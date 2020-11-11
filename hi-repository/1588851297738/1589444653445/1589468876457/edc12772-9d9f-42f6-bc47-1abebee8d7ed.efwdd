@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efwdd>
+    <fileName>QueryViewDashboard</fileName>
+    <efw>edc12772-9d9f-42f6-bc47-1abebee8d7ed.efw</efw>
+    <visible>true</visible>
+    <description>Efw Dashboard Designer</description>
+    <state><![CDATA[{"variables":[],"components":{"21h76s7t64a":{"metadata":{"dir":"/Adhoc Dynamic View/Derby DB/Query View/","name":"QueryView_SessionVariablesReport"},"type":"dashboard-component","options":{"dir":"1588851297738/1589444653445/1589468876457","file":"2de03bb3-aa95-48c3-9a6a-4962f95fcdaa.report","ext":"report","compType":"Adhoc","uid":"21h76s7t64a","iframe":false},"uid":"21h76s7t64a","name":"21h76s7t64a","label":"QueryView_SessionVariablesReport","executeAtStart":true,"gs_attr":{"x":0,"y":16,"height":16,"width":33}},"yayy5sj0lpd":{"metadata":{"dir":"/Adhoc Dynamic View/Derby DB/Query View/","name":"QueryView_SessionVariables_JoinsWithTableReport"},"type":"dashboard-component","options":{"dir":"1588851297738/1589444653445/1589468876457","file":"3c16ba96-43d9-476a-961a-aab0c0018b0e.report","ext":"report","compType":"Adhoc","uid":"yayy5sj0lpd","iframe":false},"uid":"yayy5sj0lpd","name":"yayy5sj0lpd","label":"QueryView_SessionVariables_JoinsWithTableReport","executeAtStart":true,"gs_attr":{"x":33,"y":0,"height":16,"width":33}},"2kuutg6w4uv":{"metadata":{"dir":"/Adhoc Dynamic View/Derby DB/Query View/","name":"QueryView_SessionVariables_MetadataSecurityReport"},"type":"dashboard-component","options":{"dir":"1588851297738/1589444653445/1589468876457","file":"d8138e12-7e8c-4b21-8c24-31d1c4e983d1.report","ext":"report","compType":"Adhoc","uid":"2kuutg6w4uv","iframe":false},"uid":"2kuutg6w4uv","name":"2kuutg6w4uv","label":"QueryView_SessionVariables_MetadataSecurityReport","executeAtStart":true,"gs_attr":{"x":66,"y":0,"height":16,"width":33}}},"dashboardConfig":{"id":"dashboard"},"css":"","script":"","printOptions":{"templateId":"Dashboard","title":"Dashboard"},"componentSettings":{"4s6dyk4ya4m":{"header":true,"minimize":false,"maximize":false,"export":false,"editReport":false},"yayy5sj0lpd":{"header":true,"minimize":false,"maximize":false,"export":false,"editReport":false},"2kuutg6w4uv":{"header":true,"minimize":false,"maximize":false,"export":false,"editReport":false},"21h76s7t64a":{"header":true,"minimize":false,"maximize":false,"export":false,"editReport":false}},"gridWidthOption":100,"toggleIframes":false}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</efwdd>

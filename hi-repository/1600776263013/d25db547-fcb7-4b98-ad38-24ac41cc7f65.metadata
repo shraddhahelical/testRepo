@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<metadata type="db.generic" databaseType="Elasticsearch 7.9.1">
+    <fileName>29Sept2020_MD</fileName>
+    <connectionType>global.jdbc</connectionType>
+    <visible>true</visible>
+    <connection connectionType="global.jdbc" subType="dynamicDataSource">
+        <dialect>org.hibernate.dialect.PostgreSQLDialect</dialect>
+        <connectionId>3</connectionId>
+        <driverClass reference="elasticsearchsql">org.elasticsearch.xpack.sql.jdbc.EsDriver</driverClass>
+    </connection>
+    <database name="elasticsearch" catalog="elasticsearch" schema="">
+        <tables>
+            <table id="a27416115c5152ee3bb419bdcd2ad964" name="bank" aliasName="bank">
+                <columns>
+                    <column name="account_number" id="234fa750-0fb0-4b54-bc74-d15e5cf8a61c" aliasName="account_number" type="java.lang.Long" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="address" id="2af915a3-6f56-4d09-a479-c575edccc6d7" aliasName="address" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="address.keyword" id="48b9b74e-c333-44e2-9d27-d85bfea49f83" aliasName="address.keyword" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="age" id="dee46827-0190-4f8a-81f7-3e7240931aad" aliasName="age" type="java.lang.Long" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="balance" id="38768019-6327-4e3c-a0cd-1162c2ef58aa" aliasName="balance" type="java.lang.Long" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="city" id="e2569538-eea1-44d7-b8bc-f041a529834d" aliasName="city" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="city.keyword" id="c64d060d-dcce-4583-ae03-00ca54798ca7" aliasName="city.keyword" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="email" id="d51bd36d-b051-4de0-9598-f6fcd03f178c" aliasName="email" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="email.keyword" id="23a68068-23cd-4115-8f66-8afb70295251" aliasName="email.keyword" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="employer" id="e501786b-4fd7-47ed-8f7e-3e9a4cbee33d" aliasName="employer" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="employer.keyword" id="b95a43f2-d4e6-4117-b824-b8afd6b211ec" aliasName="employer.keyword" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="firstname" id="63904d4c-d917-4f85-80fd-5858e627b494" aliasName="firstname" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="firstname.keyword" id="7d1f155a-4e7d-49ab-94ee-1acf5933dddc" aliasName="firstname.keyword" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="gender" id="b2673058-e291-4dfa-8437-4c04d00da07c" aliasName="gender" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="gender.keyword" id="2bd98efb-bf80-4c7d-a003-7e81f0084072" aliasName="gender.keyword" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="lastname" id="c753157e-bba8-40cc-bbbb-01b9887e105e" aliasName="lastname" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="lastname.keyword" id="709d6ad6-bf59-478b-b3bf-ae05ec05f18d" aliasName="lastname.keyword" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="state" id="dc1456c9-f4c6-4ce4-8768-0f7282a6b562" aliasName="state" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="state.keyword" id="534e3a0f-bf54-4692-a55d-410a07650c5c" aliasName="state.keyword" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                </columns>
+            </table>
+            <table id="fe5d5146-602b-4c54-8dd0-815d2ad96c75" name="SampleView" type="view" aliasName="SampleView">
+                <columns>
+                    <column name="gender" id="0d5af0e6-c8ce-4e95-b308-0fc6beeb5ffe" aliasName="gender" type="java.lang.Float"/>
+                    <column name="age" id="0b632048-86f7-4fa0-8515-a2abb5030a48" aliasName="age" type="java.lang.Float"/>
+                </columns>
+            </table>
+        </tables>
+        <relationships/>
+        <views>
+            <view id="fe5d5146-602b-4c54-8dd0-815d2ad96c75" name="SampleView" alias="SampleView" hasStoredProcedure="false">
+                <query type="conditionIf"><![CDATA[SELECT COUNT("bank"."gender") as "gender", "bank"."age" as "age" FROM "bank" GROUP BY "bank"."age" HAVING count("gender") > 50]]></query>
+            </view>
+        </views>
+    </database>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</metadata>

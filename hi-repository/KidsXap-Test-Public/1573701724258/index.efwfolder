@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efwfolder>
+    <visible>true</visible>
+    <title>Dashboards</title>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+    <share mandatory="true">
+        <organizations mandatory="true">
+            <organization id="501">1</organization>
+            <organization id="1002">1</organization>
+            <organization id="502">1</organization>
+            <organization id="1">1</organization>
+            <organization id="2">1</organization>
+            <organization id="3">1</organization>
+            <organization id="4">1</organization>
+            <organization id="5">1</organization>
+            <organization id="6">1</organization>
+        </organizations>
+    </share>
+</efwfolder>

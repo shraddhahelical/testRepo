@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efw>
+    <title>Panel1Report</title>
+    <author>hiadmin</author>
+    <description>Efw File</description>
+    <template>c3e1f53b-0be6-4231-a633-99d02a2c957d.html</template>
+    <visible>true</visible>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</efw>

@@ -1,0 +1,1094 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<metadata type="db.generic" databaseType="Microsoft SQL Server 12.00.2000">
+    <fileName>mtd_WaitLists</fileName>
+    <connectionType>global.jdbc</connectionType>
+    <visible>true</visible>
+    <connection connectionType="global.jdbc" subType="dynamicDataSource">
+        <dialect>org.hibernate.dialect.SQLServerDialect</dialect>
+        <connectionId>2</connectionId>
+        <driverClass reference="sqlserver">com.microsoft.sqlserver.jdbc.SQLServerDriver</driverClass>
+    </connection>
+    <database name="QA_reportDB.dbo" catalog="QA_reportDB" schema="dbo">
+        <tables>
+            <table id="42872a71-0538-409a-a297-5ece83716ca4" name="WaitListCommentProdLevel" type="view" aliasName="WaitListCommentProdLevel">
+                <columns>
+                    <column name="confLevelName" id="1463b96e-77d0-48f7-949e-a91b46d2917c" aliasName="confLevelName" type="java.lang.String"/>
+                    <column name="manage_wl_name" id="9fdfae3f-d7a0-4aa5-ad98-91fd20a17eca" aliasName="manage_wl_name" type="java.lang.String"/>
+                    <column name="wlId" id="1f8ca571-abd0-4668-8013-546c7a7a843a" aliasName="wlId" type="java.lang.String"/>
+                    <column name="OrganisationId" id="edfa8218-69b4-4412-9e98-5e40289daf0e" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="Organisation" id="99cfea0e-8bda-4dd3-b021-77b83e3db84e" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="ProviderId" id="34ca4923-747f-432c-b574-0693202e87d2" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="Provider" id="b558347f-c9c3-4b7b-97dd-9b6d18c2948b" aliasName="Provider" type="java.lang.String"/>
+                    <column name="CentreId" id="017f6516-41ea-4386-9f98-5c5e1736a069" aliasName="CentreId" type="java.lang.String"/>
+                    <column name="Centre" id="3e2d71a6-2703-45cd-b214-b124eacf07ab" aliasName="Centre" type="java.lang.String"/>
+                    <column name="Family" id="cffc56eb-a946-4dbb-89c6-bb62164e3dac" aliasName="Family" type="java.lang.String"/>
+                    <column name="CentrePrefStatus" id="63616350-b1f0-4242-979d-e1a7a5d9ed61" aliasName="CentrePrefStatus" type="java.lang.String"/>
+                    <column name="Child" id="199f000a-dae3-4676-bdcb-b1965acddaba" aliasName="Child" type="java.lang.String"/>
+                    <column name="Date Of Birth" id="e6f9f4b6-5aeb-4329-92e1-a4a63609f552" aliasName="Date Of Birth" type="java.lang.String"/>
+                    <column name="Age At Care Start Date" id="3104d8cd-0abd-42aa-a73b-627627325b53" aliasName="Age At Care Start Date" type="java.lang.Float"/>
+                    <column name="Parent" id="aa75d6b0-be7f-460a-bf45-927fce086ece" aliasName="Parent" type="java.lang.String"/>
+                    <column name="Mobile" id="493a26e3-1d53-47a1-8d02-3714cf51343a" aliasName="Mobile" type="java.lang.String"/>
+                    <column name="Email" id="b78492b5-ce00-44a9-80ae-d56b9d65e3c0" aliasName="Email" type="java.lang.String"/>
+                    <column name="Application Status" id="aea1da03-1eb6-49b5-a354-e8ea2c2ef143" aliasName="Application Status" type="java.lang.String"/>
+                    <column name="Tags" id="3833be42-edf9-45d3-a040-0916e065706b" aliasName="Tags" type="java.lang.String"/>
+                    <column name="Created On" id="575a1a30-6424-456e-8a26-66dc092eb812" aliasName="Created On" type="java.lang.String"/>
+                    <column name="Created By" id="ce1b4686-81e0-4663-b303-1f2fd2f874e3" aliasName="Created By" type="java.lang.String"/>
+                    <column name="Requested Program" id="b01d46e3-17fe-44b1-a1d4-e640484d849b" aliasName="Requested Program" type="java.lang.String"/>
+                    <column name="Requested Start Date" id="50864524-d9ef-43a3-8d9b-55832f9baa4d" aliasName="Requested Start Date" type="java.lang.String"/>
+                    <column name="Requested End Date" id="e842ac13-5cdf-4d86-a3b3-8a4f7c3373ac" aliasName="Requested End Date" type="java.lang.String"/>
+                    <column name="Requested Days" id="52ca403c-b46b-45b2-b236-91e853afd544" aliasName="Requested Days" type="java.lang.String"/>
+                    <column name="Requested Days-Filter" id="0f5799fd-7c7d-45d4-bb3a-ceb4f3d44b93" aliasName="Requested Days-Filter" type="java.lang.String"/>
+                    <column name="Offered Date" id="8999acd8-0a37-4c91-bc15-019df3ed27e3" aliasName="Offered Date" type="java.lang.String"/>
+                    <column name="Offered Program" id="3f5b4b27-ee6c-4053-b225-f503df77665a" aliasName="Offered Program" type="java.lang.String"/>
+                    <column name="Offered Booking Start Date" id="4aed8b80-08be-4082-975d-4bc5d13e0c3c" aliasName="Offered Booking Start Date" type="java.lang.String"/>
+                    <column name="Offered Booking End Date" id="564733ea-a36a-4385-8733-6995c56463bf" aliasName="Offered Booking End Date" type="java.lang.String"/>
+                    <column name="Offered Days" id="f34eefbc-a54d-4c29-8996-7da65e28155a" aliasName="Offered Days" type="java.lang.String"/>
+                    <column name="Offer Expiry Date" id="c254af21-3651-4e59-b015-7607677722b1" aliasName="Offer Expiry Date" type="java.lang.String"/>
+                    <column name="Offer Accepted Date" id="1c39b82a-97ee-4cd0-98a8-de3ee53ceef0" aliasName="Offer Accepted Date" type="java.lang.String"/>
+                    <column name="Preference Number" id="0e8981d7-8a54-4f63-8306-5604982f98e5" aliasName="Preference Number" type="java.lang.Float"/>
+                    <column name="Heard About Us" id="8cdd42bb-a026-45b8-ace9-e3ba75745323" aliasName="Heard About Us" type="java.lang.String"/>
+                    <column name="Heard About Us-Filter" id="2b733244-241c-4a8e-b402-1752fda09468" aliasName="Heard About Us-Filter" type="java.lang.String"/>
+                    <column name="Subject" id="9bd68b94-d759-442a-9cd4-341c9cddf018" aliasName="Subject" type="java.lang.String"/>
+                    <column name="Comments" id="5b224b7c-568a-4143-a6d7-78a54960665d" aliasName="Comments" type="java.lang.String"/>
+                    <column name="Commented Date" id="1800109e-2259-4d70-841a-4d0ea483734d" aliasName="Commented Date" type="java.sql.Date"/>
+                    <column name="Commented By" id="af073d3a-71ac-489c-a0bd-d02154dcb68f" aliasName="Commented By" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="3ee8790d-d57d-4805-b559-537e06ad77cf" name="WaitListCommentByCentreLevel" type="view" aliasName="WaitListCommentByCentreLevel">
+                <columns>
+                    <column name="confLevelName" id="ad45c9b2-5a56-48b2-be38-0c2bd6517de5" aliasName="confLevelName" type="java.lang.String"/>
+                    <column name="manage_wl_name" id="55b1d192-0cc9-4e07-b395-13cc292de940" aliasName="manage_wl_name" type="java.lang.String"/>
+                    <column name="wlId" id="185e9abd-0168-47b2-9732-907acaaf65fc" aliasName="wlId" type="java.lang.String"/>
+                    <column name="OrganisationId" id="e60f9bd4-e0c0-4ff3-b241-7f57b4b81159" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="Organisation" id="11ff9127-1efa-4f42-84a2-ae60aeeeab9b" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="ProviderId" id="bbda61b2-5f31-4698-9b3b-f2f2eef71b08" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="Provider" id="dd8ff372-e0cb-434a-b25c-e0aad095a70c" aliasName="Provider" type="java.lang.String"/>
+                    <column name="CentreId" id="623ee2cf-982e-4cab-891c-58975cfe0294" aliasName="CentreId" type="java.lang.String"/>
+                    <column name="Centre" id="c4ccc3b6-23e3-4468-aa85-4e16338d2d2f" aliasName="Centre" type="java.lang.String"/>
+                    <column name="Family" id="5895e54b-55bc-4f80-92af-43835eab7e56" aliasName="Family" type="java.lang.String"/>
+                    <column name="CentrePrefStatus" id="6097a19b-4acb-4cf6-8f5d-ad6a7610376b" aliasName="CentrePrefStatus" type="java.lang.String"/>
+                    <column name="Child" id="0ba8f3b9-ea17-48a3-8614-67bb60f9d690" aliasName="Child" type="java.lang.String"/>
+                    <column name="Date Of Birth" id="ed57dda8-6d85-4adc-93ca-3404d9e14914" aliasName="Date Of Birth" type="java.lang.String"/>
+                    <column name="Age At Care Start Date" id="ffae1e32-1987-48fb-9fa5-406903a4897c" aliasName="Age At Care Start Date" type="java.lang.Float"/>
+                    <column name="Parent" id="2ac99f8e-5e20-4cc1-b77e-e6082fe23710" aliasName="Parent" type="java.lang.String"/>
+                    <column name="Mobile" id="89e1a79b-f837-44b0-8847-6ff5464918f4" aliasName="Mobile" type="java.lang.String"/>
+                    <column name="Email" id="1cb35e18-38ff-4d16-b585-301cd52a2090" aliasName="Email" type="java.lang.String"/>
+                    <column name="Application Status" id="4a31cb80-bd7a-4d21-b1c7-8f616253f3c3" aliasName="Application Status" type="java.lang.String"/>
+                    <column name="Tags" id="8d4a9f46-192a-4b8c-9f72-6d6f933e0a33" aliasName="Tags" type="java.lang.String"/>
+                    <column name="Created On" id="b5226922-2902-474a-b99e-63c84c6033b0" aliasName="Created On" type="java.lang.String"/>
+                    <column name="Created By" id="1ac284f8-2fda-426e-8423-fa0a8d0dd636" aliasName="Created By" type="java.lang.String"/>
+                    <column name="Requested Program" id="1cb95844-4d04-4156-969b-61c471a1a78f" aliasName="Requested Program" type="java.lang.String"/>
+                    <column name="Requested Start Date" id="6b19ee32-23b6-47b9-8e35-0de7690487c2" aliasName="Requested Start Date" type="java.lang.String"/>
+                    <column name="Requested End Date" id="85640135-31ab-4904-a68e-d6e4f7fb4f59" aliasName="Requested End Date" type="java.lang.String"/>
+                    <column name="Requested Days" id="6f87cbc1-645b-4715-b7b2-b3d17bf134fc" aliasName="Requested Days" type="java.lang.String"/>
+                    <column name="Requested Days-Filter" id="93937fd1-4202-4c86-bac7-ebcd0cb94d83" aliasName="Requested Days-Filter" type="java.lang.String"/>
+                    <column name="Offered Date" id="e353ae1c-2e30-4d06-a2a7-dfb06961d0ef" aliasName="Offered Date" type="java.lang.String"/>
+                    <column name="Offered Program" id="bb27ea59-935c-4819-8bd4-17d4a293ea0a" aliasName="Offered Program" type="java.lang.String"/>
+                    <column name="Offered Booking Start Date" id="699a93e7-977a-41ad-86c6-5767c977cfce" aliasName="Offered Booking Start Date" type="java.lang.String"/>
+                    <column name="Offered Booking End Date" id="0685bb7d-b3a6-442c-9c05-d8f630a5aec7" aliasName="Offered Booking End Date" type="java.lang.String"/>
+                    <column name="Offered Days" id="bc11d4f2-cf06-4bd5-82b3-94df45aaf741" aliasName="Offered Days" type="java.lang.String"/>
+                    <column name="Offer Expiry Date" id="77c359d8-a606-47c7-82b9-da9d7e27831d" aliasName="Offer Expiry Date" type="java.lang.String"/>
+                    <column name="Offer Accepted Date" id="055429c5-acfc-403e-8dc1-26445b6925c9" aliasName="Offer Accepted Date" type="java.lang.String"/>
+                    <column name="Heard About Us" id="17c621f0-0709-4583-b09f-9cd15f53f52b" aliasName="Heard About Us" type="java.lang.String"/>
+                    <column name="Heard About Us-Filter" id="64df240a-9378-4dec-ba93-76c97327ad5b" aliasName="Heard About Us-Filter" type="java.lang.String"/>
+                    <column name="Subject" id="316b4419-cde3-40be-ab84-c1c9447489d1" aliasName="Subject" type="java.lang.String"/>
+                    <column name="Comments" id="b8dec8a5-72d8-42fe-bcf5-b290cd2a3973" aliasName="Comments" type="java.lang.String"/>
+                    <column name="Commented Date" id="2528999b-d2b1-4480-aeba-15724a99ac07" aliasName="Commented Date" type="java.sql.Date"/>
+                    <column name="Commented By" id="5ed804ec-1b1b-4dc1-a953-1c38219c2622" aliasName="Commented By" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="6e2965a8-af0f-437a-b969-e29ba55c4b90" name="WaitListCommentOrgLevel" type="view" aliasName="WaitListCommentOrgLevel">
+                <columns>
+                    <column name="confLevelName" id="97f4c7f4-afff-47fb-8055-dc1c7d66389b" aliasName="confLevelName" type="java.lang.String"/>
+                    <column name="manage_wl_name" id="547ccd99-8106-47f6-8715-92a32035d115" aliasName="manage_wl_name" type="java.lang.String"/>
+                    <column name="wlId" id="5f6e7a49-c75d-4807-855f-f87f56376aa8" aliasName="wlId" type="java.lang.String"/>
+                    <column name="OrganisationId" id="05f6daf6-0a26-4722-a7e1-fd7182b18ccb" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="Organisation" id="b15c9c9e-9aae-4f56-8956-f6eea018fde9" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="ProviderId" id="2f288597-b116-4699-8940-861d43bafeca" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="Provider" id="15f4c626-cbc2-48f8-87d7-150524ad42ed" aliasName="Provider" type="java.lang.String"/>
+                    <column name="CentreId" id="9c4d2838-6f3f-4e2c-9754-a94398959cd4" aliasName="CentreId" type="java.lang.String"/>
+                    <column name="Centre" id="8fc29fe5-fe85-41fb-abb8-7bef17a53e61" aliasName="Centre" type="java.lang.String"/>
+                    <column name="Family" id="e6ca65a9-7acf-4801-94b5-2ac96958b0a1" aliasName="Family" type="java.lang.String"/>
+                    <column name="CentrePrefStatus" id="0c331d8f-a125-4ea7-b1af-9348d66eb160" aliasName="CentrePrefStatus" type="java.lang.String"/>
+                    <column name="Child" id="544cd41e-b9a4-4a7e-a049-c76443332c11" aliasName="Child" type="java.lang.String"/>
+                    <column name="Date Of Birth" id="85d0e37c-273d-4de4-ac41-da42a2c9803b" aliasName="Date Of Birth" type="java.lang.String"/>
+                    <column name="Age At Care Start Date" id="099c5478-ff5a-4c4f-ba0c-e901d2b10f5a" aliasName="Age At Care Start Date" type="java.lang.Float"/>
+                    <column name="Parent" id="1afbfa33-5fd6-4779-b1dd-a672ef6ab789" aliasName="Parent" type="java.lang.String"/>
+                    <column name="Mobile" id="9c1cce4d-e7ea-4b88-8704-04a7fb4b9110" aliasName="Mobile" type="java.lang.String"/>
+                    <column name="Email" id="9018a3e4-3d04-4255-baa7-18fa2e8d215e" aliasName="Email" type="java.lang.String"/>
+                    <column name="Application Status" id="cb46c19d-62d7-4092-8421-1934956b8fc3" aliasName="Application Status" type="java.lang.String"/>
+                    <column name="Tags" id="137d250b-c935-4eb3-9fde-6d492e00c217" aliasName="Tags" type="java.lang.String"/>
+                    <column name="Created On" id="1323ef06-4ae3-48a7-b314-2a6a6fe52750" aliasName="Created On" type="java.lang.String"/>
+                    <column name="Created By" id="e3ff834a-432c-47cd-ad52-7d5e5214a834" aliasName="Created By" type="java.lang.String"/>
+                    <column name="Requested Program" id="05e0a78e-52e2-49e2-ad6c-f2397eca876c" aliasName="Requested Program" type="java.lang.String"/>
+                    <column name="Requested Start Date" id="d829ad7c-01b9-450c-8bdb-d717221ea8d8" aliasName="Requested Start Date" type="java.lang.String"/>
+                    <column name="Requested End Date" id="e201b19b-34c5-42cb-ab8f-10486a3ee8fd" aliasName="Requested End Date" type="java.lang.String"/>
+                    <column name="Requested Days" id="fd6dad1e-b601-4d43-86d8-75e0c6bbf131" aliasName="Requested Days" type="java.lang.String"/>
+                    <column name="Requested Days-Filter" id="d759d8ca-9867-4783-908a-96d5f78ade61" aliasName="Requested Days-Filter" type="java.lang.String"/>
+                    <column name="Offered Date" id="f274ff53-ba66-4329-b286-1c0d99855a80" aliasName="Offered Date" type="java.lang.String"/>
+                    <column name="Offered Program" id="baf3270e-b9ae-485a-afa4-7328361eeb5c" aliasName="Offered Program" type="java.lang.String"/>
+                    <column name="Offered Booking Start Date" id="02c8f9d9-560b-4381-8300-aea7c06dacec" aliasName="Offered Booking Start Date" type="java.lang.String"/>
+                    <column name="Offered Booking End Date" id="68c7e368-d095-4799-8dfc-9939d3ab20d7" aliasName="Offered Booking End Date" type="java.lang.String"/>
+                    <column name="Offered Days" id="04a4012e-4a8c-41f7-b9a4-1334ed4d59b2" aliasName="Offered Days" type="java.lang.String"/>
+                    <column name="Offer Expiry Date" id="68dff79a-6733-423b-8934-256a5ff6e300" aliasName="Offer Expiry Date" type="java.lang.String"/>
+                    <column name="Offer Accepted Date" id="e1ae9209-9156-4e9a-99c8-3e0fd28fba32" aliasName="Offer Accepted Date" type="java.lang.String"/>
+                    <column name="Preference Number" id="90dc0029-3008-46c1-a83b-5eeabaaf1744" aliasName="Preference Number" type="java.lang.Float"/>
+                    <column name="Heard About Us" id="bafd36e4-3c6a-43b5-bd89-55946c7ae837" aliasName="Heard About Us" type="java.lang.String"/>
+                    <column name="Heard About Us-Filter" id="8d0d3c39-cd44-465e-bf58-8574647d249f" aliasName="Heard About Us-Filter" type="java.lang.String"/>
+                    <column name="Subject" id="fd8afaa8-9a79-49e0-ae9b-9d1e5a079434" aliasName="Subject" type="java.lang.String"/>
+                    <column name="Comments" id="4709d918-c237-4970-aa63-180425f6d419" aliasName="Comments" type="java.lang.String"/>
+                    <column name="Commented Date" id="b2d2e2da-0a78-44cf-9c36-de9d72ec771a" aliasName="Commented Date" type="java.sql.Date"/>
+                    <column name="Commented By" id="f2abb8f2-fd17-49a5-a82b-78bf8a94d7e8" aliasName="Commented By" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="cbd36070-0b89-4e46-9a1e-705118e2ffdb" name="WaitListPendingOrgLevel" type="view" aliasName="WaitListPendingOrgLevel">
+                <columns>
+                    <column name="wlId" id="ac8bcc81-e483-4501-a8fa-5540a36c3406" aliasName="wlId" type="java.lang.String"/>
+                    <column name="OrganisationId" id="41377937-4b5e-44c8-944a-e1f29367a333" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="Organisation" id="39fa0e5c-ecc8-42bf-907f-3dd1628c7f32" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="ProviderId" id="f239b2cf-adf7-48ec-b946-010770afd5f2" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="Provider" id="40de2a39-6028-4add-87ab-4701b3e2298e" aliasName="Provider" type="java.lang.String"/>
+                    <column name="CentreId" id="1086a720-94a9-45af-b212-215f24f0b396" aliasName="CentreId" type="java.lang.String"/>
+                    <column name="Centre" id="2e40feef-7801-464e-b5c2-51cb785093f4" aliasName="Centre" type="java.lang.String"/>
+                    <column name="Family" id="d35d0c7e-dc4d-47f9-826c-7143441cf0db" aliasName="Family" type="java.lang.String"/>
+                    <column name="CentrePrefStatus" id="e45ac297-b2c6-48b7-945e-b55ad2c26865" aliasName="CentrePrefStatus" type="java.lang.String"/>
+                    <column name="Child" id="fa46e8da-41c6-4e30-bd09-eafb962419a8" aliasName="Child" type="java.lang.String"/>
+                    <column name="Date Of Birth" id="f61a948b-a66f-4cb2-b758-5db960dea055" aliasName="Date Of Birth" type="java.lang.String"/>
+                    <column name="Age At Care Start Date" id="26b5b230-f837-44d8-90f6-a2b024f8ef4a" aliasName="Age At Care Start Date" type="java.lang.Float"/>
+                    <column name="Parent" id="ae2f3f4c-3b9d-4a5b-bcce-6474a73bcac0" aliasName="Parent" type="java.lang.String"/>
+                    <column name="Mobile" id="29448c93-0f9e-4865-8b99-34c5623b1b0c" aliasName="Mobile" type="java.lang.String"/>
+                    <column name="Email" id="5827607e-8098-4dae-8a04-d4f839f57204" aliasName="Email" type="java.lang.String"/>
+                    <column name="Application Status" id="1b27c37d-b019-438d-85c8-bfb6a9b123ab" aliasName="Application Status" type="java.lang.String"/>
+                    <column name="Tags" id="27ea4f36-b861-491e-bcb6-5891b6f4cd8a" aliasName="Tags" type="java.lang.String"/>
+                    <column name="Created On" id="81ac0561-d3ad-4c2d-89cb-074221fdbc44" aliasName="Created On" type="java.lang.String"/>
+                    <column name="Created By" id="ca611d7f-2b66-43d3-a37f-1df40a16fc0e" aliasName="Created By" type="java.lang.String"/>
+                    <column name="Requested Program" id="48e40ec0-8ab5-4eab-89b2-66eb439a0e91" aliasName="Requested Program" type="java.lang.String"/>
+                    <column name="Requested Start Date" id="5ed565a6-dc30-4cd5-860d-67d4b470bc41" aliasName="Requested Start Date" type="java.lang.String"/>
+                    <column name="Requested End Date" id="6085b90b-2cc0-4cc4-849b-c553d69abd53" aliasName="Requested End Date" type="java.lang.String"/>
+                    <column name="Requested Days" id="265a734c-054d-4619-b270-b50f6443aae5" aliasName="Requested Days" type="java.lang.String"/>
+                    <column name="Offered Date" id="afb38c41-fd2b-40f7-b8de-15251ae8d161" aliasName="Offered Date" type="java.sql.Date"/>
+                    <column name="Offered Program" id="d50e8a09-9778-4ad2-83e7-f480ee61c0f6" aliasName="Offered Program" type="java.lang.String"/>
+                    <column name="Offered Booking Start Date" id="95e7cb20-20a4-49ff-9c9d-9084ee7e84b9" aliasName="Offered Booking Start Date" type="java.lang.String"/>
+                    <column name="Offered Booking End Date" id="3bc3f179-55c7-4832-87cf-d1aa6e41a92e" aliasName="Offered Booking End Date" type="java.lang.String"/>
+                    <column name="Offered Days" id="b02d5fa3-4e41-4c70-9331-9d8303066c61" aliasName="Offered Days" type="java.lang.String"/>
+                    <column name="Offered Days-Filter" id="3d128eef-ee52-438b-ba5d-110825a29f53" aliasName="Offered Days-Filter" type="java.lang.String"/>
+                    <column name="Offer Expiry Date" id="b6ad1345-ac05-4b20-ba27-5e27095573fb" aliasName="Offer Expiry Date" type="java.lang.String"/>
+                    <column name="Offer Accepted Date" id="74991e75-3f80-4f9b-887b-23e3ea08d136" aliasName="Offer Accepted Date" type="java.lang.String"/>
+                    <column name="Preference Number" id="fbe33ba1-d9fa-4333-9dc3-48da85b2ecd2" aliasName="Preference Number" type="java.lang.Float"/>
+                    <column name="Heard About Us" id="c29f05e3-5660-4181-9e8f-04a8303f5661" aliasName="Heard About Us" type="java.lang.String"/>
+                    <column name="Heard About Us-Filter" id="ed172623-1c54-4f50-ae17-9adbf8f3b6ed" aliasName="Heard About Us-Filter" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="aebe95db-2273-41fc-9311-2eaa7c30888e" name="WaitListPendingCentreLevel" type="view" aliasName="WaitListPendingCentreLevel">
+                <columns>
+                    <column name="wlId" id="fca283a0-b122-463a-b19e-cab22efb894a" aliasName="wlId" type="java.lang.String"/>
+                    <column name="OrganisationId" id="ff47795f-dee2-49a5-8508-2ed193c4e250" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="Organisation" id="d7f49c7f-781c-4f28-bcf2-b4f9ee3a9a58" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="ProviderId" id="7bf4e40e-95a8-41f1-aec3-31c97cc359f5" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="Provider" id="d9153cf0-04b5-4de2-9946-4dac0b462034" aliasName="Provider" type="java.lang.String"/>
+                    <column name="CentreId" id="d7df21b3-1907-491b-819a-90177263c75f" aliasName="CentreId" type="java.lang.String"/>
+                    <column name="Centre" id="409c635a-7f44-4ae2-915e-1f3251075e04" aliasName="Centre" type="java.lang.String"/>
+                    <column name="Family" id="95c51e3a-3311-463d-a6cb-1c8ddd4cdc53" aliasName="Family" type="java.lang.String"/>
+                    <column name="CentrePrefStatus" id="5c0f72cd-774e-4ea3-8f05-2dd709f6e613" aliasName="CentrePrefStatus" type="java.lang.String"/>
+                    <column name="Child" id="695cbcab-4934-4c5d-b442-e383b16b6c69" aliasName="Child" type="java.lang.String"/>
+                    <column name="Date Of Birth" id="ac56f177-4e50-4cab-bcc9-97cc48a907d1" aliasName="Date Of Birth" type="java.lang.String"/>
+                    <column name="Age At Care Start Date" id="7897b3a6-9617-4ae9-a468-7179104a09b6" aliasName="Age At Care Start Date" type="java.lang.Float"/>
+                    <column name="Parent" id="3743509d-dba3-4094-ae0c-d463c5a4d727" aliasName="Parent" type="java.lang.String"/>
+                    <column name="Mobile" id="6d443d4a-cc83-4fad-9810-f0d7da30de8b" aliasName="Mobile" type="java.lang.String"/>
+                    <column name="Email" id="519b585c-abcd-450c-a640-897ac28609de" aliasName="Email" type="java.lang.String"/>
+                    <column name="Application Status" id="c52d82ce-cfdb-47ce-821b-5aa0a55514d4" aliasName="Application Status" type="java.lang.String"/>
+                    <column name="Tags" id="d23447e9-1c4b-42a0-9ad8-35b3b7d0e998" aliasName="Tags" type="java.lang.String"/>
+                    <column name="Created On" id="723ee8d7-e119-4cb9-8134-462284680afa" aliasName="Created On" type="java.lang.String"/>
+                    <column name="Created By" id="351d9c0b-a9ad-4ea0-b576-b00e12e33455" aliasName="Created By" type="java.lang.String"/>
+                    <column name="Requested Program" id="722fa967-eeff-45c6-ae1b-2781b1a2e068" aliasName="Requested Program" type="java.lang.String"/>
+                    <column name="Requested Start Date" id="622a655c-3350-4108-b50b-1ceeb39bab52" aliasName="Requested Start Date" type="java.lang.String"/>
+                    <column name="Requested End Date" id="788ed254-5b01-4767-9da8-98c71886975d" aliasName="Requested End Date" type="java.lang.String"/>
+                    <column name="Requested Days" id="32780942-28f5-465d-abdb-9d14801cf69d" aliasName="Requested Days" type="java.lang.String"/>
+                    <column name="Offered Date" id="22c7dee5-202d-4f1d-818a-d3ddd056d619" aliasName="Offered Date" type="java.sql.Date"/>
+                    <column name="Offered Program" id="a12f22d7-e5d2-4bc6-aa58-d14f8a9f2cfb" aliasName="Offered Program" type="java.lang.String"/>
+                    <column name="Offered Booking Start Date" id="475ab0bd-c7b1-435a-93ea-856def45615d" aliasName="Offered Booking Start Date" type="java.lang.String"/>
+                    <column name="Offered Booking End Date" id="91abb01f-4c49-4414-b919-b1627c59d5f5" aliasName="Offered Booking End Date" type="java.lang.String"/>
+                    <column name="Offered Days" id="481be21f-6856-4b45-be2d-bd107a59ea47" aliasName="Offered Days" type="java.lang.String"/>
+                    <column name="Offered Days-Filter" id="55bd8eea-ddce-40ac-bb90-03ab57fa251f" aliasName="Offered Days-Filter" type="java.lang.String"/>
+                    <column name="Offer Expiry Date" id="f45c3923-523d-451e-973d-15b8092f1fc9" aliasName="Offer Expiry Date" type="java.lang.String"/>
+                    <column name="Offer Accepted Date" id="f541fdf2-cc4a-43d7-bf6e-0bcad60d06a0" aliasName="Offer Accepted Date" type="java.lang.String"/>
+                    <column name="Preference Number" id="0fe1d296-8f49-4063-b17e-38395eae796d" aliasName="Preference Number" type="java.lang.Float"/>
+                    <column name="Heard About Us" id="170ddaa1-c4c5-49a2-a35c-19287c9ddcc5" aliasName="Heard About Us" type="java.lang.String"/>
+                    <column name="Heard About Us-Filter" id="18021717-9361-4eb2-a8ff-8cb707ff259a" aliasName="Heard About Us-Filter" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="016c60a2-c159-4f03-b0fd-00da6ed69691" name="WaitListPendingProdLevel" type="view" aliasName="WaitListPendingProdLevel">
+                <columns>
+                    <column name="wlId" id="ff7e011a-fa93-4732-8626-5651abf7585e" aliasName="wlId" type="java.lang.String"/>
+                    <column name="OrganisationId" id="794758e7-241c-4b71-9a0f-673b7af66f53" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="Organisation" id="9ac4edd7-0c0b-451d-a219-38ea3f5babe1" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="ProviderId" id="5bb708e0-d1e2-4efc-bef8-c5e09b43981d" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="Provider" id="e4e18300-aeb6-4e10-acc1-0e817fc9da71" aliasName="Provider" type="java.lang.String"/>
+                    <column name="CentreId" id="e80d27f2-6927-4dc4-8f64-23b769a86b9d" aliasName="CentreId" type="java.lang.String"/>
+                    <column name="Centre" id="f3686876-53d7-46b3-9ae3-f768c88558fc" aliasName="Centre" type="java.lang.String"/>
+                    <column name="Family" id="5409d1fa-bcae-40a7-85b1-5a2a988f04a5" aliasName="Family" type="java.lang.String"/>
+                    <column name="CentrePrefStatus" id="48283d05-6dc0-46a6-b196-907522ab1d28" aliasName="CentrePrefStatus" type="java.lang.String"/>
+                    <column name="Child" id="53ae3db1-7aed-44e2-80d7-a2679ea53ffc" aliasName="Child" type="java.lang.String"/>
+                    <column name="Date Of Birth" id="bdb88842-82b0-4762-a004-46ebf6351bd7" aliasName="Date Of Birth" type="java.lang.String"/>
+                    <column name="Age At Care Start Date" id="673465ca-6c4a-4e87-9595-eed29f38a8b6" aliasName="Age At Care Start Date" type="java.lang.Float"/>
+                    <column name="Parent" id="64035528-98dc-4c62-93bf-265bdd406e53" aliasName="Parent" type="java.lang.String"/>
+                    <column name="Mobile" id="330b32ab-db0b-4bfe-a5f2-405f07944e1b" aliasName="Mobile" type="java.lang.String"/>
+                    <column name="Email" id="6430ead8-92d2-4dd9-9c24-708520d2ce39" aliasName="Email" type="java.lang.String"/>
+                    <column name="Application Status" id="91b4672c-014d-487b-af75-f4c0f5628f18" aliasName="Application Status" type="java.lang.String"/>
+                    <column name="Tags" id="258b23ec-31f1-414c-83fa-084be7692d33" aliasName="Tags" type="java.lang.String"/>
+                    <column name="Created On" id="52dceaaf-eba1-493e-aacd-a9369bc41c1c" aliasName="Created On" type="java.lang.String"/>
+                    <column name="Created By" id="19682109-0ff7-43d9-bf5b-311cdef5723c" aliasName="Created By" type="java.lang.String"/>
+                    <column name="Requested Program" id="af5a57f0-569b-4251-bc70-7cf99f8cbfdb" aliasName="Requested Program" type="java.lang.String"/>
+                    <column name="Requested Start Date" id="6d19e834-84a8-4657-b9e3-8fada0d6120c" aliasName="Requested Start Date" type="java.lang.String"/>
+                    <column name="Requested End Date" id="2ca9984b-c5ab-448b-a3d1-4bdbfa466f1f" aliasName="Requested End Date" type="java.lang.String"/>
+                    <column name="Requested Days" id="e45eb547-69d2-4ad8-af00-096eed307297" aliasName="Requested Days" type="java.lang.String"/>
+                    <column name="Offered Date" id="a3787543-1b19-4fc9-95d2-099e14a6bd40" aliasName="Offered Date" type="java.sql.Date"/>
+                    <column name="Offered Program" id="c8bb110e-5a9e-4210-b117-b0be1639ad94" aliasName="Offered Program" type="java.lang.String"/>
+                    <column name="Offered Booking Start Date" id="7f219831-6ac3-40d3-b74a-a0b8d514b645" aliasName="Offered Booking Start Date" type="java.lang.String"/>
+                    <column name="Offered Booking End Date" id="51b2b767-ef28-4319-98c0-de33ac68e583" aliasName="Offered Booking End Date" type="java.lang.String"/>
+                    <column name="Offered Days" id="36e7eeb5-6cdb-4f15-8060-3d31b2f3bf78" aliasName="Offered Days" type="java.lang.String"/>
+                    <column name="Offered Days-Filter" id="8246e3a2-e819-42d2-95ea-a19f1525e0f3" aliasName="Offered Days-Filter" type="java.lang.String"/>
+                    <column name="Offer Expiry Date" id="e86a4810-a50f-4aec-a9ce-de41b3f81e1d" aliasName="Offer Expiry Date" type="java.lang.String"/>
+                    <column name="Offer Accepted Date" id="691b64ed-dfdd-45e3-aaac-4acab8c4694a" aliasName="Offer Accepted Date" type="java.lang.String"/>
+                    <column name="Preference Number" id="208193dc-0f07-4762-985c-faa5dd571db2" aliasName="Preference Number" type="java.lang.Float"/>
+                    <column name="Heard About Us" id="f11e81b9-4b28-4012-940d-9032df1e5819" aliasName="Heard About Us" type="java.lang.String"/>
+                    <column name="Heard About Us-Filter" id="c366eda7-a39a-473d-bec7-3cdc73b0cbb6" aliasName="Heard About Us-Filter" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="01466e4c-7a5b-4092-8558-2cffe2b6cdcd" name="WaitListOrgLevel" type="view" aliasName="WaitListOrgLevel">
+                <columns>
+                    <column name="confLevelName" id="9db3264b-5735-4ac7-b6a8-263d79566e9e" aliasName="confLevelName" type="java.lang.String"/>
+                    <column name="manage_wl_name" id="d93889d6-db24-4402-9524-93350f1589c5" aliasName="manage_wl_name" type="java.lang.String"/>
+                    <column name="wlId" id="aed953f4-0493-441d-9399-46796baade3d" aliasName="wlId" type="java.lang.String"/>
+                    <column name="OrganisationId" id="61389043-a545-4037-8dfc-b1d38e175f7a" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="Organisation" id="6d06ff9c-6938-4cab-8cf8-2e6b075ec157" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="ProviderId" id="d69e0a88-0f79-43df-b918-8240f60ff4a5" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="Provider" id="ed9c5676-db14-441d-958b-3186ba225991" aliasName="Provider" type="java.lang.String"/>
+                    <column name="CentreId" id="fcedf1cf-242e-401d-af32-6631b1b9e1cb" aliasName="CentreId" type="java.lang.String"/>
+                    <column name="Centre" id="ae638187-fb44-41d9-bffd-f26f3a820739" aliasName="Centre" type="java.lang.String"/>
+                    <column name="Family" id="1e2daf14-abd8-49a1-8c81-46c6d610a7dc" aliasName="Family" type="java.lang.String"/>
+                    <column name="CentrePrefStatus" id="db773074-b36e-4ae5-8593-f042feb6aef8" aliasName="CentrePrefStatus" type="java.lang.String"/>
+                    <column name="Child" id="7953bb4f-ac57-429c-b751-2edcdf088e7a" aliasName="Child" type="java.lang.String"/>
+                    <column name="Date Of Birth" id="4a1b3328-e24d-4848-9a8b-f9746f8a0ff9" aliasName="Date Of Birth" type="java.lang.String"/>
+                    <column name="Age At Care Start Date" id="27d6a56f-77a0-44eb-8266-63e08d77717b" aliasName="Age At Care Start Date" type="java.lang.Float"/>
+                    <column name="Parent" id="e4a071fa-0db0-4fd4-9880-7438d2f861f0" aliasName="Parent" type="java.lang.String"/>
+                    <column name="Mobile" id="85fcefc3-8b97-476d-a77e-3e66ccdabb95" aliasName="Mobile" type="java.lang.String"/>
+                    <column name="Email" id="b56d0f8c-89c6-4b9a-a7b5-b21f076869f5" aliasName="Email" type="java.lang.String"/>
+                    <column name="Application Status" id="8b2ae9f6-7b71-4fe5-bb6a-9bf851d1ceb7" aliasName="Application Status" type="java.lang.String"/>
+                    <column name="Tags" id="29c629f3-b2a2-4e27-b05b-a9f5b935b865" aliasName="Tags" type="java.lang.String"/>
+                    <column name="Created On" id="fb8ac3cb-dd5d-4748-8e18-a80965eac44b" aliasName="Created On" type="java.lang.String"/>
+                    <column name="Created By" id="a133547a-8eac-45a0-a770-ccfe8a1bef14" aliasName="Created By" type="java.lang.String"/>
+                    <column name="Requested Program" id="45e28698-759b-4855-aec3-744e1b7ad693" aliasName="Requested Program" type="java.lang.String"/>
+                    <column name="Requested Start Date" id="a60b0d75-4e60-41f2-8008-07d2543c2f0e" aliasName="Requested Start Date" type="java.sql.Date"/>
+                    <column name="Requested End Date" id="3ace1bab-d1c6-4c98-8257-31706766c820" aliasName="Requested End Date" type="java.sql.Date"/>
+                    <column name="Requested Days" id="5575215c-0a73-426e-a53c-ffe6cb813dfe" aliasName="Requested Days" type="java.lang.String"/>
+                    <column name="Requested Days-Filter" id="fa1911d8-cddc-431e-8fb4-5f31e0402e67" aliasName="Requested Days-Filter" type="java.lang.String"/>
+                    <column name="Offered Date" id="c2398576-de82-4eaf-8f90-267584758710" aliasName="Offered Date" type="java.lang.String"/>
+                    <column name="Offered Program" id="1e1463a8-175b-4e5f-bfb0-48ad93bf13ad" aliasName="Offered Program" type="java.lang.String"/>
+                    <column name="Offered Booking Start Date" id="6852bc57-ac9b-4d93-a8b6-f1159a166111" aliasName="Offered Booking Start Date" type="java.lang.String"/>
+                    <column name="Offered Booking End Date" id="7375fd98-14a1-46b8-b27b-56488982ab6c" aliasName="Offered Booking End Date" type="java.lang.String"/>
+                    <column name="Offered Days" id="1e35733d-5dc7-4be4-a756-7f8884ba716c" aliasName="Offered Days" type="java.lang.String"/>
+                    <column name="Offer Expiry Date" id="c3b06494-0aee-4bf8-b892-c9153d6805ab" aliasName="Offer Expiry Date" type="java.lang.String"/>
+                    <column name="Offer Accepted Date" id="82026745-3957-411e-a722-94f29684d9bd" aliasName="Offer Accepted Date" type="java.lang.String"/>
+                    <column name="Preference Number" id="78d51ef6-0882-4c94-85f5-dd1c8f0ad08a" aliasName="Preference Number" type="java.lang.Float"/>
+                    <column name="Heard About Us" id="b2bc9aac-dbd3-4480-a0ed-c35f04118fef" aliasName="Heard About Us" type="java.lang.String"/>
+                    <column name="Heard About Us-Filter" id="0e72699b-05ab-489e-8d35-4a71d7b3023b" aliasName="Heard About Us-Filter" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="426a9a26-a1a2-43bb-aa62-6a5eea2bf249" name="WaitListProdLevel" type="view" aliasName="WaitListProdLevel">
+                <columns>
+                    <column name="confLevelName" id="981a3195-1b6f-49a5-9d28-c7bf7bc98097" aliasName="confLevelName" type="java.lang.String"/>
+                    <column name="manage_wl_name" id="084df3dd-de41-4b1a-9b5a-68b480bfe614" aliasName="manage_wl_name" type="java.lang.String"/>
+                    <column name="wlId" id="bd525ec0-177e-4f49-b27d-fe2363f26497" aliasName="wlId" type="java.lang.String"/>
+                    <column name="OrganisationId" id="b3c35a50-7d88-499c-9c27-3bba7cc858f7" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="Organisation" id="dd1fd7b9-4c30-46bc-8886-c73946e94c6b" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="ProviderId" id="508cf8d0-9235-4a05-90ad-605e42f639d5" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="Provider" id="88568c48-f5ca-4f2e-9971-0f5115149ada" aliasName="Provider" type="java.lang.String"/>
+                    <column name="CentreId" id="3d803f1a-759c-41e9-a914-f8741aec3bed" aliasName="CentreId" type="java.lang.String"/>
+                    <column name="Centre" id="d457d077-e3e2-4ab0-9cad-ee568e06f5eb" aliasName="Centre" type="java.lang.String"/>
+                    <column name="Family" id="462d72e0-b142-43c6-965d-8c0444e5d4e8" aliasName="Family" type="java.lang.String"/>
+                    <column name="CentrePrefStatus" id="7a3901df-2db0-4116-9d17-ac2431af415d" aliasName="CentrePrefStatus" type="java.lang.String"/>
+                    <column name="Child" id="20aa6920-05b5-4920-b307-d92c7ed4865b" aliasName="Child" type="java.lang.String"/>
+                    <column name="Date Of Birth" id="99f696a5-684a-476a-979c-279ca325850c" aliasName="Date Of Birth" type="java.lang.String"/>
+                    <column name="Age At Care Start Date" id="49725416-653f-46f8-8d5b-c1bbcc672948" aliasName="Age At Care Start Date" type="java.lang.Float"/>
+                    <column name="Parent" id="2c137b01-2686-4159-a765-fd98063ef19e" aliasName="Parent" type="java.lang.String"/>
+                    <column name="Mobile" id="5ad72c63-cdc8-4710-bf32-ca72bb1a09c8" aliasName="Mobile" type="java.lang.String"/>
+                    <column name="Email" id="3be5838f-3fad-4581-abc9-c04c02cadbb0" aliasName="Email" type="java.lang.String"/>
+                    <column name="Application Status" id="9f5f9fd7-c615-4f7a-8813-859742d54663" aliasName="Application Status" type="java.lang.String"/>
+                    <column name="Tags" id="5aa4d7c1-c980-4373-8fd5-7be14a4f6d4d" aliasName="Tags" type="java.lang.String"/>
+                    <column name="Created On" id="72d2794e-ab58-493e-8d89-3d2cf694af35" aliasName="Created On" type="java.lang.String"/>
+                    <column name="Created By" id="cf7b3a83-6170-49c5-8bac-60c5cad3420d" aliasName="Created By" type="java.lang.String"/>
+                    <column name="Requested Program" id="15bc60ed-2199-4bfe-a0b7-bc0f9cc27c48" aliasName="Requested Program" type="java.lang.String"/>
+                    <column name="Requested Start Date" id="30a6cf89-c6cf-4a30-85f2-259bd7150b05" aliasName="Requested Start Date" type="java.sql.Date"/>
+                    <column name="Requested End Date" id="6d011a9d-2ec1-4699-b9b5-1451450027c7" aliasName="Requested End Date" type="java.sql.Date"/>
+                    <column name="Requested Days" id="da1fb408-7ef3-4add-b81f-92eb9be48522" aliasName="Requested Days" type="java.lang.String"/>
+                    <column name="Requested Days-Filter" id="b5d462d8-ffe3-414f-a181-6c7b44e50e8d" aliasName="Requested Days-Filter" type="java.lang.String"/>
+                    <column name="Offered Date" id="237bab24-7802-4e39-a23d-79e13c8f69f7" aliasName="Offered Date" type="java.lang.String"/>
+                    <column name="Offered Program" id="541e7c06-6ce3-4cb5-84a9-e25328684633" aliasName="Offered Program" type="java.lang.String"/>
+                    <column name="Offered Booking Start Date" id="f7268285-ac5f-4f2e-b30a-94307b0c2545" aliasName="Offered Booking Start Date" type="java.lang.String"/>
+                    <column name="Offered Booking End Date" id="9dc52bfe-7e9f-4625-8e7c-92d42118e5b9" aliasName="Offered Booking End Date" type="java.lang.String"/>
+                    <column name="Offered Days" id="0ddd435a-cb09-4f63-bc5b-bc81b0045dae" aliasName="Offered Days" type="java.lang.String"/>
+                    <column name="Offer Expiry Date" id="3dbfdc81-e3bf-4d81-897b-10f8894806ce" aliasName="Offer Expiry Date" type="java.lang.String"/>
+                    <column name="Offer Accepted Date" id="729a1c8b-2c2a-4f2b-86a6-494867a67a64" aliasName="Offer Accepted Date" type="java.lang.String"/>
+                    <column name="Preference Number" id="b0456e50-b27f-44c0-9f57-c424323d1ae0" aliasName="Preference Number" type="java.lang.Float"/>
+                    <column name="Heard About Us" id="61b0c1b0-6dd9-4164-9c01-9e2af91db551" aliasName="Heard About Us" type="java.lang.String"/>
+                    <column name="Heard About Us-Filter" id="3d6a34e9-144a-4bc8-88e1-5c4f3ba6f64b" aliasName="Heard About Us-Filter" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="4f8c5982-41e7-419b-b3ad-1c32ffa15283" name="WaitListByCentreLevel" type="view" aliasName="WaitListByCentreLevel">
+                <columns>
+                    <column name="confLevelName" id="ffaf1476-a40c-477e-8de3-ddd26fa40a0f" aliasName="confLevelName" type="java.lang.String"/>
+                    <column name="manage_wl_name" id="c5ecbefd-b23e-49de-9be4-dd9a5a2205ac" aliasName="manage_wl_name" type="java.lang.String"/>
+                    <column name="wlId" id="55f00939-ba4d-46c8-bc83-745cc6d1a214" aliasName="wlId" type="java.lang.String"/>
+                    <column name="OrganisationId" id="5c5ed00e-7290-4e06-9e26-087e6e102230" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="Organisation" id="27d221e4-6871-4568-8216-77d8e5c9a728" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="ProviderId" id="03679f06-888c-45ef-b6f7-1a25a887195f" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="Provider" id="2e9eeb75-9e93-422f-8429-05a0f2eb1c04" aliasName="Provider" type="java.lang.String"/>
+                    <column name="CentreId" id="51802cff-1ba3-4057-8f6f-e9bd519331e4" aliasName="CentreId" type="java.lang.String"/>
+                    <column name="Centre" id="a8b63b10-d742-4367-bde8-3036e3c71607" aliasName="Centre" type="java.lang.String"/>
+                    <column name="Family" id="e45431ca-3180-4889-b060-274d11b1a733" aliasName="Family" type="java.lang.String"/>
+                    <column name="CentrePrefStatus" id="1b768d3e-cb13-4687-b9f3-46a712486b92" aliasName="CentrePrefStatus" type="java.lang.String"/>
+                    <column name="Child" id="ade8fa4c-838e-470c-bb20-0a1711862f9b" aliasName="Child" type="java.lang.String"/>
+                    <column name="Date Of Birth" id="1a4c7f3f-63dc-40d7-8f16-ee98a1c79d25" aliasName="Date Of Birth" type="java.lang.String"/>
+                    <column name="Age At Care Start Date" id="e2bb2339-a365-484f-a63e-6ec23fc74786" aliasName="Age At Care Start Date" type="java.lang.Float"/>
+                    <column name="Parent" id="afa35c64-c0a9-4c99-8e92-e93ca8d39e7b" aliasName="Parent" type="java.lang.String"/>
+                    <column name="Mobile" id="56159ebe-d090-4b89-9881-6472df866dbd" aliasName="Mobile" type="java.lang.String"/>
+                    <column name="Email" id="8cc8dc47-a73c-4b7f-bef2-0926b021c2ce" aliasName="Email" type="java.lang.String"/>
+                    <column name="Application Status" id="e7dc1b7a-7b5f-4e63-8c08-42819a0b4e14" aliasName="Application Status" type="java.lang.String"/>
+                    <column name="Tags" id="c9b9435a-4df9-4129-96e9-f5d6fb0a3c11" aliasName="Tags" type="java.lang.String"/>
+                    <column name="Created On" id="8f6422d4-8cd1-4158-938f-525a868e8568" aliasName="Created On" type="java.lang.String"/>
+                    <column name="Created By" id="05568d0e-ed16-42a4-b192-341e66335355" aliasName="Created By" type="java.lang.String"/>
+                    <column name="Requested Program" id="1dd22b14-422d-4128-ab43-86c0def3ca95" aliasName="Requested Program" type="java.lang.String"/>
+                    <column name="Requested Start Date" id="f80b47b6-5503-40a1-b016-7dc7b5c3550d" aliasName="Requested Start Date" type="java.sql.Date"/>
+                    <column name="Requested End Date" id="d1bffae6-00ce-4b36-8d16-9e9bd5e9c7ce" aliasName="Requested End Date" type="java.sql.Date"/>
+                    <column name="Requested Days" id="c71499e5-b37c-4edb-9ee2-733f0b9d331a" aliasName="Requested Days" type="java.lang.String"/>
+                    <column name="Requested Days-Filter" id="f6f34565-fadd-4c4d-8d51-b1346bc4a0af" aliasName="Requested Days-Filter" type="java.lang.String"/>
+                    <column name="Offered Date" id="963dd062-c2be-43f8-af58-dbcbefa7d82f" aliasName="Offered Date" type="java.lang.String"/>
+                    <column name="Offered Program" id="46f10db0-f9c5-4c9b-8616-0715098ee6eb" aliasName="Offered Program" type="java.lang.String"/>
+                    <column name="Offered Booking Start Date" id="31ca7213-cc2f-4d55-b081-44ced017f23c" aliasName="Offered Booking Start Date" type="java.lang.String"/>
+                    <column name="Offered Booking End Date" id="7da92999-672a-45fd-8248-233c8fbce21a" aliasName="Offered Booking End Date" type="java.lang.String"/>
+                    <column name="Offered Days" id="4d98c723-e5f5-4a22-9352-fd460019e0d5" aliasName="Offered Days" type="java.lang.String"/>
+                    <column name="Offer Expiry Date" id="3a0cb2f7-5a5c-47af-857d-46885d374652" aliasName="Offer Expiry Date" type="java.lang.String"/>
+                    <column name="Offer Accepted Date" id="9d6f58a5-0451-4431-bc8f-2341e8711877" aliasName="Offer Accepted Date" type="java.lang.String"/>
+                    <column name="Heard About Us" id="82c79ec9-dfa7-417d-bf02-647329a2bf20" aliasName="Heard About Us" type="java.lang.String"/>
+                    <column name="Heard About Us-Filter" id="61606b05-4a89-4e2e-aaa5-7b57061f9d1f" aliasName="Heard About Us-Filter" type="java.lang.String"/>
+                </columns>
+            </table>
+        </tables>
+        <relationships/>
+        <views>
+            <view id="42872a71-0538-409a-a297-5ece83716ca4" name="WaitListCommentProdLevel" alias="WaitListCommentProdLevel">
+                <query><![CDATA[ SELECT [confLevelName],
+[manage_wl_name],
+w.wlId, 
+w.OrganisationId, 
+w.OrganisationName AS [Organisation], 
+wcp.ProviderId,
+wcp.ProviderName AS [Provider], 
+wcp.CentreId,
+wcp.CentreName AS [Centre], 
+wcp.Family, 
+CASE WHEN wcp.CentrePrefStatus = 1 THEN 'Pending' 
+	 WHEN wcp.CentrePrefStatus = 2 THEN 'Offered' 
+	 WHEN wcp.CentrePrefStatus = 3 THEN 'Reject' 
+	 WHEN wcp.CentrePrefStatus = 4 THEN 'Approved' 
+	 WHEN wcp.CentrePrefStatus = 5 THEN 'Archive'
+	 WHEN wcp.CentrePrefStatus = 6 THEN 'Confirmed' 
+END AS CentrePrefStatus,
+w.ChildName AS [Child], 
+CONVERT(VARCHAR, w.ChildDOB, 103) AS [Date Of Birth], 
+w.AgeAtCareStart AS [Age At Care Start Date], 
+wa.PersonName AS [Parent], 
+wa.MobileNumber AS [Mobile],
+wa.Email AS [Email],
+w.wlStatus AS [Application Status], 
+w.Tags, 
+CONVERT(VARCHAR, w.CreatedOn, 103) AS [Created On], 
+w.CreatedBy AS [Created By],
+wcb.ProgramName AS [Requested Program], 
+CONVERT(VARCHAR, wcb.BookingStartDate, 103) as [Requested Start Date], 
+CONVERT(VARCHAR, wcb.BookingEndDate, 103) as [Requested End Date], 
+wcb.PreferredDays as [Requested Days],
+TRIM(CONVERT(VARCHAR, [value])) [Requested Days-Filter],
+CONVERT(VARCHAR, wcb.ofr_OfferDate, 103) AS [Offered Date],
+wcb.ofr_ProgramName AS [Offered Program],
+CONVERT(VARCHAR, wcb.ofr_BookingStartDate, 103) AS [Offered Booking Start Date], 
+CONVERT(VARCHAR, wcb.ofr_BookingEndDate, 103) AS [Offered Booking End Date],  
+wcb.ofr_OfferedDays AS [Offered Days],
+CONVERT(VARCHAR, wcp.OfferExpiryDate, 103) AS [Offer Expiry Date],
+CONVERT(VARCHAR, wcb.OfferActiondDate, 103) AS [Offer Accepted Date],
+wcp.[Priority] AS [Preference Number],
+CONVERT(VARCHAR(MAX), ISNULL((STUFF((SELECT DISTINCT ', ' + CONVERT(NVARCHAR(MAX), Hear1.HearAboutUs) FROM
+[dbo].[rpt_waitListsHearAboutUs] Hear1 WHERE Hear1.wlId = w.wlId FOR XML PATH('')) , 1, 2, '')), '-')) AS [Heard About Us],
+Hear2.HearAboutUs AS [Heard About Us-Filter],
+wc.[Subject] AS [Subject],
+wc.Comment AS [Comments],
+CONVERT(DATE, wc.PostedDate) AS [Commented Date],
+wc.PostedBy AS [Commented By]
+ /*
+wcb.OfferActionBy, 
+CASE WHEN wcb.OfferAcceptedStatus = 1 THEN 'Pending'
+	 WHEN wcb.OfferAcceptedStatus = 2 THEN 'Confirmed'
+	 WHEN wcb.OfferAcceptedStatus = 3 THEN 'Completed'
+END AS OfferAcceptedStatus,
+CASE WHEN wcb.ofr_Action = 0 THEN 'None'
+	 WHEN wcb.ofr_Action = 1 THEN 'Confirm Places'
+	 WHEN wcb.ofr_Action = 2 THEN 'Offer Days/Program'
+	 WHEN wcb.ofr_Action = 3 THEN 'No Vacancies'
+END AS ofr_Action
+*/
+FROM 
+[dbo].[rpt_waitLists] w
+INNER JOIN [dbo].[rpt_waitListSettings] ws ON ws.OrganisationId = w.OrganisationId AND ws.IsActive = 1
+LEFT JOIN [rpt_waitListsAdult] wa ON wa.wlId = w.wlId AND wa.PersonType = 'Guardian' AND ISNULL(wa.IsPrimaryGuardian, 0) = 1
+LEFT JOIN [dbo].[rpt_waitListsCentrePref] wcp ON wcp.wlId = w.wlId 
+LEFT JOIN [dbo].[rpt_waitListsCentrePrefBookingDetail] wcb ON wcb.wlId = w.wlId AND wcb.CentreId = wcp.CentreId AND wcb.FamilyId = wcp.FamilyId
+LEFT JOIN [dbo].[rpt_waitListsHearAboutUs] Hear2 ON Hear2.wlId = w.wlId
+LEFT JOIN [dbo].[rpt_waitListsComments] wc ON wc.wlId = w.wlId
+CROSS APPLY string_split(wcb.PreferredDays, ',') 
+WHERE /*w.OrganisationId = 'd4543528-3bc8-4c51-b6d9-74637787e128' AND w.wlId = 'a98fc6a1-d92c-456d-9c38-f50774ff0eb5'
+AND*/ wlStatus NOT IN ('Archived')
+AND manage_wl_Id = 'a65b1246-1cf6-4e07-8995-4319bfd9d9fe' /* 'Centrally at provider level' Tag  "Category" : 121 */
+AND w.wlStatus IN ('Draft', 'Payment Pending', 'Active', 'Offer Expired', 'Places Offered', 'Offer Rejected', 'Enroled/Extra Days Waiting')]]></query>
+            </view>
+            <view id="3ee8790d-d57d-4805-b559-537e06ad77cf" name="WaitListCommentByCentreLevel" alias="WaitListCommentByCentreLevel">
+                <query><![CDATA[SELECT [confLevelName],
+[manage_wl_name],
+w.wlId, 
+w.OrganisationId, 
+w.OrganisationName AS [Organisation], 
+wcp.ProviderId,
+wcp.ProviderName AS [Provider], 
+wcp.CentreId,
+wcp.CentreName AS [Centre], 
+wcp.Family, 
+CASE WHEN wcp.CentrePrefStatus = 1 THEN 'Pending' 
+	 WHEN wcp.CentrePrefStatus = 2 THEN 'Offered' 
+	 WHEN wcp.CentrePrefStatus = 3 THEN 'Reject' 
+	 WHEN wcp.CentrePrefStatus = 4 THEN 'Approved' 
+	 WHEN wcp.CentrePrefStatus = 5 THEN 'Archive'
+	 WHEN wcp.CentrePrefStatus = 6 THEN 'Confirmed' 
+END AS CentrePrefStatus,
+w.ChildName AS [Child], 
+CONVERT(VARCHAR, w.ChildDOB, 103) AS [Date Of Birth], 
+w.AgeAtCareStart AS [Age At Care Start Date], 
+wa.PersonName AS [Parent], 
+wa.MobileNumber AS [Mobile],
+wa.Email AS [Email],
+w.wlStatus AS [Application Status], 
+w.Tags, 
+CONVERT(VARCHAR, w.CreatedOn, 103) AS [Created On], 
+w.CreatedBy AS [Created By],
+wcb.ProgramName AS [Requested Program], 
+CONVERT(VARCHAR, wcb.BookingStartDate, 103) as [Requested Start Date], 
+CONVERT(VARCHAR, wcb.BookingEndDate, 103) as [Requested End Date], 
+wcb.PreferredDays as [Requested Days],
+TRIM(CONVERT(VARCHAR, [value])) [Requested Days-Filter],
+CONVERT(VARCHAR, wcb.ofr_OfferDate, 103) AS [Offered Date],
+wcb.ofr_ProgramName AS [Offered Program],
+CONVERT(VARCHAR, wcb.ofr_BookingStartDate, 103) AS [Offered Booking Start Date], 
+CONVERT(VARCHAR, wcb.ofr_BookingEndDate, 103) AS [Offered Booking End Date],  
+wcb.ofr_OfferedDays AS [Offered Days],
+CONVERT(VARCHAR, wcp.OfferExpiryDate, 103) AS [Offer Expiry Date],
+CONVERT(VARCHAR, wcb.OfferActiondDate, 103) AS [Offer Accepted Date],
+CONVERT(VARCHAR(MAX), ISNULL((STUFF((SELECT DISTINCT ', ' + CONVERT(NVARCHAR(MAX), Hear1.HearAboutUs) FROM
+[dbo].[rpt_waitListsHearAboutUs] Hear1 WHERE Hear1.wlId = w.wlId FOR XML PATH('')) , 1, 2, '')), '-')) AS [Heard About Us],
+Hear2.HearAboutUs AS [Heard About Us-Filter],
+wc.[Subject] AS [Subject],
+wc.Comment AS [Comments],
+CONVERT(DATE, wc.PostedDate) AS [Commented Date],
+wc.PostedBy AS [Commented By]
+ /*
+, wcb.OfferActiondDate, wcb.OfferActionBy, 
+CASE WHEN wcb.OfferAcceptedStatus = 1 THEN 'Pending'
+	 WHEN wcb.OfferAcceptedStatus = 2 THEN 'Confirmed'
+	 WHEN wcb.OfferAcceptedStatus = 3 THEN 'Completed'
+END AS OfferAcceptedStatus,
+CASE WHEN wcb.ofr_Action = 0 THEN 'None'
+	 WHEN wcb.ofr_Action = 1 THEN 'Confirm Places'
+	 WHEN wcb.ofr_Action = 2 THEN 'Offer Days/Program'
+	 WHEN wcb.ofr_Action = 3 THEN 'No Vacancies'
+END AS ofr_Action
+*/
+FROM 
+[dbo].[rpt_waitLists] w
+INNER JOIN [dbo].[rpt_waitListSettings] ws ON ws.OrganisationId = w.OrganisationId AND ws.IsActive = 1
+LEFT JOIN [rpt_waitListsAdult] wa ON wa.wlId = w.wlId AND wa.PersonType = 'Guardian' AND ISNULL(wa.IsPrimaryGuardian, 0) = 1
+LEFT JOIN [dbo].[rpt_waitListsCentrePref] wcp ON wcp.wlId = w.wlId 
+LEFT JOIN [dbo].[rpt_waitListsCentrePrefBookingDetail] wcb ON wcb.wlId = w.wlId AND wcb.CentreId = wcp.CentreId AND wcb.FamilyId = wcp.FamilyId
+LEFT JOIN [dbo].[rpt_waitListsHearAboutUs] Hear2 ON Hear2.wlId = w.wlId
+LEFT JOIN [dbo].[rpt_waitListsComments] wc ON wc.wlId = w.wlId
+CROSS APPLY string_split(wcb.PreferredDays, ',') 
+WHERE 
+
+/*w.OrganisationId = 'd4543528-3bc8-4c51-b6d9-74637787e128' 
+and w.wlId = '20768bfd-a72e-4469-a98a-1b1df516282e' and*/
+
+wlStatus NOT IN ('Archived')
+AND manage_wl_Id = '69cdd850-3e6a-4811-b7f1-592406b3a4f4'  /* 'Locally at individual centre level' */
+AND w.wlStatus IN ('Draft', 'Payment Pending', 'Active', 'Offer Expired', 'Places Offered', 'Offer Rejected', 'Enroled/Extra Days Waiting') ]]></query>
+            </view>
+            <view id="6e2965a8-af0f-437a-b969-e29ba55c4b90" name="WaitListCommentOrgLevel" alias="WaitListCommentOrgLevel">
+                <query><![CDATA[SELECT [confLevelName],
+[manage_wl_name],
+w.wlId, 
+w.OrganisationId, 
+w.OrganisationName AS [Organisation], 
+wcp.ProviderId,
+wcp.ProviderName AS [Provider], 
+wcp.CentreId,
+wcp.CentreName AS [Centre], 
+wcp.Family, 
+CASE WHEN wcp.CentrePrefStatus = 1 THEN 'Pending' 
+	 WHEN wcp.CentrePrefStatus = 2 THEN 'Offered' 
+	 WHEN wcp.CentrePrefStatus = 3 THEN 'Reject' 
+	 WHEN wcp.CentrePrefStatus = 4 THEN 'Approved' 
+	 WHEN wcp.CentrePrefStatus = 5 THEN 'Archive'
+	 WHEN wcp.CentrePrefStatus = 6 THEN 'Confirmed' 
+END AS CentrePrefStatus,
+w.ChildName AS [Child], 
+CONVERT(VARCHAR, w.ChildDOB, 103) AS [Date Of Birth], 
+w.AgeAtCareStart AS [Age At Care Start Date], 
+wa.PersonName AS [Parent], 
+wa.MobileNumber AS [Mobile],
+wa.Email AS [Email],
+w.wlStatus AS [Application Status], 
+w.Tags, 
+CONVERT(VARCHAR, w.CreatedOn, 103) AS [Created On], 
+w.CreatedBy AS [Created By],
+wcb.ProgramName AS [Requested Program], 
+CONVERT(VARCHAR, wcb.BookingStartDate, 103) as [Requested Start Date], 
+CONVERT(VARCHAR, wcb.BookingEndDate, 103) as [Requested End Date], 
+wcb.PreferredDays as [Requested Days],
+TRIM(CONVERT(VARCHAR, [value])) [Requested Days-Filter],
+CONVERT(VARCHAR, wcb.ofr_OfferDate, 103) AS [Offered Date],
+wcb.ofr_ProgramName AS [Offered Program],
+CONVERT(VARCHAR, wcb.ofr_BookingStartDate, 103) AS [Offered Booking Start Date], 
+CONVERT(VARCHAR, wcb.ofr_BookingEndDate, 103) AS [Offered Booking End Date],  
+wcb.ofr_OfferedDays AS [Offered Days],
+CONVERT(VARCHAR, wcp.OfferExpiryDate, 103) AS [Offer Expiry Date],
+CONVERT(VARCHAR, wcb.OfferActiondDate, 103) AS [Offer Accepted Date],
+wcp.[Priority] AS [Preference Number],
+CONVERT(VARCHAR(MAX), ISNULL((STUFF((SELECT DISTINCT ', ' + CONVERT(NVARCHAR(MAX), Hear1.HearAboutUs) FROM
+[dbo].[rpt_waitListsHearAboutUs] Hear1 WHERE Hear1.wlId = w.wlId FOR XML PATH('')) , 1, 2, '')), '-')) AS [Heard About Us],
+Hear2.HearAboutUs AS [Heard About Us-Filter],
+wc.[Subject] AS [Subject],
+wc.Comment AS [Comments],
+CONVERT(DATE, wc.PostedDate) AS [Commented Date],
+wc.PostedBy AS [Commented By]
+ /*
+wcb.OfferActionBy, 
+CASE WHEN wcb.OfferAcceptedStatus = 1 THEN 'Pending'
+	 WHEN wcb.OfferAcceptedStatus = 2 THEN 'Confirmed'
+	 WHEN wcb.OfferAcceptedStatus = 3 THEN 'Completed'
+END AS OfferAcceptedStatus,
+CASE WHEN wcb.ofr_Action = 0 THEN 'None'
+	 WHEN wcb.ofr_Action = 1 THEN 'Confirm Places'
+	 WHEN wcb.ofr_Action = 2 THEN 'Offer Days/Program'
+	 WHEN wcb.ofr_Action = 3 THEN 'No Vacancies'
+END AS ofr_Action
+*/
+FROM 
+[dbo].[rpt_waitLists] w
+INNER JOIN [dbo].[rpt_waitListSettings] ws ON ws.OrganisationId = w.OrganisationId AND ws.IsActive = 1
+LEFT JOIN [rpt_waitListsAdult] wa ON wa.wlId = w.wlId AND wa.PersonType = 'Guardian' AND ISNULL(wa.IsPrimaryGuardian, 0) = 1
+LEFT JOIN [dbo].[rpt_waitListsCentrePref] wcp ON wcp.wlId = w.wlId 
+LEFT JOIN [dbo].[rpt_waitListsCentrePrefBookingDetail] wcb ON wcb.wlId = w.wlId AND wcb.CentreId = wcp.CentreId AND wcb.FamilyId = wcp.FamilyId
+LEFT JOIN [dbo].[rpt_waitListsHearAboutUs] Hear2 ON Hear2.wlId = w.wlId
+LEFT JOIN [dbo].[rpt_waitListsComments] wc ON wc.wlId = w.wlId
+CROSS APPLY string_split(wcb.PreferredDays, ',') 
+WHERE /*w.OrganisationId = 'd4543528-3bc8-4c51-b6d9-74637787e128' AND w.wlId = 'a98fc6a1-d92c-456d-9c38-f50774ff0eb5'
+AND*/ wlStatus NOT IN ('Archived')
+AND manage_wl_Id = 'ab9fadea-5548-46c7-96fd-363202d353d3' /* 'Centrally at organisational level' */
+AND w.wlStatus IN ('Draft', 'Payment Pending', 'Active', 'Offer Expired', 'Places Offered', 'Offer Rejected', 'Enroled/Extra Days Waiting')
+
+ ]]></query>
+            </view>
+            <view id="cbd36070-0b89-4e46-9a1e-705118e2ffdb" name="WaitListPendingOrgLevel" alias="WaitListPendingOrgLevel">
+                <query><![CDATA[SELECT 
+w.wlId, 
+w.OrganisationId, 
+w.OrganisationName AS [Organisation], 
+wcp.ProviderId,
+wcp.ProviderName AS [Provider], 
+wcp.CentreId,
+wcp.CentreName AS [Centre], 
+wcp.Family, 
+CASE WHEN wcp.CentrePrefStatus = 1 THEN 'Pending' 
+	 WHEN wcp.CentrePrefStatus = 2 THEN 'Offered' 
+	 WHEN wcp.CentrePrefStatus = 3 THEN 'Reject' 
+	 WHEN wcp.CentrePrefStatus = 4 THEN 'Approved' 
+	 WHEN wcp.CentrePrefStatus = 5 THEN 'Archive'
+	 WHEN wcp.CentrePrefStatus = 6 THEN 'Confirmed' 
+END AS CentrePrefStatus,
+w.ChildName AS [Child], 
+CONVERT(VARCHAR, w.ChildDOB, 103) AS [Date Of Birth], 
+w.AgeAtCareStart AS [Age At Care Start Date], 
+wa.PersonName AS [Parent], 
+wa.MobileNumber AS [Mobile],
+wa.Email AS [Email],
+w.wlStatus AS [Application Status], 
+w.Tags, 
+CONVERT(VARCHAR, w.CreatedOn, 103) AS [Created On], 
+w.CreatedBy AS [Created By],
+wcb.ProgramName AS [Requested Program], 
+CONVERT(VARCHAR, wcb.BookingStartDate, 103) as [Requested Start Date], 
+CONVERT(VARCHAR, wcb.BookingEndDate, 103) as [Requested End Date], 
+wcb.PreferredDays as [Requested Days],
+CONVERT(DATE, wcb.ofr_OfferDate) AS [Offered Date],
+wcb.ofr_ProgramName AS [Offered Program],
+CONVERT(VARCHAR, wcb.ofr_BookingStartDate, 103) AS [Offered Booking Start Date], 
+CONVERT(VARCHAR, wcb.ofr_BookingEndDate, 103) AS [Offered Booking End Date],  
+wcb.ofr_OfferedDays AS [Offered Days],
+TRIM(CONVERT(VARCHAR, [value])) [Offered Days-Filter],
+CONVERT(VARCHAR, wcp.OfferExpiryDate,103) AS [Offer Expiry Date],
+CONVERT(VARCHAR, wcb.OfferActiondDate, 103) AS [Offer Accepted Date],
+wcp.[Priority] AS [Preference Number],
+CONVERT(VARCHAR(MAX), ISNULL((STUFF((SELECT DISTINCT ', ' + CONVERT(NVARCHAR(MAX), Hear1.HearAboutUs) FROM
+[dbo].[rpt_waitListsHearAboutUs] Hear1 WHERE Hear1.wlId = w.wlId FOR XML PATH('')) , 1, 2, '')), '-')) AS [Heard About Us],
+Hear2.HearAboutUs AS [Heard About Us-Filter]
+ /*
+wcb.OfferActionBy, 
+CASE WHEN wcb.OfferAcceptedStatus = 1 THEN 'Pending'
+	 WHEN wcb.OfferAcceptedStatus = 2 THEN 'Confirmed'
+	 WHEN wcb.OfferAcceptedStatus = 3 THEN 'Completed'
+END AS OfferAcceptedStatus,
+CASE WHEN wcb.ofr_Action = 0 THEN 'None'
+	 WHEN wcb.ofr_Action = 1 THEN 'Confirm Places'
+	 WHEN wcb.ofr_Action = 2 THEN 'Offer Days/Program'
+	 WHEN wcb.ofr_Action = 3 THEN 'No Vacancies'
+END AS ofr_Action
+*/
+FROM 
+[dbo].[rpt_waitLists] w
+INNER JOIN [dbo].[rpt_waitListSettings] ws ON ws.OrganisationId = w.OrganisationId AND ws.IsActive = 1
+LEFT JOIN [rpt_waitListsAdult] wa ON wa.wlId = w.wlId AND wa.PersonType = 'Guardian' AND ISNULL(wa.IsPrimaryGuardian, 0) = 1
+LEFT JOIN [dbo].[rpt_waitListsCentrePref] wcp ON wcp.wlId = w.wlId 
+LEFT JOIN [dbo].[rpt_waitListsCentrePrefBookingDetail] wcb ON wcb.wlId = w.wlId AND wcb.CentreId = wcp.CentreId AND wcb.FamilyId = wcp.FamilyId
+LEFT JOIN [dbo].[rpt_waitListsHearAboutUs] Hear2 ON Hear2.wlId = w.wlId
+CROSS APPLY string_split(wcb.ofr_OfferedDays, ',') 
+WHERE /*w.OrganisationId = 'd4543528-3bc8-4c51-b6d9-74637787e128' AND w.wlId = 'a98fc6a1-d92c-456d-9c38-f50774ff0eb5'
+AND*/ wlStatus NOT IN ('Archived')
+AND manage_wl_Id = 'ab9fadea-5548-46c7-96fd-363202d353d3' /* 'Centrally at organisational level' */
+AND w.wlStatus IN ('Offer Accepted', 'Offer Accepted/Extra Days Waiting', 'Enroled')
+
+ ]]></query>
+            </view>
+            <view id="aebe95db-2273-41fc-9311-2eaa7c30888e" name="WaitListPendingCentreLevel" alias="WaitListPendingCentreLevel">
+                <query><![CDATA[
+SELECT 
+w.wlId, 
+w.OrganisationId, 
+w.OrganisationName AS [Organisation], 
+wcp.ProviderId,
+wcp.ProviderName AS [Provider], 
+wcp.CentreId,
+wcp.CentreName AS [Centre], 
+wcp.Family, 
+CASE WHEN wcp.CentrePrefStatus = 1 THEN 'Pending' 
+	 WHEN wcp.CentrePrefStatus = 2 THEN 'Offered' 
+	 WHEN wcp.CentrePrefStatus = 3 THEN 'Reject' 
+	 WHEN wcp.CentrePrefStatus = 4 THEN 'Approved' 
+	 WHEN wcp.CentrePrefStatus = 5 THEN 'Archive'
+	 WHEN wcp.CentrePrefStatus = 6 THEN 'Confirmed' 
+END AS CentrePrefStatus,
+w.ChildName AS [Child], 
+CONVERT(VARCHAR, w.ChildDOB, 103) AS [Date Of Birth], 
+w.AgeAtCareStart AS [Age At Care Start Date], 
+wa.PersonName AS [Parent], 
+wa.MobileNumber AS [Mobile],
+wa.Email AS [Email],
+w.wlStatus AS [Application Status], 
+w.Tags, 
+CONVERT(VARCHAR, w.CreatedOn, 103) AS [Created On], 
+w.CreatedBy AS [Created By],
+wcb.ProgramName AS [Requested Program], 
+CONVERT(VARCHAR, wcb.BookingStartDate, 103) as [Requested Start Date], 
+CONVERT(VARCHAR, wcb.BookingEndDate, 103) as [Requested End Date], 
+wcb.PreferredDays as [Requested Days],
+CONVERT(DATE, wcb.ofr_OfferDate) AS [Offered Date],
+wcb.ofr_ProgramName AS [Offered Program],
+CONVERT(VARCHAR, wcb.ofr_BookingStartDate, 103) AS [Offered Booking Start Date], 
+CONVERT(VARCHAR, wcb.ofr_BookingEndDate, 103) AS [Offered Booking End Date],  
+wcb.ofr_OfferedDays AS [Offered Days],
+TRIM(CONVERT(VARCHAR, [value])) [Offered Days-Filter],
+CONVERT(VARCHAR, wcp.OfferExpiryDate, 103) AS [Offer Expiry Date],
+CONVERT(VARCHAR, wcb.OfferActiondDate, 103) AS [Offer Accepted Date],
+wcp.[Priority] AS [Preference Number],
+CONVERT(VARCHAR(MAX), ISNULL((STUFF((SELECT DISTINCT ', ' + CONVERT(NVARCHAR(MAX), Hear1.HearAboutUs) FROM
+[dbo].[rpt_waitListsHearAboutUs] Hear1 WHERE Hear1.wlId = w.wlId FOR XML PATH('')) , 1, 2, '')), '-')) AS [Heard About Us],
+Hear2.HearAboutUs AS [Heard About Us-Filter]
+
+
+ /*
+, wcb.OfferActiondDate, wcb.OfferActionBy, 
+CASE WHEN wcb.OfferAcceptedStatus = 1 THEN 'Pending'
+	 WHEN wcb.OfferAcceptedStatus = 2 THEN 'Confirmed'
+	 WHEN wcb.OfferAcceptedStatus = 3 THEN 'Completed'
+END AS OfferAcceptedStatus,
+CASE WHEN wcb.ofr_Action = 0 THEN 'None'
+	 WHEN wcb.ofr_Action = 1 THEN 'Confirm Places'
+	 WHEN wcb.ofr_Action = 2 THEN 'Offer Days/Program'
+	 WHEN wcb.ofr_Action = 3 THEN 'No Vacancies'
+END AS ofr_Action
+*/
+FROM 
+[dbo].[rpt_waitLists] w
+INNER JOIN [dbo].[rpt_waitListSettings] ws ON ws.OrganisationId = w.OrganisationId AND ws.IsActive = 1
+LEFT JOIN [rpt_waitListsAdult] wa ON wa.wlId = w.wlId AND wa.PersonType = 'Guardian' AND ISNULL(wa.IsPrimaryGuardian, 0) = 1
+LEFT JOIN [dbo].[rpt_waitListsCentrePref] wcp ON wcp.wlId = w.wlId 
+LEFT JOIN [dbo].[rpt_waitListsCentrePrefBookingDetail] wcb ON wcb.wlId = w.wlId AND wcb.CentreId = wcp.CentreId AND wcb.FamilyId = wcp.FamilyId
+LEFT JOIN [dbo].[rpt_waitListsHearAboutUs] Hear2 ON Hear2.wlId = w.wlId
+CROSS APPLY string_split(wcb.ofr_OfferedDays, ',') 
+WHERE /*w.OrganisationId = 'd4543528-3bc8-4c51-b6d9-74637787e128' AND w.wlId = 'a98fc6a1-d92c-456d-9c38-f50774ff0eb5'
+AND*/ wlStatus NOT IN ('Archived')
+AND manage_wl_Id = '69cdd850-3e6a-4811-b7f1-592406b3a4f4'  /* 'Locally at individual centre level' */
+AND w.wlStatus IN ('Offer Accepted', 'Offer Accepted/Extra Days Waiting', 'Enroled')
+
+ ]]></query>
+            </view>
+            <view id="016c60a2-c159-4f03-b0fd-00da6ed69691" name="WaitListPendingProdLevel" alias="WaitListPendingProdLevel">
+                <query><![CDATA[SELECT 
+w.wlId, 
+w.OrganisationId, 
+w.OrganisationName AS [Organisation], 
+wcp.ProviderId,
+wcp.ProviderName AS [Provider], 
+wcp.CentreId,
+wcp.CentreName AS [Centre], 
+wcp.Family, 
+CASE WHEN wcp.CentrePrefStatus = 1 THEN 'Pending' 
+	 WHEN wcp.CentrePrefStatus = 2 THEN 'Offered' 
+	 WHEN wcp.CentrePrefStatus = 3 THEN 'Reject' 
+	 WHEN wcp.CentrePrefStatus = 4 THEN 'Approved' 
+	 WHEN wcp.CentrePrefStatus = 5 THEN 'Archive'
+	 WHEN wcp.CentrePrefStatus = 6 THEN 'Confirmed' 
+END AS CentrePrefStatus,
+w.ChildName AS [Child], 
+CONVERT(VARCHAR, w.ChildDOB, 103) AS [Date Of Birth], 
+w.AgeAtCareStart AS [Age At Care Start Date], 
+wa.PersonName AS [Parent], 
+wa.MobileNumber AS [Mobile],
+wa.Email AS [Email],
+w.wlStatus AS [Application Status], 
+w.Tags, 
+CONVERT(VARCHAR, w.CreatedOn, 103) AS [Created On], 
+w.CreatedBy AS [Created By],
+wcb.ProgramName AS [Requested Program], 
+CONVERT(VARCHAR, wcb.BookingStartDate, 103) as [Requested Start Date], 
+CONVERT(VARCHAR, wcb.BookingEndDate, 103) as [Requested End Date], 
+wcb.PreferredDays as [Requested Days],
+CONVERT(DATE, wcb.ofr_OfferDate) AS [Offered Date],
+wcb.ofr_ProgramName AS [Offered Program],
+CONVERT(VARCHAR, wcb.ofr_BookingStartDate, 103) AS [Offered Booking Start Date], 
+CONVERT(VARCHAR, wcb.ofr_BookingEndDate, 103) AS [Offered Booking End Date],  
+wcb.ofr_OfferedDays AS [Offered Days],
+TRIM(CONVERT(VARCHAR, [value])) [Offered Days-Filter],
+CONVERT(VARCHAR, wcp.OfferExpiryDate, 103) AS [Offer Expiry Date],
+CONVERT(VARCHAR, wcb.OfferActiondDate, 103) AS [Offer Accepted Date],
+wcp.[Priority] AS [Preference Number],
+CONVERT(VARCHAR(MAX), ISNULL((STUFF((SELECT DISTINCT ', ' + CONVERT(NVARCHAR(MAX), Hear1.HearAboutUs) FROM
+[dbo].[rpt_waitListsHearAboutUs] Hear1 WHERE Hear1.wlId = w.wlId FOR XML PATH('')) , 1, 2, '')), '-')) AS [Heard About Us],
+Hear2.HearAboutUs AS [Heard About Us-Filter]
+ /*
+wcb.OfferActionBy, 
+CASE WHEN wcb.OfferAcceptedStatus = 1 THEN 'Pending'
+	 WHEN wcb.OfferAcceptedStatus = 2 THEN 'Confirmed'
+	 WHEN wcb.OfferAcceptedStatus = 3 THEN 'Completed'
+END AS OfferAcceptedStatus,
+CASE WHEN wcb.ofr_Action = 0 THEN 'None'
+	 WHEN wcb.ofr_Action = 1 THEN 'Confirm Places'
+	 WHEN wcb.ofr_Action = 2 THEN 'Offer Days/Program'
+	 WHEN wcb.ofr_Action = 3 THEN 'No Vacancies'
+END AS ofr_Action
+*/
+FROM 
+[dbo].[rpt_waitLists] w
+INNER JOIN [dbo].[rpt_waitListSettings] ws ON ws.OrganisationId = w.OrganisationId AND ws.IsActive = 1
+LEFT JOIN [rpt_waitListsAdult] wa ON wa.wlId = w.wlId AND wa.PersonType = 'Guardian' AND ISNULL(wa.IsPrimaryGuardian, 0) = 1
+LEFT JOIN [dbo].[rpt_waitListsCentrePref] wcp ON wcp.wlId = w.wlId 
+LEFT JOIN [dbo].[rpt_waitListsCentrePrefBookingDetail] wcb ON wcb.wlId = w.wlId AND wcb.CentreId = wcp.CentreId AND wcb.FamilyId = wcp.FamilyId
+LEFT JOIN [dbo].[rpt_waitListsHearAboutUs] Hear2 ON Hear2.wlId = w.wlId
+CROSS APPLY string_split(wcb.ofr_OfferedDays, ',') 
+WHERE /*w.OrganisationId = 'd4543528-3bc8-4c51-b6d9-74637787e128' AND w.wlId = 'a98fc6a1-d92c-456d-9c38-f50774ff0eb5'
+AND*/ wlStatus NOT IN ('Archived')
+AND manage_wl_Id = 'a65b1246-1cf6-4e07-8995-4319bfd9d9fe' /* 'Centrally at provider level' Tag  "Category" : 121 */
+AND w.wlStatus IN ('Offer Accepted', 'Offer Accepted/Extra Days Waiting', 'Enroled')]]></query>
+            </view>
+            <view id="01466e4c-7a5b-4092-8558-2cffe2b6cdcd" name="WaitListOrgLevel" alias="WaitListOrgLevel">
+                <query><![CDATA[SELECT [confLevelName],
+[manage_wl_name],
+w.wlId, 
+w.OrganisationId, 
+w.OrganisationName AS [Organisation], 
+wcp.ProviderId,
+wcp.ProviderName AS [Provider], 
+wcp.CentreId,
+wcp.CentreName AS [Centre], 
+wcp.Family, 
+CASE WHEN wcp.CentrePrefStatus = 1 THEN 'Pending' 
+	 WHEN wcp.CentrePrefStatus = 2 THEN 'Offered' 
+	 WHEN wcp.CentrePrefStatus = 3 THEN 'Reject' 
+	 WHEN wcp.CentrePrefStatus = 4 THEN 'Approved' 
+	 WHEN wcp.CentrePrefStatus = 5 THEN 'Archive'
+	 WHEN wcp.CentrePrefStatus = 6 THEN 'Confirmed' 
+END AS CentrePrefStatus,
+w.ChildName AS [Child], 
+CONVERT(VARCHAR, w.ChildDOB, 103) AS [Date Of Birth], 
+w.AgeAtCareStart AS [Age At Care Start Date], 
+wa.PersonName AS [Parent], 
+wa.MobileNumber AS [Mobile],
+wa.Email AS [Email],
+w.wlStatus AS [Application Status], 
+w.Tags, 
+CONVERT(VARCHAR, w.CreatedOn, 103) AS [Created On], 
+w.CreatedBy AS [Created By],
+wcb.ProgramName AS [Requested Program], 
+CONVERT(DATE, wcb.BookingStartDate) as [Requested Start Date], 
+CONVERT(DATE, wcb.BookingEndDate) as [Requested End Date], 
+wcb.PreferredDays as [Requested Days],
+TRIM(CONVERT(VARCHAR, [value])) [Requested Days-Filter],
+CONVERT(VARCHAR, wcb.ofr_OfferDate, 103) AS [Offered Date],
+wcb.ofr_ProgramName AS [Offered Program],
+CONVERT(VARCHAR, wcb.ofr_BookingStartDate, 103) AS [Offered Booking Start Date], 
+CONVERT(VARCHAR, wcb.ofr_BookingEndDate, 103) AS [Offered Booking End Date],  
+wcb.ofr_OfferedDays AS [Offered Days],
+CONVERT(VARCHAR, wcp.OfferExpiryDate, 103) AS [Offer Expiry Date],
+CONVERT(VARCHAR, wcb.OfferActiondDate, 103) AS [Offer Accepted Date],
+wcp.[Priority] AS [Preference Number],
+CONVERT(VARCHAR(MAX), ISNULL((STUFF((SELECT DISTINCT ', ' + CONVERT(NVARCHAR(MAX), Hear1.HearAboutUs) FROM
+[dbo].[rpt_waitListsHearAboutUs] Hear1 WHERE Hear1.wlId = w.wlId FOR XML PATH('')) , 1, 2, '')), '-')) AS [Heard About Us],
+Hear2.HearAboutUs AS [Heard About Us-Filter]
+ /*
+wcb.OfferActionBy, 
+CASE WHEN wcb.OfferAcceptedStatus = 1 THEN 'Pending'
+	 WHEN wcb.OfferAcceptedStatus = 2 THEN 'Confirmed'
+	 WHEN wcb.OfferAcceptedStatus = 3 THEN 'Completed'
+END AS OfferAcceptedStatus,
+CASE WHEN wcb.ofr_Action = 0 THEN 'None'
+	 WHEN wcb.ofr_Action = 1 THEN 'Confirm Places'
+	 WHEN wcb.ofr_Action = 2 THEN 'Offer Days/Program'
+	 WHEN wcb.ofr_Action = 3 THEN 'No Vacancies'
+END AS ofr_Action
+*/
+FROM 
+[dbo].[rpt_waitLists] w
+INNER JOIN [dbo].[rpt_waitListSettings] ws ON ws.OrganisationId = w.OrganisationId AND ws.IsActive = 1
+LEFT JOIN [rpt_waitListsAdult] wa ON wa.wlId = w.wlId AND wa.PersonType = 'Guardian' AND ISNULL(wa.IsPrimaryGuardian, 0) = 1
+LEFT JOIN [dbo].[rpt_waitListsCentrePref] wcp ON wcp.wlId = w.wlId 
+LEFT JOIN [dbo].[rpt_waitListsCentrePrefBookingDetail] wcb ON wcb.wlId = w.wlId AND wcb.CentreId = wcp.CentreId AND wcb.FamilyId = wcp.FamilyId
+LEFT JOIN [dbo].[rpt_waitListsHearAboutUs] Hear2 ON Hear2.wlId = w.wlId
+CROSS APPLY string_split(wcb.PreferredDays, ',') 
+WHERE /*w.OrganisationId = 'd4543528-3bc8-4c51-b6d9-74637787e128' AND w.wlId = 'a98fc6a1-d92c-456d-9c38-f50774ff0eb5'
+AND */ wlStatus NOT IN ('Archived')
+AND manage_wl_Id = 'ab9fadea-5548-46c7-96fd-363202d353d3' /* 'Centrally at organisational level' */
+AND w.wlStatus IN ('Draft', 'Payment Pending', 'Active', 'Offer Expired', 'Places Offered', 'Offer Rejected', 'Enroled/Extra Days Waiting')
+
+ ]]></query>
+            </view>
+            <view id="426a9a26-a1a2-43bb-aa62-6a5eea2bf249" name="WaitListProdLevel" alias="WaitListProdLevel">
+                <query><![CDATA[SELECT [confLevelName],
+[manage_wl_name],
+w.wlId, 
+w.OrganisationId, 
+w.OrganisationName AS [Organisation], 
+wcp.ProviderId,
+wcp.ProviderName AS [Provider], 
+wcp.CentreId,
+wcp.CentreName AS [Centre], 
+wcp.Family, 
+CASE WHEN wcp.CentrePrefStatus = 1 THEN 'Pending' 
+	 WHEN wcp.CentrePrefStatus = 2 THEN 'Offered' 
+	 WHEN wcp.CentrePrefStatus = 3 THEN 'Reject' 
+	 WHEN wcp.CentrePrefStatus = 4 THEN 'Approved' 
+	 WHEN wcp.CentrePrefStatus = 5 THEN 'Archive'
+	 WHEN wcp.CentrePrefStatus = 6 THEN 'Confirmed' 
+END AS CentrePrefStatus,
+w.ChildName AS [Child], 
+CONVERT(VARCHAR, w.ChildDOB, 103) AS [Date Of Birth], 
+w.AgeAtCareStart AS [Age At Care Start Date], 
+wa.PersonName AS [Parent], 
+wa.MobileNumber AS [Mobile],
+wa.Email AS [Email],
+w.wlStatus AS [Application Status], 
+w.Tags, 
+CONVERT(VARCHAR, w.CreatedOn, 103) AS [Created On], 
+w.CreatedBy AS [Created By],
+wcb.ProgramName AS [Requested Program], 
+CONVERT(DATE, wcb.BookingStartDate) as [Requested Start Date], 
+CONVERT(DATE, wcb.BookingEndDate) as [Requested End Date], 
+wcb.PreferredDays as [Requested Days],
+TRIM(CONVERT(VARCHAR, [value])) [Requested Days-Filter],
+CONVERT(VARCHAR, wcb.ofr_OfferDate, 103) AS [Offered Date],
+wcb.ofr_ProgramName AS [Offered Program],
+CONVERT(VARCHAR, wcb.ofr_BookingStartDate, 103) AS [Offered Booking Start Date], 
+CONVERT(VARCHAR, wcb.ofr_BookingEndDate, 103) AS [Offered Booking End Date],  
+wcb.ofr_OfferedDays AS [Offered Days],
+CONVERT(VARCHAR, wcp.OfferExpiryDate, 103) AS [Offer Expiry Date],
+CONVERT(VARCHAR, wcb.OfferActiondDate, 103) AS [Offer Accepted Date],
+wcp.[Priority] AS [Preference Number],
+CONVERT(VARCHAR(MAX), ISNULL((STUFF((SELECT DISTINCT ', ' + CONVERT(NVARCHAR(MAX), Hear1.HearAboutUs) FROM
+[dbo].[rpt_waitListsHearAboutUs] Hear1 WHERE Hear1.wlId = w.wlId FOR XML PATH('')) , 1, 2, '')), '-')) AS [Heard About Us],
+Hear2.HearAboutUs AS [Heard About Us-Filter]
+ /*
+wcb.OfferActionBy, 
+CASE WHEN wcb.OfferAcceptedStatus = 1 THEN 'Pending'
+	 WHEN wcb.OfferAcceptedStatus = 2 THEN 'Confirmed'
+	 WHEN wcb.OfferAcceptedStatus = 3 THEN 'Completed'
+END AS OfferAcceptedStatus,
+CASE WHEN wcb.ofr_Action = 0 THEN 'None'
+	 WHEN wcb.ofr_Action = 1 THEN 'Confirm Places'
+	 WHEN wcb.ofr_Action = 2 THEN 'Offer Days/Program'
+	 WHEN wcb.ofr_Action = 3 THEN 'No Vacancies'
+END AS ofr_Action
+*/
+FROM 
+[dbo].[rpt_waitLists] w
+INNER JOIN [dbo].[rpt_waitListSettings] ws ON ws.OrganisationId = w.OrganisationId AND ws.IsActive = 1
+LEFT JOIN [rpt_waitListsAdult] wa ON wa.wlId = w.wlId AND wa.PersonType = 'Guardian' AND ISNULL(wa.IsPrimaryGuardian, 0) = 1
+LEFT JOIN [dbo].[rpt_waitListsCentrePref] wcp ON wcp.wlId = w.wlId 
+LEFT JOIN [dbo].[rpt_waitListsCentrePrefBookingDetail] wcb ON wcb.wlId = w.wlId AND wcb.CentreId = wcp.CentreId AND wcb.FamilyId = wcp.FamilyId
+LEFT JOIN [dbo].[rpt_waitListsHearAboutUs] Hear2 ON Hear2.wlId = w.wlId
+CROSS APPLY string_split(wcb.PreferredDays, ',') 
+WHERE /*w.OrganisationId = 'd4543528-3bc8-4c51-b6d9-74637787e128' AND w.wlId = 'a98fc6a1-d92c-456d-9c38-f50774ff0eb5'
+AND */ wlStatus NOT IN ('Archived')
+AND manage_wl_Id = 'a65b1246-1cf6-4e07-8995-4319bfd9d9fe' /* 'Centrally at provider level' Tag  "Category" : 121 */
+AND w.wlStatus IN ('Draft', 'Payment Pending', 'Active', 'Offer Expired', 'Places Offered', 'Offer Rejected', 'Enroled/Extra Days Waiting')]]></query>
+            </view>
+            <view id="4f8c5982-41e7-419b-b3ad-1c32ffa15283" name="WaitListByCentreLevel" alias="WaitListByCentreLevel">
+                <query><![CDATA[SELECT [confLevelName],
+[manage_wl_name],
+w.wlId, 
+w.OrganisationId, 
+w.OrganisationName AS [Organisation], 
+wcp.ProviderId,
+wcp.ProviderName AS [Provider], 
+wcp.CentreId,
+wcp.CentreName AS [Centre], 
+wcp.Family, 
+CASE WHEN wcp.CentrePrefStatus = 1 THEN 'Pending' 
+	 WHEN wcp.CentrePrefStatus = 2 THEN 'Offered' 
+	 WHEN wcp.CentrePrefStatus = 3 THEN 'Reject' 
+	 WHEN wcp.CentrePrefStatus = 4 THEN 'Approved' 
+	 WHEN wcp.CentrePrefStatus = 5 THEN 'Archive'
+	 WHEN wcp.CentrePrefStatus = 6 THEN 'Confirmed' 
+END AS CentrePrefStatus,
+w.ChildName AS [Child], 
+CONVERT(VARCHAR, w.ChildDOB, 103) AS [Date Of Birth], 
+w.AgeAtCareStart AS [Age At Care Start Date], 
+wa.PersonName AS [Parent], 
+wa.MobileNumber AS [Mobile],
+wa.Email AS [Email],
+w.wlStatus AS [Application Status], 
+w.Tags, 
+CONVERT(VARCHAR, w.CreatedOn, 103) AS [Created On], 
+w.CreatedBy AS [Created By],
+wcb.ProgramName AS [Requested Program], 
+CONVERT(DATE, wcb.BookingStartDate) as [Requested Start Date], 
+CONVERT(DATE, wcb.BookingEndDate) as [Requested End Date], 
+wcb.PreferredDays as [Requested Days],
+TRIM(CONVERT(VARCHAR, [value])) [Requested Days-Filter],
+CONVERT(VARCHAR, wcb.ofr_OfferDate, 103) AS [Offered Date],
+wcb.ofr_ProgramName AS [Offered Program],
+CONVERT(VARCHAR, wcb.ofr_BookingStartDate, 103) AS [Offered Booking Start Date], 
+CONVERT(VARCHAR, wcb.ofr_BookingEndDate, 103) AS [Offered Booking End Date],  
+wcb.ofr_OfferedDays AS [Offered Days],
+CONVERT(VARCHAR, wcp.OfferExpiryDate, 103) AS [Offer Expiry Date],
+CONVERT(VARCHAR, wcb.OfferActiondDate, 103) AS [Offer Accepted Date],
+CONVERT(VARCHAR(MAX), ISNULL((STUFF((SELECT DISTINCT ', ' + CONVERT(NVARCHAR(MAX), Hear1.HearAboutUs) FROM
+[dbo].[rpt_waitListsHearAboutUs] Hear1 WHERE Hear1.wlId = w.wlId FOR XML PATH('')) , 1, 2, '')), '-')) AS [Heard About Us],
+Hear2.HearAboutUs AS [Heard About Us-Filter]
+ /*
+, wcb.OfferActiondDate, wcb.OfferActionBy, 
+CASE WHEN wcb.OfferAcceptedStatus = 1 THEN 'Pending'
+	 WHEN wcb.OfferAcceptedStatus = 2 THEN 'Confirmed'
+	 WHEN wcb.OfferAcceptedStatus = 3 THEN 'Completed'
+END AS OfferAcceptedStatus,
+CASE WHEN wcb.ofr_Action = 0 THEN 'None'
+	 WHEN wcb.ofr_Action = 1 THEN 'Confirm Places'
+	 WHEN wcb.ofr_Action = 2 THEN 'Offer Days/Program'
+	 WHEN wcb.ofr_Action = 3 THEN 'No Vacancies'
+END AS ofr_Action
+*/
+FROM 
+[dbo].[rpt_waitLists] w
+INNER JOIN [dbo].[rpt_waitListSettings] ws ON ws.OrganisationId = w.OrganisationId AND ws.IsActive = 1
+LEFT JOIN [rpt_waitListsAdult] wa ON wa.wlId = w.wlId AND wa.PersonType = 'Guardian' AND ISNULL(wa.IsPrimaryGuardian, 0) = 1
+LEFT JOIN [dbo].[rpt_waitListsCentrePref] wcp ON wcp.wlId = w.wlId 
+LEFT JOIN [dbo].[rpt_waitListsCentrePrefBookingDetail] wcb ON wcb.wlId = w.wlId AND wcb.CentreId = wcp.CentreId AND wcb.FamilyId = wcp.FamilyId
+LEFT JOIN [dbo].[rpt_waitListsHearAboutUs] Hear2 ON Hear2.wlId = w.wlId
+CROSS APPLY string_split(wcb.PreferredDays, ',') 
+WHERE 
+
+/*w.OrganisationId = 'd4543528-3bc8-4c51-b6d9-74637787e128' 
+and w.wlId = '20768bfd-a72e-4469-a98a-1b1df516282e' and
+*/
+wlStatus NOT IN ('Archived')
+AND  manage_wl_Id = '69cdd850-3e6a-4811-b7f1-592406b3a4f4'  /* 'Locally at individual centre level' */
+AND w.wlStatus IN ('Draft', 'Payment Pending', 'Active', 'Offer Expired', 'Places Offered', 'Offer Rejected', 'Enroled/Extra Days Waiting') 
+
+ ]]></query>
+            </view>
+        </views>
+    </database>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+    <access>
+        <expression expressionId="f8f29c8b-c755-4f24-9c87-f2887e8d86a4" type="conditionIf" expressionName="WaitListCommentByCentreLevelSecurity" expressionType="table" on="WaitListCommentByCentreLevel" accessType="grant">
+            <condition><![CDATA[${org}.name != '-']]></condition>
+            <filter><![CDATA[WaitListCommentByCentreLevel.OrganisationId IN (${profile['organisation']}) AND
+WaitListCommentByCentreLevel.ProviderId IN  (${profile['providers']}) AND
+WaitListCommentByCentreLevel.CentreId IN (${profile['centres']})
+]]></filter>
+        </expression>
+        <expression expressionId="6217277c-338f-43c8-b907-06ce62d6c588" type="conditionIf" expressionName="WaitListCommentOrgLevelSecurity" expressionType="table" on="WaitListCommentOrgLevel" accessType="grant">
+            <condition><![CDATA[${org}.name != '-']]></condition>
+            <filter><![CDATA[WaitListCommentOrgLevel.OrganisationId IN (${profile['organisation']}) AND
+WaitListCommentOrgLevel.ProviderId IN  (${profile['providers']}) AND
+WaitListCommentOrgLevel.CentreId IN (${profile['centres']})
+]]></filter>
+        </expression>
+        <expression expressionId="1be20c6d-751c-4256-9201-8668515c1286" type="conditionIf" expressionName="WaitListOrgLevelSecurity" expressionType="table" on="WaitListOrgLevel" accessType="grant">
+            <condition><![CDATA[${org}.name != '-']]></condition>
+            <filter><![CDATA[WaitListOrgLevel.OrganisationId IN (${profile['organisation']}) AND
+WaitListOrgLevel.ProviderId IN  (${profile['providers']}) AND
+WaitListOrgLevel.CentreId IN (${profile['centres']})
+]]></filter>
+        </expression>
+        <expression expressionId="085c617a-dc81-440e-92c2-5cb9a895834b" type="conditionIf" expressionName="WaitListPendingCentreLevelSecurity" expressionType="table" on="WaitListPendingCentreLevel" accessType="grant">
+            <condition><![CDATA[${org}.name != '-']]></condition>
+            <filter><![CDATA[WaitListPendingCentreLevel.OrganisationId IN (${profile['organisation']}) AND
+WaitListPendingCentreLevel.ProviderId IN  (${profile['providers']}) AND
+WaitListPendingCentreLevel.CentreId IN (${profile['centres']})
+]]></filter>
+        </expression>
+        <expression expressionId="79e8b593-ced7-4490-8017-40da56ea163c" type="conditionIf" expressionName="WaitListPendingOrgLevelSecurity" expressionType="table" on="WaitListPendingOrgLevel" accessType="grant">
+            <condition><![CDATA[${org}.name != '-']]></condition>
+            <filter><![CDATA[WaitListPendingOrgLevel.OrganisationId IN (${profile['organisation']}) AND
+WaitListPendingOrgLevel.ProviderId IN  (${profile['providers']}) AND
+WaitListPendingOrgLevel.CentreId IN (${profile['centres']})
+]]></filter>
+        </expression>
+        <expression expressionId="f998d3a9-637a-45f6-895d-12f0ad24d9ce" type="conditionIf" expressionName="WaitListPendingProdLevelSecurity" expressionType="table" on="WaitListPendingProdLevel" accessType="grant">
+            <condition><![CDATA[${org}.name != '-']]></condition>
+            <filter><![CDATA[WaitListPendingProdLevel.OrganisationId IN (${profile['organisation']}) AND
+WaitListPendingProdLevel.ProviderId IN  (${profile['providers']}) AND
+WaitListPendingProdLevel.CentreId IN (${profile['centres']})]]></filter>
+        </expression>
+        <expression expressionId="a86ebd02-345c-4ad1-b49b-e3bd95f1505b" type="conditionIf" expressionName="WaitListProdLevelSecurity" expressionType="table" on="WaitListProdLevel" accessType="grant">
+            <condition><![CDATA[${org}.name != '-']]></condition>
+            <filter><![CDATA[WaitListProdLevel.OrganisationId IN (${profile['organisation']}) AND
+WaitListProdLevel.ProviderId IN  (${profile['providers']}) AND
+WaitListProdLevel.CentreId IN (${profile['centres']})
+]]></filter>
+        </expression>
+        <expression expressionId="0e897ef9-1b98-49cc-8855-13416fe77494" type="conditionIf" expressionName="WaitListCommentProdLevelSecurity" expressionType="table" on="WaitListCommentProdLevel" accessType="grant">
+            <condition><![CDATA[${org}.name != '-']]></condition>
+            <filter><![CDATA[WaitListCommentProdLevel.OrganisationId IN (${profile['organisation']}) AND
+WaitListCommentProdLevel.ProviderId IN  (${profile['providers']}) AND
+WaitListCommentProdLevel.CentreId IN (${profile['centres']})]]></filter>
+        </expression>
+    </access>
+</metadata>

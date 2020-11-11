@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efw>
+    <title>CheckBoxDashboard</title>
+    <author>hiadmin</author>
+    <description>Efw File</description>
+    <template>8e86109b-3035-46b7-bc0c-2d7c2f7c1697.html</template>
+    <visible>true</visible>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</efw>

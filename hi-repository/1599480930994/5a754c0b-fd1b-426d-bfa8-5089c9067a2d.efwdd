@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efwdd>
+    <fileName>Dashboard</fileName>
+    <efw>5a754c0b-fd1b-426d-bfa8-5089c9067a2d.efw</efw>
+    <visible>true</visible>
+    <description>Efw Dashboard Designer</description>
+    <state><![CDATA[{"variables":[["employee_name","_all_"],["mode","dashboard"]],"components":{"a2ze6lwn9mk":{"metadata":{"dir":"/All_Input_Control/","name":"parameter"},"type":"dashboard-component","options":{"dir":"1599480930994","file":"3d995a34-4ccf-4b35-b617-944205fc2841.efw","ext":"efw","compType":"Adhoc","uid":"a2ze6lwn9mk","iframe":true},"uid":"a2ze6lwn9mk","name":"a2ze6lwn9mk","label":"parameter","executeAtStart":true,"gs_attr":{"x":0,"y":0,"height":16,"width":33}},"ubhoec6zil8":{"gs_attr":{"x":29,"y":20,"height":24,"width":54},"name":"ubhoec6zil8","metadata":{"dir":"/All_Input_Control/","name":"report"},"uid":"ubhoec6zil8","label":"","requestParameters":{"employee_name":"employee_name"},"executeAtStart":true,"type":"dashboard-component","options":{"dir":"1599480930994","file":"444a4118-b5ce-43be-95c9-ff3ce76029b5.report","ext":"report","compType":"Adhoc","uid":"ubhoec6zil8","iframe":false,"styles":{"boxComp":"Adhoc","borderComp":"Adhoc"},"report":{"dir":"1599480930994","file":"444a4118-b5ce-43be-95c9-ff3ce76029b5.report"}},"listeners":["employee_name"]}},"dashboardConfig":{"id":"dashboard"},"css":"","script":"","printOptions":{"templateId":"Dashboard","title":"Dashboard"},"componentSettings":{"a2ze6lwn9mk":{"header":true,"minimize":false,"maximize":false,"export":false,"editReport":false},"ubhoec6zil8":{"header":true,"minimize":false,"maximize":false,"export":false,"editReport":false}},"gridWidthOption":100,"toggleIframes":false}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</efwdd>

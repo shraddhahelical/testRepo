@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<metadata type="db.generic" databaseType="PostgreSQL 11.5">
+    <fileName>Patient_Stagewise_Count_Metadata</fileName>
+    <connectionType>global.jdbc</connectionType>
+    <visible>true</visible>
+    <connection connectionType="global.jdbc" subType="dynamicDataSource">
+        <dialect>org.hibernate.dialect.PostgreSQLDialect</dialect>
+        <connectionId>2</connectionId>
+        <driverClass reference="postgresql">org.postgresql.Driver</driverClass>
+    </connection>
+    <database name="db.public" catalog="db" schema="public">
+        <tables>
+            <table id="509af45978b737e7a2197e9f6779c29c" name="TrialGrant" aliasName="TrialGrant">
+                <columns>
+                    <column name="user_id" id="80bae8fb-7c17-40bb-a299-823f6096881c" aliasName="user_id" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="row_id" id="81bae08b-2676-4d0e-853e-3c69ba9113e1" aliasName="row_id" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="id" id="b716cf77-7901-4c9f-a76b-a7b4a28ce68f" aliasName="id" type="java.lang.Object" defaultFunction=""/>
+                    <column name="trial_id" id="3526bd02-75bf-4b67-8df1-b3b16ff516b9" aliasName="trial_id" type="java.lang.Object" defaultFunction=""/>
+                </columns>
+            </table>
+            <table id="2335edbf-d44d-4e25-a62a-ba2e6d2bc593" name="Patient_Stagewise_Count_View" type="view" aliasName="Patient_Stagewise_Count_View">
+                <columns>
+                    <column name="site_trial_id" id="bddb89bb-6d41-4bb2-8a8a-c73c49917571" aliasName="site_trial_id" type="java.sql.SQLXML"/>
+                    <column name="site_trial_name" id="c7043634-fe84-4170-8e4c-4d64b4118b29" aliasName="site_trial_name" type="java.lang.String"/>
+                    <column name="trial_id" id="7c886b13-6eb6-4e6a-a29d-76349db88d37" aliasName="trial_id" type="java.sql.SQLXML"/>
+                    <column name="trial_name" id="1303dbce-30bd-4795-8cc8-b3163f0ff48c" aliasName="trial_name" type="java.lang.String"/>
+                    <column name="stage" id="ab2e6127-af65-4bc0-8e13-8679ef422832" aliasName="stage" type="java.lang.String"/>
+                    <column name="numpats" id="a75769d0-a22c-4e96-a52e-34a8bd1b93fe" aliasName="numpats" type="java.lang.Float"/>
+                    <column name="currently_in_stage" id="182edeaf-827d-40bc-9bba-8ade3b6d32b3" aliasName="currently_in_stage" type="java.lang.Float"/>
+                    <column name="list_order" id="c4a1456f-66d0-4fad-9073-055599dad6bf" aliasName="list_order" type="java.lang.Float"/>
+                    <column name="pre_screen_num" id="1e13340f-dc7d-4fc9-95e4-179892170806" aliasName="pre_screen_num" type="java.lang.Float"/>
+                    <column name="pre_screen_den" id="bf97e031-a3fe-4cc2-b382-f9b7556df400" aliasName="pre_screen_den" type="java.lang.Float"/>
+                    <column name="screen_num" id="3fd2615b-1e7b-40d2-a8c3-0fc90d90bd85" aliasName="screen_num" type="java.lang.Float"/>
+                    <column name="screen_den" id="16347732-eff2-4587-b2f9-c0689c2b9f8e" aliasName="screen_den" type="java.lang.Float"/>
+                </columns>
+            </table>
+        </tables>
+        <relationships>
+            <relationship table="TrialGrant" referenceTable="Patient_Stagewise_Count_View">
+                <join id="72e621a7255290b164ea767dcaf91c00" type="inner" operator="=">
+                    <left table="TrialGrant" column="trial_id"/>
+                    <right table="Patient_Stagewise_Count_View" column="trial_id"/>
+                </join>
+            </relationship>
+        </relationships>
+        <views>
+            <view id="2335edbf-d44d-4e25-a62a-ba2e6d2bc593" name="Patient_Stagewise_Count_View" alias="Patient_Stagewise_Count_View">
+                <query><![CDATA[with list_order as (
+select cast('potential-candidate' as text) as stage,1 as list_order
+union
+select cast('pre-screening' as text) as stage,2 as list_order
+union
+select cast('first-visit-scheduled' as text) as stage,3 as list_order
+union
+select cast('in-screening' as text) as stage,4 as list_order
+union
+select cast('enrolled' as text) as stage,5 as list_order
+union
+select cast('completed' as text) as stage,6 as list_order
+union
+select cast('pre-screen-failure' as text) as stage,7 as list_order
+union
+select cast('screen-failure' as text) as stage,8 as list_order
+union
+select cast('discontinued' as text) as stage,9 as list_order 
+),
+mytable AS (
+SELECT "Funnel_Count".*, COUNT(DISTINCT(stp.id)) AS num_pats
+FROM
+	(
+SELECT t.site_trial_id, t.site_trial_name,t.trial_id, t.trial_name, t.stage "stage", sum(t.count_stage) AS "funnel_count",sum(t.count_stage_current) AS "funnel_count_current" FROM
+		(
+			SELECT
+				skipped_stages.site_trial_id,skipped_stages.site_trial_name,skipped_stages.trial_id,
+				skipped_stages.trial_name,
+				skipped_stages.stage,
+				count(skipped_stages.patient_id) AS "count_stage",
+				0 AS "count_stage_current"
+			FROM
+				(
+					with patient_hist as 
+						(select * from (
+										SELECT 
+										st.id as site_trial_id,st.name as site_trial_name,trial.id AS trial_id,trial.name AS trial_name,
+										stp.site_patient_id as patient_id,case when stp.stage is null then 'potential-candidate' else cast(stp.stage as text) end as stage,case when stp.stage is null then 'potential-candidate' else cast(stp.stage as text) end as current_stage,list_order
+										FROM			
+										"SiteTrialPatientView" stp
+										JOIN "SiteTrialRead" st ON stp.site_trial_id = st.id and st.is_pseudo=false
+										JOIN "Site" s on st.site_id=s.id  and s.is_pseudo=false
+										JOIN "Trial" trial  ON st.sponsor_trial_id = trial.id  and trial.is_pseudo=false
+										JOIN list_order lo_curr on cast(stp.stage as text)=lo_curr.stage 
+										WHERE
+										stp.stage not in ('archive','pre-screen-failure','in-screening','enrolled','screen-failure','discontinued','completed')
+										
+										UNION
+										
+										SELECT 
+										"ActivityLog".*,lo_prev.list_order
+										FROM (select st.id as site_trial_id,st.name as site_trial_name,trial.id AS trial_id,trial.name AS trial_name,
+										site_trial_patient_id  as patient_id,case when (previous_stage is null) then 'potential-candidate' else case when (previous_stage='in-screening') then 'potential-candidate' else case when (previous_stage='enrolled') then 'potential-candidate' else case when (previous_stage='screen-failure') then 'potential-candidate' else case when (previous_stage='discontinued') then 'potential-candidate' else case when (previous_stage='completed') then 'potential-candidate' else cast(previous_stage as text) end end end end end end as stage,cast(current_stage as text) 
+										FROM
+										"ActivityLog"
+										JOIN "SiteTrialPatientView" stp on "ActivityLog".site_trial_id=stp.site_trial_id and "ActivityLog".site_trial_patient_id=stp.id
+										JOIN "SiteTrialRead" st ON "ActivityLog".site_trial_id = st.id and st.is_pseudo=false
+										JOIN "Site" s on st.site_id=s.id  and s.is_pseudo=false
+										JOIN "Trial" trial  ON st.sponsor_trial_id = trial.id  and trial.is_pseudo=false
+										where current_stage in ('pre-screen-failure') and stp.stage in ('pre-screen-failure')
+										and previous_stage not in ('archive')
+										) "ActivityLog"
+										JOIN list_order lo_prev on "ActivityLog"."stage"=lo_prev.stage 
+										JOIN list_order lo_curr on  "ActivityLog"."current_stage"=lo_curr.stage
+						) patient_hist
+						)
+						,curr_stage as (
+										select max(list_order)as curr_stage,site_trial_id,trial_id,patient_id from patient_hist patient_hist_Inn group by site_trial_id,trial_id,patient_id
+										)
+						,patient_missing_stages as (
+													select p.site_trial_id,p.site_trial_name,p.trial_id,p.trial_name,p.patient_id,lo.stage as stage,lo.stage as stage1,coalesce(curr_stage,0) as curr_stage,lo.list_order as stage_order
+													from patient_hist AS p
+													JOIN list_order AS lo on lo.stage not in ('in-screening','enrolled','screen-failure','discontinued','completed')
+													JOIN curr_stage on p.site_trial_id=curr_stage.site_trial_id and p.trial_id=curr_stage.trial_id and p.patient_id=curr_stage.patient_id
+													)
+
+						select * from patient_missing_stages
+						where stage_order <= curr_stage
+
+						UNION
+						SELECT 
+						st.id as site_trial_id,st.name as site_trial_name,trial.id AS trial_id,trial.name AS trial_name,
+						stp.site_patient_id as patient_id,cast(stp.stage as text) as stage,cast(stp.stage as text) as stage1,lo_curr.list_order as curr_stage,lo_curr.list_order as stage_order
+						FROM			
+						"SiteTrialPatientView" stp
+						JOIN "SiteTrialRead" st ON stp.site_trial_id = st.id and st.is_pseudo=false
+						JOIN "Site" s on st.site_id=s.id  and s.is_pseudo=false
+						JOIN "Trial" trial  ON st.sponsor_trial_id = trial.id  and trial.is_pseudo=false
+						JOIN list_order lo_curr on cast(stp.stage as text)=lo_curr.stage 
+						WHERE
+						stp.stage in ('pre-screen-failure')
+						) skipped_stages
+		group by skipped_stages.site_trial_id,skipped_stages.site_trial_name,skipped_stages.trial_id,skipped_stages.trial_name,skipped_stages.stage
+		UNION
+			SELECT 
+				ss_out.site_trial_id,ss_out.site_trial_name,ss_out.trial_id,
+				ss_out.trial_name,
+				unnest(array['in-screening', 'enrolled','screen-failure','discontinued','completed']) AS "stage",
+				unnest(array[in_screening, enrolled,screen_failure,discontinued,completed]) AS "count_stage",
+				unnest(array[in_screening_current, enrolled_current,screen_failure,discontinued,completed]) AS "count_stage_current"
+				
+			FROM 
+				(SELECT st.id as site_trial_id,st.name as site_trial_name,trial.id as trial_id,trial.name as trial_name,SUM(COALESCE(in_screening,0) + COALESCE(enrolled,0)+COALESCE(screen_failure,0) + COALESCE(discontinued,0)+ COALESCE(completed,0)) in_screening,SUM(COALESCE(enrolled,0) + COALESCE(discontinued,0)+COALESCE(completed,0)) enrolled,screen_failure,discontinued,completed,in_screening as in_screening_current,enrolled as enrolled_current
+				FROM ixrs."IxRSSiteSnapshot" ss
+					INNER JOIN "SiteTrialRead" st ON ss.site_number = st.site_number and ss.sponsor_trial_id=st.sponsor_trial_id and st.is_pseudo=false
+					INNER JOIN "Site" s on st.site_id=s.id  and s.is_pseudo=false
+					INNER JOIN "Trial" trial  ON ss.sponsor_trial_id = trial.id  and trial.is_pseudo=false
+					where ss.ixrs_date=(select max(ixrs_date) from ixrs."IxRSSiteSnapshot" as ss_inn 
+											where ss.sponsor_trial_id=ss_inn.sponsor_trial_id 
+											and ss.site_number=ss_inn.site_number 
+											group by ss_inn.sponsor_trial_id,ss_inn.site_number)
+					group by st.id,st.name,trial.id,trial.name,screen_failure,discontinued,completed,in_screening,enrolled_current
+				) ss_out
+		) t
+GROUP BY t.site_trial_id, t.site_trial_name,t.trial_id, t.trial_name, t.stage
+) "Funnel_Count"
+LEFT JOIN "SiteTrialRead" st ON "Funnel_Count".trial_id = st.sponsor_trial_id and "Funnel_Count".site_trial_id=st.id and st.is_pseudo=false
+LEFT JOIN "SiteTrialPatientView" stp ON st.id = stp.site_trial_id
+WHERE stp."stage" <> 'archive' AND "Funnel_Count"."stage" <> 'archive'
+GROUP BY "Funnel_Count".site_trial_id, "Funnel_Count".site_trial_name,"Funnel_Count".trial_id, "Funnel_Count".trial_name, "Funnel_Count".stage, "Funnel_Count".funnel_count,"Funnel_Count".funnel_count_current
+),
+fill_all_stages as (
+select mytable.site_trial_id, mytable.site_trial_name,mytable.trial_id, mytable.trial_name, mytable.stage,case when mytable.stage='potential-candidate' then num_pats else mytable.funnel_count end as funnel_count,mytable.funnel_count_current from mytable
+union
+select mytable.site_trial_id,mytable.site_trial_name,mytable.trial_id,mytable.trial_name,'potential-candidate' as stage,0 as funnel_count,0 as funnel_count_current from mytable
+union
+select mytable.site_trial_id,mytable.site_trial_name,mytable.trial_id,mytable.trial_name,'pre-screening' as stage,0 as funnel_count,0 as funnel_count_current from mytable
+union
+select mytable.site_trial_id,mytable.site_trial_name,mytable.trial_id,mytable.trial_name,'first-visit-scheduled' as stage,0 as funnel_count,0 as funnel_count_current from mytable
+union
+select mytable.site_trial_id,mytable.site_trial_name,mytable.trial_id,mytable.trial_name,'in-screening' as stage,0 as funnel_count,0 as funnel_count_current from mytable
+union
+select mytable.site_trial_id,mytable.site_trial_name,mytable.trial_id,mytable.trial_name,'enrolled' as stage,0 as funnel_count,0 as funnel_count_current from mytable
+union
+select mytable.site_trial_id,mytable.site_trial_name,mytable.trial_id,mytable.trial_name,'enrolled-endpoint' as stage,0 as funnel_count,0 as funnel_count_current from mytable
+union
+select mytable.site_trial_id,mytable.site_trial_name,mytable.trial_id,mytable.trial_name,'completed' as stage,0 as funnel_count,0 as funnel_count_current from mytable
+union
+select mytable.site_trial_id,mytable.site_trial_name,mytable.trial_id,mytable.trial_name,'pre-screen-failure' as stage,0 as funnel_count,0 as funnel_count_current from mytable
+union
+select mytable.site_trial_id,mytable.site_trial_name,mytable.trial_id,mytable.trial_name,'screen-failure' as stage,0 as funnel_count,0 as funnel_count_current from mytable
+union
+select mytable.site_trial_id,mytable.site_trial_name,mytable.trial_id,mytable.trial_name,'discontinued' as stage,0 as funnel_count,0 as funnel_count_current from mytable
+),
+mytable_main as (
+select fill_all_stages.site_trial_id, fill_all_stages.site_trial_name,fill_all_stages.trial_id, fill_all_stages.trial_name, fill_all_stages.stage,sum(fill_all_stages.funnel_count) as funnel_count,sum(fill_all_stages.funnel_count_current) as funnel_count_current from fill_all_stages
+group by fill_all_stages.site_trial_id, fill_all_stages.site_trial_name,fill_all_stages.trial_id, fill_all_stages.trial_name, fill_all_stages.stage
+),
+Inscreen_Cumu_value as (select trial_id,site_trial_id,funnel_count from mytable_main where stage='in-screening'),
+
+siteinnerlevel as(SELECT mytable_main.site_trial_id,mytable_main.site_trial_name,mytable_main.trial_id,mytable_main.trial_name,mytable_main.stage,
+
+				CASE WHEN mytable_main.stage = 'potential-candidate' THEN mytable_main.funnel_count+(case when icv.funnel_count is null then 0 else icv.funnel_count end) ELSE 
+				CASE WHEN mytable_main.stage = 'pre-screening' THEN mytable_main.funnel_count+(case when icv.funnel_count is null then 0 else icv.funnel_count end) ELSE
+				CASE WHEN mytable_main.stage = 'first-visit-scheduled' THEN mytable_main.funnel_count+(case when icv.funnel_count is null then 0 else icv.funnel_count end) ELSE mytable_main.funnel_count END END END AS numpats,
+
+				CASE WHEN mytable_main.stage = 'potential-candidate' THEN (COUNT(DISTINCT(stp.id)) FILTER (WHERE stp.stage = 'potential-candidate')) ELSE
+				CASE WHEN mytable_main.stage = 'pre-screening' THEN (COUNT(DISTINCT(stp.id)) FILTER (WHERE stp.stage = 'pre-screening')) ELSE
+				CASE WHEN mytable_main.stage = 'first-visit-scheduled' THEN (COUNT(DISTINCT(stp.id)) FILTER (WHERE stp.stage = 'first-visit-scheduled')) ELSE
+				CASE WHEN mytable_main.stage = 'pre-screen-failure' THEN (COUNT(DISTINCT(stp.id)) FILTER (WHERE stp.stage = 'pre-screen-failure')) ELSE
+				mytable_main.funnel_count_current END END END END AS currently_in_stage,
+		
+				CASE WHEN mytable_main.stage = 'potential-candidate' THEN 1 ELSE
+				  CASE WHEN mytable_main.stage = 'pre-screening' THEN 2 ELSE
+					CASE WHEN mytable_main.stage = 'first-visit-scheduled' THEN 3 ELSE
+					  CASE WHEN mytable_main.stage = 'in-screening' THEN 4 ELSE
+						CASE WHEN mytable_main.stage = 'enrolled' THEN 5 ELSE
+						  CASE WHEN mytable_main.stage = 'completed' THEN 6 ELSE
+							CASE WHEN mytable_main.stage = 'pre-screen-failure' THEN 7 ELSE
+								CASE WHEN mytable_main.stage = 'screen-failure' THEN 8 ELSE
+									CASE WHEN mytable_main.stage = 'discontinued' THEN 9 ELSE 10 END END END END END END END END END AS list_order
+		
+	FROM mytable_main
+	LEFT JOIN "SiteTrialRead" st ON mytable_main.trial_id = st.sponsor_trial_id and mytable_main.site_trial_id=st.id  and st.is_pseudo=false
+	LEFT JOIN "SiteTrialPatientView" stp ON st.id = stp.site_trial_id
+	LEFT JOIN Inscreen_Cumu_value icv on mytable_main.trial_id=icv.trial_id and mytable_main.site_trial_id=icv.site_trial_id
+	GROUP BY mytable_main.site_trial_id,mytable_main.site_trial_name,mytable_main.trial_id,mytable_main.trial_name,mytable_main.stage,mytable_main.funnel_count,icv.funnel_count,mytable_main.funnel_count_current
+)
+
+,pre_screen_num as (select  site_trial_id,site_trial_name,trial_id,trial_name,sum(currently_in_stage) as pre_screen_num from siteinnerlevel 
+                WHERE siteinnerlevel.stage in ('pre-screen-failure') GROUP BY site_trial_id,site_trial_name,trial_id,trial_name)
+,pre_screen_den as ( select  site_trial_id,site_trial_name,trial_id,trial_name,sum(currently_in_stage) as pre_screen_den from siteinnerlevel 
+                WHERE siteinnerlevel.stage in ('pre-screen-failure','in-screening','screen-failure','enrolled','discontinued','completed') GROUP BY site_trial_id,site_trial_name,trial_id,trial_name)
+,screen_num as (select  site_trial_id,site_trial_name,trial_id,trial_name,sum(currently_in_stage) as screen_num from siteinnerlevel 
+                WHERE siteinnerlevel.stage in ('screen-failure') GROUP BY site_trial_id,site_trial_name,trial_id,trial_name)
+,screen_den as ( select  site_trial_id,site_trial_name,trial_id,trial_name,sum(currently_in_stage) as screen_den from siteinnerlevel 
+                WHERE siteinnerlevel.stage in ('screen-failure','enrolled','discontinued','completed') GROUP BY site_trial_id,site_trial_name,trial_id,trial_name)
+,act_enr_end_right as ( select  site_trial_id,site_trial_name,trial_id,trial_name,sum(numpats) as act_enr_right from siteinnerlevel 
+                WHERE siteinnerlevel.stage in ('discontinued','completed') GROUP BY site_trial_id,site_trial_name,trial_id,trial_name)
+,act_enr_end_left as ( select  site_trial_id,site_trial_name,trial_id,trial_name,sum(numpats) as act_enr_left from siteinnerlevel 
+                WHERE siteinnerlevel.stage in ('enrolled') GROUP BY site_trial_id,site_trial_name,trial_id,trial_name)
+
+select siteinnerlevel.site_trial_id,siteinnerlevel.site_trial_name,siteinnerlevel.trial_id,siteinnerlevel.trial_name,
+		CASE WHEN stage = 'potential-candidate' THEN 'Potential Candidate' ELSE
+			CASE WHEN stage = 'pre-screening' THEN 'Pre-Screening' ELSE
+				CASE WHEN stage = 'first-visit-scheduled' THEN 'First Visit Scheduled' ELSE
+					CASE WHEN stage = 'in-screening' THEN 'In-Screening' ELSE
+						CASE WHEN stage = 'enrolled' THEN 'Actively Enrolled' ELSE
+							CASE WHEN stage = 'enrolled-endpoint' THEN 'Actively Enrolled Endpoint' ELSE 'Other' END END END END END END AS stage,
+		 case when stage='enrolled-endpoint' then max(act_enr_left)-max(act_enr_right) else  sum(numpats) end as numpats,
+		 sum(currently_in_stage) as currently_in_stage,list_order,max(pre_screen_num) as pre_screen_num,max(pre_screen_den) as pre_screen_den,max(screen_num) as screen_num,max(screen_den) as screen_den
+		 
+from siteinnerlevel
+LEFT JOIN pre_screen_num pn on pn.site_trial_id = siteinnerlevel.site_trial_id and pn.trial_id = siteinnerlevel.trial_id and siteinnerlevel.stage='pre-screening'
+LEFT JOIN pre_screen_den pd on pd.site_trial_id = siteinnerlevel.site_trial_id and pd.trial_id = siteinnerlevel.trial_id and siteinnerlevel.stage='pre-screening'
+LEFT JOIN screen_num sn on sn.site_trial_id = siteinnerlevel.site_trial_id and sn.trial_id = siteinnerlevel.trial_id and siteinnerlevel.stage='in-screening'
+LEFT JOIN screen_den sd on sd.site_trial_id = siteinnerlevel.site_trial_id and sd.trial_id = siteinnerlevel.trial_id and siteinnerlevel.stage='in-screening'
+LEFT JOIN act_enr_end_right aer on aer.site_trial_id = siteinnerlevel.site_trial_id and aer.trial_id = siteinnerlevel.trial_id and siteinnerlevel.stage='enrolled-endpoint'
+LEFT JOIN act_enr_end_left ael on ael.site_trial_id = siteinnerlevel.site_trial_id and ael.trial_id = siteinnerlevel.trial_id and siteinnerlevel.stage='enrolled-endpoint'
+where stage NOT IN ('pre-screen-failure', 'screen-failure','discontinued','completed')
+GROUP BY siteinnerlevel.site_trial_id,siteinnerlevel.site_trial_name,siteinnerlevel.trial_id,siteinnerlevel.trial_name,siteinnerlevel.stage,siteinnerlevel.list_order
+ORDER BY list_order]]></query>
+            </view>
+        </views>
+    </database>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+    <share mandatory="true">
+        <organizations mandatory="true">
+            <organization id="101">2</organization>
+        </organizations>
+    </share>
+    <access>
+        <expression expressionId="8210603c-5e23-430c-8d6c-9d2c149075e7" type="conditionIf" expressionName="userNameFilter" expressionType="column" on="TrialGrant.user_id" accessType="grant">
+            <condition><![CDATA[${user}.name ne 'helicalbot']]></condition>
+            <filter><![CDATA["TrialGrant".user_id = ${user}.name]]></filter>
+        </expression>
+    </access>
+</metadata>

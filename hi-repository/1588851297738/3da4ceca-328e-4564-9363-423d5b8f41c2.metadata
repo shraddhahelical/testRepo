@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<metadata type="db.generic" databaseType="Microsoft SQL Server 12.00.2000">
+    <fileName>SQLServerDynamicVIewMD</fileName>
+    <connectionType>global.jdbc</connectionType>
+    <visible>true</visible>
+    <connection connectionType="global.jdbc" subType="dynamicDataSource">
+        <dialect>org.hibernate.dialect.SQLServerDialect</dialect>
+        <connectionId>10</connectionId>
+        <driverClass reference="sqlserver">com.microsoft.sqlserver.jdbc.SQLServerDriver</driverClass>
+    </connection>
+    <database name="KX-Sandbox.dbo" catalog="KX-Sandbox" schema="dbo">
+        <tables>
+            <table id="6c0b49655ea1ee805bc3370e11b5c305" name="rpt_Billing_Charge" aliasName="rpt_Billing_Charge">
+                <columns>
+                    <column name="Id" id="d402b0e1-eba7-4018-a283-e672fd06f3a8" aliasName="Id" type="java.lang.Long" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="ChargeId" id="4b550aad-fa95-41a3-92d4-2ee83ebd4ec1" aliasName="ChargeId" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="OrganisationId" id="b0f4e173-383c-4f93-a08a-ae5f8b27d28d" aliasName="OrganisationId" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="OrganisationName" id="2e3a9fc1-89f7-4fa9-8d70-a37bf823470d" aliasName="OrganisationName" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="ProviderId" id="870f7080-2c29-491b-824a-e63696a744fb" aliasName="ProviderId" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="ProviderName" id="eeeea029-89ff-4d3f-8429-c68d20c44795" aliasName="ProviderName" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="TenantId" id="6be94eed-a6ad-42ec-a43a-a489e295ae31" aliasName="TenantId" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="TenantName" id="d4c61be7-d7de-4f5c-ab40-51a24c59aa55" aliasName="TenantName" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="CustomerId" id="35b8a266-d7f2-46e6-85f7-f0f1f25c091e" aliasName="CustomerId" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="CustomerName" id="c0a7837d-718a-4a39-b5c3-7544eb389948" aliasName="CustomerName" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="CustomerEmail" id="385946c9-5ac9-4e19-993f-720df9a4286f" aliasName="CustomerEmail" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="CustomerPhone" id="d75f21f8-3b84-447d-bfa9-17800602c52f" aliasName="CustomerPhone" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="CustomerMobile" id="c009cc74-87b9-4b40-9f1a-cb5ca57c09cc" aliasName="CustomerMobile" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="Description" id="0ca0afbf-cfe2-4169-a13a-4e71ccf2bd8e" aliasName="Description" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="RefChargeId" id="59f84a44-b0e6-4e0c-a84f-03525f1450f0" aliasName="RefChargeId" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="TransactionDate" id="33d008d2-d25c-459d-bf43-dfe8db5c7781" aliasName="TransactionDate" type="java.sql.Timestamp" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="ChargeTypeId" id="99ea93c5-501b-4f2e-9c25-5bd610d87192" aliasName="ChargeTypeId" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="ChargeType" id="c66f5361-d96b-4dab-b71f-0c401354fdc4" aliasName="ChargeType" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="ChargeTypeCode" id="9811fa4c-3004-4848-9949-7ce70bb1a422" aliasName="ChargeTypeCode" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="InclInLedger" id="d8c40ae1-123c-4e34-ba70-0241efe2aeb0" aliasName="InclInLedger" type="java.lang.Boolean" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="IsGSTFree" id="7f1f79af-a625-406d-9bfa-c2ee75e58d62" aliasName="IsGSTFree" type="java.lang.Boolean" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="IsSystemType" id="f85f0219-7b02-4e08-90e7-1eda09224323" aliasName="IsSystemType" type="java.lang.Boolean" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="LedgerAccountType" id="da8d81f5-a0c9-4535-8bb5-4e577abfb1b4" aliasName="LedgerAccountType" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="LedgerAccountTypeCode" id="6ddc8811-4753-4ed6-8b98-d8e41d6c696c" aliasName="LedgerAccountTypeCode" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="LedgerAccountTypeId" id="6fad511e-31a3-44ff-91a1-3bfcbe6082eb" aliasName="LedgerAccountTypeId" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="Amount" id="6e5bef3d-2070-4dc9-af35-b35033a539d2" aliasName="Amount" type="java.math.BigDecimal" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="IsCredit" id="5b5a4905-6183-432d-a4e2-762ffc7d8ded" aliasName="IsCredit" type="java.lang.Boolean" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="IsInvoice" id="9e0c02b4-e4fb-4eb3-9cef-68bc8ec845c9" aliasName="IsInvoice" type="java.lang.Boolean" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="InvoiceNumber" id="639da0a0-48dd-4f97-b8a7-76817af4adc4" aliasName="InvoiceNumber" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="InvoiceDate" id="f4a38dd2-957a-429c-9470-0823329a40a6" aliasName="InvoiceDate" type="java.sql.Date" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="IsArchived" id="64ed10ea-3efd-42b5-aed4-2bad674babcd" aliasName="IsArchived" type="java.lang.Boolean" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="Family" id="513f43f1-0c1a-4b75-a698-3e378f2a1ec5" aliasName="Family" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="PaymentAccount" id="121aa19b-a9dc-4e00-9a90-483ae55c17e8" aliasName="PaymentAccount" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="Child" id="4e3e35dc-e9e0-4039-9a1a-afbae7a9fd83" aliasName="Child" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="RefNumber" id="4d2257a6-41aa-4a50-9ba7-379e1f7b2ba3" aliasName="RefNumber" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="Sessions" id="746f5858-eb09-4a22-aef1-66c87a4e1d5c" aliasName="Sessions" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="CareType" id="2cbfb33c-862d-4d0d-8668-d922faf04f8c" aliasName="CareType" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="Rooms" id="ec4849c1-7eff-46f3-ab84-b501e8f99d98" aliasName="Rooms" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="ArrangementType" id="62b78af2-f558-4ec3-bd2d-1a6b490e826f" aliasName="ArrangementType" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="CcssEnrolmentId" id="048c51ae-d80f-42a6-be5d-d0bd99f0e0aa" aliasName="CcssEnrolmentId" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="Status" id="9bdd2607-0373-418f-ac03-fd7aae3e5678" aliasName="Status" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="CreatedOn" id="91c781d4-22d8-4bb1-9ed0-2b1c15168fd0" aliasName="CreatedOn" type="java.sql.Timestamp" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="CreatedBy" id="15d8bf6d-f79d-445f-ade4-81abba6b1016" aliasName="CreatedBy" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="ModifiedOn" id="10159a19-8965-469e-9d40-7aac40be500e" aliasName="ModifiedOn" type="java.sql.Timestamp" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="ModifiedBy" id="3e44522b-aa03-4032-bdf1-a22cf147c850" aliasName="ModifiedBy" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="sysdtm" id="6e55dc9b-bde7-408c-8ee8-21edcad2deaf" aliasName="sysdtm" type="java.sql.Timestamp" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="CreatedOnMonth" id="26fdcc05-4c29-498f-9247-7047f19df529" aliasName="CreatedOnMonth" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="TransactionDateMonth" id="41ffa659-21af-4a3e-9a02-38f7ad15c843" aliasName="TransactionDateMonth" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                </columns>
+            </table>
+            <table id="f2e5a9af-5b3e-4c06-b6e1-fbae968e0f80" name="Query View" type="view" aliasName="Query View">
+                <columns>
+                    <column name="Organisation" id="8c18260e-7ffa-45d6-9d44-ed35e7ba4b4c" aliasName="Organisation" type="java.lang.Float"/>
+                    <column name="Provider" id="e8b550f2-bb0e-4800-9b24-c034fa5f268d" aliasName="Provider" type="java.lang.Float"/>
+                    <column name="Centre" id="081b5287-4835-4717-9498-e6e837cbf91b" aliasName="Centre" type="java.lang.Float"/>
+                    <column name="CreatedOn" id="7eb39946-558b-4911-ae0a-130b8054f927" aliasName="CreatedOn" type="java.lang.Float"/>
+                    <column name="TransactionDate" id="232cb18a-0530-4e24-9428-840a67d65274" aliasName="TransactionDate" type="java.lang.Float"/>
+                    <column name="PaymentAccount" id="cc4573ae-3b21-4a77-bdb5-b11a2422c2a4" aliasName="PaymentAccount" type="java.lang.String"/>
+                    <column name="Family" id="747990dd-26b8-4f09-b443-55a3daa98296" aliasName="Family" type="java.lang.String"/>
+                    <column name="Description" id="597ee8c9-5889-48a2-9c7e-7dd59fdb6d79" aliasName="Description" type="java.lang.String"/>
+                    <column name="Transactio Category" id="60ae6543-f762-4d10-a5ff-6617f0ef6930" aliasName="Transactio Category" type="java.lang.String"/>
+                    <column name="Debit" id="d442add8-a86e-4eb1-b5c0-121a6d59cfd5" aliasName="Debit" type="java.lang.Float"/>
+                    <column name="Credit" id="8da69d38-9f22-4955-8f79-8be7627ad72c" aliasName="Credit" type="java.lang.Float"/>
+                    <column name="Total" id="43b806e3-b0ed-46d8-a9a7-7238f72f5f49" aliasName="Total" type="java.lang.Float"/>
+                </columns>
+            </table>
+            <table id="e70c401f-a979-4a94-b2c1-b9e1a20fa3e1" name="SQlServerView" type="view" aliasName="SQlServerView">
+                <columns>
+                    <column name="Organisation" id="838db7b9-85c3-48d9-8160-c329c8339251" aliasName="Organisation" type="java.lang.Float"/>
+                    <column name="Provider" id="d2cd2954-bf96-42bd-a7b7-5ca1bf4a1d27" aliasName="Provider" type="java.lang.Float"/>
+                    <column name="Centre" id="08d5d2b5-709d-4bed-a8c9-08549d91c3f2" aliasName="Centre" type="java.lang.Float"/>
+                    <column name="CreatedOn" id="56e70a35-7e1a-4b24-9df4-3df4a77ad046" aliasName="CreatedOn" type="java.lang.Float"/>
+                    <column name="TransactionDate" id="4e3bf1e6-8ec2-4ff8-b1b6-9ab716006274" aliasName="TransactionDate" type="java.lang.Float"/>
+                    <column name="PaymentAccount" id="37a2e4a1-a463-42f8-9f2b-32fba19818e7" aliasName="PaymentAccount" type="java.lang.String"/>
+                    <column name="Family" id="219284ee-13cb-438e-bf56-84a4eaa6e522" aliasName="Family" type="java.lang.String"/>
+                    <column name="Description" id="868b1863-32a9-4975-ba7c-6c3c4f890e3d" aliasName="Description" type="java.lang.String"/>
+                    <column name="Transactio Category" id="4f544e1c-a013-4d0c-9473-d0b9aefdd3e3" aliasName="Transactio Category" type="java.lang.String"/>
+                    <column name="Debit" id="e113932d-2285-46ac-838c-27ed77e5c1f1" aliasName="Debit" type="java.lang.Float"/>
+                    <column name="Credit" id="5e7345a7-f632-4324-b5bf-f082c5027d6f" aliasName="Credit" type="java.lang.Float"/>
+                    <column name="Total" id="a974e277-9b81-44b9-b749-7cba271e754b" aliasName="Total" type="java.lang.Float"/>
+                </columns>
+            </table>
+        </tables>
+        <relationships>
+            <relationship table="rpt_Billing_Charge" referenceTable="SQlServerView">
+                <join id="a2c8ea597b436031dd2344b51d8f52bc" type="inner" operator="=">
+                    <left table="rpt_Billing_Charge" column="OrganisationName"/>
+                    <right table="SQlServerView" column="Organisation"/>
+                </join>
+            </relationship>
+        </relationships>
+        <views>
+            <view id="f2e5a9af-5b3e-4c06-b6e1-fbae968e0f80" name="Query View" alias="Query View" hasStoredProcedure="false">
+                <query type="conditionIf"><![CDATA[SELECT NULL AS [Organisation], NULL AS [Provider], NULL AS [Centre],
+NULL CreatedOn, NULL AS TransactionDate, ''[PaymentAccount], ''[Family],
+'_Opening Balance' AS [Description], ''[Transactio Category], 0 AS [Debit], 0 AS [Credit],
+SUM(ISNULL(IIF(IsCredit = 1, Amount, 0), 0)) + SUM(ISNULL(IIF(IsCredit = 0, Amount*-1, 0), 0)) as [Total]
+FROM dbo.rpt_Billing_Charge T1
+WHERE CreatedOn < '2020-03-01'
+AND TenantName = 'ABC Early Learning Centre, Hallam'
+AND ProviderName = 'ABC Early Learning Centre'
+AND OrganisationName = 'Alphabet Kids PTY LTD'
+and ISNULL(IsArchived, 0) = 0]]></query>
+            </view>
+            <view id="e70c401f-a979-4a94-b2c1-b9e1a20fa3e1" name="SQlServerView" alias="SQlServerView" hasStoredProcedure="false">
+                <query type="groovy"><![CDATA[if(hasFilters())
+{
+ filter1=findFilterByLabel("TenantName") 
+ filter1=filter1.values[0]
+return 'SELECT NULL AS [Organisation], NULL AS [Provider], NULL AS [Centre], NULL CreatedOn, NULL AS TransactionDate, \'\'[PaymentAccount], \'\'[Family], \'_Opening Balance\' AS [Description], \'\'[Transactio Category], 0 AS [Debit], 0 AS [Credit], SUM(ISNULL(IIF(IsCredit = 1, Amount, 0), 0)) + SUM(ISNULL(IIF(IsCredit = 0, Amount*-1, 0), 0)) as [Total] FROM dbo.rpt_Billing_Charge T1 WHERE TenantName=\''+filter1+'\''
+}
+else
+{
+return 'select  NULL AS [Organisation], NULL AS [Provider], NULL AS [Centre], NULL CreatedOn, NULL AS TransactionDate, \'\'[PaymentAccount], \'\'[Family], \'_Opening Balance\' AS [Description], \'\'[Transactio Category], 0 AS [Debit], 0 AS [Credit], SUM(ISNULL(IIF(IsCredit = 1, Amount, 0), 0)) + SUM(ISNULL(IIF(IsCredit = 0, Amount*-1, 0), 0)) as [Total]  from dbo.rpt_Billing_Charge'
+} ]]></query>
+            </view>
+        </views>
+    </database>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</metadata>

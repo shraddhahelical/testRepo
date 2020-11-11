@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Charts>
+    <Chart id="1">
+        <prop>
+            <name>report1</name>
+            <type>EFW-Table</type>
+            <DataSource>4</DataSource>
+            <Dimensions>Observations_type,Airport_Code,Location</Dimensions>
+        </prop>
+    </Chart>
+</Charts>

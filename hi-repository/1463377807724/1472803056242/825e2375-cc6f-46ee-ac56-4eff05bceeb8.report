@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<report>
+    <reportName>Travel Medium</reportName>
+    <visible>true</visible>
+    <metadata>
+        <location>1463377807724/1463377836985</location>
+        <metadataFileName>e9be6771-995b-40eb-a01c-304857a100a1.metadata</metadataFileName>
+    </metadata>
+    <canvas>
+        <columns><![CDATA[[{"column":"travel_details.travel_medium","label":"travel_details_travel_medium","id":"6ynojkxl9o9","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"travel_details_travel_medium","groupBy":["db.generic.groupBy.group"],"alias":"travel_medium"},{"column":"travel_details.travel_cost","label":"travel_details_travel_cost","id":"h5db3t3w4s5","type":{"dataType":"numeric","backendDatatype":"java.lang.Integer"},"autogen_alias":"sum_travel_cost","aggregate":["db.generic.aggregate.sum"],"alias":"travel_cost"}]]]></columns>
+    </canvas>
+    <state><![CDATA[{"columns":[{"column":"travel_details.travel_medium","label":"travel_details_travel_medium","id":"6ynojkxl9o9","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"travel_details_travel_medium","groupBy":["db.generic.groupBy.group"],"alias":"travel_medium"},{"column":"travel_details.travel_cost","label":"travel_details_travel_cost","id":"h5db3t3w4s5","type":{"dataType":"numeric","backendDatatype":"java.lang.Integer"},"autogen_alias":"sum_travel_cost","aggregate":["db.generic.aggregate.sum"],"alias":"travel_cost"}],"filters":[{"values":["Envision"],"mode":"auto","dataType":"text","valuesMode":"auto","encloseInQuotes":false,"label":"Client","column":"meeting_details.client_name","backendDataType":"java.lang.String","condition":"EQUALS"}],"customFilterExpression":"${0}","customHavingExpression":"","options":{"limitBy":1000,"prependTableNameToAlias":true},"visualisation":{"type":"Charts","settings":{"script":null,"type":"PieChart"},"vizSelectedScripts":[]},"scripts":[],"styles":"","customStyles":"","customScripts":[]}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+    <share mandatory="true">
+        <roles mandatory="true">
+            <role id="2">2</role>
+        </roles>
+    </share>
+</report>

@@ -1,0 +1,667 @@
+<Charts>
+<Chart id ="7">
+<prop>
+		<name>Adhoc VF Data test</name>
+		<type>Custom</type>		
+		<DataSource>3</DataSource>
+
+		<script>
+			<![CDATA[			
+				
+    $('#chart_7').addClass('panel').addClass('panel-primary');
+	$('#chart_7').html("<div>"+JSON.stringify(data)+"</div>");
+]]>
+		</script>
+		<Customtag id="test">
+		<name>Cutom tags will be here</name>
+		</Customtag>
+		
+</prop>
+</Chart>
+
+
+<Chart id ="9">
+<prop>
+		<name>Adhoc VF Radar Chart</name>
+		<type>Custom</type>		
+		<DataSource>3</DataSource>
+
+		<script>
+			<![CDATA[			
+				var script = document.createElement("script");
+				if(window.DashboardGlobals)
+					script.src = window.DashboardGlobals.baseUrl+"/getExternalResource.html?path=1463377807724/1464094583239/Chart.min.js";				
+				else
+					script.src = "getExternalResource.html?path=1463377807724/1464094583239/Chart.min.js";
+
+				document.getElementsByTagName("head")[0].appendChild(script);
+					document.getElementById('chart_'+9).parentElement.style.height="100%";
+				document.getElementById('chart_'+9).parentElement.style.width="100%";
+				var parentid = document.getElementById('chart_'+9).parentElement.id;
+				document.getElementById('chart_'+9).id += "-"+parentid;			
+				$('#chart_9'+"-"+parentid).css('height', 'inherit');				
+				var div = document.createElement("div");
+				div.id = 'container-'+parentid;
+				div.style.height = 'inherit';
+				//$('#container-'+parentid).css('height', 'inherit');
+//				div.style = "width:30%";
+				var canvas = document.createElement("canvas");
+				canvas.id = "canvas-"+parentid;
+			//	canvas.height = '100';
+				canvas.height = $('#container-'+parentid).innerHeight();
+			//	canvas.weight = "100";
+				
+				div.appendChild(canvas);
+				
+				document.getElementById("chart_9"+"-"+parentid).appendChild(div);
+		
+				//transform data		
+				var metadata_1 = [];
+				metadata_1.push($.map(data[0], function(value,key) {return key}));
+				metadata_1 = metadata_1[0];
+		
+				
+		
+		var actualLabels=[]; 
+		var dataset=[];
+		$.map(data, function(value,index){
+			actualLabels.push(value[metadata_1[0]]); 
+		});
+		
+		$.map(metadata_1, function(value,index){ 
+			if(index >= 1)
+			{
+				dataset.push($.map(data, function(v,i){ return v[value] }));
+			}
+		});
+		
+		
+		
+		var actualDatasets=[];
+		var colourData =["#bf616a","#5B90BF","#d08770","#ebcb8b","#a3be8c","#96b5b4","#8fa1b3","#b48ead","#ab7967","#FF8A65","#FFD54F","#4FC3F7","#673AB7","#CDDC39","#0ff","#f0f","#00f"];
+		
+		
+		/*for (var index = 0; index < dataset.length; index++)
+		{
+			var dp = {
+				label: "My dataset",
+				fillColor: "rgba(151,187,205,0.2)",
+				strokeColor: "rgba(151,187,205,1)",
+				pointColor: "rgba(151,187,205,1)",
+				pointStrokeColor: "#fff",
+				pointHighlightFill: "#fff",
+				pointHighlightStroke: "rgba(151,187,205,1)",
+				data: [28,48,40,19,96,27,100]
+			};
+			dp.label = metadata_1[index];
+			dp.fillColor = rgb[index];
+			dp.strokeColor= rgb[index];
+			dp.pointColor= rgb[index];
+			dp.pointHighlightStroke= rgb[index];
+			dp.data = dataset[index];
+			actualDatasets.push(dp);			
+		}*/
+		var values = [];
+		var selectedColumns = Object.keys(data[0]);
+		var measures = [];
+		var backgroundColor = [];
+		var hoverBackgroundColor = [];
+		var labels = [];
+		var datasets = [];
+		var dataSetArr = [];
+								
+		//var colourData= [ '#edc54a','#28d7b3','#fa6c5b','#735ea4','#27bfd7','#e377c2','#7f7f7f','#8c564b'];
+		var dimensions = [];
+		for(var i = 0; i < selectedColumns.length; i++){
+			if(typeof data[0][selectedColumns[i]] === 'number'){
+				measures.push(selectedColumns[i]);
+			}
+			else if(typeof data[0][selectedColumns[i]] === 'string'){
+				dimensions.push(selectedColumns[i]);
+			}
+		}
+			for(var i = measures.length-1; i >= 0; i--){
+			data.forEach(function(x){
+			labels.push(x[dimensions[dimensions.length-1]]);
+		});
+				var dataArr = [];
+				var dataObj = {};
+				dataObj['name'] = measures[i];
+				data.forEach(function(y){
+					dataArr.push(y[measures[i]]);
+				});
+				dataObj['data'] = dataArr;
+				dataSetArr.push(dataObj);
+			}
+			var i = 0;
+			for (var index = 0; index < dataSetArr.length; index++){
+				if(i >= colourData.length)
+					i = 0;
+				dataSetArr[index].label = dataSetArr[index]['name'];
+				dataSetArr[index].backgroundColor = Chart.helpers.color(colourData[i]).alpha(1).rgbString();
+				dataSetArr[index].borderColor = colourData[index];
+				dataSetArr[index].pointBackgroundColor = colourData[index];
+				dataSetArr[index].data = dataSetArr[index]['data'];
+				dataSetArr[index].fillColor = colourData[index];
+				dataSetArr[index].strokeColor= colourData[index];
+				dataSetArr[index].pointColor= colourData[index];
+				dataSetArr[index].pointHighlightStroke= colourData[index];
+				i++;
+				delete dataSetArr[index]['name'];
+
+				datasets.push(dataSetArr[index]);
+			}
+				var radarChartData = {
+					labels: labels,
+					datasets: datasets
+				};
+				script.onload = function(){
+					/*window.chart = new Chart(document.getElementById("canvas-"+parentid).getContext("2d")).Radar(radarChartData, {
+					responsive: true,
+					legendTemplate : "<ul style=\"\"class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].strokeColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>"
+					});
+
+					var legend = window.chart.generateLegend();
+					$("#chart_9").append(legend);
+					$( "<style>.radar-legend {    list-style: outside none none;    position: absolute;    right: 8px;    top: 0;}.radar-legend li {    border-radius: 5px;    cursor: default;    display: block;    font-size: 14px;    margin-bottom: 4px;    padding: 2px 8px 2px 28px;    position: relative;    transition: background-color 200ms ease-in-out 0s;}.radar-legend li:hover {    background-color: #fafafa;}.radar-legend li span {    border-radius: 5px;    display: block;    height: 100%;    left: 0;    position: absolute;    top: 0;    width: 20px;}</style>" ).appendTo( "head" );*/
+					/*var getCanvas = document.getElementById("canvas-"+parentid);
+					var radarChart = new Chart(getCanvas, {
+						type: 'radar',
+						data: radarChartData,
+						options: {
+							scale:{
+								ticks: {
+									display: false,
+								//	beginAtZero: true
+								},
+								pointLabels:{
+									display:true,
+								}
+							},
+							legend: {
+								display: true
+							},
+							maintainAspectRatio: false,
+							responsive: true,
+						}
+					});*/
+
+					window.radarchart = new Chart(document.getElementById("canvas-"+parentid).getContext("2d"),{
+						type:"radar",
+						data:radarChartData,
+					responsive: true,
+					legendTemplate : "<ul style=\"\"class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].strokeColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>"
+					});
+
+					var legend = window.radarchart.generateLegend();
+					$("#chart_9").append(legend);
+					$( "<style>.radar-legend {    list-style: outside none none;    position: absolute;    right: 8px;    top: 0;}.radar-legend li {    border-radius: 5px;    cursor: default;    display: block;    font-size: 14px;    margin-bottom: 4px;    padding: 2px 8px 2px 28px;    position: relative;    transition: background-color 200ms ease-in-out 0s;}.radar-legend li:hover {    background-color: #fafafa;}.radar-legend li span {    border-radius: 5px;    display: block;    height: 100%;    left: 0;    position: absolute;    top: 0;    width: 20px;}</style>" ).appendTo( "head" );
+				}
+
+			]]>
+		</script>
+		
+</prop>
+</Chart>
+
+<Chart id ="10">
+<prop>
+		<name>Adhoc VF Bar Chart</name>
+		<type>Custom</type>		
+		<DataSource>3</DataSource>
+
+		<script>
+			<![CDATA[			
+				var script = document.createElement("script");
+				if(window.DashboardGlobals)
+					script.src = window.DashboardGlobals.baseUrl+"/getExternalResource.html?path=1463377807724/1464094583239/Chart.min.js";				
+				else
+					script.src = "getExternalResource.html?path=1463377807724/1464094583239/Chart.min.js";
+
+				document.getElementsByTagName("head")[0].appendChild(script);
+				document.getElementById('chart_'+10).parentElement.style.height="100%";
+				document.getElementById('chart_'+10).parentElement.style.width="100%";
+				var div = document.createElement("div");
+				var parentid = document.getElementById('chart_'+10).parentElement.id;
+				document.getElementById('chart_'+10).id += "-"+parentid;
+//				div.style = "width:30%";
+				div.id = "container-"+parentid;
+				div.style.height = 'inherit';
+				var canvas = document.createElement("canvas");
+				canvas.id = "canvas-"+parentid;
+				canvas.height = "100";
+			//	canvas.weight = "100";
+				
+				div.appendChild(canvas);
+				
+				document.getElementById("chart_10"+"-"+parentid).appendChild(div);
+				$('#chart_10'+"-"+parentid).css('height', '100%');
+				canvas.height = $("#container-"+parentid).innerHeight();
+				canvas.width = $("#container-"+parentid).innerWidth();
+				//transform data		
+				var metadata_1 = [];
+				metadata_1.push($.map(data[0], function(value,key) {return key}));
+				metadata_1 = metadata_1[0];				
+		
+		var actualLabels=[]; 
+		var dataset=[];
+		$.map(data, function(value,index){
+			actualLabels.push(value[metadata_1[0]]); 
+		});
+		
+		$.map(metadata_1, function(value,index){ 
+		
+			if(index >= 1)
+			{
+				dataset.push($.map(data, function(v,i){ return v[value] }));
+			}
+		});
+				
+		var actualDatasets=[];
+		var rgb =["#bf616a","#5B90BF","#d08770","#ebcb8b","#a3be8c","#96b5b4","#8fa1b3","#b48ead","#ab7967","#FF8A65","#FFD54F","#4FC3F7","#673AB7","#CDDC39","#0ff","#f0f","#00f"];
+		
+		
+		for (var index = 0; index < dataset.length; index++)
+		{
+			var dp = {
+				label: "My dataset",
+				fillColor: "rgba(151,187,205,0.2)",
+				strokeColor: "rgba(151,187,205,1)",
+				pointColor: "rgba(151,187,205,1)",
+				pointStrokeColor: "#fff",
+				pointHighlightFill: "#fff",
+				pointHighlightStroke: "rgba(151,187,205,1)",
+				data: [28,48,40,19,96,27,100]
+			};
+			dp.label = metadata_1[index];
+			dp.fillColor = rgb[index];
+			dp.strokeColor= rgb[index];
+			dp.backgroundColor= rgb[index];
+			dp.borderColor= rgb[index];
+			dp.pointColor= rgb[index];
+			dp.pointHighlightStroke= rgb[index];
+			dp.data = dataset[index];
+			actualDatasets.push(dp);			
+		}
+
+				var chartData = {
+					labels: actualLabels,
+					datasets: actualDatasets
+				};
+				script.onload = function(){
+					window.barchart= new Chart(document.getElementById("canvas-"+parentid).getContext("2d"),{
+						type:"bar",
+						data:chartData,
+						responsive: true,
+						legendTemplate : "<ul style=\"\"class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].strokeColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>"
+					});
+
+					var legend = window.barchart.generateLegend();
+					$("chart_10"+"-"+parentid).append(legend);
+					$( "<style>.bar-legend {    list-style: outside none none;    position: absolute;    right: 8px;    top: 0;}.bar-legend li {    border-radius: 5px;    cursor: default;    display: block;    font-size: 14px;    margin-bottom: 4px;    padding: 2px 8px 2px 28px;    position: relative;    transition: background-color 200ms ease-in-out 0s;}.bar-legend li:hover {    background-color: #fafafa;}.bar-legend li span {    border-radius: 5px;    display: block;    height: 100%;    left: 0;    position: absolute;    top: 0;    width: 20px;}</style>" ).appendTo( "head" );
+
+				}
+
+			]]>
+		</script>
+		
+</prop>
+</Chart>
+
+<Chart id ="11">
+<prop>
+		<name>Adhoc VF Line Chart</name>
+		<type>Custom</type>		
+		<DataSource>3</DataSource>
+
+		<script>
+			<![CDATA[			
+				var script = document.createElement("script");
+				if(window.DashboardGlobals)
+					script.src = window.DashboardGlobals.baseUrl+"/getExternalResource.html?path=1463377807724/1464094583239/Chart.min.js";				
+				else
+					script.src = "getExternalResource.html?path=1463377807724/1464094583239/Chart.min.js";
+
+				document.getElementsByTagName("head")[0].appendChild(script);
+				document.getElementById('chart_'+11).parentElement.style.height="100%";
+				document.getElementById('chart_'+11).parentElement.style.width="100%";
+				var parentid = document.getElementById('chart_'+11).parentElement.id;
+				document.getElementById('chart_'+11).id += "-"+parentid;
+				
+				var div = document.createElement("div");
+//				div.style = "width:30%";
+				div.id = "container-"+"-"+parentid;
+
+				var canvas = document.createElement("canvas");
+				canvas.id = "canvas"+"-"+parentid;
+				//canvas.height = "100";
+				//canvas.weight = "100";
+				
+				div.appendChild(canvas);
+				
+				document.getElementById("chart_11"+"-"+parentid).appendChild(div);
+		
+				//transform data		
+				var metadata_1 = [];
+				metadata_1.push($.map(data[0], function(value,key) {return key}));
+				metadata_1 = metadata_1[0];
+		
+				
+				
+		
+		var actualLabels=[]; 
+		var dataset=[];
+		$.map(data, function(value,index){
+			actualLabels.push(value[metadata_1[0]]); 
+		});
+		
+		$.map(metadata_1, function(value,index){ 
+			
+			if(index >= 1)
+			{
+				dataset.push($.map(data, function(v,i){ return v[value] }));
+			}
+		});
+		
+		
+		
+		
+		var actualDatasets=[];
+		var rgb =["#bf616a","#5B90BF","#d08770","#ebcb8b","#a3be8c","#96b5b4","#8fa1b3","#b48ead","#ab7967","#FF8A65","#FFD54F","#4FC3F7","#673AB7","#CDDC39","#0ff","#f0f","#00f"];
+		
+		
+		for (var index = 0; index < dataset.length; index++)
+		{
+			var dp = {
+				label: "My dataset",
+				fillColor: "rgba(151,187,205,0.2)",
+				strokeColor: "rgba(151,187,205,1)",
+				pointColor: "rgba(151,187,205,1)",
+				pointStrokeColor: "#fff",
+				pointHighlightFill: "#fff",
+				pointHighlightStroke: "rgba(151,187,205,1)",
+				data: [28,48,40,19,96,27,100]
+			};
+			dp.label = metadata_1[index];
+			dp.fillColor = rgb[index];
+			dp.strokeColor= rgb[index];
+			dp.backgroundColor= rgb[index];
+			dp.borderColor= rgb[index];
+			dp.pointColor= rgb[index];
+			dp.pointHighlightStroke= rgb[index];
+			dp.data = dataset[index];
+			actualDatasets.push(dp);			
+		}
+
+				var chartData = {
+					labels: actualLabels,
+					datasets: actualDatasets
+				};
+				
+				script.onload = function(){
+					window.linechart= new Chart(document.getElementById("canvas"+"-"+parentid).getContext("2d"),{
+						type:"line",
+						data:chartData,
+						responsive: true,
+						legendTemplate : "<ul style=\"\"class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].strokeColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>"
+					});
+
+					var legend = window.linechart.generateLegend();
+					$("#chart_11"+"-"+parentid).append(legend);
+					$( "<style>.line-legend {    list-style: outside none none;    position: absolute;    right: 8px;    top: 0;}.line-legend li {    border-radius: 5px;    cursor: default;    display: block;    font-size: 14px;    margin-bottom: 4px;    padding: 2px 8px 2px 28px;    position: relative;    transition: background-color 200ms ease-in-out 0s;}.line-legend li:hover {    background-color: #fafafa;}.line-legend li span {    border-radius: 5px;    display: block;    height: 100%;    left: 0;    position: absolute;    top: 0;    width: 20px;}</style>" ).appendTo( "head" );
+				}
+
+			]]>
+		</script>
+		
+</prop>
+</Chart>
+
+
+<Chart id ="12">
+<prop>
+		<name>Adhoc VF Polar Chart</name>
+		<type>Custom</type>		
+		<DataSource>3</DataSource>
+
+		<script>
+			<![CDATA[			
+				var script = document.createElement("script");
+				if(window.DashboardGlobals)
+					script.src = window.DashboardGlobals.baseUrl+"/getExternalResource.html?path=1463377807724/1464094583239/Chart.min.js";				
+				else
+					script.src = "getExternalResource.html?path=1463377807724/1464094583239/Chart.min.js";
+
+				document.getElementsByTagName("head")[0].appendChild(script);
+				var parentid = document.getElementById('chart_'+12).parentElement.id;
+				document.getElementById('chart_'+12).id += "-"+parentid;
+				var div = document.createElement("div");
+//				div.style = "width:30%";
+				div.id = 'container-'+parentid;
+				$('#container-'+parentid).css('height', 'inherit');
+				var canvas = document.createElement("canvas");
+				canvas.id = "canvas-"+parentid;
+				//canvas.height = "100";
+				//canvas.weight = "100";
+				
+				div.appendChild(canvas);
+				
+				document.getElementById("chart_12"+"-"+parentid).appendChild(div);
+				$('#chart_12'+"-"+parentid).css('height', 'inherit');
+				//transform data		
+				var metadata_1 = [];
+				metadata_1.push($.map(data[0], function(value,key) {return key}));
+				metadata_1 = metadata_1[0];
+		
+				
+				
+				var actualDatasets=[];
+				var rgb =["#bf616a","#5B90BF","#d08770","#ebcb8b","#a3be8c","#96b5b4","#8fa1b3","#b48ead","#ab7967","#FF8A65","#FFD54F","#4FC3F7","#673AB7","#CDDC39","#0ff","#f0f","#00f"];
+
+				for (var index = 0; index < data.length; index++)
+				{
+					var dp = {
+						value: 300,
+						color:"#F7464A",
+						highlight: "#FF5A5E",
+						label: "Red"
+					};
+					dp.label = data[index][metadata_1[0]];
+					dp.color = rgb[index];
+					dp.highlight= rgb[index];
+					dp.value = data[index][metadata_1[1]];
+					actualDatasets.push(dp);			
+				}
+				var colourHighlight =["rgba(191, 97, 106, 1)","rgba(91, 144, 191, 1)","rgba(208, 135, 112, 1)","rgba(235, 203, 139, 1)","rgba(163, 190, 140, 1)","rgba(150, 181, 180, 1)","rgba(143, 161, 179, 1)","rgba(180, 142, 173, 1)","rgba(171, 121, 103, 1)","rgba(255, 138, 101, 1)","rgba(255, 213, 79, 1)","rgba(79, 195, 247, 1)","rgba(103, 58, 183, 1)","rgba(0, 255, 255, 1)","rgba(255, 0, 255, 1)","rgba(0, 0, 255, 1)"];
+				var colourData= [ '#edc54a','#28d7b3','#fa6c5b','#735ea4','#27bfd7','#e377c2','#7f7f7f','#8c564b'];
+				var i = 0;
+				var values = [];
+				var selectedColumns = Object.keys(data[0]);
+				var measures = [];
+				var backgroundColor = [];
+				var hoverBackgroundColor = [];
+				var labels = [];
+				var dimensions = [];
+				for(var i = 0; i < selectedColumns.length; i++){
+					if(typeof data[0][selectedColumns[i]] === 'number'){
+						measures.push(selectedColumns[i]);
+					}
+					else if(typeof data[0][selectedColumns[i]] === 'string'){
+						dimensions.push(selectedColumns[i]);
+					}
+				}
+				data.forEach(function(x, y){
+						if(i >= colourData.length)
+							i = 0;
+						labels.push(data[y][dimensions[(dimensions.length-1)]]);
+						backgroundColor.push(colourData[i]);
+						hoverBackgroundColor.push(colourHighlight[i]);
+						values.push(x[measures[(measures.length-1)]]);
+						i++;
+					});
+		
+
+				var chartData = actualDatasets;
+				
+				script.onload = function(){
+				var getCanvas = document.getElementById("canvas-"+parentid);
+				/*	window.chart= new Chart(document.getElementById("canvas-"+parentid).getContext("2d")).PolarArea(chartData, {
+					responsive: true					
+				});*/
+				
+		var radarChart = new Chart(getCanvas, {
+			type: 'polarArea',
+			data: {
+				labels: labels,
+				datasets: [{
+				  backgroundColor: backgroundColor,
+				  hoverBackgroundColor: backgroundColor,
+				  borderColor:backgroundColor,
+				  borderWidth:1,
+				  data: values
+				}]
+			  },
+			options: {
+				scale:{
+				ticks: {
+					display: false,
+				//	beginAtZero: true
+				},
+				},
+				legend: {
+					display: false
+				},
+				maintainAspectRatio: false,
+				responsive: true,
+			}
+		});
+				}
+
+			]]>
+		</script>
+		
+</prop>
+</Chart>
+
+<Chart id ="14">
+<prop>
+		<name>Adhoc VF Doughnut Chart</name>
+		<type>Custom</type>		
+		<DataSource>3</DataSource>
+
+		<script>
+			<![CDATA[			
+				var script = document.createElement("script");
+				if(window.DashboardGlobals)
+					script.src = window.DashboardGlobals.baseUrl+"/getExternalResource.html?path=1463377807724/1464094583239/Chart.min.js";				
+				else
+					script.src = "getExternalResource.html?path=1463377807724/1464094583239/Chart.min.js";
+
+				document.getElementsByTagName("head")[0].appendChild(script);
+				document.getElementById('chart_'+14).parentElement.style.height="100%";
+				document.getElementById('chart_'+14).parentElement.style.width="100%";
+				var parentid = document.getElementById('chart_'+14).parentElement.id;
+				document.getElementById('chart_'+14).id += "-"+parentid;
+				
+				$('#chart_14'+"-"+parentid).css('height', '100%');
+				$('#chart_14'+"-"+parentid).css('width', '100%');
+				var div = document.createElement("div");
+//				div.style = "width:30%";
+				div.id = "container-"+parentid;
+				div.style.height = '100%';
+				var canvas = document.createElement("canvas");
+				canvas.id = "canvas"+"-"+parentid;
+				//canvas.weight = "100";
+				
+				div.appendChild(canvas);
+				
+				document.getElementById("chart_14"+"-"+parentid).appendChild(div);
+				canvas.height = $("#container-"+parentid).innerHeight();
+				canvas.width = $("#container-"+parentid).innerWidth();
+				//transform data		
+				var metadata_1 = [];
+				metadata_1.push($.map(data[0], function(value,key) {return key}));
+				metadata_1 = metadata_1[0];
+				var actualDatasets=[];
+				var label = [];
+				var actualLabels=[]; 
+				var dataset=[];
+				$.map(data, function(value,index){
+					actualLabels.push(value[metadata_1[0]]); 
+				});
+				
+				$.map(metadata_1, function(value,index){ 
+					if(index >= 1)
+					{
+						dataset.push($.map(data, function(v,i){ return v[value] }));
+					}
+				});
+		
+		var actualDatasets=[];
+		var rgb =["#bf616a","#5B90BF","#d08770","#ebcb8b","#a3be8c","#96b5b4","#8fa1b3","#b48ead","#ab7967","#FF8A65","#FFD54F","#4FC3F7","#673AB7","#CDDC39","#0ff","#f0f","#00f","#bf616a","#5B90BF","#d08770","#ebcb8b","#a3be8c","#96b5b4","#8fa1b3","#b48ead"];
+		
+		
+		for (var index = 0; index < dataset.length; index++){
+			var dp = {
+				label: "My dataset",
+				fillColor: "rgba(151,187,205,0.2)",
+				strokeColor: "rgba(151,187,205,1)",
+				pointColor: "rgba(151,187,205,1)",
+				pointStrokeColor: "#fff",
+				pointHighlightFill: "#fff",
+				pointHighlightStroke: "rgba(151,187,205,1)",
+				data: [28,48,40,19,96,27,100]
+			};
+			dp.label = metadata_1[index];
+			dp.fillColor = rgb;
+			dp.strokeColor= rgb;
+			dp.backgroundColor= rgb;
+			dp.borderColor= rgb;
+			dp.pointColor= rgb;
+			dp.pointHighlightStroke= rgb;
+			dp.data = dataset[index];
+			actualDatasets.push(dp);			
+		}
+
+				var chartData = {
+					labels: actualLabels,
+					datasets: actualDatasets
+				};
+				
+				/*for (var index = 0; index < data.length; index++){
+					var dp = {
+						value: 300,
+						color:"#F7464A",
+						highlight: "#FF5A5E",
+						label: "Red"
+					};
+					label.push(data[index][metadata_1[0]]);
+					dp.label = data[index][metadata_1[0]];
+					dp.color = rgb[index];
+					dp.backgroundColor = rgb[index];
+					dp.borderColor = rgb[index];
+					//dp.borderWidth = 2;
+					dp.highlight= rgb[index];
+					dp.value = data[index][metadata_1[1]];
+					actualDatasets.push(dp);			
+				}*/
+
+				/*var chartData = {
+					labels: label,
+					datasets: actualDatasets
+					
+				}*/
+				script.onload = function(){
+					window.myChart= new Chart(document.getElementById("canvas"+"-"+parentid).getContext("2d"),{
+						type:"doughnut",
+						data:chartData,
+						responsive: true
+					});
+				}
+
+			]]>
+		</script>
+		
+</prop>
+</Chart>
+</Charts>

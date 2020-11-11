@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<report>
+    <reportName>ProfileNameReport</reportName>
+    <visible>true</visible>
+    <metadata>
+        <location>1588851297738/1589444653445/1589468876457</location>
+        <metadataFileName>35eb8964-4f04-437c-8f41-08a30baf078e.metadata</metadataFileName>
+    </metadata>
+    <canvas>
+        <columns><![CDATA[[{"column":"ProfileName.cancellation_reason","label":"ProfileName_cancellation_reason","id":"dy192gw99n","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"ProfileName_cancellation_reason","groupBy":["db.generic.groupBy.group"]},{"column":"ProfileName.client_name","label":"ProfileName_client_name","id":"2r5ayfgguq8","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"ProfileName_client_name","groupBy":["db.generic.groupBy.group"]}]]]></columns>
+    </canvas>
+    <state><![CDATA[{"columns":[{"column":"ProfileName.cancellation_reason","label":"ProfileName_cancellation_reason","id":"dy192gw99n","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"ProfileName_cancellation_reason","groupBy":["db.generic.groupBy.group"]},{"column":"ProfileName.client_name","label":"ProfileName_client_name","id":"2r5ayfgguq8","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"ProfileName_client_name","groupBy":["db.generic.groupBy.group"]}],"filters":[],"customFilterExpression":"","customHavingExpression":"","customFilterExpressionObj":{},"customHavingExpressionObj":{},"havingExpressionIndexs":{},"filterExpressionIndexs":{},"options":{"limitBy":1000,"prependTableNameToAlias":true},"visualisation":{"type":"Table","chartGroup":"","selectedType":"Table","settings":{"script":null,"vizscriptsEditMultipleMode":false},"vizSelectedScripts":[]},"scripts":[],"styles":"","customStyles":"","customScripts":[]}]]></state>
+    <security>
+        <createdBy>501</createdBy>
+        <organization>101</organization>
+    </security>
+</report>

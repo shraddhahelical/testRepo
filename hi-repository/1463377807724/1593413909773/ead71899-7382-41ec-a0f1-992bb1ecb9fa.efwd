@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<EFWD>
+    <DataSources>
+        <Connection id="1" type="global.jdbc">
+            <globalId>1</globalId>
+            <security>
+                <createdBy>1</createdBy>
+                <organization></organization>
+            </security>
+        </Connection>
+    </DataSources>
+    <DataMaps>
+        <DataMap id="1" connection="1" type="sql">
+            <Name>Query1</Name>
+            <Query><![CDATA[	select 
+	"HIUSER"."travel_details"."travel_id" as "ID",
+ 	"HIUSER"."meeting_details"."client_name" as "Name",
+ 	"HIUSER"."travel_details"."destination" as "Destination",
+ 	"HIUSER"."travel_details"."source" as "Source",
+ 	"HIUSER"."travel_details"."travel_cost" as "Cost",
+ 	"HIUSER"."travel_details"."travel_date" as "Date",
+ 	"HIUSER"."travel_details"."travel_medium" as "travel_medium"
+ 	
+from
+	"HIUSER"."travel_details" 
+	inner join "HIUSER"."employee_details" on ("HIUSER"."employee_details"."employee_id" = "HIUSER"."travel_details"."travelled_by") 
+	inner join "HIUSER"."meeting_details" on ("HIUSER"."employee_details"."employee_id" = "HIUSER"."meeting_details"."meeting_by") 
+	
+	
+	 where cast("travel_date" as date) between ${startdate} and ${enddate} order by "travel_medium","Name"  ]]></Query>
+            <Parameters>
+                <Parameter name="startdate" type="String" default="2015-01-01"/>
+                <Parameter name="enddate" type="String" default="2015-02-02"/>
+            </Parameters>
+        </DataMap>
+    </DataMaps>
+</EFWD>

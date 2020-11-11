@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cache>
+    <enableCache>true</enableCache>
+    <enableJsonCache>true</enableJsonCache>
+    <enableThread>true</enableThread>
+    <cacheExtension>cache</cacheExtension>
+    <cacheExpireDuration>24</cacheExpireDuration>
+    <durationUnit>hours</durationUnit>
+    <refreshUrl>
+        <url>/getEFWSolution.html</url>
+        <url>/adhocReport.html</url>
+        <url>/adhoc/report-create.html</url>
+        <url>/adhoc/report-edit.html</url>
+        <url>/hi.html</url>
+    </refreshUrl>
+    <serviceOrVisualize type="adhoc" serviceType="report" visualizeUrl="visualizeAdhoc"/>
+    <cacheManager>
+        <url bean="efwdCacheManager" pattern="/executeDatasource.html"/>
+        <url bean="efwvfCacheManager" pattern="/visualizeData.html"/>
+        <url bean="adhocCacheManager" pattern="/services"/>
+        <url bean="adhocCacheManager" pattern="/services.html"/>
+        <url bean="downloadCacheManager" pattern="/exportData.html"/>
+        <url bean="visualizeAdhocCacheManager" pattern="/visualizeAdhoc.html"/>
+        <url bean="HCRQueryProcessCacheManager" pattern="/hcr"/>
+		<url bean="HCRQueryProcessCacheManagerForResultSet" pattern="/hcrResultSet"/>
+        <url bean="HCRPrintCacheManager" pattern="/hcrPrint"/>
+    </cacheManager>
+    <downloadManager>
+        <contentType bean="CSVResultSetFormatDownload" type="csv"/>
+        <contentType bean="XLSResultsetFormatDownload" type="xls"/>
+        <contentType bean="HCRFileDownload" type="hcr"/>
+    </downloadManager>
+	<applicationCacheImplType>
+		<db bean="applicationDatabaseCache"/>
+		<file bean="applicationFileCache"/>
+		<distributed bean="applicationDistributedCache"/>
+		<inmemory bean="applicationMemoryCache"/>
+	</applicationCacheImplType>
+</cache>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<report>
+    <reportName>GroovyUserSessionDynamicViewReport</reportName>
+    <visible>true</visible>
+    <metadata>
+        <location>1588851297738/1589444653445/1590651742641</location>
+        <metadataFileName>55176731-1523-48d1-8a2d-f0f6cbad1678.metadata</metadataFileName>
+    </metadata>
+    <canvas>
+        <columns><![CDATA[[{"column":"GroovyUserSessionDynamicView.booking_platform","label":"GroovyUserSessionDynamicView_booking_platform","id":"jt16699kuko","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"GroovyUserSessionDynamicView_booking_platform","groupBy":["db.generic.groupBy.group"]},{"column":"GroovyUserSessionDynamicView.destination","label":"GroovyUserSessionDynamicView_destination","id":"cp0u32kqzid","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"GroovyUserSessionDynamicView_destination","groupBy":["db.generic.groupBy.group"]},{"column":"GroovyUserSessionDynamicView.source","label":"GroovyUserSessionDynamicView_source","id":"cw8ceervqvj","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"GroovyUserSessionDynamicView_source","groupBy":["db.generic.groupBy.group"]}]]]></columns>
+    </canvas>
+    <state><![CDATA[{"columns":[{"column":"GroovyUserSessionDynamicView.booking_platform","label":"GroovyUserSessionDynamicView_booking_platform","id":"jt16699kuko","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"GroovyUserSessionDynamicView_booking_platform","groupBy":["db.generic.groupBy.group"]},{"column":"GroovyUserSessionDynamicView.destination","label":"GroovyUserSessionDynamicView_destination","id":"cp0u32kqzid","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"GroovyUserSessionDynamicView_destination","groupBy":["db.generic.groupBy.group"]},{"column":"GroovyUserSessionDynamicView.source","label":"GroovyUserSessionDynamicView_source","id":"cw8ceervqvj","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"GroovyUserSessionDynamicView_source","groupBy":["db.generic.groupBy.group"]}],"filters":[],"customFilterExpression":"","customHavingExpression":"","customFilterExpressionObj":{},"customHavingExpressionObj":{},"havingExpressionIndexs":{},"filterExpressionIndexs":{},"options":{"limitBy":1000,"prependTableNameToAlias":true},"visualisation":{"type":"Table","chartGroup":"","selectedType":"Table","settings":{"script":null,"vizscriptsEditMultipleMode":false},"vizSelectedScripts":[]},"scripts":[],"styles":"","customStyles":"","customScripts":[]}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</report>

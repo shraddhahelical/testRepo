@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<report>
+    <reportName>GetAllEmployeesReport_StoredProcedure</reportName>
+    <visible>true</visible>
+    <metadata>
+        <location>1588851297738/1588860617511</location>
+        <metadataFileName>539f0a59-2719-4fcc-896c-16e75b6ceb3c.metadata</metadataFileName>
+    </metadata>
+    <canvas>
+        <columns><![CDATA[[{"column":"GetAllEmployees.address","label":"GetAllEmployees_address","id":"v6ywqcudc6q","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"GetAllEmployees_address","groupBy":["db.generic.groupBy.group"],"alias":"address"},{"column":"GetAllEmployees.employee_name","label":"GetAllEmployees_employee_name","id":"7nn3pvv1vc","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"GetAllEmployees_employee_name","groupBy":["db.generic.groupBy.group"],"alias":"employee_name"}]]]></columns>
+    </canvas>
+    <state><![CDATA[{"columns":[{"column":"GetAllEmployees.address","label":"GetAllEmployees_address","id":"v6ywqcudc6q","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"GetAllEmployees_address","groupBy":["db.generic.groupBy.group"],"alias":"address"},{"column":"GetAllEmployees.employee_name","label":"GetAllEmployees_employee_name","id":"7nn3pvv1vc","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"GetAllEmployees_employee_name","groupBy":["db.generic.groupBy.group"],"alias":"employee_name"}],"filters":[],"customFilterExpression":"","customHavingExpression":"","customFilterExpressionObj":{},"customHavingExpressionObj":{},"havingExpressionIndexs":{},"filterExpressionIndexs":{},"options":{"limitBy":1000,"prependTableNameToAlias":true,"unWrapSelect":true},"visualisation":{"type":"Table","chartGroup":"","selectedType":"Table","settings":{"script":null,"vizscriptsEditMultipleMode":false},"vizSelectedScripts":[]},"scripts":[],"styles":"","customStyles":"","customScripts":[]}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</report>

@@ -1,0 +1,79 @@
+<EFWD>
+     <DataSources>
+        <Connection id="1" name="SampleEFWD Sample Travel Data" type="sql.jdbc">
+            <Driver>org.apache.derby.jdbc.AutoloadedDriver</Driver>
+            <Url>jdbc:derby:C:\Program Files\Helical Insight\hi\db\SampleTravelData</Url>
+            <User>hiuser</User>
+            <Pass>hiuser</Pass>
+        </Connection>
+    </DataSources>
+    
+   <DataMaps>
+       <DataMap id="1" connection="1" type="sql" >
+           <Name>dummy</Name>
+            <Query>
+                <![CDATA[
+                        select 
+							"HIUSER"."meeting_details"."client_name" As client,
+							sum("HIUSER"."travel_details"."travel_cost") AS cost 
+						from
+							"HIUSER"."travel_details" 
+							inner join "HIUSER"."employee_details" on ("HIUSER"."employee_details"."employee_id" = "HIUSER"."travel_details"."travelled_by") 
+							inner join "HIUSER"."meeting_details" on ("HIUSER"."employee_details"."employee_id" = "HIUSER"."meeting_details"."meeting_by") 
+						where
+							("HIUSER"."meeting_details"."meeting_date" > ${start_date} AND "HIUSER"."meeting_details"."meeting_date" < ${end_date}) 	
+						group by
+							 "HIUSER"."meeting_details"."client_name"
+						order by
+							cost desc
+						FETCH FIRST 5 ROWS ONLY	
+                ]]>
+            </Query>
+			<Parameters>
+				<Parameter name="start_date" type="String" default="2015-01-01 12:00:00" openQuote="'" closeQuote="'"/>
+				<Parameter name="end_date" type="String" default="2016-01-01 12:00:00" openQuote="'" closeQuote="'"/>
+			</Parameters>
+        </DataMap>
+		
+		<DataMap id="2" connection="1" type="sql" >
+           <Name>Pie Chart</Name>
+            <Query>
+                <![CDATA[
+                        select 
+						"HIUSER"."meeting_details"."client_name" as client,
+						sum("HIUSER"."travel_details"."travel_cost") as cost 
+					from
+						"HIUSER"."travel_details" 
+						inner join "HIUSER"."employee_details" on ("HIUSER"."employee_details"."employee_id" = "HIUSER"."travel_details"."travelled_by") 
+						inner join "HIUSER"."meeting_details" on ("HIUSER"."employee_details"."employee_id" = "HIUSER"."meeting_details"."meeting_by") 
+					where
+						("HIUSER"."meeting_details"."meeting_date" > ${start_date} AND "HIUSER"."meeting_details"."meeting_date" < ${end_date}) 
+					group by
+						"HIUSER"."meeting_details"."client_name" 
+					order by
+						cost desc
+					FETCH FIRST 10 ROWS ONLY	
+                ]]>
+            </Query>
+			<Parameters>
+				<Parameter name="start_date" type="String" default="'2015-01-01 12:00:00'" openQuote="'" closeQuote="'"/>
+				<Parameter name="end_date" type="String" default="'2016-01-01 12:00:00'" openQuote="'" closeQuote="'"/>
+			</Parameters>
+        </DataMap>
+		
+        <DataMap id="3" connection="1" type="sql" >
+           <Name>dummy query</Name>
+            <Query>
+                <![CDATA[
+                        SELECT ${start_date} as Start_Date, ${end_date} as End_Date
+							from 
+								SYSIBM.SYSDUMMY1 
+                ]]>
+            </Query>
+			<Parameters>
+				<Parameter name="start_date" type="String" default="'2015-01-01 12:00:00'" openQuote="'" closeQuote="'"/>
+				<Parameter name="end_date" type="String" default="'2016-01-01 12:00:00'" openQuote="'" closeQuote="'"/>
+			</Parameters>
+          </DataMap>
+    </DataMaps>
+</EFWD>

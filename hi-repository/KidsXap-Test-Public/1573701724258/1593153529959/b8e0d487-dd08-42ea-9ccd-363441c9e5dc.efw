@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efw>
+    <title>rpt_BookReveRoom</title>
+    <author>hiadmin</author>
+    <description>Efw File</description>
+    <template>b8e0d487-dd08-42ea-9ccd-363441c9e5dc.html</template>
+    <visible>true</visible>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</efw>

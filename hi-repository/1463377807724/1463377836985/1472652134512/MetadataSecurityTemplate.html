@@ -1,0 +1,73 @@
+<div class="container">
+ <div class="row">
+ <div class="col-md-2"></div>
+ <div class="col-md-8">
+<p><strong>How to use Metadata Security</strong>&nbsp;from Samples (ConditionIf, Groovy)</p>
+<p>Inorder to utilize both Metadata Security <strong>conditionIf</strong> and Metadata Securifty <strong>groovy </strong>of&nbsp;Sample files, the following steps to be followed.</p>
+<p><strong>Creating Organization</strong></p>
+<ul>
+<li>Login into the application as 'hiadmin'</li>
+<li>Go to admin module</li>
+<li>Create 3 organizations with Bitach, Envision and SyncHR</li>
+</ul>
+<p><strong>Creating Users</strong></p>
+<ul>
+<li>Create 1st user for <strong>Bitach</strong> Organization with following details:<br /> Organization name: Bitach<br /> User name: bitach<br /> Email: bitach@helicaltech.com<br />Assign Role: ROLE_USER | Bitach<br /> Profile:Name-Destination and Value-Hyderabad,Bangalore</li>
+</ul>
+<ul>
+<li>Create 2nd user for <strong>Envision</strong> Organization with following details:<br /> Organization name:Envision<br /> User name: envision<br /> Email:envision@helicaltech.com<br /> Role:ROLE_USER | Envision</li>
+</ul>
+<ul>
+<li>Create 3rd user for <strong>SyncHR</strong> with following details:<br /> Organization name:SyncHR<br /> User name: synchr<br /> Email:synchr@helicaltech.com<br /> Role:ROLE_USER | SyncHR<br /> ROLE_AGENT | SyncHR</li>
+</ul>
+<p>Share the Metadata</p>
+<ul>
+<li>After creating 3 organzations with 3 users with following details, goto HI module, and open file browser then share the following directories the above created roles</li>
+</ul>
+<ol>
+<li>HI Sample Reports/Adhoc Metadata/Metadata Security 'conditionIf' Sample</li>
+<li>HI Sample Reports/Adhoc Metadata/Metadata Security 'groovy' Sample</li>
+</ol>
+<p>The above metadata has the security expressions with the following expression names</p>
+<ol>
+<li>Exclude Super Organization Expression</li>
+<li>Organization Name Expression</li>
+<li>Role Name Expression</li>
+<li>Email Expression</li>
+<li>Profile Name Expression</li>
+<li>User Name Expression</li>
+</ol>
+<p>To know more, open the metadata in edit mode</p>
+<p><strong>Steps to Share the above metadata</strong></p>
+<ol>
+<li>Right click on the Folder/File</li>
+<li>Then click on 'Share' option and select check boxes from 'Roles' tab on 'Share option' modal window:&nbsp;</li>
+<li>Select the checkboxes<br />ROLE_USER SyncHR<br />ROLE_AGENT SyncHR<br />ROLE_USER Bitach<br />ROLE_USER Envision</li>
+</ol>
+<p><strong>Please note we need to share the folder, sub folder and Metadata file that comes on the path</strong></p>
+<p>After sharing, the following directory, Logout from the hiadmin</p>
+<p><strong>Working with Metadata Security conditionIf sample</strong></p>
+<p><strong>Login with</strong> organization name as <strong>SyncHR</strong> and User name as <strong>synchr</strong></p>
+<p>a.Go to Adhoc module then Click on 'Create' link under 'Report' link<br /> b.Select "HI Sample Reports/Adhoc Metadata/Metadata Security 'conditionIf' Sample" file from File Browser and Create Report with following columns and observe 'How metadata security is working'</p>
+<p>&gt;&gt;<strong>Exclude Super Organization Expression</strong><br />It is due to above expression, based on login user organizaion name, the filter is added as where clause with "meeting_details.client_name = 'SyncHR'"<br />whenever user is dragged 'client_name' column he/she can view only 'SyncHR'</p>
+<p>&gt;&gt;<strong>Organization Name Expression</strong><br />It is due to above expression, based on Login user organizaion name, the filter is added as where clause with "TravelDetails.source = 'Ahmedabad'"<br />Whenever user is dragged 'source' column he/she can view only 'Ahmedabad'</p>
+<p>&gt;&gt;<strong>Role Name Expression</strong><br />It is due to above expression, based on Login user role name having ROLE_AGENT, the filter is added as where clause with "employee_details.address = 'Bhubaneshwar'"<br />Whenever user is dragged 'address' column he/she can view only 'Bhubaneshwar'</p>
+<p><strong>Login with</strong> organization name as <strong>Bitach</strong> and User name as <strong>bitach</strong> <br /> a.Go to Adhoc module then Click on 'Create' link under 'Report' link<br /> b.Select "HI Sample Reports/Adhoc Metadata/Metadata Security 'conditionIf' Sample" file from File Browser and Create Report with following columns and observe 'How metadata security is working'</p>
+<p><br />&gt;&gt;<strong>Email Expression</strong><br />It is due to above expression, based on Login user email address having 'bitach@helicaltech.com', the filter is added as where clause with "meeting_details.meeting_purpose = 'Client Visit'"<br />whenever user is dragged 'meeting_purpose' column he/she can view only 'Client Visit'</p>
+<p><br />&gt;&gt;<strong>Profile Name Expression</strong><br />It is due to above expression, based on Login user organization name having 'Bitach' and role name having 'ROLE_USER', the filter is added as where clause with <br />"TravelDetails.destination in ('Hyderabd','Bangalore')" whenever user is dragged destination column, because the profile is created as<br /> Profile:Name-Destination and Value-Hyderabad,Bangalore</p>
+<p><strong>Login with</strong> organization name as <strong>Envision</strong> and User name as <strong>envision</strong> <br /> a.Go to Adhoc module then Click on 'Create' link under 'Report' link<br /> b.Select "HI Sample Reports/Adhoc Metadata/Metadata Security 'conditionIf' Sample" file from File Browser and Create Report with following columns and observe 'How metadata security is working'</p>
+<p>&gt;&gt;<strong>User Name Expression</strong><br />It is due to above expression, based on Login user user name having 'envision', the filter is added as where clause with "meeting_details.meeting_impact = 'Finalized'", whenever user is dragged 'meeting_impact' column, he/she can view only 'Finalized'</p>
+<p><br /><strong>Working with Metadata Security groovy sample</strong></p>
+<p><strong>Login with</strong> organization name as <strong>SyncHR</strong> and User name as <strong>synchr</strong> <br /> a.Go to Adhoc module then Click on 'Create' link under 'Report' link<br /> b.Select "HI Sample Reports/Adhoc Metadata/Metadata Security 'groovy' Sample" file from File Browser and Create Report with following columns and observe 'How metadata security is working'</p>
+<p>&gt;&gt;<strong>Exclude Super Organization Expression</strong><br />It is due to above expression, based on login user organizaion name, the filter is added as where clause with "meeting_details.client_name = 'SyncHR'"<br />whenever user is dragged 'client_name' column he/she can view only 'SyncHR'</p>
+<p>&gt;&gt;<strong>Organization Name Expression</strong><br />It is due to above expression, based on Login user organizaion name, the filter is added as where clause with "TravelDetails.source = 'Ahmedabad'"<br />Whenever user is dragged 'source' column he/she can view only 'Ahmedabad'</p>
+<p>&gt;&gt;<strong>Role Name Expression</strong><br />It is due to above expression, based on Login user role name having ROLE_AGENT, the filter is added as where clause with "employee_details.address = 'Bhubaneshwar'"<br />Whenever user is dragged 'address' column he/she can view only 'Bhubaneshwar'</p>
+<p><strong>Login with</strong> organization name as <strong>Bitach</strong> and User name as <strong>bitach</strong> <br /> a.Go to Adhoc module then Click on 'Create' link under 'Report' link<br /> b.Select "HI Sample Reports/Adhoc Metadata/Metadata Security 'groovy' Sample" file from File Browser and Create Report with following columns and observe 'How metadata security is working'</p>
+<p><br />&gt;&gt;<strong>Email Expression</strong><br />It is due to above expression, based on Login user email address being&nbsp;'bitach@helicaltech.com', the filter is added as where clause with "meeting_details.meeting_purpose = 'Client Visit'"<br />whenever user is dragged 'meeting_purpose' column he/she can view only 'Client Visit'</p>
+<p><br />&gt;&gt;<strong>Profile Name Expression</strong><br />It is due to above expression, based on Login user organization name having 'Bitach' and role name having 'ROLE_USER', the filter is added as where clause with <br />"TravelDetails.destination in ('Hyderabd','Bangalore')" whenever user is dragged destination column, because the profile is created as<br /> Profile:Name-Destination and Value-Hyderabad,Bangalore</p>
+<p><strong>Login with</strong> organization name as <strong>Envision</strong> and User name as <strong>envision</strong> <br /> a.Go to Adhoc module then Click on 'Create' link under 'Report' link<br /> b.Select "HI Sample Reports/Adhoc Metadata/Metadata Security 'groovy' Sample" file from File Browser and Create Report with following columns and observe 'How metadata security is working'</p>
+<p>&gt;&gt;<strong>User Name Expression</strong><br />It is due to above expression, based on Login user user name having 'envision', the filter is added as where clause with "meeting_details.meeting_impact = 'Finalized'", whenever user is dragged 'meeting_impact' column, he/she can view only 'Finalized'</p>
+</div>
+	<div class="col-md-2"></div>
+ </div>
+</div>

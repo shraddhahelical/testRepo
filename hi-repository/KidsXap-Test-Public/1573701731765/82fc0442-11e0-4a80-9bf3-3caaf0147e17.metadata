@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<metadata type="db.generic" databaseType="Microsoft SQL Server 14.00.1000">
+    <fileName>mtd_CcssPayments</fileName>
+    <connectionType>global.jdbc</connectionType>
+    <visible>true</visible>
+    <connection connectionType="global.jdbc" subType="dynamicDataSource">
+        <dialect>org.hibernate.dialect.SQLServerDialect</dialect>
+        <connectionId>2</connectionId>
+        <driverClass reference="sqlserver">com.microsoft.sqlserver.jdbc.SQLServerDriver</driverClass>
+    </connection>
+    <database name="QA_reportDB.dbo" catalog="QA_reportDB" schema="dbo">
+        <tables>
+            <table id="15daf42b-4745-4f04-b529-ab197c9c3035" name="CcssPymtEnrolOpen" type="view" aliasName="CcssPymtEnrolOpen">
+                <columns>
+                    <column name="Clearing No" id="2e91de77-48dd-4c6a-af17-e2189f80315f" aliasName="Clearing No" type="java.lang.String"/>
+                    <column name="Ccss Service Id" id="3846741f-5540-4030-b5df-4e1269eccf78" aliasName="Ccss Service Id" type="java.lang.String"/>
+                    <column name="Ccss Service" id="22682cc4-c289-477f-be90-7d267cd1b333" aliasName="Ccss Service" type="java.lang.String"/>
+                    <column name="Child" id="1492e2b7-7546-455d-b665-24669167f3de" aliasName="Child" type="java.lang.String"/>
+                    <column name="Enrolment Id" id="e00837b8-d190-48f0-8314-5aeca2f10716" aliasName="Enrolment Id" type="java.lang.String"/>
+                    <column name="Session Report Start Date" id="6d87a8f5-0674-4bfc-87b5-bc7e2e076231" aliasName="Session Report Start Date" type="java.sql.Date"/>
+                    <column name="Tans Code" id="6f7d8583-3183-47d4-a563-4bcdad14cae5" aliasName="Tans Code" type="java.lang.String"/>
+                    <column name="Sub Trans Code" id="712e3ce1-04f7-405a-8101-3bf1f3e12c0c" aliasName="Sub Trans Code" type="java.lang.String"/>
+                    <column name="Clearing Reason" id="faec3792-ca06-4a43-a480-8661b77d3d5a" aliasName="Clearing Reason" type="java.lang.String"/>
+                    <column name="Amount" id="f62bd932-b31a-49c0-8f18-1288498c4c66" aliasName="Amount" type="java.lang.Float"/>
+                    <column name="TotalAmount" id="14bf357e-c54c-4cfb-93b2-3163fead9154" aliasName="TotalAmount" type="java.lang.Float"/>
+                    <column name="CentreId" id="95945bb4-72a1-4069-b448-f34df0fdaf72" aliasName="CentreId" type="java.lang.String"/>
+                    <column name="Centre" id="973c8684-2032-442c-a727-988430c2b4d2" aliasName="Centre" type="java.lang.String"/>
+                    <column name="ProviderId" id="15102214-f45a-47da-b930-5b1d66d9154a" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="Provider" id="5175fa64-d0be-4c1a-87d2-5a58116ab378" aliasName="Provider" type="java.lang.String"/>
+                    <column name="OrganisationId" id="df949ed6-f32f-4546-bff7-4ce05f5ec449" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="Organisation" id="9ad7c812-efef-459e-90f3-028652877869" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="Posting Date" id="fa077611-8c4c-4696-9455-d09b09de0c98" aliasName="Posting Date" type="java.sql.Date"/>
+                    <column name="Payment Date" id="aa5300a3-2432-41e9-8f9b-16a64c9ce7d1" aliasName="Payment Date" type="java.sql.Date"/>
+                </columns>
+            </table>
+            <table id="45db76c3-708c-4cde-9485-f2d2c6f58fde" name="CcssPymtEnrolCleared" type="view" aliasName="CcssPymtEnrolCleared">
+                <columns>
+                    <column name="Clearing No" id="e9507f85-6a69-4440-b00e-a7e61961993c" aliasName="Clearing No" type="java.lang.String"/>
+                    <column name="Ccss Service Id" id="73faab75-5396-426f-a2e7-e78a18867ef3" aliasName="Ccss Service Id" type="java.lang.String"/>
+                    <column name="Ccss Service" id="a800e031-38f0-4f01-bb89-8416bd8a1c10" aliasName="Ccss Service" type="java.lang.String"/>
+                    <column name="Child" id="bf1754bd-daed-4927-86a3-e6b47a336791" aliasName="Child" type="java.lang.String"/>
+                    <column name="Enrolment Id" id="4121987b-cfc1-42aa-aee6-de8e476867c4" aliasName="Enrolment Id" type="java.lang.String"/>
+                    <column name="Session Report Start Date" id="1c41693d-026e-46eb-ae1f-3d5b4c39b056" aliasName="Session Report Start Date" type="java.sql.Date"/>
+                    <column name="Tans Code" id="5e6aec45-8499-49a0-854e-2372870ff462" aliasName="Tans Code" type="java.lang.String"/>
+                    <column name="Sub Trans Code" id="b81ffa5f-10f6-4dc4-adac-c27b9d4aac77" aliasName="Sub Trans Code" type="java.lang.String"/>
+                    <column name="Clearing Reason" id="dedce1db-09dd-4055-ba64-040d0e54d53a" aliasName="Clearing Reason" type="java.lang.String"/>
+                    <column name="Amount" id="186a8782-13c0-4497-9293-20ccb42fed69" aliasName="Amount" type="java.lang.Float"/>
+                    <column name="TotalAmount" id="b35f4be4-11e3-4df2-9d67-c5fff75484c0" aliasName="TotalAmount" type="java.lang.Float"/>
+                    <column name="CentreId" id="b23fec36-b87d-42e1-8124-36a6e424942b" aliasName="CentreId" type="java.lang.String"/>
+                    <column name="Centre" id="d85703b2-d707-4be7-90a4-596db9142774" aliasName="Centre" type="java.lang.String"/>
+                    <column name="ProviderId" id="e5ecf89e-5e6e-4739-bf82-b3215e19b165" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="Provider" id="5e46fb71-7d99-4e98-a1db-06e0781a80d5" aliasName="Provider" type="java.lang.String"/>
+                    <column name="OrganisationId" id="5dbe8dc8-e769-404c-80e2-1c1208cf0c1b" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="Organisation" id="283abeee-4bea-445a-9822-75b4d171309d" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="Posting Date" id="3a12bc83-d0a1-4e05-9351-c72eb88e4009" aliasName="Posting Date" type="java.sql.Date"/>
+                    <column name="Payment Date" id="64d90aba-8950-428d-9aad-fa83a186b0d9" aliasName="Payment Date" type="java.sql.Date"/>
+                </columns>
+            </table>
+            <table id="b454e441-9909-4e0d-86d7-cb54f1c51a3d" name="CcssPymtClearingNo" type="view" aliasName="CcssPymtClearingNo">
+                <columns>
+                    <column name="Ccss Service Id" id="d81ccc9e-be30-4c75-9641-3f15b91a86f4" aliasName="Ccss Service Id" type="java.lang.String"/>
+                    <column name="Ccss Service" id="5f9b1ecd-7572-44da-b1f1-74103c26466a" aliasName="Ccss Service" type="java.lang.String"/>
+                    <column name="Clearing No" id="3d0e5979-fc21-4870-84c0-63cfa1396111" aliasName="Clearing No" type="java.lang.String"/>
+                    <column name="Payment Date" id="fa27ee1e-743f-4f97-a729-c659e02dc6f0" aliasName="Payment Date" type="java.sql.Date"/>
+                    <column name="Clearing Reason" id="52c0debe-c6f0-4094-955c-76cf1f0319c9" aliasName="Clearing Reason" type="java.lang.String"/>
+                    <column name="Fiscal Year" id="9db58d71-cb8d-4683-a7d4-563dc7d66102" aliasName="Fiscal Year" type="java.lang.Float"/>
+                    <column name="TotalAmount" id="4a05bc48-5879-4682-ae94-572decc8245e" aliasName="TotalAmount" type="java.lang.Float"/>
+                    <column name="CentreId" id="177cebc1-f5d5-4dca-ac23-249585a34b67" aliasName="CentreId" type="java.lang.String"/>
+                    <column name="Centre" id="f60c68e0-04ce-4694-9c1f-e732526ec2ba" aliasName="Centre" type="java.lang.String"/>
+                    <column name="ProviderId" id="cc1a7a8a-cb64-4b67-961c-6ebc54596790" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="Provider" id="582d3de5-3c95-4ffe-b400-d51677172483" aliasName="Provider" type="java.lang.String"/>
+                    <column name="OrganisationId" id="458b0b5e-b7a5-4681-bc30-bc9b60d3d586" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="Organisation" id="6b39e6bc-cc42-4ead-94e3-17d1a66ba82c" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="Status" id="0ac0b5f5-6bd0-407a-a5a3-9588e63d6ea0" aliasName="Status" type="java.lang.String"/>
+                </columns>
+            </table>
+        </tables>
+        <relationships/>
+        <views>
+            <view id="15daf42b-4745-4f04-b529-ab197c9c3035" name="CcssPymtEnrolOpen" alias="CcssPymtEnrolOpen">
+                <query><![CDATA[SELECT	ClearingDocNo AS [Clearing No]
+	  , CcssServiceId AS [Ccss Service Id]
+	  , CcssServiceName AS [Ccss Service]
+	  , ChildFirstName + ' ' + ChildLastName AS Child
+	  , CcsEnrolmentId AS [Enrolment Id]
+	  , SessionReportStartDate AS [Session Report Start Date]
+	  , CASE WHEN MainTransCode = 'Z401 ' THEN 'Z401  CCS Child Care Subsidy'
+			 WHEN MainTransCode = 'Z402' THEN 'Z402 ACCS Additional Child Care Subsidy'
+			 WHEN MainTransCode = '4030' THEN '4030 Reversal'
+			 WHEN MainTransCode = '0060' THEN '0060 Payment on Account'
+			 WHEN MainTransCode = 'ZRPY' THEN 'ZRPY Debt Repayment'
+			 WHEN MainTransCode = 'ZMIG ' THEN 'ZMIG  CCS Data Migration'
+	    ELSE MainTransCode END AS [Tans Code]
+	  , CASE WHEN SubTransCode = 'D010' THEN 'D010 CCS Debt Centre-Based DayCare'
+			 WHEN SubTransCode = 'D020' THEN 'D020 CCS Debt Outside School Hours'
+			 WHEN SubTransCode = 'D030' THEN 'D030 CCS Debt Family Day Care'
+			 WHEN SubTransCode = 'D040' THEN 'D040 CCS Debt In Home Child Care'
+			 WHEN SubTransCode = 'D050' THEN 'D050 CCS Business Continuity Debt'
+			 WHEN SubTransCode = 'D060' THEN 'D060 CCS Debt One Off Manual'
+			 WHEN SubTransCode = 'D070' THEN 'D070 CCS Returned Fee Reduction'
+			 WHEN SubTransCode = 'P010' THEN 'P010 CCS Payt.Centre-Based Day Care'
+			 WHEN SubTransCode = 'P020' THEN 'P020 CCS Payt. Outside School Hours'
+			 WHEN SubTransCode = 'P030' THEN 'P030 CCS Payt. Family Day Care'
+			 WHEN SubTransCode = 'P040' THEN 'P040 CCS Payt. In Home Child Care'
+			 WHEN SubTransCode = 'P050' THEN 'P050 CCS Payt. Business Continuity'
+			 WHEN SubTransCode = 'P060' THEN 'P060 CCS Payt. One Off Payment'
+			 WHEN SubTransCode = 'P070' THEN 'P070 CCS Payt Returned from Service'
+			 WHEN SubTransCode = 'W010' THEN 'W010 CCS Withholding'
+			 WHEN SubTransCode = 'X010' THEN 'X010 CCS Dedn for Withholding'
+			 WHEN SubTransCode = 'X020' THEN 'X020 CCS BCP Deductions'
+			 WHEN SubTransCode = 'X030' THEN 'X030 Enrolment Advance Deductions'
+			 WHEN SubTransCode = 'X040' THEN 'X040 Formal Debt Deductions'
+			 WHEN SubTransCode = 'X100' THEN 'X100 CCS PRVDR Debt WHH Dedn'
+			 WHEN SubTransCode = 'X200' THEN 'X200 CCS CUST Debt WHH Dedn'
+			 WHEN SubTransCode = 'Y010' THEN 'Y010 CCS Rev Distr. Withholding'
+			 WHEN SubTransCode = 'Y030' THEN 'Y030 CCS Rev Distr. Enrol. Advances'
+			 WHEN SubTransCode = 'Y040' THEN 'Y040 CCS Rev Distr. Formal Debts'
+			 WHEN SubTransCode = 'Y050' THEN 'Y050 Returned Fee Reduction'
+			 WHEN SubTransCode = 'Y100' THEN 'Y100 CCS PRVDR Debt WHH Applied'
+			 WHEN SubTransCode = 'Y200' THEN 'Y200 CCS CUST Debt WHH Applied'
+			 WHEN SubTransCode = 'D010' THEN 'D010 ACCS Debt Child wellbeing  CDC'
+			 WHEN SubTransCode = 'D011' THEN 'D011 ACCS Debt GrandParent CDC'
+			 WHEN SubTransCode = 'D012' THEN 'D012 ACCS Debt Temp Hardship CDC'
+			 WHEN SubTransCode = 'D013' THEN 'D013 ACCS Debt Trans to work CDC'
+			 WHEN SubTransCode = 'D020' THEN 'D020 ACCS Debt Child wellbeing OSH'
+			 WHEN SubTransCode = 'D021' THEN 'D021 ACCS Debt GrandParent OSH'
+			 WHEN SubTransCode = 'D022' THEN 'D022 ACCS Debt Temp Hardship OSH'
+			 WHEN SubTransCode = 'D023' THEN 'D023 ACCS Debt Trans to work OSH'
+			 WHEN SubTransCode = 'D030' THEN 'D030 ACCS Debt Child wellbeing  FDC'
+			 WHEN SubTransCode = 'D031' THEN 'D031 ACCS Debt Grandparent   FDC'
+			 WHEN SubTransCode = 'D032' THEN 'D032 ACCS Debt Temp Hardship FDC'
+			 WHEN SubTransCode = 'D033' THEN 'D033 ACCS Debt Trans to work FDC'
+			 WHEN SubTransCode = 'D040' THEN 'D040 ACCS Debt Child wellbeing HBE'
+			 WHEN SubTransCode = 'D041' THEN 'D041 ACCS Debt Grandparent  HBE'
+			 WHEN SubTransCode = 'D042' THEN 'D042 ACCS Debt Temp Hardship HBE'
+			 WHEN SubTransCode = 'D043' THEN 'D043 ACCS Debt Trans to work HBE'
+			 WHEN SubTransCode = 'D050' THEN 'D050 ACCS Debt Business Continuity'
+			 WHEN SubTransCode = 'D060' THEN 'D060 ACCS Debt One Off Manual'
+			 WHEN SubTransCode = 'P010' THEN 'P010 ACCS- Payt Child Wellbeing CDC'
+			 WHEN SubTransCode = 'P011' THEN 'P011 ACCS- Payt. Grandparent(CDC)'
+			 WHEN SubTransCode = 'P012' THEN 'P012 ACCS- Payt. TempHardship(CDC)'
+			 WHEN SubTransCode = 'P013' THEN 'P013 ACCS- Payt. Trans.ToWork(CDC)'
+			 WHEN SubTransCode = 'P020' THEN 'P020 ACCS- Payt Child Wellbeing OSH'
+			 WHEN SubTransCode = 'P021' THEN 'P021 ACCS- Payt. Grandparent(OSH)'
+			 WHEN SubTransCode = 'P022' THEN 'P022 ACCS- Payt. TempHardship(OSH)'
+			 WHEN SubTransCode = 'P023' THEN 'P023 ACCS- Payt. Trans.ToWork(OSH)'
+			 WHEN SubTransCode = 'P030' THEN 'P030 ACCS- Payt Child Wellbeing FDC'
+			 WHEN SubTransCode = 'P031' THEN 'P031 ACCS- Payt. Grandparent(FDC)'
+			 WHEN SubTransCode = 'P032' THEN 'P032 ACCS- Payt. TempHardship(FDC)'
+			 WHEN SubTransCode = 'P033' THEN 'P033 ACCS- Payt. Trans.ToWork(FDC)'
+			 WHEN SubTransCode = 'P040' THEN 'P040 ACCS- Payt Child Wellbeing IHC'
+			 WHEN SubTransCode = 'P041' THEN 'P041 ACCS- Payt. Grandparent(IHC)'
+			 WHEN SubTransCode = 'P042' THEN 'P042 ACCS- Payt. TempHardship(IHC)'
+			 WHEN SubTransCode = 'P043' THEN 'P043 ACCS- Payt. Trans.ToWork(IHC)'
+			 WHEN SubTransCode = 'P060' THEN 'P060 ACCS- Payt. One Off Payment'
+			 WHEN SubTransCode = '4030' THEN '4030 Reversal'
+			 WHEN SubTransCode = '0100' THEN '0100 PmtOnAcct'
+			 WHEN SubTransCode = 'DM60' THEN 'DM60 Enrolment Advance Debt'
+			 WHEN SubTransCode BETWEEN 'R001' AND 'R119' THEN SubTransCode + ' ' + 'Debt Repayment'
+			 ELSE SubTransCode END AS [Sub Trans Code]
+	  , CASE WHEN MainTransCode = '01' THEN '01 Incoming Payment'
+			 WHEN MainTransCode = '02' THEN '02 Outgoing Payment'
+			 WHEN MainTransCode = '08' THEN '08 Account Maintenance (OFFSET)'
+			 WHEN MainTransCode = '10' THEN '10 Returns'
+			 WHEN MainTransCode = '15' THEN '15 Automatic Clearing (OFFSET)'
+			 WHEN MainTransCode = 'Z3' THEN 'Z3 Withholdings'
+		ELSE ClearingReasonName END AS [Clearing Reason]
+	  , Amount
+	  , TotalAmount
+	  , CentreId
+	  , CentreName AS Centre
+	  , ProviderId
+	  , ProviderName AS [Provider]
+	  , OrganisationId
+	  , OrganisationName AS Organisation
+	  , PostingDate AS [Posting Date]
+	  , ClearingDocDate AS [Payment Date]
+FROM [dbo].[rpt_ccsPayments]
+WHERE [Status] = 'OPEN']]></query>
+            </view>
+            <view id="45db76c3-708c-4cde-9485-f2d2c6f58fde" name="CcssPymtEnrolCleared" alias="CcssPymtEnrolCleared">
+                <query><![CDATA[SELECT	ClearingDocNo AS [Clearing No]
+	  , CcssServiceId AS [Ccss Service Id]
+	  , CcssServiceName AS [Ccss Service]
+	  , ChildFirstName + ' ' + ChildLastName AS Child
+	  , CcsEnrolmentId AS [Enrolment Id]
+	  , SessionReportStartDate AS [Session Report Start Date]
+	  , CASE WHEN MainTransCode = 'Z401 ' THEN 'Z401  CCS Child Care Subsidy'
+			 WHEN MainTransCode = 'Z402' THEN 'Z402 ACCS Additional Child Care Subsidy'
+			 WHEN MainTransCode = '4030' THEN '4030 Reversal'
+			 WHEN MainTransCode = '0060' THEN '0060 Payment on Account'
+			 WHEN MainTransCode = 'ZRPY' THEN 'ZRPY Debt Repayment'
+			 WHEN MainTransCode = 'ZMIG ' THEN 'ZMIG  CCS Data Migration'
+	    ELSE MainTransCode END AS [Tans Code]
+	  , CASE WHEN SubTransCode = 'D010' THEN 'D010 CCS Debt Centre-Based DayCare'
+			 WHEN SubTransCode = 'D020' THEN 'D020 CCS Debt Outside School Hours'
+			 WHEN SubTransCode = 'D030' THEN 'D030 CCS Debt Family Day Care'
+			 WHEN SubTransCode = 'D040' THEN 'D040 CCS Debt In Home Child Care'
+			 WHEN SubTransCode = 'D050' THEN 'D050 CCS Business Continuity Debt'
+			 WHEN SubTransCode = 'D060' THEN 'D060 CCS Debt One Off Manual'
+			 WHEN SubTransCode = 'D070' THEN 'D070 CCS Returned Fee Reduction'
+			 WHEN SubTransCode = 'P010' THEN 'P010 CCS Payt.Centre-Based Day Care'
+			 WHEN SubTransCode = 'P020' THEN 'P020 CCS Payt. Outside School Hours'
+			 WHEN SubTransCode = 'P030' THEN 'P030 CCS Payt. Family Day Care'
+			 WHEN SubTransCode = 'P040' THEN 'P040 CCS Payt. In Home Child Care'
+			 WHEN SubTransCode = 'P050' THEN 'P050 CCS Payt. Business Continuity'
+			 WHEN SubTransCode = 'P060' THEN 'P060 CCS Payt. One Off Payment'
+			 WHEN SubTransCode = 'P070' THEN 'P070 CCS Payt Returned from Service'
+			 WHEN SubTransCode = 'W010' THEN 'W010 CCS Withholding'
+			 WHEN SubTransCode = 'X010' THEN 'X010 CCS Dedn for Withholding'
+			 WHEN SubTransCode = 'X020' THEN 'X020 CCS BCP Deductions'
+			 WHEN SubTransCode = 'X030' THEN 'X030 Enrolment Advance Deductions'
+			 WHEN SubTransCode = 'X040' THEN 'X040 Formal Debt Deductions'
+			 WHEN SubTransCode = 'X100' THEN 'X100 CCS PRVDR Debt WHH Dedn'
+			 WHEN SubTransCode = 'X200' THEN 'X200 CCS CUST Debt WHH Dedn'
+			 WHEN SubTransCode = 'Y010' THEN 'Y010 CCS Rev Distr. Withholding'
+			 WHEN SubTransCode = 'Y030' THEN 'Y030 CCS Rev Distr. Enrol. Advances'
+			 WHEN SubTransCode = 'Y040' THEN 'Y040 CCS Rev Distr. Formal Debts'
+			 WHEN SubTransCode = 'Y050' THEN 'Y050 Returned Fee Reduction'
+			 WHEN SubTransCode = 'Y100' THEN 'Y100 CCS PRVDR Debt WHH Applied'
+			 WHEN SubTransCode = 'Y200' THEN 'Y200 CCS CUST Debt WHH Applied'
+			 WHEN SubTransCode = 'D010' THEN 'D010 ACCS Debt Child wellbeing  CDC'
+			 WHEN SubTransCode = 'D011' THEN 'D011 ACCS Debt GrandParent CDC'
+			 WHEN SubTransCode = 'D012' THEN 'D012 ACCS Debt Temp Hardship CDC'
+			 WHEN SubTransCode = 'D013' THEN 'D013 ACCS Debt Trans to work CDC'
+			 WHEN SubTransCode = 'D020' THEN 'D020 ACCS Debt Child wellbeing OSH'
+			 WHEN SubTransCode = 'D021' THEN 'D021 ACCS Debt GrandParent OSH'
+			 WHEN SubTransCode = 'D022' THEN 'D022 ACCS Debt Temp Hardship OSH'
+			 WHEN SubTransCode = 'D023' THEN 'D023 ACCS Debt Trans to work OSH'
+			 WHEN SubTransCode = 'D030' THEN 'D030 ACCS Debt Child wellbeing  FDC'
+			 WHEN SubTransCode = 'D031' THEN 'D031 ACCS Debt Grandparent   FDC'
+			 WHEN SubTransCode = 'D032' THEN 'D032 ACCS Debt Temp Hardship FDC'
+			 WHEN SubTransCode = 'D033' THEN 'D033 ACCS Debt Trans to work FDC'
+			 WHEN SubTransCode = 'D040' THEN 'D040 ACCS Debt Child wellbeing HBE'
+			 WHEN SubTransCode = 'D041' THEN 'D041 ACCS Debt Grandparent  HBE'
+			 WHEN SubTransCode = 'D042' THEN 'D042 ACCS Debt Temp Hardship HBE'
+			 WHEN SubTransCode = 'D043' THEN 'D043 ACCS Debt Trans to work HBE'
+			 WHEN SubTransCode = 'D050' THEN 'D050 ACCS Debt Business Continuity'
+			 WHEN SubTransCode = 'D060' THEN 'D060 ACCS Debt One Off Manual'
+			 WHEN SubTransCode = 'P010' THEN 'P010 ACCS- Payt Child Wellbeing CDC'
+			 WHEN SubTransCode = 'P011' THEN 'P011 ACCS- Payt. Grandparent(CDC)'
+			 WHEN SubTransCode = 'P012' THEN 'P012 ACCS- Payt. TempHardship(CDC)'
+			 WHEN SubTransCode = 'P013' THEN 'P013 ACCS- Payt. Trans.ToWork(CDC)'
+			 WHEN SubTransCode = 'P020' THEN 'P020 ACCS- Payt Child Wellbeing OSH'
+			 WHEN SubTransCode = 'P021' THEN 'P021 ACCS- Payt. Grandparent(OSH)'
+			 WHEN SubTransCode = 'P022' THEN 'P022 ACCS- Payt. TempHardship(OSH)'
+			 WHEN SubTransCode = 'P023' THEN 'P023 ACCS- Payt. Trans.ToWork(OSH)'
+			 WHEN SubTransCode = 'P030' THEN 'P030 ACCS- Payt Child Wellbeing FDC'
+			 WHEN SubTransCode = 'P031' THEN 'P031 ACCS- Payt. Grandparent(FDC)'
+			 WHEN SubTransCode = 'P032' THEN 'P032 ACCS- Payt. TempHardship(FDC)'
+			 WHEN SubTransCode = 'P033' THEN 'P033 ACCS- Payt. Trans.ToWork(FDC)'
+			 WHEN SubTransCode = 'P040' THEN 'P040 ACCS- Payt Child Wellbeing IHC'
+			 WHEN SubTransCode = 'P041' THEN 'P041 ACCS- Payt. Grandparent(IHC)'
+			 WHEN SubTransCode = 'P042' THEN 'P042 ACCS- Payt. TempHardship(IHC)'
+			 WHEN SubTransCode = 'P043' THEN 'P043 ACCS- Payt. Trans.ToWork(IHC)'
+			 WHEN SubTransCode = 'P060' THEN 'P060 ACCS- Payt. One Off Payment'
+			 WHEN SubTransCode = '4030' THEN '4030 Reversal'
+			 WHEN SubTransCode = '0100' THEN '0100 PmtOnAcct'
+			 WHEN SubTransCode = 'DM60' THEN 'DM60 Enrolment Advance Debt'
+			 WHEN SubTransCode BETWEEN 'R001' AND 'R119' THEN SubTransCode + ' ' + 'Debt Repayment'
+			 ELSE SubTransCode END AS [Sub Trans Code]
+	  , CASE WHEN MainTransCode = '01' THEN '01 Incoming Payment'
+			 WHEN MainTransCode = '02' THEN '02 Outgoing Payment'
+			 WHEN MainTransCode = '08' THEN '08 Account Maintenance (OFFSET)'
+			 WHEN MainTransCode = '10' THEN '10 Returns'
+			 WHEN MainTransCode = '15' THEN '15 Automatic Clearing (OFFSET)'
+			 WHEN MainTransCode = 'Z3' THEN 'Z3 Withholdings'
+		ELSE ClearingReasonName END AS [Clearing Reason]
+	  , Amount
+	  , TotalAmount
+	  , CentreId
+	  , CentreName AS Centre
+	  , ProviderId
+	  , ProviderName AS [Provider]
+	  , OrganisationId
+	  , OrganisationName AS Organisation
+	  , PostingDate AS [Posting Date]
+	  , ClearingDocDate AS [Payment Date]
+FROM [dbo].[rpt_ccsPayments]
+WHERE [Status] = 'CLEAR']]></query>
+            </view>
+            <view id="b454e441-9909-4e0d-86d7-cb54f1c51a3d" name="CcssPymtClearingNo" alias="CcssPymtClearingNo">
+                <query><![CDATA[SELECT	CcssServiceId AS [Ccss Service Id]
+	  , CcssServiceName AS [Ccss Service]
+	  , ClearingDocNo AS [Clearing No]
+	  , ClearingDocDate AS [Payment Date]
+	  , CASE WHEN MainTransCode = '01' THEN '01 Incoming Payment'
+			 WHEN MainTransCode = '02' THEN '02 Outgoing Payment'
+			 WHEN MainTransCode = '08' THEN '08 Account Maintenance (OFFSET)'
+			 WHEN MainTransCode = '10' THEN '10 Returns'
+			 WHEN MainTransCode = '15' THEN '15 Automatic Clearing (OFFSET)'
+			 WHEN MainTransCode = 'Z3' THEN 'Z3 Withholdings'
+		ELSE ClearingReasonName END AS [Clearing Reason]
+	  , PaymentFiscalYear AS [Fiscal Year]
+	  , TotalAmount
+	  , CentreId
+	  , CentreName AS Centre
+	  , ProviderId
+	  , ProviderName AS [Provider]
+	  , OrganisationId
+	  , OrganisationName AS Organisation
+	  , [Status]
+FROM [dbo].[rpt_ccsPayments] WHERE [Status] = 'CLEAR']]></query>
+            </view>
+        </views>
+    </database>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+    <access>
+        <expression expressionId="6f16e2e5-8298-4f1c-841b-b88587b815a2" type="conditionIf" expressionName="CcssPymtClearingNoSecurity" expressionType="table" on="CcssPymtClearingNo" accessType="grant">
+            <condition><![CDATA[${org}.name != '-' ]]></condition>
+            <filter><![CDATA[CcssPymtClearingNo.OrganisationId IN (${profile['organisation']}) AND
+CcssPymtClearingNo.ProviderId IN  (${profile['providers']}) AND
+CcssPymtClearingNo.CentreId IN (${profile['centres']})]]></filter>
+        </expression>
+        <expression expressionId="bcc2dbf1-e603-4515-b414-998ba07ba02e" type="conditionIf" expressionName="CcssPymtEnrolClearedSecurity" expressionType="table" on="CcssPymtEnrolCleared" accessType="grant">
+            <condition><![CDATA[${org}.name != '-' ]]></condition>
+            <filter><![CDATA[CcssPymtEnrolCleared.OrganisationId IN (${profile['organisation']}) AND
+CcssPymtEnrolCleared.ProviderId IN  (${profile['providers']}) AND
+CcssPymtEnrolCleared.CentreId IN (${profile['centres']})]]></filter>
+        </expression>
+        <expression expressionId="fa805f72-ee18-4a54-a1f9-1094e57caa4d" type="conditionIf" expressionName="CcssPymtEnrolOpenSecurity" expressionType="table" on="CcssPymtEnrolOpen" accessType="grant">
+            <condition><![CDATA[${org}.name != '-' ]]></condition>
+            <filter><![CDATA[CcssPymtEnrolOpen.OrganisationId IN (${profile['organisation']}) AND
+CcssPymtEnrolOpen.ProviderId IN  (${profile['providers']}) AND
+CcssPymtEnrolOpen.CentreId IN (${profile['centres']})]]></filter>
+        </expression>
+    </access>
+</metadata>

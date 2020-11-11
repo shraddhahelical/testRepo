@@ -1,0 +1,670 @@
+<!DOCTYPE html><html class="hi-window no-flexbox"><head>
+        <!--Meta header contents-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="decorator" content="minimal"><title>Drill Down Report | HI: User</title>
+        <link rel="shortcut icon" type="image/x-icon" href="http://localhost:8085/hi-ee/images/favicon.ico">
+        <link rel="stylesheet" href="http://localhost:8085/hi-ee/css/fonts.css">
+        <link rel="stylesheet" href="http://localhost:8085/hi-ee/css/styles.css">
+        <link rel="stylesheet" href="http://localhost:8085/hi-ee/css/externalstyles.css">
+        <link data-clone="true" rel="stylesheet" href="http://localhost:8085/hi-ee/fonts/flaticon/flaticon.css">
+        <link data-clone="true" rel="stylesheet" href="http://localhost:8085/hi-ee/css/c3.css">
+        <link data-clone="true" rel="stylesheet" href="http://localhost:8085/hi-ee/css/pivot.css">
+        <link data-clone="true" rel="stylesheet" href="http://localhost:8085/hi-ee/css/newwindow.css">
+        <link data-clone="true" rel="stylesheet" href="http://localhost:8085/hi-ee/css/jquery.ui.min.css">
+        <link data-clone="true" rel="stylesheet" href="http://localhost:8085/hi-ee/css/jquery.multiselectCheckBox.css">
+        <script data-clone="true" src="http://localhost:8085/hi-ee/js/modernizr.js"></script>
+        <script data-clone="true" src="http://localhost:8085/hi-ee/js/plugins/es5-shim.js"></script>
+
+        <script src="http://localhost:8085/hi-ee/js/vendors/jquery.js"></script>
+
+        <!-- To support slider becuase it is using jquery tooltip. Earlier version of jquery-ui doesn't have slider plugin. -->
+        <script src="http://localhost:8085/hi-ee/js/vendors/jquery-ui.js"></script>
+        <script src="http://localhost:8085/hi-ee/js/jquery.multiselectCheckBox.js"></script>
+        <script src="http://localhost:8085/hi-ee/js/vendors/bootstrap.js"></script>
+
+
+        <script data-clone="true" type="text/javascript" src="http://localhost:8085/hi-ee/customscript.js"></script>
+        <script data-clone="true" src="http://localhost:8085/hi-ee/js/plugins/Base64.js"></script>
+
+        <!--- Refresh cache related js lib -->
+        <script src="http://localhost:8085/hi-ee/js/vendors/moment.js"></script>
+        <script src="http://localhost:8085/hi-ee/js/ajax.js"></script>
+
+        <script data-clone="true" src="http://localhost:8085/hi-ee/js/adhoc/container.js"></script>
+        <script data-clone="true" src="http://localhost:8085/hi-ee/js/adhoc/jsInterface.js"></script>
+        <script data-clone="true" src="http://localhost:8085/hi-ee/js/adhoc/vizManager.js"></script>
+        <script type="text/javascript" src="http://localhost:8085/hi-ee/js/adhoc/visualisations/table.js"></script>
+        <script type="text/javascript" src="http://localhost:8085/hi-ee/js/adhoc/visualisations/charts.js"></script>
+        <script type="text/javascript" src="http://localhost:8085/hi-ee/js/adhoc/visualisations/cross-tab.js"></script>
+        <script type="text/javascript" src="http://localhost:8085/hi-ee/js/adhoc/visualisations/vf.js"></script>
+
+        <script type="text/javascript" src="http://localhost:8085/hi-ee/js/adhoc/state-transformer.js"></script>
+
+        <script type="text/javascript">
+            window.DashboardGlobals.efwddir = "1463377807724/1472805277364";
+            
+            var urlParameters = {"mode":"open","file":"dabe0f49-2da0-48db-9772-6a51d2a5e322.efw","travel_details_travel_type":"Domestic","dir":"1463377807724/1472805277364","Client":"Market Link","meeting_details_client_name":"Envision"};
+            window.DashboardGlobals.folderpath = urlParameters.dir;
+            window.DashboardGlobals.file = urlParameters.file;
+            
+
+            window.DashboardGlobals.fileTitle = "Drill Down Report";
+            window.DashboardGlobals.lastModified = "1522764118000";
+            window.DashboardGlobals.openHcr =  "http://localhost:8085/hi-ee/hcr-report.html";
+            var admin = '';
+        </script>
+
+
+        <script src="http://localhost:8085/hi-ee/js/vendors/backbone.js"></script>
+        <script src="http://localhost:8085/hi-ee/js/vendors/moment.js"></script>
+
+
+        <!--Charts & VF  dependicies -->
+        <script type="text/javascript" src="http://localhost:8085/hi-ee/js/vendors/d3.js"></script>
+        <script type="text/javascript" src="http://localhost:8085/hi-ee/js/vendors/c3.js"></script>
+        <script type="text/javascript" src="http://localhost:8085/hi-ee/js/vendors/iopctrl.js"></script>
+        <script type="text/javascript" src="http://localhost:8085/hi-ee/js/vendors/d3plus.min.js"></script>
+        <script type="text/javascript" src="http://localhost:8085/hi-ee/js/vendors/Chart.min.js"></script>
+        <script type="text/javascript" src="http://localhost:8085/hi-ee/js/vendors/H3.js"></script>
+        <script type="text/javascript" src="http://localhost:8085/hi-ee/js/vendors/HICharts.js"></script>
+        <script type="text/javascript" src="http://localhost:8085/hi-ee/js/vendors/HI.extend.GroupedBar.js"></script>
+        <script type="text/javascript" src="http://localhost:8085/hi-ee/js/bubble.js"></script>
+        <script type="text/javascript" src="http://localhost:8085/hi-ee/js/leaflet.js"></script>
+        <script type="text/javascript" src="http://localhost:8085/hi-ee/js/vendors/leaflet-search.min.js"></script>
+        <script type="text/javascript" src="http://localhost:8085/hi-ee/js/vendors/leaflet.markercluster.js"></script>
+        <script type="text/javascript" src="http://localhost:8085/hi-ee/js/vendors/heatmap.min.js"></script>
+
+
+        <script type="text/javascript" src="http://localhost:8085/hi-ee/js/vendors/leaflet-heatmap.js"></script>
+
+        <!-- Table dependicies -->
+        <script type="text/javascript" src="http://localhost:8085/hi-ee/js/plugins/table.js"></script>
+        <!-- Cross-Tab dependicies -->
+        <script type="text/javascript" src="http://localhost:8085/hi-ee/js/pivot.js"></script>
+
+
+        <script src="http://localhost:8085/hi-ee/js/plugins/select.js"></script>
+        <script src="http://localhost:8085/hi-ee/js/plugins/multiselect.js"></script>
+        <script src="http://localhost:8085/hi-ee/js/plugins/datetimepicker.js"></script>
+        <script src="http://localhost:8085/hi-ee/js/plugins/daterangepicker.js"></script>
+        <script src="http://localhost:8085/hi-ee/js/plugins/gridstack.js"></script>
+
+        <script src="http://localhost:8085/hi-ee/js/utilities.js"></script>
+        <script src="http://localhost:8085/hi-ee/js/dashboard.js"></script>
+
+        <script src="http://localhost:8085/hi-ee/js/slvIframe.js"></script>
+
+        <script src="http://localhost:8085/hi-ee/js/downloadURL.js"></script>
+
+
+        <script src="http://localhost:8085/hi-ee/js/user_utils.js"></script>
+		<style>
+			.se_loading_icon {
+				position: fixed;
+				left: 0px;
+				top: 0px;
+				width: 100%;
+				height: 100%;
+				z-index: 9999;
+				background: url(images/loadingIcon.gif) center no-repeat #fff;
+			}
+		</style>
+
+    <style type="text/css" data-gs-style-id="gridstack-style-1701"></style><style type="text/css" id="hi-gridstack">.grid-stack > .grid-stack-item[data-gs-width='12'] {width:100%}
+.grid-stack > .grid-stack-item[data-gs-min-width='12'] {width:100%}
+.grid-stack > .grid-stack-item[data-gs-max-width='12'] {width:100%}
+.grid-stack > .grid-stack-item[data-gs-x='12'] {left:100%}
+.grid-stack > .grid-stack-item[data-gs-width='11'] {width:91.66666666666667%}
+.grid-stack > .grid-stack-item[data-gs-min-width='11'] {width:91.66666666666667%}
+.grid-stack > .grid-stack-item[data-gs-max-width='11'] {width:91.66666666666667%}
+.grid-stack > .grid-stack-item[data-gs-x='11'] {left:91.66666666666667%}
+.grid-stack > .grid-stack-item[data-gs-width='10'] {width:83.33333333333333%}
+.grid-stack > .grid-stack-item[data-gs-min-width='10'] {width:83.33333333333333%}
+.grid-stack > .grid-stack-item[data-gs-max-width='10'] {width:83.33333333333333%}
+.grid-stack > .grid-stack-item[data-gs-x='10'] {left:83.33333333333333%}
+.grid-stack > .grid-stack-item[data-gs-width='9'] {width:75%}
+.grid-stack > .grid-stack-item[data-gs-min-width='9'] {width:75%}
+.grid-stack > .grid-stack-item[data-gs-max-width='9'] {width:75%}
+.grid-stack > .grid-stack-item[data-gs-x='9'] {left:75%}
+.grid-stack > .grid-stack-item[data-gs-width='8'] {width:66.66666666666667%}
+.grid-stack > .grid-stack-item[data-gs-min-width='8'] {width:66.66666666666667%}
+.grid-stack > .grid-stack-item[data-gs-max-width='8'] {width:66.66666666666667%}
+.grid-stack > .grid-stack-item[data-gs-x='8'] {left:66.66666666666667%}
+.grid-stack > .grid-stack-item[data-gs-width='7'] {width:58.333333333333336%}
+.grid-stack > .grid-stack-item[data-gs-min-width='7'] {width:58.333333333333336%}
+.grid-stack > .grid-stack-item[data-gs-max-width='7'] {width:58.333333333333336%}
+.grid-stack > .grid-stack-item[data-gs-x='7'] {left:58.333333333333336%}
+.grid-stack > .grid-stack-item[data-gs-width='6'] {width:50%}
+.grid-stack > .grid-stack-item[data-gs-min-width='6'] {width:50%}
+.grid-stack > .grid-stack-item[data-gs-max-width='6'] {width:50%}
+.grid-stack > .grid-stack-item[data-gs-x='6'] {left:50%}
+.grid-stack > .grid-stack-item[data-gs-width='5'] {width:41.666666666666664%}
+.grid-stack > .grid-stack-item[data-gs-min-width='5'] {width:41.666666666666664%}
+.grid-stack > .grid-stack-item[data-gs-max-width='5'] {width:41.666666666666664%}
+.grid-stack > .grid-stack-item[data-gs-x='5'] {left:41.666666666666664%}
+.grid-stack > .grid-stack-item[data-gs-width='4'] {width:33.333333333333336%}
+.grid-stack > .grid-stack-item[data-gs-min-width='4'] {width:33.333333333333336%}
+.grid-stack > .grid-stack-item[data-gs-max-width='4'] {width:33.333333333333336%}
+.grid-stack > .grid-stack-item[data-gs-x='4'] {left:33.333333333333336%}
+.grid-stack > .grid-stack-item[data-gs-width='3'] {width:25%}
+.grid-stack > .grid-stack-item[data-gs-min-width='3'] {width:25%}
+.grid-stack > .grid-stack-item[data-gs-max-width='3'] {width:25%}
+.grid-stack > .grid-stack-item[data-gs-x='3'] {left:25%}
+.grid-stack > .grid-stack-item[data-gs-width='2'] {width:16.666666666666668%}
+.grid-stack > .grid-stack-item[data-gs-min-width='2'] {width:16.666666666666668%}
+.grid-stack > .grid-stack-item[data-gs-max-width='2'] {width:16.666666666666668%}
+.grid-stack > .grid-stack-item[data-gs-x='2'] {left:16.666666666666668%}
+.grid-stack > .grid-stack-item[data-gs-width='1'] {width:8.333333333333334%}
+.grid-stack > .grid-stack-item[data-gs-min-width='1'] {width:8.333333333333334%}
+.grid-stack > .grid-stack-item[data-gs-max-width='1'] {width:8.333333333333334%}
+.grid-stack > .grid-stack-item[data-gs-x='1'] {left:8.333333333333334%}
+</style><style id="hi-designer-styles"></style><style id="dashboard-cssCode"></style></head>
+    <body style="width: 100%; height: 100%; ">
+    
+<a href="#" class="toggle-toolbar"> <i class="glyphicon glyphicon-menu-down"></i> </a><!-- ## To fix page break issue while printing it to PDF
+    <div id="dashboardCanvas" class="dashboardCanvas col-md-12 col-sm-12 col-xs-12 nopad">
+-->
+    <div id="dashboardCanvas" class="dashboardCanvas" style="min-height: 100%; overflow-x: auto; overflow-y: auto; width: 100%; position: relative; ">
+
+        <div class="container-fluid" id="dashboard-canvas" style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-left: 2px; margin-right: 2px; margin-top: 2px; margin-bottom: 2px; height: 738.34px; width: 1362px; ">
+            <div id="main" class="hi-report-container">
+
+                <div class="col-md-12 col-sm-12 col-xs-12 dashboard-grid"><div class="grid-stack main-stack grid-stack-instance-831 grid-stack-static" data-gs-width="12" data-gs-current-height="48" style="height: 627px; "><div class="grid-stack-item ui-draggable ui-resizable ui-resizable-autohide ui-draggable-disabled" data-gs-id="lk591839gz" id="item_lk591839gz" data-gs-x="0" data-gs-y="0" data-gs-width="6" data-gs-height="24" style=""><div class="grid-stack-wrapper grid-stack-hover ui-draggable-handle" style="border:;background:rgba(255,255,255,0);background-size:auto;box-shadow:;" data-comp-type="Adhoc"><div><div style="height:auto !important;white-space:normal;" class="component-title ql-editor">
+                <a>
+                    <p class="ql-align-center"><strong>TravelCost</strong></p>
+                </a>
+        </div></div><div class="component-container" id="lk591839gz"><iframe src="http://localhost:8085/hi-ee/visualizeAdhoc.html?dir=1463377807724%2F1472805277364&amp;file=8245b9dd-c23a-46ad-b82a-bdd0b5973047.report&amp;mode=dashboard" name="lk591839gz" style="border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; min-height: 10px; width: 681px; height: 267px; "></iframe></div></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90; display: none; "></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90; display: none; "></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90; display: none; "></div></div><div class="grid-stack-item ui-draggable ui-resizable ui-resizable-autohide ui-draggable-disabled" data-gs-id="uxa7ndjqqgn" id="item_uxa7ndjqqgn" data-gs-x="6" data-gs-y="0" data-gs-width="6" data-gs-height="24" style=""><div class="grid-stack-wrapper grid-stack-hover ui-draggable-handle" style="border:;background:rgba(255,255,255,0);background-size:auto;box-shadow:;" data-comp-type="Adhoc"><div><div style="height:auto !important;white-space:normal;" class="component-title ql-editor">
+                <a>
+                    <p class="ql-align-center"><strong>TravelType</strong></p>
+                </a>
+        </div></div><div class="component-container" id="uxa7ndjqqgn"><iframe src="http://localhost:8085/hi-ee/visualizeAdhoc.html?dir=1463377807724%2F1472805277364&amp;file=08c93b4f-ba83-44ac-b90f-c1f95a111c24.report&amp;Client=Market%20Link&amp;mode=dashboard" name="uxa7ndjqqgn" style="border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; min-height: 10px; width: 681px; height: 267px; "></iframe></div></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90; display: none; "></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90; display: none; "></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90; display: none; "></div></div><div class="grid-stack-item ui-draggable ui-resizable ui-resizable-autohide ui-draggable-disabled" data-gs-id="zhynz3xny4" id="item_zhynz3xny4" data-gs-x="0" data-gs-y="24" data-gs-width="6" data-gs-height="24" style=""><div class="grid-stack-wrapper grid-stack-hover ui-draggable-handle" style="border:;background:rgba(255,255,255,0);background-size:auto;box-shadow:;" data-comp-type="Adhoc"><div><div style="height:auto !important;white-space:normal;" class="component-title ql-editor">
+                <a>
+                    <p class="ql-align-center"><strong>TravelMedium</strong></p>
+                </a>
+        </div></div><div class="component-container" id="zhynz3xny4"><iframe src="http://localhost:8085/hi-ee/visualizeAdhoc.html?dir=1463377807724%2F1472805277364&amp;file=d38687cc-242e-44b5-ae1e-e55d53a3adc6.report&amp;travel_details_travel_type=Domestic&amp;meeting_details_client_name=Market%20Link&amp;mode=dashboard" name="zhynz3xny4" style="border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; min-height: 10px; width: 681px; height: 267px; "></iframe></div></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90; display: none; "></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90; display: none; "></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90; display: none; "></div></div></div></div>
+<script>$(document).ready(function(){
+            $('body').css('width','100%');;
+
+            $('body').css('height','100%');;
+
+                    var placeholder;
+                    /*
+                    $('.grid-stack.main-stack').prepend("");
+
+                    $('.grid-stack.main-stack').prepend("");
+
+                    $('.grid-stack.main-stack').css("border","unset");
+
+                    placeholder = ".grid-stack.main-stack";
+
+                    */
+                  if($('#dashboardCanvas').length !== 0){
+                        $('#main').prepend("");
+
+                        $('#main').prepend("");
+
+                        $('#dashboardCanvas').css("border","unset");
+
+
+
+                         placeholder = "#dashboardCanvas";
+
+                    }else {
+                        $('#main').prepend("");
+
+                        $('#main').prepend("");
+
+                        $('body').css("border","unset");
+
+
+                        if(($('body').height()) < 627){
+                          $('body').css('height',(627));;
+
+                        }
+                          placeholder = "body";
+
+                    }
+                    
+
+                    $(placeholder).css("background",'unset');
+
+
+
+            //    $(placeholder).css("background-size",'auto');
+
+
+
+                    $(placeholder).css("box-shadow",'unset');
+
+                    // if(window.navigator.userAgent.indexOf('PhantomJS') == -1) {
+                    //     $(placeholder).css("display","table");
+
+                    // }
+                    
+$(".main-stack").gridstack({width: 12, handle: '.grid-stack-wrapper',resizable: { handles: 'se, s, sw' }, draggable: {handle: '.grid-stack-wrapper', scroll: true, appendTo: 'body'},cellHeight: 10, verticalMargin: 1, "float" : true ,staticGrid: true,disableDrag:true});
+    $.gridStackCSSGenerator(12, "hi-gridstack");
+
+     function appendImportant(cssObjNoImp){
+       var modifiedCssImp = {};
+       _.forEach(cssObjNoImp,function(val,key){
+         modifiedCssImp[key] = val + " !important";
+       });
+       return modifiedCssImp;
+     }
+
+    function convertToPer(cssObj,parentCSS){
+        var modifiedCss = {};
+        _.forEach(cssObj,function(val,key){
+          switch (key) {
+              case 'width':
+                    var bodyWidth = parseInt((parentCSS["width"].split('px'))[0]);
+                    var elemVal = parseInt((val.split('px'))[0]);
+                    var value = _.round(((elemVal/bodyWidth)*100),6);
+                    modifiedCss["width"] = value + "% !important";
+                    break;
+              case 'height':
+                    var bodyWidth = parseInt((parentCSS["height"].split('px'))[0]);
+                    var elemVal = parseInt((val.split('px'))[0]);
+                    var value = _.round(((elemVal/bodyWidth)*100),6);
+                    modifiedCss["height"] = value + "% !important";
+                  break;
+              case 'left':
+                      var bodyWidth = parseInt((parentCSS['width'].split('px'))[0]);;
+                      var elemVal = parseInt((val.split('px'))[0]);
+                      var value = _.round(((elemVal/bodyWidth)*100),6);
+                      modifiedCss[key] = value+"% !important";
+                  break;
+              case 'top':
+                      var bodyHeight = parseInt((parentCSS['height'].split('px'))[0]);;
+                      var elemVal= parseInt((val.split('px'))[0]);
+                      var value = _.round(((elemVal/bodyHeight)*100),6);
+                      modifiedCss[key] = value + "% !important";
+                  break;
+          }
+        });
+        return modifiedCss;
+      }
+
+    var dashboard = Dashboard || {},
+        gs = $(".main-stack").data("gridstack");
+    dashboard.setGridOptions = function(options) {
+        if (!_.isObject(options)) return;
+
+        if (typeof options.width === "number") {
+            gs.setGridWidth(options.width);
+            $.gridStackCSSGenerator(options.width, "hi-gridstack");
+        }
+
+        if (typeof options.verticalMargin !== "undefined") {
+            gs.verticalMargin(options.verticalMargin);
+        }
+
+        if (typeof options.horizontalMargin !== "undefined") {
+            var marginStyles = document.getElementById("hi-gridstack-margins");
+
+            if (!marginStyles) {
+                marginStyles = document.createElement("style");
+                marginStyles.type = "text/css";
+                marginStyles.rel = "stylesheet";
+                marginStyles.id = "hi-gridstack-margins";
+                document.getElementsByTagName("head")[0].appendChild(marginStyles);
+            }
+
+            var css = ".grid-stack .grid-stack-item .grid-stack-wrapper {" +
+                 "margin:" + options.horizontalMargin + ";" +
+                 "width: calc(100% - " + options.horizontalMargin + " - " + options.horizontalMargin+ ");" +
+            "}";
+
+            marginStyles.textContent = css;
+        }
+
+        if (typeof options.cellHeight !== "undefined") {
+            gs.cellHeight(options.cellHeight);
+        }
+    };
+    $(".main-stack").on("click", "[data-gs-maximize]", function(e) {
+        e.preventDefault();
+
+
+        var elem = $(this);
+        elem.toggleClass('active');
+
+        if(elem.hasClass('active')){
+            elem.html('<i class="glyphicon glyphicon-minus"></i>&nbsp; Minimize');
+            elem.closest(".grid-stack-item").css({
+                "display": "block",
+                "width": "100%",
+                "height": "100%",
+                "left": "0",
+                "right": "0",
+                "top": "0",
+                "bottom": "0"
+            });
+            $('body').css({
+                "position": "relative",
+                "height": "calc( 100vh - 60px )"
+            })
+        }
+        else{
+            elem.html('<i class="glyphicon glyphicon-fullscreen"></i>&nbsp; Maximize');
+            elem.closest(".grid-stack-item").removeAttr("style");
+
+            data = {type:"gs-maximize" , action : "maximize"}
+            window.parent.postMessage(data, "*");
+        }
+    });
+      var heightArr = [];
+      $.each($('.grid-stack-item'), function(i, item){
+        if($(item).parent().hasClass( "main-stack" )){
+          var y = $(item).position().top;
+          var height = $(item).height();
+          heightArr.push((y+height));
+        }
+      });
+      var maxHeight = _.max(heightArr);
+      if(heightArr.length > 0){
+       $('.grid-stack.main-stack').height(maxHeight);
+      }
+      $.each($('.sub-stack'), function(i, item) {
+        $(item).height("100%");
+      });
+
+    
+
+
+$("<style id='hi-designer-styles'></style>").appendTo("head")
+$("<style id='dashboard-cssCode'></style>").appendTo("head")
+Dashboard.setVariable("Client", "Market Link");
+Dashboard.setVariable("travel_details_travel_type", "Domestic");
+Dashboard.setVariable("meeting_details_client_name", ["Envision"]);
+
+Dashboard.setVariable("printOptions", {"templateId":"Dashboard","title":"Dashboard"});
+
+Dashboard.init([{"name":"lk591839gz","header":{"enable":true,"text":"\u003Cp class=\"ql-align-center\"\u003E\u003Cstrong\u003ETravelCost\u003C\u002Fstrong\u003E\u003C\u002Fp\u003E","href":"","enableColor":false,"color":{"r":"255","g":"255","b":"255","a":"1"}},"uid":"lk591839gz","label":"TravelCost","context_lable":"TravelCost","executeAtStart":true,"type":"adhoc","options":{"dir":"1463377807724\u002F1472805277364","file":"8245b9dd-c23a-46ad-b82a-bdd0b5973047.report","ext":"report"},"htmlElementId":"#lk591839gz"},{"name":"uxa7ndjqqgn","header":{"enable":true,"text":"\u003Cp class=\"ql-align-center\"\u003E\u003Cstrong\u003ETravelType\u003C\u002Fstrong\u003E\u003C\u002Fp\u003E","href":"","enableColor":false,"color":{"r":"255","g":"255","b":"255","a":"1"}},"uid":"uxa7ndjqqgn","label":"TravelType","context_lable":"TravelType","requestParameters":{"Client":"Client"},"executeAtStart":true,"type":"adhoc","options":{"dir":"1463377807724\u002F1472805277364","file":"08c93b4f-ba83-44ac-b90f-c1f95a111c24.report","ext":"report","styles":{"boxComp":"Adhoc","value":true,"boxPx":"","boxColor":"#ffffff"},"report":{"dir":"1463377807724\u002F1472805277364","file":"08c93b4f-ba83-44ac-b90f-c1f95a111c24.report"}},"listeners":["Client"],"htmlElementId":"#uxa7ndjqqgn"},{"name":"zhynz3xny4","header":{"enable":true,"text":"\u003Cp class=\"ql-align-center\"\u003E\u003Cstrong\u003ETravelMedium\u003C\u002Fstrong\u003E\u003C\u002Fp\u003E","href":"","enableColor":false,"color":{"r":"255","g":"255","b":"255","a":"1"}},"uid":"zhynz3xny4","label":"","context_lable":"","requestParameters":{"travel_details_travel_type":"travel_details_travel_type","meeting_details_client_name":"Client"},"executeAtStart":true,"type":"adhoc","options":{"dir":"1463377807724\u002F1472805277364","file":"d38687cc-242e-44b5-ae1e-e55d53a3adc6.report","ext":"report","styles":{"boxComp":"Adhoc","borderComp":"Adhoc"},"report":{"dir":"1463377807724\u002F1472805277364","file":"d38687cc-242e-44b5-ae1e-e55d53a3adc6.report"},"iframe":true},"listeners":["travel_details_travel_type"],"htmlElementId":"#zhynz3xny4"}]);
+
+
+
+$('.grid-stack.main-stack').css('height' ,'627px');
+
+if(placeholder != 'body'){$(placeholder).css('min-height','100%');;
+}
+$(placeholder).css('overflow','auto');;
+
+$(placeholder).css('width','100%');;
+
+$(placeholder).css('position','relative');;
+
+});</script>
+</div>
+        </div>
+    </div>
+    <div data-keyboard="false" data-backdrop="static" id="hdi-blockUI">
+		<div class="se_loading_icon"> </div>
+    </div>
+    <div>
+        <div class="modal fade" id="error-panel">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title"><b>Error Occurred</b></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-danger"><span id="error-generated"></span></p>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-primary" value="OK" data-dismiss="modal">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="http://localhost:8085/hi-ee/js/file-browser.js"></script>
+
+    
+    
+<script>
+    function detectBrowser() {
+        var ua = navigator.userAgent, tem,
+                M = ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+        if (/trident/i.test(M[1])) {
+            tem = /\brv[ :]+(\d+)/g.exec(ua) || [];
+            return 'IE ' + (tem[1] || '');
+        }
+        if (M[1] === 'Chrome') {
+            tem = ua.match(/\b(OPR|Edge)\/(\d+)/);
+            if (tem != null) return tem.slice(1).join(' ').replace('OPR', 'Opera');
+        }
+        M = M[2] ? [M[1], M[2]] : [navigator.appName, navigator.appVersion, '-?'];
+        if ((tem = ua.match(/version\/(\d+)/i)) != null) M.splice(1, 1, tem[1]);
+        return M.join(' ');
+    }
+    ;
+    var browserType = detectBrowser();
+    if (browserType.match(new RegExp(["IE"].join("|"), "i"))) {
+        $('.component-container').css("display", "block");
+    }
+</script>
+<script type="text/javascript">
+    </script>
+
+<script type="text/javascript">
+    function stripCSS(css) {
+
+        var temporalStyleElement = document.createElement("style");
+
+        temporalStyleElement.innerHTML = css;
+
+        return temporalStyleElement.textContent || temporalStyleElement.innerText || "";
+    }
+
+    window.stripCSS = stripCSS;
+
+</script>
+
+
+<script src="http://localhost:8085/hi-ee/js/newwindow.js"></script>
+<script src="http://localhost:8085/hi-ee/js/hdiui.js"></script><div data-keyboard="false" data-backdrop="static" id="Emailing_Model_Window" class="modal fade"><div class="modal-dialog"> <div class="modal-content"> <div class="modal-header"> <h4 class="modal-title"><b>Updating</b><i class="fa fa-repeat spin pull-right"></i></h4> </div> <div class="modal-body"> <p><b>Please wait while your request is being processed...</b></p> <p>Pending Requests: <span id="request-count">0</span></p> </div> <div class="modal-footer"> <p class="pull-left text-danger">Time elapsed: <span id="elpased_time">0:00</span></p> <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button> </div> </div> </div></div>
+	<div id="session-timeout-block" class="modal fade"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h4 class="modal-title">Session Expired!</h4></div><div class="modal-body"><p>Your session has expired. Please login to continue</p></div><div class="modal-footer"><button type="button" class="btn btn-primary" id="timeout-redirect">OK</button></div></div></div></div><span role="status" aria-live="polite" class="select2-hidden-accessible"></span>
+            <div id="hdi-file-context-menu">
+                <ul class="dropdown-menu hi-ui-fontSize"> </ul>
+            </div><div data-keyboard="false" data-backdrop="static" id="hdi-filebrowser" class="modal fade"><div class="modal-dialog modal-fluid hi-hideBrowserContextMenu">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="pull-right">
+              <button type="button" class="btn btn-primary" id="refresh-tree">
+                <span class="fa fa-refresh"></span>
+              </button>
+              <button type="button" class="btn btn-danger" id="close-file-browser">
+                <span aria-hidden="true" class="fa fa-close"></span>
+                <span class="sr-only">Close</span>
+              </button>
+            </div>
+            <h4 class="modal-title">File Browser</h4>
+          </div>
+          <div class="modal-body">
+            <div class="form-horizontal" id="hdi-file-filter">
+              <div class="form-group">
+                <label for="filter" class="col-sm-9 control-label">Filter by type:</label>
+                <div class="col-sm-3">
+                  <div class="select2-container form-control" id="s2id_filter"><a href="javascript:void(0)" class="select2-choice" tabindex="-1">   <span class="select2-chosen" id="select2-chosen-1"><i class="fa fa-asterisk"></i> 
+                All
+                </span><abbr class="select2-search-choice-close"></abbr>   <span class="select2-arrow" role="presentation"><b role="presentation"></b></span></a><label for="s2id_autogen1" class="select2-offscreen"></label><input class="select2-focusser select2-offscreen" type="text" aria-haspopup="true" role="button" aria-labelledby="select2-chosen-1" id="s2id_autogen1"><div class="select2-drop select2-display-none select2-with-searchbox">   <div class="select2-search">       <label for="s2id_autogen1_search" class="select2-offscreen"></label>       <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="select2-input" role="combobox" aria-expanded="true" aria-autocomplete="list" aria-owns="select2-results-1" id="s2id_autogen1_search" placeholder="">   </div>   <ul class="select2-results" role="listbox" id="select2-results-1">   </ul></div></div><select name="" id="filter" class="form-control" tabindex="-1" title="" style="display: none; "> 
+            
+                <option value="*" data-icon="asterisk">
+                All
+                </option>
+            
+                <option value="efw" data-icon="file-o">
+                Report
+                </option>
+            
+                <option value="efwsr" data-icon="save">
+                Saved Report
+                </option>
+            
+                <option value="report" data-icon="line-chart">
+                Adhoc Report
+                </option>
+            
+                <option value="efwce" data-icon="pencil">
+                Community Report
+                </option>
+            
+                <option value="hcr" data-icon="file-text">
+                Canned Report
+                </option>
+            
+                <option value="efwdd" data-icon="magic">
+                Dashboard Designer
+                </option>
+            
+                <option value="metadata" data-icon="table">
+                Metadata
+                </option>
+            
+                <option value="efwresult" data-icon="cloud-download">
+                Result
+                </option>
+            </select>
+                </div>
+              </div>
+            </div>
+            <div id="hdi-file-navigator">
+              <div class="clearfix" id="hdi-path-breadcrumb">
+                <div class="col col-xs-11">
+                  <ol class="breadcrumb no-selection" unselectable="on">
+                    <li class="home" style="cursor:pointer; cursor: hand;">
+                      <span class="fa fa-home" id="homeNavigator"> </span>
+                    </li>
+                  </ol>
+                </div>
+                <div class="col col-xs-1">
+                  <button type="button" class="btn btn-primary btn-block" id="search-filetree">
+                    <i class="fa fa-search"> </i>
+                  </button>
+                </div>
+              </div>
+              <form id="hdi-path-form" class="hidden">
+                <div class="form-group">
+                  <div class="input-group">
+                    <input type="text" class="form-control" id="hdi-path-field">
+                      <span class="input-group-btn">
+                        <button class="btn btn-danger" id="close-path-field">
+                          <i class="fa fa-close"></i>
+                        </button>
+                      </span>
+                    </div>
+                  </div>
+                </form>
+            </div>
+              <div id="hdi-file-explorer" class="panel-group"></div>
+              
+              <div id="hdi-file-properties" class="panel-group"> </div>
+              <div id="hdi-file-footer"></div>
+            </div>
+          </div>
+        </div></div>
+            <div id="hdi-file-context-menu">
+                <ul class="dropdown-menu hi-ui-fontSize"> </ul>
+            </div><div data-keyboard="false" data-backdrop="static" id="hdi-filebrowser" class="modal fade"><div class="modal-dialog modal-fluid hi-hideBrowserContextMenu">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="pull-right">
+              <button type="button" class="btn btn-primary" id="refresh-tree">
+                <span class="fa fa-refresh"></span>
+              </button>
+              <button type="button" class="btn btn-danger" id="close-file-browser">
+                <span aria-hidden="true" class="fa fa-close"></span>
+                <span class="sr-only">Close</span>
+              </button>
+            </div>
+            <h4 class="modal-title">File Browser</h4>
+          </div>
+          <div class="modal-body">
+            <div class="form-horizontal" id="hdi-file-filter">
+              <div class="form-group">
+                <label for="filter" class="col-sm-9 control-label">Filter by type:</label>
+                <div class="col-sm-3">
+                  <div class="select2-container form-control" id="s2id_filter"><a href="javascript:void(0)" class="select2-choice" tabindex="-1">   <span class="select2-chosen" id="select2-chosen-2"><i class="fa fa-asterisk"></i> 
+                All
+                </span><abbr class="select2-search-choice-close"></abbr>   <span class="select2-arrow" role="presentation"><b role="presentation"></b></span></a><label for="s2id_autogen2" class="select2-offscreen">Filter by type:</label><input class="select2-focusser select2-offscreen" type="text" aria-haspopup="true" role="button" aria-labelledby="select2-chosen-2" id="s2id_autogen2"><div class="select2-drop select2-display-none select2-with-searchbox">   <div class="select2-search">       <label for="s2id_autogen2_search" class="select2-offscreen"></label>       <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="select2-input" role="combobox" aria-expanded="true" aria-autocomplete="list" aria-owns="select2-results-2" id="s2id_autogen2_search" placeholder="">   </div>   <ul class="select2-results" role="listbox" id="select2-results-2">   </ul></div></div><select name="" id="filter" class="form-control" tabindex="-1" title="Filter by type:" style="display: none; "> 
+            
+                <option value="*" data-icon="asterisk">
+                All
+                </option>
+            
+                <option value="efw" data-icon="file-o">
+                Report
+                </option>
+            
+                <option value="efwsr" data-icon="save">
+                Saved Report
+                </option>
+            
+                <option value="report" data-icon="line-chart">
+                Adhoc Report
+                </option>
+            
+                <option value="efwce" data-icon="pencil">
+                Community Report
+                </option>
+            
+                <option value="hcr" data-icon="file-text">
+                Canned Report
+                </option>
+            
+                <option value="efwdd" data-icon="magic">
+                Dashboard Designer
+                </option>
+            
+                <option value="metadata" data-icon="table">
+                Metadata
+                </option>
+            
+                <option value="efwresult" data-icon="cloud-download">
+                Result
+                </option>
+            </select>
+                </div>
+              </div>
+            </div>
+            <div id="hdi-file-navigator">
+              <div class="clearfix" id="hdi-path-breadcrumb">
+                <div class="col col-xs-11">
+                  <ol class="breadcrumb no-selection" unselectable="on">
+                    <li class="home" style="cursor:pointer; cursor: hand;">
+                      <span class="fa fa-home" id="homeNavigator"> </span>
+                    </li>
+                  </ol>
+                </div>
+                <div class="col col-xs-1">
+                  <button type="button" class="btn btn-primary btn-block" id="search-filetree">
+                    <i class="fa fa-search"> </i>
+                  </button>
+                </div>
+              </div>
+              <form id="hdi-path-form" class="hidden">
+                <div class="form-group">
+                  <div class="input-group">
+                    <input type="text" class="form-control" id="hdi-path-field">
+                      <span class="input-group-btn">
+                        <button class="btn btn-danger" id="close-path-field">
+                          <i class="fa fa-close"></i>
+                        </button>
+                      </span>
+                    </div>
+                  </div>
+                </form>
+            </div>
+              <div id="hdi-file-explorer" class="panel-group"></div>
+              
+              <div id="hdi-file-properties" class="panel-group"> </div>
+              <div id="hdi-file-footer"></div>
+            </div>
+          </div>
+        </div></div><div class="daterangepicker dropdown-menu ltr single opensright"><div class="calendar left single" style="display: block; "><div class="daterangepicker_input"><input class="input-mini form-control" type="text" name="daterangepicker_start" value="" style="display: none; "><i class="fa fa-calendar glyphicon glyphicon-calendar" style="display: none; "></i><div class="calendar-time"><div></div><i class="fa fa-clock-o glyphicon glyphicon-time"></i></div></div><div class="calendar-table"></div></div><div class="calendar right" style="display: none; "><div class="daterangepicker_input"><input class="input-mini form-control" type="text" name="daterangepicker_end" value="" style="display: none; "><i class="fa fa-calendar glyphicon glyphicon-calendar" style="display: none; "></i><div class="calendar-time"><div></div><i class="fa fa-clock-o glyphicon glyphicon-time"></i></div></div><div class="calendar-table"></div></div><div class="ranges"><div class="range_inputs"><button class="applyBtn btn btn-sm btn-success" disabled="disabled" type="button">Apply</button> <button class="cancelBtn btn btn-sm btn-default" type="button">Cancel</button></div></div></div><div class="daterangepicker dropdown-menu ltr single opensright"><div class="calendar left single" style="display: block; "><div class="daterangepicker_input"><input class="input-mini form-control" type="text" name="daterangepicker_start" value="" style="display: none; "><i class="fa fa-calendar glyphicon glyphicon-calendar" style="display: none; "></i><div class="calendar-time"><div></div><i class="fa fa-clock-o glyphicon glyphicon-time"></i></div></div><div class="calendar-table"></div></div><div class="calendar right" style="display: none; "><div class="daterangepicker_input"><input class="input-mini form-control" type="text" name="daterangepicker_end" value="" style="display: none; "><i class="fa fa-calendar glyphicon glyphicon-calendar" style="display: none; "></i><div class="calendar-time"><div></div><i class="fa fa-clock-o glyphicon glyphicon-time"></i></div></div><div class="calendar-table"></div></div><div class="ranges"><div class="range_inputs"><button class="applyBtn btn btn-sm btn-success" disabled="disabled" type="button">Apply</button> <button class="cancelBtn btn btn-sm btn-default" type="button">Cancel</button></div></div></div><div data-keyboard="false" data-backdrop="static" id="#hdi-scheduling" class="modal fade"><div class="modal-dialog"> <div class="modal-content"> <div class="modal-header"> <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button> <h4 class="modal-title toggleHeading"><b>Email Options1</b></h4> </div> <div class="modal-body"> <ul class="nav nav-tabs hi-tab-highlight"> <li class="active"> <a href="#variables-review" data-step="1">Parameters review</a> </li> <li class="disabled"> <a href="#email-form" data-step="2">Email options</a> </li> <li class="disabled"> <a href="#scheduling-form" data-step="3" data-hidden="email">Scheduling options</a> </li> </ul> <div class="tab-content"> <div class="tab-pane active" id="variables-review"> <div id="variables-data"> <form id="outputVariables"> </form> </div> <hr style="margin-left:-15px;margin-right:-15px;border-top:1px solid #e5e5e5"> <div class="text-center"> <a href="#" class="btn btn-primary" data-step="2"> Next&nbsp;&nbsp;<i class="fa fa-arrow-right"></i> </a> </div> </div> <div class="tab-pane" id="email-form"> <form id="clearForm" role="form"> <div id="formatValidation" class="form-group" data-validation-group="output" data-validation-rules="required" data-validation-on="focusout" data-validation-msg="Please select at least one format"> <label for="email-to">Format<span style="color:red">*</span>&nbsp;:&nbsp;</label> <label class="checkbox-inline"> <input type="checkbox" value="pdf" name="output" class="formats" checked="checked"> PDF </label> <label class="checkbox-inline"> <input type="checkbox" value="png" name="output" class="formats" checked="checked"> PNG </label> <label class="checkbox-inline"> <input type="checkbox" value="jpg" name="output" class="formats" checked="checked"> JPG </label> </div> <div class="form-group"> <label class="control-label" for="email-to">To<span style="color:red">*</span></label> <input type="text" class="form-control" id="email-to" name="email-to" data-validation-rules="required|email" data-validation-on="focusout" data-validation-msg="Please enter valid email ID!"> <span><i class="fa fa-info-circle"></i>&nbsp; Please use ; as a separator to send email to multiple recipients </span> </div> <div class="form-group"> <label class="control-label" for="email-subject">Subject<span style="color:red">*</span></label> <input type="text" class="form-control" id="email-subject" name="email-subject" data-validation-rules="required" data-validation-on="focusout" data-validation-msg="Please enter valid subject."> </div> <div class="form-group"> <label for="email-body">Body</label> <textarea class="form-control" rows="3" style="resize:vertical" id="email-body"></textarea> </div> <div class="form-group" data-hidden="email"> <label class="control-label" for="save-report-name">Report Name<span style="color:red">*</span></label> <div class="input-group"> <input type="text" class="form-control" id="save-report-name" placeholder="Provide a name to your report schedule" data-validation-rules="required" data-validation-on="focusout" data-validation-msg="Please select a valid location." readonly="readonly"> <div class="input-group-btn"> <button class="btn btn-primary" id="select-location-btn">Select</button> </div> </div> </div> <span style="color:red">* Required fields</span> <hr style="margin-left:-15px;margin-right:-15px;border-top:1px solid #e5e5e5"> <div class="text-center" data-hidden="email"> <a href="#" class="btn btn-danger" data-step="1"> <i class="fa fa-arrow-left"></i>&nbsp;&nbsp;Prev </a>&nbsp;&nbsp; <a href="#" class="btn btn-primary" id="data-step-3" data-step="3"> Next&nbsp;&nbsp;<i class="fa fa-arrow-right"></i> </a> </div> <div class="text-center hidden" data-visible="email"> <a href="#" class="btn btn-danger" data-step="1"> <i class="fa fa-arrow-left"></i>&nbsp;&nbsp;Prev </a>&nbsp;&nbsp; <button class="btn btn-primary" id="email-btn"> <i class="fa fa-send"></i>&nbsp;&nbsp;Email now </button> </div> </form> </div> <div class="tab-pane" id="scheduling-form"> <form class="form-horizontal"> <div class="form-group"> <label class="col-xs-3 control-label">Repeats :</label> <div class="col-xs-8"> <select class="form-control" name="Frequency" id="repeatOrder">     <option value="Daily">Daily</option><option value="Weekly">Weekly</option><option value="Monthly">Monthly</option><option value="Yearly">Yearly</option></select> </div> </div> <div class="form-group"> <label class="col-xs-3 control-label">Repeats every:</label> <div class="col-xs-4"> <select class="form-control" name="RepeatsEvery" id="repeatEvery">                                                                <option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option></select> </div> <label class="col-xs-5 control-label" style="text-align:left;margin-left:-15px"><span id="repeatOrder-text">week</span>(s) &nbsp;<label id="convertWeekToDays">(1 * 7 days)</label> </label> </div> <div class="form-group" id="repeatOn" style="display: block; "> <label class="col-xs-3 control-label" id="repeatText">Repeat On :</label> <div class="col-xs-9" id="weekMonthSelector" data-validation-group="DaysofWeek"> <label class="checkbox-inline"> <input type="checkbox" class="weeks" value="Sunday" name="DaysofWeek" id="sunday"> S </label> <label class="checkbox-inline"> <input type="checkbox" class="weeks" value="Monday" name="DaysofWeek" id="monday"> M </label> <label class="checkbox-inline"> <input type="checkbox" class="weeks" value="Tuesday" name="DaysofWeek" id="tuesday"> T </label> <label class="checkbox-inline"> <input type="checkbox" class="weeks" value="Wednesday" name="DaysofWeek" id="wednesday"> W </label> <label class="checkbox-inline"> <input type="checkbox" class="weeks" value="Thursday" name="DaysofWeek" id="thursday"> T </label> <label class="checkbox-inline"> <input type="checkbox" class="weeks" value="Friday" name="DaysofWeek" id="friday"> F </label> <label class="checkbox-inline"> <input type="checkbox" class="weeks" value="Saturday" name="DaysofWeek" id="saturday"> S </label> </div> </div> <div class="form-group hidden" id="repeatBy"> <label class="col-xs-3 control-label" id="repeatText">Repeat By :</label> <div class="col-xs-9"> <label class="dayofmonth radio-inline" id="dayofmonth"> <input type="radio" name="RepeatBy" class="monthlyCheck" checked="" id="dayOfMonth" value="dayOfTheMonth"> day of the month </label> <label class="dayofweek radio-inline" id="dayofweek"> <input type="radio" name="RepeatBy" class="monthlyCheck" id="dayOfWeek" value="dayOfTheWeek"> day of the week </label> </div> </div> <div class="form-group"> <label class="col-xs-3 control-label">Time Zone:</label> <div class="col-xs-8"> <div class="select2-container form-control" id="s2id_timezone"><a href="javascript:void(0)" class="select2-choice" tabindex="-1">   <span class="select2-chosen" id="select2-chosen-3">Asia/Calcutta  (GMT +05:30)</span><abbr class="select2-search-choice-close"></abbr>   <span class="select2-arrow" role="presentation"><b role="presentation"></b></span></a><label for="s2id_autogen3" class="select2-offscreen"></label><input class="select2-focusser select2-offscreen" type="text" aria-haspopup="true" role="button" aria-labelledby="select2-chosen-3" id="s2id_autogen3"><div class="select2-drop select2-display-none select2-with-searchbox">   <div class="select2-search">       <label for="s2id_autogen3_search" class="select2-offscreen"></label>       <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="select2-input" role="combobox" aria-expanded="true" aria-autocomplete="list" aria-owns="select2-results-3" id="s2id_autogen3_search" placeholder="">   </div>   <ul class="select2-results" role="listbox" id="select2-results-3">   </ul></div></div><select class="form-control" name="timeZone" id="timezone" tabindex="-1" title="" style="display: none; ">  <option data-name="Etc/GMT+12" value="-12:00">Etc/GMT+12  (GMT -12:00)</option>  <option data-name="Etc/GMT+11" value="-11:00">Etc/GMT+11  (GMT -11:00)</option>  <option data-name="Pacific/Midway" value="-11:00">Pacific/Midway  (GMT -11:00)</option>  <option data-name="Pacific/Niue" value="-11:00">Pacific/Niue  (GMT -11:00)</option>  <option data-name="Pacific/Pago_Pago" value="-11:00">Pacific/Pago_Pago  (GMT -11:00)</option>  <option data-name="Pacific/Samoa" value="-11:00">Pacific/Samoa  (GMT -11:00)</option>  <option data-name="US/Samoa" value="-11:00">US/Samoa  (GMT -11:00)</option>  <option data-name="America/Adak" value="-10:00">America/Adak  (GMT -10:00)</option>  <option data-name="America/Atka" value="-10:00">America/Atka  (GMT -10:00)</option>  <option data-name="Etc/GMT+10" value="-10:00">Etc/GMT+10  (GMT -10:00)</option>  <option data-name="HST" value="-10:00">HST  (GMT -10:00)</option>  <option data-name="Pacific/Honolulu" value="-10:00">Pacific/Honolulu  (GMT -10:00)</option>  <option data-name="Pacific/Johnston" value="-10:00">Pacific/Johnston  (GMT -10:00)</option>  <option data-name="Pacific/Rarotonga" value="-10:00">Pacific/Rarotonga  (GMT -10:00)</option>  <option data-name="Pacific/Tahiti" value="-10:00">Pacific/Tahiti  (GMT -10:00)</option>  <option data-name="US/Aleutian" value="-10:00">US/Aleutian  (GMT -10:00)</option>  <option data-name="US/Hawaii" value="-10:00">US/Hawaii  (GMT -10:00)</option>  <option data-name="Pacific/Marquesas" value="-09:30">Pacific/Marquesas  (GMT -09:30)</option>  <option data-name="America/Anchorage" value="-09:00">America/Anchorage  (GMT -09:00)</option>  <option data-name="America/Juneau" value="-09:00">America/Juneau  (GMT -09:00)</option>  <option data-name="America/Nome" value="-09:00">America/Nome  (GMT -09:00)</option>  <option data-name="America/Sitka" value="-09:00">America/Sitka  (GMT -09:00)</option>  <option data-name="America/Yakutat" value="-09:00">America/Yakutat  (GMT -09:00)</option>  <option data-name="Etc/GMT+9" value="-09:00">Etc/GMT+9  (GMT -09:00)</option>  <option data-name="Pacific/Gambier" value="-09:00">Pacific/Gambier  (GMT -09:00)</option>  <option data-name="US/Alaska" value="-09:00">US/Alaska  (GMT -09:00)</option>  <option data-name="America/Dawson" value="-08:00">America/Dawson  (GMT -08:00)</option>  <option data-name="America/Ensenada" value="-08:00">America/Ensenada  (GMT -08:00)</option>  <option data-name="America/Los_Angeles" value="-08:00">America/Los_Angeles  (GMT -08:00)</option>  <option data-name="America/Metlakatla" value="-08:00">America/Metlakatla  (GMT -08:00)</option>  <option data-name="America/Santa_Isabel" value="-08:00">America/Santa_Isabel  (GMT -08:00)</option>  <option data-name="America/Tijuana" value="-08:00">America/Tijuana  (GMT -08:00)</option>  <option data-name="America/Vancouver" value="-08:00">America/Vancouver  (GMT -08:00)</option>  <option data-name="America/Whitehorse" value="-08:00">America/Whitehorse  (GMT -08:00)</option>  <option data-name="Canada/Pacific" value="-08:00">Canada/Pacific  (GMT -08:00)</option>  <option data-name="Canada/Yukon" value="-08:00">Canada/Yukon  (GMT -08:00)</option>  <option data-name="Etc/GMT+8" value="-08:00">Etc/GMT+8  (GMT -08:00)</option>  <option data-name="Mexico/BajaNorte" value="-08:00">Mexico/BajaNorte  (GMT -08:00)</option>  <option data-name="PST8PDT" value="-08:00">PST8PDT  (GMT -08:00)</option>  <option data-name="Pacific/Pitcairn" value="-08:00">Pacific/Pitcairn  (GMT -08:00)</option>  <option data-name="US/Pacific" value="-08:00">US/Pacific  (GMT -08:00)</option>  <option data-name="US/Pacific-New" value="-08:00">US/Pacific-New  (GMT -08:00)</option>  <option data-name="America/Boise" value="-07:00">America/Boise  (GMT -07:00)</option>  <option data-name="America/Cambridge_Bay" value="-07:00">America/Cambridge_Bay  (GMT -07:00)</option>  <option data-name="America/Chihuahua" value="-07:00">America/Chihuahua  (GMT -07:00)</option>  <option data-name="America/Creston" value="-07:00">America/Creston  (GMT -07:00)</option>  <option data-name="America/Dawson_Creek" value="-07:00">America/Dawson_Creek  (GMT -07:00)</option>  <option data-name="America/Denver" value="-07:00">America/Denver  (GMT -07:00)</option>  <option data-name="America/Edmonton" value="-07:00">America/Edmonton  (GMT -07:00)</option>  <option data-name="America/Hermosillo" value="-07:00">America/Hermosillo  (GMT -07:00)</option>  <option data-name="America/Inuvik" value="-07:00">America/Inuvik  (GMT -07:00)</option>  <option data-name="America/Mazatlan" value="-07:00">America/Mazatlan  (GMT -07:00)</option>  <option data-name="America/Ojinaga" value="-07:00">America/Ojinaga  (GMT -07:00)</option>  <option data-name="America/Phoenix" value="-07:00">America/Phoenix  (GMT -07:00)</option>  <option data-name="America/Shiprock" value="-07:00">America/Shiprock  (GMT -07:00)</option>  <option data-name="America/Yellowknife" value="-07:00">America/Yellowknife  (GMT -07:00)</option>  <option data-name="Canada/Mountain" value="-07:00">Canada/Mountain  (GMT -07:00)</option>  <option data-name="Etc/GMT+7" value="-07:00">Etc/GMT+7  (GMT -07:00)</option>  <option data-name="MST" value="-07:00">MST  (GMT -07:00)</option>  <option data-name="MST7MDT" value="-07:00">MST7MDT  (GMT -07:00)</option>  <option data-name="Mexico/BajaSur" value="-07:00">Mexico/BajaSur  (GMT -07:00)</option>  <option data-name="Navajo" value="-07:00">Navajo  (GMT -07:00)</option>  <option data-name="US/Arizona" value="-07:00">US/Arizona  (GMT -07:00)</option>  <option data-name="US/Mountain" value="-07:00">US/Mountain  (GMT -07:00)</option>  <option data-name="America/Bahia_Banderas" value="-06:00">America/Bahia_Banderas  (GMT -06:00)</option>  <option data-name="America/Belize" value="-06:00">America/Belize  (GMT -06:00)</option>  <option data-name="America/Chicago" value="-06:00">America/Chicago  (GMT -06:00)</option>  <option data-name="America/Costa_Rica" value="-06:00">America/Costa_Rica  (GMT -06:00)</option>  <option data-name="America/El_Salvador" value="-06:00">America/El_Salvador  (GMT -06:00)</option>  <option data-name="America/Guatemala" value="-06:00">America/Guatemala  (GMT -06:00)</option>  <option data-name="America/Indiana/Knox" value="-06:00">America/Indiana/Knox  (GMT -06:00)</option>  <option data-name="America/Indiana/Tell_City" value="-06:00">America/Indiana/Tell_City  (GMT -06:00)</option>  <option data-name="America/Knox_IN" value="-06:00">America/Knox_IN  (GMT -06:00)</option>  <option data-name="America/Managua" value="-06:00">America/Managua  (GMT -06:00)</option>  <option data-name="America/Matamoros" value="-06:00">America/Matamoros  (GMT -06:00)</option>  <option data-name="America/Menominee" value="-06:00">America/Menominee  (GMT -06:00)</option>  <option data-name="America/Merida" value="-06:00">America/Merida  (GMT -06:00)</option>  <option data-name="America/Mexico_City" value="-06:00">America/Mexico_City  (GMT -06:00)</option>  <option data-name="America/Monterrey" value="-06:00">America/Monterrey  (GMT -06:00)</option>  <option data-name="America/North_Dakota/Beulah" value="-06:00">America/North_Dakota/Beulah  (GMT -06:00)</option>  <option data-name="America/North_Dakota/Center" value="-06:00">America/North_Dakota/Center  (GMT -06:00)</option>  <option data-name="America/North_Dakota/New_Salem" value="-06:00">America/North_Dakota/New_Salem  (GMT -06:00)</option>  <option data-name="America/Rainy_River" value="-06:00">America/Rainy_River  (GMT -06:00)</option>  <option data-name="America/Rankin_Inlet" value="-06:00">America/Rankin_Inlet  (GMT -06:00)</option>  <option data-name="America/Regina" value="-06:00">America/Regina  (GMT -06:00)</option>  <option data-name="America/Resolute" value="-06:00">America/Resolute  (GMT -06:00)</option>  <option data-name="America/Swift_Current" value="-06:00">America/Swift_Current  (GMT -06:00)</option>  <option data-name="America/Tegucigalpa" value="-06:00">America/Tegucigalpa  (GMT -06:00)</option>  <option data-name="America/Winnipeg" value="-06:00">America/Winnipeg  (GMT -06:00)</option>  <option data-name="CST6CDT" value="-06:00">CST6CDT  (GMT -06:00)</option>  <option data-name="Canada/Central" value="-06:00">Canada/Central  (GMT -06:00)</option>  <option data-name="Canada/East-Saskatchewan" value="-06:00">Canada/East-Saskatchewan  (GMT -06:00)</option>  <option data-name="Canada/Saskatchewan" value="-06:00">Canada/Saskatchewan  (GMT -06:00)</option>  <option data-name="Etc/GMT+6" value="-06:00">Etc/GMT+6  (GMT -06:00)</option>  <option data-name="Mexico/General" value="-06:00">Mexico/General  (GMT -06:00)</option>  <option data-name="Pacific/Galapagos" value="-06:00">Pacific/Galapagos  (GMT -06:00)</option>  <option data-name="US/Central" value="-06:00">US/Central  (GMT -06:00)</option>  <option data-name="US/Indiana-Starke" value="-06:00">US/Indiana-Starke  (GMT -06:00)</option>  <option data-name="America/Atikokan" value="-05:00">America/Atikokan  (GMT -05:00)</option>  <option data-name="America/Bogota" value="-05:00">America/Bogota  (GMT -05:00)</option>  <option data-name="America/Cancun" value="-05:00">America/Cancun  (GMT -05:00)</option>  <option data-name="America/Cayman" value="-05:00">America/Cayman  (GMT -05:00)</option>  <option data-name="America/Coral_Harbour" value="-05:00">America/Coral_Harbour  (GMT -05:00)</option>  <option data-name="America/Detroit" value="-05:00">America/Detroit  (GMT -05:00)</option>  <option data-name="America/Eirunepe" value="-05:00">America/Eirunepe  (GMT -05:00)</option>  <option data-name="America/Fort_Wayne" value="-05:00">America/Fort_Wayne  (GMT -05:00)</option>  <option data-name="America/Guayaquil" value="-05:00">America/Guayaquil  (GMT -05:00)</option>  <option data-name="America/Havana" value="-05:00">America/Havana  (GMT -05:00)</option>  <option data-name="America/Indiana/Indianapolis" value="-05:00">America/Indiana/Indianapolis  (GMT -05:00)</option>  <option data-name="America/Indiana/Marengo" value="-05:00">America/Indiana/Marengo  (GMT -05:00)</option>  <option data-name="America/Indiana/Petersburg" value="-05:00">America/Indiana/Petersburg  (GMT -05:00)</option>  <option data-name="America/Indiana/Vevay" value="-05:00">America/Indiana/Vevay  (GMT -05:00)</option>  <option data-name="America/Indiana/Vincennes" value="-05:00">America/Indiana/Vincennes  (GMT -05:00)</option>  <option data-name="America/Indiana/Winamac" value="-05:00">America/Indiana/Winamac  (GMT -05:00)</option>  <option data-name="America/Indianapolis" value="-05:00">America/Indianapolis  (GMT -05:00)</option>  <option data-name="America/Iqaluit" value="-05:00">America/Iqaluit  (GMT -05:00)</option>  <option data-name="America/Jamaica" value="-05:00">America/Jamaica  (GMT -05:00)</option>  <option data-name="America/Kentucky/Louisville" value="-05:00">America/Kentucky/Louisville  (GMT -05:00)</option>  <option data-name="America/Kentucky/Monticello" value="-05:00">America/Kentucky/Monticello  (GMT -05:00)</option>  <option data-name="America/Lima" value="-05:00">America/Lima  (GMT -05:00)</option>  <option data-name="America/Louisville" value="-05:00">America/Louisville  (GMT -05:00)</option>  <option data-name="America/Montreal" value="-05:00">America/Montreal  (GMT -05:00)</option>  <option data-name="America/Nassau" value="-05:00">America/Nassau  (GMT -05:00)</option>  <option data-name="America/New_York" value="-05:00">America/New_York  (GMT -05:00)</option>  <option data-name="America/Nipigon" value="-05:00">America/Nipigon  (GMT -05:00)</option>  <option data-name="America/Panama" value="-05:00">America/Panama  (GMT -05:00)</option>  <option data-name="America/Pangnirtung" value="-05:00">America/Pangnirtung  (GMT -05:00)</option>  <option data-name="America/Port-au-Prince" value="-05:00">America/Port-au-Prince  (GMT -05:00)</option>  <option data-name="America/Porto_Acre" value="-05:00">America/Porto_Acre  (GMT -05:00)</option>  <option data-name="America/Rio_Branco" value="-05:00">America/Rio_Branco  (GMT -05:00)</option>  <option data-name="America/Thunder_Bay" value="-05:00">America/Thunder_Bay  (GMT -05:00)</option>  <option data-name="America/Toronto" value="-05:00">America/Toronto  (GMT -05:00)</option>  <option data-name="Brazil/Acre" value="-05:00">Brazil/Acre  (GMT -05:00)</option>  <option data-name="Canada/Eastern" value="-05:00">Canada/Eastern  (GMT -05:00)</option>  <option data-name="Chile/EasterIsland" value="-05:00">Chile/EasterIsland  (GMT -05:00)</option>  <option data-name="Cuba" value="-05:00">Cuba  (GMT -05:00)</option>  <option data-name="EST" value="-05:00">EST  (GMT -05:00)</option>  <option data-name="EST5EDT" value="-05:00">EST5EDT  (GMT -05:00)</option>  <option data-name="Etc/GMT+5" value="-05:00">Etc/GMT+5  (GMT -05:00)</option>  <option data-name="Jamaica" value="-05:00">Jamaica  (GMT -05:00)</option>  <option data-name="Pacific/Easter" value="-05:00">Pacific/Easter  (GMT -05:00)</option>  <option data-name="US/East-Indiana" value="-05:00">US/East-Indiana  (GMT -05:00)</option>  <option data-name="US/Eastern" value="-05:00">US/Eastern  (GMT -05:00)</option>  <option data-name="US/Michigan" value="-05:00">US/Michigan  (GMT -05:00)</option>  <option data-name="America/Caracas" value="-04:30">America/Caracas  (GMT -04:30)</option>  <option data-name="America/Anguilla" value="-04:00">America/Anguilla  (GMT -04:00)</option>  <option data-name="America/Antigua" value="-04:00">America/Antigua  (GMT -04:00)</option>  <option data-name="America/Aruba" value="-04:00">America/Aruba  (GMT -04:00)</option>  <option data-name="America/Barbados" value="-04:00">America/Barbados  (GMT -04:00)</option>  <option data-name="America/Blanc-Sablon" value="-04:00">America/Blanc-Sablon  (GMT -04:00)</option>  <option data-name="America/Boa_Vista" value="-04:00">America/Boa_Vista  (GMT -04:00)</option>  <option data-name="America/Curacao" value="-04:00">America/Curacao  (GMT -04:00)</option>  <option data-name="America/Dominica" value="-04:00">America/Dominica  (GMT -04:00)</option>  <option data-name="America/Glace_Bay" value="-04:00">America/Glace_Bay  (GMT -04:00)</option>  <option data-name="America/Goose_Bay" value="-04:00">America/Goose_Bay  (GMT -04:00)</option>  <option data-name="America/Grand_Turk" value="-04:00">America/Grand_Turk  (GMT -04:00)</option>  <option data-name="America/Grenada" value="-04:00">America/Grenada  (GMT -04:00)</option>  <option data-name="America/Guadeloupe" value="-04:00">America/Guadeloupe  (GMT -04:00)</option>  <option data-name="America/Guyana" value="-04:00">America/Guyana  (GMT -04:00)</option>  <option data-name="America/Halifax" value="-04:00">America/Halifax  (GMT -04:00)</option>  <option data-name="America/Kralendijk" value="-04:00">America/Kralendijk  (GMT -04:00)</option>  <option data-name="America/La_Paz" value="-04:00">America/La_Paz  (GMT -04:00)</option>  <option data-name="America/Lower_Princes" value="-04:00">America/Lower_Princes  (GMT -04:00)</option>  <option data-name="America/Manaus" value="-04:00">America/Manaus  (GMT -04:00)</option>  <option data-name="America/Marigot" value="-04:00">America/Marigot  (GMT -04:00)</option>  <option data-name="America/Martinique" value="-04:00">America/Martinique  (GMT -04:00)</option>  <option data-name="America/Moncton" value="-04:00">America/Moncton  (GMT -04:00)</option>  <option data-name="America/Montserrat" value="-04:00">America/Montserrat  (GMT -04:00)</option>  <option data-name="America/Port_of_Spain" value="-04:00">America/Port_of_Spain  (GMT -04:00)</option>  <option data-name="America/Porto_Velho" value="-04:00">America/Porto_Velho  (GMT -04:00)</option>  <option data-name="America/Puerto_Rico" value="-04:00">America/Puerto_Rico  (GMT -04:00)</option>  <option data-name="America/Santo_Domingo" value="-04:00">America/Santo_Domingo  (GMT -04:00)</option>  <option data-name="America/St_Barthelemy" value="-04:00">America/St_Barthelemy  (GMT -04:00)</option>  <option data-name="America/St_Kitts" value="-04:00">America/St_Kitts  (GMT -04:00)</option>  <option data-name="America/St_Lucia" value="-04:00">America/St_Lucia  (GMT -04:00)</option>  <option data-name="America/St_Thomas" value="-04:00">America/St_Thomas  (GMT -04:00)</option>  <option data-name="America/St_Vincent" value="-04:00">America/St_Vincent  (GMT -04:00)</option>  <option data-name="America/Thule" value="-04:00">America/Thule  (GMT -04:00)</option>  <option data-name="America/Tortola" value="-04:00">America/Tortola  (GMT -04:00)</option>  <option data-name="America/Virgin" value="-04:00">America/Virgin  (GMT -04:00)</option>  <option data-name="Atlantic/Bermuda" value="-04:00">Atlantic/Bermuda  (GMT -04:00)</option>  <option data-name="Brazil/West" value="-04:00">Brazil/West  (GMT -04:00)</option>  <option data-name="Canada/Atlantic" value="-04:00">Canada/Atlantic  (GMT -04:00)</option>  <option data-name="Etc/GMT+4" value="-04:00">Etc/GMT+4  (GMT -04:00)</option>  <option data-name="America/St_Johns" value="-03:30">America/St_Johns  (GMT -03:30)</option>  <option data-name="Canada/Newfoundland" value="-03:30">Canada/Newfoundland  (GMT -03:30)</option>  <option data-name="America/Araguaina" value="-03:00">America/Araguaina  (GMT -03:00)</option>  <option data-name="America/Argentina/Buenos_Aires" value="-03:00">America/Argentina/Buenos_Aires  (GMT -03:00)</option>  <option data-name="America/Argentina/Catamarca" value="-03:00">America/Argentina/Catamarca  (GMT -03:00)</option>  <option data-name="America/Argentina/ComodRivadavia" value="-03:00">America/Argentina/ComodRivadavia  (GMT -03:00)</option>  <option data-name="America/Argentina/Cordoba" value="-03:00">America/Argentina/Cordoba  (GMT -03:00)</option>  <option data-name="America/Argentina/Jujuy" value="-03:00">America/Argentina/Jujuy  (GMT -03:00)</option>  <option data-name="America/Argentina/La_Rioja" value="-03:00">America/Argentina/La_Rioja  (GMT -03:00)</option>  <option data-name="America/Argentina/Mendoza" value="-03:00">America/Argentina/Mendoza  (GMT -03:00)</option>  <option data-name="America/Argentina/Rio_Gallegos" value="-03:00">America/Argentina/Rio_Gallegos  (GMT -03:00)</option>  <option data-name="America/Argentina/Salta" value="-03:00">America/Argentina/Salta  (GMT -03:00)</option>  <option data-name="America/Argentina/San_Juan" value="-03:00">America/Argentina/San_Juan  (GMT -03:00)</option>  <option data-name="America/Argentina/San_Luis" value="-03:00">America/Argentina/San_Luis  (GMT -03:00)</option>  <option data-name="America/Argentina/Tucuman" value="-03:00">America/Argentina/Tucuman  (GMT -03:00)</option>  <option data-name="America/Argentina/Ushuaia" value="-03:00">America/Argentina/Ushuaia  (GMT -03:00)</option>  <option data-name="America/Asuncion" value="-03:00">America/Asuncion  (GMT -03:00)</option>  <option data-name="America/Bahia" value="-03:00">America/Bahia  (GMT -03:00)</option>  <option data-name="America/Belem" value="-03:00">America/Belem  (GMT -03:00)</option>  <option data-name="America/Buenos_Aires" value="-03:00">America/Buenos_Aires  (GMT -03:00)</option>  <option data-name="America/Campo_Grande" value="-03:00">America/Campo_Grande  (GMT -03:00)</option>  <option data-name="America/Catamarca" value="-03:00">America/Catamarca  (GMT -03:00)</option>  <option data-name="America/Cayenne" value="-03:00">America/Cayenne  (GMT -03:00)</option>  <option data-name="America/Cordoba" value="-03:00">America/Cordoba  (GMT -03:00)</option>  <option data-name="America/Cuiaba" value="-03:00">America/Cuiaba  (GMT -03:00)</option>  <option data-name="America/Fortaleza" value="-03:00">America/Fortaleza  (GMT -03:00)</option>  <option data-name="America/Godthab" value="-03:00">America/Godthab  (GMT -03:00)</option>  <option data-name="America/Jujuy" value="-03:00">America/Jujuy  (GMT -03:00)</option>  <option data-name="America/Maceio" value="-03:00">America/Maceio  (GMT -03:00)</option>  <option data-name="America/Mendoza" value="-03:00">America/Mendoza  (GMT -03:00)</option>  <option data-name="America/Miquelon" value="-03:00">America/Miquelon  (GMT -03:00)</option>  <option data-name="America/Paramaribo" value="-03:00">America/Paramaribo  (GMT -03:00)</option>  <option data-name="America/Recife" value="-03:00">America/Recife  (GMT -03:00)</option>  <option data-name="America/Rosario" value="-03:00">America/Rosario  (GMT -03:00)</option>  <option data-name="America/Santarem" value="-03:00">America/Santarem  (GMT -03:00)</option>  <option data-name="America/Santiago" value="-03:00">America/Santiago  (GMT -03:00)</option>  <option data-name="Antarctica/Palmer" value="-03:00">Antarctica/Palmer  (GMT -03:00)</option>  <option data-name="Antarctica/Rothera" value="-03:00">Antarctica/Rothera  (GMT -03:00)</option>  <option data-name="Atlantic/Stanley" value="-03:00">Atlantic/Stanley  (GMT -03:00)</option>  <option data-name="Chile/Continental" value="-03:00">Chile/Continental  (GMT -03:00)</option>  <option data-name="Etc/GMT+3" value="-03:00">Etc/GMT+3  (GMT -03:00)</option>  <option data-name="America/Montevideo" value="-02:00">America/Montevideo  (GMT -02:00)</option>  <option data-name="America/Noronha" value="-02:00">America/Noronha  (GMT -02:00)</option>  <option data-name="America/Sao_Paulo" value="-02:00">America/Sao_Paulo  (GMT -02:00)</option>  <option data-name="Atlantic/South_Georgia" value="-02:00">Atlantic/South_Georgia  (GMT -02:00)</option>  <option data-name="Brazil/DeNoronha" value="-02:00">Brazil/DeNoronha  (GMT -02:00)</option>  <option data-name="Brazil/East" value="-02:00">Brazil/East  (GMT -02:00)</option>  <option data-name="Etc/GMT+2" value="-02:00">Etc/GMT+2  (GMT -02:00)</option>  <option data-name="America/Scoresbysund" value="-01:00">America/Scoresbysund  (GMT -01:00)</option>  <option data-name="Atlantic/Azores" value="-01:00">Atlantic/Azores  (GMT -01:00)</option>  <option data-name="Atlantic/Cape_Verde" value="-01:00">Atlantic/Cape_Verde  (GMT -01:00)</option>  <option data-name="Etc/GMT+1" value="-01:00">Etc/GMT+1  (GMT -01:00)</option>  <option data-name="Africa/Abidjan" value="+00:00">Africa/Abidjan  (GMT +00:00)</option>  <option data-name="Africa/Accra" value="+00:00">Africa/Accra  (GMT +00:00)</option>  <option data-name="Africa/Bamako" value="+00:00">Africa/Bamako  (GMT +00:00)</option>  <option data-name="Africa/Banjul" value="+00:00">Africa/Banjul  (GMT +00:00)</option>  <option data-name="Africa/Bissau" value="+00:00">Africa/Bissau  (GMT +00:00)</option>  <option data-name="Africa/Casablanca" value="+00:00">Africa/Casablanca  (GMT +00:00)</option>  <option data-name="Africa/Conakry" value="+00:00">Africa/Conakry  (GMT +00:00)</option>  <option data-name="Africa/Dakar" value="+00:00">Africa/Dakar  (GMT +00:00)</option>  <option data-name="Africa/El_Aaiun" value="+00:00">Africa/El_Aaiun  (GMT +00:00)</option>  <option data-name="Africa/Freetown" value="+00:00">Africa/Freetown  (GMT +00:00)</option>  <option data-name="Africa/Lome" value="+00:00">Africa/Lome  (GMT +00:00)</option>  <option data-name="Africa/Monrovia" value="+00:00">Africa/Monrovia  (GMT +00:00)</option>  <option data-name="Africa/Nouakchott" value="+00:00">Africa/Nouakchott  (GMT +00:00)</option>  <option data-name="Africa/Ouagadougou" value="+00:00">Africa/Ouagadougou  (GMT +00:00)</option>  <option data-name="Africa/Sao_Tome" value="+00:00">Africa/Sao_Tome  (GMT +00:00)</option>  <option data-name="Africa/Timbuktu" value="+00:00">Africa/Timbuktu  (GMT +00:00)</option>  <option data-name="America/Danmarkshavn" value="+00:00">America/Danmarkshavn  (GMT +00:00)</option>  <option data-name="Antarctica/Troll" value="+00:00">Antarctica/Troll  (GMT +00:00)</option>  <option data-name="Atlantic/Canary" value="+00:00">Atlantic/Canary  (GMT +00:00)</option>  <option data-name="Atlantic/Faeroe" value="+00:00">Atlantic/Faeroe  (GMT +00:00)</option>  <option data-name="Atlantic/Faroe" value="+00:00">Atlantic/Faroe  (GMT +00:00)</option>  <option data-name="Atlantic/Madeira" value="+00:00">Atlantic/Madeira  (GMT +00:00)</option>  <option data-name="Atlantic/Reykjavik" value="+00:00">Atlantic/Reykjavik  (GMT +00:00)</option>  <option data-name="Atlantic/St_Helena" value="+00:00">Atlantic/St_Helena  (GMT +00:00)</option>  <option data-name="Eire" value="+00:00">Eire  (GMT +00:00)</option>  <option data-name="Etc/GMT" value="+00:00">Etc/GMT  (GMT +00:00)</option>  <option data-name="Etc/GMT+0" value="+00:00">Etc/GMT+0  (GMT +00:00)</option>  <option data-name="Etc/GMT-0" value="+00:00">Etc/GMT-0  (GMT +00:00)</option>  <option data-name="Etc/GMT0" value="+00:00">Etc/GMT0  (GMT +00:00)</option>  <option data-name="Etc/Greenwich" value="+00:00">Etc/Greenwich  (GMT +00:00)</option>  <option data-name="Etc/UCT" value="+00:00">Etc/UCT  (GMT +00:00)</option>  <option data-name="Etc/UTC" value="+00:00">Etc/UTC  (GMT +00:00)</option>  <option data-name="Etc/Universal" value="+00:00">Etc/Universal  (GMT +00:00)</option>  <option data-name="Etc/Zulu" value="+00:00">Etc/Zulu  (GMT +00:00)</option>  <option data-name="Europe/Belfast" value="+00:00">Europe/Belfast  (GMT +00:00)</option>  <option data-name="Europe/Dublin" value="+00:00">Europe/Dublin  (GMT +00:00)</option>  <option data-name="Europe/Guernsey" value="+00:00">Europe/Guernsey  (GMT +00:00)</option>  <option data-name="Europe/Isle_of_Man" value="+00:00">Europe/Isle_of_Man  (GMT +00:00)</option>  <option data-name="Europe/Jersey" value="+00:00">Europe/Jersey  (GMT +00:00)</option>  <option data-name="Europe/Lisbon" value="+00:00">Europe/Lisbon  (GMT +00:00)</option>  <option data-name="Europe/London" value="+00:00">Europe/London  (GMT +00:00)</option>  <option data-name="GB" value="+00:00">GB  (GMT +00:00)</option>  <option data-name="GB-Eire" value="+00:00">GB-Eire  (GMT +00:00)</option>  <option data-name="GMT" value="+00:00">GMT  (GMT +00:00)</option>  <option data-name="GMT+0" value="+00:00">GMT+0  (GMT +00:00)</option>  <option data-name="GMT-0" value="+00:00">GMT-0  (GMT +00:00)</option>  <option data-name="GMT0" value="+00:00">GMT0  (GMT +00:00)</option>  <option data-name="Greenwich" value="+00:00">Greenwich  (GMT +00:00)</option>  <option data-name="Iceland" value="+00:00">Iceland  (GMT +00:00)</option>  <option data-name="Portugal" value="+00:00">Portugal  (GMT +00:00)</option>  <option data-name="UCT" value="+00:00">UCT  (GMT +00:00)</option>  <option data-name="UTC" value="+00:00">UTC  (GMT +00:00)</option>  <option data-name="Universal" value="+00:00">Universal  (GMT +00:00)</option>  <option data-name="WET" value="+00:00">WET  (GMT +00:00)</option>  <option data-name="Zulu" value="+00:00">Zulu  (GMT +00:00)</option>  <option data-name="Africa/Algiers" value="+01:00">Africa/Algiers  (GMT +01:00)</option>  <option data-name="Africa/Bangui" value="+01:00">Africa/Bangui  (GMT +01:00)</option>  <option data-name="Africa/Brazzaville" value="+01:00">Africa/Brazzaville  (GMT +01:00)</option>  <option data-name="Africa/Ceuta" value="+01:00">Africa/Ceuta  (GMT +01:00)</option>  <option data-name="Africa/Douala" value="+01:00">Africa/Douala  (GMT +01:00)</option>  <option data-name="Africa/Kinshasa" value="+01:00">Africa/Kinshasa  (GMT +01:00)</option>  <option data-name="Africa/Lagos" value="+01:00">Africa/Lagos  (GMT +01:00)</option>  <option data-name="Africa/Libreville" value="+01:00">Africa/Libreville  (GMT +01:00)</option>  <option data-name="Africa/Luanda" value="+01:00">Africa/Luanda  (GMT +01:00)</option>  <option data-name="Africa/Malabo" value="+01:00">Africa/Malabo  (GMT +01:00)</option>  <option data-name="Africa/Ndjamena" value="+01:00">Africa/Ndjamena  (GMT +01:00)</option>  <option data-name="Africa/Niamey" value="+01:00">Africa/Niamey  (GMT +01:00)</option>  <option data-name="Africa/Porto-Novo" value="+01:00">Africa/Porto-Novo  (GMT +01:00)</option>  <option data-name="Africa/Tunis" value="+01:00">Africa/Tunis  (GMT +01:00)</option>  <option data-name="Arctic/Longyearbyen" value="+01:00">Arctic/Longyearbyen  (GMT +01:00)</option>  <option data-name="Atlantic/Jan_Mayen" value="+01:00">Atlantic/Jan_Mayen  (GMT +01:00)</option>  <option data-name="CET" value="+01:00">CET  (GMT +01:00)</option>  <option data-name="Etc/GMT-1" value="+01:00">Etc/GMT-1  (GMT +01:00)</option>  <option data-name="Europe/Amsterdam" value="+01:00">Europe/Amsterdam  (GMT +01:00)</option>  <option data-name="Europe/Andorra" value="+01:00">Europe/Andorra  (GMT +01:00)</option>  <option data-name="Europe/Belgrade" value="+01:00">Europe/Belgrade  (GMT +01:00)</option>  <option data-name="Europe/Berlin" value="+01:00">Europe/Berlin  (GMT +01:00)</option>  <option data-name="Europe/Bratislava" value="+01:00">Europe/Bratislava  (GMT +01:00)</option>  <option data-name="Europe/Brussels" value="+01:00">Europe/Brussels  (GMT +01:00)</option>  <option data-name="Europe/Budapest" value="+01:00">Europe/Budapest  (GMT +01:00)</option>  <option data-name="Europe/Busingen" value="+01:00">Europe/Busingen  (GMT +01:00)</option>  <option data-name="Europe/Copenhagen" value="+01:00">Europe/Copenhagen  (GMT +01:00)</option>  <option data-name="Europe/Gibraltar" value="+01:00">Europe/Gibraltar  (GMT +01:00)</option>  <option data-name="Europe/Ljubljana" value="+01:00">Europe/Ljubljana  (GMT +01:00)</option>  <option data-name="Europe/Luxembourg" value="+01:00">Europe/Luxembourg  (GMT +01:00)</option>  <option data-name="Europe/Madrid" value="+01:00">Europe/Madrid  (GMT +01:00)</option>  <option data-name="Europe/Malta" value="+01:00">Europe/Malta  (GMT +01:00)</option>  <option data-name="Europe/Monaco" value="+01:00">Europe/Monaco  (GMT +01:00)</option>  <option data-name="Europe/Oslo" value="+01:00">Europe/Oslo  (GMT +01:00)</option>  <option data-name="Europe/Paris" value="+01:00">Europe/Paris  (GMT +01:00)</option>  <option data-name="Europe/Podgorica" value="+01:00">Europe/Podgorica  (GMT +01:00)</option>  <option data-name="Europe/Prague" value="+01:00">Europe/Prague  (GMT +01:00)</option>  <option data-name="Europe/Rome" value="+01:00">Europe/Rome  (GMT +01:00)</option>  <option data-name="Europe/San_Marino" value="+01:00">Europe/San_Marino  (GMT +01:00)</option>  <option data-name="Europe/Sarajevo" value="+01:00">Europe/Sarajevo  (GMT +01:00)</option>  <option data-name="Europe/Skopje" value="+01:00">Europe/Skopje  (GMT +01:00)</option>  <option data-name="Europe/Stockholm" value="+01:00">Europe/Stockholm  (GMT +01:00)</option>  <option data-name="Europe/Tirane" value="+01:00">Europe/Tirane  (GMT +01:00)</option>  <option data-name="Europe/Vaduz" value="+01:00">Europe/Vaduz  (GMT +01:00)</option>  <option data-name="Europe/Vatican" value="+01:00">Europe/Vatican  (GMT +01:00)</option>  <option data-name="Europe/Vienna" value="+01:00">Europe/Vienna  (GMT +01:00)</option>  <option data-name="Europe/Warsaw" value="+01:00">Europe/Warsaw  (GMT +01:00)</option>  <option data-name="Europe/Zagreb" value="+01:00">Europe/Zagreb  (GMT +01:00)</option>  <option data-name="Europe/Zurich" value="+01:00">Europe/Zurich  (GMT +01:00)</option>  <option data-name="MET" value="+01:00">MET  (GMT +01:00)</option>  <option data-name="Poland" value="+01:00">Poland  (GMT +01:00)</option>  <option data-name="Africa/Blantyre" value="+02:00">Africa/Blantyre  (GMT +02:00)</option>  <option data-name="Africa/Bujumbura" value="+02:00">Africa/Bujumbura  (GMT +02:00)</option>  <option data-name="Africa/Cairo" value="+02:00">Africa/Cairo  (GMT +02:00)</option>  <option data-name="Africa/Gaborone" value="+02:00">Africa/Gaborone  (GMT +02:00)</option>  <option data-name="Africa/Harare" value="+02:00">Africa/Harare  (GMT +02:00)</option>  <option data-name="Africa/Johannesburg" value="+02:00">Africa/Johannesburg  (GMT +02:00)</option>  <option data-name="Africa/Kigali" value="+02:00">Africa/Kigali  (GMT +02:00)</option>  <option data-name="Africa/Lubumbashi" value="+02:00">Africa/Lubumbashi  (GMT +02:00)</option>  <option data-name="Africa/Lusaka" value="+02:00">Africa/Lusaka  (GMT +02:00)</option>  <option data-name="Africa/Maputo" value="+02:00">Africa/Maputo  (GMT +02:00)</option>  <option data-name="Africa/Maseru" value="+02:00">Africa/Maseru  (GMT +02:00)</option>  <option data-name="Africa/Mbabane" value="+02:00">Africa/Mbabane  (GMT +02:00)</option>  <option data-name="Africa/Tripoli" value="+02:00">Africa/Tripoli  (GMT +02:00)</option>  <option data-name="Africa/Windhoek" value="+02:00">Africa/Windhoek  (GMT +02:00)</option>  <option data-name="Asia/Amman" value="+02:00">Asia/Amman  (GMT +02:00)</option>  <option data-name="Asia/Beirut" value="+02:00">Asia/Beirut  (GMT +02:00)</option>  <option data-name="Asia/Damascus" value="+02:00">Asia/Damascus  (GMT +02:00)</option>  <option data-name="Asia/Gaza" value="+02:00">Asia/Gaza  (GMT +02:00)</option>  <option data-name="Asia/Hebron" value="+02:00">Asia/Hebron  (GMT +02:00)</option>  <option data-name="Asia/Istanbul" value="+02:00">Asia/Istanbul  (GMT +02:00)</option>  <option data-name="Asia/Jerusalem" value="+02:00">Asia/Jerusalem  (GMT +02:00)</option>  <option data-name="Asia/Nicosia" value="+02:00">Asia/Nicosia  (GMT +02:00)</option>  <option data-name="Asia/Tel_Aviv" value="+02:00">Asia/Tel_Aviv  (GMT +02:00)</option>  <option data-name="EET" value="+02:00">EET  (GMT +02:00)</option>  <option data-name="Egypt" value="+02:00">Egypt  (GMT +02:00)</option>  <option data-name="Etc/GMT-2" value="+02:00">Etc/GMT-2  (GMT +02:00)</option>  <option data-name="Europe/Athens" value="+02:00">Europe/Athens  (GMT +02:00)</option>  <option data-name="Europe/Bucharest" value="+02:00">Europe/Bucharest  (GMT +02:00)</option>  <option data-name="Europe/Chisinau" value="+02:00">Europe/Chisinau  (GMT +02:00)</option>  <option data-name="Europe/Helsinki" value="+02:00">Europe/Helsinki  (GMT +02:00)</option>  <option data-name="Europe/Istanbul" value="+02:00">Europe/Istanbul  (GMT +02:00)</option>  <option data-name="Europe/Kaliningrad" value="+02:00">Europe/Kaliningrad  (GMT +02:00)</option>  <option data-name="Europe/Kiev" value="+02:00">Europe/Kiev  (GMT +02:00)</option>  <option data-name="Europe/Mariehamn" value="+02:00">Europe/Mariehamn  (GMT +02:00)</option>  <option data-name="Europe/Nicosia" value="+02:00">Europe/Nicosia  (GMT +02:00)</option>  <option data-name="Europe/Riga" value="+02:00">Europe/Riga  (GMT +02:00)</option>  <option data-name="Europe/Sofia" value="+02:00">Europe/Sofia  (GMT +02:00)</option>  <option data-name="Europe/Tallinn" value="+02:00">Europe/Tallinn  (GMT +02:00)</option>  <option data-name="Europe/Tiraspol" value="+02:00">Europe/Tiraspol  (GMT +02:00)</option>  <option data-name="Europe/Uzhgorod" value="+02:00">Europe/Uzhgorod  (GMT +02:00)</option>  <option data-name="Europe/Vilnius" value="+02:00">Europe/Vilnius  (GMT +02:00)</option>  <option data-name="Europe/Zaporozhye" value="+02:00">Europe/Zaporozhye  (GMT +02:00)</option>  <option data-name="Israel" value="+02:00">Israel  (GMT +02:00)</option>  <option data-name="Libya" value="+02:00">Libya  (GMT +02:00)</option>  <option data-name="Turkey" value="+02:00">Turkey  (GMT +02:00)</option>  <option data-name="Africa/Addis_Ababa" value="+03:00">Africa/Addis_Ababa  (GMT +03:00)</option>  <option data-name="Africa/Asmara" value="+03:00">Africa/Asmara  (GMT +03:00)</option>  <option data-name="Africa/Asmera" value="+03:00">Africa/Asmera  (GMT +03:00)</option>  <option data-name="Africa/Dar_es_Salaam" value="+03:00">Africa/Dar_es_Salaam  (GMT +03:00)</option>  <option data-name="Africa/Djibouti" value="+03:00">Africa/Djibouti  (GMT +03:00)</option>  <option data-name="Africa/Juba" value="+03:00">Africa/Juba  (GMT +03:00)</option>  <option data-name="Africa/Kampala" value="+03:00">Africa/Kampala  (GMT +03:00)</option>  <option data-name="Africa/Khartoum" value="+03:00">Africa/Khartoum  (GMT +03:00)</option>  <option data-name="Africa/Mogadishu" value="+03:00">Africa/Mogadishu  (GMT +03:00)</option>  <option data-name="Africa/Nairobi" value="+03:00">Africa/Nairobi  (GMT +03:00)</option>  <option data-name="Antarctica/Syowa" value="+03:00">Antarctica/Syowa  (GMT +03:00)</option>  <option data-name="Asia/Aden" value="+03:00">Asia/Aden  (GMT +03:00)</option>  <option data-name="Asia/Baghdad" value="+03:00">Asia/Baghdad  (GMT +03:00)</option>  <option data-name="Asia/Bahrain" value="+03:00">Asia/Bahrain  (GMT +03:00)</option>  <option data-name="Asia/Kuwait" value="+03:00">Asia/Kuwait  (GMT +03:00)</option>  <option data-name="Asia/Qatar" value="+03:00">Asia/Qatar  (GMT +03:00)</option>  <option data-name="Asia/Riyadh" value="+03:00">Asia/Riyadh  (GMT +03:00)</option>  <option data-name="Etc/GMT-3" value="+03:00">Etc/GMT-3  (GMT +03:00)</option>  <option data-name="Europe/Minsk" value="+03:00">Europe/Minsk  (GMT +03:00)</option>  <option data-name="Europe/Moscow" value="+03:00">Europe/Moscow  (GMT +03:00)</option>  <option data-name="Europe/Simferopol" value="+03:00">Europe/Simferopol  (GMT +03:00)</option>  <option data-name="Europe/Volgograd" value="+03:00">Europe/Volgograd  (GMT +03:00)</option>  <option data-name="Indian/Antananarivo" value="+03:00">Indian/Antananarivo  (GMT +03:00)</option>  <option data-name="Indian/Comoro" value="+03:00">Indian/Comoro  (GMT +03:00)</option>  <option data-name="Indian/Mayotte" value="+03:00">Indian/Mayotte  (GMT +03:00)</option>  <option data-name="W-SU" value="+03:00">W-SU  (GMT +03:00)</option>  <option data-name="Asia/Tehran" value="+03:30">Asia/Tehran  (GMT +03:30)</option>  <option data-name="Iran" value="+03:30">Iran  (GMT +03:30)</option>  <option data-name="Asia/Baku" value="+04:00">Asia/Baku  (GMT +04:00)</option>  <option data-name="Asia/Dubai" value="+04:00">Asia/Dubai  (GMT +04:00)</option>  <option data-name="Asia/Muscat" value="+04:00">Asia/Muscat  (GMT +04:00)</option>  <option data-name="Asia/Tbilisi" value="+04:00">Asia/Tbilisi  (GMT +04:00)</option>  <option data-name="Asia/Yerevan" value="+04:00">Asia/Yerevan  (GMT +04:00)</option>  <option data-name="Etc/GMT-4" value="+04:00">Etc/GMT-4  (GMT +04:00)</option>  <option data-name="Europe/Samara" value="+04:00">Europe/Samara  (GMT +04:00)</option>  <option data-name="Indian/Mahe" value="+04:00">Indian/Mahe  (GMT +04:00)</option>  <option data-name="Indian/Mauritius" value="+04:00">Indian/Mauritius  (GMT +04:00)</option>  <option data-name="Indian/Reunion" value="+04:00">Indian/Reunion  (GMT +04:00)</option>  <option data-name="Asia/Kabul" value="+04:30">Asia/Kabul  (GMT +04:30)</option>  <option data-name="Antarctica/Mawson" value="+05:00">Antarctica/Mawson  (GMT +05:00)</option>  <option data-name="Asia/Aqtau" value="+05:00">Asia/Aqtau  (GMT +05:00)</option>  <option data-name="Asia/Aqtobe" value="+05:00">Asia/Aqtobe  (GMT +05:00)</option>  <option data-name="Asia/Ashgabat" value="+05:00">Asia/Ashgabat  (GMT +05:00)</option>  <option data-name="Asia/Ashkhabad" value="+05:00">Asia/Ashkhabad  (GMT +05:00)</option>  <option data-name="Asia/Dushanbe" value="+05:00">Asia/Dushanbe  (GMT +05:00)</option>  <option data-name="Asia/Karachi" value="+05:00">Asia/Karachi  (GMT +05:00)</option>  <option data-name="Asia/Oral" value="+05:00">Asia/Oral  (GMT +05:00)</option>  <option data-name="Asia/Samarkand" value="+05:00">Asia/Samarkand  (GMT +05:00)</option>  <option data-name="Asia/Tashkent" value="+05:00">Asia/Tashkent  (GMT +05:00)</option>  <option data-name="Asia/Yekaterinburg" value="+05:00">Asia/Yekaterinburg  (GMT +05:00)</option>  <option data-name="Etc/GMT-5" value="+05:00">Etc/GMT-5  (GMT +05:00)</option>  <option data-name="Indian/Kerguelen" value="+05:00">Indian/Kerguelen  (GMT +05:00)</option>  <option data-name="Indian/Maldives" value="+05:00">Indian/Maldives  (GMT +05:00)</option>  <option data-name="Asia/Calcutta" value="+05:30">Asia/Calcutta  (GMT +05:30)</option>  <option data-name="Asia/Colombo" value="+05:30">Asia/Colombo  (GMT +05:30)</option>  <option data-name="Asia/Kolkata" value="+05:30">Asia/Kolkata  (GMT +05:30)</option>  <option data-name="Asia/Kathmandu" value="+05:45">Asia/Kathmandu  (GMT +05:45)</option>  <option data-name="Asia/Katmandu" value="+05:45">Asia/Katmandu  (GMT +05:45)</option>  <option data-name="Antarctica/Vostok" value="+06:00">Antarctica/Vostok  (GMT +06:00)</option>  <option data-name="Asia/Almaty" value="+06:00">Asia/Almaty  (GMT +06:00)</option>  <option data-name="Asia/Bishkek" value="+06:00">Asia/Bishkek  (GMT +06:00)</option>  <option data-name="Asia/Dacca" value="+06:00">Asia/Dacca  (GMT +06:00)</option>  <option data-name="Asia/Dhaka" value="+06:00">Asia/Dhaka  (GMT +06:00)</option>  <option data-name="Asia/Kashgar" value="+06:00">Asia/Kashgar  (GMT +06:00)</option>  <option data-name="Asia/Novosibirsk" value="+06:00">Asia/Novosibirsk  (GMT +06:00)</option>  <option data-name="Asia/Omsk" value="+06:00">Asia/Omsk  (GMT +06:00)</option>  <option data-name="Asia/Qyzylorda" value="+06:00">Asia/Qyzylorda  (GMT +06:00)</option>  <option data-name="Asia/Thimbu" value="+06:00">Asia/Thimbu  (GMT +06:00)</option>  <option data-name="Asia/Thimphu" value="+06:00">Asia/Thimphu  (GMT +06:00)</option>  <option data-name="Asia/Urumqi" value="+06:00">Asia/Urumqi  (GMT +06:00)</option>  <option data-name="Etc/GMT-6" value="+06:00">Etc/GMT-6  (GMT +06:00)</option>  <option data-name="Indian/Chagos" value="+06:00">Indian/Chagos  (GMT +06:00)</option>  <option data-name="Asia/Rangoon" value="+06:30">Asia/Rangoon  (GMT +06:30)</option>  <option data-name="Indian/Cocos" value="+06:30">Indian/Cocos  (GMT +06:30)</option>  <option data-name="Antarctica/Davis" value="+07:00">Antarctica/Davis  (GMT +07:00)</option>  <option data-name="Asia/Bangkok" value="+07:00">Asia/Bangkok  (GMT +07:00)</option>  <option data-name="Asia/Ho_Chi_Minh" value="+07:00">Asia/Ho_Chi_Minh  (GMT +07:00)</option>  <option data-name="Asia/Hovd" value="+07:00">Asia/Hovd  (GMT +07:00)</option>  <option data-name="Asia/Jakarta" value="+07:00">Asia/Jakarta  (GMT +07:00)</option>  <option data-name="Asia/Krasnoyarsk" value="+07:00">Asia/Krasnoyarsk  (GMT +07:00)</option>  <option data-name="Asia/Novokuznetsk" value="+07:00">Asia/Novokuznetsk  (GMT +07:00)</option>  <option data-name="Asia/Phnom_Penh" value="+07:00">Asia/Phnom_Penh  (GMT +07:00)</option>  <option data-name="Asia/Pontianak" value="+07:00">Asia/Pontianak  (GMT +07:00)</option>  <option data-name="Asia/Saigon" value="+07:00">Asia/Saigon  (GMT +07:00)</option>  <option data-name="Asia/Vientiane" value="+07:00">Asia/Vientiane  (GMT +07:00)</option>  <option data-name="Etc/GMT-7" value="+07:00">Etc/GMT-7  (GMT +07:00)</option>  <option data-name="Indian/Christmas" value="+07:00">Indian/Christmas  (GMT +07:00)</option>  <option data-name="Antarctica/Casey" value="+08:00">Antarctica/Casey  (GMT +08:00)</option>  <option data-name="Asia/Brunei" value="+08:00">Asia/Brunei  (GMT +08:00)</option>  <option data-name="Asia/Chita" value="+08:00">Asia/Chita  (GMT +08:00)</option>  <option data-name="Asia/Choibalsan" value="+08:00">Asia/Choibalsan  (GMT +08:00)</option>  <option data-name="Asia/Chongqing" value="+08:00">Asia/Chongqing  (GMT +08:00)</option>  <option data-name="Asia/Chungking" value="+08:00">Asia/Chungking  (GMT +08:00)</option>  <option data-name="Asia/Harbin" value="+08:00">Asia/Harbin  (GMT +08:00)</option>  <option data-name="Asia/Hong_Kong" value="+08:00">Asia/Hong_Kong  (GMT +08:00)</option>  <option data-name="Asia/Irkutsk" value="+08:00">Asia/Irkutsk  (GMT +08:00)</option>  <option data-name="Asia/Kuala_Lumpur" value="+08:00">Asia/Kuala_Lumpur  (GMT +08:00)</option>  <option data-name="Asia/Kuching" value="+08:00">Asia/Kuching  (GMT +08:00)</option>  <option data-name="Asia/Macao" value="+08:00">Asia/Macao  (GMT +08:00)</option>  <option data-name="Asia/Macau" value="+08:00">Asia/Macau  (GMT +08:00)</option>  <option data-name="Asia/Makassar" value="+08:00">Asia/Makassar  (GMT +08:00)</option>  <option data-name="Asia/Manila" value="+08:00">Asia/Manila  (GMT +08:00)</option>  <option data-name="Asia/Shanghai" value="+08:00">Asia/Shanghai  (GMT +08:00)</option>  <option data-name="Asia/Singapore" value="+08:00">Asia/Singapore  (GMT +08:00)</option>  <option data-name="Asia/Taipei" value="+08:00">Asia/Taipei  (GMT +08:00)</option>  <option data-name="Asia/Ujung_Pandang" value="+08:00">Asia/Ujung_Pandang  (GMT +08:00)</option>  <option data-name="Asia/Ulaanbaatar" value="+08:00">Asia/Ulaanbaatar  (GMT +08:00)</option>  <option data-name="Asia/Ulan_Bator" value="+08:00">Asia/Ulan_Bator  (GMT +08:00)</option>  <option data-name="Australia/Perth" value="+08:00">Australia/Perth  (GMT +08:00)</option>  <option data-name="Australia/West" value="+08:00">Australia/West  (GMT +08:00)</option>  <option data-name="Etc/GMT-8" value="+08:00">Etc/GMT-8  (GMT +08:00)</option>  <option data-name="Hongkong" value="+08:00">Hongkong  (GMT +08:00)</option>  <option data-name="PRC" value="+08:00">PRC  (GMT +08:00)</option>  <option data-name="ROC" value="+08:00">ROC  (GMT +08:00)</option>  <option data-name="Singapore" value="+08:00">Singapore  (GMT +08:00)</option>  <option data-name="Australia/Eucla" value="+08:45">Australia/Eucla  (GMT +08:45)</option>  <option data-name="Asia/Dili" value="+09:00">Asia/Dili  (GMT +09:00)</option>  <option data-name="Asia/Jayapura" value="+09:00">Asia/Jayapura  (GMT +09:00)</option>  <option data-name="Asia/Khandyga" value="+09:00">Asia/Khandyga  (GMT +09:00)</option>  <option data-name="Asia/Pyongyang" value="+09:00">Asia/Pyongyang  (GMT +09:00)</option>  <option data-name="Asia/Seoul" value="+09:00">Asia/Seoul  (GMT +09:00)</option>  <option data-name="Asia/Tokyo" value="+09:00">Asia/Tokyo  (GMT +09:00)</option>  <option data-name="Asia/Yakutsk" value="+09:00">Asia/Yakutsk  (GMT +09:00)</option>  <option data-name="Etc/GMT-9" value="+09:00">Etc/GMT-9  (GMT +09:00)</option>  <option data-name="Japan" value="+09:00">Japan  (GMT +09:00)</option>  <option data-name="Pacific/Palau" value="+09:00">Pacific/Palau  (GMT +09:00)</option>  <option data-name="ROK" value="+09:00">ROK  (GMT +09:00)</option>  <option data-name="Australia/Darwin" value="+09:30">Australia/Darwin  (GMT +09:30)</option>  <option data-name="Australia/North" value="+09:30">Australia/North  (GMT +09:30)</option>  <option data-name="Antarctica/DumontDUrville" value="+10:00">Antarctica/DumontDUrville  (GMT +10:00)</option>  <option data-name="Asia/Magadan" value="+10:00">Asia/Magadan  (GMT +10:00)</option>  <option data-name="Asia/Sakhalin" value="+10:00">Asia/Sakhalin  (GMT +10:00)</option>  <option data-name="Asia/Ust-Nera" value="+10:00">Asia/Ust-Nera  (GMT +10:00)</option>  <option data-name="Asia/Vladivostok" value="+10:00">Asia/Vladivostok  (GMT +10:00)</option>  <option data-name="Australia/Brisbane" value="+10:00">Australia/Brisbane  (GMT +10:00)</option>  <option data-name="Australia/Lindeman" value="+10:00">Australia/Lindeman  (GMT +10:00)</option>  <option data-name="Australia/Queensland" value="+10:00">Australia/Queensland  (GMT +10:00)</option>  <option data-name="Etc/GMT-10" value="+10:00">Etc/GMT-10  (GMT +10:00)</option>  <option data-name="Pacific/Chuuk" value="+10:00">Pacific/Chuuk  (GMT +10:00)</option>  <option data-name="Pacific/Guam" value="+10:00">Pacific/Guam  (GMT +10:00)</option>  <option data-name="Pacific/Port_Moresby" value="+10:00">Pacific/Port_Moresby  (GMT +10:00)</option>  <option data-name="Pacific/Saipan" value="+10:00">Pacific/Saipan  (GMT +10:00)</option>  <option data-name="Pacific/Truk" value="+10:00">Pacific/Truk  (GMT +10:00)</option>  <option data-name="Pacific/Yap" value="+10:00">Pacific/Yap  (GMT +10:00)</option>  <option data-name="Australia/Adelaide" value="+10:30">Australia/Adelaide  (GMT +10:30)</option>  <option data-name="Australia/Broken_Hill" value="+10:30">Australia/Broken_Hill  (GMT +10:30)</option>  <option data-name="Australia/South" value="+10:30">Australia/South  (GMT +10:30)</option>  <option data-name="Australia/Yancowinna" value="+10:30">Australia/Yancowinna  (GMT +10:30)</option>  <option data-name="Antarctica/Macquarie" value="+11:00">Antarctica/Macquarie  (GMT +11:00)</option>  <option data-name="Asia/Srednekolymsk" value="+11:00">Asia/Srednekolymsk  (GMT +11:00)</option>  <option data-name="Australia/ACT" value="+11:00">Australia/ACT  (GMT +11:00)</option>  <option data-name="Australia/Canberra" value="+11:00">Australia/Canberra  (GMT +11:00)</option>  <option data-name="Australia/Currie" value="+11:00">Australia/Currie  (GMT +11:00)</option>  <option data-name="Australia/Hobart" value="+11:00">Australia/Hobart  (GMT +11:00)</option>  <option data-name="Australia/LHI" value="+11:00">Australia/LHI  (GMT +11:00)</option>  <option data-name="Australia/Lord_Howe" value="+11:00">Australia/Lord_Howe  (GMT +11:00)</option>  <option data-name="Australia/Melbourne" value="+11:00">Australia/Melbourne  (GMT +11:00)</option>  <option data-name="Australia/NSW" value="+11:00">Australia/NSW  (GMT +11:00)</option>  <option data-name="Australia/Sydney" value="+11:00">Australia/Sydney  (GMT +11:00)</option>  <option data-name="Australia/Tasmania" value="+11:00">Australia/Tasmania  (GMT +11:00)</option>  <option data-name="Australia/Victoria" value="+11:00">Australia/Victoria  (GMT +11:00)</option>  <option data-name="Etc/GMT-11" value="+11:00">Etc/GMT-11  (GMT +11:00)</option>  <option data-name="Pacific/Bougainville" value="+11:00">Pacific/Bougainville  (GMT +11:00)</option>  <option data-name="Pacific/Efate" value="+11:00">Pacific/Efate  (GMT +11:00)</option>  <option data-name="Pacific/Guadalcanal" value="+11:00">Pacific/Guadalcanal  (GMT +11:00)</option>  <option data-name="Pacific/Kosrae" value="+11:00">Pacific/Kosrae  (GMT +11:00)</option>  <option data-name="Pacific/Noumea" value="+11:00">Pacific/Noumea  (GMT +11:00)</option>  <option data-name="Pacific/Pohnpei" value="+11:00">Pacific/Pohnpei  (GMT +11:00)</option>  <option data-name="Pacific/Ponape" value="+11:00">Pacific/Ponape  (GMT +11:00)</option>  <option data-name="Pacific/Norfolk" value="+11:30">Pacific/Norfolk  (GMT +11:30)</option>  <option data-name="Asia/Anadyr" value="+12:00">Asia/Anadyr  (GMT +12:00)</option>  <option data-name="Asia/Kamchatka" value="+12:00">Asia/Kamchatka  (GMT +12:00)</option>  <option data-name="Etc/GMT-12" value="+12:00">Etc/GMT-12  (GMT +12:00)</option>  <option data-name="Kwajalein" value="+12:00">Kwajalein  (GMT +12:00)</option>  <option data-name="Pacific/Funafuti" value="+12:00">Pacific/Funafuti  (GMT +12:00)</option>  <option data-name="Pacific/Kwajalein" value="+12:00">Pacific/Kwajalein  (GMT +12:00)</option>  <option data-name="Pacific/Majuro" value="+12:00">Pacific/Majuro  (GMT +12:00)</option>  <option data-name="Pacific/Nauru" value="+12:00">Pacific/Nauru  (GMT +12:00)</option>  <option data-name="Pacific/Tarawa" value="+12:00">Pacific/Tarawa  (GMT +12:00)</option>  <option data-name="Pacific/Wake" value="+12:00">Pacific/Wake  (GMT +12:00)</option>  <option data-name="Pacific/Wallis" value="+12:00">Pacific/Wallis  (GMT +12:00)</option>  <option data-name="Antarctica/McMurdo" value="+13:00">Antarctica/McMurdo  (GMT +13:00)</option>  <option data-name="Antarctica/South_Pole" value="+13:00">Antarctica/South_Pole  (GMT +13:00)</option>  <option data-name="Etc/GMT-13" value="+13:00">Etc/GMT-13  (GMT +13:00)</option>  <option data-name="NZ" value="+13:00">NZ  (GMT +13:00)</option>  <option data-name="Pacific/Auckland" value="+13:00">Pacific/Auckland  (GMT +13:00)</option>  <option data-name="Pacific/Enderbury" value="+13:00">Pacific/Enderbury  (GMT +13:00)</option>  <option data-name="Pacific/Fakaofo" value="+13:00">Pacific/Fakaofo  (GMT +13:00)</option>  <option data-name="Pacific/Fiji" value="+13:00">Pacific/Fiji  (GMT +13:00)</option>  <option data-name="Pacific/Tongatapu" value="+13:00">Pacific/Tongatapu  (GMT +13:00)</option>  <option data-name="NZ-CHAT" value="+13:45">NZ-CHAT  (GMT +13:45)</option>  <option data-name="Pacific/Chatham" value="+13:45">Pacific/Chatham  (GMT +13:45)</option>  <option data-name="Etc/GMT-14" value="+14:00">Etc/GMT-14  (GMT +14:00)</option>  <option data-name="Pacific/Apia" value="+14:00">Pacific/Apia  (GMT +14:00)</option>  <option data-name="Pacific/Kiritimati" value="+14:00">Pacific/Kiritimati  (GMT +14:00)</option>  </select> </div> </div> <div class="form-group"> <label class="col-sm-3 control-label" for="startsOn">Starts On :</label> <div class="col-sm-8" id="start"> <input type="text" class="form-control" name="StartDate" id="startsOn"> </div> </div> <div class="form-group"> <label class="col-sm-3 control-label">Ends :</label> <div class="col-sm-9" id="ends"> <div class="radio"> <label> <input type="radio" class="ends" name="endsRadio" id="never" value="Never" checked=""> Never </label> </div> </div> </div> <div class="form-group"> <div class="col-sm-2 col-sm-offset-3"> <div class="radio"> <label> <input type="radio" name="endsRadio" class="ends" id="endsAfter" value="After"> After </label> </div> </div> <div class="col-sm-3"> <input type="number" max="100" min="1" class="form-control" id="endsAfterOccurrences" disabled="disabled" value="" name="EndAfterExecutions" data-validation-rules="required|numeric|numericlength" data-validation-on="focusout" data-validation-msg="Occurences should be &gt;= 1 and &lt;=99"> </div> <label class="col-sm-3 control-label" style="text-align:left;margin-left:-15px">Occurences</label> </div> <div class="form-group"> <div class="col-sm-2 col-sm-offset-3"> <div class="radio"> <label> <input type="radio" class="ends" name="endsRadio" id="endsOn" value="On"> On </label> </div> </div> <div class="col-sm-5"> <input type="text" class="form-control" name="EndDate" id="endsOnDate" disabled="disabled"> </div> </div> <div class="form-group"> <label class="col-xs-3 control-label">Summary <i class="fa fa-info-circle" data-html="true" data-tip="resets at:&lt;br&gt; 1st of every month&lt;br&gt;January 1st of every year"></i> :</label> <label class="col-xs-8 control-label" style="text-align:left"><span id="schedule-summary">Starting today, repeats every  7 days   at 17:23 (Asia/Calcutta  (GMT +05:30))</span></label> </div> <hr style="margin-left:-15px;margin-right:-15px;border-top:1px solid #e5e5e5"> <div class="text-center"> <a href="#" class="btn btn-danger" data-step="2"> <i class="fa fa-arrow-left"></i>&nbsp;&nbsp;Prev </a>&nbsp;&nbsp; <button class="btn btn-primary" id="schedule-btn"> <i class="fa fa-clock-o"></i>&nbsp;&nbsp;Schedule </button> </div> </form> </div> </div> </div> </div> </div></div></body></html>

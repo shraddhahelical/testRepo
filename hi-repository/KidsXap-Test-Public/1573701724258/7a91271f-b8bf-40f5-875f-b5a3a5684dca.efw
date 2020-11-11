@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efw>
+    <title>Families</title>
+    <author>hiadmin</author>
+    <description>Efw File</description>
+    <template>7a91271f-b8bf-40f5-875f-b5a3a5684dca.html</template>
+    <visible>true</visible>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</efw>

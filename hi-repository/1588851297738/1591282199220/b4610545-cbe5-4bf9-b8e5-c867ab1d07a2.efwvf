@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Charts>
+    <Chart id="1">
+        <prop>
+            <name>client_wise</name>
+            <type>EFW-c3</type>
+            <subtype>Pie</subtype>
+            <DataSource>2</DataSource>
+            <Dimensions>booking_platform</Dimensions>
+            <Measures>sum_travel_cost</Measures>
+        </prop>
+    </Chart>
+</Charts>

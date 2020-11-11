@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<EFWD>
+    <DataSources>
+        <Connection id="1" type="global.jdbc">
+            <globalId>1</globalId>
+            <security>
+                <createdBy>1</createdBy>
+                <organization></organization>
+            </security>
+        </Connection>
+    </DataSources>
+    <DataMaps>
+        <DataMap id="1" connection="1" type="sql">
+            <Name>traveller_name</Name>
+            <Query><![CDATA[select "employee_name" as "employee" from "employee_details"]]></Query>
+        </DataMap>
+        <DataMap id="4" connection="1" type="sql">
+            <Name>travellerType</Name>
+            <Query><![CDATA[ select 
+						"employee_name" as "employee",
+							count("travel_cost") as "travel_count" 
+						from
+						"travel_details" 
+							inner join "employee_details" on ("employee_id" = "travelled_by") 
+						where
+							("employee_name" = ${traveller_name}) 
+						group by
+							"employee_name" ]]></Query>
+            <Parameters>
+                <Parameter name="traveller_name" type="String" default=""/>
+            </Parameters>
+        </DataMap>
+        <DataMap id="5" connection="1" type="sql">
+            <Name>barChart</Name>
+            <Query><![CDATA[select 
+	count("travel_cost") as "travel_count",
+ 	(CASE MONTH("travel_date") WHEN < 4 THEN 1 WHEN BETWEEN 4 AND 6 then 2 WHEN BETWEEN 7 AND 9 then 3 WHEN BETWEEN 10 AND 12 then 4 END) as "quarter" 
+from
+	"travel_details" 
+group by
+	(CASE MONTH("travel_date") WHEN < 4 THEN 1 WHEN BETWEEN 4 AND 6 then 2 WHEN BETWEEN 7 AND 9 then 3 WHEN BETWEEN 10 AND 12 then 4 END) FETCH FIRST 1000 ROWS ONLY]]></Query>
+            <Parameters>
+                <Parameter name="traveller_name" type="String" default=""/>
+            </Parameters>
+        </DataMap>
+        <DataMap id="6" connection="1" type="sql">
+            <Name>avgCost</Name>
+            <Query><![CDATA[select 
+						sum("travel_cost") as "travel_cost",
+						count("employee_name") as "count" 
+					from
+						"travel_details" 
+						inner join "employee_details" on ("employee_id" = "travelled_by") 
+					where
+						("employee_name" = ${traveller_name}) ]]></Query>
+            <Parameters>
+                <Parameter name="traveller_name" type="String" default=""/>
+            </Parameters>
+        </DataMap>
+        <DataMap id="7" connection="1" type="sql">
+            <Name>companyAvgCost</Name>
+            <Query><![CDATA[select 
+						sum("travel_cost") as "travel_cost",
+						count("employee_name") as "count" 
+					from
+						"travel_details" 
+						inner join "employee_details" on ("employee_id" = "travelled_by") ]]></Query>
+        </DataMap>
+        <DataMap id="8" connection="1" type="sql">
+            <Name>pieChart</Name>
+            <Query><![CDATA[select 
+						"travel_medium" as "Type",
+						sum("travel_cost") as "Cost" 
+					from
+						"travel_details" 
+					where
+						("travel_medium" != 'Misc')
+					group by
+						"travel_medium"]]></Query>
+        </DataMap>
+        <DataMap id="9" connection="1" type="sql">
+            <Name>travelTypeCostPerPerson</Name>
+            <Query><![CDATA[select 
+						sum("travel_cost") as "Cost",
+						count("employee_name") as "Count"  
+					from
+						"travel_details" 
+						inner join "employee_details" on ("employee_id" = "travelled_by") 
+					where
+						("travel_medium" != 'Misc' AND 
+						"employee_name" = ${traveller_name}
+						AND "travel_medium" = ${travel_type}) ]]></Query>
+            <Parameters>
+                <Parameter name="traveller_name" type="String" default=""/>
+                <Parameter name="travel_type" type="String" default=""/>
+            </Parameters>
+        </DataMap>
+        <DataMap id="10" connection="1" type="sql">
+            <Name>travelTypeCostCompany</Name>
+            <Query><![CDATA[select 
+						sum("travel_cost") as "Cost",
+						count("employee_name") as "Count" 
+					from
+						"travel_details" 
+						inner join "employee_details" on ("employee_id" = "travelled_by") 
+					where
+						("travel_medium" != 'Misc' AND 
+						"travel_medium" = ${travel_type}) ]]></Query>
+            <Parameters>
+                <Parameter name="travel_type" type="String" default=""/>
+            </Parameters>
+        </DataMap>
+    </DataMaps>
+</EFWD>

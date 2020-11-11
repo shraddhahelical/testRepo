@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<metadata type="db.workflow" databaseType="Apache Derby 10.12.1.1 - (1704137)">
+    <fileName>Metadata_1</fileName>
+    <connectionType>global.jdbc</connectionType>
+    <visible>true</visible>
+    <connection connectionType="global.jdbc" subType="dynamicDataSource">
+        <dialect>org.hibernate.dialect.DerbyTenSevenDialect</dialect>
+        <connectionId>1</connectionId>
+        <driverClass reference="derby">org.apache.derby.jdbc.AutoloadedDriver</driverClass>
+    </connection>
+    <database name="HIUSER" catalog="" schema="HIUSER">
+        <tables>
+            <table id="9645c648a1c0dbeec1287aaf1e996db3" name="meeting_details" aliasName="meeting_details">
+                <columns>
+                    <column name="meeting_id" id="bc8b9aaa-1be2-4eb3-8124-c21acc362857" aliasName="meeting_id" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="meeting_date" id="f2ba72e0-3af9-40f2-b1b3-18d731de94ce" aliasName="meeting_date" type="java.sql.Timestamp" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="meeting_by" id="c25b6b95-59a4-4f46-b496-81c96c292baa" aliasName="meeting_by" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="client_name" id="230ff5ed-40aa-443a-aff2-58677d3bf57e" aliasName="client_name" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="meeting_purpose" id="34cb9018-3bec-4254-a352-d3f9a094db58" aliasName="meeting_purpose" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="meeting_impact" id="b5dd2780-af87-4dfc-858c-f1b854e0da1c" aliasName="meeting_impact" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="meet_cancellation_status" id="e733a4ca-01c1-4de4-995d-e220bc3d81f7" aliasName="meet_cancellation_status" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="cancellation_reason" id="5d078ad5-38a4-44d5-96d7-da0d8e439cf1" aliasName="cancellation_reason" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                </columns>
+            </table>
+            <table id="4e1fd245f4d13b77be423a43f01d80b2" name="employee_details" aliasName="employee_details">
+                <columns>
+                    <column name="employee_id" id="873cf63a-9179-4c52-b711-bea995bd599a" aliasName="employee_id" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="employee_name" id="3aa2ad28-447b-4b66-8571-1872907328d7" aliasName="employee_name" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="age" id="f518d471-b2b4-41af-b865-5126a9c27d40" aliasName="age" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="address" id="778cc88c-b5fa-4cb1-b38b-c1ec6befaef3" aliasName="address" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                </columns>
+            </table>
+            <table id="8a28627d07d04ef096d9935f12e0c7e9" name="travel_details" aliasName="travel_details">
+                <columns>
+                    <column name="travel_id" id="e0fce92d-0e49-42de-84a2-0dd7b52d4d82" aliasName="travel_id" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="travel_date" id="418aaeb6-2e53-43d7-aa7a-ed059ccb6075" aliasName="travel_date" type="java.sql.Timestamp" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="travel_type" id="9ba2d6ff-37a1-457b-bf01-ce42cf93c250" aliasName="travel_type" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="travel_medium" id="0ed05dfc-ce22-4257-938c-8ebd61e24572" aliasName="travel_medium" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="source_id" id="318d3522-a7e7-4e4a-aeaf-f7cc6045b2e3" aliasName="source_id" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="source" id="7abafdcb-9c86-4f90-814a-cf5b640254b5" aliasName="source" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="destination_id" id="41d324b8-854f-403f-ab42-64d93429b925" aliasName="destination_id" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="destination" id="124e4d37-dadb-4bb3-94e2-52292da50a6a" aliasName="destination" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="travel_cost" id="e910c688-26e7-4ef2-8713-d565068b6c6e" aliasName="travel_cost" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="mode_of_payment" id="6722d636-c79f-4d82-bdfb-c2c93bcb9c99" aliasName="mode_of_payment" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="booking_platform" id="2b6a4ca5-4da3-40eb-9901-42cecd609149" aliasName="booking_platform" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="travelled_by" id="d4e230e3-77d6-447d-af94-9a9176528338" aliasName="travelled_by" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                </columns>
+            </table>
+        </tables>
+        <relationships>
+            <relationship table="employee_details" referenceTable="meeting_details">
+                <join id="af8f3186af3703a70a3d6e219faafb4e" type="inner" operator="=">
+                    <left table="employee_details" column="employee_id"/>
+                    <right table="meeting_details" column="meeting_by"/>
+                </join>
+            </relationship>
+            <relationship table="employee_details" referenceTable="travel_details">
+                <join id="aab02b68e2c7febf125c50c8c5175037" type="inner" operator="=">
+                    <left table="employee_details" column="employee_id"/>
+                    <right table="travel_details" column="travelled_by"/>
+                </join>
+            </relationship>
+        </relationships>
+        <views/>
+    </database>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</metadata>

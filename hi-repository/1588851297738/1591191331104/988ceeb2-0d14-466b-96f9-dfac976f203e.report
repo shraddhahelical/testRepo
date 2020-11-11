@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<report>
+    <reportName>SampleDynamicViewReport</reportName>
+    <visible>true</visible>
+    <metadata>
+        <location>1588851297738/1591191331104</location>
+        <metadataFileName>f2634010-707a-4583-9cf3-354ad7e3fde4.metadata</metadataFileName>
+    </metadata>
+    <canvas>
+        <columns><![CDATA[[{"column":"SampleDynamicView.booking_platform","label":"SampleDynamicView_booking_platform","id":"t8e57jc046","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"SampleDynamicView_booking_platform","groupBy":["db.generic.groupBy.group"]},{"column":"SampleDynamicView.destination","label":"SampleDynamicView_destination","id":"waqhlo90aj","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"SampleDynamicView_destination","groupBy":["db.generic.groupBy.group"]}]]]></columns>
+    </canvas>
+    <state><![CDATA[{"columns":[{"column":"SampleDynamicView.booking_platform","label":"SampleDynamicView_booking_platform","id":"t8e57jc046","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"SampleDynamicView_booking_platform","groupBy":["db.generic.groupBy.group"]},{"column":"SampleDynamicView.destination","label":"SampleDynamicView_destination","id":"waqhlo90aj","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"SampleDynamicView_destination","groupBy":["db.generic.groupBy.group"]}],"filters":[],"customFilterExpression":"","customHavingExpression":"","customFilterExpressionObj":{},"customHavingExpressionObj":{},"havingExpressionIndexs":{},"filterExpressionIndexs":{},"options":{"limitBy":1000,"prependTableNameToAlias":true},"visualisation":{"type":"Table","chartGroup":"","selectedType":"Table","settings":{"script":null,"vizscriptsEditMultipleMode":false},"vizSelectedScripts":[]},"scripts":[],"styles":"","customStyles":"","customScripts":[]}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</report>

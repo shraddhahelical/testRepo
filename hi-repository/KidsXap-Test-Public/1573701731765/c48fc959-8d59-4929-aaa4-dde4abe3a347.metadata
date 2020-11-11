@@ -1,0 +1,1119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<metadata type="db.generic" databaseType="Microsoft SQL Server 12.00.1800">
+    <fileName>mtd_Bookings</fileName>
+    <connectionType>global.jdbc</connectionType>
+    <visible>true</visible>
+    <connection connectionType="global.jdbc" subType="dynamicDataSource">
+        <dialect>org.hibernate.dialect.SQLServerDialect</dialect>
+        <connectionId>2</connectionId>
+        <driverClass reference="sqlserver">com.microsoft.sqlserver.jdbc.SQLServerDriver</driverClass>
+    </connection>
+    <database name="QA_reportDB.dbo" catalog="QA_reportDB" schema="dbo">
+        <tables>
+            <table id="6d9c4273-2c60-4faa-b3f3-c7e2e7d8daa4" name="BookingSubsidyView" type="view" aliasName="BookingSubsidyView">
+                <columns>
+                    <column name="Id" id="0add432d-fe0e-4259-b19a-c90f3ba2331d" aliasName="Id" type="java.lang.Float"/>
+                    <column name="BookingId" id="0a87fd28-a33d-4b0f-b393-9b3f6db47aa3" aliasName="BookingId" type="java.lang.String"/>
+                    <column name="Subsidy Name" id="158d37e8-7360-4955-88ea-772c08ddb5db" aliasName="Subsidy Name" type="java.lang.String"/>
+                    <column name="Subsidy Amount" id="279d929c-18b3-448a-8d3d-e668299c9f7c" aliasName="Subsidy Amount" type="java.lang.Float"/>
+                </columns>
+            </table>
+            <table id="afb4a2e0-1d8a-4367-b2c2-454e0c498dba" name="SessionUtilisationDailyView" type="view" aliasName="SessionUtilisationDailyView">
+                <columns>
+                    <column name="Days" id="cc9be57e-8c22-4e13-9048-febb65c70bcf" aliasName="Days" type="java.lang.String"/>
+                    <column name="Week End Date" id="a04864b0-f578-40a8-b95f-db43521e4880" aliasName="Week End Date" type="java.sql.Date"/>
+                    <column name="Rooms" id="84eaa195-4ad6-4e23-93d3-17b6a73b65c9" aliasName="Rooms" type="java.lang.String"/>
+                    <column name="Sessions" id="42b1a470-fd32-498a-8434-e6fc6aaf7ca2" aliasName="Sessions" type="java.lang.String"/>
+                    <column name="Room Capacity" id="e19c046d-2675-4eda-8aeb-cbb26a4d3fbf" aliasName="Room Capacity" type="java.lang.Float"/>
+                    <column name="Total Bookings" id="b4b0bd93-6e9e-4405-a13e-fe29c0a31d1e" aliasName="Total Bookings" type="java.lang.Float"/>
+                    <column name="Total Absent" id="e7c8489a-eed5-41d5-a785-7b8e7a8721fc" aliasName="Total Absent" type="java.lang.Float"/>
+                    <column name="Weekly Vacancies" id="320ac92a-1a22-4b42-84d4-9e8573258ff1" aliasName="Weekly Vacancies" type="java.lang.Float"/>
+                    <column name="Weekly Utilisation" id="4f2523a3-0768-4a0f-9222-4ed54fb6b9cc" aliasName="Weekly Utilisation" type="java.lang.String"/>
+                    <column name="Fee Utilisation" id="61de1177-05be-4435-94a7-8165dc882423" aliasName="Fee Utilisation" type="java.lang.String"/>
+                    <column name="Used Places" id="a1dd43ea-7b29-4cde-9087-6025ef5893d0" aliasName="Used Places" type="java.lang.Float"/>
+                    <column name="Used Fee Places" id="d6c49454-4ec9-462d-bdd2-364162137857" aliasName="Used Fee Places" type="java.lang.Float"/>
+                    <column name="OrganisationId" id="ce91920f-7dc4-441b-81ce-cda0e84bf57d" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="ProviderId" id="068514fb-8ce0-43c7-a7fd-114cf53e3ce9" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="CentreId" id="484dd9b1-04e8-4668-baf3-4e86e9319946" aliasName="CentreId" type="java.lang.String"/>
+                    <column name="Organisation" id="a2c41ad2-46db-4524-b67b-c3a240c74e88" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="Provider" id="0e078f91-cc75-47e2-9608-c88dc73a5776" aliasName="Provider" type="java.lang.String"/>
+                    <column name="Centre" id="5944ee93-48e4-42d0-adab-9f9a27f31448" aliasName="Centre" type="java.lang.String"/>
+                    <column name="DayId" id="4dcb6e1c-4e76-4f58-8c45-759becc5c59f" aliasName="DayId" type="java.lang.Float"/>
+                </columns>
+            </table>
+            <table id="3f8a27b1-15df-41f7-9d07-2e5a38a7d8e5" name="ChildAgeForecasting" type="view" aliasName="ChildAgeForecasting">
+                <columns>
+                    <column name="Organisation" id="cb6a0aec-5a60-4206-81ed-b274304891f6" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="Provider" id="b708cf3f-ba5b-496f-8939-4829055a4e1f" aliasName="Provider" type="java.lang.String"/>
+                    <column name="Centre" id="72cf7266-08d7-4d68-9666-f5885b24628e" aliasName="Centre" type="java.lang.String"/>
+                    <column name="Family Status" id="0930c43a-4172-4f48-9eda-0a02fd8f63d9" aliasName="Family Status" type="java.lang.String"/>
+                    <column name="Child Family Status" id="ae66ba0d-7100-447d-94b2-a5aa88e625a5" aliasName="Child Family Status" type="java.lang.String"/>
+                    <column name="OrganisationId" id="b10ed9fa-f7e1-4a62-b3c9-16e3a834655e" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="ProviderId" id="277cbc74-a095-46f9-a0d7-3d90cf446633" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="CentreId" id="63ae5ca1-bfda-4efd-901a-7ff60a4971b6" aliasName="CentreId" type="java.lang.String"/>
+                    <column name="Child" id="c4d21f17-2054-4c3b-98cd-a3234e547616" aliasName="Child" type="java.lang.String"/>
+                    <column name="Family" id="982f5f2c-1930-4937-87b8-7fabe3d50080" aliasName="Family" type="java.lang.String"/>
+                    <column name="ChildId" id="29ff77bb-fadc-4a78-afb8-fb7fea02c9df" aliasName="ChildId" type="java.lang.String"/>
+                    <column name="Date Of Birth" id="27ffbf21-bd82-42df-90f6-22c27a02cf6c" aliasName="Date Of Birth" type="java.lang.String"/>
+                    <column name="Current Child Age-in Months" id="19834938-ba08-46bc-b2cf-badd52f3e64a" aliasName="Current Child Age-in Months" type="java.lang.Float"/>
+                    <column name="Eligible Rooms based on Age Group" id="7adc3d4e-f61b-4977-8aca-83fb31c705da" aliasName="Eligible Rooms based on Age Group" type="java.lang.String"/>
+                    <column name="Current Bookings Age Group" id="9acac79e-105d-4581-84b4-d60d4f6cf281" aliasName="Current Bookings Age Group" type="java.lang.String"/>
+                    <column name="Current Bookings in Room" id="ec6919a8-3abe-4e7e-b029-b8d9906eb192" aliasName="Current Bookings in Room" type="java.lang.String"/>
+                    <column name="Booking Date" id="44cd85ff-0969-42c9-95b4-a2f85794566b" aliasName="Booking Date" type="java.sql.Date"/>
+                    <column name="Date on which child room age group will change" id="f3357f81-fb42-4453-9626-59dd255332d2" aliasName="Date on which child room age group will change" type="java.lang.String"/>
+                    <column name="Future Child Age-in Month" id="02ee8bee-1a73-45a5-b48f-59ba48e4e75c" aliasName="Future Child Age-in Month" type="java.lang.Float"/>
+                    <column name="Future Eligible Rooms based on Age Group" id="396eb3f9-ebef-4bbb-8c95-ae94fd4ced3e" aliasName="Future Eligible Rooms based on Age Group" type="java.lang.String"/>
+                    <column name="Booking Status" id="ce1ae374-dada-45a8-8805-09ddf475b275" aliasName="Booking Status" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="4e70f9af-953b-44f5-98a7-b8caeb871ad3" name="SessionUtilisationWeeklyView" type="view" aliasName="SessionUtilisationWeeklyView">
+                <columns>
+                    <column name="Weekend Date" id="02bd2c73-872f-4bdd-a024-3e9516892ee1" aliasName="Weekend Date" type="java.sql.Date"/>
+                    <column name="Rooms" id="8e6be88c-4245-4691-b6e9-db316f4a779d" aliasName="Rooms" type="java.lang.String"/>
+                    <column name="Sessions" id="f9d97eef-6d84-403a-9cd0-b5f902b0b316" aliasName="Sessions" type="java.lang.String"/>
+                    <column name="Available Days" id="9f81021e-a2c3-4c3a-b8e1-328edf285118" aliasName="Available Days" type="java.lang.Float"/>
+                    <column name="Room Capacity" id="8caa525d-40f9-4484-8277-e8a02c2f077e" aliasName="Room Capacity" type="java.lang.Float"/>
+                    <column name="Weekly Room Capacity" id="e5d1ce67-1a87-4749-88cc-520140490310" aliasName="Weekly Room Capacity" type="java.lang.Float"/>
+                    <column name="Total Bookings" id="bde23760-02eb-4164-b0a9-f0974202cac9" aliasName="Total Bookings" type="java.lang.Float"/>
+                    <column name="Total Absent" id="1e03b6a9-6468-4874-b168-8288cc6374de" aliasName="Total Absent" type="java.lang.Float"/>
+                    <column name="Weekly Vacancies" id="852e079b-1a2c-44ce-a31d-ff02b7943056" aliasName="Weekly Vacancies" type="java.lang.Float"/>
+                    <column name="Weekly Utilisation" id="2a8351b3-c8a2-45a1-b572-eae3a72404ec" aliasName="Weekly Utilisation" type="java.lang.String"/>
+                    <column name="Fee Utilisation" id="9fbaaee8-9707-4fcd-af70-f5b4ecd9c445" aliasName="Fee Utilisation" type="java.lang.String"/>
+                    <column name="Used Places" id="195965cb-c12f-44b4-a882-5fbc51351923" aliasName="Used Places" type="java.lang.Float"/>
+                    <column name="Used Fee Places" id="6bea510b-bd96-4394-8458-45695feef0ad" aliasName="Used Fee Places" type="java.lang.Float"/>
+                    <column name="OrganisationId" id="e75af35e-9e5d-4ef3-a3e7-7e35fe7d8f27" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="ProviderId" id="b6642c60-60ef-405d-b4b9-391abda1359f" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="CentreId" id="faf685b4-9497-408d-ba40-987efb7e579d" aliasName="CentreId" type="java.lang.String"/>
+                    <column name="Organisation" id="30d8b425-3214-453e-bc1b-578c31c0963e" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="Provider" id="611d1342-e5ad-433e-b56f-3fcfef131753" aliasName="Provider" type="java.lang.String"/>
+                    <column name="Centre" id="3878c791-482a-4bfb-8432-0fece7d967b3" aliasName="Centre" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="c7c66079-7960-4c39-b7b9-d6984db1ed59" name="WeeklyOccupancyView" type="view" aliasName="WeeklyOccupancyView">
+                <columns>
+                    <column name="Days" id="fd7b3e09-0b56-4084-92de-2050f59c5c7e" aliasName="Days" type="java.lang.String"/>
+                    <column name="Weekend Date" id="55fdd7a1-ec02-4096-a79d-b39ffce6c805" aliasName="Weekend Date" type="java.sql.Date"/>
+                    <column name="Rooms" id="84817f7a-07f8-4e51-8914-9ac06f31f314" aliasName="Rooms" type="java.lang.String"/>
+                    <column name="Available Days" id="cf79ab12-5588-4b75-bd92-7e10e295c5aa" aliasName="Available Days" type="java.lang.Float"/>
+                    <column name="Room Capacity" id="0f9ed88e-8241-48c8-a58c-44d0272ccbe5" aliasName="Room Capacity" type="java.lang.Float"/>
+                    <column name="Full Sessions" id="d35d2694-7bf5-4f7e-8469-0d90a9fb2010" aliasName="Full Sessions" type="java.lang.Float"/>
+                    <column name="Occupancy" id="0d987c18-60f1-41fb-a6b9-b9ec979acff4" aliasName="Occupancy" type="java.lang.Float"/>
+                    <column name="Total Positions" id="4875a8f4-6508-46ed-b8f7-83fccc0c7e0b" aliasName="Total Positions" type="java.lang.Float"/>
+                    <column name="DayId" id="a23c57c7-7648-4fe2-af34-25310db15775" aliasName="DayId" type="java.lang.Float"/>
+                    <column name="OrganisationId" id="83aa6fe3-3aa2-41ce-88ed-c0acf49929d8" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="ProviderId" id="fda8cceb-4c13-4eae-a0f1-7fc61c49d859" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="CentreId" id="e208df76-169c-4b26-8633-6c624dde8bbf" aliasName="CentreId" type="java.lang.String"/>
+                    <column name="Organisation" id="b2981bee-0e8f-49fe-a09f-d6a58b1028b4" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="Provider" id="87a51b8a-9bcd-48b5-932b-76e1dc5edf72" aliasName="Provider" type="java.lang.String"/>
+                    <column name="Centre" id="96195d09-0703-470d-a9cc-de1d460a7e72" aliasName="Centre" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="af54ff78-a955-4ccb-aa10-6fe6bacb3eea" name="BookingPenaltyView" type="view" aliasName="BookingPenaltyView">
+                <columns>
+                    <column name="Id" id="1da11530-fb95-4659-9fb5-72775dbdee57" aliasName="Id" type="java.lang.Float"/>
+                    <column name="BookingId" id="fee833ec-a532-4f1e-bdfe-574cfdf43ac1" aliasName="BookingId" type="java.lang.String"/>
+                    <column name="OrganisationId" id="b91f490c-6e04-485d-b91b-bf03613acdff" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="ProviderId" id="0a4d236a-44ca-4428-9e97-2b1a0ef42c58" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="CentreId" id="571b727c-169c-4674-96a9-d418cd9461db" aliasName="CentreId" type="java.lang.String"/>
+                    <column name="Organisation" id="be1f7328-98a7-462a-8a4f-8b551d553411" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="Provider" id="7fa06e0f-a8b7-4a8b-b9c4-33935c7263eb" aliasName="Provider" type="java.lang.String"/>
+                    <column name="Centre" id="21cd180f-2ae0-491a-ac41-5f9436c9d316" aliasName="Centre" type="java.lang.String"/>
+                    <column name="Child" id="9b5f77c0-0af7-4065-bc50-81053ac4174e" aliasName="Child" type="java.lang.String"/>
+                    <column name="Family" id="ab6b7781-65b1-4817-a4e6-d2720225060f" aliasName="Family" type="java.lang.String"/>
+                    <column name="Payment Account" id="105407fc-5729-4427-ac37-95018aaf38e8" aliasName="Payment Account" type="java.lang.String"/>
+                    <column name="Booking Date" id="11f51ce4-2ca9-415b-841b-546e6edcaa4d" aliasName="Booking Date" type="java.sql.Date"/>
+                    <column name="Week Start Date" id="ebcea6f2-1493-4c76-8445-575ee031437f" aliasName="Week Start Date" type="java.lang.String"/>
+                    <column name="Week End Date" id="acb9578f-de9d-472a-a2c7-330bd7f5c246" aliasName="Week End Date" type="java.lang.String"/>
+                    <column name="Days" id="ca87434e-f863-462b-8e33-9d10da018f43" aliasName="Days" type="java.lang.String"/>
+                    <column name="Rooms" id="4e233aad-cada-438b-b879-9bfb62f2b570" aliasName="Rooms" type="java.lang.String"/>
+                    <column name="Sessions" id="dfbf21d6-d3fb-4071-83b6-0646f9750d0d" aliasName="Sessions" type="java.lang.String"/>
+                    <column name="Session Time" id="7f0db122-1fb6-402b-b73e-d194d23fa13d" aliasName="Session Time" type="java.lang.String"/>
+                    <column name="Booking Time" id="49b7edcc-3dc8-4dd9-969b-24207bef88d6" aliasName="Booking Time" type="java.lang.String"/>
+                    <column name="BookingStartTime" id="a43ed86b-6302-48ab-b9d5-b30dbe124247" aliasName="BookingStartTime" type="java.sql.Time"/>
+                    <column name="BookingEndTime" id="0f995283-393b-4345-b280-567a7d083ce3" aliasName="BookingEndTime" type="java.sql.Time"/>
+                    <column name="Fees" id="32f4584c-752f-4685-b322-c9edc5a5f992" aliasName="Fees" type="java.lang.Float"/>
+                    <column name="Discount Type" id="be64e174-9aa8-4be3-b28a-fb8fa8cc356f" aliasName="Discount Type" type="java.lang.String"/>
+                    <column name="Discount Amount" id="de7ae2f0-71ab-4a7a-a500-06f686bfaba9" aliasName="Discount Amount" type="java.lang.Float"/>
+                    <column name="Booking Type" id="4eda1565-7815-4002-84c7-be016de704c3" aliasName="Booking Type" type="java.lang.String"/>
+                    <column name="Booking Status" id="811c7125-fb82-41d9-bcc8-7bd461e492ba" aliasName="Booking Status" type="java.lang.String"/>
+                    <column name="Preschool Session" id="cb955a3d-94b2-4376-9d30-92b2ed274b0c" aliasName="Preschool Session" type="java.lang.String"/>
+                    <column name="Guardian Message" id="fe56138f-5c1a-4520-899e-6929d969b8a6" aliasName="Guardian Message" type="java.lang.String"/>
+                    <column name="Family Status" id="fe82a4dd-0050-47ee-8571-a91ceef61df5" aliasName="Family Status" type="java.lang.String"/>
+                    <column name="Expected Time Out" id="a180fba0-b014-4e94-8a65-3e3ec60c4b04" aliasName="Expected Time Out" type="java.lang.String"/>
+                    <column name="Signed In" id="9ef24c9c-b444-46fa-8135-2d307e8683e1" aliasName="Signed In" type="java.lang.String"/>
+                    <column name="Signed Out" id="eeada7db-323c-40a4-96a6-87209a51b7bc" aliasName="Signed Out" type="java.lang.String"/>
+                    <column name="SignedInTime" id="f336b5ac-1cdf-4247-ab49-9c579cae747d" aliasName="SignedInTime" type="java.sql.Time"/>
+                    <column name="SignedOutTime" id="feb659c1-4483-4fec-9018-82295168af92" aliasName="SignedOutTime" type="java.sql.Time"/>
+                    <column name="Signed In By" id="f10bd427-39eb-4fe1-9332-d8b162698107" aliasName="Signed In By" type="java.lang.String"/>
+                    <column name="Signed Out By" id="035e4d55-aa79-484e-a323-1cfa8f8b3a4a" aliasName="Signed Out By" type="java.lang.String"/>
+                    <column name="Penalty" id="1732bfc6-83c6-49e0-ab61-e9d29a16ddeb" aliasName="Penalty" type="java.lang.String"/>
+                    <column name="Penalty Charged" id="a2bb8962-8d40-4ef9-93a3-de50fafcb96b" aliasName="Penalty Charged" type="java.lang.Float"/>
+                    <column name="Child Family Status" id="2d2032c6-ee24-468a-abf9-e94ccde63ce8" aliasName="Child Family Status" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="63c7325a-10b4-430b-8afb-d09e868df6ed" name="EnrolmentView" type="view" aliasName="EnrolmentView">
+                <columns>
+                    <column name="OrganisationId" id="3fd4ddfe-0c65-449b-869a-7b33ed93bf57" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="ProviderId" id="2ec0d631-c05e-4ed4-955f-74f639ad1ed7" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="CentreId" id="751c035c-fae2-4a48-9e4b-b1202064cbfb" aliasName="CentreId" type="java.lang.String"/>
+                    <column name="Organisation" id="f98d5a3d-16f0-44c0-9ace-dbbde7c38408" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="Provider" id="9feccaa7-a563-49a3-9114-1c6e0ec58fa4" aliasName="Provider" type="java.lang.String"/>
+                    <column name="Centre" id="917a2d38-98c7-4117-923b-9125e3a939c9" aliasName="Centre" type="java.lang.String"/>
+                    <column name="KidsXap EnrolmentId" id="947cff8d-e3f5-4135-8194-525d76706b32" aliasName="KidsXap EnrolmentId" type="java.lang.String"/>
+                    <column name="Child" id="4f4f1fa5-0642-4a58-8ed0-46ea7f41318a" aliasName="Child" type="java.lang.String"/>
+                    <column name="Child CRN" id="2e095e69-6634-4fad-8b2e-65e2648e047d" aliasName="Child CRN" type="java.lang.String"/>
+                    <column name="Child DOB" id="cb974a11-aeba-4871-af72-40bbb3c4ad60" aliasName="Child DOB" type="java.lang.String"/>
+                    <column name="Child Verified on DHS" id="0a233a30-cb33-48d6-92a5-1c47b80a047d" aliasName="Child Verified on DHS" type="java.lang.String"/>
+                    <column name="Family" id="3592bc11-f8d1-4dcc-a3b9-c452ccc0008a" aliasName="Family" type="java.lang.String"/>
+                    <column name="CCS Claimant" id="f16cb9e7-1a03-4536-ab33-7d23b8806e97" aliasName="CCS Claimant" type="java.lang.String"/>
+                    <column name="Claimant CRN" id="d71cada1-337b-494f-9f3b-58dd452b01af" aliasName="Claimant CRN" type="java.lang.String"/>
+                    <column name="Claimant DOB" id="1b23395e-a0a0-4a5a-b67d-ebeedd123a55" aliasName="Claimant DOB" type="java.lang.String"/>
+                    <column name="Claimant Verified on DHS" id="e342f9c5-b331-4d94-8e08-c47f7752f5c6" aliasName="Claimant Verified on DHS" type="java.lang.String"/>
+                    <column name="Care Type" id="a4a5a941-5d01-454f-a581-b6be24572dd3" aliasName="Care Type" type="java.lang.String"/>
+                    <column name="CCS Service" id="a6711bde-a9c7-4d78-8b01-dc948fee6374" aliasName="CCS Service" type="java.lang.String"/>
+                    <column name="CCS EnrolmentId" id="42b7faa5-a526-4a36-9f53-b7051219debe" aliasName="CCS EnrolmentId" type="java.lang.String"/>
+                    <column name="Arrangement Type" id="2398cf0a-123f-4778-a1c7-44a7486a2d40" aliasName="Arrangement Type" type="java.lang.String"/>
+                    <column name="Occurrence Number" id="5e7a5830-3938-4239-8d38-a7d5ffe6ef86" aliasName="Occurrence Number" type="java.lang.Float"/>
+                    <column name="Arrangement Start Date" id="a0972d3e-47f8-4353-9229-986914fdc7ba" aliasName="Arrangement Start Date" type="java.lang.String"/>
+                    <column name="Arrangement End Date" id="d722e3cd-ee39-41d5-a55c-5fbf60fe397d" aliasName="Arrangement End Date" type="java.lang.String"/>
+                    <column name="Enrolment Status" id="02a3a7d0-220f-44bc-a215-871fb9c3c744" aliasName="Enrolment Status" type="java.lang.String"/>
+                    <column name="Session Indicator" id="4ae25896-18a6-4be2-bac0-2414e7064797" aliasName="Session Indicator" type="java.lang.String"/>
+                    <column name="Session Type" id="f64dc4f9-5873-4477-9ccf-4a600901a850" aliasName="Session Type" type="java.lang.String"/>
+                    <column name="Number of Week Cycle" id="e201d926-275b-40a3-aee3-e1f3055e2a10" aliasName="Number of Week Cycle" type="java.lang.Float"/>
+                    <column name="Recurring Session" id="5a44da05-b13d-46f6-b203-4db60d1a248f" aliasName="Recurring Session" type="java.lang.String"/>
+                    <column name="Recurring Session Fees" id="c5e84c56-2c39-4808-94bb-272e2ab215e5" aliasName="Recurring Session Fees" type="java.lang.Float"/>
+                    <column name="Recurring Days" id="62e9daa6-27ca-4a0f-82f3-6f911401d547" aliasName="Recurring Days" type="java.lang.String"/>
+                    <column name="Casual Session" id="6dfb37f7-ae93-4a7c-b515-37dfcb80eaca" aliasName="Casual Session" type="java.lang.String"/>
+                    <column name="Casual Session Fees" id="388d9857-516b-45ed-a5ff-99a889123aa8" aliasName="Casual Session Fees" type="java.lang.Float"/>
+                    <column name="Arrangement End Reason" id="e7ef6c69-6277-4645-8b95-482db9983a80" aliasName="Arrangement End Reason" type="java.lang.String"/>
+                    <column name="Other Reason" id="269aa294-ce0c-4add-bb28-a31df41c9425" aliasName="Other Reason" type="java.lang.String"/>
+                    <column name="Is Child in State Care" id="a3321aef-8149-446e-b225-1fe2b125062e" aliasName="Is Child in State Care" type="java.lang.String"/>
+                    <column name="Child Family Status" id="995d23af-882b-445a-b57e-da66c9cb9322" aliasName="Child Family Status" type="java.lang.String"/>
+                    <column name="Family Status" id="4c04a121-8cb8-43ba-bf83-125ad832b9d1" aliasName="Family Status" type="java.lang.String"/>
+                    <column name="Recurring DaysId" id="d959b5ed-bdd8-4220-a38a-ba779cf9c399" aliasName="Recurring DaysId" type="java.lang.Float"/>
+                </columns>
+            </table>
+            <table id="3be6e320-9045-4336-9f6b-a5c31c4293b3" name="BookingAttendanceView" type="view" aliasName="BookingAttendanceView">
+                <columns>
+                    <column name="Id" id="fa0a1377-42b9-43d7-bd8a-6095f2b05f8f" aliasName="Id" type="java.lang.Float"/>
+                    <column name="BookingId" id="bc7989f2-faf3-4d7e-b786-35d453064604" aliasName="BookingId" type="java.lang.String"/>
+                    <column name="OrganisationId" id="286838cd-d447-4923-a500-e10943c0418e" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="ProviderId" id="7e2e1d89-ebae-4426-9e53-4c38563810f7" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="CentreId" id="c886abfd-430a-41bf-a4c8-87d35eb2eec9" aliasName="CentreId" type="java.lang.String"/>
+                    <column name="Organisation" id="30309851-9b65-43a1-8c5d-0b5386012296" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="Provider" id="0178e008-0216-44b9-b5c0-1ec6680e56fa" aliasName="Provider" type="java.lang.String"/>
+                    <column name="Centre" id="b46660fd-2764-4030-a8c3-27a1e4b13153" aliasName="Centre" type="java.lang.String"/>
+                    <column name="Child" id="3410c5b0-1379-43fe-9b2d-b673bd57639e" aliasName="Child" type="java.lang.String"/>
+                    <column name="Family" id="f87b6897-466f-44b8-a03d-59dac3befb63" aliasName="Family" type="java.lang.String"/>
+                    <column name="Payment Account" id="6f55b6eb-01e2-4903-a2d7-3fc0a691149b" aliasName="Payment Account" type="java.lang.String"/>
+                    <column name="Booking Date" id="27aa85a9-fb49-48f4-8ec4-efc371aa2a98" aliasName="Booking Date" type="java.sql.Date"/>
+                    <column name="Week Start Date" id="6bc1ff5b-8b3e-4d3a-99cb-c4f465c79e7c" aliasName="Week Start Date" type="java.lang.String"/>
+                    <column name="Week End Date" id="a57a7a80-7899-4840-bd23-8dbb4b948884" aliasName="Week End Date" type="java.lang.String"/>
+                    <column name="Days" id="4f3f404c-27ee-4840-a7a9-044b71c043ca" aliasName="Days" type="java.lang.String"/>
+                    <column name="Rooms" id="08424951-32e3-4205-900e-d75bd1128f76" aliasName="Rooms" type="java.lang.String"/>
+                    <column name="Sessions" id="952e460e-27c0-4499-9708-5845c4a0ef8f" aliasName="Sessions" type="java.lang.String"/>
+                    <column name="Session Time" id="bf91af05-9852-49e0-ad4d-54dbba756835" aliasName="Session Time" type="java.lang.String"/>
+                    <column name="Absense" id="912d7499-5b04-4df1-befc-80694f47fd36" aliasName="Absense" type="java.lang.String"/>
+                    <column name="Booking Time" id="c18238e0-82d4-495c-8d8b-7b218cd658ff" aliasName="Booking Time" type="java.lang.String"/>
+                    <column name="BookingStartTime" id="f2792911-b71f-40cb-ae3e-5e24e9c49188" aliasName="BookingStartTime" type="java.sql.Time"/>
+                    <column name="BookingEndTime" id="759d99e2-74dc-4e51-9616-eaf1cd046b76" aliasName="BookingEndTime" type="java.sql.Time"/>
+                    <column name="Fees" id="99614ca0-f3df-44f3-95a9-4e5995771800" aliasName="Fees" type="java.lang.Float"/>
+                    <column name="Discount Type" id="ba0c4828-8a45-483d-8118-79ee23edba3b" aliasName="Discount Type" type="java.lang.String"/>
+                    <column name="Discount Amount" id="cdef9dda-7609-4bc3-a321-d953dfc744e9" aliasName="Discount Amount" type="java.lang.Float"/>
+                    <column name="Booking Type" id="67f12353-dc53-47be-a946-0dfca79f5a6f" aliasName="Booking Type" type="java.lang.String"/>
+                    <column name="Booking Status" id="8a0cedfa-5817-4633-b2d9-712ea71b4b00" aliasName="Booking Status" type="java.lang.String"/>
+                    <column name="Care Type" id="03c42ae9-277d-4c74-a50c-80c3a1e609ca" aliasName="Care Type" type="java.lang.String"/>
+                    <column name="Arrangement Type" id="cc13b947-9257-404d-b75c-c7c6f2713292" aliasName="Arrangement Type" type="java.lang.String"/>
+                    <column name="Preschool Session" id="65dd1665-7ae2-4006-80c9-8ae3e8767182" aliasName="Preschool Session" type="java.lang.String"/>
+                    <column name="Subsidy" id="93ab1af5-d40f-4231-b248-c3e1a2db35fa" aliasName="Subsidy" type="java.lang.String"/>
+                    <column name="KidsXap EnrolmentId" id="64cfc1b2-2fca-48eb-8eab-31f84d04bf3f" aliasName="KidsXap EnrolmentId" type="java.lang.String"/>
+                    <column name="CCSS EnrolmentId" id="7d1b65e1-3b4d-42f2-b124-4736f7a0554d" aliasName="CCSS EnrolmentId" type="java.lang.String"/>
+                    <column name="Family Status" id="af133bff-be3f-405e-962e-9738ae4b8775" aliasName="Family Status" type="java.lang.String"/>
+                    <column name="Child Family Status" id="68838be6-61e3-423d-a13c-5b7e33f1cbd8" aliasName="Child Family Status" type="java.lang.String"/>
+                    <column name="AttendanceId" id="99352256-1af9-4857-b7f8-3756fe28ea43" aliasName="AttendanceId" type="java.lang.Float"/>
+                    <column name="Expected Time Out" id="f61087ae-b5bd-439c-b9d6-b868f05babec" aliasName="Expected Time Out" type="java.lang.String"/>
+                    <column name="Signed In" id="bafcb15d-62b5-4c61-a02a-10c2d8e81756" aliasName="Signed In" type="java.lang.String"/>
+                    <column name="Signed Out" id="77e7d183-eee3-4e27-8a53-8bab93194bed" aliasName="Signed Out" type="java.lang.String"/>
+                    <column name="SignedInTime" id="00325238-bc53-4d7b-a8b2-83d27f3a2ce6" aliasName="SignedInTime" type="java.sql.Time"/>
+                    <column name="SignedOutTime" id="0491151b-e707-4b1b-8f36-02933f1d8e6d" aliasName="SignedOutTime" type="java.sql.Time"/>
+                    <column name="Signed In By" id="6a5fb5fb-4c38-40fa-ac2a-616b0211bd5e" aliasName="Signed In By" type="java.lang.String"/>
+                    <column name="Signed Out By" id="4bd3f010-25be-4dcd-aa81-e999abba0d00" aliasName="Signed Out By" type="java.lang.String"/>
+                    <column name="Attendance Status" id="182b3b7d-3864-4ce0-856b-99dbfe9db6e0" aliasName="Attendance Status" type="java.lang.String"/>
+                    <column name="Subsidy Amount" id="edae69b8-012d-46ea-a049-acddfd674cff" aliasName="Subsidy Amount" type="java.lang.Float"/>
+                    <column name="Subsidy Name" id="14897833-e532-4cb8-b71e-18713724acc7" aliasName="Subsidy Name" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="ccbd76ac-bf24-4049-ab19-1eebf2c93917" name="BookingByRoomsAndSessions" type="view" aliasName="BookingByRoomsAndSessions">
+                <columns>
+                    <column name="Id" id="62189c6b-9d6c-4a28-9b3a-a687f71c160e" aliasName="Id" type="java.lang.Float"/>
+                    <column name="OrganisationId" id="5e879f49-0a49-489a-82bd-3711baae9ab3" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="ProviderId" id="656085ca-da43-440a-a4e8-5de357a2be15" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="CentreId" id="d36bfdb2-43a1-459d-b8df-2dd4c42432e5" aliasName="CentreId" type="java.lang.String"/>
+                    <column name="Organisation" id="8b286930-46e0-4273-81a0-667f7fae9d72" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="Provider" id="fba04294-a0da-4723-b842-c9088cfe58e5" aliasName="Provider" type="java.lang.String"/>
+                    <column name="Centre" id="59e1772c-69a9-4504-8977-317c2479c8f0" aliasName="Centre" type="java.lang.String"/>
+                    <column name="Child" id="78116715-1748-471b-8c88-563ccb103ee5" aliasName="Child" type="java.lang.String"/>
+                    <column name="Family" id="b706ac7b-bd47-4a56-9869-1e8fbf59827f" aliasName="Family" type="java.lang.String"/>
+                    <column name="Payment Account" id="13de1f7f-d9f7-4ee9-abd7-8d185f3d46f6" aliasName="Payment Account" type="java.lang.String"/>
+                    <column name="Booking Date" id="422814b0-dbfa-4859-9e52-d055a8d1c25e" aliasName="Booking Date" type="java.sql.Date"/>
+                    <column name="Rooms" id="6670b249-f515-47fe-b933-99e1c5adc21f" aliasName="Rooms" type="java.lang.String"/>
+                    <column name="Sessions" id="51e0ff34-771f-4f6f-b74a-4f336fea9669" aliasName="Sessions" type="java.lang.String"/>
+                    <column name="Total Fees" id="fcf87b03-9503-4240-8755-60bd5b21b13d" aliasName="Total Fees" type="java.lang.Float"/>
+                    <column name="Total Discount Amount" id="788b625c-68a4-46d0-96ef-b85f92c3abb8" aliasName="Total Discount Amount" type="java.lang.Float"/>
+                    <column name="Booking Status" id="00d2675e-67f2-4cba-980b-713c01733e97" aliasName="Booking Status" type="java.lang.String"/>
+                    <column name="Family Status" id="0f124a13-ea75-4653-804f-6fcc1a48c4b3" aliasName="Family Status" type="java.lang.String"/>
+                    <column name="Child Family Status" id="56f8a7a0-9114-4a3a-8b68-1a9bf25596ce" aliasName="Child Family Status" type="java.lang.String"/>
+                    <column name="Subsidy Amount" id="e5a63170-0546-41f8-a74b-806db11d9493" aliasName="Subsidy Amount" type="java.lang.Float"/>
+                </columns>
+            </table>
+            <table id="73e07be4-4fd0-45af-83fd-4a433a189771" name="BookingsByChildAgeView" type="view" aliasName="BookingsByChildAgeView">
+                <columns>
+                    <column name="Id" id="b16f20fa-0d95-46cd-bb7e-9607f7a74b7a" aliasName="Id" type="java.lang.Float"/>
+                    <column name="BookingId" id="e5808317-10a2-46e6-9f8c-6fe9d5ac0279" aliasName="BookingId" type="java.lang.String"/>
+                    <column name="OrganisationId" id="a50c869e-2737-4320-b1a2-1b38187a9604" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="ProviderId" id="937225d2-8854-4f25-a589-da63e5461cc8" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="CentreId" id="69770eb8-c81e-4904-af16-9b75a981d66c" aliasName="CentreId" type="java.lang.String"/>
+                    <column name="Organisation" id="c6c485b0-f836-4fa7-8814-cccd7be4f831" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="Provider" id="918af637-d284-4ca5-aa3c-cc8b1bd14271" aliasName="Provider" type="java.lang.String"/>
+                    <column name="Centre" id="4739a55d-37aa-42b6-859a-793203a8825a" aliasName="Centre" type="java.lang.String"/>
+                    <column name="Booking Date" id="68ceec34-e6dd-4dbe-88db-be30970fda27" aliasName="Booking Date" type="java.sql.Date"/>
+                    <column name="Week Start Date" id="5ffeff8a-a6e7-42eb-ad0b-847369f2c914" aliasName="Week Start Date" type="java.lang.String"/>
+                    <column name="Week End Date" id="0ed1ecfe-3dc8-4c26-a090-8695e41a7eb0" aliasName="Week End Date" type="java.lang.String"/>
+                    <column name="Rooms" id="908585d9-9af9-49be-91cb-1bd1ca126a1d" aliasName="Rooms" type="java.lang.String"/>
+                    <column name="Sessions" id="d7d71363-65ab-4ad1-a2fd-e4151bdfed06" aliasName="Sessions" type="java.lang.String"/>
+                    <column name="Children Age In Months On Booking Date" id="ed9e07cd-591f-4cc7-b5e0-f1b039b57c8e" aliasName="Children Age In Months On Booking Date" type="java.lang.Float"/>
+                    <column name="Family Status" id="8b66da58-d80f-478a-a67b-f7a7e0a4b74f" aliasName="Family Status" type="java.lang.String"/>
+                    <column name="Child Family Status" id="b1026e36-2200-4fb2-a0ff-af271999711d" aliasName="Child Family Status" type="java.lang.String"/>
+                    <column name="Booking Status" id="b31ca7b1-a58a-46c3-a15d-121cbfd44895" aliasName="Booking Status" type="java.lang.String"/>
+                    <column name="Total Fees" id="90959f5b-724b-414a-93e1-993302011c01" aliasName="Total Fees" type="java.lang.Float"/>
+                    <column name="Total Discount Amount" id="98ecd8d8-b902-4576-ad80-a4249d369382" aliasName="Total Discount Amount" type="java.lang.Float"/>
+                    <column name="Subsidy Amount" id="01827a10-e5a7-4e9a-8978-8795f9a864f2" aliasName="Subsidy Amount" type="java.lang.Float"/>
+                </columns>
+            </table>
+            <table id="5a3a10ef-9bd6-4f3b-bd35-91007307881d" name="BookingView" type="view" aliasName="BookingView">
+                <columns>
+                    <column name="Id" id="3e6c2cd9-e30b-4261-8f2d-512e2554a6f0" aliasName="Id" type="java.lang.Float"/>
+                    <column name="BookingId" id="cfc2b8fd-0a62-4fa4-9ac2-3a1bf38911fb" aliasName="BookingId" type="java.lang.String"/>
+                    <column name="OrganisationId" id="a83cbbf9-0b4d-46d0-89cf-9a9b987da38e" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="ProviderId" id="fec3df1e-ab57-4a91-9818-e16a055b1801" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="CentreId" id="9d58f417-1d12-48db-8159-2df0062bc203" aliasName="CentreId" type="java.lang.String"/>
+                    <column name="Organisation" id="031d0388-f937-4b02-bd04-c5778c95eae0" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="Provider" id="b029ae0b-458d-4abd-bc28-c80b5e1bf9ba" aliasName="Provider" type="java.lang.String"/>
+                    <column name="Centre" id="288eec55-266f-4636-936f-e6085052afdf" aliasName="Centre" type="java.lang.String"/>
+                    <column name="Child" id="52aeebb3-ce7e-4a24-9888-9176e3ed5134" aliasName="Child" type="java.lang.String"/>
+                    <column name="Family" id="03304a70-a1cf-493f-b534-690d68cc50c4" aliasName="Family" type="java.lang.String"/>
+                    <column name="Payment Account" id="4ed5d2c2-083f-4a35-adff-b99bddd97815" aliasName="Payment Account" type="java.lang.String"/>
+                    <column name="Booking Date" id="2139da9f-1cde-4eb5-952b-4c6d8b76a839" aliasName="Booking Date" type="java.sql.Date"/>
+                    <column name="Week Start Date" id="5d2c7123-45e5-4681-bcee-357c8a5c281c" aliasName="Week Start Date" type="java.lang.String"/>
+                    <column name="Week End Date" id="91392a41-f992-4fdc-8f9c-b9c434bc417b" aliasName="Week End Date" type="java.lang.String"/>
+                    <column name="Days" id="e7d1cc53-2294-4b9c-a0c9-58e9d5dde652" aliasName="Days" type="java.lang.String"/>
+                    <column name="Rooms" id="3406c5ee-588a-4be9-a73d-6cf3983b3c2b" aliasName="Rooms" type="java.lang.String"/>
+                    <column name="Sessions" id="8d8a7dda-eb1c-4848-b5e7-8f7f794f5abf" aliasName="Sessions" type="java.lang.String"/>
+                    <column name="Session Time" id="fffa606d-153a-4a5b-8089-0a0fd13d5475" aliasName="Session Time" type="java.lang.String"/>
+                    <column name="Absense" id="a950ff15-a9fc-4761-bc57-1996d3f68126" aliasName="Absense" type="java.lang.String"/>
+                    <column name="Booking Time" id="33918388-1adc-44a3-89c9-abfff83a30c5" aliasName="Booking Time" type="java.lang.String"/>
+                    <column name="BookingStartTime" id="18089c9b-3cea-4a55-9e92-f43d0d0c3831" aliasName="BookingStartTime" type="java.sql.Time"/>
+                    <column name="BookingEndTime" id="c39b466c-c177-4738-9e1c-bb97730e3914" aliasName="BookingEndTime" type="java.sql.Time"/>
+                    <column name="Fees" id="64f86682-d1d0-4c1a-b75d-8627a6acdcfe" aliasName="Fees" type="java.lang.Float"/>
+                    <column name="Discount Type" id="ced2e716-f140-42ec-be59-ab5e93b83402" aliasName="Discount Type" type="java.lang.String"/>
+                    <column name="Discount Amount" id="b167f100-3d0b-4540-aecf-7b9533bbc330" aliasName="Discount Amount" type="java.lang.Float"/>
+                    <column name="Booking Type" id="194367dd-0fe2-4a71-bb67-813ee75dc04c" aliasName="Booking Type" type="java.lang.String"/>
+                    <column name="Booking Status" id="a83e1ab9-81b2-4d87-bb48-b0daea258ca3" aliasName="Booking Status" type="java.lang.String"/>
+                    <column name="Care Type" id="a2db6da4-06c6-4db7-9269-37ec352c66eb" aliasName="Care Type" type="java.lang.String"/>
+                    <column name="Arrangement Type" id="6d51e54a-fa53-4d53-b1c5-c9c5b27ab0f4" aliasName="Arrangement Type" type="java.lang.String"/>
+                    <column name="Preschool Session" id="d4718e10-12b2-49b5-b6f5-32e2790287d8" aliasName="Preschool Session" type="java.lang.String"/>
+                    <column name="Subsidy" id="1ebac296-828d-485d-8833-0177f10701ea" aliasName="Subsidy" type="java.lang.String"/>
+                    <column name="KidsXap EnrolmentId" id="157db640-2ea5-481c-bd70-10ff7f69d046" aliasName="KidsXap EnrolmentId" type="java.lang.String"/>
+                    <column name="CCSS EnrolmentId" id="465d1563-be0e-4ba2-9b1b-4c8722784367" aliasName="CCSS EnrolmentId" type="java.lang.String"/>
+                    <column name="Week No" id="633b6c68-867b-4779-b68c-31d2706aa397" aliasName="Week No" type="java.lang.Float"/>
+                    <column name="Child Age on Booking" id="768e38da-269a-45e3-bb9c-3179edfa3f6d" aliasName="Child Age on Booking" type="java.lang.Float"/>
+                    <column name="Biling Method" id="0888074d-f330-44dc-8182-a97b5e51d568" aliasName="Biling Method" type="java.lang.String"/>
+                    <column name="Session Unit of Measure" id="4282eefc-5624-4f3d-be26-f701a8ba68a8" aliasName="Session Unit of Measure" type="java.lang.String"/>
+                    <column name="Guardian Message" id="6088a1bf-6cd3-413b-a649-23cd2936f9b9" aliasName="Guardian Message" type="java.lang.String"/>
+                    <column name="Family Status" id="bef25b89-13bc-4208-bafe-4978335ece71" aliasName="Family Status" type="java.lang.String"/>
+                    <column name="Child Family Status" id="21bcab5a-e9f4-4cb6-a62d-c7186338d896" aliasName="Child Family Status" type="java.lang.String"/>
+                    <column name="Subsidy Amount" id="fa6d6830-b6bc-4379-935c-a56e52c51fb1" aliasName="Subsidy Amount" type="java.lang.Float"/>
+                    <column name="Subsidy Name" id="9a055cb8-86b3-4099-a804-72b698c7ad2f" aliasName="Subsidy Name" type="java.lang.String"/>
+                </columns>
+            </table>
+        </tables>
+        <relationships/>
+        <views>
+            <view id="6d9c4273-2c60-4faa-b3f3-c7e2e7d8daa4" name="BookingSubsidyView" alias="BookingSubsidyView">
+                <query><![CDATA[
+		SELECT 
+		Subsidy.Id,
+		Subsidy.BookingId,
+		Subsidy.SubsidyName AS [Subsidy Name],
+		Subsidy.SubsidyAmount AS [Subsidy Amount]
+		FROM [dbo].[rpt_BookingsSubsidy] Subsidy]]></query>
+            </view>
+            <view id="afb4a2e0-1d8a-4367-b2c2-454e0c498dba" name="SessionUtilisationDailyView" alias="SessionUtilisationDailyView">
+                <query><![CDATA[SELECT 
+
+Book.[DayName] AS [Days],
+Book.WeekEndDate AS [Week End Date],
+Book.RoomName AS [Rooms],
+Book.SessionName AS [Sessions],
+Room.MaxPlace AS [Room Capacity],
+
+COUNT(Book.Id) AS [Total Bookings],
+SUM(CASE WHEN Book.IsAbsent = 1 THEN 1 ELSE 0 END) AS [Total Absent],
+(Room.MaxPlace) [Weekly Vacancies],
+/*((Total Bookings - Total Absent) / (Room Capacity))/100.00*/
+CONVERT(VARCHAR, CONVERT(DECIMAL(18,2),(CONVERT(DECIMAL(18,2),(COUNT(Book.Id) - SUM(CASE WHEN Book.IsAbsent = 1 THEN 1 ELSE 0 END))) / CONVERT(DECIMAL(18,2),(ISNULL(Room.MaxPlace, 0))))*100.00)) + ' %' AS [Weekly Utilisation],
+/*((Total Bookings) / (Room Capacity))/100.00*/
+CONVERT(VARCHAR, CONVERT(DECIMAL(18,2),(CONVERT(DECIMAL(18,2),COUNT(Book.Id)) / CONVERT(DECIMAL(18,2),(ISNULL(Room.MaxPlace, 0))))*100.00)) + ' %' AS [Fee Utilisation],
+COUNT(Book.Id) - SUM(CASE WHEN Book.IsAbsent = 1 THEN 1 ELSE 0 END) AS [Used Places],
+COUNT(Book.Id) AS [Used Fee Places],
+Book.OrganisationId,
+Book.ProviderId,
+Book.CentreId,
+Book.OrganisationName AS [Organisation],
+Book.ProviderName AS [Provider],
+Book.CentreName AS [Centre],
+
+CASE WHEN Book.[DayName] = 'Monday' THEN 1
+		   WHEN Book.[DayName] = 'Tuesday' THEN 2
+		   WHEN Book.[DayName] = 'Wednesday' THEN 3
+		   WHEN Book.[DayName] = 'Thursday' THEN 4
+		   WHEN Book.[DayName] = 'Friday' THEN 5
+		   WHEN Book.[DayName] = 'Saturday' THEN 6
+		   WHEN Book.[DayName] = 'Sunday' THEN 7
+END AS [DayId]
+
+FROM dbo.rpt_Bookings Book
+INNER JOIN dbo.rpt_Rooms Room ON Room.RoomId = Book.RoomId
+/*WHERE  Book.BookingDate >= DATEADD(week, DATEDIFF(day, 0, GETUTCDATE())/7, 0) /*first day current week*/
+       AND Book.BookingDate <=  DATEADD(week, DATEDIFF(day, 0, GETUTCDATE())/7, 6) /*last day current week*/
+	   AND Book.CentreName = 'The Young Care St Kilda'
+	   AND Book.WeekEndDate = '2020-02-16'*/
+WHERE Book.BookingStatus = 'Approved'
+GROUP BY 
+Book.[DayName],
+Book.WeekEndDate,
+Book.RoomName,
+Book.SessionName,
+Room.MaxPlace,
+Book.OrganisationId,
+Book.ProviderId,
+Book.CentreId,
+Book.OrganisationName,
+Book.ProviderName,
+Book.CentreName
+]]></query>
+            </view>
+            <view id="3f8a27b1-15df-41f7-9d07-2e5a38a7d8e5" name="ChildAgeForecasting" alias="ChildAgeForecasting">
+                <query><![CDATA[   SELECT DISTINCT
+	Family.OrganisationName AS [Organisation], 
+	Family.ProviderName AS [Provider], 
+	Family.CentreName AS [Centre],
+	Family.FamilyStatus AS [Family Status],
+	FamilyChild.ChildFamilyStatus AS [Child Family Status], 
+	Family.[OrganisationId] AS [OrganisationId],
+	Family.[ProviderId] AS [ProviderId],
+	Family.[CentreId] AS [CentreId],
+	FamilyChild.ChildName AS [Child],
+	Family.[FamilyName] AS [Family],
+	Child.PersonId AS ChildId,
+	COALESCE(CONVERT(VARCHAR, Child.DateOfBirth, 103), '-') AS [Date Of Birth],
+	/*DATEDIFF(MONTH, Child.DateOfBirth, CONVERT(DATE, GETUTCDATE())) AS [Current Child Age-in Month],
+	ISNULL(		(SELECT CONVERT(VARCHAR,Room.MinAge) +' - ' + CONVERT(VARCHAR,Room.MaxAge)
+				FROM dbo.rpt_Rooms Room 
+				WHERE Room.RoomId = Book.RoomId AND Room.StatusName = 'Active' )
+		 ,'-')	AS [Current Age Group],*/
+	DATEDIFF(MONTH, Child.DateOfBirth, CONVERT(DATE, GETUTCDATE())) AS [Current Child Age-in Months],
+	/*CONVERT(VARCHAR(MAX), ISNULL((STUFF(( SELECT DISTINCT ', ' + CONVERT(VARCHAR,Room.MinAge) +' - ' + CONVERT(VARCHAR,Room.MaxAge)
+				FROM dbo.rpt_Rooms Room 
+				WHERE DATEDIFF(MONTH, Child.DateOfBirth, CONVERT(DATE, GETUTCDATE())) BETWEEN Room.MinAge AND Room.MaxAge AND Room.StatusName = 'Active' AND Room.CentreId = Family.CentreId
+				FOR XML PATH('')) , 1, 2, '')), '-')) 
+				AS [Current Age Group],
+	CONVERT(VARCHAR(MAX), ISNULL((STUFF(( SELECT DISTINCT ', ' + CONVERT(VARCHAR,Room.RoomName)
+				FROM dbo.rpt_Rooms Room 
+				WHERE DATEDIFF(MONTH, Child.DateOfBirth, CONVERT(DATE, GETUTCDATE())) BETWEEN Room.MinAge AND Room.MaxAge AND Room.StatusName = 'Active' AND Room.CentreId = Family.CentreId
+				FOR XML PATH('')) , 1, 2, '')), '-')) 
+				AS [Current Room],*/
+	CONVERT(VARCHAR(MAX), ISNULL((STUFF(( SELECT DISTINCT ', ' + CONVERT(VARCHAR,Room.RoomName) +'(' + CONVERT(VARCHAR,Room.MinAge) +' - ' + CONVERT(VARCHAR,Room.MaxAge) +')'
+				FROM dbo.rpt_Rooms Room 
+				WHERE DATEDIFF(MONTH, Child.DateOfBirth, CONVERT(DATE, GETUTCDATE())) BETWEEN Room.MinAge AND Room.MaxAge AND Room.StatusName = 'Active' AND Room.CentreId = Family.CentreId
+				FOR XML PATH('')) , 1, 2, '')), '-')) 
+				AS [Eligible Rooms based on Age Group],
+	ISNULL(		(SELECT CONVERT(VARCHAR,Room.MinAge) +' - ' + CONVERT(VARCHAR,Room.MaxAge)
+				FROM dbo.rpt_Rooms Room 
+				WHERE Room.RoomId = Book.RoomId AND Room.StatusName = 'Active' )
+		 ,'-')	AS [Current Bookings Age Group],
+	Book.RoomName AS [Current Bookings in Room],
+	Book.BookingDate AS [Booking Date],
+
+	/*CONVERT(VARCHAR, DATEADD(MONTH, ISNULL((	SELECT Room.MaxAge FROM dbo.rpt_Rooms Room 
+							WHERE Room.RoomId = Book.RoomId
+							AND Room.StatusName = 'Active' ), 0) + 1, 
+							CONVERT(VARCHAR,YEAR(GETUTCDATE()))+'-'+CONVERT(VARCHAR,MONTH(Child.DateOfBirth))+'-'+CONVERT(VARCHAR,DAY(Child.DateOfBirth))), 103) AS [Date on which child room age group will change],
+
+
+
+CONVERT(VARCHAR, DATEADD(MONTH, 
+IIF (((ISNULL((SELECT Room.MaxAge FROM dbo.rpt_Rooms Room 
+WHERE Room.RoomId = Book.RoomId
+AND Room.StatusName = 'Active' ), 0) + 1) - (DATEDIFF(MONTH, Child.DateOfBirth, CONVERT(DATE, GETUTCDATE())))) > 0 ,
+((ISNULL((SELECT Room.MaxAge FROM dbo.rpt_Rooms Room 
+WHERE Room.RoomId = Book.RoomId
+AND Room.StatusName = 'Active' ), 0) + 1) - (DATEDIFF(MONTH, Child.DateOfBirth, CONVERT(DATE, GETUTCDATE()))))
+, 0)
+, CONVERT(VARCHAR,YEAR(GETUTCDATE()))+'-'+CONVERT(VARCHAR,MONTH(Child.DateOfBirth))+'-'+CONVERT(VARCHAR,DAY(Child.DateOfBirth))), 103)  [Date on which child room age group will change],
+
+*/
+
+CONVERT(VARCHAR, DATEADD(MONTH, ISNULL((SELECT Room.MaxAge FROM dbo.rpt_Rooms Room 
+							WHERE Room.RoomId = Book.RoomId
+							AND Room.StatusName = 'Active' ), 0) , 
+							Child.DateOfBirth), 103) AS [Date on which child room age group will change],
+
+	DATEDIFF(MONTH, Child.DateOfBirth, DATEADD(MONTH, ISNULL((SELECT Room.MaxAge FROM dbo.rpt_Rooms Room 
+																	 WHERE Room.RoomId = Book.RoomId
+																	 AND Room.StatusName = 'Active' ), 0) + 1 , Child.DateOfBirth)) 
+																	 AS [Future Child Age-in Month],
+	/*CONVERT(VARCHAR(MAX), ISNULL((STUFF((SELECT DISTINCT ', ' + RoomF.RoomName FROM [dbo].[rpt_Rooms] RoomF where 
+				DATEDIFF(MONTH, Child.DateOfBirth, DATEADD(MONTH, ISNULL((SELECT Room.MaxAge
+				FROM dbo.rpt_Rooms Room 
+				WHERE Room.RoomId = Book.RoomId	AND Room.StatusName = 'Active' ), 0) + 1 , Child.DateOfBirth))	 >= RoomF.MinAge 
+				AND 
+		DATEDIFF(MONTH, Child.DateOfBirth,DATEADD(MONTH, ISNULL((SELECT Room.MaxAge
+				FROM dbo.rpt_Rooms Room 
+				WHERE Room.RoomId = Book.RoomId AND Room.StatusName = 'Active' ), 0) + 1 , Child.DateOfBirth)) <= RoomF.MaxAge 
+				AND RoomF.Centreid = Family.CentreId AND RoomF.StatusName = 'Active'
+				FOR XML PATH('')) , 1, 2, '')), '-')) AS [Future Eligible Room],
+
+	CONVERT(VARCHAR(MAX), ISNULL((STUFF((SELECT DISTINCT ', ' + (CONVERT(VARCHAR, RoomF.MinAge) + ' - ' + CONVERT(VARCHAR, RoomF.MaxAge)) 
+										FROM [dbo].[rpt_Rooms] RoomF where 
+										DATEDIFF(MONTH, Child.DateOfBirth, 
+										DATEADD(MONTH, ISNULL((SELECT Room.MaxAge
+										FROM dbo.rpt_Rooms Room 
+										WHERE Room.RoomId = Book.RoomId	AND Room.StatusName = 'Active' ), 0) + 1 , Child.DateOfBirth))	 >= RoomF.MinAge 
+										AND 
+										DATEDIFF(MONTH, Child.DateOfBirth, DATEADD(MONTH, ISNULL((SELECT Room.MaxAge
+										FROM dbo.rpt_Rooms Room 
+										WHERE Room.RoomId = Book.RoomId AND Room.StatusName = 'Active' ), 0) + 1 , Child.DateOfBirth)) <= RoomF.MaxAge 
+										AND RoomF.Centreid = Family.CentreId AND RoomF.StatusName = 'Active'
+										FOR XML PATH('')) , 1, 2, '')), '-')) AS [Future Eligible Age Group],
+										*/
+		CONVERT(VARCHAR(MAX), ISNULL((STUFF((SELECT DISTINCT ', ' + RoomF.RoomName + '(' + (CONVERT(VARCHAR, RoomF.MinAge) + ' - ' + CONVERT(VARCHAR, RoomF.MaxAge))  + ')'
+				FROM [dbo].[rpt_Rooms] RoomF where 
+				DATEDIFF(MONTH, Child.DateOfBirth, DATEADD(MONTH, ISNULL((SELECT Room.MaxAge
+				FROM dbo.rpt_Rooms Room 
+				WHERE Room.RoomId = Book.RoomId	AND Room.StatusName = 'Active' ), 0) + 1 , Child.DateOfBirth))	 >= RoomF.MinAge 
+				AND 
+		DATEDIFF(MONTH, Child.DateOfBirth,DATEADD(MONTH, ISNULL((SELECT Room.MaxAge
+				FROM dbo.rpt_Rooms Room 
+				WHERE Room.RoomId = Book.RoomId AND Room.StatusName = 'Active' ), 0) + 1 , Child.DateOfBirth)) <= RoomF.MaxAge 
+				AND RoomF.Centreid = Family.CentreId AND RoomF.StatusName = 'Active'
+				FOR XML PATH('')) , 1, 2, '')), '-')) AS [Future Eligible Rooms based on Age Group],
+	Book.BookingStatus AS [Booking Status]
+
+	FROM dbo.rpt_Family Family
+	INNER JOIN dbo.rpt_FamilyChild FamilyChild ON FamilyChild.FamilyId = Family.FamilyId
+	INNER JOIN dbo.rpt_ChildDetails Child ON Child.PersonId = FamilyChild.ChildId
+	INNER JOIN dbo.rpt_Bookings Book ON Book.FamilyId = Family.FamilyId AND Book.ChildId = FamilyChild.ChildId AND BOOK.RoomId IS NOT NULL
+]]></query>
+            </view>
+            <view id="4e70f9af-953b-44f5-98a7-b8caeb871ad3" name="SessionUtilisationWeeklyView" alias="SessionUtilisationWeeklyView">
+                <query><![CDATA[SELECT 
+--Book.[DayName],
+Book.WeekEndDate AS [Weekend Date],
+Book.RoomName AS [Rooms],
+Book.SessionName AS [Sessions],
+(LEN(Ses.[AvailableDays]) - LEN(REPLACE(Ses.[AvailableDays], ',', ''))+1) AS [Available Days],
+Room.MaxPlace AS [Room Capacity],
+Room.MaxPlace * (LEN(Ses.[AvailableDays]) - LEN(REPLACE(Ses.[AvailableDays], ',', ''))+1) AS [Weekly Room Capacity],
+COUNT(Book.Id) AS [Total Bookings],
+SUM(CASE WHEN Book.IsAbsent = 1 THEN 1 ELSE 0 END) AS [Total Absent],
+(Room.MaxPlace) [Weekly Vacancies],
+/*((Total Bookings - Total Absent) / (Room Capacity * No of Session Days))/100.00*/
+CONVERT(VARCHAR, CONVERT(DECIMAL(5,2),(CONVERT(DECIMAL(5,2),(COUNT(Book.Id) - SUM(CASE WHEN Book.IsAbsent = 1 THEN 1 ELSE 0 END))) / CONVERT(DECIMAL(5,2),(ISNULL(Room.MaxPlace, 0) * (LEN(Ses.[AvailableDays]) - LEN(REPLACE(Ses.[AvailableDays], ',', ''))+1))))*100.00)) + ' %' AS [Weekly Utilisation],
+/*((Total Bookings) / (Room Capacity * No of Session Days))/100.00*/
+CONVERT(VARCHAR, CONVERT(DECIMAL(5,2),(CONVERT(DECIMAL(5,2),COUNT(Book.Id)) / CONVERT(DECIMAL(5,2),(ISNULL(Room.MaxPlace, 0) * (LEN(Ses.[AvailableDays]) - LEN(REPLACE(Ses.[AvailableDays], ',', ''))+1))))*100.00)) + ' %' AS [Fee Utilisation],
+COUNT(Book.Id) - SUM(CASE WHEN Book.IsAbsent = 1 THEN 1 ELSE 0 END) AS [Used Places],
+COUNT(Book.Id) AS [Used Fee Places],
+ 
+Book.OrganisationId,
+Book.ProviderId,
+Book.CentreId,
+Book.OrganisationName AS [Organisation],
+Book.ProviderName AS [Provider],
+Book.CentreName AS [Centre]
+
+FROM dbo.rpt_Bookings Book
+INNER JOIN dbo.rpt_Rooms Room ON Room.RoomId = Book.RoomId
+INNER JOIN dbo.rpt_Sessions Ses ON Ses.SessionId = Book.SessionId
+/*WHERE  Book.BookingDate >= DATEADD(week, DATEDIFF(day, 0, GETUTCDATE())/7, 0) /*first day current week*/
+       AND Book.BookingDate <=  DATEADD(week, DATEDIFF(day, 0, GETUTCDATE())/7, 6) /*last day current week*/
+	   AND Book.CentreName = 'The Young Care St Kilda'
+	   AND Book.WeekEndDate = '2020-02-16'
+	   */
+WHERE Book.BookingStatus = 'Approved'
+GROUP BY 
+Ses.AvailableDays,
+--Book.[DayName],
+Book.WeekEndDate,
+Book.RoomName,
+Book.SessionName,
+Room.MaxPlace,
+Book.OrganisationId,
+Book.ProviderId,
+Book.CentreId,
+Book.OrganisationName,
+Book.ProviderName,
+Book.CentreName
+
+]]></query>
+            </view>
+            <view id="c7c66079-7960-4c39-b7b9-d6984db1ed59" name="WeeklyOccupancyView" alias="WeeklyOccupancyView">
+                <query><![CDATA[
+SELECT 
+
+A.[DayName] AS [Days],
+A.[WeekEndDate] AS [Weekend Date],
+A.RoomName AS [Rooms],
+A.[Available Days],
+A.[Room Capacity],
+SUM(A.[Full Sessions Daily]) AS [Full Sessions],
+
+(SUM(A.[Full Sessions Daily]) * 100.00) / A.[Room Capacity] AS [Occupancy],
+ 
+ A.[Available Days] * A.[Room Capacity] AS [Total Positions],
+
+CASE WHEN		A.[DayName] = 'Monday' THEN 1
+		   WHEN A.[DayName] = 'Tuesday' THEN 2
+		   WHEN A.[DayName] = 'Wednesday' THEN 3
+		   WHEN A.[DayName] = 'Thursday' THEN 4
+		   WHEN A.[DayName] = 'Friday' THEN 5
+		   WHEN A.[DayName] = 'Saturday' THEN 6
+		   WHEN A.[DayName] = 'Sunday' THEN 7
+END AS [DayId]
+
+,A.OrganisationId,
+A.ProviderId,
+A.CentreId,
+A.[Organisation],
+A.[Provider],
+A.[Centre]
+
+FROM (
+SELECT 
+Book.[DayName],
+Book.WeekEndDate,
+Book.RoomName,
+Book.SessionName,
+Ses.UtilisationPercentage,
+(LEN(Ses.[AvailableDays]) - LEN(REPLACE(Ses.[AvailableDays], ',', ''))+1) AS [Available Days],
+COUNT(Book.Id) AS [Total Bookings],
+SUM(CASE WHEN Book.IsAbsent = 1 THEN 1 ELSE 0 END) AS [Total Absent],
+(Room.MaxPlace) [Room Capacity],
+
+CONVERT(INT, ROUND((COUNT(Book.Id) * Ses.UtilisationPercentage ) / 100, 0)) AS [Full Sessions Daily],
+
+
+Book.OrganisationId,
+Book.ProviderId,
+Book.CentreId,
+Book.OrganisationName AS [Organisation],
+Book.ProviderName AS [Provider],
+Book.CentreName AS [Centre]
+
+
+
+FROM dbo.rpt_Bookings Book
+INNER JOIN dbo.rpt_Rooms Room ON Room.RoomId = Book.RoomId
+INNER JOIN dbo.rpt_Sessions Ses ON Ses.SessionId = Book.SessionId
+WHERE Book.BookingStatus = 'Approved'
+/*WHERE  Book.WeekEndDate >= '2020-02-16'
+       AND Book.WeekEndDate <=  '2020-02-16'
+	   AND Book.CentreName = 'Little Smarts OSHC St Thomas Primary School - Centre 1'
+	*/   
+GROUP BY 
+Book.[DayName],
+Book.WeekEndDate,
+Book.RoomName,
+Book.SessionName,
+Room.MaxPlace,
+Ses.UtilisationPercentage,
+Ses.[AvailableDays],
+Book.OrganisationId,
+Book.ProviderId,
+Book.CentreId,
+Book.OrganisationName,
+Book.ProviderName,
+Book.CentreName)A
+
+
+GROUP BY A.[DayName],
+A.[WeekEndDate],
+A.RoomName,
+A.[Available Days],
+A.[Room Capacity],
+A.OrganisationId,
+A.ProviderId,
+A.CentreId,
+A.[Organisation],
+A.[Provider],
+A.[Centre]
+]]></query>
+            </view>
+            <view id="af54ff78-a955-4ccb-aa10-6fe6bacb3eea" name="BookingPenaltyView" alias="BookingPenaltyView">
+                <query><![CDATA[		SELECT 
+		Book.Id,
+		Book.BookingId,
+		Family.OrganisationId,
+		Family.ProviderId,
+		Family.CentreId,
+		Family.OrganisationName AS [Organisation],
+		Family.ProviderName AS [Provider],
+		Family.CentreName AS [Centre],
+		ChildFirstName + ' ' + ChildLastName AS [Child],
+		Family.FamilyName AS [Family],
+		PaymentAccountName AS [Payment Account],
+		--COALESCE(CONVERT(VARCHAR, BookingDate, 103), '-') AS [Booking Date],
+		BookingDate AS [Booking Date],
+		COALESCE(CONVERT(VARCHAR, WeekStartDate, 103), '-') AS [Week Start Date],
+		COALESCE(CONVERT(VARCHAR, WeekEndDate, 103), '-') AS [Week End Date],
+		[DayName] AS [Days],
+		RoomName AS [Rooms],
+		SessionName AS [Sessions],
+		LEFT(SessionStartTime, 5) + '-' + LEFT(SessionEndTime, 5) AS [Session Time],
+		LEFT(BookingStartTime, 5) + '-' + LEFT(BookingEndTime, 5) AS [Booking Time],
+		BookingStartTime,
+		BookingEndTime,
+		SessionFee AS [Fees],
+		DiscountTypeName AS [Discount Type],
+		DiscountAmount AS [Discount Amount],
+		ISNULL(BookingType, '-') AS [Booking Type],
+		ISNULL(BookingStatus, '-') AS [Booking Status],
+		CASE WHEN PreSchoolSession = 1 THEN 'Y'
+			 WHEN PreSchoolSession = 0 THEN 'N'	 
+			 WHEN PreSchoolSession IS NULL THEN '-'	 
+			 END AS [Preschool Session],
+			 ISNULL(MessageFromGuardian, '-') AS [Guardian Message],
+			Family.FamilyStatus AS [Family Status],
+		
+		LEFT(Attendance.ExpectedTimeOut, 5) AS [Expected Time Out],
+		LEFT(Attendance.SignedInTime, 5) AS [Signed In],
+		LEFT(Attendance.SignedOutTime, 5) AS [Signed Out],
+		Attendance.SignedInTime,
+		Attendance.SignedOutTime,
+		Attendance.SignedInByName AS [Signed In By],
+		Attendance.SignedOutByName AS [Signed Out By],
+		/*
+		CASE WHEN (Book.BookingStartTime > Attendance.SignedInTime) THEN 'Early Dropoff'
+		     WHEN (Book.BookingEndTime < Attendance.SignedOutTime) THEN 'Late Pickup'
+			 WHEN ((Book.BookingStartTime > Attendance.SignedInTime) AND (Book.BookingEndTime < Attendance.SignedOutTime)) THEN 'Early Dropoff & Late Pickup'
+		ELSE '-' END AS 'Dropoff Pickup Status',
+		
+		CONVERT(VARCHAR(MAX), ISNULL((STUFF((SELECT DISTINCT ', ' + CONVERT(NVARCHAR(MAX), Penaltyy.[PenaltyType]) FROM
+		[dbo].[rpt_BookingsPenalty] Penaltyy WHERE Penaltyy.[BookingId] = Book.[BookingId] AND Book.BookingStatus = 'Approved' FOR XML PATH('')) , 1, 2, '')), '-')) AS [Penalties],
+		*/
+		ISNULL(Penalty.[PenaltyType], '-') AS Penalty,
+		ISNULL(Penalty.[PenaltyCharged], '0.00') AS [Penalty Charged],
+		Child.ChildFamilyStatus AS [Child Family Status]
+		
+		FROM [dbo].[rpt_Bookings] Book
+		INNER JOIN [dbo].[rpt_Family] Family ON Family.FamilyId = Book.FamilyId
+		LEFT  JOIN [dbo].[rpt_BookingsAttendance] Attendance ON Attendance.BookingId = Book.BookingId
+		INNER JOIN [dbo].[rpt_BookingsPenalty] Penalty ON Penalty.[BookingId] = Book.[BookingId]
+		INNER JOIN [dbo].[rpt_FamilyChild] Child ON Child.FamilyId = Family.FamilyId AND Child.ChildId = Book.ChildId
+		--WHERE Book.BookingStatus IN ('Approved', 'Pending')
+		/*WHERE (Book.BookingStartTime > Attendance.SignedInTime OR
+		Book.BookingEndTime < Attendance.SignedOutTime)*/]]></query>
+            </view>
+            <view id="63c7325a-10b4-430b-8afb-d09e868df6ed" name="EnrolmentView" alias="EnrolmentView">
+                <query><![CDATA[SELECT 
+		Enrolment.OrganisationId,
+		Enrolment.ProviderId,
+		Enrolment.CentreId,
+		Enrolment.OrganisationName AS [Organisation],
+		Enrolment.ProviderName AS [Provider],
+		Enrolment.CentreName AS [Centre],
+		Enrolment.KXEnrolmentId AS [KidsXap EnrolmentId],
+		Enrolment.ChildFirstName + ' ' + Enrolment.ChildLastName AS [Child],
+		Enrolment.ChildCRN AS [Child CRN],
+		COALESCE(CONVERT(VARCHAR, Enrolment.ChildDateOfBirth, 103), '-') AS [Child DOB],
+		CASE WHEN Enrolment.ChildVerified = 1 THEN 'Y'
+		     WHEN Enrolment.ChildVerified = 0 THEN 'N'
+			 WHEN Enrolment.ChildVerified IS NULL THEN '-' END AS [Child Verified on DHS],
+		Enrolment.FamilyName AS [Family],
+
+
+		Enrolment.CCSClaimant AS [CCS Claimant],
+		Enrolment.ClaimantCRN AS [Claimant CRN],
+		COALESCE(CONVERT(VARCHAR, Enrolment.ClaimantDateOfBirth, 103), '-') AS [Claimant DOB],
+		CASE WHEN Enrolment.ClaimantVerified = 1 THEN 'Y'
+		     WHEN Enrolment.ClaimantVerified = 0 THEN 'N'
+			 WHEN Enrolment.ClaimantVerified IS NULL THEN '-' END AS [Claimant Verified on DHS],
+
+		Enrolment.CareType AS [Care Type],
+		Enrolment.CcssServiceName AS [CCS Service],
+		Enrolment.CcssEnrolmentId AS [CCS EnrolmentId],
+		Enrolment.ArrangementType AS [Arrangement Type],
+		Occu.OccurrenceNumber AS [Occurrence Number],
+		COALESCE(CONVERT(VARCHAR, Occu.ArrangementStartDate, 103), '-') AS [Arrangement Start Date],
+		COALESCE(CONVERT(VARCHAR, Occu.ArrangementEndDate, 103), '-') AS [Arrangement End Date],
+		Occu.EnrolmentStatus AS [Enrolment Status],
+		CASE WHEN Occu.SessionIndicator = 'R' THEN 'Routine'
+			 WHEN Occu.SessionIndicator = 'C' THEN 'Casual'
+			 WHEN Occu.SessionIndicator = 'B' THEN 'Both'
+			 WHEN Occu.SessionIndicator IS NULL THEN '-'
+		END AS [Session Indicator],
+		Occu.SessionType AS [Session Type],
+		Occu.NoOfWeekCycle AS [Number of Week Cycle],
+
+		/*CONVERT(VARCHAR(MAX), ISNULL((STUFF((SELECT DISTINCT ', ' + CONVERT(NVARCHAR(MAX), Recurr.[DayName]) FROM
+		[dbo].[rpt_EnrolmentsRecurringSessions] Recurr WHERE Recurr.KXEnrolmentId = Occu.KXEnrolmentId AND Recurr.OccurrenceNumber = Occu.OccurrenceNumber
+		FOR XML PATH('') ) , 1, 2, '')), '-')) AS [Recurring-Days],*/
+
+		Recurr.SessionName AS [Recurring Session],
+		Recurr.SessionFee AS [Recurring Session Fees],
+		Recurr.[DayName] AS [Recurring Days],
+
+		Casual.SessionName AS [Casual Session],
+		Casual.NormalFee + Casual.CasualFee AS [Casual Session Fees],
+
+		Enrolment.CloserReasonName AS [Arrangement End Reason],
+		Enrolment.OtherCloserReason AS [Other Reason],
+		CASE WHEN Enrolment.IsChildInStateCare = 1 THEN 'Y' 
+			 WHEN Enrolment.IsChildInStateCare = 0 THEN 'N'
+			 WHEN Enrolment.IsChildInStateCare IS NULL THEN '-' END AS [Is Child in State Care],
+		Child.ChildFamilyStatus AS [Child Family Status],
+		Family.FamilyStatus AS [Family Status],
+CASE WHEN Recurr.[DayName] = 'Mon' THEN 1
+			 WHEN Recurr.[DayName] = 'Tue' THEN 2
+			 WHEN Recurr.[DayName] = 'Wed' THEN 3
+			 WHEN Recurr.[DayName] = 'Thu' THEN 4
+			 WHEN Recurr.[DayName] = 'Fri' THEN 5
+			 WHEN Recurr.[DayName] = 'Sat' THEN 6
+			 WHEN Recurr.[DayName] = 'Sun' THEN 7
+		END AS [Recurring DaysId]
+		
+		FROM [dbo].[rpt_Enrolments] Enrolment
+		INNER JOIN [dbo].[rpt_EnrolmentsOccurrence] Occu ON Occu.KXEnrolmentId = Enrolment.KXEnrolmentId
+		LEFT JOIN [dbo].[rpt_EnrolmentsRecurringSessions] Recurr ON Recurr.KXEnrolmentId = Occu.KXEnrolmentId AND Recurr.OccurrenceNumber = Occu.OccurrenceNumber 
+		                                                    AND CONVERT(DATE, DATEADD(HOUR, 11, GETUTCDATE())) BETWEEN StartDate AND ISNULL(EndDate, '2050-12-31')
+		LEFT JOIN [dbo].[rpt_EnrolmentsCasualSessions] Casual ON Casual.KXEnrolmentId = Occu.KXEnrolmentId AND Casual.OccurrenceNumber = Occu.OccurrenceNumber
+		INNER JOIN [dbo].[rpt_Family] Family ON Family.FamilyId = Enrolment.FamilyId
+		INNER JOIN [dbo].[rpt_FamilyChild] Child ON Child.FamilyId = Enrolment.FamilyId AND Child.ChildId = Enrolment.ChildId
+		/*WHERE Enrolment.KXEnrolmentId = '73f71929-a594-4819-8e5d-323280231efc'*/]]></query>
+            </view>
+            <view id="3be6e320-9045-4336-9f6b-a5c31c4293b3" name="BookingAttendanceView" alias="BookingAttendanceView">
+                <query><![CDATA[		SELECT 
+		Book.Id,
+		Book.BookingId,
+		Family.OrganisationId,
+		Family.ProviderId,
+		Family.CentreId,
+		Family.OrganisationName AS [Organisation],
+		Family.ProviderName AS [Provider],
+		Family.CentreName AS [Centre],
+		ChildFirstName + ' ' + ChildLastName AS [Child],
+		Family.FamilyName AS [Family],
+		PaymentAccountName AS [Payment Account],
+		--COALESCE(CONVERT(VARCHAR, BookingDate, 103), '-') AS [Booking Date],
+		BookingDate AS [Booking Date],
+		COALESCE(CONVERT(VARCHAR, WeekStartDate, 103), '-') AS [Week Start Date],
+		COALESCE(CONVERT(VARCHAR, WeekEndDate, 103), '-') AS [Week End Date],
+		[DayName] AS [Days],
+		RoomName AS [Rooms],
+		SessionName AS [Sessions],
+		LEFT(SessionStartTime, 5) + '-' + LEFT(SessionEndTime, 5) AS [Session Time],
+		CASE WHEN IsAbsent = 1 THEN 'Y'
+			 WHEN IsAbsent = 0 THEN 'N'
+			 WHEN IsAbsent IS NULL THEN 'N'
+		END AS [Absense],
+		LEFT(BookingStartTime, 5) + '-' + LEFT(BookingEndTime, 5) AS [Booking Time],
+		BookingStartTime,
+		BookingEndTime,
+		SessionFee AS [Fees],
+		DiscountTypeName AS [Discount Type],
+		DiscountAmount AS [Discount Amount],
+		ISNULL(BookingType, '-') AS [Booking Type],
+		ISNULL(BookingStatus, '-') AS [Booking Status],
+		ISNULL(CareType, '-') AS [Care Type],
+		ISNULL(ArrangementType, '-') AS [Arrangement Type],
+		CASE WHEN PreSchoolSession = 1 THEN 'Y'
+			 WHEN PreSchoolSession = 0 THEN 'N'	 
+			 WHEN PreSchoolSession IS NULL THEN '-'	 
+			 END AS [Preschool Session],
+		CASE WHEN ApplySubsidy = 1 THEN 'Y'
+			 WHEN ApplySubsidy = 0 THEN 'N'	 
+			 WHEN ApplySubsidy IS NULL THEN '-'	 
+			 END AS [Subsidy],
+			 ISNULL(KXEnrolmentId, '-') AS [KidsXap EnrolmentId],
+			 ISNULL(CcssEnrolmentId, '-') AS [CCSS EnrolmentId],
+			 /*ISNULL(WeekNumber, '-') AS [Week No],
+			 ISNULL(ChildAge, '-') AS [Child Age on Booking],
+			 ISNULL(BillingMethod, '-') AS [Biling Method],
+			 ISNULL(SessionUnitOfMeasure, '-') AS [Session Unit of Measure],
+			 ISNULL(MessageFromGuardian, '-') AS [Guardian Message],*/
+			Family.FamilyStatus AS [Family Status],
+			Child.ChildFamilyStatus AS [Child Family Status],
+
+		Attendance.Id AS AttendanceId,
+		
+		LEFT(Attendance.ExpectedTimeOut, 5) AS [Expected Time Out],
+		LEFT(Attendance.SignedInTime, 5) AS [Signed In],
+		LEFT(Attendance.SignedOutTime, 5) AS [Signed Out],
+		Attendance.SignedInTime,
+		Attendance.SignedOutTime,
+		Attendance.SignedInByName AS [Signed In By],
+		Attendance.SignedOutByName AS [Signed Out By],
+		
+		/*CASE WHEN Attendance.SignedInTime IS NULL OR Attendance.SignedOutTime IS NULL THEN 'Incomplete'
+			 ELSE 'Completed' END AS 'Attendance Status',*/
+		
+		CASE WHEN IsAbsent = 1 THEN 'Completed'
+			 WHEN (SELECT IIF(Attendance1.SignedInTime IS NOT NULL, Attendance1.SignedOutTime, Attendance1.SignedInTime) FROM [dbo].[rpt_BookingsAttendance] Attendance1 WHERE Attendance1.BookingId = Book.BookingId AND Attendance1.Id = (SELECT MAX(Att.Id) FROM  [dbo].[rpt_BookingsAttendance] Att WHERE Att.BookingId = Book.BookingId)) IS NULL THEN 'Incomplete'
+			 WHEN (SELECT IIF(Attendance1.SignedInTime IS NOT NULL, Attendance1.SignedOutTime, Attendance1.SignedInTime) FROM [dbo].[rpt_BookingsAttendance] Attendance1 WHERE Attendance1.BookingId = Book.BookingId AND Attendance1.Id = (SELECT MAX(Att.Id) FROM  [dbo].[rpt_BookingsAttendance] Att WHERE Att.BookingId = Book.BookingId)) IS NOT NULL THEN 'Completed'
+		END AS 'Attendance Status',
+		Book.SubsidyAmount AS [Subsidy Amount],
+		
+		CONVERT(VARCHAR(MAX), (STUFF((SELECT DISTINCT ', ' + CONVERT(NVARCHAR(MAX), Subsidy.SubsidyName) FROM
+		[dbo].[rpt_BookingsSubsidy] Subsidy WHERE Subsidy.BookingId = Book.BookingId FOR XML PATH('')) , 1, 2, '')))  AS [Subsidy Name]
+		
+		
+		
+		FROM [dbo].[rpt_Bookings] Book
+		INNER JOIN [dbo].[rpt_Family] Family ON Family.FamilyId = Book.FamilyId
+		INNER JOIN [dbo].[rpt_FamilyChild] Child ON Child.FamilyId = Family.FamilyId AND Child.ChildId = Book.ChildId
+		LEFT JOIN [dbo].[rpt_BookingsAttendance] Attendance ON Attendance.BookingId = Book.BookingId
+		]]></query>
+            </view>
+            <view id="ccbd76ac-bf24-4049-ab19-1eebf2c93917" name="BookingByRoomsAndSessions" alias="BookingByRoomsAndSessions">
+                <query><![CDATA[		SELECT 
+		Book.Id,
+		Family.OrganisationId,
+		Family.ProviderId,
+		Family.CentreId,
+		Family.OrganisationName AS [Organisation],
+		Family.ProviderName AS [Provider],
+		Family.CentreName AS [Centre],
+		ChildFirstName + ' ' + ChildLastName AS [Child],
+		Family.FamilyName AS [Family],
+		PaymentAccountName AS [Payment Account],
+		BookingDate AS [Booking Date],
+		RoomName AS [Rooms],
+		SessionName AS [Sessions], 
+		/*CONVERT(VARCHAR(MAX), ISNULL((STUFF((SELECT DISTINCT ', ' + CONVERT(NVARCHAR(MAX), Book.SessionName) FROM
+		dbo.rpt_Bookings Book1 WHERE Book1.Id = Book.Id AND Book1.BookingStatus = 'Approved' FOR XML PATH('')) , 1, 2, '')), '-')) AS [Sessions],*/
+		SessionFee AS [Total Fees], 
+		DiscountAmount AS [Total Discount Amount] 
+		,ISNULL(BookingStatus, '-') AS [Booking Status]
+		,Family.FamilyStatus AS [Family Status]
+		,Child.ChildFamilyStatus AS [Child Family Status]
+		,Book.SubsidyAmount AS [Subsidy Amount]
+
+		FROM [dbo].[rpt_Bookings] Book
+		INNER JOIN [dbo].[rpt_Family] Family ON Family.FamilyId = Book.FamilyId
+		INNER JOIN [dbo].[rpt_FamilyChild] Child ON Child.FamilyId = Family.FamilyId AND Child.ChildId = Book.ChildId
+		]]></query>
+            </view>
+            <view id="73e07be4-4fd0-45af-83fd-4a433a189771" name="BookingsByChildAgeView" alias="BookingsByChildAgeView">
+                <query><![CDATA[SELECT 
+	DISTINCT 
+	 Id
+	,BookingId
+	,OrganisationId
+	,ProviderId
+	,CentreId
+	,Organisation
+	,[Provider]
+	,Centre
+	,[Booking Date]
+	,[Week Start Date]
+	,[Week End Date]
+	,[Rooms]
+	,[Sessions]
+	,[Children Age In Months On Booking Date]
+	,[Family Status]
+	,[Child Family Status]
+	,[Booking Status]
+	,[Total Fees]
+	,[Total Discount Amount]
+	,[Subsidy Amount] 
+
+	FROM
+	(	SELECT 
+		Book.Id,
+		Book.BookingId,
+		Family.OrganisationId,
+		Family.ProviderId,
+		Family.CentreId,
+		Family.OrganisationName AS [Organisation],
+		Family.ProviderName AS [Provider],
+		Family.CentreName AS [Centre],
+		BookingDate AS [Booking Date],
+		COALESCE(CONVERT(VARCHAR, WeekStartDate, 103), '-') AS [Week Start Date],
+		COALESCE(CONVERT(VARCHAR, WeekEndDate, 103), '-') AS [Week End Date],
+		RoomName AS [Rooms],
+		SessionName AS [Sessions],
+		ISNULL(ChildAge, '-') AS [Children Age In Months On Booking Date],
+		Family.FamilyStatus AS [Family Status],
+		Child.ChildFamilyStatus AS [Child Family Status],
+		Book.BookingStatus AS [Booking Status],
+		SessionFee AS [Total Fees], 
+		DiscountAmount AS [Total Discount Amount],
+		SubsidyAmount AS [Subsidy Amount] 
+		
+		FROM [dbo].[rpt_Bookings] Book
+		INNER JOIN [dbo].[rpt_Family] Family ON Family.FamilyId = Book.FamilyId
+		INNER JOIN [dbo].[rpt_FamilyChild] Child ON Child.FamilyId = Family.FamilyId AND Child.ChildId = Book.ChildId
+	)  [TableView]
+]]></query>
+            </view>
+            <view id="5a3a10ef-9bd6-4f3b-bd35-91007307881d" name="BookingView" alias="BookingView">
+                <query><![CDATA[SELECT 
+		Book.Id,
+		Book.BookingId,
+		Family.OrganisationId,
+		Family.ProviderId,
+		Family.CentreId,
+		Family.OrganisationName AS [Organisation],
+		Family.ProviderName AS [Provider],
+		Family.CentreName AS [Centre],
+		ChildFirstName + ' ' + ChildLastName AS [Child],
+		Family.FamilyName AS [Family],
+		PaymentAccountName AS [Payment Account],
+		--COALESCE(CONVERT(VARCHAR, BookingDate, 103), '-') AS [Booking Date],
+		BookingDate AS [Booking Date],
+		COALESCE(CONVERT(VARCHAR, WeekStartDate, 103), '-') AS [Week Start Date],
+		COALESCE(CONVERT(VARCHAR, WeekEndDate, 103), '-') AS [Week End Date],
+		[DayName] AS [Days],
+		RoomName AS [Rooms],
+		SessionName AS [Sessions],
+		LEFT(SessionStartTime, 5) + '-' + LEFT(SessionEndTime, 5) AS [Session Time],
+		CASE WHEN IsAbsent = 1 THEN 'Y'
+			 WHEN IsAbsent = 0 THEN 'N'
+			 WHEN IsAbsent IS NULL THEN '-'
+		END AS [Absense],
+		LEFT(BookingStartTime, 5) + '-' + LEFT(BookingEndTime, 5) AS [Booking Time],
+		BookingStartTime,
+		BookingEndTime,
+		SessionFee AS [Fees],
+		DiscountTypeName AS [Discount Type],
+		DiscountAmount AS [Discount Amount],
+		ISNULL(BookingType, '-') AS [Booking Type],
+		ISNULL(BookingStatus, '-') AS [Booking Status],
+		ISNULL(CareType, '-') AS [Care Type],
+		ISNULL(ArrangementType, '-') AS [Arrangement Type],
+		CASE WHEN PreSchoolSession = 1 THEN 'Y'
+			 WHEN PreSchoolSession = 0 THEN 'N'	 
+			 WHEN PreSchoolSession IS NULL THEN '-'	 
+			 END AS [Preschool Session],
+		CASE WHEN ApplySubsidy = 1 THEN 'Y'
+			 WHEN ApplySubsidy = 0 THEN 'N'	 
+			 WHEN ApplySubsidy IS NULL THEN '-'	 
+			 END AS [Subsidy],
+			 ISNULL(KXEnrolmentId, '-') AS [KidsXap EnrolmentId],
+			 ISNULL(CcssEnrolmentId, '-') AS [CCSS EnrolmentId],
+			 ISNULL(WeekNumber, '-') AS [Week No],
+			 ISNULL(ChildAge, '-') AS [Child Age on Booking],
+			 ISNULL(BillingMethod, '-') AS [Biling Method],
+			 ISNULL(SessionUnitOfMeasure, '-') AS [Session Unit of Measure],
+			 ISNULL(MessageFromGuardian, '-') AS [Guardian Message],
+			Family.FamilyStatus AS [Family Status],
+			Child.ChildFamilyStatus AS [Child Family Status]
+			,Book.SubsidyAmount AS [Subsidy Amount]
+			,CONVERT(VARCHAR(MAX), (STUFF((SELECT DISTINCT ', ' + CONVERT(NVARCHAR(MAX), Subsidy.SubsidyName) FROM
+			 [dbo].[rpt_BookingsSubsidy] Subsidy WHERE Subsidy.BookingId = Book.BookingId FOR XML PATH('')) , 1, 2, '')))  AS [Subsidy Name]
+		
+		FROM [dbo].[rpt_Bookings] Book
+		INNER JOIN [dbo].[rpt_Family] Family ON Family.FamilyId = Book.FamilyId
+		INNER JOIN [dbo].[rpt_FamilyChild] Child ON Child.FamilyId = Family.FamilyId AND Child.ChildId = Book.ChildId
+		]]></query>
+            </view>
+        </views>
+    </database>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+    <share mandatory="true">
+        <roles mandatory="true">
+            <role id="102">3</role>
+        </roles>
+        <users mandatory="true">
+            <user id="101">3</user>
+        </users>
+        <organizations mandatory="true">
+            <organization id="1">3</organization>
+        </organizations>
+    </share>
+    <access>
+        <expression expressionId="0083f138-f8fd-4ba5-a2af-3561d026681b" type="conditionIf" expressionName="ChildAgeForecastingViewSecurity" expressionType="table" on="ChildAgeForecasting" accessType="grant">
+            <condition><![CDATA[${org}.name != '-']]></condition>
+            <filter><![CDATA[ChildAgeForecasting.OrganisationId IN (${profile['organisation']}) AND
+ChildAgeForecasting.ProviderId IN  (${profile['providers']}) AND
+ChildAgeForecasting.CentreId IN (${profile['centres']})]]></filter>
+        </expression>
+        <expression expressionId="a8c6d189-5d8a-4dc6-9898-4167928ffb7b" type="conditionIf" expressionName="BookingByRoomsAndSessionsViewSecurity" expressionType="table" on="BookingByRoomsAndSessions" accessType="grant">
+            <condition><![CDATA[${org}.name != '-']]></condition>
+            <filter><![CDATA[BookingByRoomsAndSessions.OrganisationId IN (${profile['organisation']}) AND
+BookingByRoomsAndSessions.ProviderId IN  (${profile['providers']}) AND
+BookingByRoomsAndSessions.CentreId IN (${profile['centres']})]]></filter>
+        </expression>
+        <expression expressionId="ae4e9e04-f1d8-4f1a-b173-42e62f4553e7" type="conditionIf" expressionName="BookingViewSecurity" expressionType="table" on="BookingView" accessType="grant">
+            <condition><![CDATA[${org}.name != '-']]></condition>
+            <filter><![CDATA[BookingView.OrganisationId IN (${profile['organisation']}) AND
+BookingView.ProviderId IN  (${profile['providers']}) AND
+BookingView.CentreId IN (${profile['centres']})]]></filter>
+        </expression>
+        <expression expressionId="fd25793f-fdfc-491c-a1d2-c110d9d27c15" type="conditionIf" expressionName="EnrolmentViewSecurity" expressionType="table" on="EnrolmentView" accessType="grant">
+            <condition><![CDATA[${org}.name != '-']]></condition>
+            <filter><![CDATA[EnrolmentView.OrganisationId IN (${profile['organisation']}) AND
+EnrolmentView.ProviderId IN  (${profile['providers']}) AND
+EnrolmentView.CentreId IN (${profile['centres']})]]></filter>
+        </expression>
+        <expression expressionId="151d2a7c-abee-460b-a7ba-52ab9c53a31f" type="conditionIf" expressionName="BookingAttendanceViewSecurity" expressionType="table" on="BookingAttendanceView" accessType="grant">
+            <condition><![CDATA[${org}.name != '-']]></condition>
+            <filter><![CDATA[BookingAttendanceView.OrganisationId IN (${profile['organisation']}) AND
+BookingAttendanceView.ProviderId IN  (${profile['providers']}) AND
+BookingAttendanceView.CentreId IN (${profile['centres']})
+]]></filter>
+        </expression>
+        <expression expressionId="02521866-2f53-460a-8aef-1266ec6422c7" type="conditionIf" expressionName="BookingPenaltyViewSecurity" expressionType="table" on="BookingPenaltyView" accessType="grant">
+            <condition><![CDATA[${org}.name != '-']]></condition>
+            <filter><![CDATA[BookingPenaltyView.OrganisationId IN (${profile['organisation']}) AND
+BookingPenaltyView.ProviderId IN  (${profile['providers']}) AND
+BookingPenaltyView.CentreId IN (${profile['centres']})
+]]></filter>
+        </expression>
+        <expression expressionId="2935e4ae-0516-4adb-9bcc-1a8790a7044d" type="conditionIf" expressionName="BookingSubsidyViewSecurity" expressionType="table" on="BookingSubsidyView" accessType="grant">
+            <condition><![CDATA[${org}.name != '-']]></condition>
+            <filter><![CDATA[BookingSubsidyView.OrganisationId IN (${profile['organisation']}) AND
+BookingSubsidyView.ProviderId IN  (${profile['providers']}) AND
+BookingSubsidyView.CentreId IN (${profile['centres']})
+]]></filter>
+        </expression>
+        <expression expressionId="0fe78935-9a1a-412d-92ac-3f6e36da70c0" type="conditionIf" expressionName="SessionUtilisationDailyViewSecurity" expressionType="table" on="SessionUtilisationDailyView" accessType="grant">
+            <condition><![CDATA[${org}.name != '-']]></condition>
+            <filter><![CDATA[SessionUtilisationDailyView.OrganisationId IN (${profile['organisation']}) AND
+SessionUtilisationDailyView.ProviderId IN  (${profile['providers']}) AND
+SessionUtilisationDailyView.CentreId IN (${profile['centres']})]]></filter>
+        </expression>
+        <expression expressionId="0e883fe8-7cb6-4286-a440-4c53a5c555d9" type="conditionIf" expressionName="SessionUtilisationWeeklyViewSecurity" expressionType="table" on="SessionUtilisationWeeklyView" accessType="grant">
+            <condition><![CDATA[${org}.name != '-']]></condition>
+            <filter><![CDATA[SessionUtilisationWeeklyView.OrganisationId IN (${profile['organisation']}) AND
+SessionUtilisationWeeklyView.ProviderId IN  (${profile['providers']}) AND
+SessionUtilisationWeeklyView.CentreId IN (${profile['centres']})]]></filter>
+        </expression>
+        <expression expressionId="f51578ab-2f1d-4c48-b568-e56c964570fb" type="conditionIf" expressionName="WeeklyOccupancyViewSecurity" expressionType="table" on="WeeklyOccupancyView" accessType="grant">
+            <condition><![CDATA[${org}.name != '-']]></condition>
+            <filter><![CDATA[WeeklyOccupancyView.OrganisationId IN (${profile['organisation']}) AND
+WeeklyOccupancyView.ProviderId IN  (${profile['providers']}) AND
+WeeklyOccupancyView.CentreId IN (${profile['centres']})]]></filter>
+        </expression>
+        <expression expressionId="67f73ebf-9e01-46ae-baf1-e0225ab58b76" type="conditionIf" expressionName="BookingsByChildAgeViewSecurity" expressionType="table" on="BookingsByChildAgeView" accessType="grant">
+            <condition><![CDATA[${org}.name != '-']]></condition>
+            <filter><![CDATA[BookingsByChildAgeView.OrganisationId IN (${profile['organisation']}) AND
+BookingsByChildAgeView.ProviderId IN  (${profile['providers']}) AND
+BookingsByChildAgeView.CentreId IN (${profile['centres']})
+]]></filter>
+        </expression>
+    </access>
+</metadata>

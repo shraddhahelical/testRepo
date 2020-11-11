@@ -1,0 +1,129 @@
+<Charts>
+	<Chart id="1">
+        <prop>
+            <name>Data Grid</name>
+            <type>Custom</type>
+            <DataSource></DataSource>
+            <script>
+                <![CDATA[
+				
+				console.log('data from db :',data);
+				
+				var data_from_db = data;
+				
+				 var script = document.createElement("script");
+				   scriptLoaded = false;
+				   
+					if(window.DashboardGlobals)
+						script.src = "https://ej2.syncfusion.com/javascript/demos/grid/default/datasource.js";			
+					else
+						script.src = "https://ej2.syncfusion.com/javascript/demos/grid/default/datasource.js";
+					
+				 
+				 script.async = false;
+				 document.getElementsByTagName("head")[0].appendChild(script);
+				 
+				 
+				var script1loaded = false;
+				
+				var script1 = document.createElement("script");
+				if(window.DashboardGlobals)
+						script1.src = "https://cdn.syncfusion.com/ej2/dist/ej2.min.js";				
+					else
+						script1.src = "https://cdn.syncfusion.com/ej2/dist/ej2.min.js";
+				
+				script1.async = true;
+				
+	
+				var link1 = document.createElement("link");
+					link1.rel = 'stylesheet';
+						
+					if(window.DashboardGlobals)
+						link1.href = "https://cdn.syncfusion.com/ej2/material.css";			
+					else
+						link1.href = "https://cdn.syncfusion.com/ej2/material.css";
+						
+					document.getElementsByTagName("head")[0].appendChild(link1);	
+					
+					var link2 = document.createElement("link");
+					link2.rel = 'stylesheet';
+						
+					if(window.DashboardGlobals)
+						link2.href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css";		
+					else
+						link2.href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css";
+						
+
+					document.getElementsByTagName("head")[0].appendChild(link2);	
+					
+					   
+				  
+				
+				script.onload = function(){
+					document.getElementsByTagName("head")[0].appendChild(script1);
+				}
+				
+				
+					script1.onload = function() {
+						script1loaded = true;			
+				
+				ej.base.enableRipple(true);
+				
+				
+				var metadata = __hi_result.metadata[0];
+				
+				console.log('metadata : ',metadata);
+				
+				var ColumnsMapping = [];
+				
+				for(var i in metadata) {  
+				 var item = metadata[i];
+				
+				for (var key in item) {
+					if (item.hasOwnProperty(key)) {
+					
+						console.log(key + " = " + item[key]);
+						
+						
+					if(key=='name'){
+					
+				var obj = {
+					'field': item[key],
+					'headerText':item[key],
+					'width': 120,
+					'textAlign':'Right'
+				}
+				
+			ColumnsMapping.push(obj);
+			
+				}
+			
+				}
+				}    
+				
+				
+				}
+				
+				
+
+   console.log('orderData: ',window.orderData);
+    var grid = new ej.grids.Grid({
+        dataSource: data_from_db,
+        allowPaging: true,
+        allowSorting: true,
+		allowResizing: true,
+        columns: ColumnsMapping ,
+        pageSettings: { pageCount: 2 }
+    });
+    grid.appendTo('#chart_1');
+
+		}
+
+				
+
+				]]>
+            </script>
+        </prop>
+    </Chart>
+</Charts>	
+	

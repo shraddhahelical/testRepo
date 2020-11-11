@@ -1,0 +1,1904 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<metadata type="db.generic" databaseType="Microsoft SQL Server 12.00.2000">
+    <fileName>mtd_Finance</fileName>
+    <connectionType>global.jdbc</connectionType>
+    <visible>true</visible>
+    <connection connectionType="global.jdbc" subType="dynamicDataSource">
+        <dialect>org.hibernate.dialect.SQLServerDialect</dialect>
+        <connectionId>2</connectionId>
+        <driverClass reference="sqlserver">com.microsoft.sqlserver.jdbc.SQLServerDriver</driverClass>
+    </connection>
+    <database name="QA_reportDB.dbo" catalog="QA_reportDB" schema="dbo">
+        <tables>
+            <table id="46538ae6-2c0a-4c27-8b77-6ea5f785bd6c" name="BookRevCreatedDt" type="view" aliasName="BookRevCreatedDt(NIU)">
+                <columns>
+                    <column name="Organisation" id="59890942-b704-4110-af67-f8f4c60d0ae0" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="Provider" id="4394c0da-604e-4c9a-adc1-b244c84c569a" aliasName="Provider" type="java.lang.String"/>
+                    <column name="Centre" id="4d89f2f7-ecaa-47e7-bb4e-3e5149933e86" aliasName="Centre" type="java.lang.String"/>
+                    <column name="OrganisationId" id="ecb4d14a-e7bb-4df6-820d-26abbacab8fe" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="ProviderId" id="030a31da-b9bf-41b5-b00e-312c07a24c15" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="CentreId" id="b72c04a3-9366-424c-bb7a-12bafc184dd5" aliasName="CentreId" type="java.lang.String"/>
+                    <column name="Transaction Category" id="c8cd9284-f54b-4f03-a7f0-2799fd8f6639" aliasName="Transaction Category" type="java.lang.String"/>
+                    <column name="Ledger Account" id="309d7d2c-8784-4fdd-97a0-f6cc26a5f449" aliasName="Ledger Account" type="java.lang.String"/>
+                    <column name="CreatedDate" id="5814894b-5a64-41b4-8e77-451996ac2487" aliasName="CreatedDate" type="java.sql.Date"/>
+                    <column name="Jan" id="7e2ebec0-ff42-4d04-b366-45fe25ad01d1" aliasName="Jan" type="java.lang.Float"/>
+                    <column name="Feb" id="a1275445-0145-430d-ab15-396aceb14341" aliasName="Feb" type="java.lang.Float"/>
+                    <column name="Mar" id="458d542c-89cb-4b63-8f18-2192c94f0a68" aliasName="Mar" type="java.lang.Float"/>
+                    <column name="Apr" id="52a18a36-023d-4bb5-9b6f-7b8804c0d6fb" aliasName="Apr" type="java.lang.Float"/>
+                    <column name="May" id="2f9dd3e2-583d-48d4-b885-027def0bb29e" aliasName="May" type="java.lang.Float"/>
+                    <column name="Jun" id="26f7a313-34d4-45ad-9339-4951bf4bd478" aliasName="Jun" type="java.lang.Float"/>
+                    <column name="Jul" id="42befb16-61d5-42ad-a361-a64da378e5ab" aliasName="Jul" type="java.lang.Float"/>
+                    <column name="Aug" id="8852f845-daf5-4af5-b00a-ac58dfff766a" aliasName="Aug" type="java.lang.Float"/>
+                    <column name="Sep" id="f2a3c902-1bef-49bb-8801-45ac3ea09e03" aliasName="Sep" type="java.lang.Float"/>
+                    <column name="Oct" id="7a44483f-c486-4063-a12f-c21dfaba7599" aliasName="Oct" type="java.lang.Float"/>
+                    <column name="Nov" id="1eb50c05-947e-443f-a00d-be294bdb368e" aliasName="Nov" type="java.lang.Float"/>
+                    <column name="Dec" id="b589c4d2-4191-45bd-b8c1-514725925b00" aliasName="Dec" type="java.lang.Float"/>
+                    <column name="Total" id="b2504e2e-e66e-4593-9b76-c917f065594a" aliasName="Total" type="java.lang.Float"/>
+                </columns>
+            </table>
+            <table id="9b1ab714-a17a-440f-b817-1648e86d813c" name="BookRevTransDt" type="view" aliasName="BookRevTransDt(NIU)">
+                <columns>
+                    <column name="Organisation" id="6b07f09d-1de4-4ca9-8358-2ea502773f63" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="Provider" id="2ecfba20-4576-4bc0-99bd-93c0f950e3ef" aliasName="Provider" type="java.lang.String"/>
+                    <column name="Centre" id="9c84de4d-f770-4c1b-a02e-5424097a4728" aliasName="Centre" type="java.lang.String"/>
+                    <column name="OrganisationId" id="c1496b89-4afa-4d63-b29c-62192fc9966a" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="ProviderId" id="f22482e5-2a7f-441d-be4d-a127ec112088" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="CentreId" id="74e65700-c6f0-4038-a31b-1f3276531431" aliasName="CentreId" type="java.lang.String"/>
+                    <column name="Transaction Category" id="3e219134-1e31-4d1a-865e-4592db756e7c" aliasName="Transaction Category" type="java.lang.String"/>
+                    <column name="Ledger Account" id="058a7689-6984-4650-a3d0-717ad4abe0e6" aliasName="Ledger Account" type="java.lang.String"/>
+                    <column name="TransactionDate" id="076ab2f0-4c9f-435a-95c6-651107260d1e" aliasName="TransactionDate" type="java.sql.Date"/>
+                    <column name="Jan" id="8e017551-9af2-487c-a675-1aae3043c9fd" aliasName="Jan" type="java.lang.Float"/>
+                    <column name="Feb" id="ecb2eb5d-6aca-4071-94b4-d5dbe6a72929" aliasName="Feb" type="java.lang.Float"/>
+                    <column name="Mar" id="aa6eefa0-f507-40f2-a925-435db735b619" aliasName="Mar" type="java.lang.Float"/>
+                    <column name="Apr" id="fe7a0403-fa19-4ad2-a3ce-e3e7a1991821" aliasName="Apr" type="java.lang.Float"/>
+                    <column name="May" id="ba53d2d4-5ad4-4f33-a3be-b71aed64a3f4" aliasName="May" type="java.lang.Float"/>
+                    <column name="Jun" id="816ad823-8b9e-427a-8f93-b1ce9e088a8c" aliasName="Jun" type="java.lang.Float"/>
+                    <column name="Jul" id="980500ae-191f-4aa0-99e6-362f978220a5" aliasName="Jul" type="java.lang.Float"/>
+                    <column name="Aug" id="dad3a2b7-7a5e-4e11-8355-e072613772f2" aliasName="Aug" type="java.lang.Float"/>
+                    <column name="Sep" id="46734aa8-741c-482b-ade7-373bbaf2c973" aliasName="Sep" type="java.lang.Float"/>
+                    <column name="Oct" id="6bb86437-df46-4588-b45d-c0a89b403818" aliasName="Oct" type="java.lang.Float"/>
+                    <column name="Nov" id="214af245-f74f-4f6b-99f2-af0edfaa3489" aliasName="Nov" type="java.lang.Float"/>
+                    <column name="Dec" id="4fbf35d9-b605-4783-95f8-1972487e64c5" aliasName="Dec" type="java.lang.Float"/>
+                    <column name="Total" id="6abfbcc0-4f3f-43c0-ab55-12bef1ecb904" aliasName="Total" type="java.lang.Float"/>
+                </columns>
+            </table>
+            <table id="e0f6991f-534c-403c-8481-3ddaaf0d83c2" name="FinTransMths" type="view" aliasName="FinTransMths">
+                <columns>
+                    <column name="Organisation" id="7bf2774e-9fef-4b84-9213-bb73df7d9018" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="Provider" id="eeacd756-d1eb-4bc8-b826-3085fcbd5414" aliasName="Provider" type="java.lang.String"/>
+                    <column name="Centre" id="a593fffc-b083-4dfa-a861-e773f34916d2" aliasName="Centre" type="java.lang.String"/>
+                    <column name="OrganisationId" id="3259c0c4-09da-479d-84bd-ff3fb6dc7df0" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="ProviderId" id="68491949-628e-4d7a-bc30-993712333dc0" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="CentreId" id="e2ecb87c-560c-4adb-a792-ced6ca5dc316" aliasName="CentreId" type="java.lang.String"/>
+                    <column name="CreatedDate" id="b50a73fa-cc75-4bfd-977d-d7e4d0c81c51" aliasName="CreatedDate" type="java.sql.Date"/>
+                    <column name="Transaction Category" id="1b436306-8e5a-472b-a8ff-2b36b6b69c35" aliasName="Transaction Category" type="java.lang.String"/>
+                    <column name="Ledger Account" id="27f1ab5f-5bc0-4810-87af-f039b27644df" aliasName="Ledger Account" type="java.lang.String"/>
+                    <column name="Jan" id="6eb072f7-4d62-4177-85dd-977ce424ea8f" aliasName="Jan" type="java.lang.Float"/>
+                    <column name="Feb" id="d91ce20a-d32c-4ca0-9d5a-48c8d4de8578" aliasName="Feb" type="java.lang.Float"/>
+                    <column name="Mar" id="f8dfae6e-bd56-43fa-a11f-13db7c5a5232" aliasName="Mar" type="java.lang.Float"/>
+                    <column name="Apr" id="12053aa1-e4dd-409f-b7aa-ffad92eb5a47" aliasName="Apr" type="java.lang.Float"/>
+                    <column name="May" id="5b24d32c-9635-4a68-85c0-4474de634355" aliasName="May" type="java.lang.Float"/>
+                    <column name="Jun" id="7c5c37f7-ae97-4d4a-b1fc-134108b66f9c" aliasName="Jun" type="java.lang.Float"/>
+                    <column name="Jul" id="a02ff175-7081-478e-bf42-bc13a7dc2c46" aliasName="Jul" type="java.lang.Float"/>
+                    <column name="Aug" id="a05a5448-d6f7-41a4-b9da-c6bc18f127f4" aliasName="Aug" type="java.lang.Float"/>
+                    <column name="Sep" id="e49a190d-d519-4ae4-be19-65301547a327" aliasName="Sep" type="java.lang.Float"/>
+                    <column name="Oct" id="9352adb4-eb8c-4eaa-9669-14c127287172" aliasName="Oct" type="java.lang.Float"/>
+                    <column name="Nov" id="d03140d0-2425-43c6-9bb3-3ea020885e01" aliasName="Nov" type="java.lang.Float"/>
+                    <column name="Dec" id="72a8cd96-5b6d-48fd-9073-925746233dd7" aliasName="Dec" type="java.lang.Float"/>
+                    <column name="Total" id="e815c4b3-91da-44cb-8a68-41a2b9a0688d" aliasName="Total" type="java.lang.Float"/>
+                </columns>
+            </table>
+            <table id="f0d29a99-4488-48d3-899d-6090ccb5097f" name="BookReveSession" type="view" aliasName="BookReveSession">
+                <columns>
+                    <column name="Organisation" id="13a9b258-03dc-44bb-84b5-4f55f3629c39" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="Provider" id="81cb1b5a-71f4-4825-9ccb-480484497e0c" aliasName="Provider" type="java.lang.String"/>
+                    <column name="Centre" id="e8721812-da80-4ac5-8ded-a6dcd0b8c37c" aliasName="Centre" type="java.lang.String"/>
+                    <column name="OrganisationId" id="c1a844ca-f0d3-4025-8193-277f986acac7" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="ProviderId" id="519edf6b-0bc1-4cc7-89c5-f012971150d1" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="CentreId" id="07605107-2aaf-44fd-ac83-483a9fec5ebb" aliasName="CentreId" type="java.lang.String"/>
+                    <column name="CreatedDate" id="ab02661e-97b5-4f2c-8368-127336fc98d1" aliasName="CreatedDate" type="java.sql.Date"/>
+                    <column name="Sessions" id="0bd69068-c7d6-46d3-8d54-b2cf23188c4f" aliasName="Sessions" type="java.lang.String"/>
+                    <column name="Booking Fee" id="37cd4481-fe1d-42c2-80a3-e62a859d7cad" aliasName="Booking Fee" type="java.lang.Float"/>
+                    <column name="Fee Discount" id="542f96e5-d69b-4f06-b905-2ccb329854aa" aliasName="Fee Discount" type="java.lang.Float"/>
+                    <column name="Other Subsidy" id="59daa17e-881f-448f-9e99-869a31b6310d" aliasName="Other Subsidy" type="java.lang.Float"/>
+                    <column name="CCS Rebate" id="43843785-784c-4476-9f1e-fbe287d2632c" aliasName="CCS Rebate" type="java.lang.Float"/>
+                    <column name="ACCS Rebate" id="6e1994a1-9d62-4906-bbfa-bf99ad45cccb" aliasName="ACCS Rebate" type="java.lang.Float"/>
+                    <column name="Total" id="2ea4e45b-7549-4d06-8d21-221427b099a2" aliasName="Total" type="java.lang.Float"/>
+                </columns>
+            </table>
+            <table id="0a17e2d8-5c17-4e5a-b4f0-d5d074e6501d" name="BookReveRoom" type="view" aliasName="BookReveRoom">
+                <columns>
+                    <column name="Organisation" id="a6cdab78-fc59-4d4f-a997-f853b2c9999b" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="Provider" id="6b3e5cef-b0a9-43d8-a157-41110433b3fc" aliasName="Provider" type="java.lang.String"/>
+                    <column name="Centre" id="36d22e5d-b699-46ef-aa6d-c070f5c35a4e" aliasName="Centre" type="java.lang.String"/>
+                    <column name="OrganisationId" id="10e2f15b-2689-4da5-be29-ebcd1defbe49" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="ProviderId" id="a22e673e-8b0c-42b1-9fd4-bd374d6b99e9" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="CentreId" id="82798f90-55d1-470b-bce4-8ba06eaf84e0" aliasName="CentreId" type="java.lang.String"/>
+                    <column name="CreatedDate" id="e29ea12f-4120-4c17-9545-9a15cf84f022" aliasName="CreatedDate" type="java.sql.Date"/>
+                    <column name="Rooms" id="325be0b8-6477-4423-88b8-94c5301ca47f" aliasName="Rooms" type="java.lang.String"/>
+                    <column name="Booking Fee" id="1ea0899b-74a5-4393-b2d5-a47b2fac0869" aliasName="Booking Fee" type="java.lang.Float"/>
+                    <column name="Fee Discount" id="9ad964fa-b7b8-41a6-a4c2-2aa4f0820283" aliasName="Fee Discount" type="java.lang.Float"/>
+                    <column name="Other Subsidy" id="120688db-52cb-486e-8023-fe4dca380151" aliasName="Other Subsidy" type="java.lang.Float"/>
+                    <column name="CCS Rebate" id="5ad0b6ff-0743-405e-aac9-10c78ffbb476" aliasName="CCS Rebate" type="java.lang.Float"/>
+                    <column name="ACCS Rebate" id="652790b0-4881-4912-b517-84d28cb8e905" aliasName="ACCS Rebate" type="java.lang.Float"/>
+                    <column name="Total" id="5537427f-1c2b-4b37-a30f-74ef88009c51" aliasName="Total" type="java.lang.Float"/>
+                </columns>
+            </table>
+            <table id="87641379-adb7-4ee8-bef8-cbd249364d9b" name="BondTransMths" type="view" aliasName="BondTransMths">
+                <columns>
+                    <column name="Organisation" id="47731931-43ae-4bb0-a80d-2ec0d1ecfcf9" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="Provider" id="03c47d1f-528d-4362-9df1-d19329bd3a5a" aliasName="Provider" type="java.lang.String"/>
+                    <column name="Centre" id="c6701234-28d1-49e6-a4d9-178160b76f79" aliasName="Centre" type="java.lang.String"/>
+                    <column name="OrganisationId" id="e6989ff7-b923-4ccc-a422-7f39ef219154" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="ProviderId" id="1cf6d7e2-cdee-406a-91f6-f099ddf49ee2" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="CentreId" id="9c1c30e8-e6b9-452b-ad14-07b91b4ace58" aliasName="CentreId" type="java.lang.String"/>
+                    <column name="Payment Account" id="f5a6215e-6a6a-4766-9507-d5619dd8cc7c" aliasName="Payment Account" type="java.lang.String"/>
+                    <column name="Family" id="cdde5131-3842-4c85-b095-acb882d9f34d" aliasName="Family" type="java.lang.String"/>
+                    <column name="Transaction Category" id="9a1fce5f-cbca-452b-a890-4a353c81447c" aliasName="Transaction Category" type="java.lang.String"/>
+                    <column name="CreatedDate" id="909811ab-52ad-482d-9dda-5e81402e899f" aliasName="CreatedDate" type="java.sql.Date"/>
+                    <column name="Jan" id="4bb6ec40-1a7d-403d-9adf-7074cb9bd384" aliasName="Jan" type="java.lang.Float"/>
+                    <column name="Feb" id="8e8f0fd3-27f0-41fd-b50f-eb54189ca57a" aliasName="Feb" type="java.lang.Float"/>
+                    <column name="Mar" id="fe3db5a2-ca05-4e31-b7bf-8d876fe40a27" aliasName="Mar" type="java.lang.Float"/>
+                    <column name="Apr" id="0b7756a4-aea3-4a95-88f5-90a82b8a8631" aliasName="Apr" type="java.lang.Float"/>
+                    <column name="May" id="9dca45ec-c9fc-4ea2-b06d-fa41e22d67d9" aliasName="May" type="java.lang.Float"/>
+                    <column name="Jun" id="19cfc235-c420-4f9b-b866-0c9dbf34368c" aliasName="Jun" type="java.lang.Float"/>
+                    <column name="Jul" id="3a1f70f6-bb0e-4502-84c7-0180ddc96ec3" aliasName="Jul" type="java.lang.Float"/>
+                    <column name="Aug" id="c61547ff-e49f-4e04-b87c-cbcec105ef2e" aliasName="Aug" type="java.lang.Float"/>
+                    <column name="Sep" id="7c750ca6-274d-4918-b2ea-b488a57c4a56" aliasName="Sep" type="java.lang.Float"/>
+                    <column name="Oct" id="375a827a-069a-43bf-9e68-0d3656ab4a31" aliasName="Oct" type="java.lang.Float"/>
+                    <column name="Nov" id="e9d513d6-4dc1-4e1c-8528-23e47942460c" aliasName="Nov" type="java.lang.Float"/>
+                    <column name="Dec" id="dbbb2388-3074-4ea8-85cd-6426866956d5" aliasName="Dec" type="java.lang.Float"/>
+                    <column name="Total" id="a01daf0b-26e3-4539-aa93-7eb02f71fda8" aliasName="Total" type="java.lang.Float"/>
+                </columns>
+            </table>
+            <table id="bd3285e9-8d4a-4634-babe-ea4f1ddcbe67" name="BondTrans" type="view" aliasName="BondTrans">
+                <columns>
+                    <column name="CreatedDate" id="b8fb4b27-a0af-4707-b90c-5f6a7ae91ae6" aliasName="CreatedDate" type="java.sql.Date"/>
+                    <column name="TransactionDate" id="5d1b9204-9c14-418f-bf2c-0185bf2907f2" aliasName="TransactionDate" type="java.sql.Date"/>
+                    <column name="Payment Account" id="b328fcd5-9174-41fb-a39a-24ed9dd0d766" aliasName="Payment Account" type="java.lang.String"/>
+                    <column name="Family" id="7392b92a-9c3e-426e-a79e-7d72019b8a87" aliasName="Family" type="java.lang.String"/>
+                    <column name="Description" id="5019add0-7f78-4ea9-ae69-72b9ef63225c" aliasName="Description" type="java.lang.String"/>
+                    <column name="Transaction Category" id="e043213d-1e7c-4815-97eb-90a3a01c4830" aliasName="Transaction Category" type="java.lang.String"/>
+                    <column name="Credit" id="70651785-7e53-4adf-900e-8b97a5e234a8" aliasName="Credit" type="java.lang.Float"/>
+                    <column name="Debit" id="437e1575-a723-481a-bc98-1abfadc2446b" aliasName="Debit" type="java.lang.Float"/>
+                    <column name="OrganisationId" id="467ab296-b603-4a77-8608-6d32f2bb57d8" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="Organisation" id="aceeb8f5-36b5-44db-a30a-e2bc0f754e67" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="ProviderId" id="4b5ebd1f-1543-41dc-ba7b-4dfe9f987ce7" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="Provider" id="ac679174-583b-44dc-a8c6-668cab4784bc" aliasName="Provider" type="java.lang.String"/>
+                    <column name="CentreId" id="3de7cf33-af89-4ffe-a6da-83a448959d99" aliasName="CentreId" type="java.lang.String"/>
+                    <column name="Centre" id="18464f82-4451-4d9e-9a61-806584072a5e" aliasName="Centre" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="a1b0b4f1-dbf0-4edb-a892-f02cd82fdaec" name="TransPymtMethod" type="view" aliasName="TransPymtMethod">
+                <columns>
+                    <column name="Organisation" id="391ba221-9a65-4719-b263-f091991c6846" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="Provider" id="aad291b0-e1a7-478c-b881-7a47351470a7" aliasName="Provider" type="java.lang.String"/>
+                    <column name="Centre" id="e2359cde-7631-4393-8b43-3ee663c1bea5" aliasName="Centre" type="java.lang.String"/>
+                    <column name="OrganisationId" id="cad2cb3d-c09e-433c-a5a8-3fb9c6264b9c" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="ProviderId" id="aeade785-eb5a-42b0-b404-1439bce8a0a8" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="CentreId" id="873fcc32-2ab4-484e-a5d8-ff4f6d234c7b" aliasName="CentreId" type="java.lang.String"/>
+                    <column name="CreatedDate" id="ffe6d957-d469-46f6-89c8-bf9820230d83" aliasName="CreatedDate" type="java.sql.Date"/>
+                    <column name="Transaction Category" id="1f198469-23c1-443c-8612-ccba85d5b7ef" aliasName="Transaction Category" type="java.lang.String"/>
+                    <column name="Ledger Account" id="3925ef49-aa48-439a-bdac-35f22e68fcfd" aliasName="Ledger Account" type="java.lang.String"/>
+                    <column name="Jan" id="e752396e-7495-4453-bb73-526b6b74ee43" aliasName="Jan" type="java.lang.Float"/>
+                    <column name="Feb" id="2e53a477-3e3c-4e6e-b012-0f0032db657b" aliasName="Feb" type="java.lang.Float"/>
+                    <column name="Mar" id="2d445a63-fc43-4d1f-ab0f-2be489370410" aliasName="Mar" type="java.lang.Float"/>
+                    <column name="Apr" id="6c6d8fcb-9f2c-4a56-b86e-fddc02c5a69a" aliasName="Apr" type="java.lang.Float"/>
+                    <column name="May" id="d3cf0f79-af31-4a76-b213-efcf5747f57d" aliasName="May" type="java.lang.Float"/>
+                    <column name="Jun" id="91141d64-9d69-4927-94d4-bd570b1ae241" aliasName="Jun" type="java.lang.Float"/>
+                    <column name="Jul" id="1a9b7b02-da13-49f1-bf78-f030f53afaa3" aliasName="Jul" type="java.lang.Float"/>
+                    <column name="Aug" id="2a6599ca-ff1c-45c6-92cd-10bb586a38a9" aliasName="Aug" type="java.lang.Float"/>
+                    <column name="Sep" id="06401450-658d-4586-bd74-fb032f7dbe7f" aliasName="Sep" type="java.lang.Float"/>
+                    <column name="Oct" id="cb632a61-f78b-4cc3-8eb2-48e4b2a6f2cc" aliasName="Oct" type="java.lang.Float"/>
+                    <column name="Nov" id="c1e286fd-c0e7-478c-89e7-65b67da94978" aliasName="Nov" type="java.lang.Float"/>
+                    <column name="Dec" id="a2d65b88-fc6e-4429-945b-837121eafcac" aliasName="Dec" type="java.lang.Float"/>
+                    <column name="Total" id="f1a41630-27e8-4bf2-ae42-dd1c7ab11735" aliasName="Total" type="java.lang.Float"/>
+                </columns>
+            </table>
+            <table id="267f8d3c-ca5a-40ba-8212-8452e052da38" name="FinTrans" type="view" aliasName="FinTrans">
+                <columns>
+                    <column name="Id" id="590218eb-e6f4-4729-b165-74f83d0cd9df" aliasName="Id" type="java.lang.Float"/>
+                    <column name="Organisation" id="6827f136-804d-47e3-b4ff-f88e195c23f1" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="Provider" id="d3978e68-7a4b-4e5e-9923-3f23f67cf3bc" aliasName="Provider" type="java.lang.String"/>
+                    <column name="Centre" id="c653fac4-b5c2-4ad6-b626-ed33b051a07b" aliasName="Centre" type="java.lang.String"/>
+                    <column name="OrganisationId" id="62aa6ebf-2d27-4282-9114-bf7aa70429dd" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="ProviderId" id="03d4bbed-d750-45d2-869e-1446e1fa1a0b" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="CentreId" id="54f7aa17-6058-43ca-83ef-898e12cab205" aliasName="CentreId" type="java.lang.String"/>
+                    <column name="CreatedOn" id="19747223-3233-473e-a75f-f3366ca00b53" aliasName="CreatedOn" type="java.sql.Timestamp"/>
+                    <column name="CreatedDate" id="0f81ceee-44d7-45e7-befe-844797236942" aliasName="CreatedDate" type="java.sql.Date"/>
+                    <column name="TransactionDate" id="149f1de4-1173-4e5b-bb75-489bd77ea08b" aliasName="TransactionDate" type="java.sql.Date"/>
+                    <column name="Payment Account" id="ace0be19-d445-4044-a3b3-f5dbb82bb274" aliasName="Payment Account" type="java.lang.String"/>
+                    <column name="Family" id="7cba2e73-33b9-4568-be68-0e5a676e72f6" aliasName="Family" type="java.lang.String"/>
+                    <column name="Description" id="660a1963-45e8-42ec-81d1-79179d34932a" aliasName="Description" type="java.lang.String"/>
+                    <column name="Sessions" id="948f29ef-70df-4ac1-886a-00970cfccfff" aliasName="Sessions" type="java.lang.String"/>
+                    <column name="Rooms" id="e4388fda-8297-4af8-9932-0d7cb52e3bb8" aliasName="Rooms" type="java.lang.String"/>
+                    <column name="Ledger Account" id="39c6ecf8-0fbe-4221-b465-fc4cf42a9e92" aliasName="Ledger Account" type="java.lang.String"/>
+                    <column name="Ledger Account Code" id="a8a4519f-a8e5-42eb-add0-ee993d5df5f5" aliasName="Ledger Account Code" type="java.lang.String"/>
+                    <column name="Include In Ledger" id="763c378a-52a9-4c83-850e-3d10a92d6317" aliasName="Include In Ledger" type="java.lang.String"/>
+                    <column name="Charge Status" id="3b3714f8-c765-4180-943d-2907daf3fb07" aliasName="Charge Status" type="java.lang.String"/>
+                    <column name="Transaction Category" id="dd91855f-abbd-4fbd-a9ca-cc5690875f2f" aliasName="Transaction Category" type="java.lang.String"/>
+                    <column name="Debit" id="7c0b4872-19be-4698-a4e4-55b324836a74" aliasName="Debit" type="java.lang.Float"/>
+                    <column name="Credit" id="a2b8b15b-1abf-4908-97cd-328d2854ae68" aliasName="Credit" type="java.lang.Float"/>
+                    <column name="Balance" id="302bf0ba-aaf8-45d1-9705-6fbaaa301c5e" aliasName="Balance" type="java.lang.Float"/>
+                </columns>
+            </table>
+            <table id="d8621da1-5a7b-4080-9452-7ee0e355892a" name="BondSummary" type="view" aliasName="BondSummary">
+                <columns>
+                    <column name="Amount" id="f35f55ae-d805-4b1c-8ab4-c00e74dcb327" aliasName="Amount" type="java.lang.Float"/>
+                    <column name="Centre" id="d2a4c8ef-e5cd-499e-94b4-f176113fd04c" aliasName="Centre" type="java.lang.String"/>
+                    <column name="CentreId" id="eaefffb9-c5a7-43e4-a5ee-516c303aa3a2" aliasName="CentreId" type="java.lang.String"/>
+                    <column name="CustomerId" id="c661f767-07d3-4dbe-842f-21ef7902e1ab" aliasName="CustomerId" type="java.lang.String"/>
+                    <column name="OrganisationId" id="9196935f-1765-4efe-bdca-34369027bf1b" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="Organisation" id="37a87d89-38b4-49e2-b670-3e9ee48c5109" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="ProviderId" id="aaadc413-5fbb-4a92-80c1-ba0954a5c148" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="Provider" id="b49784eb-3b79-4fb0-ab77-3bc5eccd9989" aliasName="Provider" type="java.lang.String"/>
+                    <column name="Family" id="9c8acc94-4300-4bf2-aff1-62f76e63c5f4" aliasName="Family" type="java.lang.String"/>
+                    <column name="PaymentAccountId" id="1cc8faa9-b3a3-4456-8691-4387bdf2fd03" aliasName="PaymentAccountId" type="java.lang.String"/>
+                    <column name="Payment Account" id="11223f50-45f6-4c41-a0d6-5a3df6a59cbb" aliasName="Payment Account" type="java.lang.String"/>
+                    <column name="Booking Pattern" id="13ea21af-dedd-4f51-aa1d-c7d4a765eefa" aliasName="Booking Pattern" type="java.lang.String"/>
+                    <column name="Avg Daily Booking Fee" id="8898eb95-ec85-48d1-bd1e-26fc10141fc2" aliasName="Avg Daily Booking Fee" type="java.lang.Float"/>
+                    <column name="CreatedDate" id="02b442fb-803b-4dad-bf98-2f14bb146d4d" aliasName="CreatedDate" type="java.sql.Date"/>
+                    <column name="Children" id="601ed840-ad80-4589-866e-03a49d8b6e52" aliasName="Children" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="ed3f6fcd-2403-4230-9f6a-13996386303b" name="BookReveBookDt" type="view" aliasName="BookReveBookDt">
+                <columns>
+                    <column name="Id" id="496822c7-4901-49f8-af04-e5f73fabd1ec" aliasName="Id" type="java.lang.Float"/>
+                    <column name="Organisation" id="eb152a1f-8f3b-4bcd-b348-9826593bfa33" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="Provider" id="c9f20a9a-097f-40b6-998e-5a85b891ed26" aliasName="Provider" type="java.lang.String"/>
+                    <column name="Centre" id="45e1efb7-6f5e-497a-aae5-5721aafb7249" aliasName="Centre" type="java.lang.String"/>
+                    <column name="OrganisationId" id="2ea1a418-c036-4144-9d2e-025227e65945" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="ProviderId" id="968846ff-5213-4807-b267-c5df5523b75b" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="CentreId" id="c45f8579-4f3b-48c8-88e6-21af13349e11" aliasName="CentreId" type="java.lang.String"/>
+                    <column name="TransDate" id="406c7748-bdad-4741-b3e0-3ddcc0d7837f" aliasName="TransDate" type="java.sql.Timestamp"/>
+                    <column name="CreatedDate" id="69364613-8574-48a9-a44f-f56286eccb4c" aliasName="CreatedDate" type="java.sql.Date"/>
+                    <column name="TransactionDate" id="39587718-1643-40c9-bcf9-01a56ae0b831" aliasName="TransactionDate" type="java.sql.Date"/>
+                    <column name="Payment Account" id="63e1e4ac-4137-44da-9903-70be8b5b3a0a" aliasName="Payment Account" type="java.lang.String"/>
+                    <column name="Family" id="87f9a4ef-3212-4d55-a3f9-14ea0183f455" aliasName="Family" type="java.lang.String"/>
+                    <column name="Description" id="2b164ba4-e4fb-4a0b-ad30-8010af15eb38" aliasName="Description" type="java.lang.String"/>
+                    <column name="Sessions" id="e9e37427-5249-4960-8e5a-b3e6f7699340" aliasName="Sessions" type="java.lang.String"/>
+                    <column name="Rooms" id="7013f639-2652-4ce2-8ff5-08662ab4dc4c" aliasName="Rooms" type="java.lang.String"/>
+                    <column name="Ledger Account" id="9c76a741-d9a9-4e39-8d0e-8e721ec98033" aliasName="Ledger Account" type="java.lang.String"/>
+                    <column name="Ledger Account Code" id="9a02048c-6634-49ed-bbb0-af844a623374" aliasName="Ledger Account Code" type="java.lang.String"/>
+                    <column name="Include In Ledger" id="f49ffe97-5653-4121-a816-55fb25d535cf" aliasName="Include In Ledger" type="java.lang.String"/>
+                    <column name="Charge Status" id="0b0089d4-c4d7-4453-b886-0c7d5ca76dd9" aliasName="Charge Status" type="java.lang.String"/>
+                    <column name="Transaction Category" id="3bc93dce-952e-42da-a79e-47e5a54fb1ca" aliasName="Transaction Category" type="java.lang.String"/>
+                    <column name="Debit" id="d94ae437-0f6c-45ea-b077-694fb414a1ee" aliasName="Debit" type="java.lang.Float"/>
+                    <column name="Credit" id="3afde343-7692-47ec-b55a-69b5f57f2a22" aliasName="Credit" type="java.lang.Float"/>
+                    <column name="Balance" id="3b7a51d3-2f7e-4f3f-bc05-75efb6a528eb" aliasName="Balance" type="java.lang.Float"/>
+                </columns>
+            </table>
+            <table id="f4f66c20-d4a9-4dcf-a9cc-dc3f39b14efd" name="BookReve" type="view" aliasName="BookReve">
+                <columns>
+                    <column name="Organisation" id="341718e3-2330-4649-9110-4d501bd5801f" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="Provider" id="45a5e572-49f6-4dc1-a082-474942e10c81" aliasName="Provider" type="java.lang.String"/>
+                    <column name="Centre" id="5b936b98-24d7-442c-9243-fcfb942e5b90" aliasName="Centre" type="java.lang.String"/>
+                    <column name="OrganisationId" id="0095a6cf-275d-4a28-bf55-e8a1d117f111" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="ProviderId" id="a7f6a878-430f-4bc8-81be-73ab6b9d2d19" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="CentreId" id="533d4229-e409-4ecd-b51c-16192bb24888" aliasName="CentreId" type="java.lang.String"/>
+                    <column name="CreatedOn" id="a5069c68-3a63-4c5b-9fe5-6c971f498458" aliasName="CreatedOn" type="java.sql.Timestamp"/>
+                    <column name="CreatedDate" id="060b5a4b-fb45-4103-a6b9-a00ea804d648" aliasName="CreatedDate" type="java.sql.Date"/>
+                    <column name="TransactionDate" id="016a7e8b-e033-4ffc-a72e-e6ed56bbb63b" aliasName="TransactionDate" type="java.sql.Date"/>
+                    <column name="Payment Account" id="f5722a6e-8b61-43ea-8530-de7f2e575c8f" aliasName="Payment Account" type="java.lang.String"/>
+                    <column name="Family" id="3875646b-08f9-4b67-92a6-4b7bf623391f" aliasName="Family" type="java.lang.String"/>
+                    <column name="Description" id="481595b1-9e2e-464a-acdb-82254bae22b7" aliasName="Description" type="java.lang.String"/>
+                    <column name="Sessions" id="1795acb4-887c-4f7a-a146-1f98dc234454" aliasName="Sessions" type="java.lang.String"/>
+                    <column name="Rooms" id="d1d0c964-cb69-4492-a0fc-231a93c911cf" aliasName="Rooms" type="java.lang.String"/>
+                    <column name="Ledger Account" id="c379437e-222e-41ee-8890-a3341e9e17d0" aliasName="Ledger Account" type="java.lang.String"/>
+                    <column name="Ledger Account Code" id="193c62f8-6c17-484a-99ad-3fc8e3123d12" aliasName="Ledger Account Code" type="java.lang.String"/>
+                    <column name="Include In Ledger" id="280bcb60-1a3d-4794-a106-3ded8b7c76b1" aliasName="Include In Ledger" type="java.lang.String"/>
+                    <column name="Charge Status" id="2581ea88-3051-49d4-b078-2e64787a38a0" aliasName="Charge Status" type="java.lang.String"/>
+                    <column name="Transaction Category" id="20f94a7c-3ec4-4481-8674-907fac120b60" aliasName="Transaction Category" type="java.lang.String"/>
+                    <column name="Debit" id="12a7dfd6-c102-46aa-bd56-1112c3bf944b" aliasName="Debit" type="java.lang.Float"/>
+                    <column name="Credit" id="a9c55ad0-5151-446b-8a50-31110a135b4b" aliasName="Credit" type="java.lang.Float"/>
+                    <column name="Balance" id="75e5fc25-3905-4e53-9d08-1aca074cc1e8" aliasName="Balance" type="java.lang.Float"/>
+                </columns>
+            </table>
+        </tables>
+        <relationships/>
+        <views>
+            <view id="46538ae6-2c0a-4c27-8b77-6ea5f785bd6c" name="BookRevCreatedDt" alias="BookRevCreatedDt">
+                <query><![CDATA[
+				/*NOT IN USE*/SELECT 
+
+ Actual.Organisation ,Actual.[Provider] ,Actual.Centre ,Actual.OrganisationId ,Actual.ProviderId ,Actual.CentreId ,Actual.[Transaction Category] ,Actual.[Ledger Account] ,Actual.[CreatedDate] ,
+ Actual.Jan ,Actual.Feb ,Actual.Mar ,Actual.Apr ,Actual.May ,Actual.Jun ,Actual.Jul ,Actual.Aug ,Actual.Sep ,Actual.Oct ,Actual.Nov ,Actual.[Dec] ,Actual.Total
+
+FROM (
+
+SELECT [Organisation], [Provider], [Centre], [OrganisationId], [ProviderId], [CentreId], [Transaction Category], [Ledger Account], [CreatedDate],
+	   SUM(ISNULL(Jan, 0)) AS [Jan], SUM(ISNULL(Feb, 0)) AS [Feb], SUM(ISNULL(Mar, 0)) AS [Mar], SUM(ISNULL(Apr, 0)) AS [Apr], SUM(ISNULL(May, 0)) AS [May], SUM(ISNULL(Jun, 0)) AS [Jun], SUM(ISNULL(Jul, 0)) AS [Jul], 
+	   SUM(ISNULL(Aug, 0)) AS [Aug], SUM(ISNULL(Sep, 0)) AS [Sep], SUM(ISNULL(Oct, 0)) AS [Oct], SUM(ISNULL(Nov, 0)) AS [Nov], SUM(ISNULL([Dec], 0)) AS [Dec], 
+	   SUM (ISNULL(Jan, 0) + ISNULL(Feb, 0) + ISNULL(Mar, 0) + ISNULL(Apr, 0) + ISNULL(May, 0) + ISNULL(Jun, 0) + ISNULL(Jul, 0) + ISNULL(Aug, 0) + ISNULL(Sep, 0) + ISNULL(Oct, 0) + ISNULL(Nov, 0) + ISNULL([Dec], 0) ) AS [Total]
+
+FROM (
+		SELECT OrganisationName AS [Organisation], ProviderName AS [Provider], TenantName AS [Centre], OrganisationId AS [OrganisationId], ProviderId AS [ProviderId], TenantId AS [CentreId], 
+		       CONVERT(DATE, CreatedOn) AS [CreatedDate], CreatedOnMonth, PaymentAccount AS [Payment Account], Family AS [Family], [Description] + ' ' + Child + ' ' + Rooms + ' ' + ArrangementType + ' ' + CcssEnrolmentId AS [Description], 
+			   ChargeType AS [Transaction Category], LedgerAccountType AS [Ledger Account], LedgerAccountTypeCode AS [Ledger Account Code], CASE WHEN InclInLedger = 1 THEN 'Y' WHEN InclInLedger = 0 THEN 'N' ELSE CONVERT(VARCHAR, InclInLedger) END AS [Include In Ledger], 
+			   [Status] AS [Charge Status], IIF(IsCredit = 0, Amount*-1, 0) AS [Debit], IIF(IsCredit = 1, Amount, 0) AS [Credit], (IIF(IsCredit = 1, Amount, 0)) + (IIF(IsCredit = 0, Amount*-1, 0)) AS [CrDr]
+
+		FROM dbo.rpt_Billing_Charge	WHERE ISNULL(IsArchived, 0) = 0 AND ISNULL(InclInLedger, 0) = 1
+										  AND ChargeTypeId IN 
+											('c2321c68-2eaa-44eb-a6bd-c996b956ae6a',
+											'1060435d-4789-4dfc-86c0-1f405f86a388',
+											'0e4ff5b0-7f88-46bb-b661-8d5296836e11',
+											'518c919e-62a3-4b18-ae0c-e21b456b7f6d',
+											'bcec3d12-bc08-4737-9fe9-0bf043a82564',
+											'3e358041-9087-4889-a36c-20b92382cc01',
+											'b061ce9b-951a-4726-930c-4ae8fd6ae7ec',
+											'cb3caf1a-b870-4875-9daa-c8e8f699b50e',
+											'cb27358a-a507-47b4-a4fc-dbdc23930511',
+											'1cb09a02-57b2-484e-89cc-c668118b1580')
+	)d
+	PIVOT
+	(
+	SUM(d.CrDr)
+	FOR CreatedOnMonth IN (Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,[Dec])
+	)piv
+
+	WHERE (([CentreId] IN ('${CentreId}') OR '_all_' IN ('${CentreId}') OR [CentreId] LIKE CONCAT('${CentreId}',''))
+		AND ([ProviderId] IN ('${ProviderId}') OR '_all_' IN ('${ProviderId}') OR [ProviderId] LIKE CONCAT('${ProviderId}',''))	
+		AND ([OrganisationId] IN ('${OrganisationId}') OR '_all_' IN ('${OrganisationId}') OR [OrganisationId] LIKE CONCAT('${OrganisationId}',''))
+		AND (CreatedDate >= '${CreatedDate}' OR '_all_' = '${CreatedDate}')
+		AND (CreatedDate <= '${CreatedDate_1}' OR '_all_' = '${CreatedDate_1}'))
+
+GROUP BY [Organisation], [Provider], [Centre], [OrganisationId], [ProviderId], [CentreId], [Transaction Category], [Ledger Account], [CreatedDate]
+
+ 
+ UNION
+
+	SELECT
+   NULL AS [Organisation], NULL AS [Provider], NULL AS [Centre], NULL AS [OrganisationId], NULL AS [ProviderId], NULL AS [CentreId], '_Grand Total' AS [Transaction Date], NULL AS [Ledger Account], NULL AS [CreatedDate],  
+   SUM(ISNULL(Jan, 0)) AS [Jan], SUM(ISNULL(Feb, 0)) AS [Feb], SUM(ISNULL(Mar, 0)) AS [Mar], SUM(ISNULL(Apr, 0)) AS [Apr], SUM(ISNULL(May, 0)) AS [May], SUM(ISNULL(Jun, 0)) AS [Jun], SUM(ISNULL(Jul, 0)) AS [Jul], 
+   SUM(ISNULL(Aug, 0)) AS [Aug], SUM(ISNULL(Sep, 0)) AS [Sep], SUM(ISNULL(Oct, 0)) AS [Oct], SUM(ISNULL(Nov, 0)) AS [Nov], SUM(ISNULL([Dec], 0)) AS [Dec], 
+   SUM (ISNULL(Jan, 0) + ISNULL(Feb, 0) + ISNULL(Mar, 0) + ISNULL(Apr, 0) + ISNULL(May, 0) + ISNULL(Jun, 0) + ISNULL(Jul, 0) + ISNULL(Aug, 0) + ISNULL(Sep, 0) + ISNULL(Oct, 0) + ISNULL(Nov, 0) + ISNULL([Dec], 0) ) AS [Total]
+
+	FROM (
+		SELECT OrganisationName AS [Organisation], ProviderName AS [Provider], TenantName AS [Centre], OrganisationId AS [OrganisationId], ProviderId AS [ProviderId], TenantId AS [CentreId], CONVERT(DATE, CreatedOn) AS [CreatedDate], 
+			   CONVERT(DATE, TransactionDate) AS [Transaction Date], PaymentAccount AS [Payment Account], Family AS [Family], [Description] + ' ' + Child + ' ' + Rooms + ' ' + ArrangementType + ' ' + CcssEnrolmentId AS [Description], 
+			   ChargeType AS [Transaction Category], LedgerAccountType AS [Ledger Account], LedgerAccountTypeCode AS [Ledger Account Code], CASE WHEN InclInLedger = 1 THEN 'Y' WHEN InclInLedger = 0 THEN 'N' ELSE CONVERT(VARCHAR, InclInLedger) END AS [Include In Ledger], 
+			   [Status] AS [Charge Status], IIF(IsCredit = 0, Amount*-1, 0) AS [Debit], IIF(IsCredit = 1, Amount, 0) AS [Credit], (IIF(IsCredit = 1, Amount, 0)) + (IIF(IsCredit = 0, Amount*-1, 0)) AS [Total], CreatedOnMonth
+
+		FROM dbo.rpt_Billing_Charge WHERE ISNULL(IsArchived, 0) = 0 AND ISNULL(InclInLedger, 0) = 1
+										  AND ChargeTypeId IN 
+											('c2321c68-2eaa-44eb-a6bd-c996b956ae6a',
+											'1060435d-4789-4dfc-86c0-1f405f86a388',
+											'0e4ff5b0-7f88-46bb-b661-8d5296836e11',
+											'518c919e-62a3-4b18-ae0c-e21b456b7f6d',
+											'bcec3d12-bc08-4737-9fe9-0bf043a82564',
+											'3e358041-9087-4889-a36c-20b92382cc01',
+											'b061ce9b-951a-4726-930c-4ae8fd6ae7ec',
+											'cb3caf1a-b870-4875-9daa-c8e8f699b50e',
+											'cb27358a-a507-47b4-a4fc-dbdc23930511',
+											'1cb09a02-57b2-484e-89cc-c668118b1580')
+		)d
+		PIVOT
+		(
+		MAX(d.Total)
+		FOR CreatedOnMonth IN (Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,[Dec])
+		)piv
+
+	WHERE (([CentreId] IN ('${CentreId}') OR '_all_' IN ('${CentreId}') OR [CentreId] LIKE CONCAT('${CentreId}',''))
+		AND ([ProviderId] IN ('${ProviderId}') OR '_all_' IN ('${ProviderId}') OR [ProviderId] LIKE CONCAT('${ProviderId}',''))	
+		AND ([OrganisationId] IN ('${OrganisationId}') OR '_all_' IN ('${OrganisationId}') OR [OrganisationId] LIKE CONCAT('${OrganisationId}',''))
+		AND (CreatedDate >= '${CreatedDate}' OR '_all_' = '${CreatedDate}')
+		AND (CreatedDate <= '${CreatedDate_1}' OR '_all_' = '${CreatedDate_1}')
+		)
+	
+/*GROUP BY [Organisation], [Provider], [Centre], [OrganisationId], [ProviderId], [CentreId], [Ledger Account], [CreatedDate] */
+
+ )Actual]]></query>
+            </view>
+            <view id="9b1ab714-a17a-440f-b817-1648e86d813c" name="BookRevTransDt" alias="BookRevTransDt">
+                <query><![CDATA[
+				/*NOT IN USE*/
+
+ SELECT  Actual.Organisation ,Actual.[Provider] ,Actual.Centre ,Actual.OrganisationId ,Actual.ProviderId ,Actual.CentreId ,Actual.[Transaction Category] ,Actual.[Ledger Account] ,Actual.[TransactionDate] ,
+ Actual.Jan ,Actual.Feb ,Actual.Mar ,Actual.Apr ,Actual.May ,Actual.Jun ,Actual.Jul ,Actual.Aug ,Actual.Sep ,Actual.Oct ,Actual.Nov ,Actual.[Dec] ,Actual.Total
+
+FROM (
+
+SELECT [Organisation], [Provider], [Centre], [OrganisationId], [ProviderId], [CentreId], [Transaction Category], [Ledger Account], [TransactionDate],
+	   SUM(ISNULL(Jan, 0)) AS [Jan], SUM(ISNULL(Feb, 0)) AS [Feb], SUM(ISNULL(Mar, 0)) AS [Mar], SUM(ISNULL(Apr, 0)) AS [Apr], SUM(ISNULL(May, 0)) AS [May], SUM(ISNULL(Jun, 0)) AS [Jun], SUM(ISNULL(Jul, 0)) AS [Jul], 
+	   SUM(ISNULL(Aug, 0)) AS [Aug], SUM(ISNULL(Sep, 0)) AS [Sep], SUM(ISNULL(Oct, 0)) AS [Oct], SUM(ISNULL(Nov, 0)) AS [Nov], SUM(ISNULL([Dec], 0)) AS [Dec], 
+	   SUM (ISNULL(Jan, 0) + ISNULL(Feb, 0) + ISNULL(Mar, 0) + ISNULL(Apr, 0) + ISNULL(May, 0) + ISNULL(Jun, 0) + ISNULL(Jul, 0) + ISNULL(Aug, 0) + ISNULL(Sep, 0) + ISNULL(Oct, 0) + ISNULL(Nov, 0) + ISNULL([Dec], 0) ) AS [Total]
+
+FROM (
+		SELECT OrganisationName AS [Organisation], ProviderName AS [Provider], TenantName AS [Centre], OrganisationId AS [OrganisationId], ProviderId AS [ProviderId], TenantId AS [CentreId], 
+		       CONVERT(DATE, CreatedOn) AS [CreatedDate], CONVERT(DATE, TransactionDate) AS [TransactionDate], CreatedOnMonth, TransactionDateMonth, PaymentAccount AS [Payment Account], Family AS [Family], [Description] + ' ' + Child + ' ' + Rooms + ' ' + ArrangementType + ' ' + CcssEnrolmentId AS [Description], 
+			   ChargeType AS [Transaction Category], LedgerAccountType AS [Ledger Account], LedgerAccountTypeCode AS [Ledger Account Code], CASE WHEN InclInLedger = 1 THEN 'Y' WHEN InclInLedger = 0 THEN 'N' ELSE CONVERT(VARCHAR, InclInLedger) END AS [Include In Ledger], 
+			   [Status] AS [Charge Status], IIF(IsCredit = 0, Amount*-1, 0) AS [Debit], IIF(IsCredit = 1, Amount, 0) AS [Credit], (IIF(IsCredit = 1, Amount, 0)) + (IIF(IsCredit = 0, Amount*-1, 0)) AS [CrDr]
+
+		FROM dbo.rpt_Billing_Charge	WHERE ISNULL(IsArchived, 0) = 0 AND ISNULL(InclInLedger, 0) = 1
+										  AND ChargeTypeId IN 
+											('c2321c68-2eaa-44eb-a6bd-c996b956ae6a',
+											'1060435d-4789-4dfc-86c0-1f405f86a388',
+											'0e4ff5b0-7f88-46bb-b661-8d5296836e11',
+											'518c919e-62a3-4b18-ae0c-e21b456b7f6d',
+											'bcec3d12-bc08-4737-9fe9-0bf043a82564',
+											'3e358041-9087-4889-a36c-20b92382cc01',
+											'b061ce9b-951a-4726-930c-4ae8fd6ae7ec',
+											'cb3caf1a-b870-4875-9daa-c8e8f699b50e',
+											'cb27358a-a507-47b4-a4fc-dbdc23930511',
+											'1cb09a02-57b2-484e-89cc-c668118b1580')
+	)d
+	PIVOT
+	(
+	SUM(d.CrDr)
+	FOR TransactionDateMonth IN (Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,[Dec])
+	)piv
+	
+	WHERE (
+		
+		([Centre] IN ('${Centre}') OR '_all_' IN ('${Centre}') OR [Centre] LIKE CONCAT('${Centre}',''))
+		AND ([Provider] IN ('${Provider}') OR '_all_' IN ('${Provider}') OR [Provider] LIKE CONCAT('${Provider}',''))	
+		AND ([Organisation] IN ('${Organisation}') OR '_all_' IN ('${Organisation}') OR [Organisation] LIKE CONCAT('${Organisation}',''))
+		AND ([TransactionDate] >= '${TransactionDate}' OR '_all_' = '${TransactionDate}')
+		AND ([TransactionDate] <= '${TransactionDate_1}' OR '_all_' = '${TransactionDate_1}')
+		
+		)
+
+
+
+/*WHERE Centre = 'The Young Care St Kilda' 
+AND [Provider] = 'The Young Care'
+AND Organisation = 'Little Blooms PTY Ltd'
+AND [CreatedDate] BETWEEN '2020-03-01' AND '2020-03-31'*/
+
+GROUP BY [Organisation], [Provider], [Centre], [OrganisationId], [ProviderId], [CentreId], [Transaction Category], [Ledger Account], [TransactionDate]
+
+ 
+ UNION
+
+	SELECT
+   [Organisation], [Provider], [Centre], [OrganisationId], [ProviderId], [CentreId], '_Grand Total' AS [Transaction Category], NULL AS [Ledger Account], NULL AS [TransactionDate],  
+   SUM(ISNULL(Jan, 0)) AS [Jan], SUM(ISNULL(Feb, 0)) AS [Feb], SUM(ISNULL(Mar, 0)) AS [Mar], SUM(ISNULL(Apr, 0)) AS [Apr], SUM(ISNULL(May, 0)) AS [May], SUM(ISNULL(Jun, 0)) AS [Jun], SUM(ISNULL(Jul, 0)) AS [Jul], 
+   SUM(ISNULL(Aug, 0)) AS [Aug], SUM(ISNULL(Sep, 0)) AS [Sep], SUM(ISNULL(Oct, 0)) AS [Oct], SUM(ISNULL(Nov, 0)) AS [Nov], SUM(ISNULL([Dec], 0)) AS [Dec], 
+   SUM (ISNULL(Jan, 0) + ISNULL(Feb, 0) + ISNULL(Mar, 0) + ISNULL(Apr, 0) + ISNULL(May, 0) + ISNULL(Jun, 0) + ISNULL(Jul, 0) + ISNULL(Aug, 0) + ISNULL(Sep, 0) + ISNULL(Oct, 0) + ISNULL(Nov, 0) + ISNULL([Dec], 0) ) AS [Total]
+
+	FROM (
+		SELECT OrganisationName AS [Organisation], ProviderName AS [Provider], TenantName AS [Centre], OrganisationId AS [OrganisationId], ProviderId AS [ProviderId], TenantId AS [CentreId], 
+			   CONVERT(DATE, CreatedOn) AS [CreatedDate], CONVERT(DATE, TransactionDate) AS [TransactionDate], PaymentAccount AS [Payment Account], Family AS [Family], [Description] + ' ' + Child + ' ' + Rooms + ' ' + ArrangementType + ' ' + CcssEnrolmentId AS [Description], 
+			   ChargeType AS [Transaction Category], LedgerAccountType AS [Ledger Account], LedgerAccountTypeCode AS [Ledger Account Code], CASE WHEN InclInLedger = 1 THEN 'Y' WHEN InclInLedger = 0 THEN 'N' ELSE CONVERT(VARCHAR, InclInLedger) END AS [Include In Ledger], 
+			   [Status] AS [Charge Status], IIF(IsCredit = 0, Amount*-1, 0) AS [Debit], IIF(IsCredit = 1, Amount, 0) AS [Credit], (IIF(IsCredit = 1, Amount, 0)) + (IIF(IsCredit = 0, Amount*-1, 0)) AS [Total], CreatedOnMonth, TransactionDateMonth
+
+		FROM dbo.rpt_Billing_Charge WHERE ISNULL(IsArchived, 0) = 0 AND ISNULL(InclInLedger, 0) = 1
+										  AND ChargeTypeId IN 
+											('c2321c68-2eaa-44eb-a6bd-c996b956ae6a',
+											'1060435d-4789-4dfc-86c0-1f405f86a388',
+											'0e4ff5b0-7f88-46bb-b661-8d5296836e11',
+											'518c919e-62a3-4b18-ae0c-e21b456b7f6d',
+											'bcec3d12-bc08-4737-9fe9-0bf043a82564',
+											'3e358041-9087-4889-a36c-20b92382cc01',
+											'b061ce9b-951a-4726-930c-4ae8fd6ae7ec',
+											'cb3caf1a-b870-4875-9daa-c8e8f699b50e',
+											'cb27358a-a507-47b4-a4fc-dbdc23930511',
+											'1cb09a02-57b2-484e-89cc-c668118b1580')
+		)d
+		PIVOT
+		(
+		MAX(d.Total)
+		FOR TransactionDateMonth IN (Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,[Dec])
+		)piv
+
+	WHERE (
+		
+		([Centre] IN ('${Centre}') OR '_all_' IN ('${Centre}') OR [Centre] LIKE CONCAT('${Centre}',''))
+		AND ([Provider] IN ('${Provider}') OR '_all_' IN ('${Provider}') OR [Provider] LIKE CONCAT('${Provider}',''))	
+		AND ([Organisation] IN ('${Organisation}') OR '_all_' IN ('${Organisation}') OR [Organisation] LIKE CONCAT('${Organisation}',''))
+		AND ([TransactionDate] >= '${TransactionDate}' OR '_all_' = '${TransactionDate}')
+		AND ([TransactionDate] <= '${TransactionDate_1}' OR '_all_' = '${TransactionDate_1}')
+		
+		)
+		
+		
+/*WHERE Centre = 'The Young Care St Kilda' 
+AND [Provider] = 'The Young Care'
+AND Organisation = 'Little Blooms PTY Ltd'
+AND [CreatedDate] BETWEEN '2020-03-01' AND '2020-03-31'*/
+
+GROUP BY [Organisation], [Provider], [Centre], [OrganisationId], [ProviderId], [CentreId], [Ledger Account], [TransactionDate] 
+
+ )Actual]]></query>
+            </view>
+            <view id="e0f6991f-534c-403c-8481-3ddaaf0d83c2" name="FinTransMths" alias="FinTransMths">
+                <query><![CDATA[SELECT 
+
+Actual.Organisation,Actual.[Provider],Actual.Centre,Actual.OrganisationId,Actual.ProviderId,Actual.CentreId,
+Actual.[CreatedDate],Actual.[Transaction Category],Actual.[Ledger Account],
+Actual.Jan,Actual.Feb,Actual.Mar,Actual.Apr,Actual.May,Actual.Jun,Actual.Jul,Actual.Aug,Actual.Sep,Actual.Oct,Actual.Nov,Actual.[Dec],Actual.Total
+
+
+FROM (
+
+   SELECT
+   [Organisation], [Provider], [Centre], [OrganisationId], [ProviderId], [CentreId], [CreatedDate], [Transaction Category], [Ledger Account], 
+   SUM(ISNULL(Jan, 0)) AS [Jan], SUM(ISNULL(Feb, 0)) AS [Feb], SUM(ISNULL(Mar, 0)) AS [Mar], SUM(ISNULL(Apr, 0)) AS [Apr], SUM(ISNULL(May, 0)) AS [May], SUM(ISNULL(Jun, 0)) AS [Jun], 
+   SUM(ISNULL(Jul, 0)) AS [Jul], SUM(ISNULL(Aug, 0)) AS [Aug], SUM(ISNULL(Sep, 0)) AS [Sep], SUM(ISNULL(Oct, 0)) AS [Oct], SUM(ISNULL(Nov, 0)) AS [Nov], SUM(ISNULL([Dec], 0)) AS [Dec], 
+   SUM (ISNULL(Jan, 0) + ISNULL(Feb, 0) + ISNULL(Mar, 0) + ISNULL(Apr, 0) + ISNULL(May, 0) + ISNULL(Jun, 0) + ISNULL(Jul, 0) + ISNULL(Aug, 0) + ISNULL(Sep, 0) + ISNULL(Oct, 0) + ISNULL(Nov, 0) + ISNULL([Dec], 0) ) AS [Total]
+
+FROM (
+  SELECT 
+  OrganisationName AS [Organisation]
+, ProviderName AS [Provider]
+, TenantName AS [Centre]
+, OrganisationId AS [OrganisationId]
+, ProviderId AS [ProviderId]
+, TenantId AS [CentreId]
+, CreatedOnMonth
+, CONVERT(DATE, CreatedOn) AS [CreatedDate]
+, ChargeType AS [Transaction Category]
+, LedgerAccountType AS [Ledger Account]
+, IIF(IsCredit = 0, Amount*-1, 0) AS [Debit]
+, IIF(IsCredit = 1, Amount, 0) AS [Credit]
+, (IIF(IsCredit = 1, Amount, 0)) + (IIF(IsCredit = 0, Amount*-1, 0)) AS [CrDr]
+
+FROM dbo.rpt_Billing_Charge
+WHERE ISNULL(IsArchived, 0) = 0 AND ISNULL(InclInLedger, 0) = 1
+)d
+PIVOT
+(
+SUM(d.CrDr)
+FOR CreatedOnMonth IN (Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,[Dec])
+)piv
+
+WHERE (([CentreId] IN ('${CentreId}') OR '_all_' IN ('${CentreId}') OR [CentreId] LIKE CONCAT('${CentreId}',''))
+		AND ([ProviderId] IN ('${ProviderId}') OR '_all_' IN ('${ProviderId}') OR [ProviderId] LIKE CONCAT('${ProviderId}',''))	
+		AND ([OrganisationId] IN ('${OrganisationId}') OR '_all_' IN ('${OrganisationId}') OR [OrganisationId] LIKE CONCAT('${OrganisationId}',''))
+		AND (CreatedDate >= '${CreatedDate}' OR '_all_' = '${CreatedDate}')
+		AND (CreatedDate <= '${CreatedDate_1}' OR '_all_' = '${CreatedDate_1}'))
+
+GROUP BY 
+   [Organisation]	
+ , [Provider]
+ , [Centre]
+ , [OrganisationId]
+ , [ProviderId]
+ , [CentreId]
+ , [Transaction Category]
+ , [Ledger Account]
+ , [CreatedDate]
+ 
+
+ UNION
+
+ SELECT
+   NULL AS [Organisation]	
+ , NULL AS [Provider]
+ , NULL AS [Centre]
+ , NULL AS [OrganisationId]
+ , NULL AS [ProviderId]
+ , NULL AS [CentreId]
+ , NULL AS [CreatedDate]
+ , '_Grand Total' AS [Transaction Category]
+ , NULL AS [Ledger Account]
+ , SUM(ISNULL(Jan, 0)) AS [Jan]
+ , SUM(ISNULL(Feb, 0)) AS [Feb]
+ , SUM(ISNULL(Mar, 0)) AS [Mar]
+ , SUM(ISNULL(Apr, 0)) AS [Apr]
+ , SUM(ISNULL(May, 0)) AS [May]
+ , SUM(ISNULL(Jun, 0)) AS [Jun]
+ , SUM(ISNULL(Jul, 0)) AS [Jul]
+ , SUM(ISNULL(Aug, 0)) AS [Aug]
+ , SUM(ISNULL(Sep, 0)) AS [Sep]
+ , SUM(ISNULL(Oct, 0)) AS [Oct]
+ , SUM(ISNULL(Nov, 0)) AS [Nov]
+ , SUM(ISNULL([Dec], 0)) AS [Dec]
+
+ , SUM (
+   ISNULL(Jan, 0) + 
+   ISNULL(Feb, 0) + 
+   ISNULL(Mar, 0) + 
+   ISNULL(Apr, 0) + 
+   ISNULL(May, 0) + 
+   ISNULL(Jun, 0) + 
+   ISNULL(Jul, 0) + 
+   ISNULL(Aug, 0) + 
+   ISNULL(Sep, 0) + 
+   ISNULL(Oct, 0) + 
+   ISNULL(Nov, 0) + 
+   ISNULL([Dec], 0) ) AS [Total]
+
+FROM (
+  SELECT 
+  OrganisationName AS [Organisation]
+, ProviderName AS [Provider]
+, TenantName AS [Centre]
+, OrganisationId AS [OrganisationId]
+, ProviderId AS [ProviderId]
+, TenantId AS [CentreId]
+, CONVERT(DATE, CreatedOn) AS [CreatedDate]
+, ChargeType AS [Transaction Category]
+, LedgerAccountType AS [Ledger Account]
+, LedgerAccountTypeCode AS [Ledger Account Code]
+, CASE WHEN InclInLedger = 1 THEN 'Y' WHEN InclInLedger = 0 THEN 'N' ELSE CONVERT(VARCHAR, InclInLedger) END AS [Include In Ledger]
+, IIF(IsCredit = 0, Amount*-1, 0) AS [Debit]
+, IIF(IsCredit = 1, Amount, 0) AS [Credit]
+, (IIF(IsCredit = 1, Amount, 0)) + (IIF(IsCredit = 0, Amount*-1, 0)) AS [Total]
+, CreatedOnMonth
+
+FROM dbo.rpt_Billing_Charge
+WHERE ISNULL(IsArchived, 0) = 0 AND ISNULL(InclInLedger, 0) = 1
+)d
+PIVOT
+(
+SUM(d.Total)
+FOR CreatedOnMonth IN (Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,[Dec])
+)piv
+
+
+WHERE (([CentreId] IN ('${CentreId}') OR '_all_' IN ('${CentreId}') OR [CentreId] LIKE CONCAT('${CentreId}',''))
+		AND ([ProviderId] IN ('${ProviderId}') OR '_all_' IN ('${ProviderId}') OR [ProviderId] LIKE CONCAT('${ProviderId}',''))	
+		AND ([OrganisationId] IN ('${OrganisationId}') OR '_all_' IN ('${OrganisationId}') OR [OrganisationId] LIKE CONCAT('${OrganisationId}',''))
+		AND (CreatedDate >= '${CreatedDate}' OR '_all_' = '${CreatedDate}')
+		AND (CreatedDate <= '${CreatedDate_1}' OR '_all_' = '${CreatedDate_1}'))
+
+
+/*GROUP BY 
+   [Organisation]	
+ , [Provider]
+ , [Centre]
+ , [OrganisationId]
+ , [ProviderId]
+ , [CentreId]
+ , [CreatedDate]*/
+ 
+ )Actual]]></query>
+            </view>
+            <view id="f0d29a99-4488-48d3-899d-6090ccb5097f" name="BookReveSession" alias="BookReveSession">
+                <query><![CDATA[
+SELECT Actual.Organisation, Actual.[Provider] , Actual.Centre, Actual.OrganisationId, Actual.ProviderId, Actual.CentreId, Actual.CreatedDate, Actual.[Sessions],
+	   Actual.[Booking Fee], Actual.[Fee Discount], Actual.[Other Subsidy], Actual.[CCS Rebate], Actual.[ACCS Rebate], Actual.Total
+
+FROM (
+  SELECT 
+  Organisation, [Provider], Centre, OrganisationId, ProviderId, CentreId, [CreatedDate], [Sessions]
+, SUM(ISNULL([Booking Fee], 0)) AS [Booking Fee]
+, SUM(ISNULL([Fee Discount], 0)) AS [Fee Discount]
+, SUM(ISNULL([Other Subsidy], 0)) AS [Other Subsidy]
+, SUM(ISNULL([CCS Rebate], 0)) AS [CCS Rebate]
+, SUM(ISNULL([ACCS Rebate], 0)) AS [ACCS Rebate]
+, SUM (ISNULL([Booking Fee], 0) + ISNULL([Fee Discount], 0) + ISNULL([Other Subsidy], 0) + ISNULL([CCS Rebate], 0) + ISNULL([ACCS Rebate], 0)) Total
+FROM
+(
+	SELECT mainView.Organisation, mainView.[Provider], mainView.Centre,	mainView.OrganisationId, mainView.ProviderId, mainView.CentreId, mainView.[CreatedDate], mainView.[Sessions],
+	       mainView.[Transaction Category1], mainView.[CrDr]
+	FROM (SELECT OrganisationName AS [Organisation], ProviderName AS [Provider], TenantName AS [Centre], OrganisationId AS [OrganisationId], ProviderId AS [ProviderId], TenantId AS [CentreId], 
+	             CreatedOnMonth, CONVERT(DATE, CreatedOn) AS [CreatedDate], [Sessions], ChargeType AS [Transaction Category], 
+				 CASE	WHEN ChargeTypeId IN ('c2321c68-2eaa-44eb-a6bd-c996b956ae6a', '1060435d-4789-4dfc-86c0-1f405f86a388') THEN 'Booking Fee' 
+						WHEN ChargeTypeId IN ('0e4ff5b0-7f88-46bb-b661-8d5296836e11', '518c919e-62a3-4b18-ae0c-e21b456b7f6d') THEN 'Fee Discount' 
+						WHEN ChargeTypeId IN ('bcec3d12-bc08-4737-9fe9-0bf043a82564', '3e358041-9087-4889-a36c-20b92382cc01') THEN 'Other Subsidy' 
+						WHEN ChargeTypeId IN ('b061ce9b-951a-4726-930c-4ae8fd6ae7ec', 'cb3caf1a-b870-4875-9daa-c8e8f699b50e') THEN 'CCS Rebate' 
+						WHEN ChargeTypeId IN ('cb27358a-a507-47b4-a4fc-dbdc23930511', '1cb09a02-57b2-484e-89cc-c668118b1580') THEN 'ACCS Rebate' 
+						END AS [Transaction Category1],
+				 LedgerAccountType AS [Ledger Account], LedgerAccountTypeCode AS [Ledger Account Code]
+				, CASE WHEN InclInLedger = 1 THEN 'Y' WHEN InclInLedger = 0 THEN 'N' ELSE CONVERT(VARCHAR, InclInLedger) END AS [Include In Ledger]
+				, [Status] AS [Charge Status]
+				, IIF(IsCredit = 0, Amount*-1, 0) AS [Debit]
+				, IIF(IsCredit = 1, Amount, 0) AS [Credit]
+				, IIF(IsCredit = 1, Amount, 0) + IIF(IsCredit = 0, Amount*-1, 0) AS [CrDr]
+				, CONVERT(VARCHAR, (SELECT SUM(ISNULL(IIF(IsCredit = 1, Amount, 0), 0)) + SUM(ISNULL(IIF(IsCredit = 0, Amount*-1, 0), 0))
+									FROM dbo.rpt_Billing_Charge T2
+									WHERE T2.TenantId = T1.TenantId AND T2.ProviderId = T1.ProviderId AND T2.OrganisationId = T1.OrganisationId 
+									AND CONVERT(DATE, T2.CreatedOn) <= CONVERT(DATE, T1.CreatedOn))) AS [Balance]
+
+				FROM dbo.rpt_Billing_Charge T1
+				WHERE ISNULL(IsArchived, 0) = 0 AND ISNULL(InclInLedger, 0) = 1
+				AND ChargeTypeId IN 
+				(
+				'c2321c68-2eaa-44eb-a6bd-c996b956ae6a',
+				'1060435d-4789-4dfc-86c0-1f405f86a388',
+				'0e4ff5b0-7f88-46bb-b661-8d5296836e11',
+				'518c919e-62a3-4b18-ae0c-e21b456b7f6d',
+				'bcec3d12-bc08-4737-9fe9-0bf043a82564',
+				'3e358041-9087-4889-a36c-20b92382cc01',
+				'b061ce9b-951a-4726-930c-4ae8fd6ae7ec',
+				'cb3caf1a-b870-4875-9daa-c8e8f699b50e',
+				'cb27358a-a507-47b4-a4fc-dbdc23930511',
+				'1cb09a02-57b2-484e-89cc-c668118b1580'
+				))mainView
+
+
+) d
+pivot
+( SUM(d.CrDr)
+  FOR [Transaction Category1] in ([Booking Fee], [Fee Discount], [Other Subsidy], [CCS Rebate], [ACCS Rebate] )
+) piv
+
+
+
+WHERE (([CentreId] IN ('${CentreId}') OR '_all_' IN ('${CentreId}') OR [CentreId] LIKE CONCAT('${CentreId}',''))
+		AND ([ProviderId] IN ('${ProviderId}') OR '_all_' IN ('${ProviderId}') OR [ProviderId] LIKE CONCAT('${ProviderId}',''))	
+		AND ([OrganisationId] IN ('${OrganisationId}') OR '_all_' IN ('${OrganisationId}') OR [OrganisationId] LIKE CONCAT('${OrganisationId}',''))
+		AND (CreatedDate >= '${CreatedDate}' OR '_all_' = '${CreatedDate}')
+		AND (CreatedDate <= '${CreatedDate_1}' OR '_all_' = '${CreatedDate_1}'))
+		
+
+		/*
+WHERE Centre = 'The Young Care St Kilda' 
+AND [Provider] = 'The Young Care'
+AND Organisation = 'Little Blooms PTY Ltd'
+AND [CreatedDate] BETWEEN '2020-03-01' AND '2020-03-31'
+*/
+
+
+  GROUP BY Organisation, [Provider], Centre, OrganisationId, ProviderId, CentreId, [CreatedDate], [Sessions]
+
+
+
+ UNION
+
+  
+
+  SELECT 
+  NULL AS Organisation, 
+  NULL AS [Provider], 
+  NULL AS Centre, 
+  NULL AS OrganisationId, 
+  NULL AS ProviderId, 
+  NULL AS CentreId, NULL AS [CreatedDate], '_Grand Total' AS [Sessions]
+, SUM(ISNULL([Booking Fee], 0)) AS [Booking Fee]
+, SUM(ISNULL([Fee Discount], 0)) AS [Fee Discount]
+, SUM(ISNULL([Other Subsidy], 0)) AS [Other Subsidy]
+, SUM(ISNULL([CCS Rebate], 0)) AS [CCS Rebate]
+, SUM(ISNULL([ACCS Rebate], 0)) AS [ACCS Rebate]
+, SUM (ISNULL([Booking Fee], 0) + ISNULL([Fee Discount], 0) + ISNULL([Other Subsidy], 0) + ISNULL([CCS Rebate], 0) + ISNULL([ACCS Rebate], 0)) Total
+FROM
+(
+	SELECT mainView.Organisation, mainView.[Provider], mainView.Centre,	mainView.OrganisationId, mainView.ProviderId, mainView.CentreId, mainView.[CreatedDate], mainView.[Sessions],
+	       mainView.[Transaction Category1], mainView.[CrDr]
+	FROM (SELECT OrganisationName AS [Organisation], ProviderName AS [Provider], TenantName AS [Centre], OrganisationId AS [OrganisationId], ProviderId AS [ProviderId], TenantId AS [CentreId], 
+	             CreatedOnMonth, CONVERT(DATE, CreatedOn) AS [CreatedDate], [Sessions], ChargeType AS [Transaction Category], 
+				 CASE	WHEN ChargeTypeId IN ('c2321c68-2eaa-44eb-a6bd-c996b956ae6a', '1060435d-4789-4dfc-86c0-1f405f86a388') THEN 'Booking Fee' 
+						WHEN ChargeTypeId IN ('0e4ff5b0-7f88-46bb-b661-8d5296836e11', '518c919e-62a3-4b18-ae0c-e21b456b7f6d') THEN 'Fee Discount' 
+						WHEN ChargeTypeId IN ('bcec3d12-bc08-4737-9fe9-0bf043a82564', '3e358041-9087-4889-a36c-20b92382cc01') THEN 'Other Subsidy' 
+						WHEN ChargeTypeId IN ('b061ce9b-951a-4726-930c-4ae8fd6ae7ec', 'cb3caf1a-b870-4875-9daa-c8e8f699b50e') THEN 'CCS Rebate' 
+						WHEN ChargeTypeId IN ('cb27358a-a507-47b4-a4fc-dbdc23930511', '1cb09a02-57b2-484e-89cc-c668118b1580') THEN 'ACCS Rebate' 
+						END AS [Transaction Category1],
+				 LedgerAccountType AS [Ledger Account], LedgerAccountTypeCode AS [Ledger Account Code]
+				, CASE WHEN InclInLedger = 1 THEN 'Y' WHEN InclInLedger = 0 THEN 'N' ELSE CONVERT(VARCHAR, InclInLedger) END AS [Include In Ledger]
+				, [Status] AS [Charge Status]
+				, IIF(IsCredit = 0, Amount*-1, 0) AS [Debit]
+				, IIF(IsCredit = 1, Amount, 0) AS [Credit]
+				, IIF(IsCredit = 1, Amount, 0) + IIF(IsCredit = 0, Amount*-1, 0) AS [CrDr]
+				, CONVERT(VARCHAR, (SELECT SUM(ISNULL(IIF(IsCredit = 1, Amount, 0), 0)) + SUM(ISNULL(IIF(IsCredit = 0, Amount*-1, 0), 0))
+									FROM dbo.rpt_Billing_Charge T2
+									WHERE T2.TenantId = T1.TenantId AND T2.ProviderId = T1.ProviderId AND T2.OrganisationId = T1.OrganisationId 
+									AND CONVERT(DATE, T2.CreatedOn) <= CONVERT(DATE, T1.CreatedOn))) AS [Balance]
+
+				FROM dbo.rpt_Billing_Charge T1
+				WHERE ISNULL(IsArchived, 0) = 0 AND ISNULL(InclInLedger, 0) = 1
+				AND ChargeTypeId IN 
+				(
+				'c2321c68-2eaa-44eb-a6bd-c996b956ae6a',
+				'1060435d-4789-4dfc-86c0-1f405f86a388',
+				'0e4ff5b0-7f88-46bb-b661-8d5296836e11',
+				'518c919e-62a3-4b18-ae0c-e21b456b7f6d',
+				'bcec3d12-bc08-4737-9fe9-0bf043a82564',
+				'3e358041-9087-4889-a36c-20b92382cc01',
+				'b061ce9b-951a-4726-930c-4ae8fd6ae7ec',
+				'cb3caf1a-b870-4875-9daa-c8e8f699b50e',
+				'cb27358a-a507-47b4-a4fc-dbdc23930511',
+				'1cb09a02-57b2-484e-89cc-c668118b1580'
+				))mainView
+
+
+) d
+pivot
+( SUM(d.CrDr)
+  FOR [Transaction Category1] in ([Booking Fee], [Fee Discount], [Other Subsidy], [CCS Rebate], [ACCS Rebate] )
+) piv
+
+
+
+WHERE (([CentreId] IN ('${CentreId}') OR '_all_' IN ('${CentreId}') OR [CentreId] LIKE CONCAT('${CentreId}',''))
+		AND ([ProviderId] IN ('${ProviderId}') OR '_all_' IN ('${ProviderId}') OR [ProviderId] LIKE CONCAT('${ProviderId}',''))	
+		AND ([OrganisationId] IN ('${OrganisationId}') OR '_all_' IN ('${OrganisationId}') OR [OrganisationId] LIKE CONCAT('${OrganisationId}',''))
+		AND (CreatedDate >= '${CreatedDate}' OR '_all_' = '${CreatedDate}')
+		AND (CreatedDate <= '${CreatedDate_1}' OR '_all_' = '${CreatedDate_1}'))
+		
+
+		/*
+WHERE Centre = 'The Young Care St Kilda' 
+AND [Provider] = 'The Young Care'
+AND Organisation = 'Little Blooms PTY Ltd'
+AND [CreatedDate] BETWEEN '2020-03-01' AND '2020-03-31'
+*/
+
+
+  /*GROUP BY Organisation, [Provider], Centre, OrganisationId, ProviderId, CentreId, [CreatedDate]*/
+  )Actual
+
+
+
+]]></query>
+            </view>
+            <view id="0a17e2d8-5c17-4e5a-b4f0-d5d074e6501d" name="BookReveRoom" alias="BookReveRoom">
+                <query><![CDATA[SELECT Actual.Organisation, 
+				Actual.[Provider] , 
+				Actual.Centre, 
+				Actual.OrganisationId, 
+				Actual.ProviderId, 
+				Actual.CentreId, 
+				Actual.CreatedDate, 
+				Actual.[Rooms],
+				Actual.[Booking Fee], 
+				Actual.[Fee Discount], 
+				Actual.[Other Subsidy], 
+				Actual.[CCS Rebate], 
+				Actual.[ACCS Rebate], 
+				Actual.Total
+
+FROM (
+  SELECT 
+  Organisation, [Provider], Centre, OrganisationId, ProviderId, CentreId, [CreatedDate], [Rooms]
+, SUM(ISNULL([Booking Fee], 0)) AS [Booking Fee]
+, SUM(ISNULL([Fee Discount], 0)) AS [Fee Discount]
+, SUM(ISNULL([Other Subsidy], 0)) AS [Other Subsidy]
+, SUM(ISNULL([CCS Rebate], 0)) AS [CCS Rebate]
+, SUM(ISNULL([ACCS Rebate], 0)) AS [ACCS Rebate]
+, SUM (ISNULL([Booking Fee], 0) + ISNULL([Fee Discount], 0) + ISNULL([Other Subsidy], 0) + ISNULL([CCS Rebate], 0) + ISNULL([ACCS Rebate], 0)) Total
+FROM
+(
+	SELECT mainView.Organisation, mainView.[Provider], mainView.Centre,	mainView.OrganisationId, mainView.ProviderId, mainView.CentreId, mainView.[CreatedDate], mainView.[Rooms],
+	       mainView.[Transaction Category1], mainView.[CrDr]
+	FROM (SELECT OrganisationName AS [Organisation], ProviderName AS [Provider], TenantName AS [Centre], OrganisationId AS [OrganisationId], ProviderId AS [ProviderId], TenantId AS [CentreId], 
+	             CreatedOnMonth, CONVERT(DATE, CreatedOn) AS [CreatedDate], [Rooms], ChargeType AS [Transaction Category], 
+				 CASE	WHEN ChargeTypeId IN ('c2321c68-2eaa-44eb-a6bd-c996b956ae6a', '1060435d-4789-4dfc-86c0-1f405f86a388') THEN 'Booking Fee' 
+						WHEN ChargeTypeId IN ('0e4ff5b0-7f88-46bb-b661-8d5296836e11', '518c919e-62a3-4b18-ae0c-e21b456b7f6d') THEN 'Fee Discount' 
+						WHEN ChargeTypeId IN ('bcec3d12-bc08-4737-9fe9-0bf043a82564', '3e358041-9087-4889-a36c-20b92382cc01') THEN 'Other Subsidy' 
+						WHEN ChargeTypeId IN ('b061ce9b-951a-4726-930c-4ae8fd6ae7ec', 'cb3caf1a-b870-4875-9daa-c8e8f699b50e') THEN 'CCS Rebate' 
+						WHEN ChargeTypeId IN ('cb27358a-a507-47b4-a4fc-dbdc23930511', '1cb09a02-57b2-484e-89cc-c668118b1580') THEN 'ACCS Rebate' 
+						END AS [Transaction Category1],
+				 LedgerAccountType AS [Ledger Account], LedgerAccountTypeCode AS [Ledger Account Code]
+				, CASE WHEN InclInLedger = 1 THEN 'Y' WHEN InclInLedger = 0 THEN 'N' ELSE CONVERT(VARCHAR, InclInLedger) END AS [Include In Ledger]
+				, [Status] AS [Charge Status]
+				, IIF(IsCredit = 0, Amount*-1, 0) AS [Debit]
+				, IIF(IsCredit = 1, Amount, 0) AS [Credit]
+				, IIF(IsCredit = 1, Amount, 0) + IIF(IsCredit = 0, Amount*-1, 0) AS [CrDr]
+				, CONVERT(VARCHAR, (SELECT SUM(ISNULL(IIF(IsCredit = 1, Amount, 0), 0)) + SUM(ISNULL(IIF(IsCredit = 0, Amount*-1, 0), 0))
+									FROM dbo.rpt_Billing_Charge T2
+									WHERE T2.TenantId = T1.TenantId AND T2.ProviderId = T1.ProviderId AND T2.OrganisationId = T1.OrganisationId 
+									AND CONVERT(DATE, T2.CreatedOn) <= CONVERT(DATE, T1.CreatedOn))) AS [Balance]
+
+				FROM dbo.rpt_Billing_Charge T1
+				WHERE ISNULL(IsArchived, 0) = 0 AND ISNULL(InclInLedger, 0) = 1
+				AND ChargeTypeId IN 
+				(
+				'c2321c68-2eaa-44eb-a6bd-c996b956ae6a',
+				'1060435d-4789-4dfc-86c0-1f405f86a388',
+				'0e4ff5b0-7f88-46bb-b661-8d5296836e11',
+				'518c919e-62a3-4b18-ae0c-e21b456b7f6d',
+				'bcec3d12-bc08-4737-9fe9-0bf043a82564',
+				'3e358041-9087-4889-a36c-20b92382cc01',
+				'b061ce9b-951a-4726-930c-4ae8fd6ae7ec',
+				'cb3caf1a-b870-4875-9daa-c8e8f699b50e',
+				'cb27358a-a507-47b4-a4fc-dbdc23930511',
+				'1cb09a02-57b2-484e-89cc-c668118b1580'
+				))mainView
+
+
+) d
+pivot
+( SUM(d.CrDr)
+  FOR [Transaction Category1] in ([Booking Fee], [Fee Discount], [Other Subsidy], [CCS Rebate], [ACCS Rebate] )
+) piv
+
+
+
+WHERE (	([CentreId] IN ('${CentreId}') OR '_all_' IN ('${CentreId}') OR [CentreId] LIKE CONCAT('${CentreId}',''))
+		AND ([ProviderId] IN ('${ProviderId}') OR '_all_' IN ('${ProviderId}') OR [ProviderId] LIKE CONCAT('${ProviderId}',''))	
+		AND ([OrganisationId] IN ('${OrganisationId}') OR '_all_' IN ('${OrganisationId}') OR [OrganisationId] LIKE CONCAT('${OrganisationId}',''))
+		AND (CreatedDate >= '${CreatedDate}' OR '_all_' = '${CreatedDate}')
+		AND (CreatedDate <= '${CreatedDate_1}' OR '_all_' = '${CreatedDate_1}'))
+	
+  GROUP BY Organisation, [Provider], Centre, OrganisationId, ProviderId, CentreId, [CreatedDate], [Rooms]
+
+ UNION
+
+  SELECT 
+  NULL AS Organisation, 
+  NULL AS [Provider], 
+  NULL AS Centre, 
+  NULL AS OrganisationId, 
+  NULL AS ProviderId, 
+  NULL AS CentreId, NULL AS [CreatedDate], '_Grand Total' AS [Rooms]
+, SUM(ISNULL([Booking Fee], 0)) AS [Booking Fee]
+, SUM(ISNULL([Fee Discount], 0)) AS [Fee Discount]
+, SUM(ISNULL([Other Subsidy], 0)) AS [Other Subsidy]
+, SUM(ISNULL([CCS Rebate], 0)) AS [CCS Rebate]
+, SUM(ISNULL([ACCS Rebate], 0)) AS [ACCS Rebate]
+, SUM (ISNULL([Booking Fee], 0) + ISNULL([Fee Discount], 0) + ISNULL([Other Subsidy], 0) + ISNULL([CCS Rebate], 0) + ISNULL([ACCS Rebate], 0)) Total
+FROM
+(
+	SELECT mainView.Organisation, mainView.[Provider], mainView.Centre,	mainView.OrganisationId, mainView.ProviderId, mainView.CentreId, mainView.[CreatedDate], mainView.[Rooms],
+	       mainView.[Transaction Category1], mainView.[CrDr]
+	FROM (SELECT OrganisationName AS [Organisation], ProviderName AS [Provider], TenantName AS [Centre], OrganisationId AS [OrganisationId], ProviderId AS [ProviderId], TenantId AS [CentreId], 
+	             CreatedOnMonth, CONVERT(DATE, CreatedOn) AS [CreatedDate], [Rooms], ChargeType AS [Transaction Category], 
+				 CASE	WHEN ChargeTypeId IN ('c2321c68-2eaa-44eb-a6bd-c996b956ae6a', '1060435d-4789-4dfc-86c0-1f405f86a388') THEN 'Booking Fee' 
+						WHEN ChargeTypeId IN ('0e4ff5b0-7f88-46bb-b661-8d5296836e11', '518c919e-62a3-4b18-ae0c-e21b456b7f6d') THEN 'Fee Discount' 
+						WHEN ChargeTypeId IN ('bcec3d12-bc08-4737-9fe9-0bf043a82564', '3e358041-9087-4889-a36c-20b92382cc01') THEN 'Other Subsidy' 
+						WHEN ChargeTypeId IN ('b061ce9b-951a-4726-930c-4ae8fd6ae7ec', 'cb3caf1a-b870-4875-9daa-c8e8f699b50e') THEN 'CCS Rebate' 
+						WHEN ChargeTypeId IN ('cb27358a-a507-47b4-a4fc-dbdc23930511', '1cb09a02-57b2-484e-89cc-c668118b1580') THEN 'ACCS Rebate' 
+						END AS [Transaction Category1],
+				 LedgerAccountType AS [Ledger Account], LedgerAccountTypeCode AS [Ledger Account Code]
+				, CASE WHEN InclInLedger = 1 THEN 'Y' WHEN InclInLedger = 0 THEN 'N' ELSE CONVERT(VARCHAR, InclInLedger) END AS [Include In Ledger]
+				, [Status] AS [Charge Status]
+				, IIF(IsCredit = 0, Amount*-1, 0) AS [Debit]
+				, IIF(IsCredit = 1, Amount, 0) AS [Credit]
+				, IIF(IsCredit = 1, Amount, 0) + IIF(IsCredit = 0, Amount*-1, 0) AS [CrDr]
+				, CONVERT(VARCHAR, (SELECT SUM(ISNULL(IIF(IsCredit = 1, Amount, 0), 0)) + SUM(ISNULL(IIF(IsCredit = 0, Amount*-1, 0), 0))
+									FROM dbo.rpt_Billing_Charge T2
+									WHERE T2.TenantId = T1.TenantId AND T2.ProviderId = T1.ProviderId AND T2.OrganisationId = T1.OrganisationId 
+									AND CONVERT(DATE, T2.CreatedOn) <= CONVERT(DATE, T1.CreatedOn))) AS [Balance]
+
+				FROM dbo.rpt_Billing_Charge T1
+				WHERE ISNULL(IsArchived, 0) = 0 AND ISNULL(InclInLedger, 0) = 1
+				AND ChargeTypeId IN 
+				(
+				'c2321c68-2eaa-44eb-a6bd-c996b956ae6a',
+				'1060435d-4789-4dfc-86c0-1f405f86a388',
+				'0e4ff5b0-7f88-46bb-b661-8d5296836e11',
+				'518c919e-62a3-4b18-ae0c-e21b456b7f6d',
+				'bcec3d12-bc08-4737-9fe9-0bf043a82564',
+				'3e358041-9087-4889-a36c-20b92382cc01',
+				'b061ce9b-951a-4726-930c-4ae8fd6ae7ec',
+				'cb3caf1a-b870-4875-9daa-c8e8f699b50e',
+				'cb27358a-a507-47b4-a4fc-dbdc23930511',
+				'1cb09a02-57b2-484e-89cc-c668118b1580'
+				))mainView
+
+
+) d
+pivot
+( SUM(d.CrDr)
+  FOR [Transaction Category1] in ([Booking Fee], [Fee Discount], [Other Subsidy], [CCS Rebate], [ACCS Rebate] )
+) piv
+
+
+
+WHERE (([CentreId] IN ('${CentreId}') OR '_all_' IN ('${CentreId}') OR [CentreId] LIKE CONCAT('${CentreId}',''))
+		AND ([ProviderId] IN ('${ProviderId}') OR '_all_' IN ('${ProviderId}') OR [ProviderId] LIKE CONCAT('${ProviderId}',''))	
+		AND ([OrganisationId] IN ('${OrganisationId}') OR '_all_' IN ('${OrganisationId}') OR [OrganisationId] LIKE CONCAT('${OrganisationId}',''))
+		AND (CreatedDate >= '${CreatedDate}' OR '_all_' = '${CreatedDate}')
+		AND (CreatedDate <= '${CreatedDate_1}' OR '_all_' = '${CreatedDate_1}'))
+
+  /*GROUP BY Organisation, [Provider], Centre, OrganisationId, ProviderId, CentreId, [CreatedDate]*/
+  )Actual
+]]></query>
+            </view>
+            <view id="87641379-adb7-4ee8-bef8-cbd249364d9b" name="BondTransMths" alias="BondTransMths">
+                <query><![CDATA[SELECT 
+ Actual.Organisation
+,Actual.[Provider]
+,Actual.Centre
+,Actual.OrganisationId
+,Actual.ProviderId
+,Actual.CentreId
+,Actual.[Payment Account]
+,Actual.Family
+,Actual.[Transaction Category]
+,Actual.[CreatedDate]
+,Actual.Jan
+,Actual.Feb
+,Actual.Mar
+,Actual.Apr
+,Actual.May
+,Actual.Jun
+,Actual.Jul
+,Actual.Aug
+,Actual.Sep
+,Actual.Oct
+,Actual.Nov
+,Actual.[Dec]
+,Actual.Total
+
+
+FROM (
+
+   SELECT
+   [Organisation]	
+ , [Provider]
+ , [Centre]
+ , [OrganisationId]
+ , [ProviderId]
+ , [CentreId]
+ , [CreatedDate]
+ , [Payment Account]
+ , [Family]
+ , [Transaction Category]
+ , SUM(ISNULL(Jan, 0)) AS [Jan]
+ , SUM(ISNULL(Feb, 0)) AS [Feb]
+ , SUM(ISNULL(Mar, 0)) AS [Mar]
+ , SUM(ISNULL(Apr, 0)) AS [Apr]
+ , SUM(ISNULL(May, 0)) AS [May]
+ , SUM(ISNULL(Jun, 0)) AS [Jun]
+ , SUM(ISNULL(Jul, 0)) AS [Jul]
+ , SUM(ISNULL(Aug, 0)) AS [Aug]
+ , SUM(ISNULL(Sep, 0)) AS [Sep]
+ , SUM(ISNULL(Oct, 0)) AS [Oct]
+ , SUM(ISNULL(Nov, 0)) AS [Nov]
+ , SUM(ISNULL([Dec], 0)) AS [Dec]
+
+ , SUM (
+   ISNULL(Jan, 0) + 
+   ISNULL(Feb, 0) + 
+   ISNULL(Mar, 0) + 
+   ISNULL(Apr, 0) + 
+   ISNULL(May, 0) + 
+   ISNULL(Jun, 0) + 
+   ISNULL(Jul, 0) + 
+   ISNULL(Aug, 0) + 
+   ISNULL(Sep, 0) + 
+   ISNULL(Oct, 0) + 
+   ISNULL(Nov, 0) + 
+   ISNULL([Dec], 0) ) AS [Total]
+
+FROM (
+  SELECT 
+  OrganisationName AS [Organisation]
+, ProviderName AS [Provider]
+, TenantName AS [Centre]
+, OrganisationId AS [OrganisationId]
+, ProviderId AS [ProviderId]
+, TenantId AS [CentreId]
+, CreatedOnMonth
+, CONVERT(DATE, CreatedOn) AS [CreatedDate]
+, ChargeType AS [Transaction Category]
+, LedgerAccountType AS [Ledger Account]
+, LedgerAccountTypeCode AS [Ledger Account Code]
+, PaymentAccount AS [Payment Account]
+, Family
+, CASE WHEN InclInLedger = 1 THEN 'Y' WHEN InclInLedger = 0 THEN 'N' ELSE CONVERT(VARCHAR, InclInLedger) END AS [Include In Ledger]
+, [Status] AS [Charge Status]
+, IIF(IsCredit = 0, Amount*-1, 0) AS [Debit]
+, IIF(IsCredit = 1, Amount, 0) AS [Credit]
+, (IIF(IsCredit = 1, Amount, 0)) + (IIF(IsCredit = 0, Amount*-1, 0)) AS [CrDr]
+
+
+FROM dbo.rpt_Billing_Charge
+WHERE ISNULL(IsArchived, 0) = 0 
+AND LedgerAccountTypeId = 'b582cbe3-4661-4c4b-a842-88b3d74f971d'  /*Liability*/
+  
+)d
+PIVOT
+(
+SUM(d.CrDr)
+FOR CreatedOnMonth IN (Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,[Dec])
+)piv
+
+
+WHERE (([CentreId] IN ('${CentreId}') OR '_all_' IN ('${CentreId}') OR [CentreId] LIKE CONCAT('${CentreId}',''))
+		AND ([ProviderId] IN ('${ProviderId}') OR '_all_' IN ('${ProviderId}') OR [ProviderId] LIKE CONCAT('${ProviderId}',''))
+		AND ([OrganisationId] IN ('${OrganisationId}') OR '_all_' IN ('${OrganisationId}') OR [OrganisationId] LIKE CONCAT('${OrganisationId}',''))
+
+		AND (CreatedDate >= '${CreatedDate}' OR '_all_' = '${CreatedDate}')
+		AND (CreatedDate <= '${CreatedDate_1}' OR '_all_' = '${CreatedDate_1}'))
+
+GROUP BY 
+   [Organisation]	
+ , [Provider]
+ , [Centre]
+ , [OrganisationId]
+ , [ProviderId]
+ , [CentreId]
+ , [Transaction Category]
+ , [Payment Account]
+ , [Family]
+ , [CreatedDate]
+
+ UNION
+
+  SELECT
+   NULL AS [Organisation]	
+ , NULL AS [Provider]
+ , NULL AS [Centre]
+ , NULL AS [OrganisationId]
+ , NULL AS [ProviderId]
+ , NULL AS [CentreId]
+ , NULL AS [CreatedDate]
+ , NULL AS [Payment Account]
+ , NULL AS [Family]
+ , '_Grand Total' AS [Transaction Category]
+ , SUM(ISNULL(Jan, 0)) AS [Jan]
+ , SUM(ISNULL(Feb, 0)) AS [Feb]
+ , SUM(ISNULL(Mar, 0)) AS [Mar]
+ , SUM(ISNULL(Apr, 0)) AS [Apr]
+ , SUM(ISNULL(May, 0)) AS [May]
+ , SUM(ISNULL(Jun, 0)) AS [Jun]
+ , SUM(ISNULL(Jul, 0)) AS [Jul]
+ , SUM(ISNULL(Aug, 0)) AS [Aug]
+ , SUM(ISNULL(Sep, 0)) AS [Sep]
+ , SUM(ISNULL(Oct, 0)) AS [Oct]
+ , SUM(ISNULL(Nov, 0)) AS [Nov]
+ , SUM(ISNULL([Dec], 0)) AS [Dec]
+
+ , SUM (
+   ISNULL(Jan, 0) + 
+   ISNULL(Feb, 0) + 
+   ISNULL(Mar, 0) + 
+   ISNULL(Apr, 0) + 
+   ISNULL(May, 0) + 
+   ISNULL(Jun, 0) + 
+   ISNULL(Jul, 0) + 
+   ISNULL(Aug, 0) + 
+   ISNULL(Sep, 0) + 
+   ISNULL(Oct, 0) + 
+   ISNULL(Nov, 0) + 
+   ISNULL([Dec], 0) ) AS [Total]
+
+FROM (
+  SELECT 
+  OrganisationName AS [Organisation]
+, ProviderName AS [Provider]
+, TenantName AS [Centre]
+, OrganisationId AS [OrganisationId]
+, ProviderId AS [ProviderId]
+, TenantId AS [CentreId]
+, CreatedOnMonth
+, CONVERT(DATE, CreatedOn) AS [CreatedDate]
+, ChargeType AS [Transaction Category]
+, LedgerAccountType AS [Ledger Account]
+, LedgerAccountTypeCode AS [Ledger Account Code]
+, PaymentAccount AS [Payment Account]
+, Family
+, CASE WHEN InclInLedger = 1 THEN 'Y' WHEN InclInLedger = 0 THEN 'N' ELSE CONVERT(VARCHAR, InclInLedger) END AS [Include In Ledger]
+, [Status] AS [Charge Status]
+, IIF(IsCredit = 0, Amount*-1, 0) AS [Debit]
+, IIF(IsCredit = 1, Amount, 0) AS [Credit]
+, (IIF(IsCredit = 1, Amount, 0)) + (IIF(IsCredit = 0, Amount*-1, 0)) AS [CrDr]
+
+
+FROM dbo.rpt_Billing_Charge
+WHERE ISNULL(IsArchived, 0) = 0 
+AND LedgerAccountTypeId = 'b582cbe3-4661-4c4b-a842-88b3d74f971d'  /*Liability*/
+  
+)d
+PIVOT
+(
+SUM(d.CrDr)
+FOR CreatedOnMonth IN (Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,[Dec])
+)piv
+
+
+
+WHERE (([CentreId] IN ('${CentreId}') OR '_all_' IN ('${CentreId}') OR [CentreId] LIKE CONCAT('${CentreId}',''))
+		AND ([ProviderId] IN ('${ProviderId}') OR '_all_' IN ('${ProviderId}') OR [ProviderId] LIKE CONCAT('${ProviderId}',''))
+		AND ([OrganisationId] IN ('${OrganisationId}') OR '_all_' IN ('${OrganisationId}') OR [OrganisationId] LIKE CONCAT('${OrganisationId}',''))
+		AND (CreatedDate >= '${CreatedDate}' OR '_all_' = '${CreatedDate}')
+		AND (CreatedDate <= '${CreatedDate_1}' OR '_all_' = '${CreatedDate_1}'))
+
+/*
+GROUP BY 
+   [Organisation]	
+ , [Provider]
+ , [Centre]
+ , [OrganisationId]
+ , [ProviderId]
+ , [CentreId]
+, [Transaction Category]
+  , [CreatedDate]*/
+ 
+ )Actual]]></query>
+            </view>
+            <view id="bd3285e9-8d4a-4634-babe-ea4f1ddcbe67" name="BondTrans" alias="BondTrans">
+                <query><![CDATA[SELECT 
+	 CONVERT(DATE, Charge.CreatedOn) AS [CreatedDate]
+	,CONVERT(DATE, Charge.TransactionDate) AS [TransactionDate]
+	,PA.PaymentAccountName AS [Payment Account]
+	,Charge.Family
+	,Charge.[Description]
+	,ChargeType AS [Transaction Category]
+	,(ISNULL(IIF(IsCredit = 1, Amount, 0), 0)) AS [Credit]
+	,(ISNULL(IIF(IsCredit = 0, Amount*-1, 0), 0)) AS [Debit]
+	,Charge.OrganisationId
+	,Charge.OrganisationName AS [Organisation]
+	,Charge.ProviderId
+	,Charge.ProviderName AS [Provider]
+	,Charge.TenantId AS [CentreId]
+	,Charge.TenantName AS [Centre]
+FROM dbo.rpt_Billing_Charge Charge
+INNER JOIN dbo.rpt_FamilyPaymentAccount PA ON PA.CustomerId = Charge.CustomerId 
+WHERE ISNULL(IsArchived, 0) = 0 AND LedgerAccountTypeId = 'b582cbe3-4661-4c4b-a842-88b3d74f971d'  /*Liability*/]]></query>
+            </view>
+            <view id="a1b0b4f1-dbf0-4edb-a892-f02cd82fdaec" name="TransPymtMethod" alias="TransPymtMethod">
+                <query><![CDATA[SELECT 
+
+Actual.Organisation,Actual.[Provider],Actual.Centre,Actual.OrganisationId,Actual.ProviderId,Actual.CentreId,
+Actual.[CreatedDate],Actual.[Transaction Category],Actual.[Ledger Account],
+Actual.Jan,Actual.Feb,Actual.Mar,Actual.Apr,Actual.May,Actual.Jun,Actual.Jul,Actual.Aug,Actual.Sep,Actual.Oct,Actual.Nov,Actual.[Dec],Actual.Total
+
+
+FROM (
+
+   SELECT
+   [Organisation], [Provider], [Centre], [OrganisationId], [ProviderId], [CentreId], [CreatedDate], [Transaction Category], [Ledger Account], 
+   SUM(ISNULL(Jan, 0)) AS [Jan], SUM(ISNULL(Feb, 0)) AS [Feb], SUM(ISNULL(Mar, 0)) AS [Mar], SUM(ISNULL(Apr, 0)) AS [Apr], SUM(ISNULL(May, 0)) AS [May], SUM(ISNULL(Jun, 0)) AS [Jun], 
+   SUM(ISNULL(Jul, 0)) AS [Jul], SUM(ISNULL(Aug, 0)) AS [Aug], SUM(ISNULL(Sep, 0)) AS [Sep], SUM(ISNULL(Oct, 0)) AS [Oct], SUM(ISNULL(Nov, 0)) AS [Nov], SUM(ISNULL([Dec], 0)) AS [Dec], 
+   SUM (ISNULL(Jan, 0) + ISNULL(Feb, 0) + ISNULL(Mar, 0) + ISNULL(Apr, 0) + ISNULL(May, 0) + ISNULL(Jun, 0) + ISNULL(Jul, 0) + ISNULL(Aug, 0) + ISNULL(Sep, 0) + ISNULL(Oct, 0) + ISNULL(Nov, 0) + ISNULL([Dec], 0) ) AS [Total]
+
+FROM (
+  SELECT 
+  OrganisationName AS [Organisation]
+, ProviderName AS [Provider]
+, TenantName AS [Centre]
+, OrganisationId AS [OrganisationId]
+, ProviderId AS [ProviderId]
+, TenantId AS [CentreId]
+, CreatedOnMonth
+, CONVERT(DATE, CreatedOn) AS [CreatedDate]
+, ChargeType AS [Transaction Category]
+, LedgerAccountType AS [Ledger Account]
+, IIF(IsCredit = 0, Amount*-1, 0) AS [Debit]
+, IIF(IsCredit = 1, Amount, 0) AS [Credit]
+, (IIF(IsCredit = 1, Amount, 0)) + (IIF(IsCredit = 0, Amount*-1, 0)) AS [CrDr]
+
+FROM dbo.rpt_Billing_Charge
+WHERE ISNULL(IsArchived, 0) = 0 AND ISNULL(InclInLedger, 0) = 1 AND LedgerAccountTypeId = 'e3de0124-62a1-4897-aa3f-9bcc49e3b758' /*Payment*/
+)d
+PIVOT
+(
+SUM(d.CrDr)
+FOR CreatedOnMonth IN (Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,[Dec])
+)piv
+
+
+WHERE (([CentreId] IN ('${CentreId}') OR '_all_' IN ('${CentreId}') OR [CentreId] LIKE CONCAT('${CentreId}',''))
+		AND ([ProviderId] IN ('${ProviderId}') OR '_all_' IN ('${ProviderId}') OR [ProviderId] LIKE CONCAT('${ProviderId}',''))
+		AND ([OrganisationId] IN ('${OrganisationId}') OR '_all_' IN ('${OrganisationId}') OR [OrganisationId] LIKE CONCAT('${OrganisationId}',''))
+		/*AND (CreatedDate >= '${CreatedDate}' OR '_all_' = '${CreatedDate}')*/
+		AND (CreatedDate >= '${CreatedDate}' OR '_all_' = '${CreatedDate}')
+		AND (CreatedDate <= '${CreatedDate_1}' OR '_all_' = '${CreatedDate_1}'))
+
+GROUP BY 
+   [Organisation]	
+ , [Provider]
+ , [Centre]
+ , [OrganisationId]
+ , [ProviderId]
+ , [CentreId]
+ , [Transaction Category]
+ , [Ledger Account]
+ , [CreatedDate]
+ 
+
+ UNION
+
+ SELECT
+   NULL AS [Organisation]	
+ , NULL AS [Provider]
+ , NULL AS [Centre]
+ , NULL AS [OrganisationId]
+ , NULL AS [ProviderId]
+ , NULL AS [CentreId]
+ , NULL AS [CreatedDate]
+ , '_Grand Total' AS [Transaction Category]
+ , NULL AS [Ledger Account]
+ , SUM(ISNULL(Jan, 0)) AS [Jan]
+ , SUM(ISNULL(Feb, 0)) AS [Feb]
+ , SUM(ISNULL(Mar, 0)) AS [Mar]
+ , SUM(ISNULL(Apr, 0)) AS [Apr]
+ , SUM(ISNULL(May, 0)) AS [May]
+ , SUM(ISNULL(Jun, 0)) AS [Jun]
+ , SUM(ISNULL(Jul, 0)) AS [Jul]
+ , SUM(ISNULL(Aug, 0)) AS [Aug]
+ , SUM(ISNULL(Sep, 0)) AS [Sep]
+ , SUM(ISNULL(Oct, 0)) AS [Oct]
+ , SUM(ISNULL(Nov, 0)) AS [Nov]
+ , SUM(ISNULL([Dec], 0)) AS [Dec]
+
+ , SUM (
+   ISNULL(Jan, 0) + 
+   ISNULL(Feb, 0) + 
+   ISNULL(Mar, 0) + 
+   ISNULL(Apr, 0) + 
+   ISNULL(May, 0) + 
+   ISNULL(Jun, 0) + 
+   ISNULL(Jul, 0) + 
+   ISNULL(Aug, 0) + 
+   ISNULL(Sep, 0) + 
+   ISNULL(Oct, 0) + 
+   ISNULL(Nov, 0) + 
+   ISNULL([Dec], 0) ) AS [Total]
+
+FROM (
+  SELECT 
+  OrganisationName AS [Organisation]
+, ProviderName AS [Provider]
+, TenantName AS [Centre]
+, OrganisationId AS [OrganisationId]
+, ProviderId AS [ProviderId]
+, TenantId AS [CentreId]
+, CONVERT(DATE, CreatedOn) AS [CreatedDate]
+, ChargeType AS [Transaction Category]
+, LedgerAccountType AS [Ledger Account]
+, LedgerAccountTypeCode AS [Ledger Account Code]
+, CASE WHEN InclInLedger = 1 THEN 'Y' WHEN InclInLedger = 0 THEN 'N' ELSE CONVERT(VARCHAR, InclInLedger) END AS [Include In Ledger]
+, IIF(IsCredit = 0, Amount*-1, 0) AS [Debit]
+, IIF(IsCredit = 1, Amount, 0) AS [Credit]
+, (IIF(IsCredit = 1, Amount, 0)) + (IIF(IsCredit = 0, Amount*-1, 0)) AS [Total]
+, CreatedOnMonth
+
+FROM dbo.rpt_Billing_Charge
+WHERE ISNULL(IsArchived, 0) = 0 AND ISNULL(InclInLedger, 0) = 1 AND LedgerAccountTypeId = 'e3de0124-62a1-4897-aa3f-9bcc49e3b758' /*Payment*/
+)d
+PIVOT
+(
+SUM(d.Total)
+FOR CreatedOnMonth IN (Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,[Dec])
+)piv
+
+
+WHERE (([CentreId] IN ('${CentreId}') OR '_all_' IN ('${CentreId}') OR [CentreId] LIKE CONCAT('${CentreId}',''))
+		AND ([ProviderId] IN ('${ProviderId}') OR '_all_' IN ('${ProviderId}') OR [ProviderId] LIKE CONCAT('${ProviderId}',''))
+		AND ([OrganisationId] IN ('${OrganisationId}') OR '_all_' IN ('${OrganisationId}') OR [OrganisationId] LIKE CONCAT('${OrganisationId}',''))
+		AND (CreatedDate >= '${CreatedDate}' OR '_all_' = '${CreatedDate}')
+		AND (CreatedDate <= '${CreatedDate_1}' OR '_all_' = '${CreatedDate_1}'))
+
+/*GROUP BY 
+   [Organisation]	
+ , [Provider]
+ , [Centre]
+ , [OrganisationId]
+ , [ProviderId]
+ , [CentreId]
+ , [CreatedDate]*/
+ 
+ )Actual]]></query>
+            </view>
+            <view id="267f8d3c-ca5a-40ba-8212-8452e052da38" name="FinTrans" alias="FinTrans">
+                <query><![CDATA[
+SELECT NULL AS Id, NULL AS [Organisation], NULL AS [Provider], NULL AS [Centre], 
+NULL AS [OrganisationId], NULL AS [ProviderId], NULL AS [CentreId],
+NULL AS [CreatedOn],
+NULL [CreatedDate], NULL AS [TransactionDate],  NULL AS [Payment Account], NULL AS [Family], 
+'_Opening Balance' AS [Description], NULL AS [Sessions], NULL AS [Rooms], NULL AS [Ledger Account], 
+NULL AS [Ledger Account Code], NULL AS [Include In Ledger], NULL AS [Charge Status],
+NULL AS [Transaction Category], 0 AS [Debit], 0 AS [Credit],
+SUM(ISNULL(IIF(IsCredit = 1, Amount, 0), 0)) + SUM(ISNULL(IIF(IsCredit = 0, Amount*-1, 0), 0)) AS [Balance]
+
+FROM dbo.rpt_Billing_Charge T1
+
+
+WHERE 
+ISNULL(IsArchived, 0) = 0 AND ISNULL(InclInLedger, 0) = 1
+
+AND (CONVERT(DATE, CreatedOn) < '${CreatedDate}' OR '_all_' = '${CreatedDate}')
+AND ([TenantId] IN ('${CentreId}') OR '_all_' IN ('${CentreId}') OR [TenantId] LIKE CONCAT('${CentreId}',''))
+AND ([ProviderId] IN ('${ProviderId}') OR '_all_' IN ('${ProviderId}') OR [ProviderId] LIKE CONCAT('${ProviderId}',''))
+AND ([OrganisationId] IN ('${OrganisationId}') OR '_all_' IN ('${OrganisationId}') OR [OrganisationId] LIKE CONCAT('${OrganisationId}',''))
+
+UNION
+ 
+SELECT 
+  Id
+, OrganisationName AS [Organisation]
+, ProviderName AS [Provider]
+, TenantName AS [Centre]
+, OrganisationId AS [OrganisationId]
+, ProviderId AS [ProviderId]
+, TenantId AS [CentreId]
+, CreatedOn  AS [CreatedOn]
+, CONVERT(DATE, CreatedOn) AS [CreatedDate]
+, CONVERT(DATE, TransactionDate)  AS [TransactionDate]
+, PaymentAccount AS [Payment Account]
+, Family AS [Family]
+, CASE WHEN ChargeTypeId IN (
+										'c2321c68-2eaa-44eb-a6bd-c996b956ae6a',
+										'1060435d-4789-4dfc-86c0-1f405f86a388',
+										'0e4ff5b0-7f88-46bb-b661-8d5296836e11',
+										'518c919e-62a3-4b18-ae0c-e21b456b7f6d',
+										'bcec3d12-bc08-4737-9fe9-0bf043a82564',
+										'3e358041-9087-4889-a36c-20b92382cc01',
+										'b061ce9b-951a-4726-930c-4ae8fd6ae7ec',
+										'cb3caf1a-b870-4875-9daa-c8e8f699b50e',
+										'cb27358a-a507-47b4-a4fc-dbdc23930511',
+										'1cb09a02-57b2-484e-89cc-c668118b1580'
+								) THEN [Description] + '-' + ISNULL(Child, '') + '-' + ISNULL(Rooms, '') + '-' + ISNULL(ArrangementType, '') + ' ' + ISNULL(CcssEnrolmentId, '')
+		   ELSE [Description] END AS [Description]
+, [Sessions]
+, Rooms
+, LedgerAccountType AS [Ledger Account]
+, LedgerAccountTypeCode AS [Ledger Account Code]
+, CASE WHEN InclInLedger = 1 THEN 'Y' WHEN InclInLedger = 0 THEN 'N' ELSE CONVERT(VARCHAR, InclInLedger) END AS [Include In Ledger]
+, [Status] AS [Charge Status]
+, ChargeType AS [Transaction Category]
+, IIF(IsCredit = 0, Amount*-1, 0) AS [Debit]
+, IIF(IsCredit = 1, Amount, 0) AS [Credit]
+,CONVERT(VARCHAR, (SELECT ISNULL(SUM(T2.Amount * IIF(T2.IsCredit = 1, 1, -1)), 0)
+                            +    (T1.Amount * IIF(T1.IsCredit = 1, 1, -1))
+                    FROM dbo.rpt_Billing_Charge T2
+                    WHERE 
+					(T2.[TenantId] IN ('${CentreId}') OR '_all_' IN ('${CentreId}') OR T2.[TenantId] LIKE CONCAT('${CentreId}',''))
+					AND (T2.[ProviderId] IN ('${ProviderId}') OR '_all_' IN ('${ProviderId}') OR T2.[ProviderId] LIKE CONCAT('${ProviderId}',''))
+					AND (T2.[OrganisationId] IN ('${OrganisationId}') OR '_all_' IN ('${OrganisationId}') OR T2.[OrganisationId] LIKE CONCAT('${OrganisationId}',''))
+                    AND T2.CreatedOn < T1.CreatedOn
+					AND ISNULL(IsArchived, 0) = 0 AND ISNULL(InclInLedger, 0) = 1) 
+
+                +  (SELECT ISNULL(SUM(T3.Amount * IIF(T3.IsCredit = 1, 1, -1)), 0) 
+                    FROM dbo.rpt_Billing_Charge T3
+                    WHERE 
+					(T3.[TenantId] IN ('${CentreId}') OR '_all_' IN ('${CentreId}') OR T3.[TenantId] LIKE CONCAT('${CentreId}',''))
+					AND (T3.[ProviderId] IN ('${ProviderId}') OR '_all_' IN ('${ProviderId}') OR T3.[ProviderId] LIKE CONCAT('${ProviderId}',''))
+					AND (T3.[OrganisationId] IN ('${OrganisationId}') OR '_all_' IN ('${OrganisationId}') OR T3.[OrganisationId] LIKE CONCAT('${OrganisationId}',''))
+                    AND T1.Id > T3.Id
+                    AND T1.CreatedOn = T3.CreatedOn
+					AND ISNULL(IsArchived, 0) = 0 AND ISNULL(InclInLedger, 0) = 1)
+) AS  [Balance]
+
+FROM
+dbo.rpt_Billing_Charge T1 
+WHERE 
+ISNULL(IsArchived, 0) = 0 AND ISNULL(InclInLedger, 0) = 1
+
+AND (CONVERT(DATE, CreatedOn) >= '${CreatedDate}' OR '_all_' = '${CreatedDate}')
+AND (CONVERT(DATE, CreatedOn) <= '${CreatedDate_1}' OR '_all_' = '${CreatedDate_1}')
+AND ([TenantId] IN ('${CentreId}') OR '_all_' IN ('${CentreId}') OR [TenantId] LIKE CONCAT('${CentreId}',''))
+AND ([ProviderId] IN ('${ProviderId}') OR '_all_' IN ('${ProviderId}') OR [ProviderId] LIKE CONCAT('${ProviderId}',''))
+AND ([OrganisationId] IN ('${OrganisationId}') OR '_all_' IN ('${OrganisationId}') OR [OrganisationId] LIKE CONCAT('${OrganisationId}',''))
+
+ORDER BY CreatedOn, Id
+OFFSET 0 ROWS]]></query>
+            </view>
+            <view id="d8621da1-5a7b-4080-9452-7ee0e355892a" name="BondSummary" alias="BondSummary">
+                <query><![CDATA[SELECT 
+
+ A.Amount
+,A.Centre
+,A.CentreId
+,A.CustomerId
+,A.OrganisationId
+,A.Organisation
+,A.ProviderId
+,A.[Provider]
+,A.Family
+,A.PaymentAccountId
+,A.[Payment Account]
+,A.[Booking Pattern]
+,A.[Avg Daily Booking Fee]
+,A.CreatedDate
+,A.Children
+
+FROM (
+SELECT 
+sum(((IIF(IsCredit = 1, Amount, 0)) + (IIF(IsCredit = 0, Amount*-1, 0)))) AS [Amount],
+Charge.TenantName AS [Centre],
+Charge.TenantId AS [CentreId],
+Charge.CustomerId,
+Charge.OrganisationId,
+Charge.OrganisationName AS [Organisation],
+Charge.ProviderId,
+Charge.ProviderName AS [Provider],
+Charge.Family,
+PA.PaymentAccountId,
+PA.PaymentAccountName AS [Payment Account]
+  
+	,CONVERT(VARCHAR(MAX), ISNULL((STUFF((SELECT DISTINCT ', ' + CONVERT(NVARCHAR(MAX), Rec.[DayName]) 
+	FROM dbo.rpt_Enrolments Enrol 
+	INNER JOIN dbo.rpt_EnrolmentsOccurrence Occ ON Enrol.KXEnrolmentId = Occ.KXEnrolmentId AND Occ.EnrolmentStatus IN ('Submitted', 'UnSubmitted', 'CONFIR')
+	INNER JOIN dbo.rpt_EnrolmentsRecurringSessions Rec ON Rec.KXEnrolmentId = Occ.KXEnrolmentId AND Rec.OccurrenceNumber = Occ.OccurrenceNumber AND CONVERT(DATE, GETUTCDATE()) BETWEEN Rec.StartDate AND ISNULL(Rec.EndDate, '2050-12-31')
+	WHERE  PA.PaymentAccountId = Enrol.PaymentAccountId 
+	FOR XML PATH('')) , 1, 2, '')), '-')) AS [Booking Pattern]
+	
+	,ISNULL((select Avg(Rec.SessionFee) 
+	FROM dbo.rpt_Enrolments Enrol 
+	INNER JOIN dbo.rpt_EnrolmentsOccurrence Occ ON Enrol.KXEnrolmentId = Occ.KXEnrolmentId AND Occ.EnrolmentStatus IN ('Submitted', 'UnSubmitted', 'CONFIR')
+	INNER JOIN dbo.rpt_EnrolmentsRecurringSessions Rec ON Rec.KXEnrolmentId = Occ.KXEnrolmentId AND Rec.OccurrenceNumber = Occ.OccurrenceNumber AND CONVERT(DATE, GETUTCDATE()) BETWEEN Rec.StartDate AND ISNULL(Rec.EndDate, '2050-12-31')
+	WHERE  PA.PaymentAccountId = Enrol.PaymentAccountId), '0.00') AS [Avg Daily Booking Fee],
+	CONVERT(DATE, Charge.CreatedOn) [CreatedDate]
+		
+	,CONVERT(VARCHAR(MAX), ISNULL((STUFF((SELECT DISTINCT ', ' + CONVERT(NVARCHAR(MAX), Child.ChildName) 
+	FROM dbo.rpt_FamilyChild Child 
+	WHERE  PA.FamilyId = Child.FamilyId AND ChildFamilyStatus = 'Active'
+	FOR XML PATH('')) , 1, 2, '')), '-')) AS [Children]
+
+FROM dbo.rpt_Billing_Charge Charge
+INNER JOIN dbo.rpt_FamilyPaymentAccount PA ON PA.CustomerId = Charge.CustomerId 
+WHERE ISNULL(IsArchived, 0) = 0 AND LedgerAccountTypeId = 'b582cbe3-4661-4c4b-a842-88b3d74f971d'  /*Liability*/
+
+
+
+/*AND Charge.CustomerId =  'b8327fb1-2a6c-4a95-83d1-8dd6d59ae662'
+AND CONVERT(DATE, Charge.CreatedOn) BETWEEN '2020-01-01' AND '2020-05-23'
+AND pa.PaymentAccountId = '04a5c74c-a4a0-48cd-a06b-f46367cb33af'
+*/
+GROUP BY 
+Charge.TenantName,
+Charge.TenantId,
+Charge.CustomerId,
+Charge.OrganisationId,
+Charge.OrganisationName,
+Charge.ProviderId,
+Charge.ProviderName,
+Charge.Family,
+PA.PaymentAccountId,
+PA.PaymentAccountName,
+PA.FamilyId,
+CONVERT(DATE, Charge.CreatedOn) )A
+
+
+WHERE 
+	/*(A.CreatedDate >= '${CreatedDate}' OR '_all_' =   '${CreatedDate}')*/
+(A.CreatedDate <= '${CreatedDate}' OR '_all_' = '${CreatedDate}')
+]]></query>
+            </view>
+            <view id="ed3f6fcd-2403-4230-9f6a-13996386303b" name="BookReveBookDt" alias="BookReveBookDt">
+                <query><![CDATA[/*DECLARE 
+@Organisation VARCHAR(200) = 'Little Blooms PTY LTD',
+@Provider VARCHAR(200) = 'The Young Care',
+@Centre VARCHAR(200) = 'The Young Care Windsor',
+@StartDate DATE = '2020-03-01',
+@EndDate DATE = '2020-03-31'*/
+
+SELECT NULL AS Id, NULL AS [Organisation], NULL AS [Provider], NULL AS [Centre], 
+NULL AS [OrganisationId], NULL AS [ProviderId], NULL AS [CentreId],
+NULL AS [TransDate],
+NULL [CreatedDate], NULL AS [TransactionDate],  NULL AS [Payment Account], NULL AS [Family], 
+'_Opening Balance' AS [Description], NULL AS [Sessions], NULL AS [Rooms], NULL AS [Ledger Account], 
+NULL AS [Ledger Account Code], NULL AS [Include In Ledger], NULL AS [Charge Status],
+NULL AS [Transaction Category], 0 AS [Debit], 0 AS [Credit],
+SUM(ISNULL(IIF(IsCredit = 1, Amount, 0), 0)) + SUM(ISNULL(IIF(IsCredit = 0, Amount*-1, 0), 0)) AS [Balance]
+
+FROM dbo.rpt_Billing_Charge T1
+WHERE 
+ISNULL(IsArchived, 0) = 0 AND ISNULL(InclInLedger, 0) = 1
+AND ChargeTypeId IN 
+											('c2321c68-2eaa-44eb-a6bd-c996b956ae6a',
+											'1060435d-4789-4dfc-86c0-1f405f86a388',
+											'0e4ff5b0-7f88-46bb-b661-8d5296836e11',
+											'518c919e-62a3-4b18-ae0c-e21b456b7f6d',
+											'bcec3d12-bc08-4737-9fe9-0bf043a82564',
+											'3e358041-9087-4889-a36c-20b92382cc01',
+											'b061ce9b-951a-4726-930c-4ae8fd6ae7ec',
+											'cb3caf1a-b870-4875-9daa-c8e8f699b50e',
+											'cb27358a-a507-47b4-a4fc-dbdc23930511',
+											'1cb09a02-57b2-484e-89cc-c668118b1580') 
+/*AND CONVERT(DATE, TransactionDate) < @StartDate
+AND TenantName = @Centre
+AND ProviderName = @Provider
+AND OrganisationName = @Organisation*/
+
+
+AND (CONVERT(DATE, TransactionDate) < '${TransactionDate}' OR '_all_' = '${TransactionDate}')
+		AND ([TenantId] IN ('${CentreId}') OR '_all_' IN ('${CentreId}') OR [TenantId] LIKE CONCAT('${CentreId}',''))
+		AND ([ProviderId] IN ('${ProviderId}') OR '_all_' IN ('${ProviderId}') OR [ProviderId] LIKE CONCAT('${ProviderId}',''))
+		AND ([OrganisationId] IN ('${OrganisationId}') OR '_all_' IN ('${OrganisationId}') OR [OrganisationId] LIKE CONCAT('${OrganisationId}',''))
+
+/*GROUP BY t1.OrganisationId  , t1.ProviderId  , t1.TenantId */
+
+UNION
+ 
+SELECT 
+  Id
+, OrganisationName AS [Organisation]
+, ProviderName AS [Provider]
+, TenantName AS [Centre]
+, OrganisationId AS [OrganisationId]
+, ProviderId AS [ProviderId]
+, TenantId AS [CentreId]
+, TransactionDate AS [TransDate]
+, CONVERT(DATE, CreatedOn) AS [CreatedDate]
+, CONVERT(DATE, TransactionDate)  AS [TransactionDate]
+, PaymentAccount AS [Payment Account]
+, Family AS [Family]
+, CASE WHEN ChargeTypeId IN (
+										'c2321c68-2eaa-44eb-a6bd-c996b956ae6a',
+										'1060435d-4789-4dfc-86c0-1f405f86a388',
+										'0e4ff5b0-7f88-46bb-b661-8d5296836e11',
+										'518c919e-62a3-4b18-ae0c-e21b456b7f6d',
+										'bcec3d12-bc08-4737-9fe9-0bf043a82564',
+										'3e358041-9087-4889-a36c-20b92382cc01',
+										'b061ce9b-951a-4726-930c-4ae8fd6ae7ec',
+										'cb3caf1a-b870-4875-9daa-c8e8f699b50e',
+										'cb27358a-a507-47b4-a4fc-dbdc23930511',
+										'1cb09a02-57b2-484e-89cc-c668118b1580'
+								) THEN [Description] + '-' + ISNULL(Child, '') + '-' + ISNULL(Rooms, '') + '-' + ISNULL(ArrangementType, '') + ' ' + ISNULL(CcssEnrolmentId, '')
+		   ELSE [Description] END AS [Description]
+, [Sessions]
+, Rooms
+, LedgerAccountType AS [Ledger Account]
+, LedgerAccountTypeCode AS [Ledger Account Code]
+, CASE WHEN InclInLedger = 1 THEN 'Y' WHEN InclInLedger = 0 THEN 'N' ELSE CONVERT(VARCHAR, InclInLedger) END AS [Include In Ledger]
+, [Status] AS [Charge Status]
+, ChargeType AS [Transaction Category]
+, IIF(IsCredit = 0, Amount*-1, 0) AS [Debit]
+, IIF(IsCredit = 1, Amount, 0) AS [Credit]
+
+
+
+
+,CONVERT(VARCHAR, (SELECT ISNULL(SUM(T2.Amount * IIF(T2.IsCredit = 1, 1, -1)), 0)
+                            +    (T1.Amount * IIF(T1.IsCredit = 1, 1, -1))
+                    FROM dbo.rpt_Billing_Charge T2
+                    WHERE 
+					(T2.[TenantId] IN ('${CentreId}') OR '_all_' IN ('${CentreId}') OR T2.[TenantId] LIKE CONCAT('${CentreId}',''))
+					AND (T2.[ProviderId] IN ('${ProviderId}') OR '_all_' IN ('${ProviderId}') OR T2.[ProviderId] LIKE CONCAT('${ProviderId}',''))
+					AND (T2.[OrganisationId] IN ('${OrganisationId}') OR '_all_' IN ('${OrganisationId}') OR T2.[OrganisationId] LIKE CONCAT('${OrganisationId}',''))
+                    AND T2.CreatedOn < T1.CreatedOn
+					AND ISNULL(IsArchived, 0) = 0 AND ISNULL(InclInLedger, 0) = 1
+					AND ChargeTypeId IN 
+											('c2321c68-2eaa-44eb-a6bd-c996b956ae6a',
+											'1060435d-4789-4dfc-86c0-1f405f86a388',
+											'0e4ff5b0-7f88-46bb-b661-8d5296836e11',
+											'518c919e-62a3-4b18-ae0c-e21b456b7f6d',
+											'bcec3d12-bc08-4737-9fe9-0bf043a82564',
+											'3e358041-9087-4889-a36c-20b92382cc01',
+											'b061ce9b-951a-4726-930c-4ae8fd6ae7ec',
+											'cb3caf1a-b870-4875-9daa-c8e8f699b50e',
+											'cb27358a-a507-47b4-a4fc-dbdc23930511',
+											'1cb09a02-57b2-484e-89cc-c668118b1580')) 
+
+                +  (SELECT ISNULL(SUM(T3.Amount * IIF(T3.IsCredit = 1, 1, -1)), 0) 
+                    FROM dbo.rpt_Billing_Charge T3
+                    WHERE 
+					(T3.[TenantId] IN ('${CentreId}') OR '_all_' IN ('${CentreId}') OR T3.[TenantId] LIKE CONCAT('${CentreId}',''))
+					AND (T3.[ProviderId] IN ('${ProviderId}') OR '_all_' IN ('${ProviderId}') OR T3.[ProviderId] LIKE CONCAT('${ProviderId}',''))
+					AND (T3.[OrganisationId] IN ('${OrganisationId}') OR '_all_' IN ('${OrganisationId}') OR T3.[OrganisationId] LIKE CONCAT('${OrganisationId}',''))
+                    AND T1.Id > T3.Id
+                    AND T1.CreatedOn = T3.CreatedOn
+					AND ISNULL(IsArchived, 0) = 0 AND ISNULL(InclInLedger, 0) = 1
+					AND ChargeTypeId IN 
+											('c2321c68-2eaa-44eb-a6bd-c996b956ae6a',
+											'1060435d-4789-4dfc-86c0-1f405f86a388',
+											'0e4ff5b0-7f88-46bb-b661-8d5296836e11',
+											'518c919e-62a3-4b18-ae0c-e21b456b7f6d',
+											'bcec3d12-bc08-4737-9fe9-0bf043a82564',
+											'3e358041-9087-4889-a36c-20b92382cc01',
+											'b061ce9b-951a-4726-930c-4ae8fd6ae7ec',
+											'cb3caf1a-b870-4875-9daa-c8e8f699b50e',
+											'cb27358a-a507-47b4-a4fc-dbdc23930511',
+											'1cb09a02-57b2-484e-89cc-c668118b1580'))
+) AS  [Balance]
+
+
+FROM
+dbo.rpt_Billing_Charge T1 
+WHERE 
+ISNULL(IsArchived, 0) = 0 AND ISNULL(InclInLedger, 0) = 1
+AND ChargeTypeId IN 
+											('c2321c68-2eaa-44eb-a6bd-c996b956ae6a',
+											'1060435d-4789-4dfc-86c0-1f405f86a388',
+											'0e4ff5b0-7f88-46bb-b661-8d5296836e11',
+											'518c919e-62a3-4b18-ae0c-e21b456b7f6d',
+											'bcec3d12-bc08-4737-9fe9-0bf043a82564',
+											'3e358041-9087-4889-a36c-20b92382cc01',
+											'b061ce9b-951a-4726-930c-4ae8fd6ae7ec',
+											'cb3caf1a-b870-4875-9daa-c8e8f699b50e',
+											'cb27358a-a507-47b4-a4fc-dbdc23930511',
+											'1cb09a02-57b2-484e-89cc-c668118b1580')
+
+
+AND (CONVERT(DATE, TransactionDate) >= '${TransactionDate}' OR '_all_' = '${TransactionDate}')
+AND (CONVERT(DATE, TransactionDate) <= '${TransactionDate_1}' OR '_all_' = '${TransactionDate_1}')
+
+		AND ([TenantId] IN ('${CentreId}') OR '_all_' IN ('${CentreId}') OR [TenantId] LIKE CONCAT('${CentreId}',''))
+		AND ([ProviderId] IN ('${ProviderId}') OR '_all_' IN ('${ProviderId}') OR [ProviderId] LIKE CONCAT('${ProviderId}',''))
+		AND ([OrganisationId] IN ('${OrganisationId}') OR '_all_' IN ('${OrganisationId}') OR [OrganisationId] LIKE CONCAT('${OrganisationId}',''))
+		
+ORDER BY Id, TransactionDate
+OFFSET 0 ROWS]]></query>
+            </view>
+            <view id="f4f66c20-d4a9-4dcf-a9cc-dc3f39b14efd" name="BookReve" alias="BookReve">
+                <query><![CDATA[
+
+SELECT NULL AS [Organisation], NULL AS [Provider], NULL AS [Centre], 
+NULL AS [OrganisationId], NULL AS [ProviderId], NULL AS [CentreId],
+NULL AS [CreatedOn],
+NULL [CreatedDate], NULL AS [TransactionDate],  NULL AS [Payment Account], NULL AS [Family], 
+'_Opening Balance' AS [Description], NULL AS [Sessions], NULL AS [Rooms], NULL AS [Ledger Account], 
+NULL AS [Ledger Account Code], NULL AS [Include In Ledger], NULL AS [Charge Status],
+NULL AS [Transaction Category], 0 AS [Debit], 0 AS [Credit],
+SUM(ISNULL(IIF(IsCredit = 1, Amount, 0), 0)) + SUM(ISNULL(IIF(IsCredit = 0, Amount*-1, 0), 0)) AS [Balance]
+
+FROM dbo.rpt_Billing_Charge T1
+WHERE 
+ISNULL(IsArchived, 0) = 0 AND ISNULL(InclInLedger, 0) = 1
+AND ChargeTypeId IN 
+											('c2321c68-2eaa-44eb-a6bd-c996b956ae6a',
+											'1060435d-4789-4dfc-86c0-1f405f86a388',
+											'0e4ff5b0-7f88-46bb-b661-8d5296836e11',
+											'518c919e-62a3-4b18-ae0c-e21b456b7f6d',
+											'bcec3d12-bc08-4737-9fe9-0bf043a82564',
+											'3e358041-9087-4889-a36c-20b92382cc01',
+											'b061ce9b-951a-4726-930c-4ae8fd6ae7ec',
+											'cb3caf1a-b870-4875-9daa-c8e8f699b50e',
+											'cb27358a-a507-47b4-a4fc-dbdc23930511',
+											'1cb09a02-57b2-484e-89cc-c668118b1580') 
+
+
+AND (CONVERT(DATE, CreatedOn) < '${CreatedDate}' OR '_all_' = '${CreatedDate}')
+		AND ([TenantId] IN ('${CentreId}') OR '_all_' IN ('${CentreId}') OR [TenantId] LIKE CONCAT('${CentreId}',''))
+		AND ([ProviderId] IN ('${ProviderId}') OR '_all_' IN ('${ProviderId}') OR [ProviderId] LIKE CONCAT('${ProviderId}',''))
+		AND ([OrganisationId] IN ('${OrganisationId}') OR '_all_' IN ('${OrganisationId}') OR [OrganisationId] LIKE CONCAT('${OrganisationId}',''))
+
+/*GROUP BY t1.OrganisationId  , t1.ProviderId  , t1.TenantId */
+
+UNION
+ 
+SELECT 
+  OrganisationName AS [Organisation]
+, ProviderName AS [Provider]
+, TenantName AS [Centre]
+, OrganisationId AS [OrganisationId]
+, ProviderId AS [ProviderId]
+, TenantId AS [CentreId]
+, CreatedOn  AS [CreatedOn]
+, CONVERT(DATE, CreatedOn) AS [CreatedDate]
+, CONVERT(DATE, TransactionDate)  AS [TransactionDate]
+, PaymentAccount AS [Payment Account]
+, Family AS [Family]
+, CASE WHEN ChargeTypeId IN (
+										'c2321c68-2eaa-44eb-a6bd-c996b956ae6a',
+										'1060435d-4789-4dfc-86c0-1f405f86a388',
+										'0e4ff5b0-7f88-46bb-b661-8d5296836e11',
+										'518c919e-62a3-4b18-ae0c-e21b456b7f6d',
+										'bcec3d12-bc08-4737-9fe9-0bf043a82564',
+										'3e358041-9087-4889-a36c-20b92382cc01',
+										'b061ce9b-951a-4726-930c-4ae8fd6ae7ec',
+										'cb3caf1a-b870-4875-9daa-c8e8f699b50e',
+										'cb27358a-a507-47b4-a4fc-dbdc23930511',
+										'1cb09a02-57b2-484e-89cc-c668118b1580'
+								) THEN [Description] + '-' + ISNULL(Child, '') + '-' + ISNULL(Rooms, '') + '-' + ISNULL(ArrangementType, '') + ' ' + ISNULL(CcssEnrolmentId, '')
+		   ELSE [Description] END AS [Description]
+, [Sessions]
+, Rooms
+, LedgerAccountType AS [Ledger Account]
+, LedgerAccountTypeCode AS [Ledger Account Code]
+, CASE WHEN InclInLedger = 1 THEN 'Y' WHEN InclInLedger = 0 THEN 'N' ELSE CONVERT(VARCHAR, InclInLedger) END AS [Include In Ledger]
+, [Status] AS [Charge Status]
+, ChargeType AS [Transaction Category]
+, IIF(IsCredit = 0, Amount*-1, 0) AS [Debit]
+, IIF(IsCredit = 1, Amount, 0) AS [Credit]
+,CONVERT(VARCHAR, (SELECT ISNULL(SUM(T2.Amount * IIF(T2.IsCredit = 1, 1, -1)), 0)
+                            +    (T1.Amount * IIF(T1.IsCredit = 1, 1, -1))
+                    FROM dbo.rpt_Billing_Charge T2
+                    WHERE 
+					(T2.[TenantId] IN ('${CentreId}') OR '_all_' IN ('${CentreId}') OR T2.[TenantId] LIKE CONCAT('${CentreId}',''))
+					AND (T2.[ProviderId] IN ('${ProviderId}') OR '_all_' IN ('${ProviderId}') OR T2.[ProviderId] LIKE CONCAT('${ProviderId}',''))
+					AND (T2.[OrganisationId] IN ('${OrganisationId}') OR '_all_' IN ('${OrganisationId}') OR T2.[OrganisationId] LIKE CONCAT('${OrganisationId}',''))
+                    AND T2.CreatedOn < T1.CreatedOn
+					AND ISNULL(IsArchived, 0) = 0 AND ISNULL(InclInLedger, 0) = 1
+					AND ChargeTypeId IN 
+											('c2321c68-2eaa-44eb-a6bd-c996b956ae6a',
+											'1060435d-4789-4dfc-86c0-1f405f86a388',
+											'0e4ff5b0-7f88-46bb-b661-8d5296836e11',
+											'518c919e-62a3-4b18-ae0c-e21b456b7f6d',
+											'bcec3d12-bc08-4737-9fe9-0bf043a82564',
+											'3e358041-9087-4889-a36c-20b92382cc01',
+											'b061ce9b-951a-4726-930c-4ae8fd6ae7ec',
+											'cb3caf1a-b870-4875-9daa-c8e8f699b50e',
+											'cb27358a-a507-47b4-a4fc-dbdc23930511',
+											'1cb09a02-57b2-484e-89cc-c668118b1580')
+					) 
+
+                +  (SELECT ISNULL(SUM(T3.Amount * IIF(T3.IsCredit = 1, 1, -1)), 0) 
+                    FROM dbo.rpt_Billing_Charge T3
+                    WHERE 
+					(T3.[TenantId] IN ('${CentreId}') OR '_all_' IN ('${CentreId}') OR T3.[TenantId] LIKE CONCAT('${CentreId}',''))
+					AND (T3.[ProviderId] IN ('${ProviderId}') OR '_all_' IN ('${ProviderId}') OR T3.[ProviderId] LIKE CONCAT('${ProviderId}',''))
+					AND (T3.[OrganisationId] IN ('${OrganisationId}') OR '_all_' IN ('${OrganisationId}') OR T3.[OrganisationId] LIKE CONCAT('${OrganisationId}',''))
+                    AND T1.Id > T3.Id
+                    AND T1.CreatedOn = T3.CreatedOn
+					AND ISNULL(IsArchived, 0) = 0 AND ISNULL(InclInLedger, 0) = 1
+					AND ChargeTypeId IN 
+											('c2321c68-2eaa-44eb-a6bd-c996b956ae6a',
+											'1060435d-4789-4dfc-86c0-1f405f86a388',
+											'0e4ff5b0-7f88-46bb-b661-8d5296836e11',
+											'518c919e-62a3-4b18-ae0c-e21b456b7f6d',
+											'bcec3d12-bc08-4737-9fe9-0bf043a82564',
+											'3e358041-9087-4889-a36c-20b92382cc01',
+											'b061ce9b-951a-4726-930c-4ae8fd6ae7ec',
+											'cb3caf1a-b870-4875-9daa-c8e8f699b50e',
+											'cb27358a-a507-47b4-a4fc-dbdc23930511',
+											'1cb09a02-57b2-484e-89cc-c668118b1580')
+					)
+) AS  [Balance]
+
+FROM
+dbo.rpt_Billing_Charge T1 
+WHERE 
+ISNULL(IsArchived, 0) = 0 AND ISNULL(InclInLedger, 0) = 1
+AND ChargeTypeId IN 
+											('c2321c68-2eaa-44eb-a6bd-c996b956ae6a',
+											'1060435d-4789-4dfc-86c0-1f405f86a388',
+											'0e4ff5b0-7f88-46bb-b661-8d5296836e11',
+											'518c919e-62a3-4b18-ae0c-e21b456b7f6d',
+											'bcec3d12-bc08-4737-9fe9-0bf043a82564',
+											'3e358041-9087-4889-a36c-20b92382cc01',
+											'b061ce9b-951a-4726-930c-4ae8fd6ae7ec',
+											'cb3caf1a-b870-4875-9daa-c8e8f699b50e',
+											'cb27358a-a507-47b4-a4fc-dbdc23930511',
+											'1cb09a02-57b2-484e-89cc-c668118b1580')
+
+
+
+AND (CONVERT(DATE, CreatedOn) >= '${CreatedDate}' OR '_all_' = '${CreatedDate}')
+AND (CONVERT(DATE, CreatedOn) <= '${CreatedDate_1}' OR '_all_' = '${CreatedDate_1}')
+AND ([TenantId] IN ('${CentreId}') OR '_all_' IN ('${CentreId}') OR [TenantId] LIKE CONCAT('${CentreId}',''))
+		AND ([ProviderId] IN ('${ProviderId}') OR '_all_' IN ('${ProviderId}') OR [ProviderId] LIKE CONCAT('${ProviderId}',''))
+		AND ([OrganisationId] IN ('${OrganisationId}') OR '_all_' IN ('${OrganisationId}') OR [OrganisationId] LIKE CONCAT('${OrganisationId}',''))
+
+ORDER BY CreatedOn
+OFFSET 0 ROWS]]></query>
+            </view>
+        </views>
+    </database>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+    <access>
+        <expression expressionId="74e402ab-2577-445d-ac1a-203ea69e7e27" type="conditionIf" expressionName="BondTransSecurity" expressionType="table" on="BondTrans" accessType="grant">
+            <condition><![CDATA[${org}.name != '-']]></condition>
+            <filter><![CDATA[BondTrans.OrganisationId IN (${profile['organisation']}) AND
+BondTrans.ProviderId IN  (${profile['providers']}) AND
+BondTrans.CentreId IN (${profile['centres']})
+]]></filter>
+        </expression>
+        <expression expressionId="a2686e27-88e2-42e6-ac16-6be927ceefc9" type="conditionIf" expressionName="BondSummarySecurity" expressionType="table" on="BondSummary" accessType="grant">
+            <condition><![CDATA[${org}.name != '-']]></condition>
+            <filter><![CDATA[BondSummary.OrganisationId IN (${profile['organisation']}) AND
+BondSummary.ProviderId IN  (${profile['providers']}) AND
+BondSummary.CentreId IN (${profile['centres']})
+]]></filter>
+        </expression>
+        <expression expressionId="4076df81-43d2-4dff-9999-219557e3c143" type="conditionIf" expressionName="FinTransSecurity" expressionType="table" on="FinTrans" accessType="grant">
+            <condition><![CDATA[${org}.name != '-']]></condition>
+            <filter><![CDATA[(FinTrans.OrganisationId IN (${profile['organisation']})  AND
+FinTrans.ProviderId IN  (${profile['providers']})  AND
+FinTrans.CentreId IN (${profile['centres']})) 
+OR [Description] = '_Opening Balance'
+]]></filter>
+        </expression>
+        <expression expressionId="aeddc329-f158-4cb0-8cf1-68fbcce2d1e4" type="conditionIf" expressionName="BondTransMthsSecurity" expressionType="table" on="BondTransMths" accessType="grant">
+            <condition><![CDATA[${org}.name != '-']]></condition>
+            <filter><![CDATA[(BondTransMths.OrganisationId IN (${profile['organisation']}) AND
+BondTransMths.ProviderId IN  (${profile['providers']}) AND
+BondTransMths.CentreId IN (${profile['centres']}))
+OR [Transaction Category] = '_Grand Total'
+]]></filter>
+        </expression>
+        <expression expressionId="8fbfbe08-7ddb-4d7f-bf37-b85f6026185f" type="conditionIf" expressionName="BookReveBookDtSecurity" expressionType="table" on="BookReveBookDt" accessType="grant">
+            <condition><![CDATA[${org}.name != '-']]></condition>
+            <filter><![CDATA[(BookReveBookDt.OrganisationId IN (${profile['organisation']}) AND
+BookReveBookDt.ProviderId IN  (${profile['providers']}) AND
+BookReveBookDt.CentreId IN (${profile['centres']}))
+OR [Description] = '_Opening Balance']]></filter>
+        </expression>
+        <expression expressionId="aa81bacb-8ba2-4366-a775-a9b02da5c22d" type="conditionIf" expressionName="BookReveRoomSecurity" expressionType="table" on="BookReveRoom" accessType="grant">
+            <condition><![CDATA[${org}.name != '-']]></condition>
+            <filter><![CDATA[(BookReveRoom.OrganisationId IN (${profile['organisation']}) AND
+BookReveRoom.ProviderId IN  (${profile['providers']}) AND
+BookReveRoom.CentreId IN (${profile['centres']}))
+OR [Rooms] = '_Grand Total']]></filter>
+        </expression>
+        <expression expressionId="b0200a34-1379-4068-82d4-fbc15b158e43" type="conditionIf" expressionName="BookReveSessionSecurity" expressionType="table" on="BookReveSession" accessType="grant">
+            <condition><![CDATA[${org}.name != '-']]></condition>
+            <filter><![CDATA[(BookReveSession.OrganisationId IN (${profile['organisation']}) AND
+BookReveSession.ProviderId IN  (${profile['providers']}) AND
+BookReveSession.CentreId IN (${profile['centres']}))
+OR [Sessions] = '_Grand Total']]></filter>
+        </expression>
+        <expression expressionId="276a9d17-e18e-4325-ab7b-40448b45fd36" type="conditionIf" expressionName="FinTransMthsSecurity" expressionType="table" on="FinTransMths" accessType="grant">
+            <condition><![CDATA[${org}.name != '-']]></condition>
+            <filter><![CDATA[(FinTransMths.OrganisationId IN (${profile['organisation']}) AND
+FinTransMths.ProviderId IN  (${profile['providers']}) AND
+FinTransMths.CentreId IN (${profile['centres']}))
+OR [Transaction Category] =  '_Grand Total' ]]></filter>
+        </expression>
+        <expression expressionId="3fbc57a9-40ab-412c-b9af-3a5ab42ead34" type="conditionIf" expressionName="TransPymtMethodSecurity" expressionType="table" on="TransPymtMethod" accessType="grant">
+            <condition><![CDATA[${org}.name != '-']]></condition>
+            <filter><![CDATA[(TransPymtMethod.OrganisationId IN (${profile['organisation']}) AND
+TransPymtMethod.ProviderId IN  (${profile['providers']}) AND
+TransPymtMethod.CentreId IN (${profile['centres']}))
+OR [Transaction Category] =  '_Grand Total']]></filter>
+        </expression>
+        <expression expressionId="68c381cb-5202-4828-8b89-599b9796f630" type="conditionIf" expressionName="BookReveSecurity" expressionType="table" on="BookReve" accessType="grant">
+            <condition><![CDATA[${org}.name != '-']]></condition>
+            <filter><![CDATA[(BookReve.OrganisationId IN (${profile['organisation']}) AND
+BookReve.ProviderId IN  (${profile['providers']}) AND
+BookReve.CentreId IN (${profile['centres']}))
+OR [Description] = '_Opening Balance']]></filter>
+        </expression>
+    </access>
+</metadata>

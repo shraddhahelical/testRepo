@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efwsr>
+    <reportName>Simple Bubble Chart 2010161207</reportName>
+    <reportFile>d1560c88-be0d-4380-8225-8a8df4eb53bf.report</reportFile>
+    <reportDirectory>1463377807724/1463983915686/1463838054907</reportDirectory>
+    <reportParameters><![CDATA[{}]]></reportParameters>
+    <visible>true</visible>
+    <schedulingReference>1501</schedulingReference>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+    <favourite>false</favourite>
+</efwsr>

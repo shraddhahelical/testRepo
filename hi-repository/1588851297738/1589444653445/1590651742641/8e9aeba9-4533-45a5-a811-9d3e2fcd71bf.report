@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<report>
+    <reportName>DynamicView_VFReport</reportName>
+    <visible>true</visible>
+    <metadata>
+        <location>1588851297738/1589444653445/1590651742641</location>
+        <metadataFileName>55176731-1523-48d1-8a2d-f0f6cbad1678.metadata</metadataFileName>
+    </metadata>
+    <canvas>
+        <columns><![CDATA[[{"column":"filtervalue.booking_platform","label":"filtervalue_booking_platform","id":"you2n1vvv7","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"filtervalue_booking_platform","groupBy":["db.generic.groupBy.group"]},{"column":"filtervalue.travel_cost","label":"filtervalue_travel_cost","id":"16qaceone3z","type":{"dataType":"numeric","backendDatatype":"java.lang.Float"},"autogen_alias":"sum_travel_cost","aggregate":["db.generic.aggregate.sum"]}]]]></columns>
+    </canvas>
+    <state><![CDATA[{"columns":[{"column":"filtervalue.booking_platform","label":"filtervalue_booking_platform","id":"you2n1vvv7","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"filtervalue_booking_platform","groupBy":["db.generic.groupBy.group"]},{"column":"filtervalue.travel_cost","label":"filtervalue_travel_cost","id":"16qaceone3z","type":{"dataType":"numeric","backendDatatype":"java.lang.Float"},"autogen_alias":"sum_travel_cost","aggregate":["db.generic.aggregate.sum"]}],"filters":[{"values":["Agent"],"mode":"auto","dataType":"text","orderBy":"","valuesMode":"auto","isFilterEditable":false,"encloseInQuotes":false,"dateTimeToggle":false,"databaseFunction":{},"label":"booking","column":"filtervalue.booking_platform","backendDataType":"java.lang.String","rangeValuesType":"","id":0,"condition":"EQUALS","valuesRange":{},"rangeSelectionToggole":true}],"customFilterExpression":"${0}","customHavingExpression":"","customFilterExpressionObj":{"0":"${0}"},"customHavingExpressionObj":{},"havingExpressionIndexs":{},"filterExpressionIndexs":{},"options":{"limitBy":1000,"prependTableNameToAlias":true},"visualisation":{"type":"VF","chartGroup":["C3","C3Axis","C3Bar"],"selectedType":"VF","settings":{"vf_file":"sample_report.efwvf","vf_id":1,"dir":"1463377807724/1463377978248/Sample EFW Report","__path":"/HI Sample Reports/EFW Reports/Sample EFW Report/sample_report.efwvf/pie chart (1)","script":"(function(data, chartElement){\n                \n\t\t\t\t\t if (data.length == 0) {\n                        $('#chart_1').html(\"<div><h2 style='text-align:CENTER;color:#927333;'>No Data To Display<\/h2><\/div>\");\n                    } else {\n\t\t\t\t\t\tvar array1=[];\n\t\t\t\t\t\tfor (var i = 0; i < data.length; i++) {\n\t\t\t\t\t\t\tvar array2=[];\t\n\t\t\t\t\t\t\tfor (var prop in data[i]) {\t\n\t\t\t\t\t\t\t\t\tarray2.push(data[i][prop]);\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tarray1[i] = array2;\n\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\tvar chart = c3.generate({\n\t\t\t\t\t\t\t\tbindto: '#chart_1',\n\t\t\t\t\t\t\t\tdata: {\n\t\t\t\t\t\t\t\t\tcolumns: array1,\n\t\t\t\t\t\t\t\t\ttype: 'pie'\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\tlegend: {\n\t\t\t\t\t\t\t\t\tshow: true\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\ttooltip: {\n\t\t\t\t\t\t\t\t  show: true\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t});\t\n\t\t\t\t\t}\n\t\t\t\t\n            })(window.data)","type":"VF"},"vizSelectedScripts":[]},"scripts":[],"styles":"","customStyles":"","customScripts":[]}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</report>

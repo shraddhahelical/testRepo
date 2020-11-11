@@ -1,0 +1,106 @@
+<Charts>
+	<Chart id ="1">
+		<prop>
+			<name>Adhoc VF Timeseries Chart</name>
+			<type>Custom</type>		
+			<DataSource>3</DataSource>
+
+			<script>
+				<![CDATA[	
+					//Load d3_timeseries.css
+					var link = document.createElement("link");
+					link.rel = 'stylesheet';
+						
+					if(window.DashboardGlobals)
+						link.href = window.DashboardGlobals.baseUrl+"/getExternalResource.html?path=1463377807724/1464094583239/d3_timeseries.css";				
+					else
+						link.href = "getExternalResource.html?path=1463377807724/1464094583239/d3_timeseries.css";
+
+					document.getElementsByTagName("head")[0].appendChild(link);				
+					
+					
+					//Load d3_timeseries.js
+					var script = document.createElement("script"),
+						scriptLoaded = false;
+						
+					if(window.DashboardGlobals)
+						script.src = window.DashboardGlobals.baseUrl+"/getExternalResource.html?path=1463377807724/1464094583239/d3_timeseries.js";				
+					else
+						script.src = "getExternalResource.html?path=1463377807724/1464094583239/d3_timeseries.js";
+
+					script.async = false;
+					document.getElementsByTagName("head")[0].appendChild(script);
+					document.getElementById('chart_'+1).parentElement.style.height="100%";
+					document.getElementById('chart_'+1).parentElement.style.width="100%";
+					var parentid = document.getElementById('chart_'+1).parentElement.id;
+					document.getElementById('chart_'+1).id += "-"+parentid;
+					script.onload = function(){
+						drawChart();
+					}
+					
+					$('#chart_1'+"-"+parentid).css('height', 'inherit');
+					var width = $('#chart_1'+"-"+parentid).innerWidth();
+					var height = $('#chart_1'+"-"+parentid).innerHeight();
+					console.log('width: ',width,height);
+					var dateColumnName, dateColumnCounter = 0, numericColumnName = [];
+					
+					//Colour Palette
+					var colourPalette =["rgba(191, 97, 106, 1)","rgba(91, 144, 191, 1)","rgba(208, 135, 112, 1)","rgba(235, 203, 139, 1)","rgba(163, 190, 140, 1)","rgba(150, 181, 180, 1)","rgba(143, 161, 179, 1)","rgba(180, 142, 173, 1)","rgba(171, 121, 103, 1)","rgba(255, 138, 101, 1)","rgba(255, 213, 79, 1)","rgba(79, 195, 247, 1)","rgba(103, 58, 183, 1)","#CDDC39","rgba(0, 255, 255, 1)","rgba(255, 0, 255, 1)","rgba(0, 0, 255, 1)"];
+					
+					var dataColumns = Object.keys(data[0]);
+					//var dateColumnCounter = 0;
+					for(var i = 0; i < dataColumns.length; i++){
+						if(typeof data[0][dataColumns[i]] === 'number'){
+							numericColumnName.push(dataColumns[i]);
+						}
+						else{
+							if(new Date(data[0][dataColumns[i]].split(' ').join('T')) != 'Invalid Date' && dateColumnCounter == 0){
+								dateColumnName = dataColumns[i];
+								dateColumnCounter++;
+							}
+						}
+					}
+					//Data re formatting
+					data.forEach(function(val, i){
+						data[i][dateColumnName] = new Date(data[i][dateColumnName].split(' ').join('T'));
+					});
+					
+					
+					//Function to generate chart
+					function drawChart(){
+						var chart = d3.timeseries()
+									  .yscale.domain([0]) // show 0 on y axis
+									  .margin.left(40)
+									  .yscale.tickFormat(d3.format("s"))
+									  .width(width)
+									  .height(height);
+						var i = 0;	
+						for(var i = 0; i < numericColumnName.length; i++){
+							chart.addSerie(	data,
+											{
+												x:dateColumnName,
+												y:numericColumnName[i]
+											},
+											{
+												interpolate:'linear',
+												color: colourPalette[i]
+											}
+										)
+						}
+						chart("#chart_1"+"-"+parentid);
+					}
+					
+
+					
+					//Handle window resize.
+					$(window).resize(function(){
+						height = $("#chart_1"+"-"+parentid).innerHeight();
+						width = $("#chart_1"+"-"+parentid).innerWidth();
+						$("#chart_1"+"-"+parentid+ " svg").remove();
+						drawChart();
+					});
+				]]>
+			</script>
+		</prop>
+	</Chart>
+</Charts>

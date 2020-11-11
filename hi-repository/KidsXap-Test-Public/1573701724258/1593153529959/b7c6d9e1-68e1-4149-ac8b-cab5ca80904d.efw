@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efw>
+    <title>rpt_FinTransMths</title>
+    <author>hiadmin</author>
+    <description>Efw File</description>
+    <template>b7c6d9e1-68e1-4149-ac8b-cab5ca80904d.html</template>
+    <visible>true</visible>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</efw>

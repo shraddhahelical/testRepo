@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<customScript>
+    <visible>true</visible>
+    <scriptId>card_js_addcursor</scriptId>
+    <scriptType>js</scriptType>
+	<name>AddCursor</name>
+    <group>Card</group>
+	<renderOn>simpleModel</renderOn>
+    <description>Helps to add cursor on card</description>
+    <icon>/images/scriptIcons/addcursor.png</icon>
+	<snippet>
+		<![CDATA[
+		var id = hi_container.get("renderId");
+			var ftnObj = {};
+			
+				ftnObj['addcursor'+id] = function(c){
+				jQuery('#widget-value').css('cursor', 'pointer');
+				} ;
+	
+			if(!hi_container.isSet("postExecution")){
+				hi_container.set("postExecution", ftnObj['addcursor'+id]);
+			}
+		]]>
+	</snippet>
+
+    <parameters>
+		<parameter value="{'isEnable': false, 'hours': 23, 'minutes': 59, 'seconds': 59}" name="refreshConfig" type="String"/>
+	</parameters>
+
+	<uiSnippet>
+		<![CDATA[
+			<style>
+				input{
+					width: 100%;
+					height: 30px;
+					font-size: 14px;
+					padding: 0px 5px;
+				}
+				
+				.cs-label{
+					font-size: 14px;
+				}
+				
+				.customizationLabel{
+					padding: 25px 0px 0px 0px !important;
+				}
+				
+				.timeSlabCustomization{
+					margin-top: 15px;
+				}
+				
+				.toggle-pane label{
+					text-align: center;
+				}
+			</style>
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-sm-offset-3 col-md-offset-3 col-lg-offset-3 toggle-pane">
+				<label class="col-sm-4">Disable</label>
+					<div class="col-sm-4 switch" id="switch">
+						<input id="cmn-toggle-1" class="cmn-toggle cmn-toggle-round" type="checkbox" onclick="toggleCacheRefresh(event)"/>
+						<label for="cmn-toggle-1"></label>
+					</div>
+				<label class="col-sm-4">Enable</label>
+			</div>
+			
+			<script>
+				adhocScripts.resetAll();
+				adhocScripts.setVariable('refreshConfig',params.refreshConfig);
+			
+				$('#hoursSelector').val(adhocScripts.getVariable('refreshConfig').hours);
+				$('#minutesSelector').val(adhocScripts.getVariable('refreshConfig').minutes);
+				$('#secondsSelector').val(adhocScripts.getVariable('refreshConfig').seconds);
+				if(adhocScripts.getVariable('refreshConfig').isEnable){
+					$('#cmn-toggle-1').attr('checked','checked');
+					$('#timeSlabCustomization').css('display', 'block');
+				}else{
+					$('#cmn-toggle-1').removeAttr('checked');
+					$('#timeSlabCustomization').css('display', 'none');
+				}
+					
+			
+				function setDuration(durationType){
+					var refreshConfigObj = adhocScripts.getVariable('refreshConfig');
+					refreshConfigObj[durationType] = parseInt($(this).val());
+					adhocScripts.setVariable('refreshConfig',refreshConfigObj);
+				}
+				
+				function toggleCacheRefresh(e){
+					var refreshConfigObj = adhocScripts.getVariable('refreshConfig');
+					var isEnable;
+					if($(e.target).attr('checked')){
+						$(e.target).removeAttr('checked');
+						isEnable = false;
+						$('#timeSlabCustomization').css('display', 'none');
+					}else{
+						$(e.target).attr('checked', 'checked');
+						isEnable = true;
+						$('#timeSlabCustomization').css('display', 'block');
+					}
+					refreshConfigObj.isEnable = isEnable;
+					adhocScripts.setVariable('refreshConfig', refreshConfigObj);
+				}
+				
+				$('#hoursSelector').on('keydown keyup', function(e){
+					if ($(this).val() > 23 
+						&& e.keyCode !== 46 // keycode for delete
+						&& e.keyCode !== 8 // keycode for backspace
+					   ) {
+					   e.preventDefault();
+					   $(this).val(23);
+					}
+					if ($(this).val() < 0 
+						&& e.keyCode !== 46 // keycode for delete
+						&& e.keyCode !== 8 // keycode for backspace
+					   ) {
+					   e.preventDefault();
+					   $(this).val(0);
+					}
+					if ($(this).val() == '' )
+						$(this).val(0);
+				});
+				
+				$('#minutesSelector').on('keydown keyup', function(e){
+					if ($(this).val() > 59 
+						&& e.keyCode !== 46 // keycode for delete
+						&& e.keyCode !== 8 // keycode for backspace
+					   ) {
+					   e.preventDefault();
+					   $(this).val(59);
+					}
+					if ($(this).val() < 0 
+						&& e.keyCode !== 46 // keycode for delete
+						&& e.keyCode !== 8 // keycode for backspace
+					   ) {
+					   e.preventDefault();
+					   $(this).val(0);
+					}
+					if ($(this).val() == '' )
+						$(this).val(0);
+				});
+				
+				$('#secondsSelector').on('keydown keyup', function(e){
+					if ($(this).val() > 59 
+						&& e.keyCode !== 46 // keycode for delete
+						&& e.keyCode !== 8 // keycode for backspace
+					   ) {
+					   e.preventDefault();
+					   $(this).val(59);
+					}
+					if ($(this).val() < 0 
+						&& e.keyCode !== 46 // keycode for delete
+						&& e.keyCode !== 8 // keycode for backspace
+					   ) {
+					   e.preventDefault();
+					   $(this).val(0);
+					}
+					if ($(this).val() == '' )
+						$(this).val(0);
+				});
+				
+				
+			</script>
+		]]>
+	</uiSnippet>
+</customScript>

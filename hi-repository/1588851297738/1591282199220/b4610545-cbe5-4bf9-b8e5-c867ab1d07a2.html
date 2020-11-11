@@ -1,0 +1,44 @@
+<div class = "col-sm-4 col-md-4 col-xs-4">Select client_name <div id="client_travel"></div></div>
+<div class="col-sm-6 col-xs-12 col-md-12" id="client_wise"></div> <script id="17f18868-93c4-49ff-a5db-b409db7693c2">var dashboard = Dashboard 
+ dashboard.resetAll() 
+  
+        var dashboard = Dashboard;
+dashboard.resetAll();
+dashboard.setVariable('booking_platform',['']);
+var booking_platform = {
+    name: "booking_platform",
+    type:  "select2",
+    parameters:["booking_platform"],
+  options:{
+        multiple:true,
+        value : 'booking_platform',
+        display : 'booking_platform',
+        placeholder: 'Select booking_platform'
+    },
+    efwd : {
+        file: 'b4610545-cbe5-4bf9-b8e5-c867ab1d07a2.efwd'
+    },
+    htmlElementId : "#client_travel",
+    executeAtStart: true,
+   map:1,
+iframe:true
+}; 
+ var client_wise= {
+    name: "client_wise",
+    type:"chart",
+	  listeners:["booking_platform"],
+	   requestParameters :{
+	booking_platform : "booking_platform"
+		},
+    vf : {
+      id: "1",
+      file: "b4610545-cbe5-4bf9-b8e5-c867ab1d07a2.efwvf"
+    },
+    efwd : {
+        file: 'b4610545-cbe5-4bf9-b8e5-c867ab1d07a2.efwd'
+    },
+ htmlElementId : "#client_wise",
+    executeAtStart: true
+ };
+var components = [booking_platform,client_wise];
+dashboard.init(components);</script>

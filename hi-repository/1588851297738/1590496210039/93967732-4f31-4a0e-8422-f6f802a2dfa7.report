@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<report>
+    <reportName>BugID2858</reportName>
+    <visible>true</visible>
+    <metadata>
+        <location>1588851297738/1590496210039</location>
+        <metadataFileName>58eeb248-5bce-43c3-b0bd-e76214d9512a.metadata</metadataFileName>
+    </metadata>
+    <canvas>
+        <columns><![CDATA[[{"column":"Dynamic query View.booking_platform","label":"booking_platform","id":"7xu6oms08xx","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"booking_platform","groupBy":["db.generic.groupBy.group"]}]]]></columns>
+    </canvas>
+    <state><![CDATA[{"columns":[{"column":"Dynamic query View.booking_platform","label":"booking_platform","id":"7xu6oms08xx","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"booking_platform","groupBy":["db.generic.groupBy.group"]}],"filters":[{"values":["500"],"mode":"auto","dataType":"numeric","orderBy":"","valuesMode":"auto","isFilterEditable":false,"encloseInQuotes":false,"dateTimeToggle":false,"databaseFunction":{},"label":"travel_cost","column":"Dynamic query View.travel_cost","backendDataType":"java.lang.Float","rangeValuesType":"","id":0,"condition":"EQUALS","valuesRange":{},"rangeSelectionToggole":true}],"customFilterExpression":"${0}","customHavingExpression":"","customFilterExpressionObj":{"0":"${0}"},"customHavingExpressionObj":{},"havingExpressionIndexs":{},"filterExpressionIndexs":{},"options":{"limitBy":1000,"prependTableNameToAlias":false},"visualisation":{"type":"Table","chartGroup":"","selectedType":"Table","settings":{"script":null,"vizscriptsEditMultipleMode":false},"vizSelectedScripts":[]},"scripts":[],"styles":"","customStyles":"","customScripts":[]}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</report>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<report>
+    <reportName>filter test child</reportName>
+    <visible>true</visible>
+    <metadata>
+        <location>1463377807724/1463377836985</location>
+        <metadataFileName>e9be6771-995b-40eb-a01c-304857a100a1.metadata</metadataFileName>
+    </metadata>
+    <canvas>
+        <columns><![CDATA[[{"column":"employee_details.employee_name","label":"employee_details_employee_name","id":"48l8jgh7hf4","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"employee_details_employee_name","groupBy":["db.generic.groupBy.group"]},{"column":"employee_details.address","label":"employee_details_address","id":"dtuyyb14yvr","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"employee_details_address","groupBy":["db.generic.groupBy.group"]}]]]></columns>
+    </canvas>
+    <state><![CDATA[{"columns":[{"column":"employee_details.employee_name","label":"employee_details_employee_name","id":"48l8jgh7hf4","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"employee_details_employee_name","groupBy":["db.generic.groupBy.group"]},{"column":"employee_details.address","label":"employee_details_address","id":"dtuyyb14yvr","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"employee_details_address","groupBy":["db.generic.groupBy.group"]}],"filters":[{"values":["_all_"],"mode":"auto","dataType":"numeric","valuesMode":"auto","isFilterEditable":false,"encloseInQuotes":false,"dateTimeToggle":false,"label":"employee_details_employee_id","column":"employee_details.employee_id","backendDataType":"java.lang.Integer","id":0,"condition":"IS_ONE_OF","valuesRange":{},"rangeSelectionToggole":true},{"values":["_all_"],"mode":"auto","dataType":"text","valuesMode":"auto","isFilterEditable":false,"encloseInQuotes":false,"dateTimeToggle":false,"label":"employee_details_employee_name","column":"employee_details.employee_name","backendDataType":"java.lang.String","id":1,"condition":"EQUALS","valuesRange":{},"rangeSelectionToggole":true}],"customFilterExpression":"('_all_' = '_all_') AND ('_all_' = '_all_')","customHavingExpression":"","customFilterExpressionObj":{"0":"('_all_' = '_all_')","1":"('_all_' = '_all_')"},"customHavingExpressionObj":{},"havingExpressionIndexs":{},"filterExpressionIndexs":{"0":0,"1":24},"options":{"limitBy":1000,"prependTableNameToAlias":true},"visualisation":{"type":"Table","chartGroup":"","selectedType":"Table","settings":{"script":null,"vizscriptsEditMultipleMode":false},"vizSelectedScripts":[]},"scripts":[],"styles":"","customStyles":"","customScripts":[]}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</report>

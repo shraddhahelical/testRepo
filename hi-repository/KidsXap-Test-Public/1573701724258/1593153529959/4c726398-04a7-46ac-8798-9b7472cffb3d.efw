@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efw>
+    <title>rpt_BookReveBookDt</title>
+    <author>hiadmin</author>
+    <description>Efw File</description>
+    <template>4c726398-04a7-46ac-8798-9b7472cffb3d.html</template>
+    <visible>true</visible>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</efw>

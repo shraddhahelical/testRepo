@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efw>
+    <title>QueryViewDashboard</title>
+    <author>hiadmin</author>
+    <description>Efw File</description>
+    <template>edc12772-9d9f-42f6-bc47-1abebee8d7ed.html</template>
+    <visible>true</visible>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</efw>

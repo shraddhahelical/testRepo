@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efwdd>
+    <fileName>Display Filters export issue Dashboard</fileName>
+    <efw>f4a555c2-6061-4d6a-b2f6-de451f326daf.efw</efw>
+    <visible>true</visible>
+    <description>Efw Dashboard Designer</description>
+    <state><![CDATA[{"variables":[["employee_name",["_all_"]],["address",["Bangalore","Bhubaneshwar","Delhi"]]],"components":{"izsq3hk7y4b":{"metadata":{"dir":"/z_sample/","name":"Filters display values repeating issue fixed _in pdf export"},"type":"dashboard-component","options":{"dir":"1602227113307","file":"b8d07df3-570c-4d78-96e6-f497f681c21d.report","ext":"report","compType":"Adhoc","uid":"izsq3hk7y4b","iframe":false},"uid":"izsq3hk7y4b","name":"izsq3hk7y4b","label":"Filters display values repeating issue fixed _in pdf export","executeAtStart":true,"gs_attr":{"x":12,"y":6,"height":49,"width":76}}},"dashboardConfig":{"id":"dashboard"},"css":"","script":"","printOptions":{"templateId":"Dashboard","title":"Dashboard"},"componentSettings":{"izsq3hk7y4b":{"header":true,"minimize":false,"maximize":false,"export":false,"editReport":false}},"gridWidthOption":100,"toggleIframes":false}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</efwdd>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efw>
+    <title>DynamicView_DrillDownDashboard</title>
+    <author>hiadmin</author>
+    <description>Efw File</description>
+    <template>75af5bd6-7e53-4a9b-b942-5ab6f3359f60.html</template>
+    <visible>true</visible>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</efw>

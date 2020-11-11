@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<report>
+    <reportName>DynamicView_CustomFilterExpression</reportName>
+    <visible>true</visible>
+    <metadata>
+        <location>1588851297738/1590759631807</location>
+        <metadataFileName>e8fab534-2182-4abb-a0eb-132993ea4f2d.metadata</metadataFileName>
+    </metadata>
+    <canvas>
+        <columns><![CDATA[[{"column":"DynamicView.address","label":"DynamicView_address","id":"9t3rihk2avd","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"DynamicView_address","groupBy":["db.generic.groupBy.group"]},{"column":"DynamicView.employee_name","label":"DynamicView_employee_name","id":"5phqkjkmd3t","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"DynamicView_employee_name","groupBy":["db.generic.groupBy.group"]}]]]></columns>
+    </canvas>
+    <state><![CDATA[{"columns":[{"column":"DynamicView.address","label":"DynamicView_address","id":"9t3rihk2avd","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"DynamicView_address","groupBy":["db.generic.groupBy.group"]},{"column":"DynamicView.employee_name","label":"DynamicView_employee_name","id":"5phqkjkmd3t","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"DynamicView_employee_name","groupBy":["db.generic.groupBy.group"]}],"filters":[{"values":["Bangalore"],"mode":"auto","dataType":"text","orderBy":"","valuesMode":"auto","isFilterEditable":false,"encloseInQuotes":false,"dateTimeToggle":false,"databaseFunction":{},"label":"address","column":"DynamicView.address","backendDataType":"java.lang.String","rangeValuesType":"","id":0,"condition":"EQUALS","valuesRange":{},"rangeSelectionToggole":true}],"customFilterExpression":"${0}.value='Agra'","customHavingExpression":"","customFilterExpressionObj":{"0":"${0}"},"customHavingExpressionObj":{},"havingExpressionIndexs":{},"filterExpressionIndexs":{},"options":{"limitBy":1000,"prependTableNameToAlias":true},"visualisation":{"type":"Table","chartGroup":"","selectedType":"Table","settings":{"script":null,"vizscriptsEditMultipleMode":false},"vizSelectedScripts":[]},"scripts":[],"styles":"","customStyles":"","customScripts":[]}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</report>

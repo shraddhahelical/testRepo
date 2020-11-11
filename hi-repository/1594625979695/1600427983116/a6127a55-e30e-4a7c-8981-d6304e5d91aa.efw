@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efw>
+    <title>Dashboard_LoadingIcon</title>
+    <author>hiadmin</author>
+    <description>Efw File</description>
+    <template>a6127a55-e30e-4a7c-8981-d6304e5d91aa.html</template>
+    <visible>true</visible>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</efw>

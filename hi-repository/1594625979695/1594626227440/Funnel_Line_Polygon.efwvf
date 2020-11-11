@@ -1,0 +1,236 @@
+<Charts>
+	<Chart id="1">
+        <prop>
+            <name>Funnel Line Polygon Chart</name>
+            <type>Custom</type>
+            <DataSource></DataSource>
+            <script>
+                <![CDATA[
+					var link = document.createElement("link");
+						link.rel = 'stylesheet';
+
+						if(window.DashboardGlobals)
+						link.href = window.DashboardGlobals.baseUrl+"/getExternalResource.html?path=1594625979695/1594626227440/styles.css";
+						else
+						link.href = "getExternalResource.html?path=1594625979695/1594626227440/styles.css";
+
+						document.getElementsByTagName("head")[0].appendChild(link);
+						
+						var link2 = document.createElement("link");
+						link2.rel = 'stylesheet';
+
+						if(window.DashboardGlobals)
+						link2.href = "https://fonts.googleapis.com/css?family=Lato";
+						else
+						link2.href = "https://fonts.googleapis.com/css?family=Lato";
+
+						document.getElementsByTagName("head")[0].appendChild(link2);
+
+						var script = document.createElement("script");
+						
+						if(window.DashboardGlobals)
+						script.src = window.DashboardGlobals.baseUrl+"/getExternalResource.html?path=1594625979695/1594626227440/d3_charts_library.js";
+						else
+						script.src = "getExternalResource.html?path=1594625979695/1594626227440/d3_charts_library.js";
+
+						document.getElementsByTagName("head")[0].appendChild(script);
+						
+						
+						var margin = {top: 20, right: 20, bottom: 70, left: 40},
+							width = 600 - margin.left - margin.right,
+							height = 250 - margin.top - margin.bottom;
+
+							
+						var svg = d3.select("#chart_1").append("svg")
+									.attr("preserveAspectRatio", "xMinYMin meet")
+									.attr("viewBox", "0 0 600 250")
+									.append("g")
+									.attr("transform", 
+									"translate(" + margin.left + "," + margin.top + ")");
+							
+							const selectedData = data;
+							console.log("Data: "+JSON.stringify(selectedData));
+							selectedData.forEach(function(d) {
+								d.stage =d.stage;
+								d.value = +d.value;
+								d.id=d.id;
+							});
+							
+						var x = d3.scale.ordinal().domain(selectedData.map(function(d) { return d.id; })).rangeRoundBands([0, width], .10);
+						var y = d3.scale.linear().domain([0, d3.max(selectedData, function(d) { return d.value; })]).range([height, 0]);
+
+
+						//These are x,y axis dont remove unless you dont want them.
+/*						
+						svg.append("g")
+							.attr("class", "x axis")
+							.attr("transform", "translate(0," + height + ")")
+							.call(d3.axisBottom().scale(x))
+							.selectAll("text")
+							.attr('opacity', 1);
+
+						svg.append("g")
+							.attr("class", "y axis")
+							.call(d3.axisLeft().scale(y))
+							.append("text")
+							.attr('opacity', 0);
+						*/
+						var circle_id = -1;
+						svg.selectAll("circle")
+							.data(selectedData)
+							.enter().append("circle")
+							.attr("class", function(d) { 
+												circle_id = circle_id+1;
+												return "data-circle data-circle-" + circle_id;
+											})
+							.attr("r", 2)
+							.attr("cx", function(d) { return x(d.id); })
+							.attr("cy", function(d) { return y(d.value); });
+
+						
+						svg.selectAll("line-circle")
+							.data(selectedData)
+							.enter().append("line")
+							.attr("class", "data-lines")
+							.attr("x1", function(d) {if(d.stage != 'Actively Enrolled Endpoint'){return x(d.id);} })
+							.attr("y1", function(d) {if(d.stage != 'Actively Enrolled Endpoint'){return height;} })
+							.attr("x2", function(d) {if(d.stage != 'Actively Enrolled Endpoint'){return x(d.id);} }) 
+							.attr("y2", function(d) {if(d.stage != 'Actively Enrolled Endpoint'){return 0;} });
+						svg.append("line")
+							.attr("class","data-lines")
+							.attr("x1",10)
+							.attr("y1",height)
+							.attr("x2",width-90)
+							.attr("y2",height);
+							
+
+						d3.selectAll(".data-circle").call(drawPolygon);
+						function drawPolygon(circle) {
+									var i = 0;
+									var colors = ["#E2EFF9","#CCE4F5","#B5D8F0","#5AA7DE","#2D8FD5"];
+									circle.each(function (d) {
+										//console.log("data["+i+"] :"+data[i].id+" "+data[i].value);
+										
+										cx0 = x(selectedData[i].id);
+										cy0 = y(selectedData[i].value);
+										
+										cx1 = x(selectedData[i].id);
+										cy1 = y(0);
+										var j=i;
+										i=i+1;
+										
+										nextPoint = d3.select(".data-circle-"+i);
+										
+										if (nextPoint.size() != 0) {
+											
+											//console.log("data["+i+"] :"+data[i].id+" "+data[i].value);
+											
+											cx2 = x(selectedData[i].id);
+											cy2 = y(0);
+									
+											cx3 = x(selectedData[i].id);
+											cy3 = y(selectedData[i].value); 
+										} else {
+											cx2 = width;
+											cy2 = y(0);
+
+											cx3 = width;
+											cy3 = y(0); 
+											
+										}
+
+										var polypoints = cx0+","+cy0+","+cx1+","+cy1+","+cx2+","+cy2+","+cx3+","+cy3;
+										
+										//console.log("polygon points: " + polypoints);
+										if(d.stage != 'Actively Enrolled Endpoint'){
+										svg.append("polygon")
+											.attr("points",polypoints)
+											.style("fill",colors[j]);
+										}
+										  
+
+									});
+								}
+								
+						const getNavigatorLanguage = (navigator.languages && navigator.languages.length) ? navigator.languages[0] : navigator.userLanguage || navigator.language || navigator.browserLanguage || 'en-US';					
+						svg.selectAll("line-circle")
+							.data(selectedData)
+							.enter().append("text")
+							.attr("class", "lines-value")
+							.attr('x',function(d) { return x(d.id); })
+							.attr('y',30)
+							.attr('dx',4)
+							.text(function(d) { if(d.stage!='Actively Enrolled Endpoint'){return d.value.toLocaleString(getNavigatorLanguage);} });	
+						
+						function wrap(text, width) {
+							text.each(function () {
+								var text = d3.select(this),
+									words = text.text().split(/\s+/).reverse(),
+									word,
+									line = [],
+									lineNumber = 0,
+									lineHeight = 1.1, // ems
+									x = text.attr("x"),
+									y = text.attr("y"),
+									dy = 0, //parseFloat(text.attr("dy")),
+									tspan = text.text(null)
+												.append("tspan")
+												.attr("x", x)
+												.attr("y", y)
+												.attr("dy", dy + "em");
+								while (word = words.pop()) {
+									line.push(word);
+									tspan.text(line.join(" "));
+									if (tspan.node().getComputedTextLength() > width) {
+										line.pop();
+										if(line.length>0){
+										tspan.text(line.join(" "));
+										line = [word];
+										tspan = text.append("tspan")
+													.attr("x", x)
+													.attr("y", y)
+													.attr("dy", ++lineNumber * lineHeight + dy + "em")
+													.attr('dx',4)
+													.text(word);
+										}
+									}
+								}
+							});
+						}
+						
+						svg.selectAll("line-circle")
+							.data(selectedData)
+							.enter().append("text")
+							.attr("class", "lines-text")
+							.attr('x',function(d) { return x(d.id); })
+							.text(function(d) { if(d.stage!='Actively Enrolled Endpoint'){return d.stage;} })
+							.call(wrap,45,function(d) { if(d.stage!='Actively Enrolled Endpoint'){return d.stage;}})
+							.attr('y',4)
+							.attr('dx',4);
+
+						svg.append('line').attr("class", "data-lines").attr('x1',54).attr('y1',180).attr('x2',54).attr('y2',163);
+						svg.append('line').attr("class", "data-lines").attr('x1',54).attr('y1',180).attr('x2',230).attr('y2',180);
+						svg.append('line').attr("class", "data-lines").attr('x1',230).attr('y1',180).attr('x2',230).attr('y2',163);
+						svg.append('line').attr("class", "data-lines").attr('x1',274).attr('y1',180).attr('x2',274).attr('y2',163);
+						svg.append('line').attr("class", "data-lines").attr('x1',362).attr('y1',180).attr('x2',362).attr('y2',163);
+						svg.append('line').attr("class", "data-lines").attr('x1',274).attr('y1',180).attr('x2',362).attr('y2',180);
+						svg.append('line').attr("class", "data-lines").attr('x1',142).attr('y1',180).attr('x2',142).attr('y2',197);
+						svg.append('line').attr("class", "data-lines").attr('x1',318).attr('y1',180).attr('x2',318).attr('y2',197);
+						
+						svg.append("polygon").attr("class", "data-polygon").attr("points", "138,197 142,200 142,200 146,197");
+						svg.append("polygon").attr("class", "data-polygon").attr("points", "314,197 318,200 318,200 322,197");
+						svg.append("text").attr('x',105).attr('y',210).attr("class", "fr-text").text('Pre-Screen Failure Rate');
+						var add_prescreen_fr=true;
+						svg.selectAll("line-circle").data(selectedData).enter().append("text").attr('x',135).attr('y',225).attr("class", "fr-value").text(function(d) {if(add_prescreen_fr && d.stage==='Pre-Screening'){add_prescreen_fr=false; return d.prescreen_fr+'%';} });
+						svg.append("text").attr('x',290).attr('y',210).attr("class", "fr-text").text('Screen Failure Rate');
+						var add_screen_fr=true;
+						svg.selectAll("line-circle").data(selectedData).enter().append("text").attr('x',312).attr('y',225).attr("class", "fr-value").text(function(d) {if(add_screen_fr  && d.stage==='In-Screening'){add_screen_fr=false; return d.screen_fr+'%';} });							
+						
+
+		
+				]]>
+            </script>
+        </prop>
+    </Chart>
+</Charts>	
+	

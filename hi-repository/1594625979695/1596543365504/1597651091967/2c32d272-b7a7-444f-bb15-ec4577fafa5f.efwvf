@@ -1,0 +1,729 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Charts>
+    <Chart id="1">
+        <prop>
+            <name>failure_ParentTable</name>
+            <type>Custom</type>
+            <DataSource>1</DataSource>
+            <script><![CDATA[if (data.length == 0) {
+			    $('#chart_1').html("<div ><h4 style='font-family:Lato;text-align:CENTER;color:#777d94; padding-top:80px;'>No Data Available For Current Selection</h4></div>");
+			    return;
+} else {
+var link = document.createElement("link");
+				  link.rel = "stylesheet";
+				  
+				  if(window.DashboardGlobals)
+						link.href = window.DashboardGlobals.baseUrl+"/getExternalResource.html?path=1594625979695/1600153490910/jquery.dataTables.css";				
+					else
+						link.href = "getExternalResource.html?path=1594625979695/1600153490910/jquery.dataTables.css";
+				  
+				
+				 document.getElementsByTagName("head")[0].appendChild(link);
+				 var link2 = document.createElement("link");
+				 link2.rel = 'stylesheet';
+				if(window.DashboardGlobals)
+				link2.href = "https://fonts.googleapis.com/css?family=Lato";
+				else
+				link2.href = "https://fonts.googleapis.com/css?family=Lato";
+
+				document.getElementsByTagName("head")[0].appendChild(link2);
+				 
+				 
+				   var script = document.createElement("script");
+				   scriptLoaded = false;
+				   
+					if(window.DashboardGlobals)
+						script.src = window.DashboardGlobals.baseUrl+"/getExternalResource.html?path=1594625979695/1600153490910/jquery.dataTables.min.js";				
+					else
+						script.src = "getExternalResource.html?path=1594625979695/1600153490910/jquery.dataTables.min.js";
+				 
+				 script.async = false;
+				 document.getElementsByTagName("head")[0].appendChild(script);
+
+                                var column_index=[];
+								var flag;
+								function tabulate(elem, data, columns) {	
+								var table = d3.select(elem).append("table")	
+								.attr("class"," table display compact width:100%;cellspacing:1 ")
+								.attr("id","table")
+								thead = table.append("thead"),
+								tbody = table.append("tbody");
+
+
+								// append the header row
+								thead.append("tr")
+								.selectAll("th")
+								.data(columns)
+								.enter()
+								.append("th")
+								.text(function(column) { return column; })
+								.attr('class', function(d, i){ return "colH_" + i; })
+								.style('background-color','#f6f6f6')
+								//.style('font-size','13px')
+								.style('font-weight', 'normal')
+								.style('font-family', 'Lato')
+								.style('color','#777d94')
+								//.style('border-left','1px solid #d2cfcf75')
+								.style('text-align','left')
+								//.style('padding-bottom','10px')
+								//.style('@media print','display:none')
+								//.style('padding-left','25px')
+								.style('min-width','10rem')
+								.style('padding','1rem')
+
+
+								// create a row for each object in the data
+								var rows = tbody.selectAll("tr")
+								.data(data)
+								.enter()
+								.append("tr");
+
+								// create a cell in each row for each column
+								var cells = rows.selectAll("td")
+								.data(function(row) {
+								return columns.map(function(column) {
+								return {column: column, value: row[column]};
+								});
+								})
+								.enter()
+								.append("td")
+								.text(function(d) { return d.value; })
+								.attr('class', function(d, i){ return "col_" + i; })
+								//.attr('align', 'center')
+								.style('color','#777d94')
+								//.style('font-size','13px')
+								.style('font-weight', 'normal')
+								.style('font-family', 'Lato')
+								.style('vertical-align', 'middle')
+								.style('padding', '1.5rem')
+								
+								return table;
+								}	
+
+								// render the table
+								var subjectTable = tabulate( '#chart_1', data, Object.keys(data[0]));	
+								
+							  script.onload = function(){
+
+								
+								var firstrecord=true;
+								var firstValue = 0;
+								var localizedData=0;
+								//const getNavigatorLanguage='en-US';
+								const getNavigatorLanguage = (navigator.languages && navigator.languages.length) ? navigator.languages[0] : navigator.userLanguage || navigator.language || navigator.browserLanguage || 'en-US';
+								const urlString = window.location.search;
+								const urlParams = new URLSearchParams(urlString);
+								console.log("URL has pageLength: ",urlParams.has('pageLength'));
+								console.log("pageLength: ",urlParams.get('pageLength'));
+								if(urlParams.has('pageLength'))
+								var pageLength=parseInt(urlParams.get('pageLength'));
+								else
+								var pageLength=50;
+								console.log("Data Length: ",data.length);
+								if(data.length > pageLength)
+								var paging=true
+								else
+								var paging=false
+								$(document).ready(function() {	
+								table = $('#table').DataTable({
+									//"deferRender": true,
+									"pageLength": pageLength,
+									"lengthChange": false,
+									//"pagingType": "full_numbers",
+									//"lengthMenu": [[25, 10, 25, 50, -1], [10, 10, 25, 50, "All"]],
+									"paging": paging,
+									"jQueryUI": true,
+									"ordering": false,
+									"info": true,
+									//"bFilter": false,
+									autoWidth: false,
+									"columns": [
+									{
+										"title":"",
+										"sortable":false,
+										"width":'96px',
+										"render": function(data, type, row, meta){
+											
+											for(var i = 0; i < Object.keys(data).length; i++){
+												if(firstrecord){
+													firstValue = Math.round((120/data + Number.EPSILON)*100)/100;
+													firstrecord=false;
+													return $("<div class='bar-chart-bar' id='main-table-bars'></div>", {
+													}).css({
+														"width": '120px',
+														"background-color": '#85000b'
+													}).prop("outerHTML")
+												}												
+												else{
+													var remainValues = Math.round((firstValue*data + Number.EPSILON)*100)/100;
+													var backColor='#fef8f9';
+												    if(remainValues>90){
+												    backColor='#85000b';
+												    }
+												    else if(remainValues>80&&remainValues<=90){
+												    backColor='#d2202f';
+												    }
+												    else if(remainValues>70&&remainValues<=80){
+												    backColor='#df5f6a';
+												    }
+												    else if(remainValues>60&&remainValues<=70){
+												    backColor='#e6838b';
+												    }
+												    else if(remainValues>50&&remainValues<=60){
+												    backColor='#ec9ea5';
+												    }
+												    else if(remainValues>40&&remainValues<=50){
+												    backColor='#f0b5ba';
+												    }
+												    else if(remainValues>30&&remainValues<=40){
+												    backColor='#f4c8cc';
+												    }
+												    else if(remainValues>20&&remainValues<=30){
+												    backColor='#f8dadc';
+												    }
+												    else if(remainValues>10&&remainValues<=20){
+												    backColor='#fbe9eb';
+												    }
+												    else if(remainValues=>0&&remainValues<=10){
+												    backColor='#fef8f9';
+												    }
+													return $("<div class='bar-chart-bar'></div>", {
+													}).css({
+														"width": remainValues+'px',
+														"background-color": backColor
+													}).prop("outerHTML")	
+												}
+											}
+											
+										}
+									},
+									{
+										"type": "html",
+										"title":"# of Patients",
+										"width":'120px',
+										"render":function(data){
+											return getLanguage(parseInt(data));
+										}
+										
+									},
+									{
+										"title":"Percentage",
+										"width":'120px',
+									},
+									{
+										"title":"Failed Criteria",
+										"width":'120px',
+										"render":function(data){
+											return "<div><span   class='criteria-failure-codes'>"+data+"</span></div>"
+										}
+									},
+									{
+										"title":"",
+										"className": "text-left",
+										"render":function(data, type, row, meta){
+											var data=decodeHTML(data);
+											var showChar = 200;
+											var openDet=false;
+											var actualshowChar=data.indexOf(' ', showChar);
+											if(actualshowChar!=-1) {
+												var frontString = data.substr(0, actualshowChar);
+												var backString = data.substr(actualshowChar, data.length);
+												var html='<details style=" font-family: Lato; cursor: pointer;">'+backString+'<summary style=" font-family: Lato;">'+frontString+'<span class="elipsisSpan">...</span></summary></details>';
+												return html.toString();
+												
+											}
+											else{
+												return data;
+											}
+											
+										}									
+									}
+									]
+								});
+								
+								function getLanguage(localizedData){
+									return localizedData.toLocaleString(getNavigatorLanguage) 
+								}
+								
+								function decodeHTML(encodedHTML){ return $('<div>').html(encodedHTML).text(); }
+								
+								const details = document.querySelectorAll("details");
+								details.forEach((targetDetail) => {
+								  targetDetail.addEventListener("click", () => {
+									// Close all the details that are not targetDetail.
+									details.forEach((detail) => {
+									  if (detail !== targetDetail) {
+										detail.removeAttribute("open");
+									  }
+									});
+								  });
+								});
+
+								});	
+								 
+		  }
+}]]></script>
+        </prop>
+    </Chart>
+    <Chart id="2">
+        <prop>
+            <name>failure_by_site</name>
+            <type>Custom</type>
+            <DataSource>4</DataSource>
+            <script><![CDATA[if (data.length == 0) {
+			    $('#chart_2').html("<div ><h4 style='font-family:Lato;text-align:CENTER;color:#777d94; padding-top:60px;'>No Data Available For Current Selection</h4></div>");
+			    return;
+} else {
+var link = document.createElement("link");
+				  link.rel = "stylesheet";
+				  
+				  if(window.DashboardGlobals)
+						link.href = window.DashboardGlobals.baseUrl+"/getExternalResource.html?path=1594625979695/1600153490910/jquery.dataTables.css";				
+					else
+						link.href = "getExternalResource.html?path=1594625979695/1600153490910/jquery.dataTables.css";
+				  
+				
+				 document.getElementsByTagName("head")[0].appendChild(link);
+				 var link2 = document.createElement("link");
+				 link2.rel = 'stylesheet';
+				if(window.DashboardGlobals)
+				link2.href = "https://fonts.googleapis.com/css?family=Lato";
+				else
+				link2.href = "https://fonts.googleapis.com/css?family=Lato";
+
+				document.getElementsByTagName("head")[0].appendChild(link2);
+				 
+				 
+				   var script = document.createElement("script");
+				   scriptLoaded = false;
+				   
+					if(window.DashboardGlobals)
+						script.src = window.DashboardGlobals.baseUrl+"/getExternalResource.html?path=1594625979695/1600153490910/jquery.dataTables.min.js";				
+					else
+						script.src = "getExternalResource.html?path=1594625979695/1600153490910/jquery.dataTables.min.js";
+				 
+				 script.async = false;
+				 document.getElementsByTagName("head")[0].appendChild(script);
+
+                                var column_index=[];
+								var flag;
+								function tabulate(elem, data, columns) {	
+								var table = d3.select(elem).append("table")	
+								.attr("class"," table display compact width:100%;cellspacing:1 ")
+								.attr("id","table_child")
+								thead = table.append("thead"),
+								tbody = table.append("tbody");
+
+
+								
+								// append the header row
+								thead.append("tr")
+								.selectAll("th")
+								.data(columns)
+								.enter()
+								.append("th")
+								.text(function(column) { return column; })
+								.attr('class', function(d, i){ return "colH_" + i; })
+								.style('background-color','#f6f6f6')
+								//.style('font-size','13px')
+								.style('font-weight', 'normal')
+								.style('font-family', 'Lato')
+								.style('color','#777d94')
+								//.style('border-left','1px solid #d2cfcf75')
+								.style('text-align','left')
+								//.style('padding-bottom','10px')
+								//.style('@media print','display:none')
+								//.style('padding-left','25px')
+								.style('min-width','10rem')
+								.style('padding','1rem');
+								
+
+
+								// create a row for each object in the data
+								var rows = tbody.selectAll("tr")
+								.data(data)
+								.enter()
+								.append("tr");
+
+								// create a cell in each row for each column
+								var cells = rows.selectAll("td")
+								.data(function(row) {
+								return columns.map(function(column) {
+								return {column: column, value: row[column]};
+								});
+								})
+								.enter()
+								.append("td")
+								.text(function(d) { return d.value; })
+								.attr('class', function(d, i){ return "col_" + i; })
+								//.attr('align', 'center')
+								.style('color','#777d94')
+								//.style('font-size','13px')
+								.style('font-weight', 'normal')
+								.style('font-family', 'Lato')
+								.style('vertical-align', 'middle')
+								.style('padding', '1.5rem')
+								
+								return table;
+								}	
+
+								// render the table
+								var subjectTable = tabulate( '#chart_2', data, Object.keys(data[0]));	
+								
+							  script.onload = function(){
+
+								
+								var firstrecord=true;
+								var firstValue = 0;
+								var localizedData=0;
+								//const getNavigatorLanguage='en-US';
+								const getNavigatorLanguage = (navigator.languages && navigator.languages.length) ? navigator.languages[0] : navigator.userLanguage || navigator.language || navigator.browserLanguage || 'en-US';
+								const urlString = window.location.search;
+								const urlParams = new URLSearchParams(urlString);
+								if(urlParams.has('pageLength'))
+								var pageLength=parseInt(urlParams.get('pageLength'));
+								else
+								var pageLength=50;
+								console.log("Data Length: ",data.length);
+								if(data.length > pageLength)
+								var paging=true
+								else
+								var paging=false
+								$(document).ready(function() {
+								console.log("Inside Ready: ");
+								var table_by_store = $('#table_child').DataTable({
+									//"deferRender": true,
+									"pageLength": pageLength,
+									"lengthChange": false,
+									//"pagingType": "full_numbers",
+									//"lengthMenu": [[25, 10, 25, 50, -1], [10, 10, 25, 50, "All"]],
+									"paging": paging,
+									"jQueryUI": true,
+									"ordering": false,
+									"info": true,
+									"bFilter": false,
+									autoWidth: false,
+									"columns": [
+									{
+										"title":"",
+										"sortable":false,
+										"width":'96px',
+										"render": function(data, type, row, meta){
+											for(var i = 0; i < Object.keys(data).length; i++){
+												
+												if(firstrecord){
+													firstValue = Math.round((120/data + Number.EPSILON)*100)/100;
+													firstrecord=false;
+													return $("<div class='bar-chart-bar'></div>", {
+													}).css({
+														"width": '120px',
+														"background-color": '#85000b'
+													}).prop("outerHTML")
+												}												
+												else{
+													var remainValues = Math.round((firstValue*data + Number.EPSILON)*100)/100;
+													var backColor='#fef8f9';
+												    if(remainValues>90){
+												    backColor='#85000b';
+												    }
+												    else if(remainValues>80&&remainValues<=90){
+												    backColor='#d2202f';
+												    }
+												    else if(remainValues>70&&remainValues<=80){
+												    backColor='#df5f6a';
+												    }
+												    else if(remainValues>60&&remainValues<=70){
+												    backColor='#e6838b';
+												    }
+												    else if(remainValues>50&&remainValues<=60){
+												    backColor='#ec9ea5';
+												    }
+												    else if(remainValues>40&&remainValues<=50){
+												    backColor='#f0b5ba';
+												    }
+												    else if(remainValues>30&&remainValues<=40){
+												    backColor='#f4c8cc';
+												    }
+												    else if(remainValues>20&&remainValues<=30){
+												    backColor='#f8dadc';
+												    }
+												    else if(remainValues>10&&remainValues<=20){
+												    backColor='#fbe9eb';
+												    }
+												    else if(remainValues=>0&&remainValues<=10){
+												    backColor='#fef8f9';
+												    }
+													return $("<div class='bar-chart-bar'></div>", {
+													}).css({
+														"width": remainValues+'px',
+														"background-color": backColor
+													}).prop("outerHTML")	
+												}
+											}
+											
+										}
+									},
+									{
+										"type": "html",
+										"title":"",
+										"width":'120px',
+										"render":function(data){
+											return getLanguage(parseInt(data));
+										}
+										
+									},
+									{
+										"title":"",
+										"width":'120px',
+									},
+									{
+										"className": "text-left"
+									}
+									]
+								});
+								
+								function getLanguage(localizedData){
+									return localizedData.toLocaleString(getNavigatorLanguage) 
+								}
+								
+								function decodeHTML(encodedHTML){ return $('<div>').html(encodedHTML).text(); }
+
+
+
+								
+								});	
+								 
+		  }
+}]]></script>
+        </prop>
+    </Chart>
+    <Chart id="3">
+        <prop>
+            <name>failure_by_country</name>
+            <type>Custom</type>
+            <DataSource>5</DataSource>
+            <script><![CDATA[if (data.length == 0) {
+			    $('#chart_3').html("<div ><h4 style='font-family:Lato;text-align:CENTER;color:#777d94; padding-top:60px;'>No Data Available For Current Selection</h4></div>");
+			    return;
+} else {
+var link = document.createElement("link");
+				  link.rel = "stylesheet";
+				  
+				  if(window.DashboardGlobals)
+						link.href = window.DashboardGlobals.baseUrl+"/getExternalResource.html?path=1594625979695/1600153490910/jquery.dataTables.css";				
+					else
+						link.href = "getExternalResource.html?path=1594625979695/1600153490910/jquery.dataTables.css";
+				  
+				
+				 document.getElementsByTagName("head")[0].appendChild(link);
+				 var link2 = document.createElement("link");
+				 link2.rel = 'stylesheet';
+				if(window.DashboardGlobals)
+				link2.href = "https://fonts.googleapis.com/css?family=Lato";
+				else
+				link2.href = "https://fonts.googleapis.com/css?family=Lato";
+
+				document.getElementsByTagName("head")[0].appendChild(link2);
+				 
+				 
+				   var script = document.createElement("script");
+				   scriptLoaded = false;
+				   
+					if(window.DashboardGlobals)
+						script.src = window.DashboardGlobals.baseUrl+"/getExternalResource.html?path=1594625979695/1600153490910/jquery.dataTables.min.js";				
+					else
+						script.src = "getExternalResource.html?path=1594625979695/1600153490910/jquery.dataTables.min.js";
+				 
+				 script.async = false;
+				 document.getElementsByTagName("head")[0].appendChild(script);
+
+                                var column_index=[];
+								var flag;
+								function tabulate(elem, data, columns) {	
+								var table = d3.select(elem).append("table")	
+								.attr("class"," table display compact width:100%;cellspacing:1 ")
+								.attr("id","table_child2")
+								thead = table.append("thead"),
+								tbody = table.append("tbody");
+
+
+								// append the header row
+								thead.append("tr")
+								.selectAll("th")
+								.data(columns)
+								.enter()
+								.append("th")
+								.text(function(column) { return column; })
+								.attr('class', function(d, i){ return "colH_" + i; })
+								.style('background-color','#f6f6f6')
+								//.style('font-size','13px')
+								.style('font-weight', 'normal')
+								.style('font-family', 'Lato')
+								.style('color','#777d94')
+								//.style('border-left','1px solid #d2cfcf75')
+								.style('text-align','left')
+								//.style('padding-bottom','10px')
+								//.style('@media print','display:none')
+								//.style('padding-left','25px')
+								.style('min-width','10rem')
+								.style('padding','1rem')
+
+
+								// create a row for each object in the data
+								var rows = tbody.selectAll("tr")
+								.data(data)
+								.enter()
+								.append("tr");
+
+								// create a cell in each row for each column
+								var cells = rows.selectAll("td")
+								.data(function(row) {
+								return columns.map(function(column) {
+								return {column: column, value: row[column]};
+								});
+								})
+								.enter()
+								.append("td")
+								.text(function(d) { return d.value; })
+								.attr('class', function(d, i){ return "col_" + i; })
+								//.attr('align', 'center')
+								.style('color','#777d94')
+								//.style('font-size','13px')
+								.style('font-weight', 'normal')
+								.style('font-family', 'Lato')
+								.style('vertical-align', 'middle')
+								.style('padding', '1.5rem')
+								
+								return table;
+								}	
+
+								// render the table
+								var subjectTable = tabulate( '#chart_3', data, Object.keys(data[0]));	
+								
+							  script.onload = function(){
+
+								
+								var firstrecord=true;
+								var firstValue = 0;
+								var localizedData=0;
+								//const getNavigatorLanguage='en-US';
+								const getNavigatorLanguage = (navigator.languages && navigator.languages.length) ? navigator.languages[0] : navigator.userLanguage || navigator.language || navigator.browserLanguage || 'en-US';
+								const urlString = window.location.search;
+								const urlParams = new URLSearchParams(urlString);
+								if(urlParams.has('pageLength'))
+								var pageLength=parseInt(urlParams.get('pageLength'));
+								else
+								var pageLength=50;
+								if(data.length > pageLength)
+								var paging=true
+								else
+								var paging=false
+								$(document).ready(function() {
+								console.log("Inside Ready: ");
+								var table_by_store = $('#table_child2').DataTable({
+									//"deferRender": true,
+									"pageLength": pageLength,
+									"lengthChange": false,
+									//"pagingType": "full_numbers",
+									//"lengthMenu": [[25, 10, 25, 50, -1], [10, 10, 25, 50, "All"]],
+									"paging": paging,
+									"jQueryUI": true,
+									"ordering": false,
+									"info": true,
+									"bFilter": false,
+									autoWidth: false,
+									"columns": [
+									{
+										"title":"",
+										"sortable":false,
+										"width":'96px',
+										"render": function(data, type, row, meta){
+											for(var i = 0; i < Object.keys(data).length; i++){
+												
+												if(firstrecord){
+													firstValue = Math.round((120/data + Number.EPSILON)*100)/100;
+													firstrecord=false;
+													return $("<div class='bar-chart-bar'></div>", {
+													}).css({
+														"width": '120px',
+														"background-color": '#85000b'
+													}).prop("outerHTML")
+												}												
+												else{
+													var remainValues = Math.round((firstValue*data + Number.EPSILON)*100)/100;
+													var backColor='#fef8f9';
+												    if(remainValues>90){
+												    backColor='#85000b';
+												    }
+												    else if(remainValues>80&&remainValues<=90){
+												    backColor='#d2202f';
+												    }
+												    else if(remainValues>70&&remainValues<=80){
+												    backColor='#df5f6a';
+												    }
+												    else if(remainValues>60&&remainValues<=70){
+												    backColor='#e6838b';
+												    }
+												    else if(remainValues>50&&remainValues<=60){
+												    backColor='#ec9ea5';
+												    }
+												    else if(remainValues>40&&remainValues<=50){
+												    backColor='#f0b5ba';
+												    }
+												    else if(remainValues>30&&remainValues<=40){
+												    backColor='#f4c8cc';
+												    }
+												    else if(remainValues>20&&remainValues<=30){
+												    backColor='#f8dadc';
+												    }
+												    else if(remainValues>10&&remainValues<=20){
+												    backColor='#fbe9eb';
+												    }
+												    else if(remainValues=>0&&remainValues<=10){
+												    backColor='#fef8f9';
+												    }
+													return $("<div class='bar-chart-bar'></div>", {
+													}).css({
+														"width": remainValues+'px',
+														"background-color": backColor
+													}).prop("outerHTML")	
+												}
+											}
+											
+										}
+									},
+									{
+										"type": "html",
+										"title":"",
+										"width":'120px',
+										"render":function(data){
+											return getLanguage(parseInt(data));
+										}
+										
+									},
+									{
+										"title":"",
+										"width":'120px',
+									},
+									{
+										"className": "text-left"
+									}
+									]
+								});
+								
+								function getLanguage(localizedData){
+									return localizedData.toLocaleString(getNavigatorLanguage) 
+								}
+								
+								function decodeHTML(encodedHTML){ return $('<div>').html(encodedHTML).text(); }
+
+
+
+								
+								});	
+								 
+		  }
+}]]></script>
+        </prop>
+    </Chart>
+</Charts>

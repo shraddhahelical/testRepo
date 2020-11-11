@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<report>
+    <reportName>SqliteDBQueryViewReport</reportName>
+    <visible>true</visible>
+    <metadata>
+        <location>1588851297738/1591593846496</location>
+        <metadataFileName>83696dfe-1ff7-410d-b941-a47f20c154a7.metadata</metadataFileName>
+    </metadata>
+    <canvas>
+        <columns><![CDATA[[{"column":"SqliteDBQueryView.cancellation_reason","label":"SqliteDBQueryView_cancellation_reason","id":"purf8yodn2m","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"SqliteDBQueryView_cancellation_reason","groupBy":["db.generic.groupBy.group"]},{"column":"SqliteDBQueryView.client_name","label":"SqliteDBQueryView_client_name","id":"r8h4b46lme","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"SqliteDBQueryView_client_name","groupBy":["db.generic.groupBy.group"]}]]]></columns>
+    </canvas>
+    <state><![CDATA[{"columns":[{"column":"SqliteDBQueryView.cancellation_reason","label":"SqliteDBQueryView_cancellation_reason","id":"purf8yodn2m","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"SqliteDBQueryView_cancellation_reason","groupBy":["db.generic.groupBy.group"]},{"column":"SqliteDBQueryView.client_name","label":"SqliteDBQueryView_client_name","id":"r8h4b46lme","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"SqliteDBQueryView_client_name","groupBy":["db.generic.groupBy.group"]}],"filters":[],"customFilterExpression":"","customHavingExpression":"","customFilterExpressionObj":{},"customHavingExpressionObj":{},"havingExpressionIndexs":{},"filterExpressionIndexs":{},"options":{"limitBy":1000,"prependTableNameToAlias":true},"visualisation":{"type":"Table","chartGroup":"","selectedType":"Table","settings":{"script":null,"vizscriptsEditMultipleMode":false},"vizSelectedScripts":[]},"scripts":[],"styles":"","customStyles":"","customScripts":[]}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</report>

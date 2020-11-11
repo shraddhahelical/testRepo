@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efw>
+    <title>parameter</title>
+    <author>hiadmin</author>
+    <description>Efw File</description>
+    <template>3d995a34-4ccf-4b35-b617-944205fc2841.html</template>
+    <visible>true</visible>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</efw>

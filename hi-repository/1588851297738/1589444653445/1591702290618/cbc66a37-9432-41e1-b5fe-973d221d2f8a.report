@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<report>
+    <reportName>report</reportName>
+    <visible>true</visible>
+    <metadata>
+        <location>1588851297738/1589444653445/1590651742641</location>
+        <metadataFileName>55176731-1523-48d1-8a2d-f0f6cbad1678.metadata</metadataFileName>
+    </metadata>
+    <canvas>
+        <columns><![CDATA[[{"column":"SampleBusinees.travel_date","label":"travel_date","id":"92r9js5tl0a","type":{"dataType":"dateTime","backendDatatype":"java.sql.Timestamp"},"autogen_alias":"travel_date","groupBy":["db.generic.groupBy.group"]}]]]></columns>
+    </canvas>
+    <state><![CDATA[{"columns":[{"column":"SampleBusinees.travel_date","label":"travel_date","id":"92r9js5tl0a","type":{"dataType":"dateTime","backendDatatype":"java.sql.Timestamp"},"autogen_alias":"travel_date","groupBy":["db.generic.groupBy.group"]}],"filters":[{"values":["2015-01-02 13:50:00.0"],"mode":"auto","dataType":"dateTime","valuesMode":"auto","isFilterEditable":false,"encloseInQuotes":false,"dateTimeToggle":false,"label":"travel_date","column":"SampleBusinees.travel_date","backendDataType":"java.sql.Timestamp","id":0,"condition":"IS_LESS_THAN","valuesRange":{},"rangeSelectionToggole":true},{"values":["2015-01-16 07:23:00.0"],"mode":"auto","dataType":"dateTime","valuesMode":"auto","isFilterEditable":false,"encloseInQuotes":false,"dateTimeToggle":false,"label":"travel_date_1","column":"SampleBusinees.travel_date","backendDataType":"java.sql.Timestamp","id":1,"condition":"IS_GREATER_THAN","valuesRange":{},"rangeSelectionToggole":true}],"customFilterExpression":"( ${0} OR 1=1 ) AND ( ${1} OR 1=1 )","customHavingExpression":"","customFilterExpressionObj":{"0":"${0}","1":"${1}"},"customHavingExpressionObj":{},"havingExpressionIndexs":{},"filterExpressionIndexs":{},"options":{"limitBy":1000,"prependTableNameToAlias":false},"visualisation":{"type":"Table","chartGroup":"","selectedType":"Table","settings":{"script":null,"vizscriptsEditMultipleMode":false},"vizSelectedScripts":[]},"scripts":[],"styles":"","customStyles":"","customScripts":[]}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</report>

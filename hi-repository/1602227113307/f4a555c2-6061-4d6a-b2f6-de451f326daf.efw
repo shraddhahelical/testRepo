@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efw>
+    <title>Display Filters export issue Dashboard</title>
+    <author>hiadmin</author>
+    <description>Efw File</description>
+    <template>f4a555c2-6061-4d6a-b2f6-de451f326daf.html</template>
+    <visible>true</visible>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</efw>

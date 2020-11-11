@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efwdd>
+    <fileName>CheckBoxDashboard</fileName>
+    <efw>8e86109b-3035-46b7-bc0c-2d7c2f7c1697.efw</efw>
+    <visible>true</visible>
+    <description>Efw Dashboard Designer</description>
+    <state><![CDATA[{"variables":[["employee_name","_all_"]],"components":{"k314e2w8xre":{"gs_attr":{"x":15,"y":9,"height":31,"width":31},"name":"k314e2w8xre","metadata":{"dir":"/Sample_for_All/","name":"report"},"uid":"k314e2w8xre","label":"report","requestParameters":{"employee_name":"employee_name"},"executeAtStart":true,"type":"dashboard-component","options":{"dir":"1599484815885","file":"5371d549-4cb1-4c44-8009-2a9d015df6d8.report","ext":"report","compType":"Adhoc","uid":"k314e2w8xre","iframe":false},"listeners":["employee_name"]},"k8lrufnza8q":{"gs_attr":{"x":15,"y":1,"height":5,"width":32},"dataType":"text","orderBy":"","dataSource":{"location":"1463377807724/1463377836985","metadataFileName":"e9be6771-995b-40eb-a01c-304857a100a1.metadata"},"parameters":["employee_name"],"name":"k8lrufnza8q","uid":"k8lrufnza8q","alias":"employee_details_employee_name","databaseFunction":{},"label":"","column":"employee_details.employee_name","adhoc":true,"requestParameters":{},"executeAtStart":true,"type":"dashboard-component","database":"HIUSER","options":{"compType":"Select2","display":"employee_details_employee_name","value":"employee_details_employee_name","multiple":false,"uid":"k8lrufnza8q","iframe":false,"all":true,"placeholder":"Please select a value"},"listeners":null}},"dashboardConfig":{"id":"dashboard"},"css":"","script":"","printOptions":{"templateId":"Dashboard","title":"Dashboard"},"componentSettings":{"k314e2w8xre":{"header":true,"minimize":false,"maximize":false,"export":false,"editReport":false},"k8lrufnza8q":{"header":true,"minimize":false,"maximize":false,"export":false,"editReport":false}},"gridWidthOption":100,"toggleIframes":false}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</efwdd>

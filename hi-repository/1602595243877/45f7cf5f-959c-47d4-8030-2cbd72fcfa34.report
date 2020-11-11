@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<report>
+    <reportName>PointerChange</reportName>
+    <visible>true</visible>
+    <metadata>
+        <location>1463377807724/1463377836985</location>
+        <metadataFileName>e9be6771-995b-40eb-a01c-304857a100a1.metadata</metadataFileName>
+    </metadata>
+    <canvas>
+        <columns><![CDATA[[{"column":"travel_details.travel_cost","label":"travel_details_travel_cost","id":"w9ltwhw4quo","type":{"dataType":"numeric","backendDatatype":"java.lang.Integer"},"autogen_alias":"sum_travel_cost","aggregate":["db.generic.aggregate.sum"]}]]]></columns>
+    </canvas>
+    <state><![CDATA[{"columns":[{"column":"travel_details.travel_cost","label":"travel_details_travel_cost","id":"w9ltwhw4quo","type":{"dataType":"numeric","backendDatatype":"java.lang.Integer"},"autogen_alias":"sum_travel_cost","aggregate":["db.generic.aggregate.sum"]}],"filters":[],"customFilterExpression":"","customHavingExpression":"","customFilterExpressionObj":{},"customHavingExpressionObj":{},"havingExpressionIndexs":{},"filterExpressionIndexs":{},"options":{"limitBy":1000,"prependTableNameToAlias":true},"visualisation":{"type":"Charts","chartGroup":["Card"],"selectedType":"Charts","settings":{"script":null,"type":"HIWidget","vizType":"Charts","chartGroup":["Card"]},"vizSelectedScripts":[{"name":"AddCursor","scriptId":"card_js_addcursor","scriptType":"js","group":"Card","parameters":{"refreshConfig":{"isEnable":false,"hours":23,"minutes":59,"seconds":59}},"renderOn":"simpleModel","isEditable":true,"description":"Helps to add cursor on card","icon":"/images/scriptIcons/addcursor.png","isSelected":true,"isActiveScript":"active","isCheckedForMultipleEdit":false,"snippet":"\n\t\t\n\t\tvar id = hi_container.get(\"renderId\");\n\t\t\tvar ftnObj = {};\n\t\t\t\n\t\t\t\tftnObj['addcursor'+id] = function(c){\n\t\t\t\tjQuery('#widget-value').css('cursor', 'pointer');\n\t\t\t\t} ;\n\t\n\t\t\tif(!hi_container.isSet(\"postExecution\")){\n\t\t\t\thi_container.set(\"postExecution\", ftnObj['addcursor'+id]);\n\t\t\t}\n\t\t\n\t"}]},"scripts":[],"styles":"\n","customStyles":"","customScripts":["\n\t\t\n\t\tvar id = hi_container.get(\"renderId\");\n\t\t\tvar ftnObj = {};\n\t\t\t\n\t\t\t\tftnObj['addcursor'+id] = function(c){\n\t\t\t\tjQuery('#widget-value').css('cursor', 'pointer');\n\t\t\t\t} ;\n\t\n\t\t\tif(!hi_container.isSet(\"postExecution\")){\n\t\t\t\thi_container.set(\"postExecution\", ftnObj['addcursor'+id]);\n\t\t\t}\n\t\t\n\t"]}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</report>

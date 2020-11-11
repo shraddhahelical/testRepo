@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<EFWD>
+    <DataSources>
+        <Connection id="1" type="global.jdbc">
+            <globalId>1</globalId>
+            <security>
+                <createdBy>1</createdBy>
+                <organization></organization>
+            </security>
+        </Connection>
+        <Connection id="2" type="sql.adhoc">
+            <location>1463377807724/1463377836985</location>
+            <metadataFileName>e9be6771-995b-40eb-a01c-304857a100a1.metadata</metadataFileName>
+            <security>
+                <createdBy>1</createdBy>
+                <organization></organization>
+            </security>
+        </Connection>
+    </DataSources>
+    <DataMaps>
+        <DataMap id="1" connection="2" type="sql">
+            <Name>Query1</Name>
+            <Query><![CDATA[{
+  "columns": [
+    {
+      "column": "HIUSER.travel_details.booking_platform",
+      "alias": "filtervalue_booking_platform"
+    },
+    {
+      "column": "HIUSER.travel_details.travel_cost",
+      "alias": "sum_travel_cost",
+      "aggregate": true
+    }
+  ],
+  "functions": {
+    "aggregate": [
+      {
+        "column": "HIUSER.travel_details.travel_cost",
+        "function": "db.generic.aggregate.sum",
+        "alias": "sum_travel_cost"
+      }
+    ],
+    "groupBy": [
+      {
+        "column": "booking_platform",
+        "custom": true
+      }
+    ]
+  },
+  "filters": [
+    {
+      "values": [
+        ${booking_platform}
+      ],
+      "dataType": "java.lang.String",
+      "orderBy": "",
+      "isFilterEditable": false,
+      "encloseInQuotes": false,
+      "dateTimeToggle": false,
+      "column": "HIUSER.travel_details.booking_platform",
+      "rangeValuesType": "",
+      "id": 0,
+      "condition": "EQUALS",
+      "valuesRange": {},
+      "rangeSelectionToggole": true
+    }
+  ],
+  "customFilterExpression": "${0}",
+  "limitBy": 1000,
+  "prependTableNameToAlias": false
+}]]></Query>
+            <Parameters>
+                <Parameter name="booking_platform" type="Collection" default=""/>
+            </Parameters>
+        </DataMap>
+        <DataMap id="2" connection="1" type="sql">
+            <Name>sql</Name>
+            <Query><![CDATA[select distinct "booking_platform" as "booking_platform" from (select * from "travel_details") "filtervalue"]]></Query>
+        </DataMap>
+    </DataMaps>
+</EFWD>

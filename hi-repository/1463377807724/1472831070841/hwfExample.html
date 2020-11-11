@@ -1,0 +1,247 @@
+<style>
+.heading {
+    background: #eae8e9;
+    padding-top: 2.5%;
+    padding-bottom: 1.5%;
+}
+
+#folder_name {
+    width: 100%;
+    font-size: 18px;
+}
+
+.folder-section {
+    margin-top: 2%;
+}
+
+.input-box {
+    height: 25px;
+}
+
+.folder-name-label {
+    line-height: 25px;
+    font-size: 15px;
+    text-align: right;
+    font-weight: bold;
+}
+
+.dashboard-section {
+    margin-top: 2%;
+}
+
+.dash-panel {
+    border: 1px solid black;
+    height: 380px;
+}
+
+.search-box-section {
+    padding-top: 0.7%;
+    padding-bottom: 0.7%;
+    background: #0066ba;
+}
+
+.search-box,
+.search-box-label {
+    height: 25px;
+    font-size: 15px;
+}
+
+.search-box-label {
+    line-height: 25px;
+    font-weight: bold;
+    color: white;
+}
+
+.dashboard-list {
+    height: 275px;
+    border: 2px solid white;
+    overflow-y: scroll;
+}
+
+.dashboard-list-item {
+    padding-left: 7px;
+}
+
+.dashboard {
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+    background: #EEE;
+    border: 2px solid white;
+}
+
+hr {
+    margin-top: 0px;
+}
+
+.submit {
+    float: right;
+    margin-right: 3.5%;
+}
+</style>
+<div class="content">
+    <div id="main" class="">
+        <div class="col-sm-12 col-xs-12">
+            <div class="row">
+                <div class="col-sm-12 col-xs-12 heading">
+                    <h1>Helical Workflow Dashboard Copy Example</h1>
+                    <h4>This report shows an example of how custom, on the fly functionality can be added using Helical Workflow(HWF).</h4>
+                    <h5>The dashboards present in a directory called 'DashboardDesigner-Sample' are listed here. Select the dashboard(s) you want to copy. Give a name to the folder you want the dashboards to be copied to. A new directory with the name you have given will be created in the hi-repository with the selected dashboards.</h5>
+                </div>
+            </div>
+            <div class="row folder-section" align="center">
+                <div class="col-sm-1 col-xs-0"></div>
+                <div class="col-sm-2 col-xs-5 folder-name-label">Folder Name :</div>
+                <div class="col-sm-6 col-xs-7">
+                    <input type="text" id="folder_name" class="input-box" placeholder='Folder Name to place the Dashboards into'>
+                </div>
+            </div>
+            <div class="row dashboard-section">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10 dash-panel">
+                    <div class="row search-box-section">
+                        <div class="col-sm-12">
+                            <span class="col-sm-1 search-box-label">Search :</span>
+                            <input class="col-sm-6 search-box" type='text' placeholder='Search Dashboard'>
+                        </div>
+                    </div>
+                    <div class="row dashboard-list" id="dashboard_lister"></div>
+                    <hr class="row" />
+                    <div class="row">
+                        <div class="col-sm-1 submit">
+                            <input class="btn btn-primary" type="button" id="submit-button" value="Copy Dashboards" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-1"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+var baseUrl;
+if (window.DashboardGlobals.baseUrl) {
+    baseUrl = window.DashboardGlobals.baseUrl;
+} 
+
+var json = $.ajax({
+    type: "GET",
+    url: baseUrl + "/getSolutionResources.html",
+    dataType: 'json',
+    async: false
+}).responseJSON;
+
+$(document).ready(function() {
+    var index,
+        children = json[0].children; //First directory HI Samples
+
+    $.each(children, function(key, value) {
+        if (value.name == 'DashboardDesigner-Sample') {
+            index = key;
+            return;
+        }
+    });
+
+    $.each(children[index], function(key, value) {
+        var folder_value = value;
+
+        function traverse(folder) {
+            $.each(folder, function(key, value) {
+                if (value.type === "folder") {
+                    traverse(value);
+                } else if (value.extension == 'efwdd') {
+                    var eachDashboard = document.createElement('div');
+                    eachDashboard.className = 'col-sm-4 dashboard ' + value.name;
+                    eachDashboard.id = value.title;
+
+                    var name = value.name.split(".");
+
+
+                    var srcPath;
+                    if(value.path.includes("\\"))
+                     srcPath = value.path.split("\\");
+                    if(value.path.includes("/"))
+                     srcPath = value.path.split("/");
+                      srcPath.pop();
+                    var folderPath = srcPath.join("/");
+
+                    var span = document.createElement('span');
+                    span.innerHTML = "<a href=\"" + baseUrl + "hdi.html?dir=" + folderPath + "&file=" + name[0] + ".efw\" target=\"blank\">" + value.title + "</a>";
+                    span.className = 'dashboard-list-item';
+
+                    var input = document.createElement('input');
+                    input.type = 'checkbox';
+                    input.name = value.name;
+                    input.className = 'input';
+                    input.setAttribute('path', folderPath);
+                    input.setAttribute('dashboard-name', value.title);
+
+                    eachDashboard.appendChild(input);
+                    eachDashboard.appendChild(span);
+
+                    $('#dashboard_lister').append(eachDashboard);
+                }
+            });
+        };
+        if (folder_value instanceof Array) {
+            traverse(folder_value);
+        }
+    });
+});
+
+document.getElementsByClassName('search-box')[0].addEventListener("keyup", function onKeyUpClosure(ev) {
+    var checkboxWrappers = document.getElementsByClassName('dashboard');
+
+    Array.prototype.forEach.call(checkboxWrappers, function(element) {
+        var id = element.getAttribute('id');
+
+        if (id.toLowerCase().indexOf(ev.target.value.toLowerCase()) > -1) {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+    });
+});
+
+$('#submit-button').on('click', function() {
+    var fileList = [],
+        folderName = $('#folder_name').val();
+
+    if (folderName === '' || /^(?=.*[a-zA-Z])[a-zA-Z0-9-_\/ ]*$/.test(folderName) == false) {
+        bootbox.alert('Please Enter a Valid Folder Name.');
+        return;
+    }
+
+    $('.input:checked').each(function() {
+        fileList.push($(this).attr('path'));
+        console.log("filelist: " + $(this).attr('path'));
+    });
+
+    if (fileList.length < 1) {
+        bootbox.alert('Please Select a Dashboard.');
+        return;
+    }
+
+    var responseJson = $.ajax({
+        type: "GET",
+        url: baseUrl + "workflow.html?dir=1463377807724/1472831070841&fileName=copyToClient.hwf&fileList=" + fileList + "&folderName=" + folderName,
+        async: false
+    }).responseJSON;
+
+    if (responseJson.output.response.Status.toUpperCase() === "SUCCESS")
+        $.notify({
+            message: responseJson.output.response.Message,
+            icon: "glyphicon glyphicon-ok"
+        }, {
+            type: "success"
+        });
+    else if (responseJson.output.response.Status.toUpperCase() === "FAIL")
+        $.notify({
+            message: responseJson.output.response.Message,
+            icon: "glyphicon glyphicon-remove"
+        }, {
+            type: "warning"
+        });
+});
+</script>

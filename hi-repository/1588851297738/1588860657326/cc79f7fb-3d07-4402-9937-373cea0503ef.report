@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<report>
+    <reportName>DynamicViewReport_selectQuery</reportName>
+    <visible>true</visible>
+    <metadata>
+        <location>1588851297738/1588860657326</location>
+        <metadataFileName>87333217-da36-4419-ab11-c64715153552.metadata</metadataFileName>
+    </metadata>
+    <canvas>
+        <columns><![CDATA[[{"column":"SelectQuery.booking_platform","label":"SelectQuery_booking_platform","id":"a2qke7bz74","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"SelectQuery_booking_platform","groupBy":["db.generic.groupBy.group"]},{"column":"SelectQuery.destination","label":"SelectQuery_destination","id":"07n0lxf6i17e","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"SelectQuery_destination","groupBy":["db.generic.groupBy.group"]},{"column":"SelectQuery.destination_id","label":"SelectQuery_destination_id","id":"z3yb06eii1","type":{"dataType":"numeric","backendDatatype":"java.lang.Float"},"autogen_alias":"sum_destination_id","aggregate":["db.generic.aggregate.sum"],"orderBy":["desc"]},{"column":"SelectQuery.travel_date","label":"SelectQuery_travel_date","id":"lylcai96c6o","type":{"dataType":"dateTime","backendDatatype":"java.sql.Timestamp"},"autogen_alias":"SelectQuery_travel_date","groupBy":["db.generic.groupBy.group"]}]]]></columns>
+    </canvas>
+    <state><![CDATA[{"columns":[{"column":"SelectQuery.booking_platform","label":"SelectQuery_booking_platform","id":"a2qke7bz74","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"SelectQuery_booking_platform","groupBy":["db.generic.groupBy.group"]},{"column":"SelectQuery.destination","label":"SelectQuery_destination","id":"07n0lxf6i17e","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"SelectQuery_destination","groupBy":["db.generic.groupBy.group"]},{"column":"SelectQuery.destination_id","label":"SelectQuery_destination_id","id":"z3yb06eii1","type":{"dataType":"numeric","backendDatatype":"java.lang.Float"},"autogen_alias":"sum_destination_id","aggregate":["db.generic.aggregate.sum"],"orderBy":["desc"]},{"column":"SelectQuery.travel_date","label":"SelectQuery_travel_date","id":"lylcai96c6o","type":{"dataType":"dateTime","backendDatatype":"java.sql.Timestamp"},"autogen_alias":"SelectQuery_travel_date","groupBy":["db.generic.groupBy.group"]}],"filters":[{"values":["Makemytrip"],"mode":"auto","dataType":"text","orderBy":"","valuesMode":"auto","isFilterEditable":false,"encloseInQuotes":false,"dateTimeToggle":false,"databaseFunction":{},"label":"SelectQuery_booking_platform","column":"SelectQuery.booking_platform","backendDataType":"java.lang.String","rangeValuesType":"","id":0,"condition":"EQUALS","valuesRange":{},"rangeSelectionToggole":true}],"customFilterExpression":"${0}","customHavingExpression":"","customFilterExpressionObj":{"0":"${0}"},"customHavingExpressionObj":{},"havingExpressionIndexs":{},"filterExpressionIndexs":{},"options":{"limitBy":1000,"prependTableNameToAlias":true},"visualisation":{"type":"Table","chartGroup":"","selectedType":"Table","settings":{"script":null,"vizscriptsEditMultipleMode":false},"vizSelectedScripts":[]},"scripts":[],"styles":"","customStyles":"","customScripts":[]}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</report>

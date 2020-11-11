@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efw>
+    <title>rpt_TransPymtMethod</title>
+    <author>hiadmin</author>
+    <description>Efw File</description>
+    <template>dee07f49-307b-4262-b81c-29ce3c2ff0b0.html</template>
+    <visible>true</visible>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</efw>

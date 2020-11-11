@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<EFWD>
+    <DataSources>
+        <Connection id="1" type="global.jdbc">
+            <globalId>2</globalId>
+            <security>
+                <createdBy>1</createdBy>
+                <organization></organization>
+            </security>
+        </Connection>
+    </DataSources>
+    <DataMaps>
+        <DataMap id="6" connection="1" type="sql">
+            <Name>Trials</Name>
+            <Query><![CDATA[select distinct cast(t.id as text) as trial_id from "Trial" t
+inner join "TrialGrant" tg on t.id=tg.trial_id
+where tg.user_id = ${user_name}]]></Query>
+            <Parameters>
+                <Parameter name="user_name" type="String" default=""/>
+            </Parameters>
+        </DataMap>
+        <DataMap id="13" connection="1" type="sql">
+            <Name>SiteTrials</Name>
+            <Query><![CDATA[select distinct cast(stp.site_trial_id as text) as site_trial_id from "SiteTrialPatientView" stp
+JOIN "SiteTrialRead" st ON stp.site_trial_id = st.id and st.is_pseudo=false
+JOIN "Trial" trial  ON st.sponsor_trial_id = trial.id  and trial.is_pseudo=false
+JOIN "TrialGrant" TG on TG.trial_id = trial.id
+where 
+(('_all_'=${Trials}) or (cast(trial.id as text) = ${Trials}))
+AND TG.user_id = ${user_name}]]></Query>
+            <Parameters>
+                <Parameter name="user_name" type="String" default=""/>
+                <Parameter name="Trials" type="Collection" default=""/>
+            </Parameters>
+        </DataMap>
+        <DataMap id="14" connection="1" type="sql">
+            <Name>Protocols</Name>
+            <Query><![CDATA[select protocol_name_and_version from 
+	(
+	select distinct protocol_name_and_version,IEC.created_at from "InclusionExclusionCriteria" IEC
+	JOIN "Trial" AS T ON T.id = IEC.trial_id
+	JOIN "TrialGrant" TG on TG.trial_id = T.id
+	where (('_all_'=${Trials}) or (cast(T.id as text) = ${Trials}))
+    AND TG.user_id = ${user_name}
+	) as protocals
+order by created_at desc]]></Query>
+            <Parameters>
+                <Parameter name="Trials" type="Collection" default=""/>
+                <Parameter name="user_name" type="String" default=""/>
+            </Parameters>
+        </DataMap>
+        <DataMap id="15" connection="1" type="sql">
+            <Name>Failures</Name>
+            <Query><![CDATA[select
+CASE WHEN STPV.stage = 'potential-candidate' THEN 'Potential Candidate' ELSE
+  CASE WHEN STPV.stage = 'pre-screening' THEN 'Pre-Screening' ELSE
+	CASE WHEN STPV.stage = 'first-visit-scheduled' THEN 'First Visit Scheduled' ELSE
+	  CASE WHEN STPV.stage = 'in-screening' THEN 'In-Screening' ELSE
+		CASE WHEN STPV.stage = 'enrolled' THEN 'Actively Enrolled' ELSE
+		  CASE WHEN STPV.stage = 'completed' THEN 'Completed' ELSE
+			CASE WHEN STPV.stage = 'pre-screen-failure' THEN 'Pre-screen Failure' ELSE
+				CASE WHEN STPV.stage = 'screen-failure' THEN 'Screen Failure' ELSE
+					CASE WHEN STPV.stage = 'discontinued' THEN 'Discontinued' ELSE 'Other' END END END END END END END END END as display_col,
+STPV.stage as passing_col,
+CASE WHEN STPV.stage = 'pre-screen-failure' THEN 1 ELSE
+ CASE WHEN STPV.stage = 'screen-failure' THEN 2 ELSE
+	CASE WHEN STPV.stage = 'potential-candidate' THEN 3 ELSE
+	  CASE WHEN STPV.stage = 'pre-screening' THEN 4 ELSE
+		CASE WHEN STPV.stage = 'first-visit-scheduled' THEN 5 ELSE
+		  CASE WHEN STPV.stage = 'in-screening' THEN 6 ELSE
+			CASE WHEN STPV.stage = 'enrolled' THEN 7 ELSE
+			  CASE WHEN STPV.stage = 'completed' THEN 8 ELSE		
+				CASE WHEN STPV.stage = 'discontinued' THEN 9 ELSE 10 END END END END END END END END END AS list_order
+from 
+(select distinct STPV.stage from "Answer" AS A
+JOIN "SiteTrialQuestion" AS STQ ON A.site_trial_question_id = STQ.id
+JOIN "Question" AS Q ON Q.id = STQ.question_id
+JOIN "InclusionExclusionCriteriaQuestion" IECQ ON IECQ.question_id = Q.id
+JOIN "InclusionExclusionCriteria" IEC ON IECQ.ie_criteria_id = IEC.id
+RIGHT JOIN "SiteTrialPatientView" AS STPV ON STPV.id = A.site_trial_patient_id
+JOIN "SiteTrialView" AS STV ON STV.id = STQ.site_trial_id and STV.is_pseudo = false
+JOIN "Trial" AS T ON T.id = sponsor_trial_id AND T.id = IEC.trial_id AND T.is_pseudo = false
+JOIN "TrialGrant" TG on TG.trial_id = T.id
+JOIN "Site" AS S ON S.id = STV.site_id AND S.is_pseudo = false
+Where   
+STV.ie_criteria_checklist_enabled = true
+AND stage != 'archive'
+AND ((response = 'Yes' AND criterion_type = 'exclusion') OR (response = 'No' AND criterion_type = 'inclusion'))
+AND TG.user_id = ${user_name}
+AND (('_all_'=${Trials}) or (cast(T.id as text) = ${Trials}))
+AND (('_all_' in (${SiteTrials})) or (cast(STPV.site_trial_id as text) in (${SiteTrials})))
+AND (('All Protocols' in (${Protocols})) or (cast(protocol_name_and_version as text) in (${Protocols})))
+)STPV
+order by list_order]]></Query>
+            <Parameters>
+                <Parameter name="Trials" type="Collection" default=""/>
+                <Parameter name="user_name" type="String" default=""/>
+                <Parameter name="SiteTrials" type="Collection" default=""/>
+                <Parameter name="Protocols" type="Collection" default=""/>
+            </Parameters>
+        </DataMap>
+        <DataMap id="1" connection="1" type="sql">
+            <Name>failure_ParentTable</Name>
+            <Query><![CDATA[select 
+	case when max(sum_by_trial)=0 then 0 else cast(round((sum(number_of_patients)/max(sum_by_trial))*100,0) as int) end as "bar value",
+ 	sum("criteria failure responses"."number_of_patients") as "# of Patients",
+ 	case when max(sum_by_trial)=0 then '0%' else concat(cast(round((sum(number_of_patients)/max(sum_by_trial))*100,0) as text), '%') end as "Percentage",
+ 	"criteria failure responses"."failed_criteria" as "Failed Criteria",
+ 	"criteria failure responses"."failed_criteria_text" as "Failed Criteria text" 
+from
+	(WITH rawdata AS(
+select * from (
+SELECT
+T.id as trial_id,T.name as trial_name,
+STPV.id as patient_id,
+criterion_type,
+custom_identifier,
+case when criterion_type='inclusion' then CONCAT('Inc ',custom_identifier) else CONCAT('Exc ',custom_identifier) END AS Criteria,
+response,
+IECQ.question_id,
+Q.question_text,
+IEC.created_at,
+IEC.protocol_name_and_version,
+A.created_at AS acreate,
+S.country,
+stage
+FROM "Answer" AS A
+JOIN "SiteTrialQuestion" AS STQ ON A.site_trial_question_id = STQ.id
+JOIN "Question" AS Q ON Q.id = STQ.question_id
+JOIN "InclusionExclusionCriteriaQuestion" IECQ ON IECQ.question_id = Q.id
+JOIN "InclusionExclusionCriteria" IEC ON IECQ.ie_criteria_id = IEC.id
+RIGHT JOIN "SiteTrialPatientView" AS STPV ON STPV.id = A.site_trial_patient_id
+JOIN "SiteTrialView" AS STV ON STV.id = STQ.site_trial_id and STV.is_pseudo = false
+JOIN "Trial" AS T ON T.id = sponsor_trial_id AND T.id = IEC.trial_id AND T.is_pseudo = false
+JOIN "TrialGrant" TG on TG.trial_id = T.id
+JOIN "Site" AS S ON S.id = STV.site_id AND S.is_pseudo = false
+Where   
+STV.ie_criteria_checklist_enabled = true
+AND stage != 'archive'
+AND (('_all_'=${Trials}) or (cast(T.id as text) = ${Trials}))
+AND (('_all_' in (${SiteTrials})) or (cast(STPV.site_trial_id as text) in (${SiteTrials})))
+AND TG.user_id = 'auth0|5d9234f1bc48890e1d290c57' 
+) as body
+where (('All Failures'in (${Failures})) or (cast(stage as text) in (${Failures})))
+),
+LatestQuestion as (select patient_id,question_id,max(created_at) as created_at
+FROM RAWDATA
+group by patient_id,question_id ),
+raw_main as (select r.* from RAWDATA r JOIN LatestQuestion lq on r.patient_id=lq.patient_id and r.question_id = lq.question_id and r.created_at = lq.created_at),
+maxcreation AS (
+SELECT raw.trial_name,raw.trial_id,
+RANK() OVER(
+PARTITION BY raw.trial_name
+ORDER BY COUNT(raw.Criteria) DESC) AS ranking,
+raw.Criteria,
+COUNT(raw.Criteria) AS Number_of_patients,
+raw.question_text,
+raw.country
+FROM raw_main AS raw
+INNER JOIN (
+  SELECT trial_name, MAX(created_at) AS creation
+  FROM raw_main
+  GROUP BY trial_name) b ON raw.trial_name = b.trial_name
+WHERE
+raw.created_at = b.creation 
+AND (('All Protocols' in (${Protocols})) or (cast(protocol_name_and_version as text) in (${Protocols})))
+AND ((response = 'Yes' AND criterion_type = 'exclusion') OR (response = 'No' AND criterion_type = 'inclusion'))
+GROUP BY raw.trial_name, raw.trial_id,raw.criteria, raw.question_text,raw.country
+)
+select 
+mc1.trial_id,mc1.trial_name,mc1.ranking,
+mc1.number_of_patients,
+sum(mc1.number_of_patients) over(partition by trial_id order by trial_id) as sum_by_trial,
+sum(mc1.number_of_patients) over(partition by criteria,question_text order by criteria,question_text) as sum_by_site,
+mc1.criteria as failed_criteria,
+mc1.question_text as failed_criteria_text,
+mc1.country
+from maxcreation as mc1
+group by mc1.trial_id,mc1.trial_name,mc1.ranking,
+mc1.number_of_patients,mc1.criteria,mc1.question_text,country
+order by mc1.trial_id)  "criteria failure responses" 
+group by
+	"criteria failure responses"."failed_criteria", "criteria failure responses"."failed_criteria_text" 
+order by
+	sum("criteria failure responses"."number_of_patients") desc, "criteria failure responses"."failed_criteria" asc]]></Query>
+            <Parameters>
+                <Parameter name="Trials" type="Collection" default=""/>
+                <Parameter name="user_name" type="String" default=""/>
+                <Parameter name="SiteTrials" type="Collection" default=""/>
+                <Parameter name="Protocols" type="Collection" default=""/>
+                <Parameter name="Failures" type="Collection" default=""/>
+            </Parameters>
+        </DataMap>
+        <DataMap id="4" connection="1" type="sql">
+            <Name>failure_by_site</Name>
+            <Query><![CDATA[select 
+	case when max(sum_by_site)=0 then 0 else cast(round((sum(number_of_patients)/max(sum_by_site))*100,0) as int) end as "bar value",
+ 	sum("criteria failure responses"."number_of_patients") as "# of Patients",
+ 	case when max(sum_by_site)=0 then '0%' else concat(cast(round((sum(number_of_patients)/max(sum_by_site))*100,0) as text), '%') end as "Percentage",
+ 	"criteria failure responses"."site_name" as "Site" 
+from
+	(WITH rawdata AS(
+select * from (
+SELECT
+T.id as trial_id,T.name as trial_name
+,S.id as site_id,S.name as site_name,
+STPV.id as patient_id,
+criterion_type,
+custom_identifier,
+case when criterion_type='inclusion' then CONCAT('Inc ',custom_identifier) else CONCAT('Exc ',custom_identifier) END AS Criteria,
+response,
+IECQ.question_id,
+Q.question_text,
+IEC.created_at,
+IEC.protocol_name_and_version,
+A.created_at AS acreate,
+S.country,
+stage
+FROM "Answer" AS A
+JOIN "SiteTrialQuestion" AS STQ ON A.site_trial_question_id = STQ.id
+JOIN "Question" AS Q ON Q.id = STQ.question_id
+JOIN "InclusionExclusionCriteriaQuestion" IECQ ON IECQ.question_id = Q.id
+JOIN "InclusionExclusionCriteria" IEC ON IECQ.ie_criteria_id = IEC.id
+RIGHT JOIN "SiteTrialPatientView" AS STPV ON STPV.id = A.site_trial_patient_id
+JOIN "SiteTrialView" AS STV ON STV.id = STQ.site_trial_id and STV.is_pseudo = false
+JOIN "Trial" AS T ON T.id = sponsor_trial_id AND T.id = IEC.trial_id AND T.is_pseudo = false
+JOIN "TrialGrant" TG on TG.trial_id = T.id
+JOIN "Site" AS S ON S.id = STV.site_id AND S.is_pseudo = false
+Where   
+STV.ie_criteria_checklist_enabled = true
+AND stage != 'archive'
+AND (('_all_'=${Trials}) or (cast(T.id as text) = ${Trials}))
+AND (('_all_' in (${SiteTrials})) or (cast(STPV.site_trial_id as text) in (${SiteTrials})))
+AND TG.user_id = 'auth0|5d9234f1bc48890e1d290c57') as body
+where (('All Failures'in (${Failures})) or (cast(stage as text) in (${Failures})))
+),
+LatestQuestion as (select patient_id,question_id,max(created_at) as created_at
+FROM RAWDATA
+group by patient_id,question_id ),
+raw_main as (select r.* from RAWDATA r JOIN LatestQuestion lq on r.patient_id=lq.patient_id and r.question_id = lq.question_id and r.created_at = lq.created_at),
+maxcreation AS (
+SELECT raw.trial_name,raw.trial_id, raw.site_name,raw.site_id,
+RANK() OVER(
+PARTITION BY raw.trial_name,raw.site_name
+ORDER BY COUNT(raw.Criteria) DESC) AS ranking,
+raw.Criteria,
+COUNT(raw.Criteria) AS Number_of_patients,
+raw.question_text,
+raw.country
+FROM raw_main AS raw
+INNER JOIN (
+  SELECT trial_name,site_name, MAX(created_at) AS creation
+  FROM raw_main
+  GROUP BY trial_name,site_name) b ON raw.trial_name = b.trial_name and raw.site_name = b.site_name
+WHERE 
+raw.criteria=${selected_criteria_code}
+AND (('All Protocols' in (${Protocols})) or (cast(protocol_name_and_version as text) in (${Protocols})))
+AND raw.created_at = b.creation
+AND ((response = 'Yes' AND criterion_type = 'exclusion') OR (response = 'No' AND criterion_type = 'inclusion'))
+GROUP BY raw.trial_name, raw.trial_id,raw.site_name, raw.site_id, raw.criteria, raw.question_text,raw.country
+)
+select 
+mc1.site_id,mc1.site_name,mc1.trial_id,mc1.trial_name,mc1.ranking,
+mc1.number_of_patients,
+sum(mc1.number_of_patients) over(partition by trial_id order by trial_id) as sum_by_trial,
+sum(mc1.number_of_patients) over(partition by criteria,question_text order by criteria,question_text) as sum_by_site,
+mc1.criteria as failed_criteria,
+mc1.question_text as failed_criteria_text,
+mc1.country
+from maxcreation as mc1
+group by mc1.site_id,mc1.site_name,mc1.trial_id,mc1.trial_name,mc1.ranking,
+mc1.number_of_patients,mc1.criteria,mc1.question_text,country
+order by mc1.site_id,mc1.trial_id)  "criteria failure responses" 
+group by
+	"criteria failure responses"."site_name" 
+order by
+	sum("criteria failure responses"."number_of_patients") desc, "criteria failure responses"."site_name" asc]]></Query>
+            <Parameters>
+                <Parameter name="Trials" type="Collection" default=""/>
+                <Parameter name="user_name" type="String" default=""/>
+                <Parameter name="selected_criteria_code" type="String" default=""/>
+                <Parameter name="SiteTrials" type="Collection" default=""/>
+                <Parameter name="Protocols" type="Collection" default=""/>
+                <Parameter name="Failures" type="Collection" default=""/>
+            </Parameters>
+        </DataMap>
+        <DataMap id="5" connection="1" type="sql">
+            <Name>failure_by_country</Name>
+            <Query><![CDATA[select 
+	case when max(sum_by_site)=0 then 0 else  cast(round((sum(number_of_patients)/max(sum_by_site))*100,0) as int) end as "bar value",
+ 	sum("criteria failure responses"."number_of_patients") as "# of Patients",
+ 	case when max(sum_by_site)=0 then '0%' else  concat(cast(round((sum(number_of_patients)/max(sum_by_site))*100,0) as text), '%') end as "Percentage",
+ 	"criteria failure responses"."country" as "Country" 
+from
+	(WITH rawdata AS(
+select * from (
+SELECT
+T.id as trial_id,T.name as trial_name
+,S.id as site_id,S.name as site_name,
+STPV.id as patient_id,
+criterion_type,
+custom_identifier,
+case when criterion_type='inclusion' then CONCAT('Inc ',custom_identifier) else CONCAT('Exc ',custom_identifier) END AS Criteria,
+response,
+IECQ.question_id,
+Q.question_text,
+IEC.created_at,
+IEC.protocol_name_and_version,
+A.created_at AS acreate,
+S.country,
+stage
+FROM "Answer" AS A
+JOIN "SiteTrialQuestion" AS STQ ON A.site_trial_question_id = STQ.id
+JOIN "Question" AS Q ON Q.id = STQ.question_id
+JOIN "InclusionExclusionCriteriaQuestion" IECQ ON IECQ.question_id = Q.id
+JOIN "InclusionExclusionCriteria" IEC ON IECQ.ie_criteria_id = IEC.id
+RIGHT JOIN "SiteTrialPatientView" AS STPV ON STPV.id = A.site_trial_patient_id
+JOIN "SiteTrialView" AS STV ON STV.id = STQ.site_trial_id and STV.is_pseudo = false
+JOIN "Trial" AS T ON T.id = sponsor_trial_id AND T.id = IEC.trial_id AND T.is_pseudo = false
+JOIN "TrialGrant" TG on TG.trial_id = T.id
+JOIN "Site" AS S ON S.id = STV.site_id AND S.is_pseudo = false
+Where   
+STV.ie_criteria_checklist_enabled = true
+AND stage != 'archive'
+AND (('_all_'=${Trials}) or (cast(T.id as text) = ${Trials}))
+AND (('_all_' in (${SiteTrials})) or (cast(STPV.site_trial_id as text) in (${SiteTrials})))
+AND TG.user_id = 'auth0|5d9234f1bc48890e1d290c57') as body
+where (('All Failures'in (${Failures})) or (cast(stage as text) in (${Failures})))
+),
+LatestQuestion as (select patient_id,question_id,max(created_at) as created_at
+FROM RAWDATA
+group by patient_id,question_id ),
+raw_main as (select r.* from RAWDATA r JOIN LatestQuestion lq on r.patient_id=lq.patient_id and r.question_id = lq.question_id and r.created_at = lq.created_at),
+maxcreation AS (
+SELECT raw.trial_name,raw.trial_id, raw.site_name,raw.site_id,
+RANK() OVER(
+PARTITION BY raw.trial_name,raw.site_name
+ORDER BY COUNT(raw.Criteria) DESC) AS ranking,
+raw.Criteria,
+COUNT(raw.Criteria) AS Number_of_patients,
+raw.question_text,
+raw.country
+FROM raw_main AS raw
+INNER JOIN (
+  SELECT trial_name,site_name, MAX(created_at) AS creation
+  FROM raw_main
+  GROUP BY trial_name,site_name) b ON raw.trial_name = b.trial_name and raw.site_name = b.site_name
+WHERE 
+raw.criteria=${selected_criteria_code}
+AND (('All Protocols' in (${Protocols})) or (cast(protocol_name_and_version as text) in (${Protocols})))
+AND raw.created_at = b.creation
+AND ((response = 'Yes' AND criterion_type = 'exclusion') OR (response = 'No' AND criterion_type = 'inclusion'))
+GROUP BY raw.trial_name, raw.trial_id,raw.site_name, raw.site_id, raw.criteria, raw.question_text,raw.country
+)
+select 
+mc1.site_id,mc1.site_name,mc1.trial_id,mc1.trial_name,mc1.ranking,
+mc1.number_of_patients,
+sum(mc1.number_of_patients) over(partition by trial_id order by trial_id) as sum_by_trial,
+sum(mc1.number_of_patients) over(partition by criteria,question_text order by criteria,question_text) as sum_by_site,
+mc1.criteria as failed_criteria,
+mc1.question_text as failed_criteria_text,
+mc1.country
+from maxcreation as mc1
+group by mc1.site_id,mc1.site_name,mc1.trial_id,mc1.trial_name,mc1.ranking,
+mc1.number_of_patients,mc1.criteria,mc1.question_text,country
+order by mc1.site_id,mc1.trial_id)  "criteria failure responses" 
+group by
+	"criteria failure responses"."country" 
+order by
+	sum("criteria failure responses"."number_of_patients") desc, "criteria failure responses"."country" asc]]></Query>
+            <Parameters>
+                <Parameter name="Trials" type="Collection" default=""/>
+                <Parameter name="user_name" type="String" default=""/>
+                <Parameter name="selected_criteria_code" type="String" default=""/>
+                <Parameter name="SiteTrials" type="Collection" default=""/>
+                <Parameter name="Protocols" type="Collection" default=""/>
+                <Parameter name="Failures" type="Collection" default=""/>
+            </Parameters>
+        </DataMap>
+        <DataMap id="19" connection="1" type="sql">
+            <Name>customScript</Name>
+            <Query><![CDATA[select 1 as one]]></Query>
+        </DataMap>
+    </DataMaps>
+</EFWD>

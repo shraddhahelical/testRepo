@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EFWD mandatory="true">
+<DataMaps>
+
+		<DataMap id="1" connection="1" type="metadata.groovy">
+            <Name>getCatalog</Name>
+            <Query>
+               
+                <![CDATA[
+				
+import com.mongodb.MongoClient;
+import com.mongodb.MongoClientURI;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.MongoIterable;
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+
+public JSONObject collectionNames(String url) {
+String[] urlArray = url.split("/");
+		int index=0;
+		String urll=null;
+		String dbName=null;
+		for(String name:urlArray){
+			
+			if(index == 2){
+				urll=name;
+			}
+			
+			index++;
+		}
+	
+JSONObject dataObjects = new JSONObject();
+		String uri="mongodb://"+urll;
+	
+		JSONArray dataArray = new JSONArray();
+		
+		MongoClient mongoClient = new MongoClient(new MongoClientURI(uri));
+		
+			
+			
+			List<String>  collections = mongoClient.getDatabaseNames();
+		    for (String collectionName : collections) {
+			
+			JSONObject dataObject  = new JSONObject();
+				dataObject.put("schemas", collectionName);
+				dataArray.add(dataObject);
+				
+			}
+			if(mongoClient != null){
+			mongoClient.close();
+			
+			}
+			
+			 
+			dataObjects.put("data", dataArray);
+			return dataObjects;   
+			
+			
+	}
+
+				return collectionNames(queryParams.connection.url);
+						
+                ]]>
+           
+            </Query>
+          
+        </DataMap>
+		<DataMap id="2" connection="1" type="metadata.groovy">
+            <Name>getSchema</Name>
+            <Query>
+               
+                <![CDATA[
+				
+				return '''{"data":[{"schemas":"Null"}]}''';
+						
+						
+                ]]>
+           
+            </Query>
+			<Parameters>
+            <Parameter name="catalogs" type="String" default="table_schema"/>
+        </Parameters>
+        </DataMap>
+		 
+		<DataMap id="3" connection="1" type="metadata.groovy" >
+           <Name>getTable</Name>
+            <Query>
+                <![CDATA[
+                        
+import com.mongodb.MongoClient;
+import com.mongodb.MongoClientURI;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.MongoIterable;
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+
+public JSONObject collectionNames(String url) {
+String[] urlArray = url.split("/");
+		int index=0;
+		String urll=null;
+		String dbName=null;
+		for(String name:urlArray){
+			
+			if(index == 2){
+				urll=name;
+			}
+			
+			index++;
+		}
+		
+JSONObject dataObjects = new JSONObject();
+		String uri="mongodb://"+urll;
+		
+		
+		JSONArray dataArray = new JSONArray();
+		
+		MongoClient mongoClient = new MongoClient(new MongoClientURI(uri));
+			
+			MongoDatabase database = mongoClient.getDatabase(${catalog});
+			MongoIterable<String> collections = database.listCollectionNames();
+			for (String collectionName : collections) {
+			
+			JSONObject dataObject  = new JSONObject();
+				dataObject.put("tables", collectionName);
+				dataObject.put("schemas", ${catalog});
+				dataObject.put("catalogs","Null");
+				dataArray.add(dataObject);
+				
+			}
+			if(mongoClient != null){
+			mongoClient.close();
+			
+			}
+			
+			 
+			dataObjects.put("data", dataArray);
+			return dataObjects;
+			
+			}
+			return collectionNames(queryParams.connection.url);
+						
+                ]]>
+            </Query>
+			<Parameters>
+            <Parameter name="catalog" type="String" default="hice" openQuote="'" closeQuote="'"/>
+            <Parameter name="schemas" type="Integer" default="Null" openQuote="'" closeQuote="'"/>
+			
+        </Parameters>
+        </DataMap>
+		
+		<DataMap id="4" connection="1" type="metadata.groovy" >
+           <Name>getColumn</Name>
+            <Query>
+                <![CDATA[
+import org.bson.Document;
+import com.mongodb.MongoClient;
+import com.mongodb.MongoClientURI;
+import com.mongodb.client.FindIterable;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import net.sf.json.JSONObject;
+
+public JSONObject collectionNames(String url) {
+String[] urlArray = url.split("/");
+		int index=0;
+		String urll=null;
+		String dbName=null;
+		for(String name:urlArray){
+			
+			if(index == 2){
+				urll=name;
+			}
+			
+			index++;
+		}
+		
+
+		String uri="mongodb://"+urll;
+		
+		
+		JSONObject dataObject = new JSONObject();
+		List<JSONObject> singleObjectInList = new ArrayList<>();
+		List<JSONObject> allObjectsInList = new ArrayList<>();
+		
+		MongoClient mongoClient = new MongoClient(new MongoClientURI(uri));
+			MongoDatabase database = mongoClient.getDatabase(${schemas});
+			String names ="${tables}";
+			
+			List<String> tableNames = Arrays.asList(names.split(","));
+			
+			for(String name :  tableNames){
+			name = name.replaceAll("\'","");
+			
+						singleObjectInList=	getDocuments( database,name);
+						allObjectsInList.addAll(singleObjectInList);
+					}
+			dataObject.put("data", allObjectsInList);
+
+				if (mongoClient != null) {
+					mongoClient.close();
+				}
+				return dataObject;
+
+			}
+			
+			public List<JSONObject> getDocuments( MongoDatabase database,String tableName) {
+		List<JSONObject> allObjectsInList = new ArrayList<>();
+		MongoCollection<Document> collection = database
+					.getCollection(tableName);
+			
+ FindIterable<Document> documents = collection.find().limit(1);
+
+
+Iterator<Document> it = documents.iterator();
+int count = 1;
+while (it.hasNext()) {
+		Document doc =  it.next();
+		Set<String> docNames = doc.keySet();
+		for (String name : docNames) {
+			JSONObject record = new JSONObject();
+			record.put("catalogs", ${schemas});
+			record.put("schemas", ${catalog});//"Null"
+			record.put("tables", tableName);
+			record.put("columns", name);
+			record.put("position", count);
+			record.put("nullable", "false");
+			record.put("size", 0);
+			record.put("type", "enum");
+			record.put("dataType", "java.lang.String");
+
+			count++;
+			allObjectsInList.add(record);
+		}
+
+}
+return allObjectsInList;
+
+	}
+
+		
+		
+		 return collectionNames(queryParams.connection.url)
+                ]]>
+            </Query>
+			<Parameters>
+            <Parameter name="catalog" type="String" default="hice"/>
+            <Parameter name="schemas" type="Collection" default="Null"/>
+            <Parameter name="tables" type="Collection" default="Null"/>
+        </Parameters>
+        </DataMap>
+	
+		
+</DataMaps> 
+  
+    
+  
+</EFWD>

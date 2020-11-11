@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<report>
+    <reportName>DynamicViewMysqlReportFromPostgres</reportName>
+    <visible>true</visible>
+    <metadata>
+        <location>1588851297738/1591083129013</location>
+        <metadataFileName>ac9bd31a-c88b-4471-a0f5-985da4a1d55a.metadata</metadataFileName>
+    </metadata>
+    <canvas>
+        <columns><![CDATA[[{"column":"PostgresView.booking_platform","label":"PostgresView_booking_platform","id":"6b7bmr15vu4","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"PostgresView_booking_platform","groupBy":["db.generic.groupBy.group"]},{"column":"PostgresView.destination","label":"PostgresView_destination","id":"vtxwbryrhbs","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"PostgresView_destination","groupBy":["db.generic.groupBy.group"]},{"column":"PostgresView.travel_cost","label":"PostgresView_travel_cost","id":"9ips0u9mpsk","type":{"dataType":"numeric","backendDatatype":"java.lang.Float"},"autogen_alias":"PostgresView_travel_cost","groupBy":["db.generic.groupBy.group"]}]]]></columns>
+    </canvas>
+    <state><![CDATA[{"columns":[{"column":"PostgresView.booking_platform","label":"PostgresView_booking_platform","id":"6b7bmr15vu4","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"PostgresView_booking_platform","groupBy":["db.generic.groupBy.group"]},{"column":"PostgresView.destination","label":"PostgresView_destination","id":"vtxwbryrhbs","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"PostgresView_destination","groupBy":["db.generic.groupBy.group"]},{"column":"PostgresView.travel_cost","label":"PostgresView_travel_cost","id":"9ips0u9mpsk","type":{"dataType":"numeric","backendDatatype":"java.lang.Float"},"autogen_alias":"PostgresView_travel_cost","groupBy":["db.generic.groupBy.group"]}],"filters":[{"values":["800"],"mode":"auto","dataType":"numeric","orderBy":"","valuesMode":"auto","isFilterEditable":false,"encloseInQuotes":false,"dateTimeToggle":false,"databaseFunction":{},"label":"travel_cost","column":"PostgresView.travel_cost","backendDataType":"java.lang.Float","rangeValuesType":"","id":0,"condition":"EQUALS","valuesRange":{},"rangeSelectionToggole":true}],"customFilterExpression":"${0}","customHavingExpression":"","customFilterExpressionObj":{"0":"${0}"},"customHavingExpressionObj":{},"havingExpressionIndexs":{},"filterExpressionIndexs":{},"options":{"limitBy":1000,"prependTableNameToAlias":true},"visualisation":{"type":"Table","chartGroup":"","selectedType":"Table","settings":{"script":null,"vizscriptsEditMultipleMode":false},"vizSelectedScripts":[]},"scripts":[],"styles":"","customStyles":"","customScripts":[]}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</report>

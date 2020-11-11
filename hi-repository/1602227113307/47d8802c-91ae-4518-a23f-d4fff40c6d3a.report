@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<report>
+    <reportName>child report</reportName>
+    <visible>true</visible>
+    <metadata>
+        <location>1463377807724/1463377836985</location>
+        <metadataFileName>e9be6771-995b-40eb-a01c-304857a100a1.metadata</metadataFileName>
+    </metadata>
+    <canvas>
+        <columns><![CDATA[[{"column":"travel_details.travel_type","label":"travel_details_travel_type","id":"58zzu4otxq5","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"travel_details_travel_type","groupBy":["db.generic.groupBy.group"],"alias":"travel_type"},{"column":"travel_details.travel_medium","label":"travel_details_travel_medium","id":"dye6q1igk1i","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"travel_details_travel_medium","groupBy":["db.generic.groupBy.group"],"alias":"travel_medium"},{"column":"travel_details.travel_cost","label":"travel_details_travel_cost","id":"009lsgr1moab7","type":{"dataType":"numeric","backendDatatype":"java.lang.Integer"},"autogen_alias":"sum_travel_cost","aggregate":["db.generic.aggregate.sum"],"alias":"travel_cost"}]]]></columns>
+    </canvas>
+    <state><![CDATA[{"columns":[{"column":"travel_details.travel_type","label":"travel_details_travel_type","id":"58zzu4otxq5","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"travel_details_travel_type","groupBy":["db.generic.groupBy.group"],"alias":"travel_type"},{"column":"travel_details.travel_medium","label":"travel_details_travel_medium","id":"dye6q1igk1i","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"travel_details_travel_medium","groupBy":["db.generic.groupBy.group"],"alias":"travel_medium"},{"column":"travel_details.travel_cost","label":"travel_details_travel_cost","id":"009lsgr1moab7","type":{"dataType":"numeric","backendDatatype":"java.lang.Integer"},"autogen_alias":"sum_travel_cost","aggregate":["db.generic.aggregate.sum"],"alias":"travel_cost"}],"filters":[{"values":["_all_"],"mode":"auto","dataType":"text","orderBy":"","valuesMode":"auto","isFilterEditable":false,"encloseInQuotes":false,"dateTimeToggle":false,"databaseFunction":{},"label":"travel_type","column":"travel_details.travel_type","backendDataType":"java.lang.String","rangeValuesType":"","id":0,"condition":"EQUALS","valuesRange":{},"rangeSelectionToggole":true},{"values":["_all_"],"mode":"auto","dataType":"text","orderBy":"","valuesMode":"auto","isFilterEditable":false,"encloseInQuotes":false,"dateTimeToggle":false,"databaseFunction":{},"label":"travel_medium","column":"travel_details.travel_medium","backendDataType":"java.lang.String","rangeValuesType":"","id":1,"condition":"EQUALS","valuesRange":{},"rangeSelectionToggole":true}],"customFilterExpression":"('_all_' = '_all_') AND ('_all_' = '_all_')","customHavingExpression":"","customFilterExpressionObj":{"0":"('_all_' = '_all_')","1":"('_all_' = '_all_')"},"customHavingExpressionObj":{},"havingExpressionIndexs":{},"filterExpressionIndexs":{"0":0,"1":24},"options":{"limitBy":1000,"prependTableNameToAlias":true},"visualisation":{"type":"Table","chartGroup":"","selectedType":"Table","settings":{"script":null,"vizscriptsEditMultipleMode":false},"vizSelectedScripts":[]},"scripts":[],"styles":"","customStyles":"","customScripts":[]}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</report>

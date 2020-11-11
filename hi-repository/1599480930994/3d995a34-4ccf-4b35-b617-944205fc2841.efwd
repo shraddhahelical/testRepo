@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<EFWD>
+    <DataSources>
+        <Connection id="1" type="global.jdbc">
+            <globalId>1</globalId>
+            <security>
+                <createdBy>1</createdBy>
+                <organization></organization>
+            </security>
+        </Connection>
+    </DataSources>
+    <DataMaps>
+        <DataMap id="1" connection="1" type="sql">
+            <Name>parameter1</Name>
+            <Query><![CDATA[select 'All Store Names' as "employee_name", '_all_' as "employee_display"
+from
+	"HIUSER"."employee_details" 
+group by 'All Store Names',  '_all_'
+
+UNION ALL
+
+select 
+	"HIUSER"."employee_details"."employee_name" as "employee_name", "HIUSER"."employee_details"."employee_name" as "employee_display"
+from
+	"HIUSER"."employee_details" 
+group by
+	"HIUSER"."employee_details"."employee_name", "HIUSER"."employee_details"."employee_name"]]></Query>
+        </DataMap>
+    </DataMaps>
+</EFWD>

@@ -1,0 +1,528 @@
+<html class="hi-visulize-adhoc"><head>
+    <title></title>
+    <link rel="icon" type="image/x-icon" href="http://164.52.201.247:8085/hi-ee/images/favicon.ico">
+    <link data-clone="true" rel="stylesheet" href="http://164.52.201.247:8085/hi-ee/css/styles.css">
+    <link data-clone="true" rel="stylesheet" href="http://164.52.201.247:8085/hi-ee/css/externalstyles.css">
+    <link data-clone="true" rel="stylesheet" href="http://164.52.201.247:8085/hi-ee/css/fonts.css">
+    <link data-clone="true" rel="stylesheet" href="http://164.52.201.247:8085/hi-ee/css/HI-Core.css">
+    <link data-clone="true" rel="stylesheet" href="http://164.52.201.247:8085/hi-ee/css/MarkerCluster.Default.css">
+    <link data-clone="true" rel="stylesheet" href="http://164.52.201.247:8085/hi-ee/css/leaflet-search.min.css">
+    <link data-clone="true" rel="stylesheet" href="http://164.52.201.247:8085/hi-ee/css/leaflet.css">
+
+    <link data-clone="true" rel="stylesheet" href="http://164.52.201.247:8085/hi-ee/css/c3.css">
+    <link data-clone="true" rel="stylesheet" href="http://164.52.201.247:8085/hi-ee/css/newwindow.css">
+    <script type="text/javascript">
+        </script>
+    <style>
+        .LoadingElement {
+            width: 200px;
+            height: 50px;
+            text-align: center;
+            font-size: 25px;
+            background-color: #353e3e;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+    </style>
+    <script src="http://164.52.201.247:8085/hi-ee/js/vendors/jquery.js"></script>
+    <script src="http://164.52.201.247:8085/hi-ee/js/vendors/bootstrap.js"></script>
+    <script src="http://164.52.201.247:8085/hi-ee/js/shim.js"></script>
+    <script type="text/javascript" src="http://164.52.201.247:8085/hi-ee/js/adhoc/visualisations/customScripts/applyScripts.js"></script>
+    <script src="http://164.52.201.247:8085/hi-ee/js/plugins/Base64.js"></script>
+
+    <!--- Refresh cache related js lib -->
+    <script src="http://164.52.201.247:8085/hi-ee/js/vendors/moment.js"></script>
+    <script src="http://164.52.201.247:8085/hi-ee/js/ajax.js"></script>
+
+    <script type="text/javascript">
+        (function () {
+            var baseURL = "http://164.52.201.247:8085/hi-ee/";
+
+            if (window.HDI) {
+                window.HDI = window.HDI;
+            } else {
+                window.HDI = {};
+            }
+            if (window.HDI.adhoc) {
+                window.HDI.adhoc = window.HDI.adhoc;
+            } else {
+                window.HDI.adhoc = {};
+            }
+            window.HDI.adhoc.urls = {
+                createDataSource: baseURL + "/createDataSource",
+                listDataSources: baseURL + "/listDataSources",
+                services: baseURL + "/services",
+                listLocations: baseURL + "/listLocations",
+                getResources: baseURL + "/getResources",
+                visualizeAdhoc: baseURL + "/visualizeAdhoc.html"
+            };
+
+            if (!window.DashboardGlobals) {
+                window.DashboardGlobals = (function () {
+                    var object = {
+                        baseUrl: baseURL,
+                        solutionLoader: baseURL + "/getSolutionResources.html",
+                        resourceLoader: baseURL + "/getEFWSolution.html",
+                        updateService: baseURL + "/executeDatasource.html",
+                        chartingService: baseURL + "/visualizeData.html",
+                        exportData: baseURL + "/exportData.html",
+                        reportDownload: baseURL + "/downloadReport.html",
+                        productInfo: baseURL + "/getProductInformation.html",
+                        sendMail: baseURL + "/sendMail.html",
+                        updateEFWTemplate: baseURL + "/updateEFWTemplate.html",
+                        visualizeAdhoc: baseURL + "/visualizeAdhoc.html",
+                        sessionUserName: "hiadmin",
+                        sessionUserEmail: "admin@helicalinsight.com",
+                        sessionUserOrganization: "",
+                        rootDirectoryPermission: "4",
+                        enableReportSave: "false",
+                        controllers: {
+                            efw: baseURL + "/getEFWSolution.html",
+                            efwsr: baseURL + "/executeSavedReport.html",
+                            efwfav: baseURL + "/executeFavourite.html",
+                            report: baseURL + "/adhocReport.html"
+                        },
+
+                        saveReport: baseURL + "/saveReport.html",
+                        fsop: baseURL + "/fileSystemOperations.html",
+                        importFile: baseURL + "/importFile.html",
+                        downloadEnableSavedReport: baseURL + "/downloadEnableSavedReport.html",
+                        "scheduling": {
+                            "get": baseURL + "/getScheduleData.html",
+                            "update": baseURL + "/updateScheduleData.html"
+                        },
+                        services: baseURL + "/services",
+                        designerEdit: baseURL + "/designer-edit.html",
+                        adhocEdit: baseURL + "/adhoc/report-edit.html",
+                        metadataEdit: baseURL + "/adhoc/metadata-edit.html",
+                        openAdhoc: baseURL + "/adhocReport.html",
+                        openEfw: baseURL + "/hi.html",
+                        openHcr: baseURL + "/hcr-report.html",
+                        user: {
+                            roles: "[ROLE_ADMIN, ROLE_USER, ROLE_VIEWER]",
+                            profile: window.loggedInUser,
+                            userName: "hiadmin",
+                            email: "admin@helicalinsight.com",
+                            organization: ""
+                        }
+                    };
+
+                    return object;
+                })();
+            }
+        })();
+    </script>
+    <script>
+        
+        window.__hi_result = {};
+        
+        window.__hi_params = {"settings":"eyJzY3JpcHQiOm51bGwsInR5cGUiOiJISUJ1YmJsZWNoYXJ0Iiwidml6VHlwZSI6IkNoYXJ0cyJ9","database":"SElVU0VS","file":"d1560c88-be0d-4380-8225-8a8df4eb53bf.report","columns":"W3siY29sdW1uIjoidHJhdmVsX2RldGFpbHMudHJhdmVsX2RhdGUiLCJsYWJlbCI6InRyYXZlbF9kZXRhaWxzX3RyYXZlbF9kYXRlIiwiaWQiOiJoenJ1aTliZThpdiIsInR5cGUiOnsiZGF0YVR5cGUiOiJkYXRlVGltZSIsImJhY2tlbmREYXRhdHlwZSI6ImphdmEuc3FsLlRpbWVzdGFtcCJ9LCJhdXRvZ2VuX2FsaWFzIjoidHJhdmVsX2RldGFpbHNfdHJhdmVsX2RhdGUiLCJncm91cEJ5IjpbImRiLmdlbmVyaWMuZ3JvdXBCeS5ncm91cCJdLCJhbGlhcyI6Ik1vbnRoIiwiZGF0YWJhc2VGdW5jdGlvbiI6eyJrZXkiOiJzcWwuZGF0ZVRpbWUubW9udGhuYW1lIiwiZGVzY3JpcHRpb24iOiJSZXR1cm5zIHRoZSBtb250aCBuYW1lIGJhc2VkIG9uIHRoZSBnaXZlbiBkYXRlL2RhdGV0aW1lLiBFeGFtcGxlOiBtb250aG5hbWUoJzIwMTQtMDgtMDggMDg6MDA6MDAuMDAwJykgcmVzdWx0OiBBdWd1c3QgIiwidmFsdWUiOiJNT05USE5BTUUiLCJzaWduYXR1cmUiOiIoY2FzZSB3aGVuIChtb250aCgke2RhdGV0aW1lfSk9MDEgT1IgbW9udGgoJHtkYXRldGltZX0pPTEpIHRoZW4gJ0phbnVhcnknIFxuXHQgICAgIHdoZW4gKG1vbnRoKCR7ZGF0ZXRpbWV9KT0wMiBPUiBtb250aCgke2RhdGV0aW1lfSk9MikgdGhlbiAnRmVicnVhcnknXG5cdCAgICAgd2hlbiAobW9udGgoJHtkYXRldGltZX0pPTAzIE9SIG1vbnRoKCR7ZGF0ZXRpbWV9KT0zKSB0aGVuICdNYXJjaCdcblx0ICAgICB3aGVuIChtb250aCgke2RhdGV0aW1lfSk9MDQgT1IgbW9udGgoJHtkYXRldGltZX0pPTQpIHRoZW4gJ0FwcmlsJ1xuXHQgICAgIHdoZW4gKG1vbnRoKCR7ZGF0ZXRpbWV9KT0wNSBPUiBtb250aCgke2RhdGV0aW1lfSk9NSkgdGhlbiAnTWF5J1xuXHQgICAgIHdoZW4gKG1vbnRoKCR7ZGF0ZXRpbWV9KT0wNiBPUiBtb250aCgke2RhdGV0aW1lfSk9NikgdGhlbiAnSnVuZSdcblx0ICAgICB3aGVuIChtb250aCgke2RhdGV0aW1lfSk9MDcgT1IgbW9udGgoJHtkYXRldGltZX0pPTcpIHRoZW4gJ0p1bHknXG5cdCAgICAgd2hlbiAobW9udGgoJHtkYXRldGltZX0pPTA4IE9SIG1vbnRoKCR7ZGF0ZXRpbWV9KT04KSB0aGVuICdBdWd1c3QnXG5cdCAgICAgd2hlbiAobW9udGgoJHtkYXRldGltZX0pPTA5IE9SIG1vbnRoKCR7ZGF0ZXRpbWV9KT05KSB0aGVuICdTZXB0ZW1iZXInXG5cdCAgICAgd2hlbiAobW9udGgoJHtkYXRldGltZX0pPTEwKSB0aGVuICdPY3RvYmVyJ1xuXHQgICAgIHdoZW4gKG1vbnRoKCR7ZGF0ZXRpbWV9KT0xMSkgdGhlbiAnTm92ZW1iZXInXG5cdCAgICAgd2hlbiAobW9udGgoJHtkYXRldGltZX0pPTEyKSB0aGVuICdEZWNlbWJlcidcblx0ICAgICBlbHNlIG51bGwgZW5kKSIsInJldHVybnMiOiJ0ZXh0IiwicGFyYW1ldGVycyI6W3sibmFtZSI6ImRhdGV0aW1lIiwiZGVmYXVsdFZhbHVlIjoiJzIwMTQtMDgtMDggMDg6MDA6MDAuMDAwJyIsInZhbHVlIjoidHJhdmVsX2RldGFpbHMudHJhdmVsX2RhdGUiLCJjb2x1bW4iOnRydWUsImFsaWFzTmFtZSI6Ik1vbnRoIn1dfX0seyJjb2x1bW4iOiJ0cmF2ZWxfZGV0YWlscy50cmF2ZWxfY29zdCIsImxhYmVsIjoidHJhdmVsX2RldGFpbHNfdHJhdmVsX2Nvc3QiLCJpZCI6ImQ5aHI3NzQ5ajZjIiwidHlwZSI6eyJkYXRhVHlwZSI6Im51bWVyaWMiLCJiYWNrZW5kRGF0YXR5cGUiOiJqYXZhLmxhbmcuSW50ZWdlciJ9LCJhdXRvZ2VuX2FsaWFzIjoiY291bnRfdHJhdmVsX2Nvc3QiLCJhZ2dyZWdhdGUiOlsiZGIuZ2VuZXJpYy5hZ2dyZWdhdGUuY291bnQiXSwiYWxpYXMiOiJObyBvZiBUcmF2ZWxzIiwib3JkZXJCeSI6WyJhc2MiXX1d","getFilters":[],"adhocData":"eyJsb2NhdGlvbiI6IjE0NjMzNzc4MDc3MjQvMTQ2MzM3NzgzNjk4NSIsIm1ldGFkYXRhRmlsZU5hbWUiOiJlOWJlNjc3MS05OTViLTQwZWItYTAxYy0zMDQ4NTdhMTAwYTEubWV0YWRhdGEiLCJjb2x1bW5zIjpbeyJjb2x1bW4iOiJISVVTRVIudHJhdmVsX2RldGFpbHMudHJhdmVsX2RhdGUiLCJhbGlhcyI6Ik1vbnRoIiwiZGF0YWJhc2VGdW5jdGlvbiI6eyJmdW5jdGlvbk5hbWUiOiJzcWwuZGF0ZVRpbWUubW9udGhuYW1lIiwiZGF0YVR5cGUiOiJ0ZXh0IiwicGFyYW1ldGVycyI6eyJkYXRldGltZSI6InRyYXZlbF9kZXRhaWxzLnRyYXZlbF9kYXRlIn19fSx7ImNvbHVtbiI6IkhJVVNFUi50cmF2ZWxfZGV0YWlscy50cmF2ZWxfY29zdCIsImFsaWFzIjoiTm8gb2YgVHJhdmVscyIsImFnZ3JlZ2F0ZSI6dHJ1ZX1dLCJmdW5jdGlvbnMiOnsiYWdncmVnYXRlIjpbeyJjb2x1bW4iOiJISVVTRVIudHJhdmVsX2RldGFpbHMudHJhdmVsX2Nvc3QiLCJmdW5jdGlvbiI6ImRiLmdlbmVyaWMuYWdncmVnYXRlLmNvdW50IiwiYWxpYXMiOiJObyBvZiBUcmF2ZWxzIn1dLCJncm91cEJ5IjpbeyJjb2x1bW4iOiJNb250aCIsImN1c3RvbSI6dHJ1ZX1dLCJvcmRlckJ5IjpbeyJhbGlhcyI6Ik5vIG9mIFRyYXZlbHMiLCJvcmRlciI6ImFzYyIsImN1c3RvbSI6dHJ1ZX1dfSwibGltaXRCeSI6MTAwMCwicHJlcGVuZFRhYmxlTmFtZVRvQWxpYXMiOnRydWV9","styles":"","viz_type":"Charts","dir":"1463377807724/1463983915686/1463838054907","scripts":"W10="};
+    </script>
+</head>
+<body class="">
+<!--add for handling notification for with iframe-->
+<div data-keyboard="false" data-backdrop="static" id="hdi-blockUI" class="modal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title"><b>Updating</b>
+                        <span class="glyphicon glyphicon-repeat spin pull-right"></span></h4>
+                </div>
+                <div class="modal-body">
+                    <p><b>Please wait while the report is being loaded...</b></p>
+
+                    <p>Pending Requests: <span id="request-count">0</span></p>
+                </div>
+                <div class="modal-footer">
+                    <p class="pull-left text-danger">Time elapsed: <span id="elpased_time">0:00</span></p>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="_reset_loading_panel()">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="modal fade" id="error-panel">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title"><b>Error Occurred</b></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-danger"><span id="error-generated"></span></p>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-primary" value="OK" data-dismiss="modal">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div id="main"><div id="chart" style="width:1297.7px;height:613.7px"><svg viewBox="0 0 1297 613" width="1297" height="613" class="bubble"><g class="HI-Bubblechart-node" transform="translate(629.5462457062429,364.34052374583024)"><circle r="53.44024231018785" style="fill: #81b8ec; "></circle><text dy=".3em" style="text-anchor: middle; ">56</text></g><g class="HI-Bubblechart-node" transform="translate(738.8573108101949,364.34052374583024)"><circle r="54.38616074194931" style="fill: #434348; "></circle><text dy=".3em" style="text-anchor: middle; ">58</text></g><g class="HI-Bubblechart-node" transform="translate(683.2437215853388,268.0616716291986)"><circle r="55.31590605175608" style="fill: #90ed7d; "></circle><text dy=".3em" style="text-anchor: middle; ">60</text></g><g class="HI-Bubblechart-node" transform="translate(566.6957141649309,268.42552310935815)"><circle r="59.748007269820214" style="fill: #f7a35c; "></circle><text dy=".3em" style="text-anchor: middle; ">70</text></g><g class="HI-Bubblechart-node" transform="translate(515.3126878698478,378.4218211562061)"><circle r="60.17326535724372" style="fill: #9498ec; "></circle><text dy=".3em" style="text-anchor: middle; ">71</text></g><g class="HI-Bubblechart-node" transform="translate(591.9537828234596,473.1265311508593)"><circle r="60.17326535724372" style="fill: #f15c80; "></circle><text dy=".3em" style="text-anchor: middle; ">71</text></g><g class="HI-Bubblechart-node" transform="translate(718.2461530740625,483.50185163209363)"><circle r="65.05990897794592" style="fill: #e7d764; "></circle><text dy=".3em" style="text-anchor: middle; ">83</text></g><g class="HI-Bubblechart-node" transform="translate(843.1307464585569,432.12163593791183)"><circle r="68.49649024269502" style="fill: #2b908f; "></circle><text dy=".3em" style="text-anchor: middle; ">92</text></g><g class="HI-Bubblechart-node" transform="translate(841.7607173032798,292.5428851576205)"><circle r="69.60432205462494" style="fill: #f45b5b; "></circle><text dy=".3em" style="text-anchor: middle; ">95</text></g><g class="HI-Bubblechart-node" transform="translate(767.4752129098824,167.2656805698247)"><circle r="74.55686771335587" style="fill: #91e8e1; "></circle><text dy=".3em" style="text-anchor: middle; ">109</text></g><g class="HI-Bubblechart-node" transform="translate(617.5234470766403,140.6859539683053)"><circle r="76.24771457834483" style="fill: #7cb5ec; "></circle><text dy=".3em" style="text-anchor: middle; ">114</text></g><g class="HI-Bubblechart-node" transform="translate(464.25047819168196,172.84365562844167)"><circle r="78.87771489293391" style="fill: #81b8ec; "></circle><text dy=".3em" style="text-anchor: middle; ">122</text></g></svg><div class="HI-Core-tooltip" id="HI-Core-tooltip-chart" style="display: none; background-color: rgb(255, 255, 255); z-index: 1040; "></div><div id="HI-infoWindow" class="HI-Core-popup" style="z-index: 2000; display: none; "></div></div></div>
+<form id="hi-viz-form" method="post" style="display:none">
+    <input type="hidden" name="adhocData" value="">
+    <input type="hidden" name="columns" value="">
+    <input type="hidden" name="scripts" value="">
+    <input type="hidden" name="styles" value="">
+    <input type="hidden" name="viz_type" value="">
+    <input type="hidden" name="settings" value="">
+    <input type="hidden" name="database" value="">
+    <input type="hidden" name="getFilters" value="">
+    <button style="display:none;" type="submit" id="hi-viz-submit"></button>
+</form>
+
+<script src="http://164.52.201.247:8085/hi-ee/js/adhoc/container.js"></script>
+<script src="http://164.52.201.247:8085/hi-ee/js/adhoc/jsInterface.js"></script>
+<script src="http://164.52.201.247:8085/hi-ee/js/adhoc/vizManager.js"></script>
+<script type="text/javascript" src="http://164.52.201.247:8085/hi-ee/js/adhoc/visualisations/table.js"></script>
+<script type="text/javascript" src="http://164.52.201.247:8085/hi-ee/js/adhoc/visualisations/charts.js"></script>
+<script type="text/javascript" src="http://164.52.201.247:8085/hi-ee/js/adhoc/visualisations/cross-tab.js"></script>
+<script type="text/javascript" src="http://164.52.201.247:8085/hi-ee/js/adhoc/visualisations/vf.js"></script>
+<script type="text/javascript">
+    (function () {
+        window.hi_container = new Container.default();
+        window.Dashboard = window.Dashboard || {};
+        window.Dashboard.setVariable = function (variable, value) {
+            var parent = window.parent;
+            while (parent) {
+                if (parent.Dashboard) {
+                    parent.Dashboard.setVariable(variable, value);
+                }
+
+                if (parent === parent.parent) {
+                    break;
+                }
+
+                parent = parent.parent;
+            }
+        }
+
+        window.Dashboard.getFilters = function () {
+            return window.__hi_params.getFilters;
+        }
+
+        window.Dashboard.getAllVariables = function () {
+            return (window.__hi_params.getFilters || []).reduce(function (p, c) {
+                p[c.name] = c.values;
+                return p;
+            }, {});
+        }
+
+        if (hi_container.isSet("getFilters")) {
+
+            hi_container.unSet("getFilters");
+            hi_container.set("getFilters", window.Dashboard.getFilters);
+
+        } else {
+
+            hi_container.set("getFilters", window.Dashboard.getFilters);
+
+        }
+
+        var requestData = ("eyJsb2NhdGlvbiI6IjE0NjMzNzc4MDc3MjQvMTQ2MzM3NzgzNjk4NSIsIm1ldGFkYXRhRmlsZU5hbWUiOiJlOWJlNjc3MS05OTViLTQwZWItYTAxYy0zMDQ4NTdhMTAwYTEubWV0YWRhdGEiLCJjb2x1bW5zIjpbeyJjb2x1bW4iOiJISVVTRVIudHJhdmVsX2RldGFpbHMudHJhdmVsX2RhdGUiLCJhbGlhcyI6Ik1vbnRoIiwiZGF0YWJhc2VGdW5jdGlvbiI6eyJmdW5jdGlvbk5hbWUiOiJzcWwuZGF0ZVRpbWUubW9udGhuYW1lIiwiZGF0YVR5cGUiOiJ0ZXh0IiwicGFyYW1ldGVycyI6eyJkYXRldGltZSI6InRyYXZlbF9kZXRhaWxzLnRyYXZlbF9kYXRlIn19fSx7ImNvbHVtbiI6IkhJVVNFUi50cmF2ZWxfZGV0YWlscy50cmF2ZWxfY29zdCIsImFsaWFzIjoiTm8gb2YgVHJhdmVscyIsImFnZ3JlZ2F0ZSI6dHJ1ZX1dLCJmdW5jdGlvbnMiOnsiYWdncmVnYXRlIjpbeyJjb2x1bW4iOiJISVVTRVIudHJhdmVsX2RldGFpbHMudHJhdmVsX2Nvc3QiLCJmdW5jdGlvbiI6ImRiLmdlbmVyaWMuYWdncmVnYXRlLmNvdW50IiwiYWxpYXMiOiJObyBvZiBUcmF2ZWxzIn1dLCJncm91cEJ5IjpbeyJjb2x1bW4iOiJNb250aCIsImN1c3RvbSI6dHJ1ZX1dLCJvcmRlckJ5IjpbeyJhbGlhcyI6Ik5vIG9mIFRyYXZlbHMiLCJvcmRlciI6ImFzYyIsImN1c3RvbSI6dHJ1ZX1dfSwibGltaXRCeSI6MTAwMCwicHJlcGVuZFRhYmxlTmFtZVRvQWxpYXMiOnRydWV9" == "") ? "" : JSON.parse(window.Base64.decode("eyJsb2NhdGlvbiI6IjE0NjMzNzc4MDc3MjQvMTQ2MzM3NzgzNjk4NSIsIm1ldGFkYXRhRmlsZU5hbWUiOiJlOWJlNjc3MS05OTViLTQwZWItYTAxYy0zMDQ4NTdhMTAwYTEubWV0YWRhdGEiLCJjb2x1bW5zIjpbeyJjb2x1bW4iOiJISVVTRVIudHJhdmVsX2RldGFpbHMudHJhdmVsX2RhdGUiLCJhbGlhcyI6Ik1vbnRoIiwiZGF0YWJhc2VGdW5jdGlvbiI6eyJmdW5jdGlvbk5hbWUiOiJzcWwuZGF0ZVRpbWUubW9udGhuYW1lIiwiZGF0YVR5cGUiOiJ0ZXh0IiwicGFyYW1ldGVycyI6eyJkYXRldGltZSI6InRyYXZlbF9kZXRhaWxzLnRyYXZlbF9kYXRlIn19fSx7ImNvbHVtbiI6IkhJVVNFUi50cmF2ZWxfZGV0YWlscy50cmF2ZWxfY29zdCIsImFsaWFzIjoiTm8gb2YgVHJhdmVscyIsImFnZ3JlZ2F0ZSI6dHJ1ZX1dLCJmdW5jdGlvbnMiOnsiYWdncmVnYXRlIjpbeyJjb2x1bW4iOiJISVVTRVIudHJhdmVsX2RldGFpbHMudHJhdmVsX2Nvc3QiLCJmdW5jdGlvbiI6ImRiLmdlbmVyaWMuYWdncmVnYXRlLmNvdW50IiwiYWxpYXMiOiJObyBvZiBUcmF2ZWxzIn1dLCJncm91cEJ5IjpbeyJjb2x1bW4iOiJNb250aCIsImN1c3RvbSI6dHJ1ZX1dLCJvcmRlckJ5IjpbeyJhbGlhcyI6Ik5vIG9mIFRyYXZlbHMiLCJvcmRlciI6ImFzYyIsImN1c3RvbSI6dHJ1ZX1dfSwibGltaXRCeSI6MTAwMCwicHJlcGVuZFRhYmxlTmFtZVRvQWxpYXMiOnRydWV9"));
+
+        if (hi_container.isSet("requestData")) {
+
+            hi_container.unSet("requestData");
+            hi_container.set("requestData", requestData);
+
+        } else {
+
+            hi_container.set("requestData", requestData);
+
+        }
+
+        if (window.hi_vizManager) {
+            var viz_Options = {};
+            window.hi_vizManager.getVizOptions("Charts", function (vizOptObj) {
+                viz_Options = vizOptObj;
+            }, {"settings":"eyJzY3JpcHQiOm51bGwsInR5cGUiOiJISUJ1YmJsZWNoYXJ0Iiwidml6VHlwZSI6IkNoYXJ0cyJ9","database":"SElVU0VS","file":"d1560c88-be0d-4380-8225-8a8df4eb53bf.report","columns":"W3siY29sdW1uIjoidHJhdmVsX2RldGFpbHMudHJhdmVsX2RhdGUiLCJsYWJlbCI6InRyYXZlbF9kZXRhaWxzX3RyYXZlbF9kYXRlIiwiaWQiOiJoenJ1aTliZThpdiIsInR5cGUiOnsiZGF0YVR5cGUiOiJkYXRlVGltZSIsImJhY2tlbmREYXRhdHlwZSI6ImphdmEuc3FsLlRpbWVzdGFtcCJ9LCJhdXRvZ2VuX2FsaWFzIjoidHJhdmVsX2RldGFpbHNfdHJhdmVsX2RhdGUiLCJncm91cEJ5IjpbImRiLmdlbmVyaWMuZ3JvdXBCeS5ncm91cCJdLCJhbGlhcyI6Ik1vbnRoIiwiZGF0YWJhc2VGdW5jdGlvbiI6eyJrZXkiOiJzcWwuZGF0ZVRpbWUubW9udGhuYW1lIiwiZGVzY3JpcHRpb24iOiJSZXR1cm5zIHRoZSBtb250aCBuYW1lIGJhc2VkIG9uIHRoZSBnaXZlbiBkYXRlL2RhdGV0aW1lLiBFeGFtcGxlOiBtb250aG5hbWUoJzIwMTQtMDgtMDggMDg6MDA6MDAuMDAwJykgcmVzdWx0OiBBdWd1c3QgIiwidmFsdWUiOiJNT05USE5BTUUiLCJzaWduYXR1cmUiOiIoY2FzZSB3aGVuIChtb250aCgke2RhdGV0aW1lfSk9MDEgT1IgbW9udGgoJHtkYXRldGltZX0pPTEpIHRoZW4gJ0phbnVhcnknIFxuXHQgICAgIHdoZW4gKG1vbnRoKCR7ZGF0ZXRpbWV9KT0wMiBPUiBtb250aCgke2RhdGV0aW1lfSk9MikgdGhlbiAnRmVicnVhcnknXG5cdCAgICAgd2hlbiAobW9udGgoJHtkYXRldGltZX0pPTAzIE9SIG1vbnRoKCR7ZGF0ZXRpbWV9KT0zKSB0aGVuICdNYXJjaCdcblx0ICAgICB3aGVuIChtb250aCgke2RhdGV0aW1lfSk9MDQgT1IgbW9udGgoJHtkYXRldGltZX0pPTQpIHRoZW4gJ0FwcmlsJ1xuXHQgICAgIHdoZW4gKG1vbnRoKCR7ZGF0ZXRpbWV9KT0wNSBPUiBtb250aCgke2RhdGV0aW1lfSk9NSkgdGhlbiAnTWF5J1xuXHQgICAgIHdoZW4gKG1vbnRoKCR7ZGF0ZXRpbWV9KT0wNiBPUiBtb250aCgke2RhdGV0aW1lfSk9NikgdGhlbiAnSnVuZSdcblx0ICAgICB3aGVuIChtb250aCgke2RhdGV0aW1lfSk9MDcgT1IgbW9udGgoJHtkYXRldGltZX0pPTcpIHRoZW4gJ0p1bHknXG5cdCAgICAgd2hlbiAobW9udGgoJHtkYXRldGltZX0pPTA4IE9SIG1vbnRoKCR7ZGF0ZXRpbWV9KT04KSB0aGVuICdBdWd1c3QnXG5cdCAgICAgd2hlbiAobW9udGgoJHtkYXRldGltZX0pPTA5IE9SIG1vbnRoKCR7ZGF0ZXRpbWV9KT05KSB0aGVuICdTZXB0ZW1iZXInXG5cdCAgICAgd2hlbiAobW9udGgoJHtkYXRldGltZX0pPTEwKSB0aGVuICdPY3RvYmVyJ1xuXHQgICAgIHdoZW4gKG1vbnRoKCR7ZGF0ZXRpbWV9KT0xMSkgdGhlbiAnTm92ZW1iZXInXG5cdCAgICAgd2hlbiAobW9udGgoJHtkYXRldGltZX0pPTEyKSB0aGVuICdEZWNlbWJlcidcblx0ICAgICBlbHNlIG51bGwgZW5kKSIsInJldHVybnMiOiJ0ZXh0IiwicGFyYW1ldGVycyI6W3sibmFtZSI6ImRhdGV0aW1lIiwiZGVmYXVsdFZhbHVlIjoiJzIwMTQtMDgtMDggMDg6MDA6MDAuMDAwJyIsInZhbHVlIjoidHJhdmVsX2RldGFpbHMudHJhdmVsX2RhdGUiLCJjb2x1bW4iOnRydWUsImFsaWFzTmFtZSI6Ik1vbnRoIn1dfX0seyJjb2x1bW4iOiJ0cmF2ZWxfZGV0YWlscy50cmF2ZWxfY29zdCIsImxhYmVsIjoidHJhdmVsX2RldGFpbHNfdHJhdmVsX2Nvc3QiLCJpZCI6ImQ5aHI3NzQ5ajZjIiwidHlwZSI6eyJkYXRhVHlwZSI6Im51bWVyaWMiLCJiYWNrZW5kRGF0YXR5cGUiOiJqYXZhLmxhbmcuSW50ZWdlciJ9LCJhdXRvZ2VuX2FsaWFzIjoiY291bnRfdHJhdmVsX2Nvc3QiLCJhZ2dyZWdhdGUiOlsiZGIuZ2VuZXJpYy5hZ2dyZWdhdGUuY291bnQiXSwiYWxpYXMiOiJObyBvZiBUcmF2ZWxzIiwib3JkZXJCeSI6WyJhc2MiXX1d","getFilters":[],"adhocData":"eyJsb2NhdGlvbiI6IjE0NjMzNzc4MDc3MjQvMTQ2MzM3NzgzNjk4NSIsIm1ldGFkYXRhRmlsZU5hbWUiOiJlOWJlNjc3MS05OTViLTQwZWItYTAxYy0zMDQ4NTdhMTAwYTEubWV0YWRhdGEiLCJjb2x1bW5zIjpbeyJjb2x1bW4iOiJISVVTRVIudHJhdmVsX2RldGFpbHMudHJhdmVsX2RhdGUiLCJhbGlhcyI6Ik1vbnRoIiwiZGF0YWJhc2VGdW5jdGlvbiI6eyJmdW5jdGlvbk5hbWUiOiJzcWwuZGF0ZVRpbWUubW9udGhuYW1lIiwiZGF0YVR5cGUiOiJ0ZXh0IiwicGFyYW1ldGVycyI6eyJkYXRldGltZSI6InRyYXZlbF9kZXRhaWxzLnRyYXZlbF9kYXRlIn19fSx7ImNvbHVtbiI6IkhJVVNFUi50cmF2ZWxfZGV0YWlscy50cmF2ZWxfY29zdCIsImFsaWFzIjoiTm8gb2YgVHJhdmVscyIsImFnZ3JlZ2F0ZSI6dHJ1ZX1dLCJmdW5jdGlvbnMiOnsiYWdncmVnYXRlIjpbeyJjb2x1bW4iOiJISVVTRVIudHJhdmVsX2RldGFpbHMudHJhdmVsX2Nvc3QiLCJmdW5jdGlvbiI6ImRiLmdlbmVyaWMuYWdncmVnYXRlLmNvdW50IiwiYWxpYXMiOiJObyBvZiBUcmF2ZWxzIn1dLCJncm91cEJ5IjpbeyJjb2x1bW4iOiJNb250aCIsImN1c3RvbSI6dHJ1ZX1dLCJvcmRlckJ5IjpbeyJhbGlhcyI6Ik5vIG9mIFRyYXZlbHMiLCJvcmRlciI6ImFzYyIsImN1c3RvbSI6dHJ1ZX1dfSwibGltaXRCeSI6MTAwMCwicHJlcGVuZFRhYmxlTmFtZVRvQWxpYXMiOnRydWV9","styles":"","viz_type":"Charts","dir":"1463377807724/1463983915686/1463838054907","scripts":"W10="}, "", hi_container);
+
+        }
+        else {
+            var viz_Options = {};
+        }
+        if (viz_Options && typeof viz_Options !== "undefined") {
+
+            if (hi_container.isSet("viz_Options")) {
+                hi_container.unSet("viz_Options");
+                hi_container.set("viz_Options", viz_Options);
+            } else {
+                hi_container.set("viz_Options", viz_Options);
+            }
+
+        } else {
+
+            hi_container.set("viz_Options", {});
+
+        }
+        if (window.hi_vizManager) {
+            var currentVizObject = window.hi_vizManager.getVizObject("Charts");
+        } else {
+            var currentVizObject = {};
+        }
+
+        if (currentVizObject && typeof currentVizObject !== "undefined") {
+
+            if (hi_container.isSet("currentVizObj")) {
+                hi_container.unSet("currentVizObj");
+                hi_container.set("currentVizObj", currentVizObject);
+            } else {
+                hi_container.set("currentVizObj", currentVizObject);
+            }
+
+        } else {
+
+            hi_container.set("viz_Options", {});
+
+        }
+        var ReportData = {
+            "formData": ("eyJsb2NhdGlvbiI6IjE0NjMzNzc4MDc3MjQvMTQ2MzM3NzgzNjk4NSIsIm1ldGFkYXRhRmlsZU5hbWUiOiJlOWJlNjc3MS05OTViLTQwZWItYTAxYy0zMDQ4NTdhMTAwYTEubWV0YWRhdGEiLCJjb2x1bW5zIjpbeyJjb2x1bW4iOiJISVVTRVIudHJhdmVsX2RldGFpbHMudHJhdmVsX2RhdGUiLCJhbGlhcyI6Ik1vbnRoIiwiZGF0YWJhc2VGdW5jdGlvbiI6eyJmdW5jdGlvbk5hbWUiOiJzcWwuZGF0ZVRpbWUubW9udGhuYW1lIiwiZGF0YVR5cGUiOiJ0ZXh0IiwicGFyYW1ldGVycyI6eyJkYXRldGltZSI6InRyYXZlbF9kZXRhaWxzLnRyYXZlbF9kYXRlIn19fSx7ImNvbHVtbiI6IkhJVVNFUi50cmF2ZWxfZGV0YWlscy50cmF2ZWxfY29zdCIsImFsaWFzIjoiTm8gb2YgVHJhdmVscyIsImFnZ3JlZ2F0ZSI6dHJ1ZX1dLCJmdW5jdGlvbnMiOnsiYWdncmVnYXRlIjpbeyJjb2x1bW4iOiJISVVTRVIudHJhdmVsX2RldGFpbHMudHJhdmVsX2Nvc3QiLCJmdW5jdGlvbiI6ImRiLmdlbmVyaWMuYWdncmVnYXRlLmNvdW50IiwiYWxpYXMiOiJObyBvZiBUcmF2ZWxzIn1dLCJncm91cEJ5IjpbeyJjb2x1bW4iOiJNb250aCIsImN1c3RvbSI6dHJ1ZX1dLCJvcmRlckJ5IjpbeyJhbGlhcyI6Ik5vIG9mIFRyYXZlbHMiLCJvcmRlciI6ImFzYyIsImN1c3RvbSI6dHJ1ZX1dfSwibGltaXRCeSI6MTAwMCwicHJlcGVuZFRhYmxlTmFtZVRvQWxpYXMiOnRydWV9" == "") ? "" : JSON.parse(window.Base64.decode("eyJsb2NhdGlvbiI6IjE0NjMzNzc4MDc3MjQvMTQ2MzM3NzgzNjk4NSIsIm1ldGFkYXRhRmlsZU5hbWUiOiJlOWJlNjc3MS05OTViLTQwZWItYTAxYy0zMDQ4NTdhMTAwYTEubWV0YWRhdGEiLCJjb2x1bW5zIjpbeyJjb2x1bW4iOiJISVVTRVIudHJhdmVsX2RldGFpbHMudHJhdmVsX2RhdGUiLCJhbGlhcyI6Ik1vbnRoIiwiZGF0YWJhc2VGdW5jdGlvbiI6eyJmdW5jdGlvbk5hbWUiOiJzcWwuZGF0ZVRpbWUubW9udGhuYW1lIiwiZGF0YVR5cGUiOiJ0ZXh0IiwicGFyYW1ldGVycyI6eyJkYXRldGltZSI6InRyYXZlbF9kZXRhaWxzLnRyYXZlbF9kYXRlIn19fSx7ImNvbHVtbiI6IkhJVVNFUi50cmF2ZWxfZGV0YWlscy50cmF2ZWxfY29zdCIsImFsaWFzIjoiTm8gb2YgVHJhdmVscyIsImFnZ3JlZ2F0ZSI6dHJ1ZX1dLCJmdW5jdGlvbnMiOnsiYWdncmVnYXRlIjpbeyJjb2x1bW4iOiJISVVTRVIudHJhdmVsX2RldGFpbHMudHJhdmVsX2Nvc3QiLCJmdW5jdGlvbiI6ImRiLmdlbmVyaWMuYWdncmVnYXRlLmNvdW50IiwiYWxpYXMiOiJObyBvZiBUcmF2ZWxzIn1dLCJncm91cEJ5IjpbeyJjb2x1bW4iOiJNb250aCIsImN1c3RvbSI6dHJ1ZX1dLCJvcmRlckJ5IjpbeyJhbGlhcyI6Ik5vIG9mIFRyYXZlbHMiLCJvcmRlciI6ImFzYyIsImN1c3RvbSI6dHJ1ZX1dfSwibGltaXRCeSI6MTAwMCwicHJlcGVuZFRhYmxlTmFtZVRvQWxpYXMiOnRydWV9")),
+            "columns": ("W3siY29sdW1uIjoidHJhdmVsX2RldGFpbHMudHJhdmVsX2RhdGUiLCJsYWJlbCI6InRyYXZlbF9kZXRhaWxzX3RyYXZlbF9kYXRlIiwiaWQiOiJoenJ1aTliZThpdiIsInR5cGUiOnsiZGF0YVR5cGUiOiJkYXRlVGltZSIsImJhY2tlbmREYXRhdHlwZSI6ImphdmEuc3FsLlRpbWVzdGFtcCJ9LCJhdXRvZ2VuX2FsaWFzIjoidHJhdmVsX2RldGFpbHNfdHJhdmVsX2RhdGUiLCJncm91cEJ5IjpbImRiLmdlbmVyaWMuZ3JvdXBCeS5ncm91cCJdLCJhbGlhcyI6Ik1vbnRoIiwiZGF0YWJhc2VGdW5jdGlvbiI6eyJrZXkiOiJzcWwuZGF0ZVRpbWUubW9udGhuYW1lIiwiZGVzY3JpcHRpb24iOiJSZXR1cm5zIHRoZSBtb250aCBuYW1lIGJhc2VkIG9uIHRoZSBnaXZlbiBkYXRlL2RhdGV0aW1lLiBFeGFtcGxlOiBtb250aG5hbWUoJzIwMTQtMDgtMDggMDg6MDA6MDAuMDAwJykgcmVzdWx0OiBBdWd1c3QgIiwidmFsdWUiOiJNT05USE5BTUUiLCJzaWduYXR1cmUiOiIoY2FzZSB3aGVuIChtb250aCgke2RhdGV0aW1lfSk9MDEgT1IgbW9udGgoJHtkYXRldGltZX0pPTEpIHRoZW4gJ0phbnVhcnknIFxuXHQgICAgIHdoZW4gKG1vbnRoKCR7ZGF0ZXRpbWV9KT0wMiBPUiBtb250aCgke2RhdGV0aW1lfSk9MikgdGhlbiAnRmVicnVhcnknXG5cdCAgICAgd2hlbiAobW9udGgoJHtkYXRldGltZX0pPTAzIE9SIG1vbnRoKCR7ZGF0ZXRpbWV9KT0zKSB0aGVuICdNYXJjaCdcblx0ICAgICB3aGVuIChtb250aCgke2RhdGV0aW1lfSk9MDQgT1IgbW9udGgoJHtkYXRldGltZX0pPTQpIHRoZW4gJ0FwcmlsJ1xuXHQgICAgIHdoZW4gKG1vbnRoKCR7ZGF0ZXRpbWV9KT0wNSBPUiBtb250aCgke2RhdGV0aW1lfSk9NSkgdGhlbiAnTWF5J1xuXHQgICAgIHdoZW4gKG1vbnRoKCR7ZGF0ZXRpbWV9KT0wNiBPUiBtb250aCgke2RhdGV0aW1lfSk9NikgdGhlbiAnSnVuZSdcblx0ICAgICB3aGVuIChtb250aCgke2RhdGV0aW1lfSk9MDcgT1IgbW9udGgoJHtkYXRldGltZX0pPTcpIHRoZW4gJ0p1bHknXG5cdCAgICAgd2hlbiAobW9udGgoJHtkYXRldGltZX0pPTA4IE9SIG1vbnRoKCR7ZGF0ZXRpbWV9KT04KSB0aGVuICdBdWd1c3QnXG5cdCAgICAgd2hlbiAobW9udGgoJHtkYXRldGltZX0pPTA5IE9SIG1vbnRoKCR7ZGF0ZXRpbWV9KT05KSB0aGVuICdTZXB0ZW1iZXInXG5cdCAgICAgd2hlbiAobW9udGgoJHtkYXRldGltZX0pPTEwKSB0aGVuICdPY3RvYmVyJ1xuXHQgICAgIHdoZW4gKG1vbnRoKCR7ZGF0ZXRpbWV9KT0xMSkgdGhlbiAnTm92ZW1iZXInXG5cdCAgICAgd2hlbiAobW9udGgoJHtkYXRldGltZX0pPTEyKSB0aGVuICdEZWNlbWJlcidcblx0ICAgICBlbHNlIG51bGwgZW5kKSIsInJldHVybnMiOiJ0ZXh0IiwicGFyYW1ldGVycyI6W3sibmFtZSI6ImRhdGV0aW1lIiwiZGVmYXVsdFZhbHVlIjoiJzIwMTQtMDgtMDggMDg6MDA6MDAuMDAwJyIsInZhbHVlIjoidHJhdmVsX2RldGFpbHMudHJhdmVsX2RhdGUiLCJjb2x1bW4iOnRydWUsImFsaWFzTmFtZSI6Ik1vbnRoIn1dfX0seyJjb2x1bW4iOiJ0cmF2ZWxfZGV0YWlscy50cmF2ZWxfY29zdCIsImxhYmVsIjoidHJhdmVsX2RldGFpbHNfdHJhdmVsX2Nvc3QiLCJpZCI6ImQ5aHI3NzQ5ajZjIiwidHlwZSI6eyJkYXRhVHlwZSI6Im51bWVyaWMiLCJiYWNrZW5kRGF0YXR5cGUiOiJqYXZhLmxhbmcuSW50ZWdlciJ9LCJhdXRvZ2VuX2FsaWFzIjoiY291bnRfdHJhdmVsX2Nvc3QiLCJhZ2dyZWdhdGUiOlsiZGIuZ2VuZXJpYy5hZ2dyZWdhdGUuY291bnQiXSwiYWxpYXMiOiJObyBvZiBUcmF2ZWxzIiwib3JkZXJCeSI6WyJhc2MiXX1d" == "") ? "" : JSON.parse(window.Base64.decode("W3siY29sdW1uIjoidHJhdmVsX2RldGFpbHMudHJhdmVsX2RhdGUiLCJsYWJlbCI6InRyYXZlbF9kZXRhaWxzX3RyYXZlbF9kYXRlIiwiaWQiOiJoenJ1aTliZThpdiIsInR5cGUiOnsiZGF0YVR5cGUiOiJkYXRlVGltZSIsImJhY2tlbmREYXRhdHlwZSI6ImphdmEuc3FsLlRpbWVzdGFtcCJ9LCJhdXRvZ2VuX2FsaWFzIjoidHJhdmVsX2RldGFpbHNfdHJhdmVsX2RhdGUiLCJncm91cEJ5IjpbImRiLmdlbmVyaWMuZ3JvdXBCeS5ncm91cCJdLCJhbGlhcyI6Ik1vbnRoIiwiZGF0YWJhc2VGdW5jdGlvbiI6eyJrZXkiOiJzcWwuZGF0ZVRpbWUubW9udGhuYW1lIiwiZGVzY3JpcHRpb24iOiJSZXR1cm5zIHRoZSBtb250aCBuYW1lIGJhc2VkIG9uIHRoZSBnaXZlbiBkYXRlL2RhdGV0aW1lLiBFeGFtcGxlOiBtb250aG5hbWUoJzIwMTQtMDgtMDggMDg6MDA6MDAuMDAwJykgcmVzdWx0OiBBdWd1c3QgIiwidmFsdWUiOiJNT05USE5BTUUiLCJzaWduYXR1cmUiOiIoY2FzZSB3aGVuIChtb250aCgke2RhdGV0aW1lfSk9MDEgT1IgbW9udGgoJHtkYXRldGltZX0pPTEpIHRoZW4gJ0phbnVhcnknIFxuXHQgICAgIHdoZW4gKG1vbnRoKCR7ZGF0ZXRpbWV9KT0wMiBPUiBtb250aCgke2RhdGV0aW1lfSk9MikgdGhlbiAnRmVicnVhcnknXG5cdCAgICAgd2hlbiAobW9udGgoJHtkYXRldGltZX0pPTAzIE9SIG1vbnRoKCR7ZGF0ZXRpbWV9KT0zKSB0aGVuICdNYXJjaCdcblx0ICAgICB3aGVuIChtb250aCgke2RhdGV0aW1lfSk9MDQgT1IgbW9udGgoJHtkYXRldGltZX0pPTQpIHRoZW4gJ0FwcmlsJ1xuXHQgICAgIHdoZW4gKG1vbnRoKCR7ZGF0ZXRpbWV9KT0wNSBPUiBtb250aCgke2RhdGV0aW1lfSk9NSkgdGhlbiAnTWF5J1xuXHQgICAgIHdoZW4gKG1vbnRoKCR7ZGF0ZXRpbWV9KT0wNiBPUiBtb250aCgke2RhdGV0aW1lfSk9NikgdGhlbiAnSnVuZSdcblx0ICAgICB3aGVuIChtb250aCgke2RhdGV0aW1lfSk9MDcgT1IgbW9udGgoJHtkYXRldGltZX0pPTcpIHRoZW4gJ0p1bHknXG5cdCAgICAgd2hlbiAobW9udGgoJHtkYXRldGltZX0pPTA4IE9SIG1vbnRoKCR7ZGF0ZXRpbWV9KT04KSB0aGVuICdBdWd1c3QnXG5cdCAgICAgd2hlbiAobW9udGgoJHtkYXRldGltZX0pPTA5IE9SIG1vbnRoKCR7ZGF0ZXRpbWV9KT05KSB0aGVuICdTZXB0ZW1iZXInXG5cdCAgICAgd2hlbiAobW9udGgoJHtkYXRldGltZX0pPTEwKSB0aGVuICdPY3RvYmVyJ1xuXHQgICAgIHdoZW4gKG1vbnRoKCR7ZGF0ZXRpbWV9KT0xMSkgdGhlbiAnTm92ZW1iZXInXG5cdCAgICAgd2hlbiAobW9udGgoJHtkYXRldGltZX0pPTEyKSB0aGVuICdEZWNlbWJlcidcblx0ICAgICBlbHNlIG51bGwgZW5kKSIsInJldHVybnMiOiJ0ZXh0IiwicGFyYW1ldGVycyI6W3sibmFtZSI6ImRhdGV0aW1lIiwiZGVmYXVsdFZhbHVlIjoiJzIwMTQtMDgtMDggMDg6MDA6MDAuMDAwJyIsInZhbHVlIjoidHJhdmVsX2RldGFpbHMudHJhdmVsX2RhdGUiLCJjb2x1bW4iOnRydWUsImFsaWFzTmFtZSI6Ik1vbnRoIn1dfX0seyJjb2x1bW4iOiJ0cmF2ZWxfZGV0YWlscy50cmF2ZWxfY29zdCIsImxhYmVsIjoidHJhdmVsX2RldGFpbHNfdHJhdmVsX2Nvc3QiLCJpZCI6ImQ5aHI3NzQ5ajZjIiwidHlwZSI6eyJkYXRhVHlwZSI6Im51bWVyaWMiLCJiYWNrZW5kRGF0YXR5cGUiOiJqYXZhLmxhbmcuSW50ZWdlciJ9LCJhdXRvZ2VuX2FsaWFzIjoiY291bnRfdHJhdmVsX2Nvc3QiLCJhZ2dyZWdhdGUiOlsiZGIuZ2VuZXJpYy5hZ2dyZWdhdGUuY291bnQiXSwiYWxpYXMiOiJObyBvZiBUcmF2ZWxzIiwib3JkZXJCeSI6WyJhc2MiXX1d")),
+            "viz_type": "Charts",
+            "settings": ("eyJzY3JpcHQiOm51bGwsInR5cGUiOiJISUJ1YmJsZWNoYXJ0Iiwidml6VHlwZSI6IkNoYXJ0cyJ9" == "") ? "" : JSON.parse(window.Base64.decode("eyJzY3JpcHQiOm51bGwsInR5cGUiOiJISUJ1YmJsZWNoYXJ0Iiwidml6VHlwZSI6IkNoYXJ0cyJ9")),
+            "database": ("SElVU0VS" == "") ? "" : window.Base64.decode("SElVU0VS"),
+            "scripts": ("W10=" == "") ? "" : JSON.parse(window.Base64.decode("W10=")),
+            "customScripts": ("" == "") ? "" : JSON.parse(window.Base64.decode("")),
+            "styles": window.Base64.decode(""),
+            "customStyles": window.Base64.decode("")
+        };
+
+        if (hi_container.isSet("reportData")) {
+
+            hi_container.unSet("reportData");
+            hi_container.set("reportData", ReportData);
+
+        } else {
+
+            hi_container.set("reportData", ReportData);
+
+        }
+
+    })();
+</script>
+<script type="text/javascript">
+    (function () {
+        hi_container.set("renderId", "");
+        if (window.__hi_params && window.__hi_params.scripts) {
+            try {
+                var scripts = window.Base64.decode(window.__hi_params.scripts);
+
+                scripts = JSON.parse(scripts);
+                scripts.map(function (scriptText) {
+                    var scripts_id = "scripts" + Math.random().toString(16).slice(2);
+                    var script = document.createElement("script");
+                    script.text = 'try { function ' + scripts_id + '(hi_container){' + scriptText + '} } catch(e){console.error(e.trace)}';
+                    script.type = 'text/javascript';
+                    script.charset = 'utf-8';
+                    document.body.appendChild(script);
+                    eval(scripts_id + '(hi_container)')
+                })
+            } catch (e) {
+            }
+        }
+
+        if (window.__hi_params && window.__hi_params.styles) {
+            try {
+                var styles = window.Base64.decode(window.__hi_params.styles);
+
+                var style = document.createElement("style");
+                style.type = "text/css";
+                style.textContent = styles;
+                document.head.appendChild(style);
+            } catch (e) {
+            }
+        }
+        if (window.__hi_params && window.__hi_params.customScripts) {
+
+            try {
+                var customScripts = window.Base64.decode(window.__hi_params.customScripts);
+                customScripts = JSON.parse(customScripts);
+                //console.log("customScripts",customScripts);
+                customScripts.map(function (customScriptsText, index) {
+                    var customScripts_id = "customScripts" + Math.random().toString(16).slice(2);
+                    var script = document.createElement("script");
+                    script.text = 'try { function ' + customScripts_id + '(hi_container){' + customScriptsText + '} } catch(e){console.error(e.trace)}';
+                    script.type = 'text/javascript';
+                    //console.log("customScriptsText",customScriptsText);
+                    script.charset = 'utf-8';
+                    document.body.appendChild(script);
+                    eval(customScripts_id + '(hi_container)');
+                    //console.log("hi_container",hi_container);
+                });
+
+            } catch (e) {
+
+            }
+        }
+
+        if (window.__hi_params && window.__hi_params.customStyles) {
+            try {
+                var customStyles = window.Base64.decode(window.__hi_params.customStyles);
+
+                var style = document.createElement("style");
+                style.type = "text/css";
+                style.textContent = customStyles;
+                document.head.appendChild(style);
+            } catch (e) {
+            }
+        }
+
+    })()
+
+</script>
+<!--Charts & VF  dependicies -->
+<script type="text/javascript" src="http://164.52.201.247:8085/hi-ee/js/vendors/d3.js"></script>
+<script type="text/javascript" src="http://164.52.201.247:8085/hi-ee/js/vendors/c3.js"></script>
+<script type="text/javascript" src="http://164.52.201.247:8085/hi-ee/js/vendors/iopctrl.js"></script>
+<script type="text/javascript" src="http://164.52.201.247:8085/hi-ee/js/vendors/d3plus.min.js"></script>
+<script type="text/javascript" src="http://164.52.201.247:8085/hi-ee/js/leaflet.js"></script>
+<script type="text/javascript" src="http://164.52.201.247:8085/hi-ee/js/vendors/leaflet-search.min.js"></script>
+<script type="text/javascript" src="http://164.52.201.247:8085/hi-ee/js/vendors/leaflet.markercluster.js"></script>
+<script type="text/javascript" src="http://164.52.201.247:8085/hi-ee/js/vendors/heatmap.min.js"></script>
+
+
+<script type="text/javascript" src="http://164.52.201.247:8085/hi-ee/js/vendors/leaflet-heatmap.js"></script>
+
+<script type="text/javascript" src="http://164.52.201.247:8085/hi-ee/js/vendors/Chart.min.js"></script>
+<script type="text/javascript" src="http://164.52.201.247:8085/hi-ee/js/vendors/H3.js"></script>
+
+<script type="text/javascript" src="http://164.52.201.247:8085/hi-ee/js/vendors/HICharts.js"></script>
+<script type="text/javascript" src="http://164.52.201.247:8085/hi-ee/js/vendors/HI.extend.GroupedBar.js"></script>
+<script type="text/javascript" src="http://164.52.201.247:8085/hi-ee/js/bubble.js"></script>
+
+<!-- Table dependicies -->
+<script type="text/javascript" src="http://164.52.201.247:8085/hi-ee/js/plugins/table.js"></script>
+<!-- Cross-Tab dependicies -->
+<script type="text/javascript" src="http://164.52.201.247:8085/hi-ee/js/jquery-ui-1.9.2.custom.min.js"></script>
+<script type="text/javascript" src="http://164.52.201.247:8085/hi-ee/js/pivot.js"></script>
+<script src="http://164.52.201.247:8085/hi-ee/js/newwindow.js"></script>
+
+<script type="text/javascript">
+    if (hi_container.isSet("__hi_params")) {
+        hi_container.unSet("__hi_params");
+        hi_container.set("__hi_params", window.__hi_params);
+    } else {
+        hi_container.set("__hi_params", window.__hi_params);
+    }
+
+    function preExecution() {
+        var d = new $.Deferred();
+
+        // console.log("preExecution Start");
+        if (hi_container.isSet("preExecution")) {
+            hi_container.get("preExecution");
+        }
+        // console.log("preExecution End");
+        d.resolve();
+        return d.promise();
+    }
+
+    function preFetch() {
+        var d = new $.Deferred();
+        // console.log("preFetch start");
+        if (hi_container.isSet("preFetch")) {
+            hi_container.get("preFetch");
+        }
+        // console.log("preFetch End");
+        d.resolve();
+        return d.promise();
+    }
+    function getData() {
+        // console.log("Inside Form Submit");
+        var d = new $.Deferred();
+        var formData = "";
+        if (hi_container.isSet("requestData")) {
+
+            formData = JSON.stringify(hi_container.get("requestData"));
+
+        }
+        else {
+            formData = JSON.stringify(JSON.parse(window.Base64.decode("eyJsb2NhdGlvbiI6IjE0NjMzNzc4MDc3MjQvMTQ2MzM3NzgzNjk4NSIsIm1ldGFkYXRhRmlsZU5hbWUiOiJlOWJlNjc3MS05OTViLTQwZWItYTAxYy0zMDQ4NTdhMTAwYTEubWV0YWRhdGEiLCJjb2x1bW5zIjpbeyJjb2x1bW4iOiJISVVTRVIudHJhdmVsX2RldGFpbHMudHJhdmVsX2RhdGUiLCJhbGlhcyI6Ik1vbnRoIiwiZGF0YWJhc2VGdW5jdGlvbiI6eyJmdW5jdGlvbk5hbWUiOiJzcWwuZGF0ZVRpbWUubW9udGhuYW1lIiwiZGF0YVR5cGUiOiJ0ZXh0IiwicGFyYW1ldGVycyI6eyJkYXRldGltZSI6InRyYXZlbF9kZXRhaWxzLnRyYXZlbF9kYXRlIn19fSx7ImNvbHVtbiI6IkhJVVNFUi50cmF2ZWxfZGV0YWlscy50cmF2ZWxfY29zdCIsImFsaWFzIjoiTm8gb2YgVHJhdmVscyIsImFnZ3JlZ2F0ZSI6dHJ1ZX1dLCJmdW5jdGlvbnMiOnsiYWdncmVnYXRlIjpbeyJjb2x1bW4iOiJISVVTRVIudHJhdmVsX2RldGFpbHMudHJhdmVsX2Nvc3QiLCJmdW5jdGlvbiI6ImRiLmdlbmVyaWMuYWdncmVnYXRlLmNvdW50IiwiYWxpYXMiOiJObyBvZiBUcmF2ZWxzIn1dLCJncm91cEJ5IjpbeyJjb2x1bW4iOiJNb250aCIsImN1c3RvbSI6dHJ1ZX1dLCJvcmRlckJ5IjpbeyJhbGlhcyI6Ik5vIG9mIFRyYXZlbHMiLCJvcmRlciI6ImFzYyIsImN1c3RvbSI6dHJ1ZX1dfSwibGltaXRCeSI6MTAwMCwicHJlcGVuZFRhYmxlTmFtZVRvQWxpYXMiOnRydWV9")));
+        }
+
+        $.post(DashboardGlobals.services, {
+            type: "adhoc",
+            serviceType: "report",
+            service: "fetchData",
+            formData: window.Base64.encode(formData)
+        }).done(function (data) {
+            // console.log("GetData method Success",data);
+            $("body").removeClass("hi-loading");
+            if (data.status === 0) {
+                $("#main").append("<span class='alert alert-danger' style='width:100vw'>" + data.response.message + "</span>");
+                return;
+            }
+            if (hi_container.isSet("responseData")) {
+                window.__hi_result = data.response;
+                hi_container.unSet("responseData");
+                hi_container.set("responseData", data.response);
+            } else {
+                window.__hi_result = data.response;
+                hi_container.set("responseData", data.response);
+            }
+
+            d.resolve();
+        }).fail(function (xhr, textStatus, errorThrown) {
+            $("body").removeClass("hi-loading");
+            $("#main").append("<span class='alert alert-danger' style='width:100vw'>" + errorThrown + "</span>");
+            return;
+        });
+        return d.promise();
+    }
+    function postFetch() {
+        var d = new $.Deferred();
+        // console.log("postFetch start");
+        if (hi_container.isSet("postFetch")) {
+            hi_container.get("postFetch");
+        }
+        // console.log("postFetch End");
+        d.resolve();
+        return d.promise();
+    }
+    function loadViz() {
+        var d = new $.Deferred();
+        // console.log("Inside loadViz");
+        $.when(
+                window.hi_vizManager.renderViz("Charts", hi_container.get("responseData"), hi_container.get("viz_Options"), {"settings":"eyJzY3JpcHQiOm51bGwsInR5cGUiOiJISUJ1YmJsZWNoYXJ0Iiwidml6VHlwZSI6IkNoYXJ0cyJ9","database":"SElVU0VS","file":"d1560c88-be0d-4380-8225-8a8df4eb53bf.report","columns":"W3siY29sdW1uIjoidHJhdmVsX2RldGFpbHMudHJhdmVsX2RhdGUiLCJsYWJlbCI6InRyYXZlbF9kZXRhaWxzX3RyYXZlbF9kYXRlIiwiaWQiOiJoenJ1aTliZThpdiIsInR5cGUiOnsiZGF0YVR5cGUiOiJkYXRlVGltZSIsImJhY2tlbmREYXRhdHlwZSI6ImphdmEuc3FsLlRpbWVzdGFtcCJ9LCJhdXRvZ2VuX2FsaWFzIjoidHJhdmVsX2RldGFpbHNfdHJhdmVsX2RhdGUiLCJncm91cEJ5IjpbImRiLmdlbmVyaWMuZ3JvdXBCeS5ncm91cCJdLCJhbGlhcyI6Ik1vbnRoIiwiZGF0YWJhc2VGdW5jdGlvbiI6eyJrZXkiOiJzcWwuZGF0ZVRpbWUubW9udGhuYW1lIiwiZGVzY3JpcHRpb24iOiJSZXR1cm5zIHRoZSBtb250aCBuYW1lIGJhc2VkIG9uIHRoZSBnaXZlbiBkYXRlL2RhdGV0aW1lLiBFeGFtcGxlOiBtb250aG5hbWUoJzIwMTQtMDgtMDggMDg6MDA6MDAuMDAwJykgcmVzdWx0OiBBdWd1c3QgIiwidmFsdWUiOiJNT05USE5BTUUiLCJzaWduYXR1cmUiOiIoY2FzZSB3aGVuIChtb250aCgke2RhdGV0aW1lfSk9MDEgT1IgbW9udGgoJHtkYXRldGltZX0pPTEpIHRoZW4gJ0phbnVhcnknIFxuXHQgICAgIHdoZW4gKG1vbnRoKCR7ZGF0ZXRpbWV9KT0wMiBPUiBtb250aCgke2RhdGV0aW1lfSk9MikgdGhlbiAnRmVicnVhcnknXG5cdCAgICAgd2hlbiAobW9udGgoJHtkYXRldGltZX0pPTAzIE9SIG1vbnRoKCR7ZGF0ZXRpbWV9KT0zKSB0aGVuICdNYXJjaCdcblx0ICAgICB3aGVuIChtb250aCgke2RhdGV0aW1lfSk9MDQgT1IgbW9udGgoJHtkYXRldGltZX0pPTQpIHRoZW4gJ0FwcmlsJ1xuXHQgICAgIHdoZW4gKG1vbnRoKCR7ZGF0ZXRpbWV9KT0wNSBPUiBtb250aCgke2RhdGV0aW1lfSk9NSkgdGhlbiAnTWF5J1xuXHQgICAgIHdoZW4gKG1vbnRoKCR7ZGF0ZXRpbWV9KT0wNiBPUiBtb250aCgke2RhdGV0aW1lfSk9NikgdGhlbiAnSnVuZSdcblx0ICAgICB3aGVuIChtb250aCgke2RhdGV0aW1lfSk9MDcgT1IgbW9udGgoJHtkYXRldGltZX0pPTcpIHRoZW4gJ0p1bHknXG5cdCAgICAgd2hlbiAobW9udGgoJHtkYXRldGltZX0pPTA4IE9SIG1vbnRoKCR7ZGF0ZXRpbWV9KT04KSB0aGVuICdBdWd1c3QnXG5cdCAgICAgd2hlbiAobW9udGgoJHtkYXRldGltZX0pPTA5IE9SIG1vbnRoKCR7ZGF0ZXRpbWV9KT05KSB0aGVuICdTZXB0ZW1iZXInXG5cdCAgICAgd2hlbiAobW9udGgoJHtkYXRldGltZX0pPTEwKSB0aGVuICdPY3RvYmVyJ1xuXHQgICAgIHdoZW4gKG1vbnRoKCR7ZGF0ZXRpbWV9KT0xMSkgdGhlbiAnTm92ZW1iZXInXG5cdCAgICAgd2hlbiAobW9udGgoJHtkYXRldGltZX0pPTEyKSB0aGVuICdEZWNlbWJlcidcblx0ICAgICBlbHNlIG51bGwgZW5kKSIsInJldHVybnMiOiJ0ZXh0IiwicGFyYW1ldGVycyI6W3sibmFtZSI6ImRhdGV0aW1lIiwiZGVmYXVsdFZhbHVlIjoiJzIwMTQtMDgtMDggMDg6MDA6MDAuMDAwJyIsInZhbHVlIjoidHJhdmVsX2RldGFpbHMudHJhdmVsX2RhdGUiLCJjb2x1bW4iOnRydWUsImFsaWFzTmFtZSI6Ik1vbnRoIn1dfX0seyJjb2x1bW4iOiJ0cmF2ZWxfZGV0YWlscy50cmF2ZWxfY29zdCIsImxhYmVsIjoidHJhdmVsX2RldGFpbHNfdHJhdmVsX2Nvc3QiLCJpZCI6ImQ5aHI3NzQ5ajZjIiwidHlwZSI6eyJkYXRhVHlwZSI6Im51bWVyaWMiLCJiYWNrZW5kRGF0YXR5cGUiOiJqYXZhLmxhbmcuSW50ZWdlciJ9LCJhdXRvZ2VuX2FsaWFzIjoiY291bnRfdHJhdmVsX2Nvc3QiLCJhZ2dyZWdhdGUiOlsiZGIuZ2VuZXJpYy5hZ2dyZWdhdGUuY291bnQiXSwiYWxpYXMiOiJObyBvZiBUcmF2ZWxzIiwib3JkZXJCeSI6WyJhc2MiXX1d","getFilters":[],"adhocData":"eyJsb2NhdGlvbiI6IjE0NjMzNzc4MDc3MjQvMTQ2MzM3NzgzNjk4NSIsIm1ldGFkYXRhRmlsZU5hbWUiOiJlOWJlNjc3MS05OTViLTQwZWItYTAxYy0zMDQ4NTdhMTAwYTEubWV0YWRhdGEiLCJjb2x1bW5zIjpbeyJjb2x1bW4iOiJISVVTRVIudHJhdmVsX2RldGFpbHMudHJhdmVsX2RhdGUiLCJhbGlhcyI6Ik1vbnRoIiwiZGF0YWJhc2VGdW5jdGlvbiI6eyJmdW5jdGlvbk5hbWUiOiJzcWwuZGF0ZVRpbWUubW9udGhuYW1lIiwiZGF0YVR5cGUiOiJ0ZXh0IiwicGFyYW1ldGVycyI6eyJkYXRldGltZSI6InRyYXZlbF9kZXRhaWxzLnRyYXZlbF9kYXRlIn19fSx7ImNvbHVtbiI6IkhJVVNFUi50cmF2ZWxfZGV0YWlscy50cmF2ZWxfY29zdCIsImFsaWFzIjoiTm8gb2YgVHJhdmVscyIsImFnZ3JlZ2F0ZSI6dHJ1ZX1dLCJmdW5jdGlvbnMiOnsiYWdncmVnYXRlIjpbeyJjb2x1bW4iOiJISVVTRVIudHJhdmVsX2RldGFpbHMudHJhdmVsX2Nvc3QiLCJmdW5jdGlvbiI6ImRiLmdlbmVyaWMuYWdncmVnYXRlLmNvdW50IiwiYWxpYXMiOiJObyBvZiBUcmF2ZWxzIn1dLCJncm91cEJ5IjpbeyJjb2x1bW4iOiJNb250aCIsImN1c3RvbSI6dHJ1ZX1dLCJvcmRlckJ5IjpbeyJhbGlhcyI6Ik5vIG9mIFRyYXZlbHMiLCJvcmRlciI6ImFzYyIsImN1c3RvbSI6dHJ1ZX1dfSwibGltaXRCeSI6MTAwMCwicHJlcGVuZFRhYmxlTmFtZVRvQWxpYXMiOnRydWV9","styles":"","viz_type":"Charts","dir":"1463377807724/1463983915686/1463838054907","scripts":"W10="}, "", hi_container)
+        ).done(function () {
+                    $("body").removeClass("hi-loading");
+                    
+                    d.resolve();
+                }).fail(function (xhr, textStatus, errorThrown) {
+                    $("body").removeClass("hi-loading");
+                    $("#main").append("<span class='alert alert-danger' style='width:100vw'>" + errorThrown + "</span>");
+                    return;
+                });
+        ;
+        return d.promise();
+    }
+    function postExecution() {
+        var d = new $.Deferred();
+        // console.log("postExecution Start");
+        if (hi_container.isSet("postExecution")) {
+            hi_container.get("postExecution");
+        }
+        // console.log("postExecution End");
+        d.resolve();
+        return d.promise();
+    }
+
+
+    if (window.navigator.userAgent.indexOf('PhantomJS') === -1 && "Charts" == "Table") {
+        preExecution().then(preFetch).then(loadViz);
+    } else {
+        preExecution().then(preFetch).then(getData).then(postFetch).then(loadViz).then(postExecution);
+    }
+</script>
+
+
+
+
+
+
+</body></html>

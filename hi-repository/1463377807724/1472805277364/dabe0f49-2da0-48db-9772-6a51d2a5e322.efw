@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efw>
+    <title>Drill Down Report</title>
+    <author>hiadmin</author>
+    <description>Efw File</description>
+    <template>dabe0f49-2da0-48db-9772-6a51d2a5e322.html</template>
+    <visible>true</visible>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+    <share mandatory="true">
+        <roles mandatory="true">
+            <role id="2">2</role>
+        </roles>
+    </share>
+</efw>

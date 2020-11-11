@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efw>
+    <title>dashboard1</title>
+    <author>hiadmin</author>
+    <description>Efw File</description>
+    <template>f864a769-0087-4d98-a17a-7c4a0a7d9e30.html</template>
+    <visible>true</visible>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</efw>

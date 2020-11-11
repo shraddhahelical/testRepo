@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efwsr>
+    <reportName>DyanmicViewScheduledReport</reportName>
+    <reportFile>0be6b7ce-d152-4cad-888f-7550df3f7d9c.report</reportFile>
+    <reportDirectory>1588851297738</reportDirectory>
+    <reportParameters><![CDATA[{"booking":["Agent"]}]]></reportParameters>
+    <visible>true</visible>
+    <schedulingReference>1706</schedulingReference>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+    <favourite>false</favourite>
+</efwsr>

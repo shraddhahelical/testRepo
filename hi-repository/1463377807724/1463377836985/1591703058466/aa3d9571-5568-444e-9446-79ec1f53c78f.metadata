@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<metadata type="db.generic" databaseType="Apache Derby 10.12.1.1 - (1704137)">
+    <fileName>Sample View MD</fileName>
+    <connectionType>global.jdbc</connectionType>
+    <visible>true</visible>
+    <connection connectionType="global.jdbc" subType="dynamicDataSource">
+        <dialect>org.hibernate.dialect.DerbyTenSevenDialect</dialect>
+        <connectionId>1</connectionId>
+        <driverClass reference="derby">org.apache.derby.jdbc.AutoloadedDriver</driverClass>
+    </connection>
+    <database name="HIUSER" catalog="" schema="HIUSER">
+        <tables>
+            <table id="4ac5d9f68b58bd7c0d179146e46795be" name="dimdate" aliasName="dimdate">
+                <columns>
+                    <column name="dim_id" id="8e81683b-8f4d-459e-86b8-e03b87e7da5e" aliasName="dim_id" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="fiscal_year" id="09bf2268-c684-45a0-8a7c-273e9a7ed425" aliasName="fiscal_year" type="java.sql.Date" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="modified_date" id="f2b603d2-725b-426f-a858-7ce26d13d909" aliasName="modified_date" type="java.sql.Timestamp" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="date_key" id="79473896-cf97-460c-b0a3-3e0b6e74f42a" aliasName="date_key" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="day_number" id="a2f440b6-8251-4985-8ec5-63255ea4c2a9" aliasName="day_number" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="fiscal_month_name" id="902e040d-cfde-4f98-80f8-bcdacdb06be1" aliasName="fiscal_month_name" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="fiscal_month_label" id="f6086fff-0dd8-4f7b-8c30-a2622fbf3c16" aliasName="fiscal_month_label" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="created_date" id="a7fdb15c-0815-4afb-9c2e-35b105720985" aliasName="created_date" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="created_time" id="ef0ff425-9d2d-49fb-90f2-7167a33640a8" aliasName="created_time" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="rating" id="87ba9e7a-2650-437b-b0a5-ceeaa7858fff" aliasName="rating" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                </columns>
+            </table>
+            <table id="4e1fd245f4d13b77be423a43f01d80b2" name="employee_details" aliasName="employee_details">
+                <columns>
+                    <column name="employee_id" id="22914fe8-8033-434c-adc9-9715ce4e424c" aliasName="employee_id" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="employee_name" id="5811e732-f247-4874-a0d4-5fbdc2f6affe" aliasName="employee_name" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="age" id="aac9403a-8e50-4d78-82c2-86829b3fbb49" aliasName="age" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="address" id="537135b6-525a-4a18-9641-8f5105efa9c6" aliasName="address" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                </columns>
+            </table>
+            <table id="be534112989b616b194bc59c2fb25a42" name="geo_cordinates" aliasName="geo_cordinates">
+                <columns>
+                    <column name="location_id" id="648c74ad-24d6-41e2-9d88-7f68f876b4b8" aliasName="location_id" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="location" id="51342e91-a284-4121-893f-6d91b8114e50" aliasName="location" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="latitude" id="37f27f15-b790-4a72-ad8a-7b8d8fc4ddb8" aliasName="latitude" type="java.lang.Double" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="longitude" id="9dc06fc3-42ed-4a19-b04a-363117d3cd27" aliasName="longitude" type="java.lang.Double" defaultFunction="db.generic.aggregate.sum"/>
+                </columns>
+            </table>
+            <table id="9645c648a1c0dbeec1287aaf1e996db3" name="meeting_details" aliasName="meeting_details">
+                <columns>
+                    <column name="meeting_id" id="13beace7-a57c-40d4-b091-b33607162812" aliasName="meeting_id" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="meeting_date" id="932f67ff-3210-4a54-89e6-f6de48ac2b00" aliasName="meeting_date" type="java.sql.Timestamp" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="meeting_by" id="f1850de8-5fd1-4361-a94a-5ae96174cf2e" aliasName="meeting_by" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="client_name" id="5a3ecdf9-ff1d-45ff-b358-8791183ba011" aliasName="client_name" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="meeting_purpose" id="b99841cf-814b-4533-98ad-18901a7980e2" aliasName="meeting_purpose" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="meeting_impact" id="32588bd7-33c8-436d-af29-ebe1ddea9e0d" aliasName="meeting_impact" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="meet_cancellation_status" id="cfc6a7ae-9c58-4c25-8cdb-0e6a150a9e6a" aliasName="meet_cancellation_status" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="cancellation_reason" id="cd4f4ee0-fdeb-4eaf-bbdd-8568a87e7664" aliasName="cancellation_reason" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                </columns>
+            </table>
+            <table id="8a28627d07d04ef096d9935f12e0c7e9" name="travel_details" aliasName="travel_details">
+                <columns>
+                    <column name="travel_id" id="eecc7e95-499a-4045-8f73-f3ed0f8afec1" aliasName="travel_id" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="travel_date" id="b8647e8b-b239-4559-a81a-3188a5189824" aliasName="travel_date" type="java.sql.Timestamp" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="travel_type" id="2ea32ac4-da3f-4bcc-b9ae-fbdc2557cf54" aliasName="travel_type" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="travel_medium" id="b56377e6-0d27-443e-974c-83e3a6cd3075" aliasName="travel_medium" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="source_id" id="d60849c2-2bb2-4a37-a739-1418dd6f5435" aliasName="source_id" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="source" id="d3eb2d86-3b03-4167-841f-34237cd68d90" aliasName="source" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="destination_id" id="38b4442a-23bb-466e-ab30-fe1b3c270ced" aliasName="destination_id" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="destination" id="e35c6745-4869-4496-a77f-575f212879ec" aliasName="destination" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="travel_cost" id="9ba269f3-0a3e-470b-81a5-d84420f43723" aliasName="travel_cost" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="mode_of_payment" id="d65a971e-7b04-4f7d-a804-b66eb401d0c1" aliasName="mode_of_payment" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="booking_platform" id="254a0119-2c7a-4518-9f35-40fdc95bb784" aliasName="booking_platform" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="travelled_by" id="2bacf50c-f37c-42fc-bc55-6c0ac5f5ffb0" aliasName="travelled_by" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                </columns>
+            </table>
+            <table id="ba864e07-1f50-4fce-9d96-3fd95e7a66fb" name="Query View" type="view" aliasName="Query View">
+                <columns>
+                    <column name="meeting_id" id="36d9ec98-b95a-4f17-a980-8ce8d417a3ed" aliasName="meeting_id" type="java.lang.Float"/>
+                    <column name="meeting_date" id="1c9f388f-d213-41db-9ab4-67adf0dafc96" aliasName="meeting_date" type="java.sql.Timestamp"/>
+                    <column name="meeting_by" id="1b481d2c-6207-4fb1-9199-d9a6f382b122" aliasName="meeting_by" type="java.lang.Float"/>
+                    <column name="client_name" id="0d98c949-22d6-46b6-bd43-4afd195f9647" aliasName="client_name" type="java.lang.String"/>
+                    <column name="meeting_purpose" id="6c821dfb-a718-49cd-af37-d7fa72184a8f" aliasName="meeting_purpose" type="java.lang.String"/>
+                    <column name="meeting_impact" id="0a571c67-d949-46c3-854f-8e7941ee3a6e" aliasName="meeting_impact" type="java.lang.String"/>
+                    <column name="meet_cancellation_status" id="3575e8d0-d322-491f-b81d-733928ec1689" aliasName="meet_cancellation_status" type="java.lang.String"/>
+                    <column name="cancellation_reason" id="a14991e4-7c79-4748-ab9e-3699256f98ba" aliasName="cancellation_reason" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="219f780b-5f47-40d2-b565-14f0d5a6a72c" name="Dynamic View" type="view" aliasName="Dynamic View">
+                <columns>
+                    <column name="travel_id" id="4764edac-d030-4903-b402-62df8fc1b5c9" aliasName="travel_id" type="java.lang.Float"/>
+                    <column name="travel_date" id="84c99624-d5b3-465e-8704-c5e04835ef5a" aliasName="travel_date" type="java.sql.Timestamp"/>
+                    <column name="travel_type" id="0fd366d4-51b5-4d58-bd36-ff92806dd682" aliasName="travel_type" type="java.lang.String"/>
+                    <column name="travel_medium" id="825978f3-ac0b-4e5e-89ae-5ab5abbf438e" aliasName="travel_medium" type="java.lang.String"/>
+                    <column name="source_id" id="b1eb6840-5e13-4abe-a26b-42c33021dc10" aliasName="source_id" type="java.lang.Float"/>
+                    <column name="source" id="6ec1fb57-e371-4644-be96-3462334bcbba" aliasName="source" type="java.lang.String"/>
+                    <column name="destination_id" id="acd15d71-ef78-4921-ae6a-0851b658ea9f" aliasName="destination_id" type="java.lang.Float"/>
+                    <column name="destination" id="b179b247-0e1a-44f6-a2bc-0a47b3174d8c" aliasName="destination" type="java.lang.String"/>
+                    <column name="travel_cost" id="38a554b2-4d9a-483e-a415-fad62e2b5e79" aliasName="travel_cost" type="java.lang.Float"/>
+                    <column name="mode_of_payment" id="0ae4c113-5138-40fa-bca0-c4b980e1cd8d" aliasName="mode_of_payment" type="java.lang.String"/>
+                    <column name="booking_platform" id="e60e3808-85c8-467a-a22d-0fcedb7964e2" aliasName="booking_platform" type="java.lang.String"/>
+                    <column name="travelled_by" id="c7d003d4-c58f-4536-aa51-84c380f55862" aliasName="travelled_by" type="java.lang.Float"/>
+                </columns>
+            </table>
+        </tables>
+        <relationships>
+            <relationship table="geo_cordinates" referenceTable="dimdate">
+                <join id="ca21d00c8c87263dedd812f8f74c05b5" type="inner" operator="=">
+                    <left table="geo_cordinates" column="location_id"/>
+                    <right table="dimdate" column="dim_id"/>
+                </join>
+            </relationship>
+            <relationship table="employee_details" referenceTable="meeting_details">
+                <join id="af8f3186af3703a70a3d6e219faafb4e" type="inner" operator="=">
+                    <left table="employee_details" column="employee_id"/>
+                    <right table="meeting_details" column="meeting_by"/>
+                </join>
+            </relationship>
+            <relationship table="employee_details" referenceTable="travel_details">
+                <join id="aab02b68e2c7febf125c50c8c5175037" type="inner" operator="=">
+                    <left table="employee_details" column="employee_id"/>
+                    <right table="travel_details" column="travelled_by"/>
+                </join>
+            </relationship>
+            <relationship table="geo_cordinates" referenceTable="travel_details">
+                <join id="daa3221b04c18670d4af25ac99f3ae76" type="inner" operator="=">
+                    <left table="geo_cordinates" column="location_id"/>
+                    <right table="travel_details" column="destination_id"/>
+                </join>
+                <join id="cdeb5b19799c89335f23ed9b50cc5a22" type="inner" operator="=">
+                    <left table="geo_cordinates" column="location_id"/>
+                    <right table="travel_details" column="source_id"/>
+                </join>
+            </relationship>
+        </relationships>
+        <views>
+            <view id="ba864e07-1f50-4fce-9d96-3fd95e7a66fb" name="Query View" alias="Query View" hasStoredProcedure="false">
+                <query type="conditionIf"><![CDATA[select * from "meeting_details" where "meeting_id"= ${user}.id]]></query>
+            </view>
+            <view id="219f780b-5f47-40d2-b565-14f0d5a6a72c" name="Dynamic View" alias="Dynamic View" hasStoredProcedure="false">
+                <query type="groovy"><![CDATA[if (check("${filter}.label" ,"travel_date"))
+ {
+traveldateFilter = findFilterByLabel("travel_date")
+traveldateFilterValue = traveldateFilter.value
+traveldateFilter_1 = findFilterByLabel("travel_date_1")
+traveldateFilterValue_1 = traveldateFilter_1.value
+
+//You can write your business logic here.
+ return "select *  from \"travel_details\" T1 where \"travel_date\" between  "+ traveldateFilterValue +" and "+traveldateFilterValue_1;
+ }
+ else
+ {
+  return "select * from \"travel_details\""
+ }]]></query>
+            </view>
+        </views>
+    </database>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</metadata>

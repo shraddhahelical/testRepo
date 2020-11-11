@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efw>
+    <title>Bookings</title>
+    <author>hiadmin</author>
+    <description>Efw File</description>
+    <template>efc3fb3f-452c-4c37-97c8-f41775d9c006.html</template>
+    <visible>true</visible>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</efw>

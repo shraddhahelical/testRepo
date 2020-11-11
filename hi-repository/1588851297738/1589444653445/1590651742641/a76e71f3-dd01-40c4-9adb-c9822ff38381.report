@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<report>
+    <reportName>DynamicViewfilterSizeReport</reportName>
+    <visible>true</visible>
+    <metadata>
+        <location>1588851297738/1589444653445/1590651742641</location>
+        <metadataFileName>55176731-1523-48d1-8a2d-f0f6cbad1678.metadata</metadataFileName>
+    </metadata>
+    <canvas>
+        <columns><![CDATA[[{"column":"filterSize.booking_platform","label":"filterSize_booking_platform","id":"w9p59dqecnk","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"filterSize_booking_platform","groupBy":["db.generic.groupBy.group"]},{"column":"filterSize.destination","label":"filterSize_destination","id":"llwrpktcvdd","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"filterSize_destination","groupBy":["db.generic.groupBy.group"]},{"column":"filterSize.travel_cost","label":"filterSize_travel_cost","id":"wabhssaf7l","type":{"dataType":"numeric","backendDatatype":"java.lang.Float"},"autogen_alias":"filterSize_travel_cost","groupBy":["db.generic.groupBy.group"]}]]]></columns>
+    </canvas>
+    <state><![CDATA[{"columns":[{"column":"filterSize.booking_platform","label":"filterSize_booking_platform","id":"w9p59dqecnk","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"filterSize_booking_platform","groupBy":["db.generic.groupBy.group"]},{"column":"filterSize.destination","label":"filterSize_destination","id":"llwrpktcvdd","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"filterSize_destination","groupBy":["db.generic.groupBy.group"]},{"column":"filterSize.travel_cost","label":"filterSize_travel_cost","id":"wabhssaf7l","type":{"dataType":"numeric","backendDatatype":"java.lang.Float"},"autogen_alias":"filterSize_travel_cost","groupBy":["db.generic.groupBy.group"]}],"filters":[{"values":["700"],"mode":"auto","dataType":"numeric","orderBy":"","valuesMode":"auto","isFilterEditable":false,"encloseInQuotes":false,"dateTimeToggle":false,"databaseFunction":{},"label":"travel_cost","column":"filterSize.travel_cost","backendDataType":"java.lang.Float","rangeValuesType":"","id":0,"condition":"EQUALS","valuesRange":{},"rangeSelectionToggole":true}],"customFilterExpression":"${0}","customHavingExpression":"","customFilterExpressionObj":{"0":"${0}"},"customHavingExpressionObj":{},"havingExpressionIndexs":{},"filterExpressionIndexs":{},"options":{"limitBy":1000,"prependTableNameToAlias":true},"visualisation":{"type":"Table","chartGroup":"","selectedType":"Table","settings":{"script":null,"vizscriptsEditMultipleMode":false},"vizSelectedScripts":[]},"scripts":[],"styles":"","customStyles":"","customScripts":[]}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</report>

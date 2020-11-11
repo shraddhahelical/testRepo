@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<metadata type="db.generic" databaseType="MySQL 5.7.18-0ubuntu0.17.04.1">
+    <fileName>MYSQL_EmpMetadataWithView</fileName>
+    <connectionType>global.jdbc</connectionType>
+    <visible>true</visible>
+    <connection connectionType="global.jdbc" subType="dynamicDataSource">
+        <dialect>org.hibernate.dialect.MySQLDialect</dialect>
+        <connectionId>7</connectionId>
+        <driverClass reference="mysql">com.mysql.jdbc.Driver</driverClass>
+    </connection>
+    <database name="SampleTravelData" catalog="SampleTravelData" schema="">
+        <tables>
+            <table id="152371825108bf241d5e58d460282bf0" name="employee_details" aliasName="employee_details">
+                <columns>
+                    <column name="employee_id" id="d25f03ec-8177-4025-8238-b93a407f9c43" aliasName="employee_id" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="employee_name" id="ef99995f-1c2a-4855-b7e9-7d8ac25a96f3" aliasName="employee_name" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="age" id="5d8ac9c1-5658-4cf0-97d3-e92c6bb713e5" aliasName="age" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="address" id="19d9ddbc-f8e5-4478-9d91-2ffd98f1fae8" aliasName="address" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                </columns>
+                <primaryKeys>
+                    <primaryKey name="employee_id"/>
+                </primaryKeys>
+            </table>
+            <table id="e0292ff4-b449-475d-be3f-ea76f9e2a28f" name="QueryView" type="view" aliasName="QueryView">
+                <columns>
+                    <column name="employee_id" id="1d29f0de-905f-410d-8303-99faf70f99b1" aliasName="employee_id" type="java.lang.Float"/>
+                    <column name="employee_name" id="0dc87404-c188-47b9-906a-2afc408f7a8a" aliasName="employee_name" type="java.lang.String"/>
+                    <column name="age" id="eb336b5e-c475-48ec-b614-4038b36318c8" aliasName="age" type="java.lang.Float"/>
+                    <column name="address" id="e9c5f79e-0497-4832-a3b9-c0b99d55f674" aliasName="address" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="7dca2f0a-5188-4eb2-a92d-367a2b4ab4e6" name="DynamicView" type="view" aliasName="DynamicView">
+                <columns>
+                    <column name="employee_id" id="63220867-6e93-4495-a688-3950f17b21e5" aliasName="employee_id" type="java.lang.Float"/>
+                    <column name="employee_name" id="f14e0ebc-c7f8-4218-a173-c4810356e6a3" aliasName="employee_name" type="java.lang.String"/>
+                    <column name="age" id="7476ea15-1af6-4974-8f32-580099559a28" aliasName="age" type="java.lang.Float"/>
+                    <column name="address" id="307d4cbd-e53f-4595-89ea-1966d0c256c5" aliasName="address" type="java.lang.String"/>
+                </columns>
+            </table>
+        </tables>
+        <relationships/>
+        <views>
+            <view id="e0292ff4-b449-475d-be3f-ea76f9e2a28f" name="QueryView" alias="QueryView" hasStoredProcedure="false">
+                <query type="conditionIf"><![CDATA[select * from employee_details]]></query>
+            </view>
+            <view id="7dca2f0a-5188-4eb2-a92d-367a2b4ab4e6" name="DynamicView" alias="DynamicView" hasStoredProcedure="false">
+                <query type="groovy"><![CDATA[if ( hasFilters())
+{
+ filter1=findFilterByLabel("address") 
+ filter2=filter1.id
+ filter3=filter1.column
+ filter1=filter1.value
+ return "select * from employee_details  where $filter3=$filter1"
+}
+else
+{
+return 'select * from employee_details'
+}
+]]></query>
+            </view>
+        </views>
+    </database>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+    <share mandatory="true">
+        <users mandatory="true">
+            <user id="2">3</user>
+        </users>
+    </share>
+</metadata>

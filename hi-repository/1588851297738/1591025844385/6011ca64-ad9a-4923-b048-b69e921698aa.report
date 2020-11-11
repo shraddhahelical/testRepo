@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<report>
+    <reportName>SSO-DynamicViewReport</reportName>
+    <visible>true</visible>
+    <metadata>
+        <location>1588851297738/1591025844385</location>
+        <metadataFileName>da5bf73a-c314-4b7c-8cfa-a9e3bd3d148c.metadata</metadataFileName>
+    </metadata>
+    <canvas>
+        <columns><![CDATA[[{"column":"SSOView.booking_platform","label":"SSOView_booking_platform","id":"f8a4arzf2qh","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"SSOView_booking_platform","groupBy":["db.generic.groupBy.group"]},{"column":"SSOView.travel_cost","label":"SSOView_travel_cost","id":"hhsj515zi5","type":{"dataType":"numeric","backendDatatype":"java.lang.Float"},"autogen_alias":"SSOView_travel_cost","groupBy":["db.generic.groupBy.group"]}]]]></columns>
+    </canvas>
+    <state><![CDATA[{"columns":[{"column":"SSOView.booking_platform","label":"SSOView_booking_platform","id":"f8a4arzf2qh","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"SSOView_booking_platform","groupBy":["db.generic.groupBy.group"]},{"column":"SSOView.travel_cost","label":"SSOView_travel_cost","id":"hhsj515zi5","type":{"dataType":"numeric","backendDatatype":"java.lang.Float"},"autogen_alias":"SSOView_travel_cost","groupBy":["db.generic.groupBy.group"]}],"filters":[{"values":["800"],"mode":"auto","dataType":"numeric","orderBy":"","valuesMode":"auto","isFilterEditable":false,"encloseInQuotes":false,"dateTimeToggle":false,"databaseFunction":{},"label":"travel_cost","column":"SSOView.travel_cost","backendDataType":"java.lang.Float","rangeValuesType":"","id":0,"condition":"EQUALS","valuesRange":{},"rangeSelectionToggole":true}],"customFilterExpression":"${0}","customHavingExpression":"","customFilterExpressionObj":{"0":"${0}"},"customHavingExpressionObj":{},"havingExpressionIndexs":{},"filterExpressionIndexs":{},"options":{"limitBy":1000,"prependTableNameToAlias":true},"visualisation":{"type":"Table","chartGroup":"","selectedType":"Table","settings":{"script":null,"vizscriptsEditMultipleMode":false},"vizSelectedScripts":[]},"scripts":[],"styles":"","customStyles":"","customScripts":[]}]]></state>
+    <security>
+        <createdBy>602</createdBy>
+        <organization>101</organization>
+    </security>
+</report>

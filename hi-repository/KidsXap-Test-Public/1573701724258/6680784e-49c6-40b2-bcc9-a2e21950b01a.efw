@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efw>
+    <title>rpt_KIM</title>
+    <author>hiadmin</author>
+    <description>Efw File</description>
+    <template>6680784e-49c6-40b2-bcc9-a2e21950b01a.html</template>
+    <visible>true</visible>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</efw>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efwdd>
+    <fileName>rpt_BookReveRoom</fileName>
+    <efw>b8e0d487-dd08-42ea-9ccd-363441c9e5dc.efw</efw>
+    <visible>true</visible>
+    <description>Efw Dashboard Designer</description>
+    <state><![CDATA[{"variables":[["Organisation",["_all_"]],["Provider",["_all_"]],["Centre",["_all_"]],["From Date",["2020-03-01"]],["To Date",["2020-03-31"]],["OrganisationId",["_all_"]],["ProviderId",["_all_"]],["CentreId",["_all_"]]],"components":{"ip4vve4xiyq":{"gs_attr":{"x":0,"y":0,"width":100,"height":500},"name":"ip4vve4xiyq","metadata":{"dir":"/KidsXap-Test-Public/Reports/Finance_Report/","name":"rpt_BookReveRoom"},"uid":"ip4vve4xiyq","label":"","requestParameters":{"To Date":"To Date","From Date":"From Date","CentreId":"CentreId","ProviderId":"ProviderId","OrganisationId":"OrganisationId"},"executeAtStart":true,"type":"dashboard-component","options":{"dir":"KidsXap-Test-Public/1573701738739/1583893041593","file":"0dc376b6-f91e-4458-b05b-c7d679da6a52.report","ext":"report","compType":"Adhoc","uid":"ip4vve4xiyq","iframe":true,"styles":{"boxComp":"Adhoc","borderComp":"Adhoc"},"report":{"dir":"KidsXap-Test-Public/1573701738739/1583893041593","file":"0dc376b6-f91e-4458-b05b-c7d679da6a52.report"}},"listeners":["From Date","To Date","OrganisationId","ProviderId","CentreId"]}},"dashboardConfig":{"id":"dashboard"},"css":"","script":"","printOptions":{"templateId":"Dashboard","title":"Dashboard"},"componentSettings":{"ip4vve4xiyq":{"header":true,"minimize":false,"maximize":false,"export":false,"editReport":false}},"gridWidthOption":100,"toggleIframes":false}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</efwdd>

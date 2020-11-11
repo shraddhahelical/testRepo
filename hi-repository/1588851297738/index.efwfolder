@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efwfolder>
+    <visible>true</visible>
+    <title>Adhoc Dynamic View</title>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+    <share mandatory="true">
+        <users mandatory="true">
+            <user id="4">5</user>
+            <user id="501">5</user>
+            <user id="602">5</user>
+        </users>
+    </share>
+</efwfolder>

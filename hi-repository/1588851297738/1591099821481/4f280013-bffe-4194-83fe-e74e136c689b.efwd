@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<EFWD>
+    <DataSources>
+        <Connection id="1" type="sql.jdbc.groovy">
+            <Condition><![CDATA[import groovy.sql.Sql;
+	      import net.sf.json.JSONObject;
+	      import com.helicalinsight.adhoc.metadata.GroovyUsersSession;
+	      public JSONObject evalCondition() {
+		JSONObject responseJson = new JSONObject();
+		String userName = GroovyUsersSession.getValue('${user}.name');
+		userName  = userName .replaceAll("'","");
+		if (
+			userName.equals("hiadmin")
+			){
+			responseJson.put("globalId", 7);
+		}
+		
+		if (
+			userName.equals("hiuser")
+			){
+			responseJson.put("globalId", 1);
+		
+		}
+		responseJson.put("type","global.jdbc");
+	          return responseJson;
+	      }]]></Condition>
+            <security>
+                <createdBy>1</createdBy>
+                <organization></organization>
+            </security>
+        </Connection>
+    </DataSources>
+    <DataMaps>
+        <DataMap id="1" connection="1" type="sql.groovy">
+            <Name>DynamicViewGroovyQuery</Name>
+            <Query><![CDATA[import com.helicalinsight.efw.utility.GroovyUsersSession;
+public String evalCondition() {
+
+String userName = GroovyUsersSession.getValue('${user}.name');
+userName = userName.replaceAll("'","");
+
+String responseJson;
+
+String selectClause = """select ("destination") as "destination","travel_cost" as "travel_cost" 
+from "travel_details" """;
+
+
+whereClause = """where ("destination"='Hyderabad')"""
+
+responseJson = selectClause+ "" +whereClause;
+
+return responseJson;
+}]]></Query>
+        </DataMap>
+    </DataMaps>
+</EFWD>

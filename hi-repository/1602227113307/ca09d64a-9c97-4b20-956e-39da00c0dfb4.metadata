@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<metadata type="db.workflow" databaseType="MySQL 5.6.40">
+    <fileName>poc_metadata_Nov9</fileName>
+    <connectionType>global.jdbc</connectionType>
+    <visible>true</visible>
+    <connection connectionType="global.jdbc" subType="dynamicDataSource">
+        <dialect>org.hibernate.dialect.MySQLDialect</dialect>
+        <connectionId>6</connectionId>
+        <driverClass reference="mysql">com.mysql.jdbc.Driver</driverClass>
+    </connection>
+    <database name="hiee_3" catalog="hiee_3" schema="">
+        <tables>
+            <table id="d6014a7d11fb72a450f642554afd064e" name="poc_sample_data" aliasName="poc_sample_data">
+                <columns>
+                    <column name="DATA_value" id="e68fb99e-e6c9-4c40-882e-dde7c62d2c79" aliasName="DATA_value" type="java.sql.Date" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="TIMESTAMP" id="a5c89f76-a9ca-466a-a981-ce7087de1448" aliasName="TIMESTAMP" type="java.sql.Timestamp" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="ID_device" id="d96ed8a4-9ec3-41cf-8983-126f203ee4ba" aliasName="ID_device" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="DEVICE" id="60958087-4313-45e1-bfa8-f5375710047b" aliasName="DEVICE" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="Humidity Wall" id="cfc17727-67b2-4eb6-b6ac-8ee0c5bf51d0" aliasName="Humidity Wall" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="Celsius" id="9dbc5dbc-5a58-4358-a46e-f02b3a256356" aliasName="Celsius" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="Fahren" id="8e7d706a-c8e8-48c5-ab21-48af3f1bd236" aliasName="Fahren" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="Humidity" id="29c014f7-9aaf-4ab1-abc3-460263dfbda8" aliasName="Humidity" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                </columns>
+            </table>
+        </tables>
+        <relationships/>
+        <views/>
+    </database>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</metadata>

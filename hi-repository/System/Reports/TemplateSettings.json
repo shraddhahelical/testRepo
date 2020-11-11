@@ -1,0 +1,26 @@
+{
+    "layout": ["portrait", "landscape"],
+    "paperSize": ["A3", "A4", "A5", "Legal", "Letter", "Tabloid"],
+    "scaling": [ "0.25" ,"0.75", "0.80", "0.90", "1", "2"],
+    "footer": {
+        "text": "Report Footer Text",
+        "fontSize": "12px",
+        "fontColor": "#0f0f0f",
+        "fontStyle": ["normal","bold","bolder","lighter","number","initial","inherit"],
+        "textAlign": ["right", "left", "center"],
+		"height":1
+    },
+    "header": {
+        "text": "Report Header Text",
+        "fontSize": "12px",
+        "fontColor": "#0f0f0f",
+        "fontStyle": ["normal","bold","bolder","lighter","number","initial","inherit"],
+        "textAlign": ["right", "left", "center"],
+		"height":1
+    },
+    "margin": "1",
+	"paperWidth":786,
+	"paperHeight":1048,
+	"viewPortWidth":1366,
+	"viewPortHeight":786	
+}

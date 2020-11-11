@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<report>
+    <reportName>test parent filter</reportName>
+    <visible>true</visible>
+    <metadata>
+        <location>1463377807724/1463377836985</location>
+        <metadataFileName>e9be6771-995b-40eb-a01c-304857a100a1.metadata</metadataFileName>
+    </metadata>
+    <canvas>
+        <columns><![CDATA[[{"column":"employee_details.employee_name","label":"employee_details_employee_name","id":"egp5kb72h88","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"employee_details_employee_name","groupBy":["db.generic.groupBy.group"]},{"column":"employee_details.age","label":"age","id":"83ip2l18qrn","type":{"dataType":"numeric","backendDatatype":"java.lang.Integer"},"autogen_alias":"sum_age","aggregate":["db.generic.aggregate.sum"]}]]]></columns>
+    </canvas>
+    <state><![CDATA[{"columns":[{"column":"employee_details.employee_name","label":"employee_details_employee_name","id":"egp5kb72h88","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"employee_details_employee_name","groupBy":["db.generic.groupBy.group"]},{"column":"employee_details.age","label":"age","id":"83ip2l18qrn","type":{"dataType":"numeric","backendDatatype":"java.lang.Integer"},"autogen_alias":"sum_age","aggregate":["db.generic.aggregate.sum"]}],"filters":[{"values":["1","4"],"mode":"auto","dataType":"numeric","valuesMode":"auto","isFilterEditable":false,"encloseInQuotes":false,"dateTimeToggle":false,"label":"employee_id","column":"employee_details.employee_id","backendDataType":"java.lang.Integer","id":0,"condition":"IS_ONE_OF","valuesRange":{},"rangeSelectionToggole":true}],"customFilterExpression":"${0}","customHavingExpression":"","customFilterExpressionObj":{"0":"${0}"},"customHavingExpressionObj":{},"havingExpressionIndexs":{},"filterExpressionIndexs":{},"options":{"limitBy":"10","prependTableNameToAlias":false},"visualisation":{"type":"Charts","chartGroup":["C3","C3NonAxis","C3Pie"],"selectedType":"Charts","settings":{"script":null,"vizscriptsEditMultipleMode":false,"crossTabRows":[],"crossTabCols":[{"column":"employee_details.employee_name","label":"employee_details_employee_name","id":"egp5kb72h88","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"employee_details_employee_name","groupBy":["db.generic.groupBy.group"]},{"column":"employee_details.address","label":"address","id":"om2hvfrutk","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"address","groupBy":["db.generic.groupBy.group"]}],"crossTabVals":[],"type":"PieChart","vizType":"Charts","chartGroup":["C3","C3NonAxis","C3Pie"]},"vizSelectedScripts":[{"name":"Chart Drilldown","scriptId":"c3NonAxis_js_drilldown","scriptType":"js","group":"C3NonAxis","parameters":{"ipc":"true","new_tab":"false","current_tab":"false","new_window":"false","set_category":"true","category_name":"","drilldownURL":"","drilldownName":"","params":"","paramList":[],"childFilterList":[]},"renderOn":"simpleModel","isEditable":true,"description":"Add Drilldown to C3 charts","icon":"/images/scriptIcons/DrillDown.png","isSelected":true,"isActiveScript":"active","isCheckedForMultipleEdit":false}]},"scripts":[],"styles":"","customStyles":"","customScripts":[null]}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</report>

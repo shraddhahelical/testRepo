@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<EFWD>
+    <DataSources>
+        <Connection id="1" type="global.jdbc">
+            <globalId>4</globalId>
+            <security>
+                <createdBy>1</createdBy>
+                <organization></organization>
+            </security>
+        </Connection>
+    </DataSources>
+    <DataMaps>
+        <DataMap id="4" connection="1" type="sql">
+            <Name>report1</Name>
+            <Query><![CDATA[db.observation.aggregate([
+{
+"$project": 
+{
+       "_id" : 1,
+       "Observations_type" : { $arrayElemAt: [ "$fields", 0 ] },
+       "numberOfObservers" :  { $gte: [ "$numberOfObservers", 0 ]},
+       "Airport_Code" : { $arrayElemAt: [ "$fields", 3 ]},
+       "Location" : { $arrayElemAt: [ "$fields", 4 ]},
+       flat_fields : "$fields"
+}
+},
+{
+"$project":
+{
+       "_id" : 0,
+        Observations_type : "$Observations_type.control.modelValue",
+        Airport_Code : "$Airport_Code.control.modelValue",
+        Location : "$Location.control.modelValue"
+}
+},
+{ $limit: 5 }
+
+])]]></Query>
+        </DataMap>
+    </DataMaps>
+</EFWD>

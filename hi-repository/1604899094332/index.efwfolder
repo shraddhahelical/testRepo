@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efwfolder>
+    <visible>true</visible>
+    <title>TestSharing</title>
+    <security>
+        <createdBy>501</createdBy>
+        <organization>101</organization>
+    </security>
+    <share mandatory="true">
+        <roles mandatory="true">
+            <role id="303">3</role>
+        </roles>
+    </share>
+</efwfolder>

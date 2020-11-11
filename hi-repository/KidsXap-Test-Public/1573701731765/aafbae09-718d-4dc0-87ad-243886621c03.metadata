@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<metadata type="db.generic" databaseType="Microsoft SQL Server 12.00.1900">
+    <fileName>mtd_Families_Dashboard</fileName>
+    <connectionType>global.jdbc</connectionType>
+    <visible>true</visible>
+    <connection connectionType="global.jdbc" subType="dynamicDataSource">
+        <dialect>org.hibernate.dialect.SQLServerDialect</dialect>
+        <connectionId>2</connectionId>
+        <driverClass reference="sqlserver">com.microsoft.sqlserver.jdbc.SQLServerDriver</driverClass>
+    </connection>
+    <database name="QA_reportDB.dbo" catalog="QA_reportDB" schema="dbo">
+        <tables>
+            <table id="c426f0b6-1e51-441a-9951-399ccd389298" name="PaymentMethodView" type="view" aliasName="PaymentMethodView">
+                <columns>
+                    <column name="Organisation" id="8b65fa48-4c98-43dc-9ef1-bd75f0b2c603" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="Provider" id="9d4caeaa-1553-4c48-8356-e00e4ef4488c" aliasName="Provider" type="java.lang.String"/>
+                    <column name="Centre" id="3eabe52b-0086-498f-92d9-b9535957d9d1" aliasName="Centre" type="java.lang.String"/>
+                    <column name="FamilyStatus" id="11cdbcc5-5821-4c22-8e92-dc002853c3c2" aliasName="FamilyStatus" type="java.lang.String"/>
+                    <column name="PaymentAccountStatus" id="0e5a9e51-fc3a-434d-a294-970bbd3c034a" aliasName="PaymentAccountStatus" type="java.lang.String"/>
+                    <column name="PaymentMethod" id="edd4b454-42a7-466d-ab79-edf85c48faa0" aliasName="PaymentMethod" type="java.lang.String"/>
+                    <column name="Id" id="85f267f3-180e-4581-8f4f-dabda3417e65" aliasName="Id" type="java.lang.Float"/>
+                    <column name="OrganisationId" id="8befb838-9aa1-4718-ac23-a41422b1031d" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="ProviderId" id="6999b102-b52f-4763-a966-1fa5e35a0141" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="CentreId" id="c3457fa9-65f8-4810-ac21-798f35c76a89" aliasName="CentreId" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="37cb9be0-7009-4edd-810c-2ed51be73457" name="PersonStatusView" type="view" aliasName="PersonStatusView">
+                <columns>
+                    <column name="Organisation" id="81f12669-c27b-46e2-9e1f-5441f3996a05" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="Provider" id="192ca398-f0c1-407f-8a26-c2f69f25008c" aliasName="Provider" type="java.lang.String"/>
+                    <column name="Centre" id="4425a5a5-4c46-4230-8440-557d4e12efbc" aliasName="Centre" type="java.lang.String"/>
+                    <column name="AdultFamilyStatus" id="62874d9c-b82e-46bd-9fb9-51b63465a9ab" aliasName="AdultFamilyStatus" type="java.lang.String"/>
+                    <column name="FamilyStatus" id="185c9e5a-76ff-4a80-b139-bcb3d371eb15" aliasName="FamilyStatus" type="java.lang.String"/>
+                    <column name="AdultType" id="3ef33ab8-4176-40a1-b38b-82c0e023d12d" aliasName="AdultType" type="java.lang.String"/>
+                    <column name="Id" id="48cf751c-0f7b-465f-8ec2-69adf3d97960" aliasName="Id" type="java.lang.Float"/>
+                    <column name="OrganisationId" id="337a43c0-fd80-46bb-bd05-94cb5bd5b663" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="ProviderId" id="8617732a-8f12-470a-ba67-8102e45412da" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="CentreId" id="2ab9e550-7c58-46d1-b78d-e8149ef6450d" aliasName="CentreId" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="3a7ad3a6-fee5-47e8-baef-5139406bfcd6" name="ChildStatusView" type="view" aliasName="ChildStatusView">
+                <columns>
+                    <column name="Organisation" id="886d5341-7d4b-44c2-8de1-07608926d848" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="Provider" id="6351aa65-880e-47e3-a224-40b732992601" aliasName="Provider" type="java.lang.String"/>
+                    <column name="Centre" id="2ea749f5-c056-48ea-9fde-c42900c33a5a" aliasName="Centre" type="java.lang.String"/>
+                    <column name="ChildFamilyStatus" id="0ccd7285-73a3-4174-9887-07edd0ca3307" aliasName="ChildFamilyStatus" type="java.lang.String"/>
+                    <column name="FamilyStatus" id="1453109a-1688-4cfa-adc2-81e5fe288681" aliasName="FamilyStatus" type="java.lang.String"/>
+                    <column name="Id" id="07823d0a-8042-4637-903c-9d348495b4a8" aliasName="Id" type="java.lang.Float"/>
+                    <column name="OrganisationId" id="a9208cc0-781f-4039-9324-cde4a696c008" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="ProviderId" id="a058ba48-1d02-40d1-9ccd-f69fd9ff4c72" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="CentreId" id="6e959a2a-bd12-495f-82cb-f5dcca39e609" aliasName="CentreId" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="000d12f1-3550-454c-baa2-9986c3d6d9d1" name="FamilyStatusView" type="view" aliasName="FamilyStatusView">
+                <columns>
+                    <column name="Organisation" id="ea2370cd-e8ff-4998-9970-fdeb519c4066" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="Provider" id="6ed013f0-e1ab-4ebd-8a53-d665cb0301de" aliasName="Provider" type="java.lang.String"/>
+                    <column name="Centre" id="f50691d4-30f4-4f0f-b5b3-d33121cb0ac0" aliasName="Centre" type="java.lang.String"/>
+                    <column name="FamilyStatus" id="58189aa6-824e-47c0-b2bc-938c8feb1e76" aliasName="FamilyStatus" type="java.lang.String"/>
+                    <column name="Id" id="5c6c6fb9-3aea-4f3a-a4eb-abb5c10b7892" aliasName="Id" type="java.lang.Float"/>
+                    <column name="OrganisationId" id="f7c6398d-e24d-47c9-b1c8-add2cb3fb7af" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="ProviderId" id="da8e3f31-a7b7-4ff8-bef7-c56351304933" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="CentreId" id="3a075bb3-c7dd-4ab4-8223-34bef8a5b346" aliasName="CentreId" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="4033e701-153e-4e93-96d6-5c8ff1366ee9" name="PaymentAccountStatusView" type="view" aliasName="PaymentAccountStatusView">
+                <columns>
+                    <column name="Organisation" id="fe10c231-d7ab-4796-9b54-896f2288d40a" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="Provider" id="f7d3b230-557f-4c1e-a9c2-5e3a0ccf8847" aliasName="Provider" type="java.lang.String"/>
+                    <column name="Centre" id="ef5a444c-c532-49c9-a32d-3c1e55af50e4" aliasName="Centre" type="java.lang.String"/>
+                    <column name="PaymentAccountStatus" id="b3809326-9a3a-4f35-947d-dfb07a4cc467" aliasName="PaymentAccountStatus" type="java.lang.String"/>
+                    <column name="FamilyStatus" id="d344ba9a-3106-46b1-8b08-200ad2240a81" aliasName="FamilyStatus" type="java.lang.String"/>
+                    <column name="Total" id="835c471b-238b-4222-9f0f-88d5b159747d" aliasName="Total" type="java.lang.Float"/>
+                    <column name="OrganisationId" id="f7413205-8174-4daa-97be-30199ba6ceb6" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="ProviderId" id="edf1ee9e-77c6-4769-9ed0-56d87ebcb0e3" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="CentreId" id="77dc3d70-9f51-4dc8-9bb1-cc453cbe2247" aliasName="CentreId" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="aee85bfa-1b08-43b0-8209-bdff2ccd980a" name="HealthDocumentExpDateView" type="view" aliasName="HealthDocumentExpDateView">
+                <columns>
+                    <column name="Centre" id="5c5ece59-c7a5-4263-913d-98c94f3474c8" aliasName="Centre" type="java.lang.String"/>
+                    <column name="Organisation" id="01c16790-f28e-4636-8e3d-728cdd501106" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="Provider" id="c7506e76-199f-4869-8e61-4b44ccdf1b53" aliasName="Provider" type="java.lang.String"/>
+                    <column name="Child" id="6143235b-1ef0-41d9-92da-f0e8dedb3745" aliasName="Child" type="java.lang.String"/>
+                    <column name="Family" id="e5b68fb9-3168-4900-9b21-f64b7e504924" aliasName="Family" type="java.lang.String"/>
+                    <column name="OrganisationId" id="51f0c1dc-6fd1-4245-90e9-8016fba0c2ab" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="ProviderId" id="82f783c2-a79c-4b54-9849-9ea3b64b8cec" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="CentreId" id="47f157ad-3310-4e11-a420-d9503e82fac5" aliasName="CentreId" type="java.lang.String"/>
+                    <column name="Health Document" id="2263c690-b967-4efb-80c7-5b52a87173f6" aliasName="Health Document" type="java.lang.String"/>
+                    <column name="Expired Date" id="608e162e-12f3-4f69-84be-fef02f384725" aliasName="Expired Date" type="java.lang.String"/>
+                    <column name="FamilyStatus" id="807bc70b-b077-4bdf-b989-714a78604217" aliasName="FamilyStatus" type="java.lang.String"/>
+                    <column name="ChildFamilyStatus" id="b7a591fb-500f-45a3-a276-b0745c059e73" aliasName="ChildFamilyStatus" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="00a81ca0-5c39-4193-a88b-279e4d8307ea" name="ChildGenderView" type="view" aliasName="ChildGenderView">
+                <columns>
+                    <column name="Organisation" id="54e0ae33-eac9-4a78-8a41-46feb09abfac" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="Provider" id="8d837321-f907-465f-a2ba-d874f06447fe" aliasName="Provider" type="java.lang.String"/>
+                    <column name="Centre" id="8d07f6ec-60fd-4ef9-95d0-bdd7f7978381" aliasName="Centre" type="java.lang.String"/>
+                    <column name="FamilyStatus" id="46c02ead-1228-4116-8285-3003d57222ac" aliasName="FamilyStatus" type="java.lang.String"/>
+                    <column name="ChildFamilyStatus" id="27e3b575-a253-46b9-b95b-ca24a0b0030f" aliasName="ChildFamilyStatus" type="java.lang.String"/>
+                    <column name="Gender" id="8011acd0-529b-4054-8ceb-87a4f96e1810" aliasName="Gender" type="java.lang.String"/>
+                    <column name="Id" id="79ef4aaa-2658-48ba-8856-3501d1152380" aliasName="Id" type="java.lang.Float"/>
+                    <column name="OrganisationId" id="b34356b0-7a23-4e4d-878e-3fd8e8d62c08" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="ProviderId" id="c252dbdd-0190-4781-8ebd-618bd1d3e108" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="CentreId" id="05a7b162-41f7-406e-8c06-d07f179bf708" aliasName="CentreId" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="5922074c-e9e9-4a92-afd8-9553abde6c2d" name="ChildHealthTagView" type="view" aliasName="ChildHealthTagView">
+                <columns>
+                    <column name="Organisation" id="01a846b4-c80c-42aa-8798-118d70157906" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="Provider" id="978995fb-4bc3-466d-b9ac-669fb253c3aa" aliasName="Provider" type="java.lang.String"/>
+                    <column name="Centre" id="d201e214-a70f-4c87-a4be-00616b92a694" aliasName="Centre" type="java.lang.String"/>
+                    <column name="FamilyStatus" id="19bf4e52-af4d-4a22-b228-e184174fe1bd" aliasName="FamilyStatus" type="java.lang.String"/>
+                    <column name="ChildFamilyStatus" id="5ad18023-958f-4d10-ba7c-8b267425a696" aliasName="ChildFamilyStatus" type="java.lang.String"/>
+                    <column name="HealthTag" id="fb645e5e-3bf7-4025-a171-d8a47dce52d6" aliasName="HealthTag" type="java.lang.String"/>
+                    <column name="PersonId" id="f614b74c-1f13-4c6a-a8a0-207f603f3b3b" aliasName="PersonId" type="java.lang.String"/>
+                    <column name="OrganisationId" id="569c196b-e9a8-4d5a-9cc5-c5422e6fb732" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="ProviderId" id="03f0a3fe-2534-4db0-ad30-864ad92e5e87" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="CentreId" id="5d47ff13-aaee-4d8b-9b45-e1550e42a5dc" aliasName="CentreId" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="bf78e137-c3c1-4d99-bc79-026346b4b183" name="ChildBirthdayWeekView" type="view" aliasName="ChildBirthdayWeekView">
+                <columns>
+                    <column name="Organisation" id="e400505c-0cca-4371-be9c-1214d478adea" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="Provider" id="cb175376-5b58-4267-8730-9d33ce557f90" aliasName="Provider" type="java.lang.String"/>
+                    <column name="Centre" id="2436e935-a688-44cb-81aa-5e35924a67d0" aliasName="Centre" type="java.lang.String"/>
+                    <column name="FamilyStatus" id="0ee357f6-8820-4e47-934e-82e097278e95" aliasName="FamilyStatus" type="java.lang.String"/>
+                    <column name="ChildFamilyStatus" id="fb0f6131-84d7-45f4-9df5-3d12b5a5bba6" aliasName="ChildFamilyStatus" type="java.lang.String"/>
+                    <column name="Child Name" id="fdc36db8-529a-4af1-b547-3f4ec09ac307" aliasName="Child Name" type="java.lang.String"/>
+                    <column name="Date Of Birth" id="9e857aea-e0cf-49ba-9d73-acf95dddddb9" aliasName="Date Of Birth" type="java.lang.String"/>
+                    <column name="OrganisationId" id="86bf68a2-86b4-4bbd-b75e-3bf67fd0bfe0" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="ProviderId" id="db29b31f-86ca-4c2d-8684-131cd0b7049f" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="CentreId" id="a8d483ba-f48c-4680-b89d-a23bc0d53472" aliasName="CentreId" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="9609b8a9-2b94-4471-9a96-ff6fe84fd9ab" name="ChildImmunisationView" type="view" aliasName="ChildImmunisationView">
+                <columns>
+                    <column name="Organisation" id="5f8b5830-566e-4134-9d91-79ccdabf3236" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="Provider" id="55d5a208-8ab2-4b02-84dd-7a3ae87d09ba" aliasName="Provider" type="java.lang.String"/>
+                    <column name="Centre" id="ae087e8e-f51b-47cb-9201-9b27f3b4bc44" aliasName="Centre" type="java.lang.String"/>
+                    <column name="FamilyStatus" id="1121e1b8-4cfb-46cc-87ae-8142fadf00d1" aliasName="FamilyStatus" type="java.lang.String"/>
+                    <column name="ChildFamilyStatus" id="03cd7bf0-4d4a-4dcd-b538-9e4046e2b657" aliasName="ChildFamilyStatus" type="java.lang.String"/>
+                    <column name="Child Name" id="841f2661-8b30-4fa5-8250-b9856f41fd44" aliasName="Child Name" type="java.lang.String"/>
+                    <column name="Date Of Birth" id="63b994e4-9ce4-4e69-bead-5326474c8d82" aliasName="Date Of Birth" type="java.lang.String"/>
+                    <column name="Child Name and DOB" id="88acbd70-5dc8-4d61-9cb7-9bd8920c0b1c" aliasName="Child Name and DOB" type="java.lang.String"/>
+                    <column name="ChildAgeInMonths" id="e440371e-27df-4401-8649-14647910a946" aliasName="ChildAgeInMonths" type="java.lang.Float"/>
+                    <column name="Immunisation Status" id="5120c159-1c2a-4caa-b740-f744ee1fbc6e" aliasName="Immunisation Status" type="java.lang.String"/>
+                    <column name="OrganisationId" id="6974c57c-9882-4bf7-b63b-344c73bfb8c4" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="ProviderId" id="4d307bef-daa9-4789-92ab-c988a2a86399" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="CentreId" id="1b1de9d4-a188-4566-8a6d-2126ae0d6a08" aliasName="CentreId" type="java.lang.String"/>
+                    <column name="Birth" id="6240b2a8-8332-4012-af14-5c68c6dceaee" aliasName="Birth" type="java.lang.String"/>
+                    <column name="2 Mths" id="04f881f0-d055-4ba9-a16f-f3c085e085a8" aliasName="2 Mths" type="java.lang.String"/>
+                    <column name="4 Mths" id="6e79159e-b021-4953-9bf6-5b233a982ea7" aliasName="4 Mths" type="java.lang.String"/>
+                    <column name="6 Mths" id="ba8ff9d6-fad1-465f-9501-de8a12d688ac" aliasName="6 Mths" type="java.lang.String"/>
+                    <column name="12 Mths" id="ae77b3b9-ec24-4b05-8ab3-a3e8b8233ad0" aliasName="12 Mths" type="java.lang.String"/>
+                    <column name="18 Mths" id="51c2a6a2-ca2b-4d28-baed-90d91cdf4f16" aliasName="18 Mths" type="java.lang.String"/>
+                    <column name="4 Yrs" id="b9c5d663-d151-4ac4-9d62-16f3b9f9be88" aliasName="4 Yrs" type="java.lang.String"/>
+                    <column name="6 Mths-5 Yrs" id="add3a265-20b8-480e-a311-2f2ff633c9ee" aliasName="6 Mths-5 Yrs" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="4d3743a4-da1b-4dd3-a62b-a47285859f27" name="PersonAndPaymentAccStatusView" type="view" aliasName="PersonAndPaymentAccStatusView">
+                <columns>
+                    <column name="Guardian Status" id="353f853c-ba4d-4df5-8877-4a70e326eb58" aliasName="Guardian Status" type="java.lang.String"/>
+                    <column name="Organisation" id="6931f6a8-d709-4f84-9a22-3fab7e2889a5" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="Provider" id="0e163b26-f753-4487-849d-ecdea0f8230f" aliasName="Provider" type="java.lang.String"/>
+                    <column name="Centre" id="1797ba82-ecc2-4a13-8c5e-6d93f4b6167d" aliasName="Centre" type="java.lang.String"/>
+                    <column name="Id" id="b3844cbb-7755-40c7-ad58-9b5b467d0851" aliasName="Id" type="java.lang.Float"/>
+                    <column name="OrganisationId" id="e9488b8f-1e05-4c00-835d-74504ffa1fe2" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="ProviderId" id="812765d9-bb4b-4689-896a-03ec5cf7b073" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="CentreId" id="0b34ad2f-79c2-4954-a653-c647e394870f" aliasName="CentreId" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="58aeec2b-ad3f-4f99-a1e9-ae8c819f412c" name="NomineeStatusView" type="view" aliasName="NomineeStatusView">
+                <columns>
+                    <column name="Organisation" id="789d9278-c0d8-457f-99dd-9a77f63df3e2" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="Provider" id="6c5bb76b-18c2-4869-a164-aefd3440c91e" aliasName="Provider" type="java.lang.String"/>
+                    <column name="Centre" id="030bbf4a-70b5-470e-8015-66f931caace5" aliasName="Centre" type="java.lang.String"/>
+                    <column name="FamilyStatus" id="e03325ac-71aa-4656-a869-8d0dfa4c0cab" aliasName="FamilyStatus" type="java.lang.String"/>
+                    <column name="AdultType" id="c17628ea-be9d-4b68-97fd-a9c5e1e1f070" aliasName="AdultType" type="java.lang.String"/>
+                    <column name="AdultFamilyStatus" id="41b11174-d6e1-40f9-9b64-e720a869ed42" aliasName="AdultFamilyStatus" type="java.lang.String"/>
+                    <column name="Id" id="c116d249-cc68-464a-8dca-81beff234c36" aliasName="Id" type="java.lang.Float"/>
+                    <column name="OrganisationId" id="29dd12e1-93f9-493f-9cfb-38e39c3debbc" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="ProviderId" id="8db9fe0d-8bc7-424a-b219-74719bef32d8" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="CentreId" id="63cf55d6-7b72-44f3-9ac4-1b7686158057" aliasName="CentreId" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="ca4db968-e5f8-4086-a02c-71ced2af98d5" name="ChildAgeView" type="view" aliasName="ChildAgeView">
+                <columns>
+                    <column name="Organisation" id="7516cc2d-648a-4212-bb6a-de465ba067c7" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="Provider" id="2fdaddf3-3f8a-4787-9027-bc4abac9f990" aliasName="Provider" type="java.lang.String"/>
+                    <column name="Centre" id="7705cf88-f0b6-445f-b9c9-0756187c6284" aliasName="Centre" type="java.lang.String"/>
+                    <column name="FamilyStatus" id="117305f3-30b2-4dcd-8228-6b64ea02f755" aliasName="FamilyStatus" type="java.lang.String"/>
+                    <column name="ChildFamilyStatus" id="03469417-8f6d-43bd-9755-90ddb9459b96" aliasName="ChildFamilyStatus" type="java.lang.String"/>
+                    <column name="ChildAgeRatio" id="fdc00c6c-e55a-4fa1-b045-10f01b741bb0" aliasName="ChildAgeRatio" type="java.lang.String"/>
+                    <column name="OrganisationId" id="a9980d58-3950-4c64-8810-ab605b494b68" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="ProviderId" id="f7a78011-0dcb-49d8-bca3-effc463973fb" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="CentreId" id="7c747b91-e247-4324-9fd2-fae89afb4a17" aliasName="CentreId" type="java.lang.String"/>
+                    <column name="ChildAge" id="b07f2609-bdf7-4542-b46d-bbae917e37e1" aliasName="ChildAge" type="java.lang.Float"/>
+                </columns>
+            </table>
+        </tables>
+        <relationships/>
+        <views>
+            <view id="c426f0b6-1e51-441a-9951-399ccd389298" name="PaymentMethodView" alias="PaymentMethodView">
+                <query><![CDATA[SELECT 
+		Family.OrganisationName AS [Organisation], 
+		Family.ProviderName AS [Provider], 
+		Family.CentreName AS [Centre],
+		Family.FamilyStatus,
+		PaymentAccount.PaymentAccountStatus,
+		PaymentAccount.PaymentMethod, 
+		PaymentAccount.Id,
+		Family.[OrganisationId]  AS [OrganisationId],
+		Family.[ProviderId]  AS [ProviderId],
+		Family.[CentreId]  AS [CentreId]
+FROM dbo.rpt_Family Family
+INNER JOIN dbo.rpt_FamilyPaymentAccount PaymentAccount ON PaymentAccount.FamilyId = Family.FamilyId
+
+]]></query>
+            </view>
+            <view id="37cb9be0-7009-4edd-810c-2ed51be73457" name="PersonStatusView" alias="PersonStatusView">
+                <query><![CDATA[SELECT	Family.OrganisationName AS [Organisation], 
+		Family.ProviderName AS [Provider], 
+		Family.CentreName AS [Centre], 
+		Adult.AdultFamilyStatus, 
+		Family.FamilyStatus,
+		Adult.AdultType,
+		Adult.Id,
+		Family.[OrganisationId]  AS [OrganisationId],
+		Family.[ProviderId]  AS [ProviderId],
+		Family.[CentreId]  AS [CentreId]
+FROM dbo.rpt_Family Family
+INNER JOIN dbo.rpt_FamilyAdult Adult ON Adult.FamilyId = Family.FamilyId
+]]></query>
+            </view>
+            <view id="3a7ad3a6-fee5-47e8-baef-5139406bfcd6" name="ChildStatusView" alias="ChildStatusView">
+                <query><![CDATA[SELECT	Family.OrganisationName AS [Organisation], 
+		Family.ProviderName AS [Provider], 
+		Family.CentreName AS [Centre], 
+		Child.ChildFamilyStatus, 
+		Family.FamilyStatus,
+		Child.Id,
+		Family.[OrganisationId]  AS [OrganisationId],
+		Family.[ProviderId]  AS [ProviderId],
+		Family.[CentreId]  AS [CentreId]
+	
+FROM dbo.rpt_Family Family
+INNER JOIN dbo.rpt_FamilyChild Child ON Child.FamilyId = Family.FamilyId
+]]></query>
+            </view>
+            <view id="000d12f1-3550-454c-baa2-9986c3d6d9d1" name="FamilyStatusView" alias="FamilyStatusView">
+                <query><![CDATA[SELECT	OrganisationName AS [Organisation], 
+		ProviderName AS [Provider], 
+		CentreName AS [Centre], 
+		FamilyStatus, 
+		Id,
+		[OrganisationId],
+		[ProviderId],
+		[CentreId]
+	
+FROM dbo.rpt_Family]]></query>
+            </view>
+            <view id="4033e701-153e-4e93-96d6-5c8ff1366ee9" name="PaymentAccountStatusView" alias="PaymentAccountStatusView">
+                <query><![CDATA[SELECT Family.OrganisationName AS [Organisation], 
+		Family.ProviderName AS [Provider], 
+		Family.CentreName AS [Centre], 
+		Payment.PaymentAccountStatus,  
+		Family.FamilyStatus,
+		Family.Id Total,
+		Family.[OrganisationId]  AS [OrganisationId],
+		Family.[ProviderId]  AS [ProviderId],
+		Family.[CentreId]  AS [CentreId]
+
+FROM dbo.rpt_Family Family
+INNER JOIN dbo.rpt_FamilyPaymentAccount Payment ON Payment.FamilyId = Family.FamilyId]]></query>
+            </view>
+            <view id="aee85bfa-1b08-43b0-8209-bdff2ccd980a" name="HealthDocumentExpDateView" alias="HealthDocumentExpDateView">
+                <query><![CDATA[SELECT
+	DISTINCT
+	Family.[CentreName] AS [Centre],
+ 	Family.[OrganisationName]  AS [Organisation],
+	Family.ProviderName AS [Provider],
+ 	Child.ChildName AS [Child],
+	Family.[FamilyName] AS [Family],
+	
+	
+	Family.[OrganisationId]  AS [OrganisationId],
+	Family.[ProviderId]  AS [ProviderId],
+	Family.[CentreId]  AS [CentreId],
+	CASE WHEN Health.HealthTag = 'Anaphylaxis' THEN 'Anaphylaxis Management Plan'
+		 WHEN Health.HealthTag = 'Asthma' THEN 'Asthma Management Plan'
+		 WHEN Health.HealthTag = 'Allergies' THEN 'Allergies Management Plan'
+		 WHEN Health.HealthTag = 'Diabetes' THEN 'Diabetes Management Plan'
+	END AS [Health Document]
+	
+	,COALESCE(CONVERT(VARCHAR, Health.PlanExpDate, 103), '-') AS [Expired Date]
+
+ 	, Family.FamilyStatus, Child.ChildFamilyStatus
+ 
+FROM [dbo].rpt_Family Family
+INNER JOIN [dbo].[rpt_FamilyChild] Child ON Family.FamilyId = Child.FamilyId
+INNER JOIN [dbo].[rpt_ChildHealthDetails] Health ON Health.PersonId = Child.ChildId
+WHERE ISNULL(HavePlanSigned, 0) = 1
+AND Health.PlanExpDate <= GETUTCDATE()]]></query>
+            </view>
+            <view id="00a81ca0-5c39-4193-a88b-279e4d8307ea" name="ChildGenderView" alias="ChildGenderView">
+                <query><![CDATA[SELECT 
+		Family.OrganisationName AS [Organisation], 
+		Family.ProviderName AS [Provider], 
+		Family.CentreName AS [Centre],
+		Family.FamilyStatus, 
+		FamilyChild.ChildFamilyStatus,
+		CASE WHEN Child.Gender IS NULL THEN 'Not Defined'
+			 ELSE Child.Gender END AS [Gender] ,
+		Child.Id,
+		Family.[OrganisationId]  AS [OrganisationId],
+		Family.[ProviderId]  AS [ProviderId],
+	 	Family.[CentreId]  AS [CentreId]
+	
+FROM dbo.rpt_Family Family
+INNER JOIN dbo.rpt_FamilyChild FamilyChild ON FamilyChild.FamilyId = Family.FamilyId
+INNER JOIN dbo.rpt_ChildDetails Child ON Child.PersonId = FamilyChild.ChildId]]></query>
+            </view>
+            <view id="5922074c-e9e9-4a92-afd8-9553abde6c2d" name="ChildHealthTagView" alias="ChildHealthTagView">
+                <query><![CDATA[SELECT DISTINCT 
+		Family.OrganisationName AS [Organisation], 
+		Family.ProviderName AS [Provider], 
+		Family.CentreName AS [Centre],
+		Family.FamilyStatus, FamilyChild.ChildFamilyStatus,
+		CASE WHEN HealthTag = 'AdditionalNeed' THEN 'Additional Need'
+			 WHEN HealthTag = 'DiagnosedDisability' THEN 'Diagnosed Disability'
+			 WHEN HealthTag = 'DietaryRestrictions' THEN 'Dietary Restrictions'
+			 WHEN HealthTag = 'OtherMedication' THEN 'Other Medication'
+			 WHEN HealthTag = 'SpecialistServices' THEN 'Specialist Services'
+		ELSE HealthTag END AS HealthTag,		  
+		PersonId,
+		Family.[OrganisationId]  AS [OrganisationId],
+		Family.[ProviderId]  AS [ProviderId],
+		Family.[CentreId]  AS [CentreId]
+		
+	
+FROM dbo.rpt_Family Family
+INNER JOIN dbo.rpt_FamilyChild FamilyChild ON FamilyChild.FamilyId = Family.FamilyId
+INNER JOIN dbo.rpt_ChildHealthDetails Health ON Health.PersonId = FamilyChild.ChildId]]></query>
+            </view>
+            <view id="bf78e137-c3c1-4d99-bc79-026346b4b183" name="ChildBirthdayWeekView" alias="ChildBirthdayWeekView">
+                <query><![CDATA[/*SET DATEFIRST 1*/
+SELECT 
+		Family.OrganisationName AS [Organisation], 
+		Family.ProviderName AS [Provider], 
+		Family.CentreName AS [Centre],
+		Family.FamilyStatus,
+		FamilyChild.ChildFamilyStatus,
+		FirstName + ' ' + LastName AS [Child Name], 
+		LEFT(convert(varchar,Child.DateOfBirth,106), 6) AS [Date Of Birth],
+		Family.[OrganisationId]  AS [OrganisationId],
+		Family.[ProviderId]  AS [ProviderId],
+		Family.[CentreId]  AS [CentreId]
+		
+FROM dbo.rpt_Family Family
+INNER JOIN dbo.rpt_FamilyChild FamilyChild ON FamilyChild.FamilyId = Family.FamilyId
+INNER JOIN dbo.rpt_ChildDetails Child ON Child.PersonId = FamilyChild.ChildId
+WHERE 
+	   /*Child.DateOfBirth >= DATEADD(week, DATEDIFF(day, 0, GETUTCDATE())/7, 0) first day current week
+       AND Child.DateOfBirth <=  DATEADD(week, DATEDIFF(day, 0, GETUTCDATE())/7, 6) last day current week*/
+	   
+	   	MONTH(Child.DateOfBirth) BETWEEN MONTH(DATEADD(week, DATEDIFF(day, 0, GETUTCDATE())/7, 0)) AND MONTH(DATEADD(week, DATEDIFF(day, 0, GETUTCDATE())/7, 6))
+	AND DAY(Child.DateOfBirth) BETWEEN DAY(DATEADD(week, DATEDIFF(day, 0, GETUTCDATE())/7, 0)) AND DAY(DATEADD(week, DATEDIFF(day, 0, GETUTCDATE())/7, 6))
+	   
+/*
+Child.DateOfBirth >= CONVERT(DATE, DATEADD(wk, 0, DATEADD(DAY, 1-DATEPART(WEEKDAY, GETDATE()), DATEDIFF(dd, 0, GETDATE())))) /*first day current week*/
+AND Child.DateOfBirth <=  CONVERT(DATE, DATEADD(wk, 1, DATEADD(DAY, 0-DATEPART(WEEKDAY, GETDATE()), DATEDIFF(dd, 0, GETDATE())))) /*last day current week*/
+*/]]></query>
+            </view>
+            <view id="9609b8a9-2b94-4471-9a96-ff6fe84fd9ab" name="ChildImmunisationView" alias="ChildImmunisationView">
+                <query><![CDATA[SELECT
+Family.OrganisationName AS [Organisation], 
+		Family.ProviderName AS [Provider], 
+		Family.CentreName AS [Centre],
+Family.FamilyStatus,FamilyChild.ChildFamilyStatus, 
+FamilyChild.ChildName AS [Child Name],
+COALESCE(CONVERT(VARCHAR, Child.DateOfBirth, 103), '-') AS [Date Of Birth],
+
+FamilyChild.ChildName + ' (' + COALESCE(CONVERT(VARCHAR, Child.DateOfBirth, 103), '-') + ')' AS [Child Name and DOB],
+
+DATEDIFF(MONTH, DateOfBirth, CONVERT(DATE, DATEADD(HOUR, 11, GETUTCDATE()))) AS ChildAgeInMonths,
+--IsBirth, Is2MonthsOfAge, Is4MonthsOfAge, Is6MonthsOfAge, Is12MonthsOfAge, Is18MonthsOfAge, Is4YearsOfAge, Is6MonthsTo5YearsOfAge,
+CASE WHEN DATEDIFF(MONTH, DateOfBirth, CONVERT(DATE, DATEADD(HOUR, 11, GETUTCDATE()))) BETWEEN 0 AND 1 AND (ISNULL(IsBirth, 0) = 0) THEN 'Not Complete'
+	 WHEN DATEDIFF(MONTH, DateOfBirth, CONVERT(DATE, DATEADD(HOUR, 11, GETUTCDATE()))) BETWEEN 0 AND 1 AND (ISNULL(IsBirth, 0) = 1) THEN 'Completed'
+     WHEN DATEDIFF(MONTH, DateOfBirth, CONVERT(DATE, DATEADD(HOUR, 11, GETUTCDATE()))) BETWEEN 2 AND 3 AND (ISNULL(IsBirth, 0) = 0 OR ISNULL(Is2MonthsOfAge, 0) = 0 ) THEN 'Not Complete'
+	 WHEN DATEDIFF(MONTH, DateOfBirth, CONVERT(DATE, DATEADD(HOUR, 11, GETUTCDATE()))) BETWEEN 2 AND 3 AND (ISNULL(IsBirth, 0) = 1 OR ISNULL(Is2MonthsOfAge, 0) = 1 ) THEN 'Completed'
+	 WHEN DATEDIFF(MONTH, DateOfBirth, CONVERT(DATE, DATEADD(HOUR, 11, GETUTCDATE()))) BETWEEN 4 AND 5 AND (ISNULL(IsBirth, 0) = 0 OR ISNULL(Is2MonthsOfAge, 0) = 0 OR ISNULL(Is4MonthsOfAge, 0) = 0 ) THEN 'Not Complete'
+	 WHEN DATEDIFF(MONTH, DateOfBirth, CONVERT(DATE, DATEADD(HOUR, 11, GETUTCDATE()))) BETWEEN 4 AND 5 AND (ISNULL(IsBirth, 0) = 1 AND ISNULL(Is2MonthsOfAge, 0) = 1 AND ISNULL(Is4MonthsOfAge, 0) = 1 ) THEN 'Completed'
+	 WHEN DATEDIFF(MONTH, DateOfBirth, CONVERT(DATE, DATEADD(HOUR, 11, GETUTCDATE()))) BETWEEN 6 AND 11 AND (ISNULL(IsBirth, 0) = 0 OR ISNULL(Is2MonthsOfAge, 0) = 0 OR ISNULL(Is4MonthsOfAge, 0) = 0 OR ISNULL(Is6MonthsOfAge, 0) = 0 ) THEN 'Not Complete'
+	 WHEN DATEDIFF(MONTH, DateOfBirth, CONVERT(DATE, DATEADD(HOUR, 11, GETUTCDATE()))) BETWEEN 6 AND 11 AND (ISNULL(IsBirth, 0) = 1 OR ISNULL(Is2MonthsOfAge, 0) = 1 OR ISNULL(Is4MonthsOfAge, 0) = 1 OR ISNULL(Is6MonthsOfAge, 0) = 1 ) THEN 'Completed'
+	 WHEN DATEDIFF(MONTH, DateOfBirth, CONVERT(DATE, DATEADD(HOUR, 11, GETUTCDATE()))) BETWEEN 12 AND 17 AND (ISNULL(IsBirth, 0) = 0 OR ISNULL(Is2MonthsOfAge, 0) = 0 OR ISNULL(Is4MonthsOfAge, 0) = 0 OR ISNULL(Is6MonthsOfAge, 0) = 0 OR ISNULL(Is12MonthsOfAge, 0) = 0 ) THEN 'Not Complete'
+	 WHEN DATEDIFF(MONTH, DateOfBirth, CONVERT(DATE, DATEADD(HOUR, 11, GETUTCDATE()))) BETWEEN 12 AND 17 AND (ISNULL(IsBirth, 0) = 1 OR ISNULL(Is2MonthsOfAge, 0) = 1 OR ISNULL(Is4MonthsOfAge, 0) = 1 OR ISNULL(Is6MonthsOfAge, 0) = 1 OR ISNULL(Is12MonthsOfAge, 0) = 1 ) THEN 'Completed'
+	 WHEN DATEDIFF(MONTH, DateOfBirth, CONVERT(DATE, DATEADD(HOUR, 11, GETUTCDATE()))) BETWEEN 18 AND 47 AND (ISNULL(IsBirth, 0) = 0 OR ISNULL(Is2MonthsOfAge, 0) = 0 OR ISNULL(Is4MonthsOfAge, 0) = 0 OR ISNULL(Is6MonthsOfAge, 0) = 0 OR ISNULL(Is12MonthsOfAge, 0) = 0 OR ISNULL(Is18MonthsOfAge, 0) = 0 ) THEN 'Not Complete'
+	 WHEN DATEDIFF(MONTH, DateOfBirth, CONVERT(DATE, DATEADD(HOUR, 11, GETUTCDATE()))) BETWEEN 18 AND 47 AND (ISNULL(IsBirth, 0) = 1 OR ISNULL(Is2MonthsOfAge, 0) = 1 OR ISNULL(Is4MonthsOfAge, 0) = 1 OR ISNULL(Is6MonthsOfAge, 0) = 1 OR ISNULL(Is12MonthsOfAge, 0) = 1 OR ISNULL(Is18MonthsOfAge, 0) = 1 ) THEN 'Completed'
+	 WHEN DATEDIFF(MONTH, DateOfBirth, CONVERT(DATE, DATEADD(HOUR, 11, GETUTCDATE()))) BETWEEN 48 AND 59 AND (ISNULL(IsBirth, 0) = 0 OR ISNULL(Is2MonthsOfAge, 0) = 0 OR ISNULL(Is4MonthsOfAge, 0) = 0 OR ISNULL(Is6MonthsOfAge, 0) = 0 OR ISNULL(Is12MonthsOfAge, 0) = 0 OR ISNULL(Is18MonthsOfAge, 0) = 0 OR ISNULL(Is4YearsOfAge, 0) = 0 ) THEN 'Not Complete'
+	 WHEN DATEDIFF(MONTH, DateOfBirth, CONVERT(DATE, DATEADD(HOUR, 11, GETUTCDATE()))) BETWEEN 48 AND 59 AND (ISNULL(IsBirth, 0) = 1 OR ISNULL(Is2MonthsOfAge, 0) = 1 OR ISNULL(Is4MonthsOfAge, 0) = 1 OR ISNULL(Is6MonthsOfAge, 0) = 1 OR ISNULL(Is12MonthsOfAge, 0) = 1 OR ISNULL(Is18MonthsOfAge, 0) = 1 OR ISNULL(Is4YearsOfAge, 0) = 1 ) THEN 'Completed'
+	 WHEN DATEDIFF(MONTH, DateOfBirth, CONVERT(DATE, DATEADD(HOUR, 11, GETUTCDATE()))) BETWEEN 6 AND 60 AND (ISNULL(IsBirth, 0) = 0 OR ISNULL(Is2MonthsOfAge, 0) = 0 OR ISNULL(Is4MonthsOfAge, 0) = 0 OR ISNULL(Is6MonthsOfAge, 0) = 0 OR ISNULL(Is12MonthsOfAge, 0) = 0 OR ISNULL(Is18MonthsOfAge, 0) = 0 OR ISNULL(Is4YearsOfAge, 0) = 0 OR ISNULL(Is6MonthsTo5YearsOfAge, 0) = 0 ) THEN 'Not Complete'
+	 WHEN DATEDIFF(MONTH, DateOfBirth, CONVERT(DATE, DATEADD(HOUR, 11, GETUTCDATE()))) BETWEEN 6 AND 60 AND (ISNULL(IsBirth, 0) = 1 OR ISNULL(Is2MonthsOfAge, 0) = 1 OR ISNULL(Is4MonthsOfAge, 0) = 1 OR ISNULL(Is6MonthsOfAge, 0) = 1 OR ISNULL(Is12MonthsOfAge, 0) = 1 OR ISNULL(Is18MonthsOfAge, 0) = 1 OR ISNULL(Is4YearsOfAge, 0) = 1 OR ISNULL(Is6MonthsTo5YearsOfAge, 0) = 1 ) THEN 'Completed'
+	 WHEN DATEDIFF(MONTH, DateOfBirth, CONVERT(DATE, DATEADD(HOUR, 11, GETUTCDATE()))) > 60 AND (ISNULL(IsBirth, 0) = 0 OR ISNULL(Is2MonthsOfAge, 0) = 0 OR ISNULL(Is4MonthsOfAge, 0) = 0 OR ISNULL(Is6MonthsOfAge, 0) = 0 OR ISNULL(Is12MonthsOfAge, 0) = 0 OR ISNULL(Is18MonthsOfAge, 0) = 0 OR ISNULL(Is4YearsOfAge, 0) = 0 OR ISNULL(Is6MonthsTo5YearsOfAge, 0) = 0 ) THEN 'Not Complete'
+	 WHEN DATEDIFF(MONTH, DateOfBirth, CONVERT(DATE, DATEADD(HOUR, 11, GETUTCDATE()))) > 60 AND (ISNULL(IsBirth, 0) = 1 OR ISNULL(Is2MonthsOfAge, 0) = 1 OR ISNULL(Is4MonthsOfAge, 0) = 1 OR ISNULL(Is6MonthsOfAge, 0) = 1 OR ISNULL(Is12MonthsOfAge, 0) = 1 OR ISNULL(Is18MonthsOfAge, 0) = 1 OR ISNULL(Is4YearsOfAge, 0) = 1 OR ISNULL(Is6MonthsTo5YearsOfAge, 0) = 1 ) THEN 'Completed'
+ELSE 'Not recorded'
+END AS [Immunisation Status],
+	Family.[OrganisationId]  AS [OrganisationId],
+	Family.[ProviderId]  AS [ProviderId],
+	Family.[CentreId]  AS [CentreId],
+	IIF(ISNULL(Child.IsBirth, 0) = 0, 'N', 'Y') AS [Birth],
+	IIF(ISNULL(Child.Is2MonthsOfAge, 0) = 0, 'N', 'Y') AS [2 Mths],
+	IIF(ISNULL(Child.Is4MonthsOfAge, 0) = 0, 'N', 'Y') AS [4 Mths],
+	IIF(ISNULL(Child.Is6MonthsOfAge, 0) = 0, 'N', 'Y') AS [6 Mths],
+	IIF(ISNULL(Child.Is12MonthsOfAge, 0) = 0, 'N', 'Y') AS [12 Mths],
+	IIF(ISNULL(Child.Is18MonthsOfAge, 0) = 0, 'N', 'Y') AS [18 Mths],
+	IIF(ISNULL(Child.Is4YearsOfAge, 0) = 0, 'N', 'Y') AS [4 Yrs],
+	IIF(ISNULL(Child.Is6MonthsTo5YearsOfAge, 0) = 0, 'N', 'Y') AS [6 Mths-5 Yrs]
+
+FROM dbo.rpt_Family Family
+INNER JOIN dbo.rpt_FamilyChild FamilyChild ON FamilyChild.FamilyId = Family.FamilyId
+INNER JOIN dbo.rpt_ChildDetails Child ON Child.PersonId = FamilyChild.ChildId]]></query>
+            </view>
+            <view id="4d3743a4-da1b-4dd3-a62b-a47285859f27" name="PersonAndPaymentAccStatusView" alias="PersonAndPaymentAccStatusView">
+                <query><![CDATA[
+SELECT	Adult.AdultFamilyStatus AS [Guardian Status],
+Family.OrganisationName AS [Organisation],
+Family.ProviderName AS [Provider],
+Family.CentreName AS [Centre],
+Family.Id,
+Family.[OrganisationId]  AS [OrganisationId],
+		Family.[ProviderId]  AS [ProviderId],
+		Family.[CentreId]  AS [CentreId]
+FROM dbo.rpt_Family Family
+INNER JOIN dbo.rpt_FamilyAdult Adult ON Adult.FamilyId = Family.FamilyId
+WHERE Adult.AdultFamilyStatus IN ('Active', 'Archived', 'On Wait List', 'Inactive') AND Family.FamilyStatus NOT IN ('Deleted', 'Archived')
+AND Adult.AdultType = 'Guardian' 
+ /*
+UNION ALL
+
+SELECT 'Payment Accounts', 
+Family.OrganisationName AS [Organisation],
+Family.ProviderName AS [Provider],
+Family.CentreName AS [Centre],
+Family.Id,
+Family.[OrganisationId]  AS [OrganisationId],
+		Family.[ProviderId]  AS [ProviderId],
+		Family.[CentreId]  AS [CentreId]
+FROM dbo.rpt_Family Family
+INNER JOIN dbo.rpt_FamilyAdult Adult ON Adult.FamilyId = Family.FamilyId
+INNER JOIN dbo.rpt_FamilyPaymentAccount Payment ON Payment.FamilyId = Family.FamilyId AND Payment.PaymentAccountPersonId = Adult.AdultId
+WHERE Payment.PaymentAccountStatus = 'Active' AND Family.FamilyStatus = 'Active'
+AND Adult.AdultType = 'Guardian' */]]></query>
+            </view>
+            <view id="58aeec2b-ad3f-4f99-a1e9-ae8c819f412c" name="NomineeStatusView" alias="NomineeStatusView">
+                <query><![CDATA[SELECT 
+		Family.OrganisationName AS [Organisation], 
+		Family.ProviderName AS [Provider], 
+		Family.CentreName AS [Centre], 
+		Family.FamilyStatus, 
+		Adult.AdultType,
+		Adult.AdultFamilyStatus,
+		Adult.Id,
+		Family.[OrganisationId]  AS [OrganisationId],
+	Family.[ProviderId]  AS [ProviderId],
+	Family.[CentreId]  AS [CentreId]
+	
+FROM dbo.rpt_Family Family
+INNER JOIN dbo.rpt_FamilyAdult Adult ON Adult.FamilyId = Family.FamilyId AND Adult.AdultType = 'Nominee'
+WHERE Family.FamilyStatus NOT IN ('Archived', 'Deleted')
+AND Adult.AdultFamilyStatus IN ('Active', 'Inactive', 'On Wait List', 'Archived')]]></query>
+            </view>
+            <view id="ca4db968-e5f8-4086-a02c-71ced2af98d5" name="ChildAgeView" alias="ChildAgeView">
+                <query><![CDATA[SELECT 
+temp.Organisation,
+temp.[Provider],
+temp.[Centre],
+temp.FamilyStatus,
+temp.ChildFamilyStatus,
+temp.ChildAgeRatio,
+temp.[OrganisationId],
+temp.[ProviderId],
+temp.[CentreId], 
+COALESCE(actual.ChildAge,0) AS ChildAge 
+FROM (
+	SELECT * FROM 
+		(
+		SELECT
+		DISTINCT Family.OrganisationName AS [Organisation], 
+		Family.ProviderName AS [Provider], 
+		Family.CentreName AS [Centre],
+		FamilyStatus,ChildFamilyStatus,
+		Family.[OrganisationId] AS [OrganisationId],
+		Family.[ProviderId] AS [ProviderId],
+		Family.[CentreId] AS [CentreId]
+		FROM dbo.rpt_Family Family
+		INNER JOIN dbo.rpt_FamilyChild FamilyChild ON FamilyChild.FamilyId = Family.FamilyId
+		INNER JOIN dbo.rpt_ChildDetails Child ON Child.PersonId = FamilyChild.ChildId
+		)a,
+		(
+		SELECT '0 to 12' AS ChildAgeRatio
+		UNION SELECT '13 to 24' AS ChildAgeRatio
+		UNION SELECT '25 to 36' AS ChildAgeRatio
+		UNION SELECT '37 to 48' AS ChildAgeRatio
+		UNION SELECT 'Above 48' AS ChildAgeRatio
+		)b
+	) temp
+LEFT JOIN
+(
+
+
+SELECT Organisation,[Provider],[Centre],FamilyStatus,ChildFamilyStatus,
+CASE WHEN ChildAge BETWEEN 0 AND 12 THEN '0 to 12'
+WHEN ChildAge BETWEEN 13 AND 24 THEN '13 to 24'
+WHEN ChildAge BETWEEN 25 AND 36 THEN '25 to 36'
+WHEN ChildAge BETWEEN 37 AND 48 THEN '37 to 48'
+WHEN ChildAge > 48 THEN 'Above 48'
+END AS [ChildAgeRatio],[OrganisationId],[ProviderId],[CentreId],
+COUNT([ChildAgeView].[ChildAge]) AS [ChildAge]
+FROM 
+(
+SELECT
+Family.OrganisationName AS [Organisation], 
+Family.ProviderName AS [Provider], 
+Family.CentreName AS [Centre],
+Family.FamilyStatus,FamilyChild.ChildFamilyStatus, 
+DATEDIFF(MONTH, DateOfBirth, CONVERT(DATE, GETUTCDATE())) AS ChildAge,
+Family.[OrganisationId] AS [OrganisationId],
+Family.[ProviderId] AS [ProviderId],
+Family.[CentreId] AS [CentreId]
+FROM dbo.rpt_Family Family
+INNER JOIN dbo.rpt_FamilyChild FamilyChild ON FamilyChild.FamilyId = Family.FamilyId
+INNER JOIN dbo.rpt_ChildDetails Child ON Child.PersonId = FamilyChild.ChildId
+) [ChildAgeView]
+GROUP BY
+CASE WHEN ChildAge BETWEEN 0 AND 12 THEN '0 to 12'
+WHEN ChildAge BETWEEN 13 AND 24 THEN '13 to 24'
+WHEN ChildAge BETWEEN 25 AND 36 THEN '25 to 36'
+WHEN ChildAge BETWEEN 37 AND 48 THEN '37 to 48'
+WHEN ChildAge > 48 THEN 'Above 48'
+END, [ChildAgeView].FamilyStatus,[ChildAgeView].ChildFamilyStatus,Organisation,[Provider],[Centre],[OrganisationId],[ProviderId],[CentreId])actual
+ON temp.ChildAgeRatio=actual.ChildAgeRatio and temp.Organisation=actual.Organisation 
+and temp.[Provider]=actual.[Provider] and temp.Centre=actual.Centre 
+and temp.FamilyStatus=actual.FamilyStatus 
+and temp.ChildFamilyStatus=actual.ChildFamilyStatus
+and temp.[OrganisationId]=actual.[OrganisationId] 
+and temp.[ProviderId]=actual.[ProviderId] 
+and temp.[CentreId]=actual.[CentreId]
+]]></query>
+            </view>
+        </views>
+    </database>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+    <access>
+        <expression expressionId="dd4088f6-6d01-4161-9232-00c937e9ca15" type="conditionIf" expressionName="ChildAgeViewSecurity" expressionType="table" on="ChildAgeView" accessType="grant">
+            <condition><![CDATA[${org}.name != '-']]></condition>
+            <filter><![CDATA[ChildAgeView.OrganisationId IN (${profile['organisation']}) AND
+ChildAgeView.ProviderId IN  (${profile['providers']}) AND
+ChildAgeView.CentreId IN (${profile['centres']})]]></filter>
+        </expression>
+        <expression expressionId="3b3fd9d8-5f1b-4cb0-bd0c-aa87f25673ae" type="conditionIf" expressionName="ChildBirthdayWeekViewSecurity" expressionType="table" on="ChildBirthdayWeekView" accessType="grant">
+            <condition><![CDATA[${org}.name != '-']]></condition>
+            <filter><![CDATA[ChildBirthdayWeekView.OrganisationId IN (${profile['organisation']}) AND
+ChildBirthdayWeekView.ProviderId IN  (${profile['providers']}) AND
+ChildBirthdayWeekView.CentreId IN (${profile['centres']})]]></filter>
+        </expression>
+        <expression expressionId="88353267-b0bf-434d-9eda-482152611490" type="conditionIf" expressionName="ChildGenderViewSecurity" expressionType="table" on="ChildGenderView" accessType="grant">
+            <condition><![CDATA[${org}.name != '-']]></condition>
+            <filter><![CDATA[ChildGenderView.OrganisationId IN (${profile['organisation']}) AND
+ChildGenderView.ProviderId IN  (${profile['providers']}) AND
+ChildGenderView.CentreId IN (${profile['centres']})]]></filter>
+        </expression>
+        <expression expressionId="2db26769-a41e-4150-8520-313eb225fb4a" type="conditionIf" expressionName="ChildHealthTagViewSecurity" expressionType="table" on="ChildHealthTagView" accessType="grant">
+            <condition><![CDATA[${org}.name != '-']]></condition>
+            <filter><![CDATA[ChildHealthTagView.OrganisationId IN (${profile['organisation']}) AND
+ChildHealthTagView.ProviderId IN  (${profile['providers']}) AND
+ChildHealthTagView.CentreId IN (${profile['centres']})]]></filter>
+        </expression>
+        <expression expressionId="9417c1e8-6bcd-4372-b95b-403e58aac46b" type="conditionIf" expressionName="ChildImmunisationViewSecurity" expressionType="table" on="ChildImmunisationView" accessType="grant">
+            <condition><![CDATA[${org}.name != '-']]></condition>
+            <filter><![CDATA[ChildImmunisationView.OrganisationId IN (${profile['organisation']}) AND
+ChildImmunisationView.ProviderId IN  (${profile['providers']}) AND
+ChildImmunisationView.CentreId IN (${profile['centres']})]]></filter>
+        </expression>
+        <expression expressionId="ee202a17-f7fe-4f8b-96f6-b378a53a7af6" type="conditionIf" expressionName="ChildStatusViewSecurity" expressionType="table" on="ChildStatusView" accessType="grant">
+            <condition><![CDATA[${org}.name != '-']]></condition>
+            <filter><![CDATA[ChildStatusView.OrganisationId IN (${profile['organisation']}) AND
+ChildStatusView.ProviderId IN  (${profile['providers']}) AND
+ChildStatusView.CentreId IN (${profile['centres']})]]></filter>
+        </expression>
+        <expression expressionId="af62d138-1053-42fd-bfdd-7a508a044aa5" type="conditionIf" expressionName="FamilyStatusViewSecurity" expressionType="table" on="FamilyStatusView" accessType="grant">
+            <condition><![CDATA[${org}.name != '-']]></condition>
+            <filter><![CDATA[FamilyStatusView.OrganisationId IN (${profile['organisation']}) AND
+FamilyStatusView.ProviderId IN  (${profile['providers']}) AND
+FamilyStatusView.CentreId IN (${profile['centres']})]]></filter>
+        </expression>
+        <expression expressionId="cf0d66b9-a72a-4f2b-8db4-5b7fa81687ec" type="conditionIf" expressionName="NomineeStatusViewSecurity" expressionType="table" on="NomineeStatusView" accessType="grant">
+            <condition><![CDATA[${org}.name != '-']]></condition>
+            <filter><![CDATA[NomineeStatusView.OrganisationId IN (${profile['organisation']}) AND
+NomineeStatusView.ProviderId IN  (${profile['providers']}) AND
+NomineeStatusView.CentreId IN (${profile['centres']})]]></filter>
+        </expression>
+        <expression expressionId="4427dcf4-fb26-4b5a-94d4-eaf82aef40c8" type="conditionIf" expressionName="PaymentAccountStatusViewSecurity" expressionType="table" on="PaymentAccountStatusView" accessType="grant">
+            <condition><![CDATA[${org}.name != '-']]></condition>
+            <filter><![CDATA[PaymentAccountStatusView.OrganisationId IN (${profile['organisation']}) AND
+PaymentAccountStatusView.ProviderId IN  (${profile['providers']}) AND
+PaymentAccountStatusView.CentreId IN (${profile['centres']})]]></filter>
+        </expression>
+        <expression expressionId="6b981e18-cdde-4bd6-b6f8-154f8e3e64a2" type="conditionIf" expressionName="PaymentMethodViewSecurity" expressionType="table" on="PaymentMethodView" accessType="grant">
+            <condition><![CDATA[${org}.name != '-']]></condition>
+            <filter><![CDATA[PaymentMethodView.OrganisationId IN (${profile['organisation']}) AND
+PaymentMethodView.ProviderId IN  (${profile['providers']}) AND
+PaymentMethodView.CentreId IN (${profile['centres']})]]></filter>
+        </expression>
+        <expression expressionId="60f06b44-aa4e-457b-a115-717df12890ef" type="conditionIf" expressionName="PersonStatusViewSecurity" expressionType="table" on="PersonStatusView" accessType="grant">
+            <condition><![CDATA[${org}.name != '-']]></condition>
+            <filter><![CDATA[PersonStatusView.OrganisationId IN (${profile['organisation']}) AND
+PersonStatusView.ProviderId IN  (${profile['providers']}) AND
+PersonStatusView.CentreId IN (${profile['centres']})]]></filter>
+        </expression>
+        <expression expressionId="3b03473c-446c-4f9e-81e5-ea3b7d41f997" type="conditionIf" expressionName="HealthDocumentExpDateViewSecurity" expressionType="table" on="HealthDocumentExpDateView" accessType="grant">
+            <condition><![CDATA[${org}.name != '-']]></condition>
+            <filter><![CDATA[HealthDocumentExpDateView.OrganisationId IN (${profile['organisation']}) AND
+HealthDocumentExpDateView.ProviderId IN  (${profile['providers']}) AND
+HealthDocumentExpDateView.CentreId IN (${profile['centres']})]]></filter>
+        </expression>
+        <expression expressionId="3ab1af5b-08b0-408b-87f4-d98ed9646d84" type="conditionIf" expressionName="PersonAndPaymentAccStatusViewSecurity" expressionType="table" on="PersonAndPaymentAccStatusView" accessType="grant">
+            <condition><![CDATA[${org}.name != '-']]></condition>
+            <filter><![CDATA[PersonAndPaymentAccStatusView.OrganisationId IN (${profile['organisation']}) AND
+PersonAndPaymentAccStatusView.ProviderId IN  (${profile['providers']}) AND
+PersonAndPaymentAccStatusView.CentreId IN (${profile['centres']})
+]]></filter>
+        </expression>
+    </access>
+</metadata>

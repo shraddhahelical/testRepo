@@ -1,0 +1,41 @@
+.axis {
+  font: 10px sans-serif;
+}
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #DADADA;
+  shape-rendering: crispEdges;
+}
+.data-circle {
+ fill: none;
+}
+
+.data-lines, .data-polygon{
+  stroke: #DADADA;
+  fill: #DADADA;
+}
+.lines-text{
+  fill: #747A92;
+  font-size: 8px;
+  font-weight: bold;  
+  font-family: 'Lato-Bold', 'Lato';
+}
+.lines-value{
+  fill: #004170;
+  font-size: 7px;
+  font-weight: bold;  
+  font-family: 'Lato-Bold', 'Lato';
+}
+.fr-text{
+  fill: #747A92;
+  font-size: 7px;
+  font-weight: bold;  
+  font-family: 'Lato-Bold', 'Lato';
+}
+.fr-value{
+  fill: #D0021B;
+  font-size: 10px;
+  font-weight: bold;  
+  font-family: 'Lato-Bold', 'Lato';
+}

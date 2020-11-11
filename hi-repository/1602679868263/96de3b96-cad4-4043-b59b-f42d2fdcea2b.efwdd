@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efwdd>
+    <fileName>Test Sort and Hover</fileName>
+    <efw>96de3b96-cad4-4043-b59b-f42d2fdcea2b.efw</efw>
+    <visible>true</visible>
+    <description>Efw Dashboard Designer</description>
+    <state><![CDATA[{"variables":[],"components":{"3qbyg7yj0ky":{"metadata":{"dir":"/test/","name":"test sor and hover"},"type":"dashboard-component","options":{"dir":"1602679868263","file":"9ef9baa2-5727-4291-a98d-df2d4af4fac7.report","ext":"report","compType":"Adhoc","uid":"3qbyg7yj0ky","iframe":false},"uid":"3qbyg7yj0ky","name":"3qbyg7yj0ky","label":"test sor and hover","executeAtStart":true,"gs_attr":{"x":9,"y":7,"height":46,"width":77}}},"dashboardConfig":{"id":"dashboard"},"css":"","script":"","printOptions":{"templateId":"Dashboard","title":"Dashboard"},"componentSettings":{"3qbyg7yj0ky":{"header":true,"minimize":false,"maximize":false,"export":false,"editReport":false}},"gridWidthOption":100,"toggleIframes":false}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</efwdd>

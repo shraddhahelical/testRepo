@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efwdd>
+    <fileName>Drill Down Dashboard</fileName>
+    <efw>dabe0f49-2da0-48db-9772-6a51d2a5e322.efw</efw>
+    <visible>true</visible>
+    <description>Efw Dashboard Designer</description>
+    <state><![CDATA[{"variables":[["Client","Market Link"],["travel_details_travel_type","Domestic"],["meeting_details_client_name",["Envision"]]],"components":{"lk591839gz":{"gs_attr":{"x":0,"y":0,"width":6,"height":24},"name":"lk591839gz","header":{"enable":true,"text":"<p class=\"ql-align-center\"><strong>TravelCost<\/strong><\/p>","href":"","enableColor":false,"color":{"r":"255","g":"255","b":"255","a":"1"}},"metadata":{"dir":"/HI Sample Reports/Dashboard Designer-Drill Down/","name":"TravelCost"},"uid":"lk591839gz","label":"TravelCost","context_lable":"TravelCost","executeAtStart":true,"type":"dashboard-component","options":{"dir":"1463377807724/1472805277364","file":"8245b9dd-c23a-46ad-b82a-bdd0b5973047.report","ext":"report","compType":"Adhoc"}},"uxa7ndjqqgn":{"gs_attr":{"x":6,"y":0,"width":6,"height":24},"name":"uxa7ndjqqgn","header":{"enable":true,"text":"<p class=\"ql-align-center\"><strong>TravelType<\/strong><\/p>","href":"","enableColor":false,"color":{"r":"255","g":"255","b":"255","a":"1"}},"metadata":{"dir":"/HI Sample Reports/Dashboard Designer-Drill Down/","name":"TravelType"},"uid":"uxa7ndjqqgn","label":"TravelType","context_lable":"TravelType","requestParameters":{"Client":"Client"},"executeAtStart":true,"type":"dashboard-component","options":{"dir":"1463377807724/1472805277364","file":"08c93b4f-ba83-44ac-b90f-c1f95a111c24.report","ext":"report","compType":"Adhoc","styles":{"boxComp":"Adhoc","value":true,"boxPx":"","boxColor":"#ffffff"},"report":{"dir":"1463377807724/1472805277364","file":"08c93b4f-ba83-44ac-b90f-c1f95a111c24.report"}},"listeners":["Client"]},"zhynz3xny4":{"gs_attr":{"x":0,"y":24,"width":6,"height":24},"name":"zhynz3xny4","header":{"enable":true,"text":"<p class=\"ql-align-center\"><strong>TravelMedium<\/strong><\/p>","href":"","enableColor":false,"color":{"r":"255","g":"255","b":"255","a":"1"}},"metadata":{"dir":"/HI Sample Reports/Dashboard Designer-Drill Down/","name":"TravelMedium"},"uid":"zhynz3xny4","label":"","context_lable":"","requestParameters":{"travel_details_travel_type":"travel_details_travel_type","meeting_details_client_name":"Client"},"executeAtStart":true,"type":"dashboard-component","options":{"dir":"1463377807724/1472805277364","file":"d38687cc-242e-44b5-ae1e-e55d53a3adc6.report","ext":"report","compType":"Adhoc","styles":{"boxComp":"Adhoc","borderComp":"Adhoc"},"report":{"dir":"1463377807724/1472805277364","file":"d38687cc-242e-44b5-ae1e-e55d53a3adc6.report"},"iframe":true},"listeners":["travel_details_travel_type"]}},"dashboardConfig":{"id":"dashboard"},"css":"","script":"","printOptions":{"templateId":"Dashboard","title":"Dashboard"},"componentSettings":{"fr6hmcch4sj":{"header":true,"minimize":false,"maximize":false,"export":false,"editReport":false},"yjs6jwjmys":{"header":true,"minimize":false,"maximize":false,"export":false,"editReport":false}},"gridWidthOption":12,"toggleIframes":true}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+    <share mandatory="true">
+        <roles mandatory="true">
+            <role id="2">2</role>
+        </roles>
+    </share>
+</efwdd>

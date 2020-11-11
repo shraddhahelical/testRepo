@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efwsr>
+    <reportName>test123 2009111655</reportName>
+    <reportFile>f9a198ae-a948-4853-b860-f7886ea68134.efw</reportFile>
+    <reportDirectory>1588851297738/1591191331104</reportDirectory>
+    <reportParameters><![CDATA[{"employee_name":["_all_"],"travel_details_travel_type":["International"],"printOptions":{"templateId":"Dashboard","title":"Dashboard"}}]]></reportParameters>
+    <visible>true</visible>
+    <schedulingReference>1000</schedulingReference>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+    <favourite>false</favourite>
+</efwsr>

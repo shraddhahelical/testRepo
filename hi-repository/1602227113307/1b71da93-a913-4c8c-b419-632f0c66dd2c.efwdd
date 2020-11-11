@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efwdd>
+    <fileName>Sample Dashboard</fileName>
+    <efw>1b71da93-a913-4c8c-b419-632f0c66dd2c.efw</efw>
+    <visible>true</visible>
+    <description>Efw Dashboard Designer</description>
+    <state><![CDATA[{"variables":[["employee_details_employee_name",["_all_"]]],"components":{"d2zemgp86s":{"gs_attr":{"x":17,"y":16,"height":34,"width":71},"name":"d2zemgp86s","metadata":{"dir":"/z_sample/","name":"sample report"},"uid":"d2zemgp86s","label":"sample report","requestParameters":{"employee_details_employee_name":"employee_details_employee_name"},"executeAtStart":true,"type":"dashboard-component","options":{"dir":"1602227113307","file":"b0cf83f2-d1ac-4afa-a073-294e6f3dc5d7.report","ext":"report","compType":"Adhoc","uid":"d2zemgp86s","iframe":false},"listeners":["employee_details_employee_name"]},"64gximyhnzf":{"gs_attr":{"x":23,"y":0,"width":20,"height":16},"dataType":"text","orderBy":"","dataSource":{"location":"1463377807724/1463377836985","metadataFileName":"e9be6771-995b-40eb-a01c-304857a100a1.metadata"},"parameters":["employee_details_employee_name"],"name":"64gximyhnzf","uid":"64gximyhnzf","alias":"employee_details_employee_name","databaseFunction":{},"label":"","column":"employee_details.employee_name","adhoc":true,"requestParameters":{},"executeAtStart":true,"type":"dashboard-component","database":"HIUSER","options":{"compType":"Select","display":"employee_details_employee_name","value":"employee_details_employee_name","multiple":true,"uid":"64gximyhnzf","iframe":false,"all":true},"listeners":null}},"dashboardConfig":{"id":"dashboard"},"css":"","script":"","printOptions":{"templateId":"Dashboard","title":"Dashboard"},"componentSettings":{"d2zemgp86s":{"header":true,"minimize":false,"maximize":false,"export":false,"editReport":false},"64gximyhnzf":{"header":true,"minimize":false,"maximize":false,"export":false,"editReport":false}},"gridWidthOption":100,"toggleIframes":false}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</efwdd>

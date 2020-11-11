@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<report>
+    <reportName>JNDIQueryVIewReport</reportName>
+    <visible>true</visible>
+    <metadata>
+        <location>1588851297738/1591620701625</location>
+        <metadataFileName>1de90f54-c4ff-4b19-9fb0-6583650150d9.metadata</metadataFileName>
+    </metadata>
+    <canvas>
+        <columns><![CDATA[[{"column":"JNDI Query VIew.cancellation_reason","label":"JNDI Query VIew_cancellation_reason","id":"5uu01tnsymk","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"JNDI Query VIew_cancellation_reason","groupBy":["db.generic.groupBy.group"]},{"column":"JNDI Query VIew.client_name","label":"JNDI Query VIew_client_name","id":"mjkvdfmlw9","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"JNDI Query VIew_client_name","groupBy":["db.generic.groupBy.group"]},{"column":"JNDI Query VIew.meeting_id","label":"JNDI Query VIew_meeting_id","id":"ucgpu9vwcwc","type":{"dataType":"numeric","backendDatatype":"java.lang.Float"},"autogen_alias":"JNDI Query VIew_meeting_id","groupBy":["db.generic.groupBy.group"]}]]]></columns>
+    </canvas>
+    <state><![CDATA[{"columns":[{"column":"JNDI Query VIew.cancellation_reason","label":"JNDI Query VIew_cancellation_reason","id":"5uu01tnsymk","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"JNDI Query VIew_cancellation_reason","groupBy":["db.generic.groupBy.group"]},{"column":"JNDI Query VIew.client_name","label":"JNDI Query VIew_client_name","id":"mjkvdfmlw9","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"JNDI Query VIew_client_name","groupBy":["db.generic.groupBy.group"]},{"column":"JNDI Query VIew.meeting_id","label":"JNDI Query VIew_meeting_id","id":"ucgpu9vwcwc","type":{"dataType":"numeric","backendDatatype":"java.lang.Float"},"autogen_alias":"JNDI Query VIew_meeting_id","groupBy":["db.generic.groupBy.group"]}],"filters":[],"customFilterExpression":"","customHavingExpression":"","customFilterExpressionObj":{},"customHavingExpressionObj":{},"havingExpressionIndexs":{},"filterExpressionIndexs":{},"options":{"limitBy":1000,"prependTableNameToAlias":true},"visualisation":{"type":"Table","chartGroup":"","selectedType":"Table","settings":{"script":null,"vizscriptsEditMultipleMode":false},"vizSelectedScripts":[]},"scripts":[],"styles":"","customStyles":"","customScripts":[]}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</report>

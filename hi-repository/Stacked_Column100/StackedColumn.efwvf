@@ -1,0 +1,102 @@
+<Charts>
+	<Chart id="1">
+        <prop>
+            <name>Stacked Column</name>
+            <type>Custom</type>
+            <DataSource></DataSource>
+            <script>
+                <![CDATA[
+				
+				console.log("SyncFusion chart - stackingcolumn");
+				console.log("data : ");
+				console.log(data);
+				
+				var data_from_db = data;
+	
+				var link1 = document.createElement("link");
+					link1.rel = 'stylesheet';
+						
+				if(window.DashboardGlobals)
+					link1.href = window.DashboardGlobals.baseUrl+"/getExternalResource.html?path=Stacked_Column100/material.css";			
+				else
+					link1.href = "getExternalResource.html?path=Stacked_Column100/material.css";
+						
+				document.getElementsByTagName("head")[0].appendChild(link1);	
+					
+				var link2 = document.createElement("link");
+				link2.rel = 'stylesheet';
+						
+				if(window.DashboardGlobals)
+					link1.href = window.DashboardGlobals.baseUrl+"/getExternalResource.html?path=Stacked_Column100/bootstrap.min.css";			
+				else
+					link1.href = "getExternalResource.html?path=Stacked_Column100/bootstrap.min.css";
+				
+				document.getElementsByTagName("head")[0].appendChild(link2);	
+				
+				var script = document.createElement("script");
+				 
+				if(window.DashboardGlobals)
+					script.src = "https://cdn.syncfusion.com/ej2/dist/ej2.min.js";					
+				else
+					script.src = "https://cdn.syncfusion.com/ej2/dist/ej2.min.js";
+					
+				document.getElementsByTagName("head")[0].appendChild(script);
+				 
+				script.onload = function(){
+				
+					ej.base.enableRipple(true);
+					
+					
+					var chartData = data_from_db;
+
+					var metadata = __hi_result.metadata[0];
+					var SeriesMapping = [];
+					var keys = Object.keys(data[0]);
+
+					console.log("__hi_result.metadata[0] : ");
+					console.log(__hi_result.metadata[0]);
+
+
+					for(var i in metadata) {  
+						console.log("First For Loop : ", i);
+						var item = metadata[i];
+					
+						for (var key in item) {
+							console.log("Second For Loop : ", key);
+							
+							if (item.hasOwnProperty(key)) {
+							
+								if(key=='name' && i>1){
+								
+									var obj = {
+										'dataSource': chartData,
+										'xName':keys[0],
+										'yName': item[key],
+										'type':'StackingColumn',
+										'name':item[key]
+										
+									}
+									SeriesMapping.push(obj);
+								}
+							}
+						}    
+					}
+					
+					console.log(SeriesMapping);
+						
+					var chart = new ej.charts.Chart({
+						primaryXAxis: {
+							valueType: 'Category'
+						},
+						series: SeriesMapping,
+					});
+		
+					chart.appendTo('#chart_1');
+				} //script.onload ends here 
+				
+				]]>
+			</script>
+        </prop>
+    </Chart>
+</Charts>	
+	

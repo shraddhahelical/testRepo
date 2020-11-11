@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<report>
+    <reportName>BugID2919</reportName>
+    <visible>true</visible>
+    <metadata>
+        <location>1588851297738/1589444653445/1590651742641</location>
+        <metadataFileName>55176731-1523-48d1-8a2d-f0f6cbad1678.metadata</metadataFileName>
+    </metadata>
+    <canvas>
+        <columns><![CDATA[[{"column":"findFilter.booking_platform","label":"findFilter_booking_platform","id":"h1n9sbqna2n","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"findFilter_booking_platform","groupBy":["db.generic.groupBy.group"]},{"column":"findFilter.destination","label":"findFilter_destination","id":"sxdgr3q71sg","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"findFilter_destination","groupBy":["db.generic.groupBy.group"]}]]]></columns>
+    </canvas>
+    <state><![CDATA[{"columns":[{"column":"findFilter.booking_platform","label":"findFilter_booking_platform","id":"h1n9sbqna2n","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"findFilter_booking_platform","groupBy":["db.generic.groupBy.group"]},{"column":"findFilter.destination","label":"findFilter_destination","id":"sxdgr3q71sg","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"findFilter_destination","groupBy":["db.generic.groupBy.group"]}],"filters":[{"values":["Makemytrip"],"mode":"auto","dataType":"text","orderBy":"","valuesMode":"auto","isFilterEditable":false,"encloseInQuotes":false,"dateTimeToggle":false,"databaseFunction":{},"label":"booking","column":"findFilter.booking_platform","backendDataType":"java.lang.String","rangeValuesType":"","id":0,"condition":"EQUALS","valuesRange":{},"rangeSelectionToggole":true}],"customFilterExpression":"${0}","customHavingExpression":"","customFilterExpressionObj":{"0":"${0}"},"customHavingExpressionObj":{},"havingExpressionIndexs":{},"filterExpressionIndexs":{},"options":{"limitBy":1000,"prependTableNameToAlias":true},"visualisation":{"type":"Table","chartGroup":"","selectedType":"Table","settings":{"script":null,"vizscriptsEditMultipleMode":false},"vizSelectedScripts":[]},"scripts":[],"styles":"","customStyles":"","customScripts":[]}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</report>

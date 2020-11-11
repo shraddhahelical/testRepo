@@ -1,0 +1,227 @@
+<div class="col-md-12 col-sm-12 col-xs-12 dashboard-grid"><div class="grid-stack main-stack" data-gs-width="12"><div class="grid-stack-item" data-gs-id="j392zyv9zlme5q74t06hia4i" id="item_j392zyv9zlme5q74t06hia4i" data-gs-x="0" data-gs-y="0" data-gs-width="2" data-gs-height="3"><div class="grid-stack-wrapper hi-custom-component grid-stack-hover" style="border:;background:;background-size:auto;box-shadow:;"><div class="component-title"><a><p></p></a></div><div class="component-container" id="j392zyv9zlme5q74t06hia4i"></div></div></div><div class="grid-stack-item" data-gs-id="o41uqe46p" id="item_o41uqe46p" data-gs-x="0" data-gs-y="16" data-gs-width="2" data-gs-height="6"><div class="grid-stack-wrapper hi-parameter-component grid-stack-hover" style="border:;background:;background-size:auto;box-shadow:;" data-comp-type="Select"><div><div style="height:auto !important;white-space:normal;"class="component-title ql-editor">
+                <a>
+                    <p class="ql-align-center"><strong>Travel Type</strong></p>
+                </a>
+        </div></div><div class="component-container" id="o41uqe46p"></div></div></div><div class="grid-stack-item" data-gs-id="hmtro7eh95o" id="item_hmtro7eh95o" data-gs-x="0" data-gs-y="22" data-gs-width="6" data-gs-height="16"><div class="grid-stack-wrapper grid-stack-hover" style="border:;background:rgba(255,255,255,0);background-size:auto;box-shadow:;" data-comp-type="Adhoc"><div class="component-title"><a><p></p></a></div><div class="component-container" id="hmtro7eh95o"></div></div></div><div class="grid-stack-item" data-gs-id="zqi70ekisn9" id="item_zqi70ekisn9" data-gs-x="0" data-gs-y="3" data-gs-width="2" data-gs-height="7"><div class="grid-stack-wrapper hi-parameter-component grid-stack-hover" style="border:;background:;background-size:auto;box-shadow:;" data-comp-type="DatePicker"><div><div style="height:auto !important;white-space:normal;"class="component-title ql-editor">
+                <a>
+                    <p class="ql-align-center"><strong>Month</strong></p>
+                </a>
+        </div></div><div class="component-container" id="zqi70ekisn9"></div></div></div><div class="grid-stack-item" data-gs-id="fiij695s7sj" id="item_fiij695s7sj" data-gs-x="6" data-gs-y="22" data-gs-width="6" data-gs-height="16"><div class="grid-stack-wrapper grid-stack-hover" style="border:;background:rgba(255,255,255,0);background-size:auto;box-shadow:;" data-comp-type="Adhoc"><div class="component-title"><a><p></p></a></div><div class="report-setting-list"><div class="dropdown"><button class="btn btn-default dropdown-toggle" type="button" id="fiij695s7sjreportSettingDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="glyphicon glyphicon-option-vertical"></i></button><ul class="dropdown-menu" aria-labelledby="fiij695s7sjreportSettingDropdown"><li><a class="tool-box-btn" href="http://localhost:8085/hi-ee/adhoc/report-edit.html?dir=1463377807724/1463836339870/1463985785968&amp;file=177ade8d-640d-44b7-849f-eea435fdbce1.report" target="_blank" title="edit report"><i class="glyphicon glyphicon-edit"></i>  Edit Report</a></li></ul></div></div><div class="component-container" id="fiij695s7sj"></div></div></div><div class="grid-stack-item" data-gs-id="lmt8hqwheak" id="item_lmt8hqwheak" data-gs-x="3" data-gs-y="0" data-gs-width="9" data-gs-height="19"><div class="grid-stack-wrapper grid-stack-hover" style="border:;background:rgba(255,255,255,0);background-size:auto;box-shadow:;" data-comp-type="Adhoc"><div class="component-title"><a><p></p></a></div><div class="component-container" id="lmt8hqwheak"></div></div></div><div class="grid-stack-item" data-gs-id="vfp1z7gqspp" id="item_vfp1z7gqspp" data-gs-x="0" data-gs-y="10" data-gs-width="2" data-gs-height="5"><div class="grid-stack-wrapper hi-parameter-component grid-stack-hover" style="border:;background:;background-size:auto;box-shadow:;" data-comp-type="Select"><div><div style="height:auto !important;white-space:normal;"class="component-title ql-editor">
+                <a>
+                    <p class="ql-align-center"><strong>Travel Medium</strong></p>
+                </a>
+        </div></div><div class="component-container" id="vfp1z7gqspp"></div></div></div></div></div>
+<script>$(document).ready(function(){
+            $('body').css('width','100%');;
+
+            $('body').css('height','100%');;
+
+                    var placeholder;
+                    /*
+                    $('.grid-stack.main-stack').prepend("");
+
+                    $('.grid-stack.main-stack').prepend("");
+
+                    $('.grid-stack.main-stack').css("border","unset");
+
+                    placeholder = ".grid-stack.main-stack";
+
+                    */
+                  if($('#dashboardCanvas').length !== 0){
+                        $('#main').prepend("");
+
+                        $('#main').prepend("");
+
+                        $('#dashboardCanvas').css("border","unset");
+
+
+
+                         placeholder = "#dashboardCanvas";
+
+                    }else {
+                        $('#main').prepend("");
+
+                        $('#main').prepend("");
+
+                        $('body').css("border","unset");
+
+
+                        if(($('body').height()) < 517){
+                          $('body').css('height',(517));;
+
+                        }
+                          placeholder = "body";
+
+                    }
+                    
+
+                    $(placeholder).css("background",'unset');
+
+
+
+            //    $(placeholder).css("background-size",'auto');
+
+
+
+                    $(placeholder).css("box-shadow",'unset');
+
+                    // if(window.navigator.userAgent.indexOf('PhantomJS') == -1) {
+                    //     $(placeholder).css("display","table");
+
+                    // }
+                    
+$(".main-stack").gridstack({width: 12, handle: '.grid-stack-wrapper',resizable: { handles: 'se, s, sw' }, draggable: {handle: '.grid-stack-wrapper', scroll: true, appendTo: 'body'},cellHeight: 10, verticalMargin: 1, "float" : true ,staticGrid: true,disableDrag:true});
+    $.gridStackCSSGenerator(12, "hi-gridstack");
+
+     function appendImportant(cssObjNoImp){
+       var modifiedCssImp = {};
+       _.forEach(cssObjNoImp,function(val,key){
+         modifiedCssImp[key] = val + " !important";
+       });
+       return modifiedCssImp;
+     }
+
+    function convertToPer(cssObj,parentCSS){
+        var modifiedCss = {};
+        _.forEach(cssObj,function(val,key){
+          switch (key) {
+              case 'width':
+                    var bodyWidth = parseInt((parentCSS["width"].split('px'))[0]);
+                    var elemVal = parseInt((val.split('px'))[0]);
+                    var value = _.round(((elemVal/bodyWidth)*100),6);
+                    modifiedCss["width"] = value + "% !important";
+                    break;
+              case 'height':
+                    var bodyWidth = parseInt((parentCSS["height"].split('px'))[0]);
+                    var elemVal = parseInt((val.split('px'))[0]);
+                    var value = _.round(((elemVal/bodyWidth)*100),6);
+                    modifiedCss["height"] = value + "% !important";
+                  break;
+              case 'left':
+                      var bodyWidth = parseInt((parentCSS['width'].split('px'))[0]);;
+                      var elemVal = parseInt((val.split('px'))[0]);
+                      var value = _.round(((elemVal/bodyWidth)*100),6);
+                      modifiedCss[key] = value+"% !important";
+                  break;
+              case 'top':
+                      var bodyHeight = parseInt((parentCSS['height'].split('px'))[0]);;
+                      var elemVal= parseInt((val.split('px'))[0]);
+                      var value = _.round(((elemVal/bodyHeight)*100),6);
+                      modifiedCss[key] = value + "% !important";
+                  break;
+          }
+        });
+        return modifiedCss;
+      }
+
+    var dashboard = Dashboard || {},
+        gs = $(".main-stack").data("gridstack");
+    dashboard.setGridOptions = function(options) {
+        if (!_.isObject(options)) return;
+
+        if (typeof options.width === "number") {
+            gs.setGridWidth(options.width);
+            $.gridStackCSSGenerator(options.width, "hi-gridstack");
+        }
+
+        if (typeof options.verticalMargin !== "undefined") {
+            gs.verticalMargin(options.verticalMargin);
+        }
+
+        if (typeof options.horizontalMargin !== "undefined") {
+            var marginStyles = document.getElementById("hi-gridstack-margins");
+
+            if (!marginStyles) {
+                marginStyles = document.createElement("style");
+                marginStyles.type = "text/css";
+                marginStyles.rel = "stylesheet";
+                marginStyles.id = "hi-gridstack-margins";
+                document.getElementsByTagName("head")[0].appendChild(marginStyles);
+            }
+
+            var css = ".grid-stack .grid-stack-item .grid-stack-wrapper {" +
+                 "margin:" + options.horizontalMargin + ";" +
+                 "width: calc(100% - " + options.horizontalMargin + " - " + options.horizontalMargin+ ");" +
+            "}";
+
+            marginStyles.textContent = css;
+        }
+
+        if (typeof options.cellHeight !== "undefined") {
+            gs.cellHeight(options.cellHeight);
+        }
+    };
+    $(".main-stack").on("click", "[data-gs-maximize]", function(e) {
+        e.preventDefault();
+
+
+        var elem = $(this);
+        elem.toggleClass('active');
+
+        if(elem.hasClass('active')){
+            elem.html('<i class="glyphicon glyphicon-minus"></i>&nbsp; Minimize');
+            elem.closest(".grid-stack-item").css({
+                "display": "block",
+                "width": "100%",
+                "height": "100%",
+                "left": "0",
+                "right": "0",
+                "top": "0",
+                "bottom": "0"
+            });
+            $('body').css({
+                "position": "relative",
+                "height": "calc( 100vh - 60px )"
+            })
+        }
+        else{
+            elem.html('<i class="glyphicon glyphicon-fullscreen"></i>&nbsp; Maximize');
+            elem.closest(".grid-stack-item").removeAttr("style");
+
+            data = {type:"gs-maximize" , action : "maximize"}
+            window.parent.postMessage(data, "*");
+        }
+    });
+      var heightArr = [];
+      $.each($('.grid-stack-item'), function(i, item){
+        if($(item).parent().hasClass( "main-stack" )){
+          var y = $(item).position().top;
+          var height = $(item).height();
+          heightArr.push((y+height));
+        }
+      });
+      var maxHeight = _.max(heightArr);
+      if(heightArr.length > 0){
+       $('.grid-stack.main-stack').height(maxHeight);
+      }
+      $.each($('.sub-stack'), function(i, item) {
+        $(item).height("100%");
+      });
+
+    
+
+$("#j392zyv9zlme5q74t06hia4i").html("<div class=\"select-parameters\">  Parameter:</div>");
+$("<style id='hi-designer-styles'>  .hi-heading{    font-size: 40px;  	line-height: 70px;    font-weight: bold;    color: white;	width: 100%;  	text-align: center;}[data-gs-id=\"a2ul5uab1niev7khcp0c0udi\"] .component-container{  background: #1382b0;}.select-parameters{   text-align: center; 	font-weight: bold !important;  	font-size: 18px;  	color: #1382b0;}</style>").appendTo("head")
+$("<style id='dashboard-cssCode'></style>").appendTo("head")
+Dashboard.setVariable("travel_details_travel_type", "Domestic");
+Dashboard.setVariable("travel_details_travel_date", "April");
+Dashboard.setVariable("Travel Medium", "Bus");
+Dashboard.setVariable("Year", "2015");
+
+Dashboard.setVariable("printOptions", {"templateId":"Dashboard","title":"Dashboard"});
+
+Dashboard.init([{"dataType":"text","dataSource":{"location":"1463377807724\u002F1463377836985","metadataFileName":"e9be6771-995b-40eb-a01c-304857a100a1.metadata"},"parameters":["travel_details_travel_type"],"name":"o41uqe46p","header":{"enable":true,"text":"\u003Cp class=\"ql-align-center\"\u003E\u003Cstrong\u003ETravel Type\u003C\u002Fstrong\u003E\u003C\u002Fp\u003E","href":"","enableColor":false,"color":{"r":"255","g":"255","b":"255","a":"1"}},"uid":"o41uqe46p","alias":"travel_details_travel_type","label":"Travel Type","column":"travel_details.travel_type","adhoc":true,"executeAtStart":true,"type":"select","database":"HIUSER","options":{"display":"travel_details_travel_type","value":"travel_details_travel_type","multiple":false,"uid":"o41uqe46p","iframe":true},"htmlElementId":"#o41uqe46p"},{"name":"hmtro7eh95o","uid":"hmtro7eh95o","label":"Top 5 Travel Expense","requestParameters":{"travel_details_travel_type":"travel_details_travel_type"},"executeAtStart":true,"type":"adhoc","options":{"dir":"1463377807724\u002F1463378012748","file":"96f687aa-39c1-4603-8db2-26dff2c55181.report","ext":"report","styles":{"boxComp":"Adhoc","value":true,"boxPx":"","boxColor":"#ffffff"},"report":{"dir":"1463377807724\u002F1463378012748","file":"96f687aa-39c1-4603-8db2-26dff2c55181.report"}},"listeners":["travel_details_travel_type"],"htmlElementId":"#hmtro7eh95o"},{"dataSource":{"location":"1463377807724\u002F1463377836985","metadataFileName":"e9be6771-995b-40eb-a01c-304857a100a1.metadata"},"parameters":["travel_details_travel_date"],"name":"zqi70ekisn9","header":{"enable":true,"text":"\u003Cp class=\"ql-align-center\"\u003E\u003Cstrong\u003EMonth\u003C\u002Fstrong\u003E\u003C\u002Fp\u003E","href":"","enableColor":false,"color":{"r":"255","g":"255","b":"255","a":"1"}},"uid":"zqi70ekisn9","alias":"TRAVELDETAILS_TRAVEL_DATE","databaseFunction":{"functionName":"sql.date.monthname","parameters":{"column":"TRAVELDETAILS.TRAVEL_DATE"}},"label":"","context_lable":"","column":"TRAVELDETAILS.TRAVEL_DATE","adhoc":true,"requestParameters":{},"executeAtStart":"","type":"datepicker","database":"HIUSER","options":{"displayFormat":"MMMM","outputFormat":"MMMM"},"htmlElementId":"#zqi70ekisn9"},{"name":"fiij695s7sj","uid":"fiij695s7sj","label":"","requestParameters":{"travel_details_travel_date":"travel_details_travel_date"},"executeAtStart":true,"type":"adhoc","options":{"dir":"1463377807724\u002F1463836339870\u002F1463985785968","file":"177ade8d-640d-44b7-849f-eea435fdbce1.report","ext":"report","styles":{"boxComp":"Adhoc","borderComp":"Adhoc"},"report":{"dir":"1463377807724\u002F1463836339870\u002F1463985785968","file":"177ade8d-640d-44b7-849f-eea435fdbce1.report"},"iframe":true},"listeners":["travel_details_travel_date"],"htmlElementId":"#fiij695s7sj"},{"name":"lmt8hqwheak","uid":"lmt8hqwheak","label":"Medium Wise Travel Expense","requestParameters":{"Travel Medium":"Travel Medium"},"executeAtStart":true,"type":"adhoc","options":{"dir":"1463377807724\u002F1463836339870\u002F1463836491959","file":"c662317d-c422-4015-8d0e-2f50b31b75c0.report","ext":"report","styles":{"boxComp":"Adhoc","value":true,"boxPx":"","boxColor":"#ffffff"},"report":{"dir":"1463377807724\u002F1463836339870\u002F1463836491959","file":"c662317d-c422-4015-8d0e-2f50b31b75c0.report"}},"listeners":["Travel Medium"],"htmlElementId":"#lmt8hqwheak"},{"dataType":"text","dataSource":{"location":"1463377807724\u002F1463377836985","metadataFileName":"e9be6771-995b-40eb-a01c-304857a100a1.metadata"},"parameters":["Travel Medium"],"name":"vfp1z7gqspp","header":{"enable":true,"text":"\u003Cp class=\"ql-align-center\"\u003E\u003Cstrong\u003ETravel Medium\u003C\u002Fstrong\u003E\u003C\u002Fp\u003E","href":"","enableColor":false,"color":{"r":"255","g":"255","b":"255","a":"1"}},"uid":"vfp1z7gqspp","alias":"travel_details_travel_medium","label":"Travel Medium","column":"travel_details.travel_medium","adhoc":true,"executeAtStart":true,"type":"select","database":"HIUSER","options":{"display":"travel_details_travel_medium","value":"travel_details_travel_medium","multiple":false,"uid":"vfp1z7gqspp","iframe":true},"htmlElementId":"#vfp1z7gqspp"}]);
+
+
+
+$('.grid-stack.main-stack').css('height' ,'517px');
+
+if(placeholder != 'body'){$(placeholder).css('min-height','100%');;
+}
+$(placeholder).css('overflow','auto');;
+
+$(placeholder).css('width','100%');;
+
+$(placeholder).css('position','relative');;
+
+});</script>

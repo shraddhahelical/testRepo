@@ -1,0 +1,12 @@
+{
+    "head": {
+        "title": "Landscape",
+        "description": "Exports reports with landscape. The page uses A4 size."
+    },
+    "body": {
+	
+        "layout": "landscape",
+        "paperSize": "A4",
+        "hasScript": false
+    }
+}

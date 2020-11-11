@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<report>
+    <reportName>SelectWithWhereAndOrderByReport</reportName>
+    <visible>true</visible>
+    <metadata>
+        <location>1600776263013</location>
+        <metadataFileName>28df189d-e971-4c5c-b7f5-ae277bd23a0a.metadata</metadataFileName>
+    </metadata>
+    <canvas>
+        <columns><![CDATA[[{"column":"bank.firstname","label":"bank_firstname","id":"yqvy4q3jzfb","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"bank_firstname","alias":"Firstname"},{"column":"bank.age","label":"bank_age","id":"okkc3n8nvd","type":{"dataType":"numeric","backendDatatype":"java.lang.Long"},"autogen_alias":"bank_age","alias":"Age","orderBy":["asc"]},{"column":"bank.gender","label":"bank_gender","id":"whtoxb1gc3h","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"bank_gender","alias":"Gender"}]]]></columns>
+    </canvas>
+    <state><![CDATA[{"columns":[{"column":"bank.firstname","label":"bank_firstname","id":"yqvy4q3jzfb","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"bank_firstname","alias":"Firstname"},{"column":"bank.age","label":"bank_age","id":"okkc3n8nvd","type":{"dataType":"numeric","backendDatatype":"java.lang.Long"},"autogen_alias":"bank_age","alias":"Age","orderBy":["asc"]},{"column":"bank.gender","label":"bank_gender","id":"whtoxb1gc3h","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"bank_gender","alias":"Gender"}],"filters":[{"values":["F"],"mode":"auto","dataType":"text","orderBy":"","valuesMode":"custom","isFilterEditable":false,"encloseInQuotes":true,"dateTimeToggle":false,"databaseFunction":{},"label":"Gender","column":"bank.gender","backendDataType":"java.lang.String","rangeValuesType":"","id":0,"condition":"EQUALS","valuesRange":{},"rangeSelectionToggole":true}],"customFilterExpression":"${0}","customHavingExpression":"","customFilterExpressionObj":{"0":"${0}"},"customHavingExpressionObj":{},"havingExpressionIndexs":{},"filterExpressionIndexs":{},"options":{"limitBy":"10","prependTableNameToAlias":true},"visualisation":{"type":"Table","chartGroup":"","selectedType":"Table","settings":{"script":null,"vizscriptsEditMultipleMode":false},"vizSelectedScripts":[]},"scripts":[],"styles":"","customStyles":"","customScripts":[]}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</report>

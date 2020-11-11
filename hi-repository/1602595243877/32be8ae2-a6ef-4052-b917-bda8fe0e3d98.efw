@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efw>
+    <title>OnHoverDashboard</title>
+    <author>hiadmin</author>
+    <description>Efw File</description>
+    <template>32be8ae2-a6ef-4052-b917-bda8fe0e3d98.html</template>
+    <visible>true</visible>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</efw>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<report>
+    <reportName>JNDIDynamicVIewReport</reportName>
+    <visible>true</visible>
+    <metadata>
+        <location>1588851297738/1591620701625</location>
+        <metadataFileName>1de90f54-c4ff-4b19-9fb0-6583650150d9.metadata</metadataFileName>
+    </metadata>
+    <canvas>
+        <columns><![CDATA[[{"column":"JNDI Dynamic View.booking_platform","label":"JNDI Dynamic View_booking_platform","id":"yd7bj2bzwc","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"JNDI Dynamic View_booking_platform","groupBy":["db.generic.groupBy.group"]},{"column":"JNDI Dynamic View.destination","label":"JNDI Dynamic View_destination","id":"cbhma3n7bt","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"JNDI Dynamic View_destination","groupBy":["db.generic.groupBy.group"]},{"column":"JNDI Dynamic View.travel_cost","label":"JNDI Dynamic View_travel_cost","id":"mug759flgwf","type":{"dataType":"numeric","backendDatatype":"java.lang.Float"},"autogen_alias":"JNDI Dynamic View_travel_cost","groupBy":["db.generic.groupBy.group"]}]]]></columns>
+    </canvas>
+    <state><![CDATA[{"columns":[{"column":"JNDI Dynamic View.booking_platform","label":"JNDI Dynamic View_booking_platform","id":"yd7bj2bzwc","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"JNDI Dynamic View_booking_platform","groupBy":["db.generic.groupBy.group"]},{"column":"JNDI Dynamic View.destination","label":"JNDI Dynamic View_destination","id":"cbhma3n7bt","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"JNDI Dynamic View_destination","groupBy":["db.generic.groupBy.group"]},{"column":"JNDI Dynamic View.travel_cost","label":"JNDI Dynamic View_travel_cost","id":"mug759flgwf","type":{"dataType":"numeric","backendDatatype":"java.lang.Float"},"autogen_alias":"JNDI Dynamic View_travel_cost","groupBy":["db.generic.groupBy.group"]}],"filters":[{"values":["600"],"mode":"auto","dataType":"numeric","orderBy":"","valuesMode":"auto","isFilterEditable":false,"encloseInQuotes":false,"dateTimeToggle":false,"databaseFunction":{},"label":"travel_cost","column":"JNDI Dynamic View.travel_cost","backendDataType":"java.lang.Float","rangeValuesType":"","id":0,"condition":"EQUALS","valuesRange":{},"rangeSelectionToggole":true}],"customFilterExpression":"${0}","customHavingExpression":"","customFilterExpressionObj":{"0":"${0}"},"customHavingExpressionObj":{},"havingExpressionIndexs":{},"filterExpressionIndexs":{},"options":{"limitBy":1000,"prependTableNameToAlias":true},"visualisation":{"type":"Table","chartGroup":"","selectedType":"Table","settings":{"script":null,"vizscriptsEditMultipleMode":false},"vizSelectedScripts":[]},"scripts":[],"styles":"","customStyles":"","customScripts":[]}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</report>

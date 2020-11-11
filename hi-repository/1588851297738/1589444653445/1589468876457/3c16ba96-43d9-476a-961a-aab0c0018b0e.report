@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<report>
+    <reportName>QueryView_SessionVariables_JoinsWithTableReport</reportName>
+    <visible>true</visible>
+    <metadata>
+        <location>1588851297738/1589444653445/1589468876457</location>
+        <metadataFileName>35eb8964-4f04-437c-8f41-08a30baf078e.metadata</metadataFileName>
+    </metadata>
+    <canvas>
+        <columns><![CDATA[[{"column":"UserID.cancellation_reason","label":"UserID_cancellation_reason","id":"n8girpev9ml","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"UserID_cancellation_reason","groupBy":["db.generic.groupBy.group"]},{"column":"UserID.client_name","label":"UserID_client_name","id":"4ynlxe4et4d","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"UserID_client_name","groupBy":["db.generic.groupBy.group"]},{"column":"meeting_details.meeting_date","label":"meeting_details_meeting_date","id":"dxwakw85ss9","type":{"dataType":"dateTime","backendDatatype":"java.sql.Timestamp"},"autogen_alias":"meeting_details_meeting_date","groupBy":["db.generic.groupBy.group"]},{"column":"meeting_details.meeting_impact","label":"meeting_details_meeting_impact","id":"hklowizkogf","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"meeting_details_meeting_impact","groupBy":["db.generic.groupBy.group"]},{"column":"meeting_details.meeting_purpose","label":"meeting_details_meeting_purpose","id":"auj5hxczjw8","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"meeting_details_meeting_purpose","groupBy":["db.generic.groupBy.group"]}]]]></columns>
+    </canvas>
+    <state><![CDATA[{"columns":[{"column":"UserID.cancellation_reason","label":"UserID_cancellation_reason","id":"n8girpev9ml","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"UserID_cancellation_reason","groupBy":["db.generic.groupBy.group"]},{"column":"UserID.client_name","label":"UserID_client_name","id":"4ynlxe4et4d","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"UserID_client_name","groupBy":["db.generic.groupBy.group"]},{"column":"meeting_details.meeting_date","label":"meeting_details_meeting_date","id":"dxwakw85ss9","type":{"dataType":"dateTime","backendDatatype":"java.sql.Timestamp"},"autogen_alias":"meeting_details_meeting_date","groupBy":["db.generic.groupBy.group"]},{"column":"meeting_details.meeting_impact","label":"meeting_details_meeting_impact","id":"hklowizkogf","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"meeting_details_meeting_impact","groupBy":["db.generic.groupBy.group"]},{"column":"meeting_details.meeting_purpose","label":"meeting_details_meeting_purpose","id":"auj5hxczjw8","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"meeting_details_meeting_purpose","groupBy":["db.generic.groupBy.group"]}],"filters":[],"customFilterExpression":"","customHavingExpression":"","customFilterExpressionObj":{},"customHavingExpressionObj":{},"havingExpressionIndexs":{},"filterExpressionIndexs":{},"options":{"limitBy":1000,"prependTableNameToAlias":true},"visualisation":{"type":"Table","chartGroup":"","selectedType":"Table","settings":{"script":null,"vizscriptsEditMultipleMode":false},"vizSelectedScripts":[]},"scripts":[],"styles":"","customStyles":"","customScripts":[]}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</report>

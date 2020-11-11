@@ -1,0 +1,129 @@
+<EFWD>
+  <DataSources>
+    <Connection id="1" type="sql.jdbc.groovy">
+      <Driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</Driver>
+      <Url>jdbc:sqlserver://103.236.163.15:1433;DatabaseName=QA_reportDB</Url>
+      <User>sa</User>
+      <Pass>Abcd1234$</Pass>
+      <Condition>
+        <![CDATA[
+				import net.sf.json.JSONObject;
+				public JSONObject evalCondition() {
+					                                   JSONObject responseJson = new JSONObject();
+					                                   responseJson.put("driver","com.microsoft.sqlserver.jdbc.SQLServerDriver");
+					                                   responseJson.put("url","jdbc:sqlserver://103.236.163.15:1433;DatabaseName=QA_reportDB");
+					                                   responseJson.put("user","sa");
+					                                   responseJson.put("password","Abcd1234$");
+					                                   return responseJson;
+				                                  }
+			 ]]>
+      </Condition>
+    </Connection>
+  </DataSources>
+
+
+  <DataMaps>
+
+    <DataMap id="1" connection="1" type="sql.groovy">
+      <Name>Organisation</Name>
+      <Query>
+        <![CDATA[
+                
+                  import com.helicalinsight.adhoc.metadata.GroovyUsersSession;
+				  
+							    public String evalCondition() {
+							
+								String orgName = GroovyUsersSession.getValue('${org}.name');
+								orgName = orgName.replaceAll("'","");
+								
+                                String responseJson;
+                  
+                                responseJson = "SELECT '_all_' AS [Organisation] UNION SELECT DISTINCT OrganisationName AS [Organisation] FROM rpt_Family WHERE OrganisationId = '"+orgName+"' GROUP BY OrganisationName;"
+                                  
+                                return responseJson; 
+                                                
+						}
+                ]]>
+      </Query>
+    </DataMap>
+
+
+    <DataMap id="2" connection="1" type="sql.groovy" >
+      <Name>Provider</Name>
+      <Query>
+        <![CDATA[
+					
+          
+          
+          
+                 import com.helicalinsight.adhoc.metadata.GroovyUsersSession;
+							    public String evalCondition() {
+							
+								                                  String userName = GroovyUsersSession.getValue('${user}.name');
+								                                  userName = userName.replaceAll("'","");
+								
+								String orgName = GroovyUsersSession.getValue('${org}.name');
+								orgName = orgName.replaceAll("'","");
+								
+                                                  String profileValue1 = GroovyUsersSession.getValue('${profile[\'providers\']}');
+									                                profileValue1 = profileValue1.replaceAll("'","");
+                                                  
+                                                  String profileValue2 = GroovyUsersSession.getValue('${profile[\'centres\']}');
+									                                profileValue2 = profileValue2.replaceAll("'","");
+								  
+                  
+                                                  String responseJson;
+                  
+                                                  responseJson = "SELECT '_all_' AS [Provider] UNION SELECT DISTINCT ProviderName AS [Provider] FROM rpt_Family WHERE OrganisationId = '"+orgName+"' GROUP BY ProviderName;"
+                                  
+                                                  return responseJson; 
+                                                }
+					      
+          
+          
+                ]]>
+      </Query>
+
+    </DataMap>
+
+
+    <DataMap id="3" connection="1" type="sql.groovy" >
+      <Name>Centre</Name>
+      <Query>
+        <![CDATA[
+          
+                  import com.helicalinsight.adhoc.metadata.GroovyUsersSession;
+							    public String evalCondition() {
+							
+								                                  String userName = GroovyUsersSession.getValue('${user}.name');
+								                                  userName = userName.replaceAll("'","");
+								
+								                                  String orgName = GroovyUsersSession.getValue('${org}.name');
+								                                  orgName = orgName.replaceAll("'","");
+								
+                                                  String profileValue1 = GroovyUsersSession.getValue('${profile[\'providers\']}');
+									                                profileValue1 = profileValue1.replaceAll("'","");
+                                                  
+                                                  String profileValue2 = GroovyUsersSession.getValue('${profile[\'centres\']}');
+									                                
+								  
+                  
+                                                  String responseJson;
+                  
+                                                  responseJson = "SELECT '_all_' AS [Centre] UNION SELECT DISTINCT CentreName AS [Centre] FROM rpt_Family WHERE OrganisationId = '"+orgName+"' AND (ProviderName in (${Provider}) OR ('_all_' IN (${Provider}))) AND CentreId IN ("+profileValue2+")  GROUP BY CentreName;"
+                                                                  
+                                  
+                                                  return responseJson; 
+                                                }
+          
+          
+                ]]>
+      </Query>
+      <Parameters>
+        <Parameter name="Provider" type="Collection" default="''"/>
+      </Parameters>
+
+    </DataMap>
+
+  </DataMaps>
+</EFWD>

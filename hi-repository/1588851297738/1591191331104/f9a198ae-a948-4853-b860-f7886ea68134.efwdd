@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efwdd>
+    <fileName>test123</fileName>
+    <efw>f9a198ae-a948-4853-b860-f7886ea68134.efw</efw>
+    <visible>true</visible>
+    <description>Efw Dashboard Designer</description>
+    <state><![CDATA[{"variables":[["employee_name",["_all_"]],["travel_details_travel_type",["International"]]],"components":{"8l55s0qlycn":{"metadata":{"dir":"/All_Input_Control/","name":"report"},"type":"dashboard-component","options":{"dir":"1599480930994","file":"444a4118-b5ce-43be-95c9-ff3ce76029b5.report","ext":"report","compType":"Adhoc","uid":"8l55s0qlycn","iframe":false},"uid":"8l55s0qlycn","name":"8l55s0qlycn","label":"report","executeAtStart":true,"gs_attr":{"x":0,"y":16,"height":32,"width":33}},"vvcroge7tf":{"type":"code-html","options":{"lang":"HTML"},"gs_attr":{"x":66,"y":51,"height":16,"width":33}},"zulxg3hgbw":{"type":"code-html","options":{"lang":"HTML","html":"    <h1>sdsadadsasdasd<\/h1>\n"},"gs_attr":{"x":34,"y":0,"height":16,"width":33}},"t341etqldy9":{"gs_attr":{"x":34,"y":19,"height":32,"width":42},"name":"t341etqldy9","metadata":{"dir":"/HI Sample Reports/Adhoc Cross Tab Report/","name":"Cross Tabular Report Conditional Formatting"},"uid":"t341etqldy9","label":"","requestParameters":{},"executeAtStart":true,"type":"dashboard-component","options":{"dir":"1463377807724/1463384004492","file":"16d9efc6-7d84-461e-80c7-a59e1ca7d44a.report","ext":"report","compType":"Adhoc","uid":"t341etqldy9","iframe":true,"styles":{"boxComp":"Adhoc","borderComp":"Adhoc"},"report":{"dir":"1463377807724/1463384004492","file":"16d9efc6-7d84-461e-80c7-a59e1ca7d44a.report"}},"listeners":null}},"dashboardConfig":{"id":"dashboard"},"css":"","script":"","printOptions":{"templateId":"Dashboard","title":"Dashboard"},"componentSettings":{"8l55s0qlycn":{"header":true,"minimize":false,"maximize":false,"export":false,"editReport":false},"vvcroge7tf":{"header":true,"minimize":false,"maximize":false,"export":false,"editReport":false},"zulxg3hgbw":{"header":true,"minimize":false,"maximize":false,"export":false,"editReport":false},"y59opwxis4":{"header":true,"minimize":false,"maximize":false,"export":false,"editReport":false},"t341etqldy9":{"header":true,"minimize":false,"maximize":false,"export":false,"editReport":false}},"gridWidthOption":100,"toggleIframes":false}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</efwdd>

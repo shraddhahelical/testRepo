@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<report>
+    <reportName>QueryView_SessionVariables_MetadataSecurityReport</reportName>
+    <visible>true</visible>
+    <metadata>
+        <location>1588851297738/1589444653445/1589468876457</location>
+        <metadataFileName>35eb8964-4f04-437c-8f41-08a30baf078e.metadata</metadataFileName>
+    </metadata>
+    <canvas>
+        <columns><![CDATA[[{"column":"UserName.client_name","label":"UserName_client_name","id":"xk7lywz72jk","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"UserName_client_name","groupBy":["db.generic.groupBy.group"]},{"column":"UserName.cancellation_reason","label":"UserName_cancellation_reason","id":"xp5s438zhs9","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"UserName_cancellation_reason","groupBy":["db.generic.groupBy.group"]}]]]></columns>
+    </canvas>
+    <state><![CDATA[{"columns":[{"column":"UserName.client_name","label":"UserName_client_name","id":"xk7lywz72jk","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"UserName_client_name","groupBy":["db.generic.groupBy.group"]},{"column":"UserName.cancellation_reason","label":"UserName_cancellation_reason","id":"xp5s438zhs9","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"UserName_cancellation_reason","groupBy":["db.generic.groupBy.group"]}],"filters":[],"customFilterExpression":"","customHavingExpression":"","customFilterExpressionObj":{},"customHavingExpressionObj":{},"havingExpressionIndexs":{},"filterExpressionIndexs":{},"options":{"limitBy":1000,"prependTableNameToAlias":true},"visualisation":{"type":"Table","chartGroup":"","selectedType":"Table","settings":{"script":null,"vizscriptsEditMultipleMode":false},"vizSelectedScripts":[]},"scripts":[],"styles":"","customStyles":"","customScripts":[]}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</report>

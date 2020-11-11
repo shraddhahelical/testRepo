@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efwdd>
+    <fileName>Interpanel Report</fileName>
+    <efw>a2b8a874-719f-46b0-b3ff-7402ffe5b484.efw</efw>
+    <visible>true</visible>
+    <description>Efw Dashboard Designer</description>
+    <state><![CDATA[{"variables":[["Client",["Envision"]]],"components":{"5khr284i8i32q26g5n90aoflxr":{"gs_attr":{"x":0,"y":0,"height":21,"width":6},"name":"5khr284i8i32q26g5n90aoflxr","header":{"enable":true,"text":"<p class=\"ql-align-center\"><strong>Travel cost<\/strong><\/p>","href":"","enableColor":false,"color":{"r":"255","g":"255","b":"255","a":"1"}},"metadata":{"dir":"/Sample/Interpanel Communication/","name":"report1"},"uid":"5khr284i8i32q26g5n90aoflxr","label":"Travel cost","context_lable":"Travel cost","requestParameters":{},"executeAtStart":true,"type":"dashboard-component","options":{"dir":"1463377807724/1472803056242","file":"a06c8634-527c-4e55-ae42-e3a7eade4b1a.report","ext":"report","compType":"Adhoc"},"listeners":null},"ctqwqchmbogoe8jk1rj0v0a4i":{"gs_attr":{"x":6,"y":0,"height":21,"width":6},"name":"ctqwqchmbogoe8jk1rj0v0a4i","header":{"enable":true,"text":"<p class=\"ql-align-center\"><strong>Travel medium<\/strong><\/p>","href":"","enableColor":false,"color":{"r":"255","g":"255","b":"255","a":"1"}},"metadata":{"dir":"/Sample/Interpanel Communication/","name":"report2"},"uid":"ctqwqchmbogoe8jk1rj0v0a4i","label":"Travel medium","context_lable":"Travel medium","requestParameters":{"Client":"Client"},"executeAtStart":true,"type":"dashboard-component","options":{"dir":"1463377807724/1472803056242","file":"825e2375-cc6f-46ee-ac56-4eff05bceeb8.report","ext":"report","compType":"Adhoc"},"listeners":["Client"]}},"dashboardConfig":{"id":"dashboard"},"css":"","script":"","printOptions":{"templateId":"Dashboard","title":"Dashboard"},"componentSettings":{},"gridWidthOption":12,"toggleIframes":true}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+    <share mandatory="true">
+        <roles mandatory="true">
+            <role id="2">2</role>
+        </roles>
+    </share>
+</efwdd>

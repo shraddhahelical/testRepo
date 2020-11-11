@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efw>
+    <title>BugID2929</title>
+    <author>hiadmin</author>
+    <description>Efw File</description>
+    <template>72092b57-9ab0-4e91-bf6e-b670e5bdf2c7.html</template>
+    <visible>true</visible>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</efw>

@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<metadata type="db.generic" databaseType="Apache Derby 10.12.1.1 - (1704137)">
+    <fileName>WithSessionVariables_QueryVIewMD</fileName>
+    <connectionType>global.jdbc</connectionType>
+    <visible>true</visible>
+    <connection connectionType="global.jdbc" subType="dynamicDataSource">
+        <dialect>org.hibernate.dialect.DerbyTenSevenDialect</dialect>
+        <connectionId>1</connectionId>
+        <driverClass reference="derby">org.apache.derby.jdbc.AutoloadedDriver</driverClass>
+    </connection>
+    <database name="HIUSER" catalog="" schema="HIUSER">
+        <tables>
+            <table id="9645c648a1c0dbeec1287aaf1e996db3" name="meeting_details" aliasName="meeting_details">
+                <columns>
+                    <column name="meeting_id" id="018cc537-3791-44cb-a6e7-6d88e010506b" aliasName="meeting_id" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="meeting_date" id="c5b62fb2-a51c-45a3-af09-311182e7535f" aliasName="meeting_date" type="java.sql.Timestamp" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="meeting_by" id="e50f2e40-5d98-4f20-b379-56753c86432d" aliasName="meeting_by" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="client_name" id="13db6df0-9ac1-44be-ae6a-dc3e9c9ca82b" aliasName="client_name" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="meeting_purpose" id="665717a4-5ace-468f-8da8-c3d1d9e79584" aliasName="meeting_purpose" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="meeting_impact" id="fbd00fac-146e-4fbd-8d2d-025525f3fda8" aliasName="meeting_impact" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="meet_cancellation_status" id="58835817-7e49-46aa-a7a8-f6932069333a" aliasName="meet_cancellation_status" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="cancellation_reason" id="d6a72162-3d50-4ff1-9bae-f176124023a9" aliasName="cancellation_reason" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                </columns>
+            </table>
+            <table id="8a28627d07d04ef096d9935f12e0c7e9" name="travel_details" aliasName="travel_details">
+                <columns>
+                    <column name="travel_id" id="f2bf4ce2-3ae7-470d-b989-06a631e879f5" aliasName="travel_id" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="travel_date" id="43d50e25-75c3-4726-a3d7-3ccd406a006a" aliasName="travel_date" type="java.sql.Timestamp" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="travel_type" id="1b4d29a5-3416-4633-b762-69ba1daf763b" aliasName="travel_type" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="travel_medium" id="cb4ca367-3fb1-4fde-8bb2-80210fed466b" aliasName="travel_medium" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="source_id" id="6572951c-527e-452b-ac6d-e823af739c42" aliasName="source_id" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="source" id="89060d81-98e4-4e9c-9b8e-d4f2d9e266d8" aliasName="source" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="destination_id" id="12d34d56-7042-4a6b-9b2d-2b43ead9fa54" aliasName="destination_id" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="destination" id="5cf1e7cb-c8d7-432f-b6f9-4a4948b570ed" aliasName="destination" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="travel_cost" id="d2379c51-b562-4367-b96c-7a66cd357dd2" aliasName="travel_cost" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="mode_of_payment" id="8a423b34-41dd-49e6-95d3-f2c4820f710f" aliasName="mode_of_payment" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="booking_platform" id="0165d20b-0874-4f7a-8025-df25d4d9094f" aliasName="booking_platform" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="travelled_by" id="7a1b2369-c872-4b81-b154-b6bacacf6f48" aliasName="travelled_by" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                </columns>
+            </table>
+            <table id="4ac5d9f68b58bd7c0d179146e46795be" name="dimdate" aliasName="dimdate">
+                <columns>
+                    <column name="dim_id" id="1fdb1bd6-31ac-4109-b826-877ea6be4789" aliasName="dim_id" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="fiscal_year" id="13365533-1035-4be8-9fde-c24b7b256ed3" aliasName="fiscal_year" type="java.sql.Date" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="modified_date" id="bfe77a34-888d-440c-8023-d4a3836a57a8" aliasName="modified_date" type="java.sql.Timestamp" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="date_key" id="abf37445-2d04-40bb-b2dd-748ee73f6136" aliasName="date_key" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="day_number" id="867d840b-520f-44f0-b907-d94172a039c6" aliasName="day_number" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="fiscal_month_name" id="0599bb88-7e90-4dbb-a4ae-e9598450433b" aliasName="fiscal_month_name" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="fiscal_month_label" id="a672d6d7-29f3-4e94-b275-20ffbf11e3d8" aliasName="fiscal_month_label" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="created_date" id="2b3828e4-cae0-4f12-a750-2f8dc3a5f0ce" aliasName="created_date" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="created_time" id="8ee3e00b-1ca0-4189-a184-dee49be8ae0b" aliasName="created_time" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="rating" id="19652741-3d96-4250-bb5d-a7f11f439b66" aliasName="rating" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                </columns>
+            </table>
+            <table id="4e1fd245f4d13b77be423a43f01d80b2" name="employee_details" aliasName="employee_details">
+                <columns>
+                    <column name="employee_id" id="f2a05490-07f0-495a-b23c-02833c4d2fe7" aliasName="employee_id" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="employee_name" id="ca2d98e9-ec1c-4c19-8f7b-f77c6ca9a86c" aliasName="employee_name" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="age" id="8efc0a4c-7b01-4e90-871a-511dafc1304d" aliasName="age" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="address" id="7757cfa8-e5d0-4680-91af-379606f63196" aliasName="address" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                </columns>
+            </table>
+            <table id="be534112989b616b194bc59c2fb25a42" name="geo_cordinates" aliasName="geo_cordinates">
+                <columns>
+                    <column name="location_id" id="e40c6db8-a3aa-4822-a5eb-2a8201f77d22" aliasName="location_id" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="location" id="422f3ac2-0232-4548-a8c8-041548182d81" aliasName="location" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="latitude" id="84a3f90f-5eea-487d-86e6-78c305585df7" aliasName="latitude" type="java.lang.Double" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="longitude" id="bf69acae-f925-4092-a96f-6c24846ccfc4" aliasName="longitude" type="java.lang.Double" defaultFunction="db.generic.aggregate.sum"/>
+                </columns>
+            </table>
+            <table id="317885d2-5cbf-4454-a99d-9acfd75cdd93" name="UserID" type="view" aliasName="UserID">
+                <columns>
+                    <column name="meeting_id" id="03de6f8c-ecb7-42d7-93da-2d7c6d9c9fb3" aliasName="meeting_id" type="java.lang.Float"/>
+                    <column name="meeting_date" id="807f11a5-1798-4da0-9743-7f4932309da7" aliasName="meeting_date" type="java.sql.Timestamp"/>
+                    <column name="meeting_by" id="1e08019a-6c5c-4998-abec-8e97f9a4895a" aliasName="meeting_by" type="java.lang.Float"/>
+                    <column name="client_name" id="c7e7b4ad-d959-4266-97ce-7f56f5aee919" aliasName="client_name" type="java.lang.String"/>
+                    <column name="meeting_purpose" id="55e978d6-f9cd-42cb-aa7a-a3e1f0e95914" aliasName="meeting_purpose" type="java.lang.String"/>
+                    <column name="meeting_impact" id="dec7531c-6dc7-4792-bd94-6200b93aa6fc" aliasName="meeting_impact" type="java.lang.String"/>
+                    <column name="meet_cancellation_status" id="8033c9f0-1213-4323-acd3-3c60a0a0d975" aliasName="meet_cancellation_status" type="java.lang.String"/>
+                    <column name="cancellation_reason" id="456b4459-190a-4a83-a2f3-daba9e3a48af" aliasName="cancellation_reason" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="727f106a-190e-4bdd-be1e-dca816bdd641" name="SelectQuery" type="view" aliasName="SelectQuery">
+                <columns>
+                    <column name="meeting_id" id="08fb8a08-5512-40ad-a277-702c105643fd" aliasName="meeting_id" type="java.lang.Float"/>
+                    <column name="meeting_date" id="d402bbdd-d3f7-4bb6-9e47-aebbabda83a8" aliasName="meeting_date" type="java.sql.Timestamp"/>
+                    <column name="meeting_by" id="1a3101b4-fc21-4208-b756-004c05414c32" aliasName="meeting_by" type="java.lang.Float"/>
+                    <column name="client_name" id="0b193820-e56b-430f-b551-33a1281237ff" aliasName="client_name" type="java.lang.String"/>
+                    <column name="meeting_purpose" id="6dc89f37-3cf2-40c1-81cb-09320d5ed810" aliasName="meeting_purpose" type="java.lang.String"/>
+                    <column name="meeting_impact" id="6d2fede1-0d86-4b62-8120-6d9134fcfcc4" aliasName="meeting_impact" type="java.lang.String"/>
+                    <column name="meet_cancellation_status" id="10b4f142-957a-4baf-a511-408581dfe3a7" aliasName="meet_cancellation_status" type="java.lang.String"/>
+                    <column name="cancellation_reason" id="1ede9fa9-bff1-423a-8002-6f21ae657045" aliasName="cancellation_reason" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="2644a1e5-ec28-4bf8-9abc-0167156c35a9" name="UserName" type="view" aliasName="UserName">
+                <columns>
+                    <column name="meeting_id" id="030be5ac-35ab-486f-a971-134f6a8b4504" aliasName="meeting_id" type="java.lang.Float"/>
+                    <column name="meeting_date" id="40d4fc76-a223-478c-802a-4597587d7824" aliasName="meeting_date" type="java.sql.Timestamp"/>
+                    <column name="meeting_by" id="77b5b0c2-d1e0-41be-999a-cebd5954195f" aliasName="meeting_by" type="java.lang.Float"/>
+                    <column name="client_name" id="58f52609-e2d4-44a9-8f80-899a4b48aac5" aliasName="client_name" type="java.lang.String"/>
+                    <column name="meeting_purpose" id="e23e9221-1b22-46b3-b409-4facb3f06b40" aliasName="meeting_purpose" type="java.lang.String"/>
+                    <column name="meeting_impact" id="70069bcf-5a2a-40a2-969d-a3dcf188ad42" aliasName="meeting_impact" type="java.lang.String"/>
+                    <column name="meet_cancellation_status" id="b0002aa1-fe71-40ad-80dd-d2486c9121af" aliasName="meet_cancellation_status" type="java.lang.String"/>
+                    <column name="cancellation_reason" id="a7176ec8-520f-4e94-ac61-de75fb22d35c" aliasName="cancellation_reason" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="339c0570-e623-420b-ae3a-b7a67c0ce07c" name="ExternalUser" type="view" aliasName="ExternalUser">
+                <columns>
+                    <column name="meeting_id" id="ff82bb6f-8cc5-4208-8443-0d571856deaa" aliasName="meeting_id" type="java.lang.Float"/>
+                    <column name="meeting_date" id="f3e8e75d-0d73-4b00-98ef-6f417130c22b" aliasName="meeting_date" type="java.sql.Timestamp"/>
+                    <column name="meeting_by" id="42d152d0-fa62-4113-aadc-a05ded21d354" aliasName="meeting_by" type="java.lang.Float"/>
+                    <column name="client_name" id="ce178696-62ec-4dbf-9ebc-30674199b746" aliasName="client_name" type="java.lang.String"/>
+                    <column name="meeting_purpose" id="235d6730-893a-4e46-a896-5bee3752c13d" aliasName="meeting_purpose" type="java.lang.String"/>
+                    <column name="meeting_impact" id="00e432f8-1e12-4e26-90d9-1aafab095943" aliasName="meeting_impact" type="java.lang.String"/>
+                    <column name="meet_cancellation_status" id="6f2a2b91-ff7a-4f79-9c80-f4d644861662" aliasName="meet_cancellation_status" type="java.lang.String"/>
+                    <column name="cancellation_reason" id="74e987af-91f7-46d5-b6f0-cfa4866e0cbf" aliasName="cancellation_reason" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="dc467834-2c90-4285-96f3-117b663f41f5" name="UserEnabled" type="view" aliasName="UserEnabled">
+                <columns>
+                    <column name="meeting_id" id="41420f4e-683b-4318-9ca1-9c5fc3ac00cc" aliasName="meeting_id" type="java.lang.Float"/>
+                    <column name="meeting_date" id="da70e39b-0857-457d-ad80-b84da9f7ed09" aliasName="meeting_date" type="java.sql.Timestamp"/>
+                    <column name="meeting_by" id="f395f5e0-2aa0-4d0d-aa79-e3306bf9a790" aliasName="meeting_by" type="java.lang.Float"/>
+                    <column name="client_name" id="1303455c-a438-4878-b02e-95d5e6c917d7" aliasName="client_name" type="java.lang.String"/>
+                    <column name="meeting_purpose" id="c0cbbe58-18c3-4410-9d4f-4cdcc3a71fe3" aliasName="meeting_purpose" type="java.lang.String"/>
+                    <column name="meeting_impact" id="725b41f2-8915-4649-8ed4-77f6efb4eb1f" aliasName="meeting_impact" type="java.lang.String"/>
+                    <column name="meet_cancellation_status" id="9ddf1a88-b6b9-40de-8c0e-bd5c431f2121" aliasName="meet_cancellation_status" type="java.lang.String"/>
+                    <column name="cancellation_reason" id="f284d6c9-d8bd-4b0d-952f-8e9ca4e4b84e" aliasName="cancellation_reason" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="e5e4a75d-f7ae-4491-a5e2-51c8bb969e51" name="UserEmail" type="view" aliasName="UserEmail">
+                <columns>
+                    <column name="meeting_id" id="0e46ba79-cbf6-40fe-9ac0-57f45907e5a1" aliasName="meeting_id" type="java.lang.Float"/>
+                    <column name="meeting_date" id="79d0f52b-7431-4352-87e3-9e82c8150caa" aliasName="meeting_date" type="java.sql.Timestamp"/>
+                    <column name="meeting_by" id="ba3c90d2-fcca-4c37-aeeb-3191af016242" aliasName="meeting_by" type="java.lang.Float"/>
+                    <column name="client_name" id="89ba9ca7-1c73-4e0c-9a98-2bae21e60ccf" aliasName="client_name" type="java.lang.String"/>
+                    <column name="meeting_purpose" id="d9c016d3-0c53-4d56-9252-6cb6a03b3c04" aliasName="meeting_purpose" type="java.lang.String"/>
+                    <column name="meeting_impact" id="c755ded6-9feb-4af0-8776-ff2620c843dd" aliasName="meeting_impact" type="java.lang.String"/>
+                    <column name="meet_cancellation_status" id="82be800e-f00d-48a4-b821-19207e7a16ed" aliasName="meet_cancellation_status" type="java.lang.String"/>
+                    <column name="cancellation_reason" id="4a65fc6e-6c71-4a27-b602-ccaebd02a7ae" aliasName="cancellation_reason" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="1f7bdb59-11c8-4720-ba55-e61c585634f8" name="MultiSelect_InClause" type="view" aliasName="MultiSelect_InClause">
+                <columns>
+                    <column name="meeting_id" id="4f6314c9-51ca-420f-a757-c47c1f81a04b" aliasName="meeting_id" type="java.lang.Float"/>
+                    <column name="meeting_date" id="5b72427c-f21f-458b-bf28-5f2d045bd753" aliasName="meeting_date" type="java.sql.Timestamp"/>
+                    <column name="meeting_by" id="77257c8a-6d01-4352-b34a-ad738e71c887" aliasName="meeting_by" type="java.lang.Float"/>
+                    <column name="client_name" id="dac8314e-142d-4929-a936-6490f6757b4a" aliasName="client_name" type="java.lang.String"/>
+                    <column name="meeting_purpose" id="6f3739a3-2093-45e8-8a61-468ba4573f78" aliasName="meeting_purpose" type="java.lang.String"/>
+                    <column name="meeting_impact" id="894837b1-eb6d-4955-a7da-343b56a4faa8" aliasName="meeting_impact" type="java.lang.String"/>
+                    <column name="meet_cancellation_status" id="bbdb05b0-6954-4739-b304-043cfe225e36" aliasName="meet_cancellation_status" type="java.lang.String"/>
+                    <column name="cancellation_reason" id="c9ce30f2-4854-4e2d-ac4b-605046ba350c" aliasName="cancellation_reason" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="9f8c1a8b-d4c8-4a9c-b23a-d24b1cd579d5" name="BetweenCondition" type="view" aliasName="BetweenCondition">
+                <columns>
+                    <column name="meeting_id" id="722d2ffb-525c-4b03-b142-3d30daf3771d" aliasName="meeting_id" type="java.lang.Float"/>
+                    <column name="meeting_date" id="c6f6a6f9-ffa8-476a-a041-2bc6050eed48" aliasName="meeting_date" type="java.sql.Timestamp"/>
+                    <column name="meeting_by" id="17d91d03-c540-4878-82ed-ff337f5b201d" aliasName="meeting_by" type="java.lang.Float"/>
+                    <column name="client_name" id="55b917f2-af47-44b3-90b9-71834a829c2d" aliasName="client_name" type="java.lang.String"/>
+                    <column name="meeting_purpose" id="dba89330-577e-4d5f-9882-183959fac719" aliasName="meeting_purpose" type="java.lang.String"/>
+                    <column name="meeting_impact" id="ae3d8277-9612-4e37-b267-634d0739d07e" aliasName="meeting_impact" type="java.lang.String"/>
+                    <column name="meet_cancellation_status" id="0ff59052-0fba-4437-8468-b6ccdd434ad6" aliasName="meet_cancellation_status" type="java.lang.String"/>
+                    <column name="cancellation_reason" id="830caf8b-c37a-4831-bd8e-9cb109beec09" aliasName="cancellation_reason" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="8d85ec53-61ba-49be-9eac-7e2fe0fec5a0" name="OrgID" type="view" aliasName="OrgID">
+                <columns>
+                    <column name="meeting_id" id="e6ab3317-3cb8-4e86-b0e2-fe592a7daa26" aliasName="meeting_id" type="java.lang.Float"/>
+                    <column name="meeting_date" id="2f8add83-cbda-476a-8dbd-5bed8835c4b2" aliasName="meeting_date" type="java.sql.Timestamp"/>
+                    <column name="meeting_by" id="fbe0a923-7e74-4643-bc85-d73349b4a8b0" aliasName="meeting_by" type="java.lang.Float"/>
+                    <column name="client_name" id="4514bc95-0e87-4856-861b-179d8af1ab82" aliasName="client_name" type="java.lang.String"/>
+                    <column name="meeting_purpose" id="32c8cd39-bc50-4679-b00c-8339625f7d82" aliasName="meeting_purpose" type="java.lang.String"/>
+                    <column name="meeting_impact" id="d89b5f67-ac3e-4eb3-9518-f992def53feb" aliasName="meeting_impact" type="java.lang.String"/>
+                    <column name="meet_cancellation_status" id="a82c7361-8ac1-4903-a844-dae97883ff71" aliasName="meet_cancellation_status" type="java.lang.String"/>
+                    <column name="cancellation_reason" id="e774ac97-1552-4fbb-a9bf-cb5f945a124b" aliasName="cancellation_reason" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="0d2ca2f8-8b65-4043-a447-53fbb6b92d0b" name="OrgName" type="view" aliasName="OrgName">
+                <columns>
+                    <column name="meeting_id" id="285499ca-ff2b-4fc1-9f85-863827235e0b" aliasName="meeting_id" type="java.lang.Float"/>
+                    <column name="meeting_date" id="3add1f2c-7496-4724-bb53-adc84409ddca" aliasName="meeting_date" type="java.sql.Timestamp"/>
+                    <column name="meeting_by" id="5c3e7ca5-c8f2-4348-b208-24a25d708bea" aliasName="meeting_by" type="java.lang.Float"/>
+                    <column name="client_name" id="276a4049-4814-47ee-8716-d9a75d945ae8" aliasName="client_name" type="java.lang.String"/>
+                    <column name="meeting_purpose" id="4914e1b4-ccb5-4ff5-a847-ce377be89192" aliasName="meeting_purpose" type="java.lang.String"/>
+                    <column name="meeting_impact" id="1087c354-545a-4c18-a413-3cb9a1b2fd5e" aliasName="meeting_impact" type="java.lang.String"/>
+                    <column name="meet_cancellation_status" id="98267f00-2584-4d0b-9ea1-fffb2c2787bb" aliasName="meet_cancellation_status" type="java.lang.String"/>
+                    <column name="cancellation_reason" id="271e7fff-73a7-4a09-ad4d-92300a4c1a90" aliasName="cancellation_reason" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="4c2f4890-828b-4884-8b1d-ec4a6a860aef" name="ProfileID" type="view" aliasName="ProfileID">
+                <columns>
+                    <column name="meeting_id" id="e75c3abc-e0ee-4860-b88a-1a74042d91c5" aliasName="meeting_id" type="java.lang.Float"/>
+                    <column name="meeting_date" id="b5d55fe8-ea28-4477-85b1-4183390b606f" aliasName="meeting_date" type="java.sql.Timestamp"/>
+                    <column name="meeting_by" id="b57e68f7-7b38-4579-bf0f-9ace38adf263" aliasName="meeting_by" type="java.lang.Float"/>
+                    <column name="client_name" id="bfa1bd35-b407-4c29-b850-6af834d4db94" aliasName="client_name" type="java.lang.String"/>
+                    <column name="meeting_purpose" id="0acfd182-fd6c-4f0d-98eb-9179ce56e7d5" aliasName="meeting_purpose" type="java.lang.String"/>
+                    <column name="meeting_impact" id="775b0d23-31ee-4637-b092-6ebe515e30f3" aliasName="meeting_impact" type="java.lang.String"/>
+                    <column name="meet_cancellation_status" id="bab554e0-a547-4fb4-bb3f-0bc28c9a3df2" aliasName="meet_cancellation_status" type="java.lang.String"/>
+                    <column name="cancellation_reason" id="f0a4ce02-66b0-4d79-b774-d3d002edddee" aliasName="cancellation_reason" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="86acdbbf-fdd9-4d50-aeff-7bb4c8eeb5a1" name="ProfileName" type="view" aliasName="ProfileName">
+                <columns>
+                    <column name="meeting_id" id="53ae7bc9-31cf-47e9-8b94-9ebaab041130" aliasName="meeting_id" type="java.lang.Float"/>
+                    <column name="meeting_date" id="c44dd6a3-8fe5-44b0-b7cb-08d9bb611b4b" aliasName="meeting_date" type="java.sql.Timestamp"/>
+                    <column name="meeting_by" id="90e1ed65-9cc3-44c3-9cf6-b6d5ec2da5ef" aliasName="meeting_by" type="java.lang.Float"/>
+                    <column name="client_name" id="a422ab1a-4d12-4d40-b790-50c02184f9bc" aliasName="client_name" type="java.lang.String"/>
+                    <column name="meeting_purpose" id="02e43fcf-67fb-469f-8d3f-60e19542ba25" aliasName="meeting_purpose" type="java.lang.String"/>
+                    <column name="meeting_impact" id="2bc98977-43d3-46d0-ba82-ac6c9c0d895d" aliasName="meeting_impact" type="java.lang.String"/>
+                    <column name="meet_cancellation_status" id="ce68fd01-3eaa-4679-badc-7e6fd2d8076a" aliasName="meet_cancellation_status" type="java.lang.String"/>
+                    <column name="cancellation_reason" id="cde34f7e-5dcc-4aa2-8367-0909f9644d00" aliasName="cancellation_reason" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="e3a3e016-8e06-4d7f-afeb-3f3f392ebaa1" name="ProfileValue" type="view" aliasName="ProfileValue">
+                <columns>
+                    <column name="meeting_id" id="4133464e-8896-47da-be92-ced9f3c05d4e" aliasName="meeting_id" type="java.lang.Float"/>
+                    <column name="meeting_date" id="e4e275d8-c1e3-473c-adb3-324e380ca8cd" aliasName="meeting_date" type="java.sql.Timestamp"/>
+                    <column name="meeting_by" id="e4f05ffa-9784-42ff-889a-57e60371fab1" aliasName="meeting_by" type="java.lang.Float"/>
+                    <column name="client_name" id="986434ef-a88a-40d1-a8a0-b4ba23ccd9c3" aliasName="client_name" type="java.lang.String"/>
+                    <column name="meeting_purpose" id="ab82bafb-1b84-4eaa-a3b7-8bdfbd021689" aliasName="meeting_purpose" type="java.lang.String"/>
+                    <column name="meeting_impact" id="2074e5ba-7239-48ad-bf97-3f5b92831409" aliasName="meeting_impact" type="java.lang.String"/>
+                    <column name="meet_cancellation_status" id="7c82d769-7c01-4464-a052-59eebc69395f" aliasName="meet_cancellation_status" type="java.lang.String"/>
+                    <column name="cancellation_reason" id="9e4ec3ff-7bc4-489b-a02c-4a3c16f506a3" aliasName="cancellation_reason" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="4e07449b-0b92-4823-8d2d-046aeee5d068" name="RoleID" type="view" aliasName="RoleID">
+                <columns>
+                    <column name="meeting_id" id="761adeb6-2d82-4ce8-a91e-123157658614" aliasName="meeting_id" type="java.lang.Float"/>
+                    <column name="meeting_date" id="f8dbc307-0d77-4852-bcdf-bbd7fd2d528d" aliasName="meeting_date" type="java.sql.Timestamp"/>
+                    <column name="meeting_by" id="76b9e735-3ee6-4169-a3b6-e3ed6e5ae3fc" aliasName="meeting_by" type="java.lang.Float"/>
+                    <column name="client_name" id="9e8d1c45-6f95-4402-a35f-59303a351e11" aliasName="client_name" type="java.lang.String"/>
+                    <column name="meeting_purpose" id="fc4969db-dddc-47dc-905f-44ed1f3be803" aliasName="meeting_purpose" type="java.lang.String"/>
+                    <column name="meeting_impact" id="2d30445e-4f9e-4222-847e-df20406ea4dc" aliasName="meeting_impact" type="java.lang.String"/>
+                    <column name="meet_cancellation_status" id="3237fcfa-256d-441c-8f9e-02605c631b25" aliasName="meet_cancellation_status" type="java.lang.String"/>
+                    <column name="cancellation_reason" id="c2e3e6b4-2e0f-4d37-8530-b17b30b6614d" aliasName="cancellation_reason" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="64aa8319-0d4d-48df-9abc-a5088c04b73a" name="RoleName" type="view" aliasName="RoleName">
+                <columns>
+                    <column name="meeting_id" id="e873f28a-cf50-4ed5-afa6-8858cc9661e6" aliasName="meeting_id" type="java.lang.Float"/>
+                    <column name="meeting_date" id="2afb43a3-4b91-43d1-849c-9050fca9999c" aliasName="meeting_date" type="java.sql.Timestamp"/>
+                    <column name="meeting_by" id="e58c27cb-5d58-4b9d-9757-dbb73a66f755" aliasName="meeting_by" type="java.lang.Float"/>
+                    <column name="client_name" id="728df4ab-3db6-4233-9d3a-006f483f4ead" aliasName="client_name" type="java.lang.String"/>
+                    <column name="meeting_purpose" id="a9af4359-4337-422d-946e-9677790482c7" aliasName="meeting_purpose" type="java.lang.String"/>
+                    <column name="meeting_impact" id="1f036dee-2fed-481e-8097-cc780518b120" aliasName="meeting_impact" type="java.lang.String"/>
+                    <column name="meet_cancellation_status" id="f659acd7-b2b0-4457-bc6b-a2fc5019acc2" aliasName="meet_cancellation_status" type="java.lang.String"/>
+                    <column name="cancellation_reason" id="ddaf715a-f9ac-4878-bd29-7dba9f740c6f" aliasName="cancellation_reason" type="java.lang.String"/>
+                </columns>
+            </table>
+        </tables>
+        <relationships>
+            <relationship table="meeting_details" referenceTable="UserID">
+                <join id="3f20285a07111630aac9ca5588bce291" type="inner" operator="=">
+                    <left table="meeting_details" column="meeting_id"/>
+                    <right table="UserID" column="meeting_id"/>
+                </join>
+            </relationship>
+            <relationship table="UserEmail" referenceTable="UserID">
+                <join id="72072ed89420da70361fc0a6cffa8ba2" type="inner" operator="=">
+                    <left table="UserEmail" column="meeting_id"/>
+                    <right table="UserID" column="meeting_id"/>
+                </join>
+            </relationship>
+            <relationship table="employee_details" referenceTable="meeting_details">
+                <join id="af8f3186af3703a70a3d6e219faafb4e" type="inner" operator="=">
+                    <left table="employee_details" column="employee_id"/>
+                    <right table="meeting_details" column="meeting_by"/>
+                </join>
+            </relationship>
+            <relationship table="employee_details" referenceTable="travel_details">
+                <join id="aab02b68e2c7febf125c50c8c5175037" type="inner" operator="=">
+                    <left table="employee_details" column="employee_id"/>
+                    <right table="travel_details" column="travelled_by"/>
+                </join>
+            </relationship>
+            <relationship table="geo_cordinates" referenceTable="travel_details">
+                <join id="daa3221b04c18670d4af25ac99f3ae76" type="inner" operator="=">
+                    <left table="geo_cordinates" column="location_id"/>
+                    <right table="travel_details" column="destination_id"/>
+                </join>
+                <join id="cdeb5b19799c89335f23ed9b50cc5a22" type="inner" operator="=">
+                    <left table="geo_cordinates" column="location_id"/>
+                    <right table="travel_details" column="source_id"/>
+                </join>
+            </relationship>
+            <relationship table="geo_cordinates" referenceTable="dimdate">
+                <join id="ca21d00c8c87263dedd812f8f74c05b5" type="inner" operator="=">
+                    <left table="geo_cordinates" column="location_id"/>
+                    <right table="dimdate" column="dim_id"/>
+                </join>
+            </relationship>
+        </relationships>
+        <views>
+            <view id="317885d2-5cbf-4454-a99d-9acfd75cdd93" name="UserID" alias="UserID" hasStoredProcedure="false">
+                <query type="conditionIf"><![CDATA[select * from "meeting_details" where "meeting_id"= ${user}.id]]></query>
+            </view>
+            <view id="727f106a-190e-4bdd-be1e-dca816bdd641" name="SelectQuery" alias="SelectQuery" hasStoredProcedure="false">
+                <query type="conditionIf"><![CDATA[select * from "meeting_details"]]></query>
+            </view>
+            <view id="2644a1e5-ec28-4bf8-9abc-0167156c35a9" name="UserName" alias="UserName" hasStoredProcedure="false">
+                <query type="conditionIf"><![CDATA[select * from "meeting_details" where "client_name"=  ${user}.name]]></query>
+            </view>
+            <view id="339c0570-e623-420b-ae3a-b7a67c0ce07c" name="ExternalUser" alias="ExternalUser" hasStoredProcedure="false">
+                <query type="conditionIf"><![CDATA[select * from "meeting_details" where "meet_cancellation_status"=  ${user}.isExternalUser]]></query>
+            </view>
+            <view id="dc467834-2c90-4285-96f3-117b663f41f5" name="UserEnabled" alias="UserEnabled" hasStoredProcedure="false">
+                <query type="conditionIf"><![CDATA[select * from "meeting_details" where "meet_cancellation_status"=   ${user}.enabled]]></query>
+            </view>
+            <view id="e5e4a75d-f7ae-4491-a5e2-51c8bb969e51" name="UserEmail" alias="UserEmail" hasStoredProcedure="false">
+                <query type="conditionIf"><![CDATA[select * from "meeting_details" where "cancellation_reason"=    ${user}.email]]></query>
+            </view>
+            <view id="1f7bdb59-11c8-4720-ba55-e61c585634f8" name="MultiSelect_InClause" alias="MultiSelect_InClause" hasStoredProcedure="false">
+                <query type="conditionIf"><![CDATA[select * from "meeting_details" where "cancellation_reason" in(  ${user}.email,${user}.name)]]></query>
+            </view>
+            <view id="9f8c1a8b-d4c8-4a9c-b23a-d24b1cd579d5" name="BetweenCondition" alias="BetweenCondition" hasStoredProcedure="false">
+                <query type="conditionIf"><![CDATA[select * from "meeting_details" where "meeting_id" between  ${user}.id and  ${user}.id]]></query>
+            </view>
+            <view id="8d85ec53-61ba-49be-9eac-7e2fe0fec5a0" name="OrgID" alias="OrgID" hasStoredProcedure="false">
+                <query type="conditionIf"><![CDATA[select * from "meeting_details" where "meeting_id"=  ${org}.id]]></query>
+            </view>
+            <view id="0d2ca2f8-8b65-4043-a447-53fbb6b92d0b" name="OrgName" alias="OrgName" hasStoredProcedure="false">
+                <query type="conditionIf"><![CDATA[select * from "meeting_details" where "client_name"=  ${org}.name]]></query>
+            </view>
+            <view id="4c2f4890-828b-4884-8b1d-ec4a6a860aef" name="ProfileID" alias="ProfileID" hasStoredProcedure="false">
+                <query type="conditionIf"><![CDATA[select * from "meeting_details" where "meeting_id"=  ${profile}.id]]></query>
+            </view>
+            <view id="86acdbbf-fdd9-4d50-aeff-7bb4c8eeb5a1" name="ProfileName" alias="ProfileName" hasStoredProcedure="false">
+                <query type="conditionIf"><![CDATA[select * from "meeting_details" where "client_name"=  ${profile}.name]]></query>
+            </view>
+            <view id="e3a3e016-8e06-4d7f-afeb-3f3f392ebaa1" name="ProfileValue" alias="ProfileValue" hasStoredProcedure="false">
+                <query type="conditionIf"><![CDATA[select * from "meeting_details" where "client_name"=  ${profile}.value]]></query>
+            </view>
+            <view id="4e07449b-0b92-4823-8d2d-046aeee5d068" name="RoleID" alias="RoleID" hasStoredProcedure="false">
+                <query type="conditionIf"><![CDATA[select * from "meeting_details" where "meeting_id" in (${role}.id)]]></query>
+            </view>
+            <view id="64aa8319-0d4d-48df-9abc-a5088c04b73a" name="RoleName" alias="RoleName" hasStoredProcedure="false">
+                <query type="conditionIf"><![CDATA[select * from "meeting_details" where "client_name" in(${role}.name)]]></query>
+            </view>
+        </views>
+    </database>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+    <share mandatory="true">
+        <users mandatory="true">
+            <user id="501">5</user>
+        </users>
+    </share>
+    <access>
+        <expression expressionId="888f761a-3106-450a-bfc5-126bf36665fd" type="conditionIf" expressionName="UserNameSecurity" expressionType="table" on="UserName" accessType="grant">
+            <condition><![CDATA[${user}.name eq 'hiadmin']]></condition>
+            <filter><![CDATA["UserName"."client_name"='hiuser']]></filter>
+        </expression>
+    </access>
+</metadata>

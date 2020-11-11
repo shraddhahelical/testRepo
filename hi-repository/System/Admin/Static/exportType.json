@@ -1,0 +1,79 @@
+{
+	"HCR": {
+		"PDF": {
+			"icon": "",
+			"tooltip": "",
+			"format": "pdf"
+		},
+		"DOCX": {
+			"icon": "",
+			"tooltip": "",
+			"format": "docx"
+		},
+		"CSV": {
+			"icon": "",
+			"tooltip": "",
+			"format": "csv"
+		},
+		"XLSX": {
+			"icon": "",
+			"tooltip": "",
+			"format": "xlsx"
+		},
+		"XLS": {
+			"icon": "",
+			"tooltip": "",
+			"format": "xls"
+		},
+		"PNG": {
+			"icon": "",
+			"tooltip": "",
+			"format": "png"
+		},
+		"JPEG": {
+			"icon": "",
+			"tooltip": "",
+			"format": "jpeg"
+		},
+		"JPG": {
+			"icon": "",
+			"tooltip": "",
+			"format": "jpg"
+		},
+		"XML": {
+			"icon": "",
+			"tooltip": "",
+			"format": "xml"
+		},
+		"HTML": {
+			"icon": "",
+			"tooltip": "",
+			"format": "html"
+		},
+		"RTF": {
+			"icon": "",
+			"tooltip": "",
+			"format": "rtf"
+		},
+		"ODT": {
+			"icon": "",
+			"tooltip": "",
+			"format": "odt"
+		},
+		"ODS": {
+			"icon": "",
+			"tooltip": "",
+			"format": "ods"
+		},
+		"PPTX": {
+			"icon": "",
+			"tooltip": "",
+			"format": "pptx"
+		},
+		"TXT": {
+			"icon": "",
+			"tooltip": "",
+			"format": "txt"
+		},
+	}
+}

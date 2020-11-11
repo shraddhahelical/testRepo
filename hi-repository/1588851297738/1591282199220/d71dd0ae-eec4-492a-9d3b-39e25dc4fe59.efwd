@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<EFWD>
+    <DataSources>
+        <Connection id="1" type="sql.adhoc">
+            <location>1588851297738/1589444653445/1590651742641</location>
+            <metadataFileName>55176731-1523-48d1-8a2d-f0f6cbad1678.metadata</metadataFileName>
+            <security>
+                <createdBy>1</createdBy>
+                <organization></organization>
+            </security>
+        </Connection>
+    </DataSources>
+    <DataMaps>
+        <DataMap id="2" connection="1" type="sql.adhoc">
+            <Name>client_wise</Name>
+            <Query><![CDATA[{"columns":[{"column":"HIUSER.filtervalue.booking_platform","alias":"filtervalue_booking_platform"},{"column":"HIUSER.filtervalue.travel_cost","alias":"sum_travel_cost","aggregate":true}],"functions":{"aggregate":[{"column":"HIUSER.filtervalue.travel_cost","function":"db.generic.aggregate.sum","alias":"sum_travel_cost"}],"groupBy":[{"column":"filtervalue_booking_platform","custom":true}]},"filters":[{"values":["Makemytrip"],"mode":"auto","dataType":"java.lang.String","orderBy":"","isFilterEditable":false,"encloseInQuotes":false,"dateTimeToggle":false,"label":"booking","column":"HIUSER.filtervalue.booking_platform","rangeValuesType":"","id":0,"condition":"EQUALS","valuesRange":{},"rangeSelectionToggole":true}],"customFilterExpression":"${0}","prependTableNameToAlias":true,"limitBy":1000}]]></Query>
+        </DataMap>
+    </DataMaps>
+</EFWD>

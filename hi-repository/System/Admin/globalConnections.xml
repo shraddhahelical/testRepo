@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<connections mandatory="true">
+    <tomcatJdbcDataSource id="1" name="SampleTravelDataDerby" type="dynamicDataSource" baseType="global.jdbc">
+        <visible>true</visible>
+        <dataSourcePoolId>tomcat_1</dataSourcePoolId>
+        <dataSourceProvider>tomcat</dataSourceProvider>
+        <forceAlternateUsername>false</forceAlternateUsername>
+        <username>hiuser</username>
+        <password>hiuser</password>
+        <driverClassName>org.apache.derby.jdbc.AutoloadedDriver</driverClassName>
+        <url>jdbc:derby:/usr/local/Helical Insight/hi/db/SampleTravelData</url>
+        <testWhileIdle>false</testWhileIdle>
+        <testOnBorrow>true</testOnBorrow>
+        <testOnReturn>false</testOnReturn>
+        <validationQuery>SELECT 1</validationQuery>
+        <validationInterval>30000</validationInterval>
+        <timeBetweenEvictionRunsMillis>30000</timeBetweenEvictionRunsMillis>
+        <maxActive>100</maxActive>
+        <minIdle>1</minIdle>
+        <maxWait>180000</maxWait>
+        <initialSize>1</initialSize>
+        <removeAbandonedTimeout>36000</removeAbandonedTimeout>
+        <removeAbandoned>true</removeAbandoned>
+        <logAbandoned>true</logAbandoned>
+        <minEvictableIdleTimeMillis>30000</minEvictableIdleTimeMillis>
+        <jmxEnabled>true</jmxEnabled>
+        <jdbcInterceptors>org.apache.tomcat.jdbc.pool.interceptor.ConnectionState; org.apache.tomcat.jdbc.pool.interceptor.StatementFinalizer; org.apache.tomcat.jdbc.pool.interceptor.ResetAbandonedTimer</jdbcInterceptors>
+        <security>
+            <createdBy>1</createdBy>
+            <organization></organization>
+        </security>
+        <share mandatory="true">
+            <roles mandatory="true">
+                <role id="2">2</role>
+                <role id="3">5</role>
+            </roles>
+            <users mandatory="true">
+                <user id="407">3</user>
+                <user id="501">1</user>
+            </users>
+        </share>
+        <databaseName>SampleTravelData</databaseName>
+    </tomcatJdbcDataSource>
+    <tomcatJdbcDataSource id="2" name="Sponsor" type="dynamicDataSource" baseType="global.jdbc">
+        <visible>true</visible>
+        <dataSourcePoolId>tomcat_2</dataSourcePoolId>
+        <dataSourceProvider>tomcat</dataSourceProvider>
+        <forceAlternateUsername>false</forceAlternateUsername>
+        <username>helical_insight_user</username>
+        <password>G6vcEybxLeON7mh6s16YWertxiqZ4btqe6FR0wAtfng</password>
+        <driverClassName>org.postgresql.Driver</driverClassName>
+        <url>jdbc:postgresql://elb-reify-testing-26920.aptible.in:5432/db</url>
+        <testWhileIdle>false</testWhileIdle>
+        <testOnBorrow>true</testOnBorrow>
+        <testOnReturn>false</testOnReturn>
+        <validationQuery>SELECT 1</validationQuery>
+        <validationInterval>30000</validationInterval>
+        <timeBetweenEvictionRunsMillis>30000</timeBetweenEvictionRunsMillis>
+        <maxActive>100</maxActive>
+        <minIdle>1</minIdle>
+        <maxWait>180000</maxWait>
+        <initialSize>1</initialSize>
+        <removeAbandonedTimeout>36000</removeAbandonedTimeout>
+        <removeAbandoned>true</removeAbandoned>
+        <logAbandoned>true</logAbandoned>
+        <minEvictableIdleTimeMillis>30000</minEvictableIdleTimeMillis>
+        <jmxEnabled>true</jmxEnabled>
+        <jdbcInterceptors>org.apache.tomcat.jdbc.pool.interceptor.ConnectionState; org.apache.tomcat.jdbc.pool.interceptor.StatementFinalizer; org.apache.tomcat.jdbc.pool.interceptor.ResetAbandonedTimer</jdbcInterceptors>
+        <security>
+            <createdBy>1</createdBy>
+            <organization></organization>
+        </security>
+        <share mandatory="true">
+            <organizations mandatory="true">
+                <organization id="1">2</organization>
+            </organizations>
+        </share>
+        <databaseDialect></databaseDialect>
+        <databaseName>db</databaseName>
+    </tomcatJdbcDataSource>
+    <tomcatJdbcDataSource id="3" name="ElasticSearch" type="dynamicDataSource" baseType="global.jdbc">
+        <visible>true</visible>
+        <dataSourcePoolId>tomcat_3</dataSourcePoolId>
+        <dataSourceProvider>tomcat</dataSourceProvider>
+        <forceAlternateUsername>false</forceAlternateUsername>
+        <username></username>
+        <password>eKTQjq1f6X13iCt061TZeA</password>
+        <driverClassName>org.elasticsearch.xpack.sql.jdbc.EsDriver</driverClassName>
+        <url>jdbc:es://localhost:9200</url>
+        <testWhileIdle>false</testWhileIdle>
+        <testOnBorrow>true</testOnBorrow>
+        <testOnReturn>false</testOnReturn>
+        <validationQuery>SELECT 1</validationQuery>
+        <validationInterval>30000</validationInterval>
+        <timeBetweenEvictionRunsMillis>30000</timeBetweenEvictionRunsMillis>
+        <maxActive>100</maxActive>
+        <minIdle>1</minIdle>
+        <maxWait>180000</maxWait>
+        <initialSize>1</initialSize>
+        <removeAbandonedTimeout>36000</removeAbandonedTimeout>
+        <removeAbandoned>true</removeAbandoned>
+        <logAbandoned>true</logAbandoned>
+        <minEvictableIdleTimeMillis>30000</minEvictableIdleTimeMillis>
+        <jmxEnabled>true</jmxEnabled>
+        <jdbcInterceptors>org.apache.tomcat.jdbc.pool.interceptor.ConnectionState; org.apache.tomcat.jdbc.pool.interceptor.StatementFinalizer; org.apache.tomcat.jdbc.pool.interceptor.ResetAbandonedTimer</jdbcInterceptors>
+        <security>
+            <createdBy>1</createdBy>
+            <organization></organization>
+        </security>
+        <databaseDialect></databaseDialect>
+        <databaseName></databaseName>
+    </tomcatJdbcDataSource>
+    <tomcatJdbcDataSource id="4" name="fedex" type="dynamicDataSource" baseType="global.jdbc">
+        <visible>true</visible>
+        <dataSourcePoolId>tomcat_4</dataSourcePoolId>
+        <dataSourceProvider>tomcat</dataSourceProvider>
+        <forceAlternateUsername>false</forceAlternateUsername>
+        <username></username>
+        <password>eKTQjq1f6X13iCt061TZeA</password>
+        <driverClassName>com.helical.mongodb.MongoJdbcDriver</driverClassName>
+        <url>mongodb+srv://swadmin:swtech0000@prod1.6syqg.mongodb.net/fedex?retryWrites=true&amp;w=majority</url>
+        <testWhileIdle>false</testWhileIdle>
+        <testOnBorrow>true</testOnBorrow>
+        <testOnReturn>false</testOnReturn>
+        <validationQuery>SELECT 1</validationQuery>
+        <validationInterval>30000</validationInterval>
+        <timeBetweenEvictionRunsMillis>30000</timeBetweenEvictionRunsMillis>
+        <maxActive>100</maxActive>
+        <minIdle>1</minIdle>
+        <maxWait>180000</maxWait>
+        <initialSize>1</initialSize>
+        <removeAbandonedTimeout>36000</removeAbandonedTimeout>
+        <removeAbandoned>true</removeAbandoned>
+        <logAbandoned>true</logAbandoned>
+        <minEvictableIdleTimeMillis>30000</minEvictableIdleTimeMillis>
+        <jmxEnabled>true</jmxEnabled>
+        <jdbcInterceptors>org.apache.tomcat.jdbc.pool.interceptor.ConnectionState; org.apache.tomcat.jdbc.pool.interceptor.StatementFinalizer; org.apache.tomcat.jdbc.pool.interceptor.ResetAbandonedTimer</jdbcInterceptors>
+        <security>
+            <createdBy>1</createdBy>
+            <organization></organization>
+        </security>
+        <databaseDialect></databaseDialect>
+        <databaseName></databaseName>
+    </tomcatJdbcDataSource>
+    <tomcatJdbcDataSource id="5" name="Efacec" type="dynamicDataSource" baseType="global.jdbc">
+        <visible>true</visible>
+        <dataSourcePoolId>tomcat_5</dataSourcePoolId>
+        <dataSourceProvider>tomcat</dataSourceProvider>
+        <forceAlternateUsername>false</forceAlternateUsername>
+        <username>helical</username>
+        <password>sEUu1DHjJM4VwFtiT0JGUg</password>
+        <driverClassName>com.mysql.jdbc.Driver</driverClassName>
+        <url>jdbc:mysql://52.73.123.21:3306/hiee_3?HI_TABLE_CONTAINS=CB</url>
+        <testWhileIdle>false</testWhileIdle>
+        <testOnBorrow>true</testOnBorrow>
+        <testOnReturn>false</testOnReturn>
+        <validationQuery>SELECT 1</validationQuery>
+        <validationInterval>30000</validationInterval>
+        <timeBetweenEvictionRunsMillis>30000</timeBetweenEvictionRunsMillis>
+        <maxActive>100</maxActive>
+        <minIdle>1</minIdle>
+        <maxWait>180000</maxWait>
+        <initialSize>1</initialSize>
+        <removeAbandonedTimeout>36000</removeAbandonedTimeout>
+        <removeAbandoned>true</removeAbandoned>
+        <logAbandoned>true</logAbandoned>
+        <minEvictableIdleTimeMillis>30000</minEvictableIdleTimeMillis>
+        <jmxEnabled>true</jmxEnabled>
+        <jdbcInterceptors>org.apache.tomcat.jdbc.pool.interceptor.ConnectionState; org.apache.tomcat.jdbc.pool.interceptor.StatementFinalizer; org.apache.tomcat.jdbc.pool.interceptor.ResetAbandonedTimer</jdbcInterceptors>
+        <security>
+            <createdBy>1</createdBy>
+            <organization></organization>
+        </security>
+        <databaseDialect></databaseDialect>
+        <databaseName>hiee_3</databaseName>
+    </tomcatJdbcDataSource>
+    <tomcatJdbcDataSource id="6" name="poc data" type="dynamicDataSource" baseType="global.jdbc">
+        <visible>true</visible>
+        <dataSourcePoolId>tomcat_6</dataSourcePoolId>
+        <dataSourceProvider>tomcat</dataSourceProvider>
+        <forceAlternateUsername>false</forceAlternateUsername>
+        <username>helical</username>
+        <password>sEUu1DHjJM4VwFtiT0JGUg</password>
+        <driverClassName>com.mysql.jdbc.Driver</driverClassName>
+        <url>jdbc:mysql://52.73.123.21:3306/hiee_3</url>
+        <testWhileIdle>false</testWhileIdle>
+        <testOnBorrow>true</testOnBorrow>
+        <testOnReturn>false</testOnReturn>
+        <validationQuery>SELECT 1</validationQuery>
+        <validationInterval>30000</validationInterval>
+        <timeBetweenEvictionRunsMillis>30000</timeBetweenEvictionRunsMillis>
+        <maxActive>100</maxActive>
+        <minIdle>1</minIdle>
+        <maxWait>180000</maxWait>
+        <initialSize>1</initialSize>
+        <removeAbandonedTimeout>36000</removeAbandonedTimeout>
+        <removeAbandoned>true</removeAbandoned>
+        <logAbandoned>true</logAbandoned>
+        <minEvictableIdleTimeMillis>30000</minEvictableIdleTimeMillis>
+        <jmxEnabled>true</jmxEnabled>
+        <jdbcInterceptors>org.apache.tomcat.jdbc.pool.interceptor.ConnectionState; org.apache.tomcat.jdbc.pool.interceptor.StatementFinalizer; org.apache.tomcat.jdbc.pool.interceptor.ResetAbandonedTimer</jdbcInterceptors>
+        <security>
+            <createdBy>1</createdBy>
+            <organization></organization>
+        </security>
+        <databaseDialect></databaseDialect>
+        <databaseName>hiee_3</databaseName>
+    </tomcatJdbcDataSource>
+</connections>

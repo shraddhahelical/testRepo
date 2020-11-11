@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efwdd>
+    <fileName>dashboard1</fileName>
+    <efw>f864a769-0087-4d98-a17a-7c4a0a7d9e30.efw</efw>
+    <visible>true</visible>
+    <description>Efw Dashboard Designer</description>
+    <state><![CDATA[{"variables":[["employee_name",["Dorry Kordahi","Lex Pedersen","Bradley Smith","Ahmed Haider","Phillip Di Bella","Sheng Yeo","Justin Cameron"]]],"components":{"1dalrxs7g8x":{"gs_attr":{"x":27,"y":2,"height":46,"width":32},"name":"1dalrxs7g8x","metadata":{"dir":"/Sample_for_All/","name":"report"},"uid":"1dalrxs7g8x","label":"report","requestParameters":{"employee_name":"employee_name"},"executeAtStart":true,"type":"dashboard-component","options":{"dir":"1599484815885","file":"5371d549-4cb1-4c44-8009-2a9d015df6d8.report","ext":"report","compType":"Adhoc","uid":"1dalrxs7g8x","iframe":false},"listeners":["employee_name"]},"v8gyuegnwhm":{"gs_attr":{"x":59,"y":0,"height":16,"width":33},"dataType":"text","orderBy":"","dataSource":{"location":"1463377807724/1463377836985","metadataFileName":"e9be6771-995b-40eb-a01c-304857a100a1.metadata"},"parameters":["employee_name"],"name":"v8gyuegnwhm","uid":"v8gyuegnwhm","alias":"employee_details_employee_name","databaseFunction":{},"label":"","column":"employee_details.employee_name","adhoc":true,"requestParameters":{},"executeAtStart":true,"type":"dashboard-component","database":"HIUSER","options":{"compType":"Select2","display":"employee_details_employee_name","value":"employee_details_employee_name","multiple":true,"uid":"v8gyuegnwhm","iframe":false,"all":true,"placeholder":"Please select a value"},"listeners":null}},"dashboardConfig":{"id":"dashboard"},"css":"","script":"","printOptions":{"templateId":"Dashboard","title":"Dashboard"},"componentSettings":{"1dalrxs7g8x":{"header":true,"minimize":false,"maximize":false,"export":false,"editReport":false},"v8gyuegnwhm":{"export":false},"9331d49qmo":{"header":true,"minimize":false,"maximize":false,"export":false,"editReport":false}},"gridWidthOption":100,"toggleIframes":false}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</efwdd>

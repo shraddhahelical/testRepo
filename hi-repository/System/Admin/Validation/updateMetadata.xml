@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<formData>
+    <database type="text"/>
+    <classifier type="text"/>
+    <location type="directory"/>
+    <filename type="file"/>
+    <jsFunction name="validate" language="groovy"><![CDATA[
+        import net.sf.json.JSONObject;
+        import net.sf.json.JSONArray;
+        import org.apache.commons.codec.binary.Base64;
+
+        public class Validate {
+
+            def JSONObject validate(JSONObject requestJson, JSONObject responseJson) {
+			if(requestJson.classifier == "null"){
+			       responseJson.accumulate("classifier","Please provide a proper classifier. The classifier is missing");
+			 }
+			
+                boolean hasTables = requestJson.tables;
+                boolean hasColumns = requestJson.columns
+                if (hasTables && validateAlias(requestJson, "tables")) {
+                    responseJson.accumulate("message", requestJson.getString("error"));
+                }
+
+                if (hasColumns && validateAlias(requestJson, "columns")) {
+                    responseJson.accumulate("message", requestJson.getString("error"));
+                    return responseJson
+                }
+
+                if (requestJson.has("access")) {
+                    return validateAccess(requestJson, responseJson);
+                }
+
+                return responseJson;
+            }
+
+
+            public boolean validateAlias(JSONObject requestJson, String keyName) {
+
+                Iterator keys = requestJson.getJSONObject(keyName).keys();
+                while (keys.hasNext()) {
+                    String key = (String) keys.next();
+                    JSONObject tableColumnKey = requestJson.getJSONObject(keyName);
+
+                    String columnName = tableColumnKey.getString(key);
+					if(columnName != null){
+                         if (columnName.startsWith(" ")) {
+                             requestJson.put("error", "Alias should not start with spaces")
+                             return true;
+                         }
+                         if (columnName.equals("")) {
+                             requestJson.put("error", "The alias name cannot be blank");
+                             return true;
+                         }
+                         if (!columnName.matches('[a-z\\u00A1-\\uFFFFA-Z0-9\\s-_\\*\\\$\\(\\[\\]\\)\\.,\']*')) {
+                             requestJson.put("error", "Invalid characters found only "+'.$()[]\'_-* allowed');
+                             return true;
+                         }
+					}
+                }
+                return false;
+            }
+
+            public JSONObject validateAccess(JSONObject requestJson, JSONObject responseJson) {
+
+                if (!requestJson.get("access") instanceof JSONObject) {
+                    responseJson.put("access", "The  'access'  in the formData should be a JSON object")
+                    return responseJson;
+                }
+
+
+                def JSONObject accessObject = requestJson.getJSONObject("access")
+                if (!accessObject.has("expression")) {
+                    responseJson.put("access", "The  'expression' in 'access' is missing")
+                    return responseJson;
+                }
+
+                if (!(accessObject.get("expression") instanceof JSONArray)) {
+                    responseJson.put("expression", "Expected 'expression' in 'access' to be a JSON array ")
+                    return responseJson;
+                }
+
+                def expressionArray = accessObject.getJSONArray("expression")
+                Set<String> duplicate = new HashSet<String>();
+                for (Object expressionObject : expressionArray) {
+                    JSONObject expressionJson = (JSONObject) expressionObject;
+                    if (!expressionJson.has("expressionId")) {
+                        responseJson.put("access", "The  'expressionId' in 'expression' array is missing")
+                        return responseJson;
+                    }
+
+
+                    String expressionId = expressionJson.getString("expressionId")
+                    if (expressionId.isEmpty()) {
+                        responseJson.put("expressionId", "The  'expressionId' in 'expression' cannot be blank")
+                        return responseJson;
+                    }
+
+                    if (!duplicate.add(expressionId)) {
+                        responseJson.put("expressionId", "The  duplicate expression id " + duplicate + "  found")
+                        return responseJson;
+                    }
+
+                    if (!expressionObject.has("action")) {
+                        responseJson.put("access", "The  'action' in 'expression' is missing")
+                        return responseJson;
+                    }
+
+                    if (expressionJson.action.isEmpty()) {
+                        responseJson.put("access", "The  'action' in 'expression' cannot be blank")
+                        return responseJson;
+                    }
+                }
+                return responseJson;
+            }
+        }
+        ]]>
+    </jsFunction>
+</formData>

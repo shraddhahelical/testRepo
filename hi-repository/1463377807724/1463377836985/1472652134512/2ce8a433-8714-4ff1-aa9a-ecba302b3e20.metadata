@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<metadata type="db.generic" databaseType="Apache Derby 10.12.1.1 - (1704137)">
+    <fileName>Metadata Security groovy Sample</fileName>
+    <connectionType>global.jdbc</connectionType>
+    <visible>true</visible>
+    <connection connectionType="global.jdbc" subType="dynamicDataSource">
+        <dialect>org.hibernate.dialect.DerbyTenSevenDialect</dialect>
+        <connectionId>1</connectionId>
+        <driverClass reference="derby">org.apache.derby.jdbc.AutoloadedDriver</driverClass>
+    </connection>
+    <database name="HIUSER" catalog="" schema="HIUSER">
+        <tables>
+            <table id="9645c648a1c0dbeec1287aaf1e996db3" name="meeting_details" aliasName="meeting_details">
+                <columns>
+                    <column name="meeting_id" id="18bbd6dd-518b-4419-872e-fc5428629dfd" aliasName="meeting_id" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="meeting_date" id="2ad3058a-4009-472a-8d57-1ac2c2b82329" aliasName="meeting_date" type="java.sql.Timestamp" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="meeting_by" id="c4f7a471-367f-4573-97cb-fe9ca5bbf48d" aliasName="meeting_by" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="client_name" id="8b43c5bc-1b40-4235-94a3-214a7cc55153" aliasName="client_name" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="meeting_purpose" id="d9a304c1-d0b5-4345-8cda-3fdf512f840d" aliasName="meeting_purpose" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="meeting_impact" id="25517838-13bb-4b7d-b63a-bc06d400627d" aliasName="meeting_impact" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="meet_cancellation_status" id="5bb899d6-35b4-402d-9279-09703b270a7d" aliasName="meet_cancellation_status" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="cancellation_reason" id="dcb449de-3e65-4e2f-bc8f-fcbd402e0aa5" aliasName="cancellation_reason" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                </columns>
+            </table>
+            <table id="8a28627d07d04ef096d9935f12e0c7e9" name="travel_details" aliasName="travel_details">
+                <columns>
+                    <column name="travel_id" id="f2f1201e-fe4e-454d-9bb8-c1f3c0d3adae" aliasName="travel_id" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="travel_date" id="e7cd7ea8-2c7b-452d-aa50-db54da07547e" aliasName="travel_date" type="java.sql.Timestamp" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="travel_type" id="85dd4480-a548-4192-a15b-e0d01ec63a3f" aliasName="travel_type" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="travel_medium" id="cf38bb18-3889-44e0-8318-e77341875622" aliasName="travel_medium" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="source_id" id="d27b669d-d547-4e0c-a8fc-5c18ef58a2a9" aliasName="source_id" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="source" id="c7de9924-2871-4d7a-ba2e-7e87951c67b2" aliasName="source" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="destination_id" id="5205d86b-3bee-41cf-b137-aaf156f7f3b7" aliasName="destination_id" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="destination" id="0f76c6b7-d019-4100-87a9-91ad61ed3d09" aliasName="destination" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="travel_cost" id="06fba8c6-42a1-4f5d-8791-5be964e2779b" aliasName="travel_cost" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="mode_of_payment" id="895872a8-0153-4ae1-8bdd-c79b05b3c8c6" aliasName="mode_of_payment" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="booking_platform" id="e9f150e0-800c-48bf-bf11-f91b52a8fb49" aliasName="booking_platform" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="travelled_by" id="94f95cb9-e89a-4acf-a461-dba7b3a02ab4" aliasName="travelled_by" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                </columns>
+            </table>
+            <table id="4ac5d9f68b58bd7c0d179146e46795be" name="dimdate" aliasName="dimdate">
+                <columns>
+                    <column name="dim_id" id="8401bbce-303e-44df-8982-1fb2d48f0238" aliasName="dim_id" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="fiscal_year" id="cccb5479-7666-47aa-b98f-876c01e62ca1" aliasName="fiscal_year" type="java.sql.Date" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="modified_date" id="f6ddf184-dda0-47b6-8b63-ce30a82bc565" aliasName="modified_date" type="java.sql.Timestamp" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="date_key" id="b5a724ca-e86c-4c9c-aa50-3597349f2c7d" aliasName="date_key" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="day_number" id="dbde0637-c0c8-49cb-b066-7238688ddc29" aliasName="day_number" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="fiscal_month_name" id="89f51e26-ab9e-442d-b726-7adccf2a68c3" aliasName="fiscal_month_name" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="fiscal_month_label" id="1d445572-03ef-4cb5-b077-fb3abb43207f" aliasName="fiscal_month_label" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="created_date" id="0a9de6ff-2d82-4bcb-94f8-95283e4e0488" aliasName="created_date" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="created_time" id="f674867e-b1f2-47d3-8c27-74819b549469" aliasName="created_time" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="rating" id="962b496a-9b1a-4d03-91d1-d9ba18de3260" aliasName="rating" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                </columns>
+            </table>
+            <table id="4e1fd245f4d13b77be423a43f01d80b2" name="employee_details" aliasName="employee_details">
+                <columns>
+                    <column name="employee_id" id="1fca6ba7-29b3-4467-b10e-c134e273b1eb" aliasName="employee_id" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="employee_name" id="4f414552-b3c8-4d4e-a36d-9d325792048e" aliasName="employee_name" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="age" id="e189ec5d-e711-4404-b77b-278fa4dfe51d" aliasName="age" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="address" id="2a3eb671-ced8-4d27-b49b-73ccc6b04ade" aliasName="address" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                </columns>
+            </table>
+            <table id="be534112989b616b194bc59c2fb25a42" name="geo_cordinates" aliasName="geo_cordinates">
+                <columns>
+                    <column name="location_id" id="d3d09eb5-bd91-4ced-b400-0148c0d2a23b" aliasName="location_id" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="location" id="23b86657-841d-427b-95ff-5f4635522001" aliasName="location" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="latitude" id="4a0ecd4a-196b-41ff-9e36-53083e797ffc" aliasName="latitude" type="java.lang.Double" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="longitude" id="c3b3d91a-4fd8-4939-aecb-5d9d436ad737" aliasName="longitude" type="java.lang.Double" defaultFunction="db.generic.aggregate.sum"/>
+                </columns>
+            </table>
+        </tables>
+        <relationships>
+            <relationship table="employee_details" referenceTable="meeting_details">
+                <join id="af8f3186af3703a70a3d6e219faafb4e" type="inner" operator="=">
+                    <left table="employee_details" column="employee_id"/>
+                    <right table="meeting_details" column="meeting_by"/>
+                </join>
+            </relationship>
+            <relationship table="employee_details" referenceTable="travel_details">
+                <join id="aab02b68e2c7febf125c50c8c5175037" type="inner" operator="=">
+                    <left table="employee_details" column="employee_id"/>
+                    <right table="travel_details" column="travelled_by"/>
+                </join>
+            </relationship>
+            <relationship table="geo_cordinates" referenceTable="travel_details">
+                <join id="daa3221b04c18670d4af25ac99f3ae76" type="inner" operator="=">
+                    <left table="geo_cordinates" column="location_id"/>
+                    <right table="travel_details" column="destination_id"/>
+                </join>
+                <join id="cdeb5b19799c89335f23ed9b50cc5a22" type="inner" operator="=">
+                    <left table="geo_cordinates" column="location_id"/>
+                    <right table="travel_details" column="source_id"/>
+                </join>
+            </relationship>
+            <relationship table="geo_cordinates" referenceTable="dimdate">
+                <join id="ca21d00c8c87263dedd812f8f74c05b5" type="inner" operator="=">
+                    <left table="geo_cordinates" column="location_id"/>
+                    <right table="dimdate" column="dim_id"/>
+                </join>
+            </relationship>
+        </relationships>
+        <views/>
+    </database>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+    <access>
+        <expression expressionId="045f140a-06cb-4f9a-8958-24608e1051af" type="groovy" expressionName="Exclude Super Organization Expression" expressionType="global" on="meeting_details" accessType="grant">
+            <condition><![CDATA[
+                import com.helicalinsight.adhoc.metadata.GroovyUsersSession;
+                def  evalCondition() {
+                    String orgName = GroovyUsersSession.getValue('${org}.name');
+                    if (!orgName.equals("'Null'")) {
+                        return true
+                    } else {
+                        return false
+                    }  
+                }
+            ]]></condition>
+            <filter><![CDATA[import com.helicalinsight.adhoc.metadata.GroovyUsersSession;
+            def evalFilter() {
+               String orgName = GroovyUsersSession.getValue('${org}.name');
+               return '"meeting_details"."client_name"=' + orgName;
+            }]]></filter>
+        </expression>
+        <expression expressionId="cc810247-2b50-49f1-a755-a71f264ef11b" type="groovy" expressionName="Organization Name Expression" expressionType="global" on="travel_details" accessType="grant">
+            <condition><![CDATA[
+                import com.helicalinsight.adhoc.metadata.GroovyUsersSession;
+                def  evalCondition() {
+                    String orgName = GroovyUsersSession.getValue('${org}.name');
+                    if(orgName.equalsIgnoreCase("'SyncHR'")){
+                        return true
+                    } else {
+                        return false
+                    } 
+                }       
+        ]]></condition>
+            <filter><![CDATA[def evalFilter() {
+                   return "\"travel_details\".\"source\" = \'Ahmedabad\'"
+                }]]></filter>
+        </expression>
+        <expression expressionId="b738d921-29f3-4f7e-8a3d-e09456de85e6" type="groovy" expressionName="Email Expression" expressionType="global" on="meeting_details" accessType="grant">
+            <condition><![CDATA[
+                import com.helicalinsight.adhoc.metadata.GroovyUsersSession;
+                def  evalCondition() {
+                        String userEmail = GroovyUsersSession.getValue('${user}.email');
+                        if (userEmail.equals("'bitach@helicaltech.com'")) {
+                            return true
+                        } else {
+                             return false
+                        }        
+                }
+]]></condition>
+            <filter><![CDATA[def evalFilter(){
+                return "\"meeting_details\".\"meeting_purpose\" = \'Client Visit\'"
+}]]></filter>
+        </expression>
+        <expression expressionId="96f9aa2e-3b68-447d-9861-e7bcdf21e054" type="groovy" expressionName="Role Name Expression" expressionType="global" on="meeting_details" accessType="grant">
+            <condition><![CDATA[
+                import com.helicalinsight.adhoc.metadata.GroovyUsersSession;
+                def evalCondition() {
+                    String userName = GroovyUsersSession.getValue('${role}.name');
+                    if (userName. contains( 'ROLE_AGENT')) {
+                        return true        
+                    } else {
+                        return false
+                    }        
+                }
+]]></condition>
+            <filter><![CDATA[def evalFilter() {
+                    return "\"employee_details\".\"address\" = \'Bhubaneshwar\'"
+}]]></filter>
+        </expression>
+        <expression expressionId="005c9686-0f89-4d88-a138-1ebf717e7b62" type="groovy" expressionName="User Name Expression" expressionType="global" on="meeting_details" accessType="grant">
+            <condition><![CDATA[
+                import com.helicalinsight.adhoc.metadata.GroovyUsersSession;
+                def evalCondition() {
+                        String userName = GroovyUsersSession.getValue('${user}.name');
+                        if (userName.equalsIgnoreCase("'envision'")) {
+                            return true
+                        } else {
+                            return false
+                        }        
+                }
+]]></condition>
+            <filter><![CDATA[def evalFilter() {
+                    return "\"meeting_details\".\"meeting_impact\" = \'Finalized\'"
+}]]></filter>
+        </expression>
+        <expression expressionId="eee72f23-74b9-4e07-be3e-99a82030ccf1" type="groovy" expressionName="Profile Name Expression" expressionType="column" on="travel_details.destination" accessType="grant">
+            <condition><![CDATA[                import com.helicalinsight.adhoc.metadata.GroovyUsersSession;
+                def evalCondition() {
+                    String profileValues = GroovyUsersSession.getValue('${profile}.name');
+                    if (profileValues.contains( 'Destination')) {
+                        return true        
+                    } else {
+                        return false
+                    }        
+                }]]></condition>
+            <filter><![CDATA[                import com.helicalinsight.adhoc.metadata.GroovyUsersSession;
+def evalFilter() {
+                    String profileValues = GroovyUsersSession.getValue('${profile}.value');
+return "\"travel_details\".\"destination\" in ("+profileValues+")"
+}]]></filter>
+        </expression>
+    </access>
+</metadata>

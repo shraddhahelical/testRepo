@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<report>
+    <reportName>DynamicView_Date_EqualConditionReport</reportName>
+    <visible>true</visible>
+    <metadata>
+        <location>1588851297738/1589444653445/1590651742641/1591111658450</location>
+        <metadataFileName>9fdad882-9600-43aa-92f0-2553f60922c8.metadata</metadataFileName>
+    </metadata>
+    <canvas>
+        <columns><![CDATA[[{"column":"DateFilterConditions.fiscal_year","label":"DateFilterConditions_fiscal_year","id":"4l9avv0cy8i","type":{"dataType":"date","backendDatatype":"java.sql.Date"},"autogen_alias":"DateFilterConditions_fiscal_year","groupBy":["db.generic.groupBy.group"]},{"column":"DateFilterConditions.created_date","label":"DateFilterConditions_created_date","id":"m67mmysrxj","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"DateFilterConditions_created_date","groupBy":["db.generic.groupBy.group"]}]]]></columns>
+    </canvas>
+    <state><![CDATA[{"columns":[{"column":"DateFilterConditions.fiscal_year","label":"DateFilterConditions_fiscal_year","id":"4l9avv0cy8i","type":{"dataType":"date","backendDatatype":"java.sql.Date"},"autogen_alias":"DateFilterConditions_fiscal_year","groupBy":["db.generic.groupBy.group"]},{"column":"DateFilterConditions.created_date","label":"DateFilterConditions_created_date","id":"m67mmysrxj","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"DateFilterConditions_created_date","groupBy":["db.generic.groupBy.group"]}],"filters":[{"values":["2013-01-04"],"mode":"auto","dataType":"date","orderBy":"","valuesMode":"auto","isFilterEditable":false,"encloseInQuotes":false,"dateTimeToggle":false,"databaseFunction":{},"label":"fiscal_year","column":"DateFilterConditions.fiscal_year","backendDataType":"java.sql.Date","rangeValuesType":"","id":0,"condition":"EQUALS","valuesRange":{},"rangeSelectionToggole":true}],"customFilterExpression":"${0}","customHavingExpression":"","customFilterExpressionObj":{"0":"${0}"},"customHavingExpressionObj":{},"havingExpressionIndexs":{},"filterExpressionIndexs":{},"options":{"limitBy":1000,"prependTableNameToAlias":true},"visualisation":{"type":"Table","chartGroup":"","selectedType":"Table","settings":{"script":null,"vizscriptsEditMultipleMode":false},"vizSelectedScripts":[]},"scripts":[],"styles":"","customStyles":"","customScripts":[]}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</report>

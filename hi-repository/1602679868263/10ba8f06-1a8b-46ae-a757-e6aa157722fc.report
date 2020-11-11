@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<report>
+    <reportName>test child for card</reportName>
+    <visible>true</visible>
+    <metadata>
+        <location>1463377807724/1463377836985</location>
+        <metadataFileName>e9be6771-995b-40eb-a01c-304857a100a1.metadata</metadataFileName>
+    </metadata>
+    <canvas>
+        <columns><![CDATA[[{"column":"employee_details.age","label":"age","id":"83ip2l18qrn","type":{"dataType":"numeric","backendDatatype":"java.lang.Integer"},"autogen_alias":"sum_age","aggregate":["db.generic.aggregate.sum"]},{"column":"employee_details.employee_name","label":"employee_name","id":"cc3lurt1vgt","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"employee_name","groupBy":["db.generic.groupBy.group"]}]]]></columns>
+    </canvas>
+    <state><![CDATA[{"columns":[{"column":"employee_details.age","label":"age","id":"83ip2l18qrn","type":{"dataType":"numeric","backendDatatype":"java.lang.Integer"},"autogen_alias":"sum_age","aggregate":["db.generic.aggregate.sum"]},{"column":"employee_details.employee_name","label":"employee_name","id":"cc3lurt1vgt","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"employee_name","groupBy":["db.generic.groupBy.group"]}],"filters":[{"values":["1","4"],"mode":"auto","dataType":"numeric","valuesMode":"auto","isFilterEditable":false,"encloseInQuotes":false,"dateTimeToggle":false,"label":"employee_id","column":"employee_details.employee_id","backendDataType":"java.lang.Integer","id":0,"condition":"IS_ONE_OF","valuesRange":{},"rangeSelectionToggole":true}],"customFilterExpression":"${0}","customHavingExpression":"","customFilterExpressionObj":{"0":"${0}"},"customHavingExpressionObj":{},"havingExpressionIndexs":{},"filterExpressionIndexs":{},"options":{"limitBy":10,"prependTableNameToAlias":false},"visualisation":{"type":"Table","chartGroup":["Card"],"selectedType":"Table","settings":{"script":null,"vizscriptsEditMultipleMode":false,"crossTabRows":[],"crossTabCols":[{"column":"employee_details.employee_name","label":"employee_details_employee_name","id":"egp5kb72h88","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"employee_details_employee_name","groupBy":["db.generic.groupBy.group"]},{"column":"employee_details.address","label":"address","id":"om2hvfrutk","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"address","groupBy":["db.generic.groupBy.group"]}],"crossTabVals":[],"type":"HIWidget","vizType":"Charts","chartGroup":["Card"]},"vizSelectedScripts":[]},"scripts":[],"styles":"","customStyles":"","customScripts":[]}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</report>

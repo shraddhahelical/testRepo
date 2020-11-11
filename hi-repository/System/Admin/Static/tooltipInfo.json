@@ -1,0 +1,461 @@
+{
+	"tooltip_pageSetup": {
+		"show": true,
+		"onIcon": true,
+		"isHtml": true,
+		"htmlId": "pageSetupTooltip",
+		"content": [
+			{
+				"type": "infoDisplay",
+				"fromStatic": false,
+				"displayContent": "page width : $__width and page height : $__height",
+				"displayValues": {
+					"width": [
+						"pageLayoutInfo",
+						"size",
+						"fullPage",
+						"width"
+					],
+					"height": [
+						"pageLayoutInfo",
+						"size",
+						"fullPage",
+						"height"
+					]
+				}
+			},
+			{
+				"type": "infoDisplay",
+				"fromStatic": false,
+				"displayContent": "page margins top : $__top, bottom : $__bottom, left : $__left, right : $__right",
+				"displayValues": {
+					"top": [
+						"pageLayoutInfo",
+						"margin",
+						"top"
+					],
+					"bottom": [
+						"pageLayoutInfo",
+						"margin",
+						"bottom"
+					],
+					"left": [
+						"pageLayoutInfo",
+						"margin",
+						"left"
+					],
+					"right": [
+						"pageLayoutInfo",
+						"margin",
+						"right"
+					]
+				}
+			},
+			{
+				"type": "infoDisplay",
+				"fromStatic": false,
+				"displayContent": "editable page width : $__width and page height : $__height",
+				"displayValues": {
+					"width": [
+						"pageLayoutInfo",
+						"size",
+						"canvasPage",
+						"width"
+					],
+					"height": [
+						"pageLayoutInfo",
+						"size",
+						"canvasPage",
+						"height"
+					]
+				}
+			}
+		]
+	},
+	"tooltip_pageSize": {
+		"content": [
+			{
+				"displayContent": "Change the page dimensions"
+			}
+		]
+	},
+	"tooltip_titleInNewPage": {
+		"content": [
+			{
+				"displayContent": "Specify if the title section should be printed on a separate initial page"
+			}
+		]
+	},
+	"tooltip_summaryInNewPage": {
+		"content": [
+			{
+				"displayContent": "Specify if the summary section should be printed on a separate last page"
+			}
+		]
+	},
+	"tooltip_floatingColumnFooter": {
+		"content": [
+			{
+				"displayContent": "Specify if the column footer section should be printed at the bottom of the column or if it should immediately follow the last detail or group footer printed on the current column"
+			}
+		]
+	},
+	"tooltip_summaryWithHeaderAndFooter": {
+		"content": [
+			{
+				"displayContent": "Specify if the summary section should be accompained by the page Header and footer"
+			}
+		]
+	},
+	"tooltip_reprintHeaderOnEachPage": {
+		"content": [
+			{
+				"displayContent": "Reprint header on each page"
+			}
+		]
+	},
+	"tooltip_ignorePagination": {
+		"content": [
+			{
+				"displayContent": "Specify whether to use pagination"
+			}
+		]
+	},
+	"tooltip_printInFirstWholeBand": {
+		"content": [
+			{
+				"displayContent": "The element gets printed in the first section of a new page or column that is not an overflow from a previous page or column."
+			}
+		]
+	},
+	"tooltip_printRepeatedValues": {
+		"content": [
+			{
+				"displayContent": "Allows suppressing the repeating values for the dynamic elements such as text field and image fields and to fully customize the bheviour of the static elements like line and static texts"
+			}
+		]
+	},
+	"tooltip_removeLineWhenBlank": {
+		"content": [
+			{
+				"displayContent": "Collapses the section if the element is not printing and no other element is occupying the same horizontal space."
+			}
+		]
+	},
+	"tooltip_pattern": {
+		"isHtml": true,
+		"content": [
+			{
+				"displayContent": "Pattern to use when formatting the output of the text field expression <br><table style = 'border : 1px solid white'> <tr style = 'font-weight : bold'> <td style = 'border : 1px solid white'>Fromat</td><td style = 'border : 1px solid white'>Pattern</td><td style = 'border : 1px solid white'>Example</td> </tr> <tr> <td style = 'border : 1px solid white'>Numeric </td><td style = 'border : 1px solid white'> #,##0.###</td><td style = 'border : 1px solid white'>1,234.00</td> </tr> <tr> <td style = 'border : 1px solid white'>Date </td><td style = 'border : 1px solid white'> MMM d, yyyy</td><td style = 'border : 1px solid white'>Jan 01, 2020</td> </tr> <tr> <td style = 'border : 1px solid white'>Time </td><td style = 'border : 1px solid white'> h:mm:ss a z</td><td style = 'border : 1px solid white'>4:14:46 PM IST</td> </tr> <tr> <td style = 'border : 1px solid white'>Currency </td><td style = 'border : 1px solid white'> $#,##0</td><td style = 'border : 1px solid white'>$1,234</td> </tr> <tr> <td style = 'border : 1px solid white'>Percentage </td><td style = 'border : 1px solid white'> #,##0.##%</td><td style = 'border : 1px solid white'>84%</td> </tr> <tr> <td style = 'border : 1px solid white'>Scientific Notation </td><td style = 'border : 1px solid white'> 0.0##E0</td><td style = 'border : 1px solid white'>1.001E3</td> </tr> </table>"
+			}
+		]
+	},
+	"tooltip_columnCount": {
+		"content": [
+			{
+				"displayContent": "Specify the number of columns in a page"
+			}
+		]
+	},
+	"tooltip_columnSpacing": {
+		"content": [
+			{
+				"displayContent": "Space between the columns"
+			}
+		]
+	},
+	"tooltip_columnWidth": {
+		"content": [
+			{
+				"displayContent": "Width of each column created"
+			}
+		]
+	},
+	"tooltip_printOrder": {
+				"isHtml": true,
+		"content": [
+			{
+				"displayContent": "Vertical - the filling process run first from top to bottom and then from left to right; the first column is entirely filled, then the second one, the third, etc <br> Horizontal - the filling process run first from left to right and then from top to bottom; the first row is filled in any column, then the second row, etc."
+			}
+		]
+	},
+	"tooltip_whenNoData": {
+		"content": [
+			{
+				"displayContent": "Allows users to customize the behaviour of the report when there is no data"
+			}
+		]
+	},
+	"tooltip_varResetType": {
+		"content": [
+			{
+				"displayContent": "Reset level for variables that perform calculations"
+			}
+		]
+	},
+	"tooltip_varIncrementFactoryClassName": {
+		"content": [
+			{
+				"displayContent": "The name of a class that implements the net.sf.jasperreports.engine.fill.JRIncrementerFactory interface to use when creating the incrementer instance for this variable. Incrementers are objects that implement thenet.sf.jasperreports.engine.fill.JRIncrementer interface and handle the incremental calculation performed on the variable's current value with every iteration in the data source."
+			}
+		]
+	},
+	"tooltip_varInitialValueExpression": {
+		"isHtml": true,
+		"content": [
+			{
+				"displayContent": "Definition of the expression that will be used to calculate the initial value of the variable, before any calculations are made. <br> Example : Suppose to have a variable called variable1 with the expression \"new Integer(5)\". At every record read will be assign to the variable the integer value 5, so the initial value it isn't important in this context. But suppose to change the expression to \"$V{variable1}+5\", this means that at every iteration the variable is incremented by 5. In this case an initial value it's necessary otherwise at the first iteration the variable1 is undefined and this breaks all future evaluations."
+			}
+		]
+	},
+	"tooltip_StyleName": {
+		"content": [
+			{
+				"displayContent": "Name of the style."
+			}
+		]
+	},
+	"tooltip_Name": {
+		"content": [
+			{
+				"displayContent": "Name of the calculation."
+			}
+		]
+	},
+	"tooltip_varClassName": {
+		"content": [
+			{
+				"displayContent": "Class of the calculation values."
+			}
+		]
+	},
+	"tooltip_varCalculation": {
+		"content": [
+			{
+				"displayContent": "Calulation to perform on the master report variable when returing the value from the subreport"
+			}
+		]
+	},
+	"tooltip_varIncrement": {
+		"content": [
+			{
+				"displayContent": "Increment level for variables that perform calculations."
+			}
+		]
+	},
+	"tooltip_varExpression": {
+		"isHtml": true,
+		"content": [
+			{
+				"displayContent": "Definition of the expression associated with the calculation.The value of this expression will be calculated at runtime and will represent the value of the corresponding calculation or it will be used in calculation to obtain the value of the calculated variable"
+			}
+		]
+	},
+	"tooltip_resetPageNumber": {
+		"content": [
+			{
+				"displayContent": "Reset page number."
+			}
+		]
+	},
+	"tooltip_startNewPage": {
+		"content": [
+			{
+				"displayContent": "Start new page for new group"
+			}
+		]
+	},
+	"tooltip_startNewColumn": {
+		"content": [
+			{
+				"displayContent": "Start new column for new group"
+			}
+		]
+	},
+	"tooltip_keepTogether": {
+		"content": [
+			{
+				"displayContent": "Keep together."
+			}
+		]
+	},
+	"tooltip_preventOrphanFooter": {
+		"content": [
+			{
+				"displayContent": "Prevent Orphan Footer."
+			}
+		]
+	},
+	"tooltip_minDetailsToStartFromTop": {
+		"content": [
+			{
+				"displayContent": "Minimum number of details to be rendered on the current column, to avoid starting the group on a new column"
+			}
+		]
+	},
+	"tooltip_minHeightToStartNewPage": {
+		"content": [
+			{
+				"displayContent": "Minimum Height To Start New Page"
+			}
+		]
+	},
+	"tooltip_poition": {
+		"content": [
+			{
+				"displayContent": "Specifies the object position when the report section is affected by stretch."
+			}
+		]
+	},
+	"tooltip_stretch": {
+		"content": [
+			{
+				"displayContent": "Specifies the graphic element stretch behavior when the report section is affected by stretch."
+			}
+		]
+	},
+	"tooltip_rotationType": {
+		"content": [
+			{
+				"displayContent": "Type of the rotation of text object"
+			}
+		]
+	},
+	"tooltip_markUp": {
+		"content": [
+			{
+				"displayContent": "Name of the mark up language used to embed style information in text content. Supported values are none(Plain text),styled(styled text), rtf(RTF format) and html(HTML format)"
+			}
+		]
+	},
+	"tooltip_evalTime": {
+		"isHtml": true,
+		"content": [
+			{
+				"displayContent": "The text to be printed is supplied by the associated expression. This expression can be evaluated at a specified moment. This could be useful for example, when we want to have on the first page a text that will be generated only after fetching all the datasource rows"
+			}
+		]
+	},
+	"tooltip_styleNameReference": {
+		"content": [
+			{
+				"displayContent": "Name of the report level style to use as base style(see <Page styles> element)"
+			}
+		]
+	},
+	"tooltip_evalGroupName": {
+		"content": [
+			{
+				"displayContent": "Specify group name at which the expression to be executed if the evaluation time is selected as group"
+			}
+		]
+	},
+	"tooltip_patternExpression": {
+		"isHtml": true,
+		"content": [
+			{
+				"displayContent": "Definition of Boolean expression that will return a pattern based on the expression <br> Example :$F{travel_cost}.equals(1350)? \"#,##0.##%\":\"#,##0.###\"  "
+			}
+		]
+	},
+	"tooltip_printWhenExpression": {
+		"isHtml": true,
+		"content": [
+			{
+				"displayContent": "Definition of Boolean expression that will determine if the element should be printed or not <br> Example : (($F{meet_cancellation_status}.equals(\"Yes\")))"
+			}
+		]
+	},
+	"tooltip_printWhenDetailOverflows": {
+		"content": [
+			{
+				"displayContent": "The element will be printed when the record overflows to a new page or a new column"
+			}
+		]
+	},
+	"tooltip_stretchWithOverflow": {
+		"content": [
+			{
+				"displayContent": "Allows the text field to stretch downwards in order to display all its text when it doesn't fit in the defined text field height"
+			}
+		]
+	},
+	"tooltip_blankWhenNull": {
+		"content": [
+			{
+				"displayContent": "Specifies that the text field should display a blank character instead of null when the text field expression evaluates to null"
+			}
+		]
+	},
+	"tooltip_varResetGroup": {
+		"content": [
+			{
+				"displayContent": "Name of the group at which the variable is reinitialized, when the Reset Type property is set to Group."
+			}
+		]
+	},
+	"tooltip_varIncrementGroup": {
+		"content": [
+			{
+				"displayContent": "Name of the group at which the variable is incremented, when the Increment Type property is set to Group."
+			}
+		]
+	},
+	"tooltip_isDefaultStyle": {
+		"content": [
+			{
+				"displayContent": "The default report style is used as base style for all the elements that do not explicitly reference a report style definition"
+			}
+		]
+	},
+	"tooltip_content": {
+		"isHtml": true,
+		"content": [
+			{
+				"displayContent": "Define the expression to use for this text field <br> Note : Enclose static text in double quotes"
+			}
+		]
+	},
+	"tooltip_mode": {
+		"content": [
+			{
+				"displayContent": "Specifies whether the background of an object is transparent or opaque"
+			}
+		]
+	},
+	"tooltip_isUsingCache": {
+		"content": [
+			{
+				"displayContent": "If true, tells the report engine to cache the images that are loaded from the same location."
+			}
+		]
+	},
+	"tooltip_isLazy": {
+		"content": [
+			{
+				"displayContent": "Gives control over when the images are retrieved from their specified location."
+			}
+		]
+	},
+	"tooltip_onErrorType": {
+		"content": [
+			{
+				"displayContent": "Controls the behavior of the engine in case the image is not available."
+			}
+		]
+	},
+	"tooltip_scaleImage": {
+		"content": [
+			{
+				"displayContent": "Image displaying type."
+			}
+		]
+	},
+	"tooltip_fillImage": {
+		"content": [
+			{
+				"displayContent": "Type of the fill pattern used to fill objects."
+			}
+		]
+	}
+}

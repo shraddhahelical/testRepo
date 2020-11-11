@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<customScript>
+    <visible>true</visible>
+    <scriptId>generic_js_displayAll</scriptId>
+    <scriptType>js</scriptType>
+	<name>Display All</name>
+    <group>Generic</group>
+	<renderOn>simpleModel</renderOn>
+    <description>Helps to replace _all_ with All</description>
+    <icon>/images/scriptIcons/displayAll.png</icon>
+	<snippet>
+		<![CDATA[
+		
+			var id = hi_container.get("renderId");
+			var ftnObj = {};
+			var display = ${switch};
+			
+				ftnObj['displayAll'+id] = function(a){  
+					
+					
+				if(display) 
+				{
+					var b = a.get("requestData");
+					var value_str = b.filters[0].values[0];
+					if(value_str.includes("-1"))
+					{
+					b.filters[0].values[0]= "-1";
+					b.filters[0].condition="CUSTOM";
+					b.filters[0].customCondition= "<>";
+					}
+				}
+				
+				};
+	
+			if(!hi_container.isSet("preFetch")){
+				hi_container.set("preFetch", ftnObj['displayAll'+id]);
+			}
+			else{
+			    hi_container.extend("preFetch", ftnObj['displayAll'+id]);
+			}
+			
+		]]>
+	</snippet>
+	<parameters>
+		<parameter value="true" name="switch" type="Boolean"/>   
+	</parameters>
+    <uiSnippet>
+		<![CDATA[
+				<div class="row">
+				
+					<div class="col-sm-12 form-horizontal">
+						<div id="toggle1" align="center">
+							<div class="col-sm-3">
+								<label><b>Display All</b></label> 
+							</div>
+							<div class="col-sm-3  toggle_label_hide">
+								<label>Disable</label>
+							</div>
+							<div class="col-sm-2 switch" id="switch1">
+								<input id="cmn-toggle-1" class="cmn-toggle cmn-toggle-round" type="checkbox" onclick='switchToggle(event)' />
+								<label for="cmn-toggle-1"></label>
+							</div>
+							<div class="col-sm-3 toggle_label_show">  
+								<label>Enable</label>  
+							</div>
+						</div>
+					</div>
+					
+				
+				</div>
+				
+			<script>
+			
+				adhocScripts.resetAll();
+				
+				adhocScripts.setVariable("switch",params.switch);
+				
+				
+				function switchToggle(event){
+					if(adhocScripts.getVariable('switch') == 'false'){
+						window.frames[0].hi_container.unSet("preExecution");
+						adhocScripts.setVariable("switch", 'true');
+					}
+					else{
+						adhocScripts.setVariable("switch", 'false');
+					}
+				}; 
+				
+				
+				
+				if(adhocScripts.getVariable('switch') == 'true'){
+					$('#cmn-toggle-1').attr('checked', 'checked');
+				} else {
+					$('#cmn-toggle-1').removeAttr('checked');
+				}
+				
+				
+				
+			</script>	
+		]]>
+	</uiSnippet>
+</customScript>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efw>
+    <title>DyanmicViewDashboard</title>
+    <author>hiadmin</author>
+    <description>Efw File</description>
+    <template>d6dcc9a6-0be4-4729-8956-0afad711a10d.html</template>
+    <visible>true</visible>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</efw>

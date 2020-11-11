@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efw>
+    <title>Sample Designer Report</title>
+    <author>hdiadmin</author>
+    <description>Efw File</description>
+    <template>3a91fae9-6d4d-48fc-a718-83f38613198f.html</template>
+    <visible>true</visible>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+    <share mandatory="true">
+        <roles mandatory="true">
+            <role id="2">2</role>
+        </roles>
+    </share>
+</efw>

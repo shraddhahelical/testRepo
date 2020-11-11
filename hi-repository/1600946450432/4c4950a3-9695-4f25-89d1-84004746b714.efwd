@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<EFWD>
+    <DataSources>
+        <Connection id="1" type="global.jdbc">
+            <globalId>4</globalId>
+            <security>
+                <createdBy>1</createdBy>
+                <organization></organization>
+            </security>
+        </Connection>
+    </DataSources>
+    <DataMaps>
+        <DataMap id="4" connection="1" type="sql">
+            <Name>report1</Name>
+            <Query><![CDATA[db.user.aggregate([{  "$match": {    "$and": [      {        "userProfile.orgLevel": "VP"      },      {        "enabled": true      },      {        "userProfile.orgCode": {          "$exists": true        }      }    ]  }},{  "$lookup": {    "from": "observation",    "let": {      "id": "$_id"    },    "pipeline": [      {        "$match": {          "$and": [            {              "$expr": {                "$eq": [                  "$$id",                  "$observer._id"                ]              }            },            {              "$and": [               {                  "displayDate": {                    "$gte": ISODate("2020-05-01T00:00:00Z")                  }                },                {                  "displayDate": {                    "$lt": ISODate("2020-06-01T00:00:00Z")                  }                }              ]            }          ]        }      }    ],    "as": "o"  }},{  "$unwind": {    "path": "$o",    "preserveNullAndEmptyArrays": true  }},{  "$group": {    "_id": {      "formattedName": "$formattedName",      "userProfile_orgLevel": "$userProfile.orgLevel",      "userProfile_orgCode": "$userProfile.orgCode",      "obs_state": "$o.state",      "obs_id" : "$o._id"    },    "Obs_Target": {      "$min": "$userProfile.observationsGoal"    }  }},{  "$project": {	"_id": 0,    "Observer Name": "$_id.formattedName",    "Org Level": "$_id.userProfile_orgLevel",    "Org Code": "$_id.userProfile_orgCode",    "Obs_Target": "$Obs_Target",    "group_obs_count" : { $cond: { if: { $eq: [ "$_id.obs_state", "PUBLISHED" ] }, then: 1 , else: 0 }}  }},{  "$group": {    "_id": {      "Observer Name": "$Observer Name",      "Org Level": "$Org Level",      "Org Code": "$Org Code",      "Obs_Target": "$Obs_Target"    },    "Obs_Completed": {      "$sum": "$group_obs_count"    }  }},{    "$project": {	"_id": 0,    "Observer Name": "$_id.Observer Name",    "Org Level": "$_id.Org Level",    "Org Code": "$_id.Org Code",    "Obs_Target": "$_id.Obs_Target",    "Obs_Completed" : "$Obs_Completed"  }}])]]></Query>
+        </DataMap>
+    </DataMaps>
+</EFWD>

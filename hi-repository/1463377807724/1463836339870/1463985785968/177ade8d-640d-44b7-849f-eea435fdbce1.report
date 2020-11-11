@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<report>
+    <reportName>BarChart Chart Transformation</reportName>
+    <visible>true</visible>
+    <metadata>
+        <location>1463377807724/1463377836985</location>
+        <metadataFileName>e9be6771-995b-40eb-a01c-304857a100a1.metadata</metadataFileName>
+    </metadata>
+    <canvas>
+        <columns><![CDATA[[{"column":"meeting_details.meeting_purpose","label":"meeting_details_meeting_purpose","id":"8rcet1prrtk","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"meeting_details_meeting_purpose","groupBy":["db.generic.groupBy.group"],"alias":"Meeting Purpose"},{"column":"travel_details.travel_cost","label":"travel_details_travel_cost","id":"titvfw6yb3","type":{"dataType":"numeric","backendDatatype":"java.lang.Integer"},"autogen_alias":"count_travel_cost","aggregate":["db.generic.aggregate.count"],"alias":"No of Travel"},{"label":"Custom Column","custom":true,"column":"(sum(\"travel_cost\")/10000)","alias":"Travel Expense $ (mn)","id":"587bjo9s76nm858b0mkylxflxr"}]]]></columns>
+    </canvas>
+    <state><![CDATA[{"columns":[{"column":"meeting_details.meeting_purpose","label":"meeting_details_meeting_purpose","id":"8rcet1prrtk","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"meeting_details_meeting_purpose","groupBy":["db.generic.groupBy.group"],"alias":"Meeting Purpose"},{"column":"travel_details.travel_cost","label":"travel_details_travel_cost","id":"titvfw6yb3","type":{"dataType":"numeric","backendDatatype":"java.lang.Integer"},"autogen_alias":"count_travel_cost","aggregate":["db.generic.aggregate.count"],"alias":"No of Travel"},{"label":"Custom Column","custom":true,"column":"(sum(\"travel_cost\")/10000)","alias":"Travel Expense $ (mn)","id":"587bjo9s76nm858b0mkylxflxr"}],"filters":[{"values":["July"],"mode":"auto","dataType":"dateTime","orderBy":"","valuesMode":"custom","isFilterEditable":false,"encloseInQuotes":true,"dateTimeToggle":false,"databaseFunction":{"key":"sql.dateTime.monthname","description":"Returns the month name based on the given date/datetime. Example: monthname('2014-08-08 08:00:00.000') result: August ","value":"MONTHNAME","signature":"(case when (month(${datetime})=01 OR month(${datetime})=1) then 'January' \n\t     when (month(${datetime})=02 OR month(${datetime})=2) then 'February'\n\t     when (month(${datetime})=03 OR month(${datetime})=3) then 'March'\n\t     when (month(${datetime})=04 OR month(${datetime})=4) then 'April'\n\t     when (month(${datetime})=05 OR month(${datetime})=5) then 'May'\n\t     when (month(${datetime})=06 OR month(${datetime})=6) then 'June'\n\t     when (month(${datetime})=07 OR month(${datetime})=7) then 'July'\n\t     when (month(${datetime})=08 OR month(${datetime})=8) then 'August'\n\t     when (month(${datetime})=09 OR month(${datetime})=9) then 'September'\n\t     when (month(${datetime})=10) then 'October'\n\t     when (month(${datetime})=11) then 'November'\n\t     when (month(${datetime})=12) then 'December'\n\t     else null end)","returns":"text","parameters":[{"name":"datetime","defaultValue":"'2014-08-08 08:00:00.000'","value":"travel_details.travel_date","column":true}]},"label":"travel_details_travel_date","column":"travel_details.travel_date","backendDataType":"java.sql.Timestamp","rangeValuesType":"","id":0,"condition":"EQUALS","valuesRange":{},"rangeSelectionToggole":true}],"customFilterExpression":"${0}","customHavingExpression":"","customFilterExpressionObj":{"0":"${0}"},"customHavingExpressionObj":{},"havingExpressionIndexs":{},"filterExpressionIndexs":{},"options":{"limitBy":10,"prependTableNameToAlias":true},"visualisation":{"type":"Charts","chartGroup":"","selectedType":"Table","settings":{"script":null,"type":"BarChart","vizType":"Charts"},"vizSelectedScripts":[]},"scripts":["hi_container.set(\"postExecution\", function () {\n Hdi.c3chart.transform('line', 'No of Travel' );  \n Hdi.c3chart.data.colors({ \"No of Travel\" : '#ff7f0e' });\n}); \n\n"],"styles":"","customStyles":"","customScripts":[]}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+    <share mandatory="true">
+        <roles mandatory="true">
+            <role id="2">2</role>
+        </roles>
+    </share>
+</report>

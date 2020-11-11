@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Return type for each function node can be the following 
+
+	"numeric", "text", "date", "time","dateTime","boolean","other" 
+	
+	-->
+<functions dialect="org.hibernate.dialect.MySQLDialect" type="sql">
+     
+	
+	 
+<!--Conversion specific functions must be there for every xml file starts--> 
+ 
+	<function group="type conversion" returns="text">
+        <key>sql.typeConversion.cast</key>
+        <value>CAST</value>
+        <signature><![CDATA[CAST(${column} AS ${dataType})]]></signature>
+        <parameters>
+            <parameter column="true" name="column"/>
+			<parameter column="false" name="dataType"/>
+        </parameters>
+        <description>Cast function converts one datatype to another. Note:All Values should be in single quotes if you are typing the value. Example: CAST('2019-03-22 17:34:03.000' AS char) result:2019-03-22 17:34:03.000</description>
+    </function>
+	
+	<function group="type conversion" returns="text">
+        <key>sql.typeConversion.tochar</key>
+        <value>TOCHAR</value>
+        <signature><![CDATA[cast(${column} AS CHAR)]]></signature>
+        <parameters>
+            <parameter column="true" name="column"/>
+        </parameters>
+        <description>Converts value to char type. Example:	cast('2015-01-01' AS CHAR) result:2015-01-01 </description>
+    </function>
+	
+	<function group="type conversion" returns="numeric">
+        <key>sql.typeConversion.tonum</key>
+        <value>TONUM</value>
+        <signature><![CDATA[CAST(${column} as SIGNED)]]></signature>
+        <parameters>
+            <parameter column="true" name="column"/>
+        </parameters>
+        <description>This function converts value to a number type. Example: cast(23.3 AS signed) result:23</description>
+    </function>
+    <function group="type conversion" returns="time">
+      <key>sql.typeConversion.totime</key>
+      <value>TOTIME</value>
+      <signature><![CDATA[CAST(${column} AS TIME)]]></signature>
+      <parameters>
+         <parameter column="true" name="column" />
+      </parameters>
+      <description>Converts value to TIME type. Format is "HH:MM:SS" (Supported range is from "-838:59:59" to "838:59:59").	Example: CAST('2019-02-12 14:06:10' AS time) RESULTS: 14:06:10. NOTE: column's value should be in quotes if the values is manually typing and its data type is "text/date/dateTime/time" type</description>
+   </function>
+    <function group="type conversion" returns="date">
+      <key>sql.typeConversion.todate</key>
+      <value>TODATE</value>
+      <signature><![CDATA[CAST(${column} AS DATE)]]></signature>
+      <parameters>
+         <parameter column="true" name="column" />
+      </parameters>
+      <description>Converts value to DATE type. Format is "YYYY-MM-DD" (Supported range is from "1000-01-01" to "9999-12-31").Example: CAST('2019-02-12 14:06:10' AS date) RESULTS: 2019-02-12.NOTE: column's value should be in quotes if the values is manually typing</description>
+   </function>
+   <function group="type conversion" returns="dateTime">
+      <key>sql.typeConversion.todatetime</key>
+      <value>TODATETIME</value>
+      <signature><![CDATA[CAST(${column} AS DATETIME)]]></signature>
+      <parameters>
+         <parameter column="true" name="column" />
+      </parameters>
+      <description>Converts value to DATETIME type. Format is "YYYY-MM-DD HH:MM:SS" (Supported range is from "1000-01-01 00:00:00" to "9999-12-31 23:59:59"). Example:CAST('2019-02-12' AS datetime) RESULTS: 2019-02-12 00:00:00.NOTE: column's value should be in quotes if the values is manually typing</description>
+   </function>
+   <function group="type conversion" returns="numeric">
+        <key>sql.typeConversion.todecimal</key>
+        <value>TODECIMAL</value>
+        <signature><![CDATA[cast(${column} AS DECIMAL)]]></signature>
+        <parameters>
+            <parameter column="true" name="column"/>
+        </parameters>
+        <description>Converts the value to decimal type. Example: cast(23.3 as decimal) result: 23</description>
+    </function>
+	
+	 
+<function group="dateRelated" returns="numeric">
+        <key>sql.dateTime.years</key>
+        <value>YEARS</value>
+        <signature><![CDATA[year(${datetime})]]></signature>
+        <parameters>
+            <parameter column="true" name="datetime" defaultValue="'2007-02-03 09:00:00'"/>
+        </parameters>
+        <description>Extract the year of a given date as integer.</description>
+</function>
+<function group="dateRelated" returns="text">
+        <key>sql.dateTime.quarters</key>
+        <value>QUARTERS</value>
+        <signature><![CDATA[concat('Q',quarter(${datetime}))]]></signature>
+        <parameters>
+            <parameter column="true" name="datetime" defaultValue="'2007-02-03 09:00:00'"/>
+        </parameters>
+        <description>Extract the quarter of a given date as integer</description>
+</function>
+
+<function group="dateRelated" returns="text">
+        <key>sql.dateTime.months</key>
+        <value>MONTHS</value>
+        <signature><![CDATA[date_format(${datetime},'MMMM')]]></signature>
+        <parameters>
+            <parameter column="true" name="datetime" defaultValue="'2007-02-03 09:00:00'"/>
+        </parameters>
+        <description>Extract the month of a given date as integer.</description>
+</function>
+<function group="dateRelated" returns="numeric">
+        <key>sql.dateTime.days</key>
+        <value>DAYS</value>
+        <signature><![CDATA[dayofmonth(${datetime})]]></signature>
+        <parameters>
+            <parameter column="true" name="datetime" defaultValue="'2007-02-03 09:00:00'"/>
+        </parameters>
+        <description>Extract the day of the month of a given date as integer.</description>
+</function>
+<function group="dateRelated" returns="numeric">
+        <key>sql.dateTime.hours</key>
+        <value>HOURS</value>
+        <signature><![CDATA[hour(${datetime})]]></signature>
+        <parameters>
+            <parameter column="true" name="datetime" defaultValue="'2007-02-03 09:00:00'"/>
+        </parameters>
+        <description>Extracts the hours as an integer from a given date/timestamp/string.</description>
+</function>
+<function group="dateRelated" returns="numeric">
+        <key>sql.dateTime.minutes</key>
+        <value>MINUTES</value>
+        <signature><![CDATA[minute(${datetime})]]></signature>
+        <parameters>
+            <parameter column="true" name="datetime" defaultValue="'2007-02-03 09:00:00'"/>
+        </parameters>
+        <description>Extracts the minutes as an integer from a given date/timestamp/string.</description>
+</function>
+<function group="dateRelated" returns="numeric">
+        <key>sql.dateTime.seconds</key>
+        <value>SECONDS</value>
+        <signature><![CDATA[second(${datetime})]]></signature>
+        <parameters>
+            <parameter column="true" name="datetime" defaultValue="'2007-02-03 09:00:00'"/>
+        </parameters>
+        <description>Extracts the minutes as an integer from a given date/timestamp/string.</description>
+</function>
+<function group="dateRelated" returns="text">
+        <key>sql.dateTime.weeknumber</key>
+        <value>WEEK NUMBERS</value>
+        <signature><![CDATA[concat('Week ',weekofyear(${datetime}))]]></signature>
+        <parameters>
+            <parameter column="true" name="datetime" defaultValue="'2007-02-03 09:00:00'"/>
+        </parameters>
+        <description>Extracts the week number as an integer from a given date/timestamp/string</description>
+</function>
+<function group="dateRelated" returns="text">
+        <key>sql.dateTime.monthyear</key>
+        <value>MONTH/YEAR</value>
+        <signature><![CDATA[concat(date_format(${datetime},'MMMM'),' ',year(${datetime}))]]></signature>
+        <parameters>
+            <parameter column="true" name="datetime" defaultValue="'2007-02-03 09:00:00'"/>
+        </parameters>
+        <description>Extracts the week number as an integer from a given date/timestamp/string</description>
+</function>
+<function group="dateRelated" returns="text">
+        <key>sql.dateTime.monthdayyear</key>
+        <value>MONTH/DAY/YEAR</value>
+        <signature><![CDATA[concat(date_format(${datetime},'MMMM'),' ',dayofmonth(${datetime}),' ',year(${datetime}))]]></signature>
+        <parameters>
+            <parameter column="true" name="datetime" defaultValue="'2007-02-03 09:00:00'"/>
+        </parameters>
+        <description>Extracts the week number as an integer from a given date/timestamp/string</description>
+</function>
+<function group="dateRelated" returns="text">
+        <key>sql.dateTime.weekdays</key>
+        <value>WEEKDAYS</value>
+        <signature><![CDATA[date_format(${datetime},'E')]]></signature>
+        <parameters>
+            <parameter column="true" name="datetime" defaultValue="'2007-02-03 09:00:00'"/>
+        </parameters>
+        <description>Extracts the week number as an integer from a given date/timestamp/string</description>
+</function>
+   
+   
+<!--Conversion specific functions must be there for every xml file ends-->
+</functions>

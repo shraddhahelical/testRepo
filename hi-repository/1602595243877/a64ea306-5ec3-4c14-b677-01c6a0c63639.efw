@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efw>
+    <title>Dashboard_Drilldown_Testing</title>
+    <author>hiadmin</author>
+    <description>Efw File</description>
+    <template>a64ea306-5ec3-4c14-b677-01c6a0c63639.html</template>
+    <visible>true</visible>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</efw>

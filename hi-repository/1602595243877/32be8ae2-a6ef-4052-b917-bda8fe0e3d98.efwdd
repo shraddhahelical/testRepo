@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efwdd>
+    <fileName>OnHoverDashboard</fileName>
+    <efw>32be8ae2-a6ef-4052-b917-bda8fe0e3d98.efw</efw>
+    <visible>true</visible>
+    <description>Efw Dashboard Designer</description>
+    <state><![CDATA[{"variables":[],"components":{"5auxgdlj1zq":{"metadata":{"dir":"/HI Sample Reports/Adhoc Tabular Report/","name":"Simple Report"},"type":"dashboard-component","options":{"dir":"1463377807724/1463378012748","file":"94b8d841-bf01-4ff3-8e9e-ac858ac8a52c.report","ext":"report","compType":"Adhoc","uid":"5auxgdlj1zq","iframe":false},"uid":"5auxgdlj1zq","name":"5auxgdlj1zq","label":"Simple Report","executeAtStart":true,"gs_attr":{"x":0,"y":0,"height":43,"width":94}}},"dashboardConfig":{"id":"dashboard"},"css":"","script":"","printOptions":{"templateId":"Dashboard","title":"Dashboard"},"componentSettings":{"5auxgdlj1zq":{"header":true,"minimize":false,"maximize":false,"export":false,"editReport":false}},"gridWidthOption":100,"toggleIframes":false}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</efwdd>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efwfolder>
+    <visible>true</visible>
+    <title>Reify Reports</title>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+    <share mandatory="true">
+        <organizations mandatory="true">
+            <organization id="1">2</organization>
+        </organizations>
+    </share>
+</efwfolder>

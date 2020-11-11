@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efwdd>
+    <fileName>rpt_FinTrans</fileName>
+    <efw>ae785f5f-6616-4f89-ac01-73fd7569eca1.efw</efw>
+    <visible>true</visible>
+    <description>Efw Dashboard Designer</description>
+    <state><![CDATA[{"variables":[["Organisation",["_all_"]],["Provider",["_all_"]],["Centre",["_all_"]],["From Date",["2020-06-01"]],["To Date",["2020-06-30"]],["OrganisationId",["_all_"]],["ProviderId",["_all_"]],["CentreId",["_all_"]]],"components":{"ezj78e22qep":{"gs_attr":{"x":0,"y":0,"width":100,"height":500},"name":"ezj78e22qep","background":{"enable":false,"color":{"r":74,"g":144,"b":226,"a":1},"imgUrl":"","imgOpacity":50,"size":"auto","bgWidth":1350,"bgHeight":650,"sizeType":"default"},"metadata":{"dir":"/KidsXap-Test-Public/Reports/Finance_Report/","name":"rpt_FinTrans"},"uid":"ezj78e22qep","label":"","context_lable":"","requestParameters":{"To Date":"To Date","From Date":"From Date","OrganisationId":"OrganisationId","ProviderId":"ProviderId","CentreId":"CentreId"},"executeAtStart":true,"type":"dashboard-component","options":{"dir":"KidsXap-Test-Public/1573701738739/1583893041593","file":"bd222b36-deb1-45d7-aa95-24f13e900a66.report","ext":"report","compType":"Adhoc","uid":"ezj78e22qep","iframe":true,"styles":{"boxComp":"Adhoc","borderComp":"Adhoc"},"report":{"dir":"KidsXap-Test-Public/1573701738739/1583893041593","file":"bd222b36-deb1-45d7-aa95-24f13e900a66.report"}},"listeners":["From Date","To Date","OrganisationId","ProviderId","CentreId"]}},"dashboardConfig":{"id":"dashboard"},"css":".dashboard-grid {height: calc(100vh) !important;}\n\n.grid-stack {height: 100% !important;}\n\n.grid-stack > .grid-stack-item[data-gs-width='100'] {height: 100% !important;}\n\n.grid-stack .grid-stack-item:last-child:after {\ndisplay: none;}\n\n","script":"","printOptions":{"templateId":"Dashboard","title":"Dashboard"},"componentSettings":{"ezj78e22qep":{"export":false,"editReport":false},"u7cmz85zvh":{"header":true,"minimize":false,"maximize":false,"export":false,"editReport":false},"tprdt2obyp":{"header":true,"minimize":false,"maximize":false,"export":false,"editReport":false},"wn77zycvxve":{"header":true,"minimize":false,"maximize":false,"export":false,"editReport":false}},"gridWidthOption":100,"toggleIframes":false}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</efwdd>

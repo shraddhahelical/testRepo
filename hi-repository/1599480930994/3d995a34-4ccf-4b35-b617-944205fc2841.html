@@ -1,0 +1,26 @@
+<div id="parameter1"></div><script id="d88cd99e-be6f-48fb-9e46-e1862683a887">var dashboard = Dashboard 
+ dashboard.resetAll() 
+  
+        dashboard = Dashboard;
+dashboard.resetAll();
+dashboard.setVariable('employee_name','_all_');
+
+var parameter1 = {
+    name: "parameter1" ,
+    type:  "select",             
+    parameters:["employee_name"],
+    options:{
+        multiple: false,             // it can be true or false
+        display : 'employee_name',
+        value : 'employee_display',
+        placeholder: 'Select Store'
+    },
+    htmlElementId : "#parameter1",              
+    executeAtStart: true,            // it can be true or false
+    map: 1,
+    efwd : {
+        file: '3d995a34-4ccf-4b35-b617-944205fc2841.efwd'
+    },
+}; 
+var components = [parameter1];
+dashboard.init(components);</script>

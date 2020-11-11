@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<report>
+    <reportName>BugID2845Report</reportName>
+    <visible>true</visible>
+    <metadata>
+        <location>1588851297738/1590496210039</location>
+        <metadataFileName>610feb95-f852-4d63-a735-43b26cafcb55.metadata</metadataFileName>
+    </metadata>
+    <canvas>
+        <columns><![CDATA[[{"column":"testview.booking_platform","label":"testview_booking_platform","id":"yn5v9eb5x6i","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"testview_booking_platform"},{"column":"testview.destination","label":"testview_destination","id":"935vld4pq8o","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"testview_destination"},{"column":"testview.travel_cost","label":"testview_travel_cost","id":"3lg5wbexl15","type":{"dataType":"numeric","backendDatatype":"java.lang.Float"},"autogen_alias":"testview_travel_cost"}]]]></columns>
+    </canvas>
+    <state><![CDATA[{"columns":[{"column":"testview.booking_platform","label":"testview_booking_platform","id":"yn5v9eb5x6i","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"testview_booking_platform"},{"column":"testview.destination","label":"testview_destination","id":"935vld4pq8o","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"testview_destination"},{"column":"testview.travel_cost","label":"testview_travel_cost","id":"3lg5wbexl15","type":{"dataType":"numeric","backendDatatype":"java.lang.Float"},"autogen_alias":"testview_travel_cost"}],"filters":[{"values":["800"],"mode":"auto","dataType":"numeric","orderBy":"","valuesMode":"auto","isFilterEditable":false,"encloseInQuotes":false,"dateTimeToggle":false,"databaseFunction":{},"label":"travel_cost","column":"testview.travel_cost","backendDataType":"java.lang.Float","rangeValuesType":"","id":0,"condition":"EQUALS","valuesRange":{},"rangeSelectionToggole":true}],"customFilterExpression":"${0}","customHavingExpression":"","customFilterExpressionObj":{"0":"${0}"},"customHavingExpressionObj":{},"havingExpressionIndexs":{},"filterExpressionIndexs":{},"options":{"limitBy":1000,"prependTableNameToAlias":true},"visualisation":{"type":"Table","chartGroup":"","selectedType":"Table","settings":{"script":null,"vizscriptsEditMultipleMode":false},"vizSelectedScripts":[]},"scripts":[],"styles":"","customStyles":"","customScripts":[]}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</report>

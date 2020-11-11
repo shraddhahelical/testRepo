@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efwfolder>
+    <visible>true</visible>
+    <title>HI Sample Reports</title>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+    <share mandatory="true">
+        <roles mandatory="true">
+            <role id="2">2</role>
+            <role id="3">5</role>
+        </roles>
+        <users mandatory="true">
+            <user id="501">2</user>
+        </users>
+    </share>
+</efwfolder>

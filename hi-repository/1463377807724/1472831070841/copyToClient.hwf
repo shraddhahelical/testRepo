@@ -1,0 +1,352 @@
+<HWF mandatory="true" type="com.helicalinsight.hwf.core.api.HWFEngine">
+    <input mandatory="true">
+        <fileList default="fileList" type="helical.String">fileList</fileList>
+        <folderName default="folderName" type="helical.String">folderName</folderName>
+        <formatInput default="formatInput" type="helical.String">formatInput</formatInput>
+        <validateInput default="validateInput" type="helical.String">validateInput</validateInput>
+        <sendError default="sendError" type="helical.String">sendError</sendError>
+        <copyDirectory default="copyDirectory" type="helical.String">copyDirectory</copyDirectory>
+        <efwFolderCreator default="efwFolderCreator" type="helical.String">efwFolderCreator</efwFolderCreator>
+        <setPermissions default="setPermissions" type="helical.String">setPermissions</setPermissions>
+    </input>
+
+    <flow>
+        <execution alias="formatInput" id="1" type="job.executeGroovy">
+            <input>
+                <ref>folderName</ref>
+                <ref>fileList</ref>
+                <ref for="functionName">formatInput</ref>
+            </input>
+            <code>
+                <![CDATA[ 
+                    import net.sf.json.JSONObject;
+                    
+                    public static JSONObject formatInput(JSONObject req, JSONObject responseJson) {
+                        String[] srcFolders = req.fileList.split(",");
+                        responseJson.put("srcFolders", srcFolders);
+                        responseJson.put("targetFolder", req.folderName)
+                        return responseJson;
+                    
+                    }
+				]]>
+            </code>
+            <output>requiredJson</output>
+            <action>
+                <executeNext>validateInput</executeNext>
+            </action>
+        </execution>
+
+        <execution alias="validateInput" id="2" type="job.executeGroovy">
+            <input>
+                <ref>requiredJson</ref>
+                <ref for="functionName">validateInput</ref>
+            </input>
+
+            <code>
+                <![CDATA[
+                    import com.helicalinsight.efw.ApplicationProperties
+                    import net.sf.json.JSONObject;
+                    
+                    public static JSONObject validateInput(JSONObject req, JSONObject responseJson) {
+                        ApplicationProperties instance = ApplicationProperties.getInstance();
+                        String solutionDirectory = instance.getSolutionDirectory();
+                    
+                        for (int i = 0; i < req.requiredJson.srcFolders.size(); i++) {
+                            File src = new File(solutionDirectory + File.separator + req.requiredJson.srcFolders[i]);
+                            if (src.isDirectory()) {
+                                continue;
+                            } else {
+                                responseJson.put("result", false);
+                                return responseJson;
+                            }
+                        }
+                        responseJson.put("result", true);
+                    
+                        return responseJson;
+                    }
+				]]>
+            </code>
+            <output>testValidation</output>
+            <action>
+                <executeNext>conditional</executeNext>
+            </action>
+        </execution>
+
+
+        <execution alias="conditional" id="3" type="job.conditional">
+            <input>
+                <ref for="test" required="true">testValidation</ref>
+            </input>
+            <steps mandatory="true">
+                <expression type="groovy">
+                    <![CDATA[input.test.result]]>
+                </expression>
+            </steps>
+            <output>conditionOutput</output>
+            <action>
+                <ifTrue>copyDirectory</ifTrue>
+                <ifFalse>sendError</ifFalse>
+            </action>
+        </execution>
+
+
+        <execution alias="sendError" id="4" type="job.executeGroovy">
+            <input>
+                <ref for="functionName">sendError</ref>
+            </input>
+            <code>
+                <![CDATA[ 
+                    import net.sf.json.JSONObject;
+
+                    public static JSONObject sendError(JSONObject request,JSONObject responseJson) {
+                        responseJson.put("Status", "Fail");
+                        responseJson.put("Message", "One or more source folder does not exists");
+                        return responseJson;
+                    
+                    }
+				]]>
+            </code>
+            <output>response</output>
+        </execution>
+
+        <execution alias="copyDirectory" id="5" type="job.executeGroovy">
+            <input>
+                <ref>requiredJson</ref>
+                <ref for="functionName">copyDirectory</ref>
+            </input>
+            <code>
+                <![CDATA[ 
+                    import com.helicalinsight.efw.ApplicationProperties;
+                    import net.sf.json.JSONObject;
+                    
+                    public static JSONObject copyDirectory(JSONObject req, JSONObject responseJson) {
+                        String solutionDirectory = ApplicationProperties.getInstance().getSolutionDirectory() + File.separator;
+                    
+                        File tgt = new File(solutionDirectory + req.requiredJson.targetFolder);
+                    
+                        for (int i = 0; i < req.requiredJson.srcFolders.size(); i++) {
+                            File src = new File(solutionDirectory + req.requiredJson.srcFolders[i]);
+                    
+                            String[] child = req.requiredJson.srcFolders[i].split("/");
+                            File eachFolder = new File(tgt.getPath() + File.separator + child[child.length - 1]);
+                    
+                            new AntBuilder().copy(todir: eachFolder) {
+                                fileset(dir: src)
+                            }
+                        }
+                        return responseJson;
+                    }
+				]]>
+            </code>
+            <output>tempOutput</output>
+            <action>
+                <executeNext>efwFolderCreator</executeNext>
+            </action>
+        </execution>
+
+        <execution alias="efwFolderCreator" id="6" type="job.executeGroovy">
+            <input>
+                <ref>requiredJson</ref>
+                <ref for="functionName">efwFolderCreator</ref>
+            </input>
+            <code>
+                <![CDATA[
+                    import com.helicalinsight.resourcesecurity.jaxb.EfwFolder
+                    import com.helicalinsight.efw.utility.JaxbUtils
+                    import com.helicalinsight.resourcesecurity.SecurityUtils
+                    import com.helicalinsight.efw.ApplicationProperties
+                    import net.sf.json.JSONObject
+                    
+                    class NewFolderHandler {
+                    
+                        public EfwFolder getNewFolderTemplate(String folderName) {
+                            EfwFolder efwFolder = new EfwFolder();
+                            efwFolder.setTitle(folderName);
+                            efwFolder.setVisible("true");
+                            efwFolder.setSecurity(SecurityUtils.securityObject());
+                            return efwFolder;
+                        }
+                    
+                        public JSONObject efwFolderCreator(JSONObject req, JSONObject responseJson) {
+                            ApplicationProperties applicationProperties = ApplicationProperties.getInstance();
+                            ArrayList<String> controlLooper = req.requiredJson.targetFolder.split("/");
+                    
+                            while (controlLooper.size() > 0) {
+                                String target = "";
+                                for (String s : controlLooper) {
+                                    target += s + File.separator;
+                                }
+                                target = target.substring(0, target.length() - 1);
+                    
+                                File directory = new File(applicationProperties.getSolutionDirectory() + File.separator + target);
+                    
+                                String folderName = controlLooper.get(controlLooper.size() - 1);
+                    
+                                EfwFolder newFolderTemplate = getNewFolderTemplate(folderName);
+                    
+                                File xmlFile = new File(directory.toString() + File.separator + "index.efwFolder");
+                                try {
+                                    synchronized (NewFolderHandler.class) {
+                                        JaxbUtils.marshal(newFolderTemplate, xmlFile);
+                                        responseJson.put("catch", "no")
+                                    }
+                                } catch (Exception e) {
+                                    responseJson.put("Catch", e.getMessage());
+                                }
+                                controlLooper.remove(controlLooper.size() - 1);
+                            }
+                            responseJson.put("Done", "Yes");
+                            return responseJson;
+                        }
+                    }
+				]]>
+            </code>
+            <output>output</output>
+            <action>
+                <executeNext>setPermissions</executeNext>
+            </action>
+        </execution>
+
+        <execution alias="setPermissions" id="6" type="job.executeGroovy">
+            <input>
+                <ref>requiredJson</ref>
+                <ref for="functionName">setPermissions</ref>
+            </input>
+            <code>
+                <![CDATA[
+                    import com.helicalinsight.efw.efwcomponents.jaxb.*
+                    import com.helicalinsight.admin.utils.AuthenticationUtils
+                    import com.helicalinsight.resourcesecurity.jaxb.Security
+                    import com.helicalinsight.resourcesecurity.SecurityUtils
+                    import com.helicalinsight.efw.ApplicationProperties
+                    import net.sf.json.JSONObject
+                    import org.apache.commons.io.FilenameUtils
+                    
+                    public JSONObject setPermissions(JSONObject req, JSONObject responseJson) {
+                        ApplicationProperties applicationProperties = ApplicationProperties.getInstance();
+                    
+                        ArrayList<String> controlLooper = req.requiredJson.targetFolder.split("/");
+                    
+                        String tgt = controlLooper.get(0);
+                    
+                        File parent = new File(applicationProperties.getSolutionDirectory() + File.separator + tgt);
+                    
+                        responseJson = getAllFiles(parent, responseJson);
+                        return responseJson;
+                    }
+                    
+                    public JSONObject getAllFiles(File curDir, JSONObject responseJson) {
+                        File[] filesList = curDir.listFiles();
+                        try {
+                            for (File f : filesList) {
+                    
+                                if (f.isDirectory()) {
+                                    getAllFiles(f, responseJson);
+                                } else if (f.isFile()) {
+                                    String extension = FilenameUtils.getExtension(f.toString());
+                                    if ("EFW".equals(extension.toUpperCase())) {
+                    
+                                        Efw efw = JaxbUtils.unMarshal(Efw.class, f);
+                                        efw.setSecurity(SecurityUtils.securityObject());
+                    
+                                        Security.Organization org = new Security.Organization();
+                                        org.setId(AuthenticationUtils.getOrganizationId());
+                                        org.setPermission("5");
+                    
+                                        List orgList = new ArrayList();
+                                        orgList.add(org);
+                    
+                                        Security.Organizations orgs = new Security.Organizations();
+                                        orgs.setOrganizations(orgList);
+                    
+                                        Security.Share share = new Security.Share();
+                                        share.setOrganizations(orgs)
+                    
+                                        efw.setShare(share);
+                                        JaxbUtils.marshal(efw, f);
+                    
+                                        responseJson.put("EFW", "I am done");
+                                    } else if ("EFWDD".equals(extension.toUpperCase())) {
+                                        EfwDashboardDesigner efwdd = JaxbUtils.unMarshal(EfwDashboardDesigner.class, f);
+                                        efwdd.setSecurity(SecurityUtils.securityObject());
+                    
+                                        Security.Organization org = new Security.Organization();
+                                        org.setId(AuthenticationUtils.getOrganizationId());
+                                        org.setPermission("5");
+                    
+                                        List orgList = new ArrayList();
+                                        orgList.add(org);
+                    
+                                        Security.Organizations orgs = new Security.Organizations();
+                                        orgs.setOrganizations(orgList);
+                    
+                                        Security.Share share = new Security.Share();
+                                        share.setOrganizations(orgs)
+                    
+                                        efwdd.setShare(share);
+                    
+                                        JaxbUtils.marshal(efwdd, f);
+                                        responseJson.put("EFWDD", "I am done");
+                                    } else if ("REPORT".equals(extension.toUpperCase())) {
+                                        AdhocReport report = JaxbUtils.unMarshal(AdhocReport.class, f);
+                                        report.setSecurity(SecurityUtils.securityObject());
+                    
+                                        Security.Organization org = new Security.Organization();
+                                        org.setId(AuthenticationUtils.getOrganizationId());
+                                        org.setPermission("5");
+                    
+                                        List orgList = new ArrayList();
+                                        orgList.add(org);
+                    
+                                        Security.Organizations orgs = new Security.Organizations();
+                                        orgs.setOrganizations(orgList);
+                    
+                                        Security.Share share = new Security.Share();
+                                        share.setOrganizations(orgs)
+                    
+                                        report.setShare(share);
+                    
+                                        JaxbUtils.marshal(report, f);
+                                        responseJson.put("REPORT", "I am done");
+                                    } else if ("EFWFOLDER".equals(extension.toUpperCase())) {
+                                        EfwFolder efwFolder = JaxbUtils.unMarshal(EfwFolder.class, f);
+                                        efwFolder.setSecurity(SecurityUtils.securityObject());
+                    
+                                        Security.Organization org = new Security.Organization();
+                                        org.setId(AuthenticationUtils.getOrganizationId());
+                                        org.setPermission("5");
+                    
+                                        List orgList = new ArrayList();
+                                        orgList.add(org);
+                    
+                                        Security.Organizations orgs = new Security.Organizations();
+                                        orgs.setOrganizations(orgList);
+                    
+                                        Security.Share share = new Security.Share();
+                                        share.setOrganizations(orgs)
+                    
+                                        efwFolder.setShare(share);
+                    
+                                        JaxbUtils.marshal(efwFolder, f);
+                                        responseJson.put("efwFolder", "I am done");
+                                    }
+                                }
+                            }
+                            responseJson.put("Message", "Dashboards Imported Successfully.");
+                            responseJson.put("Status", "Success");
+                        } catch (Exception e) {
+                            responseJson.put("Message", e.getMessage());
+                            responseJson.put("Status", "Fail");
+                        }
+                        return responseJson;
+                    }
+				]]>
+            </code>
+            <output>response</output>
+        </execution>
+    </flow>
+
+    <output mandatory="true" viewPage="" showStack="false" showFlow="true">
+        <response type="com.helical.print">output</response>
+    </output>
+</HWF>

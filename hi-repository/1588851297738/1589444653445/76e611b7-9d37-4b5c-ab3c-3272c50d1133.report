@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<report>
+    <reportName>DynamicViewReport_SelectQuery</reportName>
+    <visible>true</visible>
+    <metadata>
+        <location>1588851297738/1589444653445</location>
+        <metadataFileName>6c26eb11-cbea-4b33-8dae-e94d9c65878e.metadata</metadataFileName>
+    </metadata>
+    <canvas>
+        <columns><![CDATA[[{"column":"DynamicView_Query.address","label":"DynamicView_Query_address","id":"x2fuow3hin","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"DynamicView_Query_address","groupBy":["db.generic.groupBy.group"]},{"column":"DynamicView_Query.employee_id","label":"DynamicView_Query_employee_id","id":"0b6bibjgrv6e","type":{"dataType":"numeric","backendDatatype":"java.lang.Float"},"autogen_alias":"sum_employee_id","aggregate":["db.generic.aggregate.sum"]},{"column":"DynamicView_Query.age","label":"DynamicView_Query_age","id":"249zl7gi37p","type":{"dataType":"numeric","backendDatatype":"java.lang.Float"},"autogen_alias":"sum_age","aggregate":["db.generic.aggregate.sum"]},{"column":"DynamicView_Query.employee_name","label":"DynamicView_Query_employee_name","id":"uls8wkxms7h","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"DynamicView_Query_employee_name","groupBy":["db.generic.groupBy.group"]}]]]></columns>
+    </canvas>
+    <state><![CDATA[{"columns":[{"column":"DynamicView_Query.address","label":"DynamicView_Query_address","id":"x2fuow3hin","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"DynamicView_Query_address","groupBy":["db.generic.groupBy.group"]},{"column":"DynamicView_Query.employee_id","label":"DynamicView_Query_employee_id","id":"0b6bibjgrv6e","type":{"dataType":"numeric","backendDatatype":"java.lang.Float"},"autogen_alias":"sum_employee_id","aggregate":["db.generic.aggregate.sum"]},{"column":"DynamicView_Query.age","label":"DynamicView_Query_age","id":"249zl7gi37p","type":{"dataType":"numeric","backendDatatype":"java.lang.Float"},"autogen_alias":"sum_age","aggregate":["db.generic.aggregate.sum"]},{"column":"DynamicView_Query.employee_name","label":"DynamicView_Query_employee_name","id":"uls8wkxms7h","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"DynamicView_Query_employee_name","groupBy":["db.generic.groupBy.group"]}],"filters":[{"values":["Bhubaneshwar"],"mode":"auto","dataType":"text","orderBy":"","valuesMode":"auto","isFilterEditable":false,"encloseInQuotes":false,"dateTimeToggle":false,"databaseFunction":{},"label":"DynamicView_Query_address","column":"DynamicView_Query.address","backendDataType":"java.lang.String","rangeValuesType":"","id":0,"condition":"EQUALS","valuesRange":{},"rangeSelectionToggole":true}],"customFilterExpression":"${0}","customHavingExpression":"","customFilterExpressionObj":{"0":"${0}"},"customHavingExpressionObj":{},"havingExpressionIndexs":{},"filterExpressionIndexs":{},"options":{"limitBy":1000,"prependTableNameToAlias":true},"visualisation":{"type":"Table","chartGroup":["C3","C3NonAxis","C3Pie"],"selectedType":"Table","settings":{"script":null,"vizscriptsEditMultipleMode":false,"type":"PieChart","vizType":"Charts","chartGroup":["C3","C3NonAxis","C3Pie"]},"vizSelectedScripts":[]},"scripts":[],"styles":"","customStyles":"","customScripts":[]}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</report>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<report>
+    <reportName>Simple Bar Chart</reportName>
+    <visible>true</visible>
+    <metadata>
+        <location>1463377807724/1463377836985</location>
+        <metadataFileName>e9be6771-995b-40eb-a01c-304857a100a1.metadata</metadataFileName>
+    </metadata>
+    <canvas>
+        <columns><![CDATA[[{"column":"meeting_details.meeting_purpose","label":"meeting_details_meeting_purpose","id":"p0dguqf8yz","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"meeting_details_meeting_purpose","groupBy":["db.generic.groupBy.group"],"alias":"Meeting Purpose"},{"column":"travel_details.travel_cost","label":"travel_details_travel_cost","id":"18mxdqx072c","type":{"dataType":"numeric","backendDatatype":"java.lang.Integer"},"autogen_alias":"count_travel_cost","aggregate":["db.generic.aggregate.count"],"alias":"No of Travels"}]]]></columns>
+    </canvas>
+    <state><![CDATA[{"columns":[{"column":"meeting_details.meeting_purpose","label":"meeting_details_meeting_purpose","id":"p0dguqf8yz","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"meeting_details_meeting_purpose","groupBy":["db.generic.groupBy.group"],"alias":"Meeting Purpose"},{"column":"travel_details.travel_cost","label":"travel_details_travel_cost","id":"18mxdqx072c","type":{"dataType":"numeric","backendDatatype":"java.lang.Integer"},"autogen_alias":"count_travel_cost","aggregate":["db.generic.aggregate.count"],"alias":"No of Travels"}],"filters":[],"customFilterExpression":"","customHavingExpression":"","options":{"limitBy":10,"prependTableNameToAlias":true},"visualisation":{"type":"Charts","settings":{"script":null,"type":"BarChart","vizType":"Charts"},"vizSelectedScripts":[]},"scripts":[],"styles":"","customStyles":"","customScripts":[]}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+    <share mandatory="true">
+        <roles mandatory="true">
+            <role id="2">2</role>
+        </roles>
+    </share>
+</report>

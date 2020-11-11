@@ -1,0 +1,115 @@
+<HWF mandatory="true" type="com.helical.HWFEngine">
+	<input mandatory="true">
+		<functionName default="getUserDetails" type="helical.String">functionName</functionName>
+		<emailFunction default="sendMail" type="helical.String">emailFunctionName</emailFunction>
+		<default default="defaultFunction" type="helical.String">default</default>
+	</input>
+	
+	<flow>
+		<execution alias="userDetails" id="1" type="job.executeGroovy">
+			<input>
+				<ref>functionName</ref>
+			</input>
+			<code>
+				<![CDATA[ 
+				import net.sf.json.JSONObject;
+				import com.helical.efw.rules.AuthenticationUtils;
+				import com.helical.efw.singleton.ApplicationProperties;
+				import com.helical.efw.model.User;
+				import com.helical.efw.model.Principal;
+				import org.springframework.security.core.Authentication;
+				import org.springframework.security.core.context.SecurityContextHolder;
+
+				public JSONObject getUserDetails(JSONObject requestJson, JSONObject responseJson) {
+					List<String> userRoles = AuthenticationUtils.getUserRoles();
+					Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+			        Principal currentUser = (Principal) auth.getPrincipal();
+			        User loggedInUser = currentUser.getLoggedInUser();
+					responseJson.put("roledetails", userRoles)
+					responseJson.put("user", loggedInUser.username);
+					responseJson.put("email", loggedInUser.emailAddress);
+					return responseJson;
+				}
+				]]>
+			</code>
+			<output>userresult</output>
+			<action>
+				<executeNext>conditional</executeNext>
+			</action>
+		</execution>
+		<execution alias="conditional" id="2" type="job.conditional">
+			<input>
+				<ref for="test" required="true">userresult</ref>
+			</input>
+			<steps mandatory="true">
+				<expression type="groovy">
+					<![CDATA[input.test.roledetails.contains('ROLE_ADMIN')]]>
+				</expression>
+			</steps>
+			<output>conditionOutput</output>
+			<action>
+				<ifTrue>sendMail</ifTrue>
+				<ifFalse>setBackgroundCache</ifFalse>
+			</action>
+		</execution>
+		<execution alias="setBackgroundCache" id="3" type="job.executeGroovy">
+			<input>
+				<ref for="functionName">default</ref>
+			</input>
+			<output>cacheOutput</output>
+			<code>
+				<![CDATA[ 
+				import net.sf.json.JSONObject;
+				import com.helical.hwf.component.BackgroundCache;
+
+				public JSONObject defaultFunction(JSONObject req, JSONObject responseJson) {
+					JSONObject requestJson = new JSONObject();
+			        requestJson.put("url", "/visualizeAdhoc.html");
+					requestJson.put("dir", "1451295254141");
+			        requestJson.put("file", "1196d691-7548-45c3-8c6b-ad06bb00de4a.report");
+
+			        requestJson.put("formData", "eyJsb2NhdGlvbiI6IjE0NTEyOTUyNTQxNDEiLCJtZXRhZGF0YUZpbGVOYW1lIjoiMTE5NmQ2OTEtNzU0OC00NWMzLThjNmItYWQwNmJiMDBkZTRhLm1ldGFkYXRhIiwiY29sdW1ucyI6W3siY29sdW1uIjoiaGRpLmhfdXNlcnMuZW5hYmxlZCIsImFsaWFzIjoiaF91c2Vyc19lbmFibGVkIn0seyJjb2x1bW4iOiJoZGkuaF91c2Vycy5pZCIsImFsaWFzIjoiaF91c2Vyc19pZCJ9XSwiZnVuY3Rpb25zIjp7fSwicHJlcGVuZFRhYmxlTmFtZVRvQWxpYXMiOnRydWUsImxpbWl0QnkiOjEwMDB9");
+
+			        BackgroundCache backgroundCache = new BackgroundCache();
+			        backgroundCache.prepareCache(requestJson);
+					responseJson.put("message", "Running the backgroundCache");
+		            return responseJson;
+				}
+				]]>
+			</code>
+		</execution>
+		
+		<execution alias="sendMail" id="4" type="job.executeGroovy">
+			<input>
+				<ref for="functionName">emailFunction</ref>
+				<ref for="data">userresult</ref>
+			</input>
+			<code>
+				<![CDATA[ 
+				import net.sf.json.JSONObject;
+				import com.helical.efw.export.SendMail;
+				
+				public JSONObject sendMail(JSONObject requestJson, JSONObject responseJson) {
+					String[] mail = new String[1];
+					mail[0] = requestJson.data.email;
+					SendMail sendMail = new SendMail();
+					try {
+						sendMail.sendMessage("mail.companyname.com", "587",mail ,"noreply@companyname.com", "no", "yes", "", "", "TestMail", "Mail sent from groovy script");
+						responseJson.put("message", "mail sent successfully");
+					} catch(Exception ex){
+						responseJson.put("message", "mail cannot be sent. Please check logs. " + ex.getMessage());
+					}
+					return responseJson;
+				}
+				]]>
+			</code>
+			<output>mailResult</output>
+		</execution>
+	</flow>
+
+	<output mandatory="true" viewPage="" showStack="true" showFlow="true">
+		<mailResult type="com.helical.print">response</mailResult>
+		<userresult type="com.helical.print">response</userresult>
+		<cacheOutput type="com.helical.print">output</cacheOutput>
+	</output>
+</HWF>

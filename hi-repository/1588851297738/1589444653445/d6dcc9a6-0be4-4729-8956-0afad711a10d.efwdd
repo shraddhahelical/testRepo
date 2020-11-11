@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efwdd>
+    <fileName>DyanmicViewDashboard</fileName>
+    <efw>d6dcc9a6-0be4-4729-8956-0afad711a10d.efw</efw>
+    <visible>true</visible>
+    <description>Efw Dashboard Designer</description>
+    <state><![CDATA[{"variables":[["DynamicView_Query_address","Delhi"]],"components":{"h41utwuyurs":{"gs_attr":{"x":0,"y":0,"height":16,"width":33},"name":"h41utwuyurs","metadata":{"dir":"/Adhoc Dynamic View/Derby DB/","name":"DynamicViewReport_SelectQuery"},"uid":"h41utwuyurs","label":"DynamicViewReport_SelectQuery","requestParameters":{"DynamicView_Query_address":"DynamicView_Query_address"},"executeAtStart":true,"type":"dashboard-component","options":{"dir":"1588851297738/1589444653445","file":"76e611b7-9d37-4b5c-ab3c-3272c50d1133.report","ext":"report","compType":"Adhoc","uid":"h41utwuyurs","iframe":false},"listeners":["DynamicView_Query_address"]},"5v8pahuzzl":{"gs_attr":{"x":33,"y":0,"height":16,"width":33},"dataType":"text","orderBy":"","dataSource":{"location":"1588851297738/1589444653445","metadataFileName":"6c26eb11-cbea-4b33-8dae-e94d9c65878e.metadata"},"parameters":["DynamicView_Query_address"],"name":"5v8pahuzzl","uid":"5v8pahuzzl","alias":"DynamicView_Query_address","databaseFunction":{},"column":"DynamicView_Query.address","adhoc":true,"executeAtStart":true,"type":"dashboard-component","database":"HIUSER","options":{"compType":"Select","display":"DynamicView_Query_address","value":"DynamicView_Query_address","multiple":false,"uid":"5v8pahuzzl","iframe":false}}},"dashboardConfig":{"id":"dashboard"},"css":"","script":"","printOptions":{"templateId":"Dashboard","title":"Dashboard"},"componentSettings":{"h41utwuyurs":{"header":true,"minimize":false,"maximize":false,"export":false,"editReport":false},"5v8pahuzzl":{"header":true,"minimize":false,"maximize":false,"export":false,"editReport":false}},"gridWidthOption":100,"toggleIframes":false}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</efwdd>

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<services>
+    <!-- Without the mandatory attribute the json library is missing the first child node. So, any type should always have the mandatory attribute. -->
+    <!-- There should be only one node for each feature type in a single xml file. -->
+    <!-- The type(core) represents a feature-->
+    <description>Configurable services of HDI</description>
+    <core mandatory="true">
+        <!-- Acutal serviceType -->
+        <dataSource>
+            <!-- The service implementation -->
+			<fileOperationOverNetwork  class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+			<loadDriver class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+			<updateDrillConfig  class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+			<deleteUploadedDrillFiles  class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+			<drillCsvDatasource  class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+			<drill  class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+			<drillConfig  class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+			<reportFiles  class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+			<sheduledReports class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+			<listing class="com.helicalinsight.datasource.DataSourceDelete"/>
+			<delete class="com.helicalinsight.datasource.DataSourceDelete"/>
+            <read class="com.helicalinsight.datasource.DataSourceReader"/>
+            <write class="com.helicalinsight.adhoc.services.DataSourceWriter"/>
+            <test class="com.helicalinsight.adhoc.services.DataSourceConnectionTester"/>
+            <update class="com.helicalinsight.adhoc.services.DataSourceUpdateHandler"/>
+            <quickTest class="com.helicalinsight.datasource.QuickConnectionTest"/>
+            <shutdown class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+            <cachedDS class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+			<cacheStats class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+			<abortWorker class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+			
+        </dataSource>
+        <!-- To update any resource that has security and share feature -->
+        <share mandatory="true">
+            <update class="com.helicalinsight.resourcesecurity.ShareService"/>
+            <fetchInfo class="com.helicalinsight.resourcesecurity.ShareService"/>
+            <retrieveSharedInfo class="com.helicalinsight.resourcesecurity.ShareService"/>
+        </share>
+    </core>
+    <!-- A type that represents a feature adhoc-->
+    <adhoc mandatory="true">
+        <query mandatory="true">
+            <discover class="com.helicalinsight.nlp.NlqaService"/>
+            <cancelQuery class="com.helicalinsight.adhoc.services.CustomScriptService"/>
+            <queryDetails class="com.helicalinsight.adhoc.services.CustomScriptService"/>
+        </query>
+        <metadata mandatory="true">
+		<dialectInformation class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation" />
+            <get class="com.helicalinsight.adhoc.services.MetadataProvider"/>
+            <fetchMetadata class="com.helicalinsight.adhoc.services.MetadataService"/>
+            <update class="com.helicalinsight.adhoc.services.MetadataUpdateService"/>
+            <delete class="com.helicalinsight.adhoc.services.MetadataDeleteService"/>
+			<deleteMetadata class="com.helicalinsight.adhoc.services.MetadataDeleteService"/>
+            <getFunctions class="com.helicalinsight.adhoc.services.FunctionsListService"/>
+            <metadataWorkflow class="com.helicalinsight.adhoc.services.MetadataWorkflowService" workerBean="metadataRetrieval" serviceImplBean="autoTriggerCheckImpl" />
+			
+								  
+				 <cacheMetadata class="com.helicalinsight.adhoc.services.MetadataWorkflowService"/>				  
+								  
+		   
+            <saveWorkflow class="com.helicalinsight.adhoc.services.MetadataWorkflowService"/>
+            <retrieveViewLabels class="com.helicalinsight.adhoc.services.QueryExecutorService"/>
+            <saveView class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+            <retrieveView class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+            <getSecurity class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+            <security class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+            <access class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+            <evaluateSecurity class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+			<sync class="com.helicalinsight.spark.SparkMetadataService"/>
+			<retrieveJoins class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+			<fetchColumns class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+			<fetchJoins class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+			<dumpCube class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+			<cachedConnectionStatus class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+			<fetchAllCubes class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+			<fetchPhase class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+        </metadata>
+        <report mandatory="true">
+            <generateQuery class="com.helicalinsight.adhoc.services.QueryGeneratorService"/>
+            <executeQuery class="com.helicalinsight.adhoc.services.QueryExecutorService"/>
+            <fetchData class="com.helicalinsight.adhoc.services.QueryGeneratorAndExecutorService"/>
+            <fetchDataSpark class="com.helicalinsight.adhoc.services.QueryGeneratorAndExecutorService"/>
+            <saveReport class="com.helicalinsight.adhoc.services.AdhocReportService"/>
+            <deleteReport class="com.helicalinsight.adhoc.services.ReportDeleteService"/>
+            <visualize class="com.helicalinsight.adhoc.services.VisualizationService"/>
+            <getReport class="com.helicalinsight.adhoc.services.VisualizationService"/>
+            <!-- To fix the bug related to being able to edit a shared adhoc report, this new service is created -->
+            <getReportForEdit class="com.helicalinsight.adhoc.services.VisualizationService"/>
+																								  
+        </report>
+        <customScript mandatory="true">
+            <save class="com.helicalinsight.adhoc.services.CustomScriptService"/>
+            <update class="com.helicalinsight.adhoc.services.CustomScriptService"/>
+            <fetch class="com.helicalinsight.adhoc.services.CustomScriptService"/>
+            <delete class="com.helicalinsight.adhoc.services.CustomScriptService"/>
+            <search class="com.helicalinsight.adhoc.services.CustomScriptService"/>
+            <getSnippets class="com.helicalinsight.adhoc.services.CustomScriptService"/>
+        </customScript>
+        <threadpool mandatory="true">
+            <queryManager class="com.helicalinsight.adhoc.services.CustomScriptService"/>
+        </threadpool>
+    </adhoc>
+	<hcr mandatory="true">
+		<report mandatory="true">
+			<generateReport  class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+			<saveReportState class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+			<fetchReportState class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+			<deleteReportState class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+			<executeReportQuery class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+		</report>
+	</hcr>
+    <dashboard mandatory="true">
+        <efwdd mandatory="true">
+            <designer class="com.helicalinsight.adhoc.services.DashboardDesignerService"/>
+            <fetch class="com.helicalinsight.adhoc.services.DashboardDesignerService"/>
+            <delete class="com.helicalinsight.adhoc.services.DashboardDesignerService"/>
+        </efwdd>
+		<efwce mandatory="true">
+            <designer class="com.helicalinsight.adhoc.services.DashboardDesignerService"/>
+            <fetch class="com.helicalinsight.adhoc.services.DashboardDesignerService"/>
+            <delete class="com.helicalinsight.adhoc.services.DashboardDesignerService"/>
+        </efwce>
+    </dashboard>
+    <content mandatory="true">
+        <static mandatory="true">
+            <getContents class="com.helicalinsight.export.ExportService"/>
+       </static>
+    </content>
+    <print mandatory="true">
+        <export mandatory="true">
+            <getTemplateList class="com.helicalinsight.export.ExportService"/>
+            <getExportSettings class="com.helicalinsight.export.ExportService"/>
+            <getTemplate class="com.helicalinsight.export.ExportService"/>
+            <deleteTemplate class="com.helicalinsight.export.ExportService"/>
+            <saveTemplate class="com.helicalinsight.export.ExportService"/>
+            <getContents class="com.helicalinsight.export.ExportService"/>
+            <xls class="com.helicalinsight.export.ExportService"/>
+			<phantomActions class="com.helicalinsight.export.ExportService"/>
+        </export>
+    </print>
+    <monitor mandatory="true">
+        <scheduling mandatory="true">
+            <schedule class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+			<migrateSchedules class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+			<generateCron class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+        </scheduling>
+        <cache mandatory="true">
+            <updateConfiguration class="com.helicalinsight.admin.management.ResourceManagerService"/>
+            <size class="com.helicalinsight.admin.management.ResourceManagerService"/>
+            <delete class="com.helicalinsight.admin.management.ResourceManagerService"/>
+            <dump class="com.helicalinsight.admin.management.ResourceManagerService"/>
+            <clean class="com.helicalinsight.admin.management.ResourceManagerService"/>
+            <refresh class="com.helicalinsight.admin.management.ResourceManagerService"/>
+			
+        </cache>
+        <system mandatory="true">
+            <systemInfo class="com.helicalinsight.admin.management.ResourceManagerService"/>
+            <tempFile class="com.helicalinsight.admin.management.ResourceManagerService"/>
+            <log class="com.helicalinsight.admin.management.ResourceManagerService"/>
+            <readWrite class="com.helicalinsight.admin.management.ResourceManagerService"/>
+            <closePlugin class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+            <availablePlugins class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+            <loadedPlugins class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+            <reportStats class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+            <datasourceCount class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+            <diskSpace class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+			<management class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+			<customWatcher class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+			<deletePlugin class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+			<readProperty class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+			<noSqlConfig  class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+			<updateNoSql  class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+			<mailStats class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+	    </system>
+    </monitor>
+	<hwf mandatory="true">
+		<hwfFile mandatory="true">
+			<create class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+			<fetch  class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+			<delete class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+			<types  class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+	    </hwfFile>
+	</hwf>
+    <util mandatory="true">
+        <io mandatory="true">
+            <getExtensions   class="com.helicalinsight.admin.management.FileExtensionService"/>
+			<getTypesDetails class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+			<imageService class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+        </io>
+		<fileBrowser mandatory="true">
+			<search class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+			<refreshFileBrowser class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+        </fileBrowser>
+    </util>
+    <!-- <import>
+        <xml name="exampleImportServices.xml"/>
+    </import> -->
+	
+	<common mandatory="true">
+        <!-- Acutal serviceType -->
+        <abort mandatory="true">
+			<abortRequest class="com.helicalinsight.efw.serviceframework.GenericServiceImplementation"/>
+		</abort>
+	</common>
+</services>

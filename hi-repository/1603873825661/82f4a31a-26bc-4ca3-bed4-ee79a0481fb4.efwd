@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<EFWD>
+    <DataSources>
+        <Connection id="1" type="global.jdbc">
+            <globalId>5</globalId>
+            <security>
+                <createdBy>1</createdBy>
+                <organization></organization>
+            </security>
+        </Connection>
+    </DataSources>
+    <DataMaps>
+        <DataMap id="1" connection="1" type="sql">
+            <Name>Query1</Name>
+            <Query><![CDATA[select * from MaintenanceOrders
+order by OrderType desc]]></Query>
+        </DataMap>
+    </DataMaps>
+</EFWD>

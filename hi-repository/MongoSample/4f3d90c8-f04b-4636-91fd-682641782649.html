@@ -1,0 +1,24 @@
+<div id='report'></div>
+<div id="report1"></div><script id="e7929ce8-138c-4d71-a1ac-f8033b7772e5">var dashboard = Dashboard 
+ dashboard.resetAll() 
+  
+        Dashboard.setVariable('cuisine',['FAR']);
+var cuisine = {
+    name: "cuisine" ,
+    type:  "select",             
+    parameters:["cuisine"],
+    options:{
+        multiple: true,             // it can be true or false
+        display : 'Airport_Code',
+        value : 'Airport_Code',
+        placeholder: 'select value'
+    },
+    htmlElementId : "#report",              
+    executeAtStart: true,            // it can be true or false
+    map: 1,
+    efwd : {
+        file: '4f3d90c8-f04b-4636-91fd-682641782649.efwd'
+    },
+}; 
+var components = [cuisine];
+dashboard.init(components);</script>

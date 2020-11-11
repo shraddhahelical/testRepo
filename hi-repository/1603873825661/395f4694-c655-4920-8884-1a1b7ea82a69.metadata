@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<metadata type="db.generic" databaseType="MySQL 5.6.40">
+    <fileName>Efacec Metadata</fileName>
+    <connectionType>global.jdbc</connectionType>
+    <visible>true</visible>
+    <connection connectionType="global.jdbc" subType="dynamicDataSource">
+        <dialect>org.hibernate.dialect.MySQLDialect</dialect>
+        <connectionId>5</connectionId>
+        <driverClass reference="mysql">com.mysql.jdbc.Driver</driverClass>
+    </connection>
+    <database name="hiee_3" catalog="hiee_3" schema="">
+        <tables>
+            <table id="e88719140fbbeeac618ba6569cde5445" name="CircuitBreaker" aliasName="CircuitBreaker">
+                <columns>
+                    <column name="Id" id="a45a1c01-d147-438c-8643-5a78a0d939ec" aliasName="Id" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="EquipmentId" id="3bc9e4e5-e282-4682-b10f-536aef665a62" aliasName="EquipmentId" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="VoltLevel" id="08940ed6-f374-4b91-8317-b22d7b7b2935" aliasName="VoltLevel" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="ObjType" id="d26b2256-a393-41d3-9ea0-c62a05957122" aliasName="ObjType" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="YearBuilt" id="d08beb00-bfcc-45db-bef6-c6715e26e291" aliasName="YearBuilt" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="InstallDate" id="3505071d-9611-4c0a-a73f-b3587e4ac6c5" aliasName="InstallDate" type="java.sql.Date" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="Model" id="3538cd87-5028-4795-a242-0f63e824bc41" aliasName="Model" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="SerialNumber" id="cfe8c332-c55e-4735-8bfe-fe3857d8d50d" aliasName="SerialNumber" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="MaintTeam" id="0889c556-b25b-44ce-ab11-bfd5628122cb" aliasName="MaintTeam" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="InstalationCode" id="3cc1090c-f16c-4c5d-9686-9e463875bee9" aliasName="InstalationCode" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="CurrentStatus" id="6778e4aa-fa80-4f83-bef5-24c01ba2dec8" aliasName="CurrentStatus" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="ShortCircuitCurrent" id="692d45b8-d009-46a5-939e-59101243eb7e" aliasName="ShortCircuitCurrent" type="java.lang.Float" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="NominalCurrent" id="b2fda963-9a84-4d41-afd5-f48971dc515f" aliasName="NominalCurrent" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="AppType" id="6f00a654-301a-49cc-b51e-d6a9340c4b9e" aliasName="AppType" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="ITOMS" id="c214d5c8-468d-4b8c-8621-77820fbe4df4" aliasName="ITOMS" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="Dielectric" id="350f9d18-40a0-4262-8525-b89d737c4235" aliasName="Dielectric" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="Criticality" id="c2cff0af-8d5d-452b-9fc8-ade7daa812bb" aliasName="Criticality" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="I2T0" id="d93fb1fc-343a-4b80-8e93-f5ba474d12b8" aliasName="I2T0" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="I2T4" id="62469273-00a3-429e-968f-e9a8f757c0d0" aliasName="I2T4" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="I2T8" id="022ab610-e48c-4e36-bda9-3fe1208600e2" aliasName="I2T8" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="Wear" id="5b147343-ab39-4e98-8b44-507a93fd1c6d" aliasName="Wear" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="WearLM" id="0629ca2d-2826-418b-8854-25e214f4f334" aliasName="WearLM" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="LastOperation" id="798bd89b-f372-4626-9137-722a097c124b" aliasName="LastOperation" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="CHI" id="b14dbde6-ddaa-4799-8939-37e5ea00f51e" aliasName="CHI" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                </columns>
+            </table>
+            <table id="5c61d0b3e9c73b2d38f95d8d2077dfa9" name="MaintenanceOrders" aliasName="MaintenanceOrders">
+                <columns>
+                    <column name="Id" id="7313a125-b3c9-41a9-aa70-bfec9ec3569c" aliasName="Id" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="OrderNumber" id="2d098502-4b32-458c-81b6-4a50991c4dab" aliasName="OrderNumber" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="OrderType" id="dfda2694-61bd-4091-aa50-928a70e00a6c" aliasName="OrderType" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="AssetId" id="24114da0-f35d-4e2c-9971-f8e23a22493b" aliasName="AssetId" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="Description" id="ccec6971-958b-431e-8518-28ba117cc293" aliasName="Description" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="InstalationCode" id="2b410109-e01e-4038-ac40-4f4417b229d8" aliasName="InstalationCode" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="SystemStatus" id="0bc4423c-b05e-4a8c-9690-cedc8aa7974c" aliasName="SystemStatus" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="EntryDate" id="7fd12687-d5a4-4fa8-a874-3519f56fe990" aliasName="EntryDate" type="java.sql.Timestamp" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="StartDate" id="79a18496-df52-4704-a2d9-b533eb3e2301" aliasName="StartDate" type="java.sql.Timestamp" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="EndDate" id="dcdfa4b8-8306-414f-ac81-69eb3d593b6b" aliasName="EndDate" type="java.sql.Timestamp" defaultFunction="db.generic.groupBy.group"/>
+                </columns>
+            </table>
+            <table id="d9268e96f337aa7dab829dc555cd3a60" name="Fleet_HI_Evolution" aliasName="Fleet_HI_Evolution">
+                <columns>
+                    <column name="Year" id="867ebc8c-bb75-4770-8095-5f2e53ba7434" aliasName="Year" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="No_Of_CBs" id="c64a3098-00d2-4473-8aba-bcf98c529cde" aliasName="No_Of_CBs" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="status" id="41e8c8a8-6c60-4442-a8e9-9e93e7a961ff" aliasName="status" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="Id" id="26c321b1-695c-4da1-a23b-5dc7fde0fff8" aliasName="Id" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="HI" id="bcfdc80a-dfc8-4133-b048-60287710a372" aliasName="HI" type="java.lang.Double" defaultFunction="db.generic.aggregate.sum"/>
+                </columns>
+            </table>
+            <table id="fd85f325f5099e1c0467ef326e5a1c85" name="Assets" aliasName="Assets">
+                <columns>
+                    <column name="Id" id="f856283d-8f25-4803-ad40-37bb455b5b62" aliasName="Id" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="Name" id="3fbcaa05-b7df-47dd-960e-fd0e9152a5b1" aliasName="Name" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="Description" id="67122103-6520-4551-8140-d5bdf9a1dd4f" aliasName="Description" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="Latitude" id="97308a95-0dde-436c-be2f-ef385e34176d" aliasName="Latitude" type="java.lang.Long" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="Longitude" id="b7048229-7b55-4ec8-af29-a085c2dfa601" aliasName="Longitude" type="java.lang.Long" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="Altitude" id="216aa884-551d-4ec0-87a1-3b5fd569719f" aliasName="Altitude" type="java.lang.Long" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="Type" id="3221f200-e3f3-48f0-a6e5-2d48800dba6e" aliasName="Type" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="ParentId" id="881b6db9-228f-46f4-b0db-51b7a9a2e833" aliasName="ParentId" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="CreationDate" id="27aaf01e-55a7-4186-bbd4-e3d17979149d" aliasName="CreationDate" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="OperationalDate" id="09c6945f-b90c-4714-9587-4bea97e6725f" aliasName="OperationalDate" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="DecommissionedDate" id="4305b9ac-de06-4d69-93e9-be7852b08cc7" aliasName="DecommissionedDate" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="CreationMethod" id="6cb2c272-77cd-413c-99cf-e525530b7cd4" aliasName="CreationMethod" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="Status" id="9db8396e-5ef9-4212-a7fb-336786e018fa" aliasName="Status" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="Code" id="d682d962-de25-4825-a15b-0befb1bc0f6f" aliasName="Code" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="Criticality" id="28faa918-d957-44b2-a30b-5511ac6f1890" aliasName="Criticality" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="ApprovedOpSettingId" id="94c4c98a-a7e0-4880-8cbe-db79323ece83" aliasName="ApprovedOpSettingId" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="LastOpSettingId" id="37b33051-312c-4087-be2c-e2db086e5ca8" aliasName="LastOpSettingId" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                </columns>
+            </table>
+            <table id="9e032f16cb75abec2f46414a9a3d232e" name="CBOperations" aliasName="CBOperations">
+                <columns>
+                    <column name="Id" id="a5a0ba7a-ece0-4bd9-942e-985c7aa8b23d" aliasName="Id" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="CircuitBreakerId" id="0feb7e97-2121-4fb2-994f-1cf50456b033" aliasName="CircuitBreakerId" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="OperType" id="85e6458b-1166-4cea-a44d-b9493a1fe552" aliasName="OperType" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="SourceDateTime" id="e01c046f-a132-4ec0-a841-7e2a904ba908" aliasName="SourceDateTime" type="java.sql.Timestamp" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="SourceType" id="62a3da53-59e7-488b-87a5-a3d76d5e3f2a" aliasName="SourceType" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="SwitchCurrentF0" id="9fdf2cdf-7e02-42e3-86a9-577c61df0e7e" aliasName="SwitchCurrentF0" type="java.lang.Double" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="SwitchCurrentF4" id="75e9f0a5-d59a-4976-8787-8bcba6847bba" aliasName="SwitchCurrentF4" type="java.lang.Double" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="SwitchCurrentF8" id="a598f82b-1f34-40a2-94d2-2d3f165e3578" aliasName="SwitchCurrentF8" type="java.lang.Double" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="I2TF0" id="22a3e4e2-f335-4e84-bacc-054d48a51355" aliasName="I2TF0" type="java.lang.Double" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="I2TF4" id="4ad23275-5de2-4981-b068-4b8d68455d1b" aliasName="I2TF4" type="java.lang.Double" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="I2TF8" id="feabce68-229c-45a9-b788-2a19859d4c05" aliasName="I2TF8" type="java.lang.Double" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="OperTime" id="4207cf9a-e826-4835-b023-a13d37e128a3" aliasName="OperTime" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="PoleDiscrepancy" id="ce9c0cd7-851e-4076-9b8e-06af4c7c92b5" aliasName="PoleDiscrepancy" type="java.lang.Integer" defaultFunction="db.generic.aggregate.sum"/>
+                    <column name="ShortCircuitDuration" id="8dc28b62-aef4-4c6a-a368-5e03ff850783" aliasName="ShortCircuitDuration" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="DisturbanceRecordId" id="104ead8c-fa32-4261-a28e-211c62b2d098" aliasName="DisturbanceRecordId" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                    <column name="HealthIndex" id="8002591a-5f58-41be-af9d-0fbf701b116f" aliasName="HealthIndex" type="java.lang.String" defaultFunction="db.generic.groupBy.group"/>
+                </columns>
+            </table>
+        </tables>
+        <relationships>
+            <relationship table="Assets" referenceTable="CBOperations">
+                <join id="51724c0753c9a8db3ef27e7c9a5db1e2" type="inner" operator="=">
+                    <left table="Assets" column="Id"/>
+                    <right table="CBOperations" column="Id"/>
+                </join>
+            </relationship>
+            <relationship table="Assets" referenceTable="MaintenanceOrders">
+                <join id="d2af5ff04080fe6e3a437b00ad4e13eb" type="inner" operator="=">
+                    <left table="Assets" column="Id"/>
+                    <right table="MaintenanceOrders" column="AssetId"/>
+                </join>
+            </relationship>
+            <relationship table="CBOperations" referenceTable="CircuitBreaker">
+                <join id="fddd42ab8bc1837da32a0d735b5671ed" type="inner" operator="=">
+                    <left table="CBOperations" column="CircuitBreakerId"/>
+                    <right table="CircuitBreaker" column="Id"/>
+                </join>
+            </relationship>
+        </relationships>
+        <views/>
+    </database>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</metadata>

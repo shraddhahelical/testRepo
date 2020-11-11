@@ -1,0 +1,760 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<metadata type="db.generic" databaseType="Microsoft SQL Server 12.00.1900">
+    <fileName>mtd_Children</fileName>
+    <connectionType>global.jdbc</connectionType>
+    <visible>true</visible>
+    <connection connectionType="global.jdbc" subType="dynamicDataSource">
+        <dialect>org.hibernate.dialect.SQLServerDialect</dialect>
+        <connectionId>2</connectionId>
+        <driverClass reference="sqlserver">com.microsoft.sqlserver.jdbc.SQLServerDriver</driverClass>
+    </connection>
+    <database name="QA_reportDB.dbo" catalog="QA_reportDB" schema="dbo">
+        <tables>
+            <table id="009e3df8-15e6-462d-9202-eccebbf144f8" name="ChildCourtOrdersView" type="view" aliasName="ChildCourtOrdersView">
+                <columns>
+                    <column name="Centre" id="6a6bde15-9c5a-4b99-9acc-1514544af1f2" aliasName="Centre" type="java.lang.String"/>
+                    <column name="Organisation" id="26425355-2429-4326-9260-c08b0abf1f55" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="Provider" id="27d5534e-2057-4afa-92b2-b73f245af2a6" aliasName="Provider" type="java.lang.String"/>
+                    <column name="Child" id="6a130d48-632a-4344-836d-de9e253dfe09" aliasName="Child" type="java.lang.String"/>
+                    <column name="Family" id="4546be60-3ac7-4df5-a7aa-20b476936ecd" aliasName="Family" type="java.lang.String"/>
+                    <column name="Child DOB" id="10d37e85-3b2a-48fa-aa1c-2fc5ac41e4ff" aliasName="Child DOB" type="java.lang.String"/>
+                    <column name="Court Orders" id="03a58a6c-888f-4260-8ed7-fc0fe5121268" aliasName="Court Orders" type="java.lang.String"/>
+                    <column name="Details" id="e3b8909d-e9b6-4559-8728-b1ac68a97efa" aliasName="Details" type="java.lang.String"/>
+                    <column name="Document Uploaded" id="429cbf05-0c2d-430c-8222-b394f463551b" aliasName="Document Uploaded" type="java.lang.String"/>
+                    <column name="Expiry Date" id="0aa14012-da0b-4db2-82a3-30d1e84964e5" aliasName="Expiry Date" type="java.lang.String"/>
+                    <column name="Order Relates to" id="d1c763a1-fb05-458d-a052-8b17a8b40328" aliasName="Order Relates to" type="java.lang.String"/>
+                    <column name="Authorised Contact" id="5a7f1a41-ad25-410d-9520-a14384ec2385" aliasName="Authorised Contact" type="java.lang.String"/>
+                    <column name="Rooms" id="92b546ff-09a0-4a41-ba0e-b8ec79027b79" aliasName="Rooms" type="java.lang.String"/>
+                    <column name="RoomName" id="31fe5b95-9664-4864-ad47-86753caa432d" aliasName="RoomName" type="java.lang.String"/>
+                    <column name="Child Status" id="92b93cb3-3d94-4e93-ab4a-e9b5c3825d36" aliasName="Child Status" type="java.lang.String"/>
+                    <column name="Family Status" id="0f893fa9-4a88-4233-8282-4955a626d434" aliasName="Family Status" type="java.lang.String"/>
+                    <column name="OrganisationId" id="c9555454-438d-4715-99fa-f96e25071503" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="ProviderId" id="28cd8d9d-a013-4eb3-b277-a716ad00b363" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="CentreId" id="2b4a9279-5791-4490-8091-7f8231fbabef" aliasName="CentreId" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="b7d6639d-beab-4c43-bd15-77edb9d50a17" name="ChildMedicalView" type="view" aliasName="ChildMedicalView">
+                <columns>
+                    <column name="Centre" id="deb87924-926c-47d1-bf98-2ba07292fa4d" aliasName="Centre" type="java.lang.String"/>
+                    <column name="Organisation" id="43457a6f-5263-44ec-bcd2-e40285dfebf1" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="Provider" id="8e826a33-0d53-4d5d-ac08-3d544b41a34c" aliasName="Provider" type="java.lang.String"/>
+                    <column name="Child" id="05cdae12-07b6-4b10-be01-9e944e218a42" aliasName="Child" type="java.lang.String"/>
+                    <column name="Family" id="6b3a9cd9-04b6-4c39-950b-c28162bef4d4" aliasName="Family" type="java.lang.String"/>
+                    <column name="Child DOB" id="df69ff9b-c649-4538-a4d5-63fe7bc91656" aliasName="Child DOB" type="java.lang.String"/>
+                    <column name="Medical Clinic Name" id="89cb6765-589a-425c-8464-78f1fdc1016d" aliasName="Medical Clinic Name" type="java.lang.String"/>
+                    <column name="Doctor Name" id="af4cf68c-606a-4bb2-a32f-91b80f1c28c0" aliasName="Doctor Name" type="java.lang.String"/>
+                    <column name="Clinic/Doctor Contact No" id="96b2c66e-77c8-429a-9569-2a2c4ecc5876" aliasName="Clinic/Doctor Contact No" type="java.lang.String"/>
+                    <column name="Clinic Address" id="a1ecad52-6add-4a09-9acf-c047b74f1f1b" aliasName="Clinic Address" type="java.lang.String"/>
+                    <column name="Maternal Clinic" id="ab172a59-5314-494f-b0d9-5a20bbba9bb5" aliasName="Maternal Clinic" type="java.lang.String"/>
+                    <column name="Nurse Name" id="7c472e04-d603-4772-953a-f45d16f7bdf7" aliasName="Nurse Name" type="java.lang.String"/>
+                    <column name="Nurse/Clinic Contact No" id="32bd15f3-ec6e-49c7-aab1-ae4973868f44" aliasName="Nurse/Clinic Contact No" type="java.lang.String"/>
+                    <column name="Medicare Number" id="8546a656-cd43-46ff-824b-962324a97c89" aliasName="Medicare Number" type="java.lang.String"/>
+                    <column name="Medicare Exp Date" id="a0321924-2d81-4fbc-8cbc-6f529d25f22c" aliasName="Medicare Exp Date" type="java.lang.String"/>
+                    <column name="Ambulance Sub No" id="1f6c8d70-8e99-464e-acbe-41696c4125dc" aliasName="Ambulance Sub No" type="java.lang.String"/>
+                    <column name="Amb Exp Date" id="5d995758-06d6-4906-8988-3f74521d1332" aliasName="Amb Exp Date" type="java.lang.String"/>
+                    <column name="Private Insurance Provider" id="3e3cdae6-dabb-4eb1-a098-dbb89f5765b3" aliasName="Private Insurance Provider" type="java.lang.String"/>
+                    <column name="Insurance No" id="1cd0b874-1484-4abf-9a6f-084c0280be58" aliasName="Insurance No" type="java.lang.String"/>
+                    <column name="Rooms" id="348da726-fb57-4242-9f2b-dab6b6a95e5a" aliasName="Rooms" type="java.lang.String"/>
+                    <column name="RoomName" id="8b9cac9d-12f8-4b52-8d01-531c6e694304" aliasName="RoomName" type="java.lang.String"/>
+                    <column name="Child Status" id="857134ba-682b-4794-a29e-4071970e53a0" aliasName="Child Status" type="java.lang.String"/>
+                    <column name="Family Status" id="df55937f-f45d-46cc-a9f3-00a5558b9d1d" aliasName="Family Status" type="java.lang.String"/>
+                    <column name="OrganisationId" id="459de753-4203-4b2e-995c-6053bfd0ac62" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="ProviderId" id="a28bb081-d626-46b2-9975-97455508a5c9" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="CentreId" id="a6d10c3d-8726-4194-b700-6c9722be48e1" aliasName="CentreId" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="48100b60-b0e6-408f-b4fb-13ced8a00548" name="ChildConsentView" type="view" aliasName="ChildConsentView">
+                <columns>
+                    <column name="Centre" id="924e2085-7dc5-47d4-98d6-b8b24e19ca5b" aliasName="Centre" type="java.lang.String"/>
+                    <column name="Organisation" id="3e654d3b-0a9a-4692-b198-8bf4ef9cd628" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="Provider" id="78f27c03-2789-4eec-8c6c-58ce1920123e" aliasName="Provider" type="java.lang.String"/>
+                    <column name="Child" id="26356a57-f039-48c8-9825-6a7bc3c40d32" aliasName="Child" type="java.lang.String"/>
+                    <column name="Family" id="b527ae8e-540f-4b89-a7d3-95fd7e19e9e4" aliasName="Family" type="java.lang.String"/>
+                    <column name="Events Participation" id="b2260f03-df68-4ddc-9383-10152e25db2d" aliasName="Events Participation" type="java.lang.String"/>
+                    <column name="Restricated Events" id="a63b3373-18e2-4ca6-a55c-534c8aee28df" aliasName="Restricated Events" type="java.lang.String"/>
+                    <column name="Generic Sunscreen" id="e9384319-9ed9-4811-8677-08be52cd40ce" aliasName="Generic Sunscreen" type="java.lang.String"/>
+                    <column name="Requested Brand" id="a9bbe4d5-ff10-498e-a38c-2eb09bb950d6" aliasName="Requested Brand" type="java.lang.String"/>
+                    <column name="Centre Display1" id="fd6b3635-04c3-4ac4-9d8f-5cf06636db7b" aliasName="Centre Display1" type="java.lang.String"/>
+                    <column name="Centre Display" id="1155d5f8-ce43-4700-b4b6-6503079cfcb4" aliasName="Centre Display" type="java.lang.String"/>
+                    <column name="Centre Promotion1" id="637791af-f815-42ef-a8aa-7807e29fd06e" aliasName="Centre Promotion1" type="java.lang.String"/>
+                    <column name="Centre Promotion" id="4122fc6f-78ba-480d-8636-154bbad5a589" aliasName="Centre Promotion" type="java.lang.String"/>
+                    <column name="Group Post1" id="0e564229-f64b-4819-a5ae-a49233999586" aliasName="Group Post1" type="java.lang.String"/>
+                    <column name="Group Post" id="31a26ba3-8a4b-48ec-9786-93582e72c83c" aliasName="Group Post" type="java.lang.String"/>
+                    <column name="Rooms" id="ddd92aac-1b78-45da-8412-d7ee31204ae0" aliasName="Rooms" type="java.lang.String"/>
+                    <column name="RoomName" id="b26bc364-fdf2-4b26-86e5-53bf1650dce3" aliasName="RoomName" type="java.lang.String"/>
+                    <column name="Booking Date" id="2e8483c3-83f5-4036-a602-38bbec4d3eb3" aliasName="Booking Date" type="java.sql.Date"/>
+                    <column name="Child Status" id="0ff0b421-224c-4225-a8aa-470096dd0dcd" aliasName="Child Status" type="java.lang.String"/>
+                    <column name="Family Status" id="ede912a9-960b-4412-9d37-d873d918bb3b" aliasName="Family Status" type="java.lang.String"/>
+                    <column name="OrganisationId" id="aeb44734-4ca9-4f0b-a4b2-df6d936ef02e" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="ProviderId" id="2fba7ce4-94b6-43f1-98ed-e27f509958da" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="CentreId" id="74a89fa8-0908-470c-a156-e53c195cb23e" aliasName="CentreId" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="500184d2-f6df-40cc-92dd-81f7fabca20f" name="ChildHealthView" type="view" aliasName="ChildHealthView">
+                <columns>
+                    <column name="Centre" id="6b2c57f0-60ed-4694-bf23-0b2001c1d8cb" aliasName="Centre" type="java.lang.String"/>
+                    <column name="Organisation" id="e4277dfc-8a97-4c5f-94b5-cc3abfc8d99e" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="Provider" id="e53aa592-4810-4458-b7cf-4a42e2566ad6" aliasName="Provider" type="java.lang.String"/>
+                    <column name="Child" id="fde349c3-9c19-4d2e-befe-6af649985bcd" aliasName="Child" type="java.lang.String"/>
+                    <column name="Family" id="c237f0e4-140e-4bb3-91c3-941f6e73a065" aliasName="Family" type="java.lang.String"/>
+                    <column name="Child DOB" id="8c3608a9-1d95-4609-9480-a1fbd405a4ef" aliasName="Child DOB" type="java.lang.String"/>
+                    <column name="Health Condition" id="b0c0d551-6b92-4a41-a543-775a21a03653" aliasName="Health Condition" type="java.lang.String"/>
+                    <column name="Mgmt Plan Signed" id="7555f6f0-5730-43aa-9255-92b7410b6613" aliasName="Mgmt Plan Signed" type="java.lang.String"/>
+                    <column name="Mgmt Plan Exp Date" id="768a6a95-532f-472c-9d1b-4c5ab617bbb6" aliasName="Mgmt Plan Exp Date" type="java.lang.String"/>
+                    <column name="Risk Mgmt Plan Signed" id="2378f58f-e788-433f-b4ef-7cf51a09df91" aliasName="Risk Mgmt Plan Signed" type="java.lang.String"/>
+                    <column name="EpiPen/Anapen Exp Date" id="03bc0783-6a09-4abe-81d4-67b0612f5cc5" aliasName="EpiPen/Anapen Exp Date" type="java.lang.String"/>
+                    <column name="Health Comments" id="69198d74-fd8b-42b6-bbf6-b4a2109cd492" aliasName="Health Comments" type="java.lang.String"/>
+                    <column name="Medication" id="a07988bc-1d48-4d30-8451-37639c086222" aliasName="Medication" type="java.lang.String"/>
+                    <column name="Medication Exp Date" id="d8c54df4-5e62-4c10-bb86-b4346d0ee8a1" aliasName="Medication Exp Date" type="java.lang.String"/>
+                    <column name="Other Comments" id="218f6cc7-ea42-4f1f-8ea9-533568c75646" aliasName="Other Comments" type="java.lang.String"/>
+                    <column name="Rooms" id="3ae5e703-7247-40af-84ca-fdde4273b31e" aliasName="Rooms" type="java.lang.String"/>
+                    <column name="RoomName" id="7c0cbb74-a35e-4401-9e46-81618dcef650" aliasName="RoomName" type="java.lang.String"/>
+                    <column name="Child Status" id="4dc2534d-4467-46ab-86d5-b4e6c2f0741a" aliasName="Child Status" type="java.lang.String"/>
+                    <column name="Family Status" id="696c4f49-3396-46ec-995f-dc661c55eb11" aliasName="Family Status" type="java.lang.String"/>
+                    <column name="OrganisationId" id="40bfbb55-6514-45ae-a7d8-7efe02a98616" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="ProviderId" id="c585369c-3bb6-44b3-8cfb-55ba6e67e1fe" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="CentreId" id="5d7bceaa-2050-4584-bf97-9b8346a11070" aliasName="CentreId" type="java.lang.String"/>
+                    <column name="Attachments" id="c4f98619-9e78-49e4-9f32-5dcb69c75a50" aliasName="Attachments" type="java.lang.String"/>
+                    <column name="Files Location" id="ece8ac10-affd-4d82-8dfb-4567cbbbcab1" aliasName="Files Location" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="a58650bd-02e7-49e1-b40d-de447068cee8" name="DietRequirementView" type="view" aliasName="DietRequirementView">
+                <columns>
+                    <column name="Dietary" id="f3eebf22-c1fb-4787-88a1-000e11b44756" aliasName="Dietary" type="java.lang.String"/>
+                    <column name="Diet Requirement" id="aca8c042-7ae5-40ee-83fd-3745146f289d" aliasName="Diet Requirement" type="java.lang.String"/>
+                    <column name="FamilyId" id="2f483a13-f4c5-4e50-b391-fe38a0a64a75" aliasName="FamilyId" type="java.lang.String"/>
+                    <column name="Family" id="45fb5a74-2669-4c61-a705-3e851f3264f3" aliasName="Family" type="java.lang.String"/>
+                    <column name="ChildId" id="4e20d7a0-7ead-4df2-91f5-417205ea78fa" aliasName="ChildId" type="java.lang.String"/>
+                    <column name="Child" id="a2957e59-cdad-4c69-8564-45d886042b1d" aliasName="Child" type="java.lang.String"/>
+                    <column name="Rooms" id="adac6f03-e870-40e2-921e-82518889c048" aliasName="Rooms" type="java.lang.String"/>
+                    <column name="Family Status" id="f2c82c6c-9405-42ec-b6ec-21e8eebc9921" aliasName="Family Status" type="java.lang.String"/>
+                    <column name="Child Family Status" id="54c1f0c3-d668-4ffa-8464-7f9561f29e2f" aliasName="Child Family Status" type="java.lang.String"/>
+                    <column name="OrganisationId" id="cde775c2-9edd-4831-afc3-041d677f536c" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="Organisation" id="b4d9b742-5123-4e7c-a4e6-23f078323ccc" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="ProviderId" id="3319cb4d-073d-4a8f-8f52-a1a32bb33229" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="Provider" id="54e568f7-a4d4-4728-ba1e-27a9bbb87d4e" aliasName="Provider" type="java.lang.String"/>
+                    <column name="CentreId" id="fc543814-ca08-4f6a-8940-52e40d7a0766" aliasName="CentreId" type="java.lang.String"/>
+                    <column name="Centre" id="8614db66-b3d0-4886-89ce-61ae94b899fe" aliasName="Centre" type="java.lang.String"/>
+                    <column name="Booking Status" id="07262986-5603-4461-abe7-4729d7c0431f" aliasName="Booking Status" type="java.lang.String"/>
+                    <column name="BookingDate" id="99627804-2039-4209-9ba3-a851f2be2395" aliasName="BookingDate" type="java.sql.Date"/>
+                    <column name="Document Uploaded" id="cd3f18a4-e2ff-46c2-9776-74096b18ae10" aliasName="Document Uploaded" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="80cb1a4d-5dea-4b60-93ef-6b9d89676f03" name="ChildImmunisationView" type="view" aliasName="ChildImmunisationView">
+                <columns>
+                    <column name="Centre" id="6c502c1a-bccd-4b58-9179-7976fa797293" aliasName="Centre" type="java.lang.String"/>
+                    <column name="Organisation" id="4860a31d-4fa0-448d-b707-c149ac31eb64" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="Provider" id="abef4594-6699-4ae1-9b5f-300827cadfa9" aliasName="Provider" type="java.lang.String"/>
+                    <column name="Child" id="61178a33-6ac9-45d0-a308-ae8422ba5932" aliasName="Child" type="java.lang.String"/>
+                    <column name="Family" id="fdcf8478-54f8-45e7-94cc-820015dd1347" aliasName="Family" type="java.lang.String"/>
+                    <column name="Child DOB" id="39ca516e-329a-4ab4-b5d5-4853a727e1b5" aliasName="Child DOB" type="java.lang.String"/>
+                    <column name="Child Age-Mth" id="a2d7993b-83ed-4001-80e8-8343e4d97e0f" aliasName="Child Age-Mth" type="java.lang.Float"/>
+                    <column name="Immunised" id="8b2944cf-468a-4dda-a087-6f34fb88b6a7" aliasName="Immunised" type="java.lang.String"/>
+                    <column name="Document Uploaded" id="f621efbd-364b-477a-a6a8-22c9c714bf24" aliasName="Document Uploaded" type="java.lang.String"/>
+                    <column name="Document Type" id="7c481f07-7cbf-4c84-b32f-b57c4ab0b83b" aliasName="Document Type" type="java.lang.String"/>
+                    <column name="Birth" id="7abde22c-d4a7-46c5-bfa2-02379517cf7c" aliasName="Birth" type="java.lang.String"/>
+                    <column name="2 Months" id="d9379366-7ca1-4c80-bbf6-7c78a950e661" aliasName="2 Months" type="java.lang.String"/>
+                    <column name="4 Months" id="3cfb5597-ea96-4319-b02d-9a6524c56c55" aliasName="4 Months" type="java.lang.String"/>
+                    <column name="6 Months" id="0bf6097c-f94a-4c7d-83f9-c1705b940f19" aliasName="6 Months" type="java.lang.String"/>
+                    <column name="12 Months" id="d56a545a-274b-4308-ac0b-ac4fe11c85b3" aliasName="12 Months" type="java.lang.String"/>
+                    <column name="18 Months" id="cfc620b2-6ddb-4f5f-af79-bffe184dc9b6" aliasName="18 Months" type="java.lang.String"/>
+                    <column name="4 Years" id="81134dc4-9786-4e9f-aeca-3084987eae18" aliasName="4 Years" type="java.lang.String"/>
+                    <column name="6 Months to 5 Years" id="7227aa19-d4d7-4644-8363-627bb2ee99c0" aliasName="6 Months to 5 Years" type="java.lang.String"/>
+                    <column name="Rooms" id="7717b118-85af-432a-88fc-11f2b6cacef5" aliasName="Rooms" type="java.lang.String"/>
+                    <column name="RoomName" id="5923af02-1985-4c84-9aa2-8bb02df3237a" aliasName="RoomName" type="java.lang.String"/>
+                    <column name="Booking Date" id="d8cf2bfd-4559-4fe6-babb-5ed5d7ba4b72" aliasName="Booking Date" type="java.sql.Date"/>
+                    <column name="Child Status" id="af9b52c2-0f17-4460-82f2-501bfa24b6b8" aliasName="Child Status" type="java.lang.String"/>
+                    <column name="Family Status" id="4eac2c3a-1578-4dcc-9c51-ba724e9ca91b" aliasName="Family Status" type="java.lang.String"/>
+                    <column name="OrganisationId" id="17cfa746-d278-4405-b8a6-24638b52ec8b" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="ProviderId" id="c64f3dc2-c210-4b4d-912b-f04b519b113c" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="CentreId" id="a4696786-2c38-47af-9ce0-1a2035b0967e" aliasName="CentreId" type="java.lang.String"/>
+                    <column name="Booking Status" id="ecff3fe9-a09a-4444-b625-c85a669a27be" aliasName="Booking Status" type="java.lang.String"/>
+                </columns>
+            </table>
+            <table id="5d6eb9e9-7055-4ce2-a182-72fe198518ea" name="ChildView" type="view" aliasName="ChildView">
+                <columns>
+                    <column name="Centre" id="ed54e0d1-5840-46f8-9c71-b0abb097a268" aliasName="Centre" type="java.lang.String"/>
+                    <column name="Organisation" id="01737e4a-a05c-4f59-9584-8770e41f3943" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="Provider" id="6758a5d0-3726-4840-a6b0-933cdb29ddc8" aliasName="Provider" type="java.lang.String"/>
+                    <column name="Child" id="846f3400-6d22-4b0f-9572-b4895d929eef" aliasName="Child" type="java.lang.String"/>
+                    <column name="Family" id="e5467a59-e7db-4eee-b664-4e7e5f2b629c" aliasName="Family" type="java.lang.String"/>
+                    <column name="Child DOB" id="6a2e4a98-c1d2-4f57-9f43-5aa96b45917c" aliasName="Child DOB" type="java.lang.String"/>
+                    <column name="Child Age Group" id="78deca01-c133-4dd2-98ec-a366f047afab" aliasName="Child Age Group" type="java.lang.String"/>
+                    <column name="Known As" id="5e086aeb-0909-4c09-8d82-3c0eab2cb1a2" aliasName="Known As" type="java.lang.String"/>
+                    <column name="CRN" id="93c4c36f-5c7c-4116-8b88-6cdccd34a6be" aliasName="CRN" type="java.lang.String"/>
+                    <column name="Address" id="6bc21e42-c9c0-4ad7-97de-380277dbb7cd" aliasName="Address" type="java.lang.String"/>
+                    <column name="Gender" id="ce59acc4-17ef-44db-81ba-4edde4a3a851" aliasName="Gender" type="java.lang.String"/>
+                    <column name="Aboriginal" id="3458f546-236d-4bc5-8aad-1f68b1cfb7b3" aliasName="Aboriginal" type="java.lang.String"/>
+                    <column name="Country Of Birth" id="42ec2d93-174a-4987-ba38-e90bbf5862ca" aliasName="Country Of Birth" type="java.lang.String"/>
+                    <column name="Nationality" id="07157b8e-48e0-4925-858f-15a74a7bb798" aliasName="Nationality" type="java.lang.String"/>
+                    <column name="Cultural Background" id="71cb0c9c-42c3-4da4-9968-8b433eb53415" aliasName="Cultural Background" type="java.lang.String"/>
+                    <column name="Languages Spoken" id="09b77569-3690-4916-9118-b64237bc72ee" aliasName="Languages Spoken" type="java.lang.String"/>
+                    <column name="Religion" id="12faccc1-01dc-4b3f-ae62-5e7cce9ae5b3" aliasName="Religion" type="java.lang.String"/>
+                    <column name="School Year" id="c1d69c92-f102-43c6-b464-70fe7d0bc2ff" aliasName="School Year" type="java.lang.String"/>
+                    <column name="School Start Date" id="cd7dac73-ad08-46de-b516-aa4375ab4ac5" aliasName="School Start Date" type="java.lang.String"/>
+                    <column name="School" id="b34c1575-f317-46b0-82bc-b2b6871a5db9" aliasName="School" type="java.lang.String"/>
+                    <column name="Rooms" id="34a5dfde-4cf1-463c-8cf1-7a8b7ca8d54f" aliasName="Rooms" type="java.lang.String"/>
+                    <column name="RoomName" id="9923ac92-d1f1-42e8-bde3-8b8fef7b8754" aliasName="RoomName" type="java.lang.String"/>
+                    <column name="Guardian" id="90bdf4bf-b638-469a-9bd0-c2c5cb5da9b6" aliasName="Guardian" type="java.lang.String"/>
+                    <column name="Guardian DOB" id="20842b41-d7cc-4eb3-9565-b3b063000c68" aliasName="Guardian DOB" type="java.lang.String"/>
+                    <column name="Guardian CRN" id="727a084c-c7fc-4f8e-889d-9e317d727031" aliasName="Guardian CRN" type="java.lang.String"/>
+                    <column name="Mobile" id="25107f68-951f-447f-b92b-9ba656b26ef9" aliasName="Mobile" type="java.lang.String"/>
+                    <column name="Work" id="bc601a43-d5cc-442c-b495-97ad9d0b3fe4" aliasName="Work" type="java.lang.String"/>
+                    <column name="Home" id="18194e76-6fa2-4642-990e-2a97c7b7ac7b" aliasName="Home" type="java.lang.String"/>
+                    <column name="Email" id="3ffb2bf1-abc6-4545-a13f-21ac1a77bf9f" aliasName="Email" type="java.lang.String"/>
+                    <column name="Priority Contact Name" id="23e87ca2-ed5a-4c5a-8571-d270e6b59a38" aliasName="Priority Contact Name" type="java.lang.String"/>
+                    <column name="Priority Contact No" id="8a4f5ba7-7f60-4228-bcb7-0b048f78f585" aliasName="Priority Contact No" type="java.lang.String"/>
+                    <column name="Contact Priority" id="3827ab30-83e4-42b1-a0c0-402f7db3f1bc" aliasName="Contact Priority" type="java.lang.Float"/>
+                    <column name="Child Relation" id="873116ac-e3c2-4310-bad0-6b9f8dc77d5c" aliasName="Child Relation" type="java.lang.String"/>
+                    <column name="Person Type" id="82e0435b-9df9-4c52-b047-2449da98785c" aliasName="Person Type" type="java.lang.String"/>
+                    <column name="Seek Medical Treatement" id="13d18046-5d3e-47f0-be67-c2be80794390" aliasName="Seek Medical Treatement" type="java.lang.String"/>
+                    <column name="Authorise Medication" id="65cfaeae-2555-4780-b74e-2a61c1a3e2e2" aliasName="Authorise Medication" type="java.lang.String"/>
+                    <column name="Act As Emergency Contact" id="ea553efe-8286-48e1-a528-5185f3ed0478" aliasName="Act As Emergency Contact" type="java.lang.String"/>
+                    <column name="Excursion Permission" id="ad486820-04ee-4459-ac40-32b36201a8e8" aliasName="Excursion Permission" type="java.lang.String"/>
+                    <column name="Dropoff-Pickup" id="16eb13b1-acc8-4505-81d8-0784bf782f25" aliasName="Dropoff-Pickup" type="java.lang.String"/>
+                    <column name="Pickup From Date" id="03112e07-e3ce-434a-a5ad-7101099c789e" aliasName="Pickup From Date" type="java.lang.String"/>
+                    <column name="Pickup To Date" id="03181dfb-6ab7-4f79-84b0-d8099de3436c" aliasName="Pickup To Date" type="java.lang.String"/>
+                    <column name="Guardian Status" id="18b57128-7930-4021-bc00-b674d03580a5" aliasName="Guardian Status" type="java.lang.String"/>
+                    <column name="Child Status" id="11450339-78ba-4cba-b3e4-888d63dafb31" aliasName="Child Status" type="java.lang.String"/>
+                    <column name="Family Status" id="8b86ff9f-0265-42ec-8dbc-52c609dd7ffe" aliasName="Family Status" type="java.lang.String"/>
+                    <column name="Guardian Known As" id="5e28a852-c348-4ebe-a4e5-4b10815d65df" aliasName="Guardian Known As" type="java.lang.String"/>
+                    <column name="Payment Account Status" id="219966b7-61d8-442f-a1b1-d4d102f0b762" aliasName="Payment Account Status" type="java.lang.String"/>
+                    <column name="OrganisationId" id="c931d237-13f5-44cd-8237-5625cb18d545" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="ProviderId" id="65188b9b-ced0-48e1-bd16-bd8dacc52fe8" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="CentreId" id="517a2097-c73d-4bae-818e-c817519c5a76" aliasName="CentreId" type="java.lang.String"/>
+                    <column name="Custom Fields" id="8fb57567-2a77-4c47-8ac2-c11b18816588" aliasName="Custom Fields" type="java.lang.String"/>
+                </columns>
+            </table>
+        </tables>
+        <relationships/>
+        <views>
+            <view id="009e3df8-15e6-462d-9202-eccebbf144f8" name="ChildCourtOrdersView" alias="ChildCourtOrdersView">
+                <query><![CDATA[SELECT
+	Family.[CentreName] AS [Centre],
+ 	Family.[OrganisationName]  AS [Organisation],
+	Family.ProviderName AS [Provider],
+ 	Child.ChildName AS [Child],
+	Family.[FamilyName] AS [Family],
+	COALESCE(CONVERT(VARCHAR, cd.DateOfBirth, 103), '-') AS [Child DOB],
+
+	CASE WHEN Court.IsCourtOrder = 1 THEN 'Y'
+	     WHEN Court.IsCourtOrder = 0 THEN 'N'
+		 WHEN Court.IsCourtOrder IS NULL THEN '-' END AS [Court Orders],
+
+	ISNULL(Court.Summary, '-') AS [Details],
+
+
+	CASE WHEN Court.DocumentUploaded = 1 THEN 'Y'
+	     WHEN Court.DocumentUploaded = 0 THEN 'N'
+		 WHEN Court.DocumentUploaded IS NULL THEN '-' END AS [Document Uploaded],
+
+	COALESCE(CONVERT(VARCHAR, Court.ExpDate, 103), '-') AS [Expiry Date],
+	
+	ISNULL(Court.OrderRelates, '-') AS [Order Relates to], --Person to whom the order relates
+
+	ISNULL(Court.AuthorisedContact, '-') AS [Authorised Contact], 
+
+	CONVERT(VARCHAR(MAX), ISNULL((STUFF((SELECT DISTINCT ', ' + CONVERT(NVARCHAR(MAX), book.RoomName) FROM
+	dbo.rpt_Bookings book WHERE book.ChildId = Child.ChildId AND book.BookingStatus = 'Approved' FOR XML PATH('')) , 1, 2, '')), '-')) AS Rooms,
+	Book.RoomName,
+	/*Book.BookingDate AS [Booking Date],*/
+
+	ISNULL(Child.ChildFamilyStatus, '-') AS [Child Status],
+	ISNULL(Family.FamilyStatus, '-') AS [Family Status],
+	Family.[OrganisationId]  AS [OrganisationId],
+	Family.[ProviderId]  AS [ProviderId],
+	Family.[CentreId]  AS [CentreId]
+	
+FROM [dbo].rpt_Family Family
+INNER JOIN [dbo].[rpt_FamilyChild] Child ON Family.FamilyId = Child.FamilyId
+INNER JOIN [dbo].[rpt_ChildDetails] cd ON cd.PersonId = Child.ChildId
+LEFT JOIN [dbo].[rpt_ChildCourtOrders] Court ON Court.PersonId = Child.ChildId
+LEFT JOIN dbo.rpt_Bookings Book ON Book.FamilyId = Family.FamilyId AND Book.ChildId = Child.ChildId AND Book.BookingStatus = 'Approved' AND Book.BookingDate BETWEEN CONVERT(DATE, GETUTCDATE()) AND DATEADD(DD, 30, CONVERT(DATE, GETUTCDATE()))
+]]></query>
+            </view>
+            <view id="b7d6639d-beab-4c43-bd15-77edb9d50a17" name="ChildMedicalView" alias="ChildMedicalView">
+                <query><![CDATA[SELECT
+	Family.[CentreName] AS [Centre],
+ 	Family.[OrganisationName]  AS [Organisation],
+	Family.ProviderName AS [Provider],
+ 	Child.ChildName AS [Child],
+	Family.[FamilyName] AS [Family],
+	COALESCE(CONVERT(VARCHAR, cd.DateOfBirth, 103), '-') AS [Child DOB],
+	
+	ISNULL(cd.MedicalPractionerOrServiceName, '-') AS [Medical Clinic Name],
+	ISNULL(cd.Doctor, '-') AS [Doctor Name],
+	ISNULL(cd.DoctorContact, '-') AS [Clinic/Doctor Contact No],
+	ISNULL(cd.DoctorAddress, '-') AS [Clinic Address],
+	ISNULL(cd.MeternalAndChildHealth, '-') AS [Maternal Clinic],
+	ISNULL(cd.MCHNurse, '-') AS [Nurse Name],
+	ISNULL(cd.MCHNurseContact, '-') AS [Nurse/Clinic Contact No],
+	ISNULL(cd.Medicare, '-') AS [Medicare Number],
+	COALESCE(CONVERT(VARCHAR, cd.MedicareExpDate, 103), '-') AS [Medicare Exp Date],
+	ISNULL(cd.AmbulanceSubNumber, '-') AS [Ambulance Sub No],
+	COALESCE(CONVERT(VARCHAR, cd.AmbulanceSubExpDate, 103), '-') AS [Amb Exp Date],
+	ISNULL(cd.PrivateInsuranceName, '-') AS [Private Insurance Provider],
+	ISNULL(cd.PrivateInsuranceNumber, '-') AS [Insurance No],
+	
+	CONVERT(VARCHAR(MAX), ISNULL((STUFF((SELECT DISTINCT ', ' + CONVERT(NVARCHAR(MAX), book.RoomName) FROM
+	dbo.rpt_Bookings book WHERE book.ChildId = Child.ChildId AND book.BookingStatus = 'Approved' FOR XML PATH('')) , 1, 2, '')), '-')) AS Rooms,
+	
+	Book.RoomName,
+
+	ISNULL(Child.ChildFamilyStatus, '-') AS [Child Status],
+	ISNULL(Family.FamilyStatus, '-') AS [Family Status],
+	/*Book.BookingDate AS [Booking Date],*/
+	Family.[OrganisationId]  AS [OrganisationId],
+	Family.[ProviderId]  AS [ProviderId],
+	Family.[CentreId]  AS [CentreId]
+	
+	
+FROM [dbo].rpt_Family Family
+INNER JOIN [dbo].[rpt_FamilyChild] Child ON Family.FamilyId = Child.FamilyId
+INNER JOIN [dbo].[rpt_ChildDetails] cd ON cd.PersonId = child.ChildId
+LEFT JOIN dbo.rpt_Bookings Book ON Book.FamilyId = Family.FamilyId AND Book.ChildId = Child.ChildId AND Book.BookingStatus = 'Approved' AND Book.BookingDate BETWEEN CONVERT(DATE, GETUTCDATE()) AND DATEADD(DD, 30, CONVERT(DATE, GETUTCDATE()))
+ ]]></query>
+            </view>
+            <view id="48100b60-b0e6-408f-b4fb-13ced8a00548" name="ChildConsentView" alias="ChildConsentView">
+                <query><![CDATA[SELECT
+	Family.[CentreName] AS [Centre],
+ 	Family.[OrganisationName]  AS [Organisation],
+	Family.ProviderName AS [Provider],
+ 	Child.ChildName AS [Child],
+	Family.[FamilyName] AS [Family],
+
+	CASE WHEN Consent.InEvents = 1 THEN 'Y'
+	     WHEN Consent.InEvents = 0 THEN 'N'
+		 WHEN Consent.InEvents IS NULL THEN '-' END AS [Events Participation],
+	
+	ISNULL(CelebrationEvents, '-') AS [Restricated Events],
+
+	
+	CASE WHEN Consent.IsSunscreen = 1 THEN 'Y'
+	     WHEN Consent.IsSunscreen = 0 THEN 'N'
+		 WHEN Consent.IsSunscreen IS NULL THEN '-' END AS [Generic Sunscreen],
+
+	CASE WHEN Consent.IsAllergySunscreen = 1 THEN Consent.SunscreenBrands
+	     WHEN Consent.IsAllergySunscreen = 0 THEN '-'
+		 WHEN Consent.IsAllergySunscreen IS NULL THEN '-' END AS [Requested Brand],
+	'Centre Display' AS [Centre Display1],
+	CASE WHEN Consent.DispNamePhoto = 1 THEN 'Y'
+	     WHEN Consent.DispNamePhoto = 0 THEN 'N'
+		 WHEN Consent.DispNamePhoto IS NULL THEN '-' END AS [Centre Display],
+	'Centre Promotion' AS [Centre Promotion1],
+	CASE WHEN Consent.UseInCentrePromo = 1 THEN 'Y'
+	     WHEN Consent.UseInCentrePromo = 0 THEN 'N'
+		 WHEN Consent.UseInCentrePromo IS NULL THEN '-' END AS [Centre Promotion],
+	'Group Post'AS [Group Post1],
+	CASE WHEN Consent.UseInGroupPost = 1 THEN 'Y'
+	     WHEN Consent.UseInGroupPost = 0 THEN 'N'
+		 WHEN Consent.UseInGroupPost IS NULL THEN '-' END AS [Group Post],
+
+	CONVERT(VARCHAR(MAX), ISNULL((STUFF((SELECT DISTINCT ', ' + CONVERT(NVARCHAR(MAX), book.RoomName) FROM
+	dbo.rpt_Bookings book WHERE book.ChildId = Child.ChildId AND book.BookingStatus = 'Approved' FOR XML PATH('')) , 1, 2, '')), '-')) AS Rooms,
+	Book.RoomName,
+	Book.BookingDate AS [Booking Date],
+
+	ISNULL(Child.ChildFamilyStatus, '-') AS [Child Status],
+	ISNULL(Family.FamilyStatus, '-') AS [Family Status],
+	Family.[OrganisationId]  AS [OrganisationId],
+	Family.[ProviderId]  AS [ProviderId],
+	Family.[CentreId]  AS [CentreId]
+	
+FROM [dbo].rpt_Family Family
+INNER JOIN [dbo].[rpt_FamilyChild] Child ON Family.FamilyId = Child.FamilyId
+INNER JOIN [dbo].[rpt_ChildDetails] cd ON cd.PersonId = child.ChildId
+LEFT JOIN [dbo].[rpt_ChildConsent] Consent ON Consent.PersonId = child.ChildId
+LEFT JOIN dbo.rpt_Bookings Book ON Book.FamilyId = Family.FamilyId AND Book.ChildId = Child.ChildId AND Book.BookingStatus = 'Approved']]></query>
+            </view>
+            <view id="500184d2-f6df-40cc-92dd-81f7fabca20f" name="ChildHealthView" alias="ChildHealthView">
+                <query><![CDATA[--AND Book.BookingDate BETWEEN CONVERT(DATE, GETUTCDATE()) AND DATEADD(DD, 30, CONVERT(DATE, GETUTCDATE()))
+
+
+SELECT
+	Family.[CentreName] AS [Centre],
+ 	Family.[OrganisationName]  AS [Organisation],
+	Family.ProviderName AS [Provider],
+ 	Child.ChildName AS [Child],
+	Family.[FamilyName] AS [Family],
+	COALESCE(CONVERT(VARCHAR, cd.DateOfBirth, 103), '-') AS [Child DOB],
+	
+	ISNULL(Health.HealthTag, '-') AS [Health Condition],
+	CASE WHEN Health.HavePlanSigned = 1 THEN 'Y'
+	     WHEN Health.HavePlanSigned = 0 THEN 'N' 
+		 WHEN Health.HavePlanSigned IS NULL THEN '-' END AS [Mgmt Plan Signed],
+
+	COALESCE(CONVERT(VARCHAR, Health.PlanExpDate, 103), '-') AS [Mgmt Plan Exp Date],	
+
+	CASE WHEN Health.HaveRiskMgmtPlan = 1 THEN 'Y'
+	     WHEN Health.HaveRiskMgmtPlan = 0 THEN 'N' 
+		 WHEN Health.HaveRiskMgmtPlan IS NULL THEN '-' END AS [Risk Mgmt Plan Signed],
+
+	COALESCE(CONVERT(VARCHAR, Health.EpiPenExpDate, 103), '-') AS [EpiPen/Anapen Exp Date],	
+
+	ISNULL(Health.HealthComments, '-') AS [Health Comments],
+
+	ISNULL(Health.Medication, '-') AS [Medication],
+	CONVERT(VARCHAR, Health.MedicationExpDate, 103) AS [Medication Exp Date],
+	
+	ISNULL(Health.OtherDetails, '-') AS [Other Comments],
+	
+	CONVERT(VARCHAR(MAX), ISNULL((STUFF((SELECT DISTINCT ', ' + CONVERT(NVARCHAR(MAX), book.RoomName) FROM
+	dbo.rpt_Bookings book WHERE book.ChildId = Child.ChildId AND book.BookingStatus = 'Approved' FOR XML PATH('')) , 1, 2, '')), '-')) AS Rooms,
+ 	Book.RoomName,
+	ISNULL(Child.ChildFamilyStatus, '-') AS [Child Status],
+	ISNULL(Family.FamilyStatus, '-') AS [Family Status],
+	/*Book.BookingDate AS [Booking Date],*/
+	Family.[OrganisationId]  AS [OrganisationId],
+	Family.[ProviderId]  AS [ProviderId],
+	Family.[CentreId]  AS [CentreId],
+	Health.Attachments,
+	/*
+	CONVERT(VARCHAR(MAX), ISNULL((STUFF((SELECT DISTINCT ', ' + CONVERT(NVARCHAR(MAX), Attachments.[OriginalFile]) FROM
+	dbo.[rpt_FamilyAttachments] Attachments WHERE Attachments.PersonId = Child.ChildId AND Attachments.OrganisationId = Child.OrganisationId FOR XML PATH('')) , 1, 2, '')), '-')) AS [OriginalFiles],
+
+	CONVERT(VARCHAR(MAX), ISNULL((STUFF((SELECT DISTINCT ', ' + CONVERT(NVARCHAR(MAX), Attachments.[File]) FROM
+	dbo.[rpt_FamilyAttachments] Attachments WHERE Attachments.PersonId = Child.ChildId AND Attachments.OrganisationId = Child.OrganisationId FOR XML PATH('')) , 1, 2, '')), '-')) AS [Files],
+	*/
+'https://kidsxaptest.blob.core.windows.net/person/'+[File] AS [Files Location]
+
+
+
+	 
+
+	
+FROM [dbo].rpt_Family Family
+INNER JOIN [dbo].[rpt_FamilyChild] Child ON Family.FamilyId = Child.FamilyId
+INNER JOIN [dbo].[rpt_ChildDetails] cd ON cd.PersonId = Child.ChildId
+INNER JOIN [dbo].[rpt_ChildHealthDetails] Health ON Health.PersonId = Child.ChildId
+LEFT JOIN dbo.rpt_Bookings Book ON Book.FamilyId = Family.FamilyId AND Book.ChildId = Child.ChildId AND Book.BookingStatus = 'Approved' AND Book.BookingDate BETWEEN CONVERT(DATE, GETUTCDATE()) AND DATEADD(DD, 30, CONVERT(DATE, GETUTCDATE()))
+LEFT JOIN dbo.[rpt_FamilyAttachments] Attachments on Attachments.PersonId = Child.ChildId
+--WHERE Child.ChildId = '56060589-1cef-4dee-aae8-c4d69ab80929'
+/*SELECT
+	Family.[CentreName] AS [Centre],
+ 	Family.[OrganisationName]  AS [Organisation],
+	Family.ProviderName AS [Provider],
+ 	Child.ChildName AS [Child],
+	Family.[FamilyName] AS [Family],
+	COALESCE(CONVERT(VARCHAR, cd.DateOfBirth, 103), '-') AS [Child DOB],
+	
+	ISNULL(Health.HealthTag, '-') AS [Health Condition],
+	CASE WHEN Health.HavePlanSigned = 1 THEN 'Y'
+	     WHEN Health.HavePlanSigned = 0 THEN 'N' 
+		 WHEN Health.HavePlanSigned IS NULL THEN '-' END AS [Mgmt Plan Signed],
+
+	COALESCE(CONVERT(VARCHAR, Health.PlanExpDate, 103), '-') AS [Mgmt Plan Exp Date],	
+
+	CASE WHEN Health.HaveRiskMgmtPlan = 1 THEN 'Y'
+	     WHEN Health.HaveRiskMgmtPlan = 0 THEN 'N' 
+		 WHEN Health.HaveRiskMgmtPlan IS NULL THEN '-' END AS [Risk Mgmt Plan Signed],
+
+	COALESCE(CONVERT(VARCHAR, Health.EpiPenExpDate, 103), '-') AS [EpiPen/Anapen Exp Date],	
+
+	ISNULL(Health.HealthComments, '-') AS [Health Comments],
+
+	ISNULL(Health.Medication, '-') AS [Medication],
+	Health.MedicationExpDate AS [Medication Exp Date],
+	
+	ISNULL(Health.OtherDetails, '-') AS [Other Comments],
+	
+	CONVERT(VARCHAR(MAX), ISNULL((STUFF((SELECT DISTINCT ', ' + CONVERT(NVARCHAR(MAX), book.RoomName) FROM
+	dbo.rpt_Bookings book WHERE book.ChildId = Child.ChildId AND book.BookingStatus = 'Approved' FOR XML PATH('')) , 1, 2, '')), '-')) AS Rooms,
+ 	Book.RoomName,
+	ISNULL(Child.ChildFamilyStatus, '-') AS [Child Status],
+	ISNULL(Family.FamilyStatus, '-') AS [Family Status],
+	Book.BookingDate AS [Booking Date],
+	Family.[OrganisationId]  AS [OrganisationId],
+	Family.[ProviderId]  AS [ProviderId],
+	Family.[CentreId]  AS [CentreId],
+	Health.Attachments,
+
+	CONVERT(VARCHAR(MAX), ISNULL((STUFF((SELECT DISTINCT ', ' + CONVERT(NVARCHAR(MAX), Attachments.[OriginalFile]) FROM
+	dbo.[rpt_FamilyAttachments] Attachments WHERE Attachments.PersonId = Child.ChildId AND Attachments.OrganisationId = Child.OrganisationId FOR XML PATH('')) , 1, 2, '')), '-')) AS [OriginalFiles],
+	
+	CONVERT(VARCHAR(MAX), ISNULL((STUFF((SELECT DISTINCT ', ' + 
+	'<a href="'        + 'https://kidsxaptest.blob.core.windows.net/person/232218f3-ce9b-41ce-874b-1dba80e3f5fe.jpg '       + '">'        +  CONVERT(NVARCHAR(MAX), Attachments.[File]) + '</a>'
+	FROM
+	dbo.[rpt_FamilyAttachments] Attachments WHERE Attachments.PersonId = Child.ChildId AND Attachments.OrganisationId = Child.OrganisationId FOR XML PATH('')) , 1, 2, '')), '-')) AS [Files]
+	
+/*
+	CONVERT(VARCHAR(MAX), ISNULL((STUFF((SELECT DISTINCT ', ' + 'https://kidsxaptest.blob.core.windows.net/person/' +
+	CONVERT(NVARCHAR(MAX), Attachments.[File]) FROM
+	dbo.[rpt_FamilyAttachments] Attachments WHERE Attachments.PersonId = Child.ChildId AND Attachments.OrganisationId = Child.OrganisationId FOR XML PATH('')) , 1, 2, '')), '-')) AS [Files]
+	*/
+FROM [dbo].rpt_Family Family
+INNER JOIN [dbo].[rpt_FamilyChild] Child ON Family.FamilyId = Child.FamilyId
+INNER JOIN [dbo].[rpt_ChildDetails] cd ON cd.PersonId = Child.ChildId
+INNER JOIN [dbo].[rpt_ChildHealthDetails] Health ON Health.PersonId = Child.ChildId
+LEFT JOIN dbo.rpt_Bookings Book ON Book.FamilyId = Family.FamilyId AND Book.ChildId = Child.ChildId AND Book.BookingStatus = 'Approved'
+*/]]></query>
+            </view>
+            <view id="a58650bd-02e7-49e1-b40d-de447068cee8" name="DietRequirementView" alias="DietRequirementView">
+                <query><![CDATA[	SELECT 
+	DISTINCT ISNULL(Health.HealthTag, '-') AS [Dietary], 
+	Health.OtherDetails AS [Diet Requirement],
+	Book.FamilyId, 
+	Family.FamilyName AS [Family],
+	Book.ChildId, 
+	Child.ChildName AS [Child],
+	Book.RoomName AS [Rooms],
+	Family.FamilyStatus AS [Family Status], 
+	Child.ChildFamilyStatus AS [Child Family Status],
+	Family.OrganisationId, 
+	Family.OrganisationName AS [Organisation], 
+	Family.ProviderId, 
+	Family.ProviderName AS [Provider], 
+	Family.CentreId, 
+	Family.CentreName AS [Centre], 
+	Book.BookingStatus AS [Booking Status],
+	 Book.BookingDate,
+	 
+	CASE WHEN (SELECT ISNULL(COUNT(Attached.Id), 0) FROM dbo.rpt_FamilyAttachments Attached WHERE Attached.AttachmentId IN ('64b6b4a1-f458-4817-8ddc-1faec2b03c28') AND
+				Attached.PersonId = Child.ChildId) >  0 THEN 'Y'
+	     WHEN (SELECT ISNULL(COUNT(Attached.Id), 0) FROM dbo.rpt_FamilyAttachments Attached WHERE Attached.AttachmentId IN ('64b6b4a1-f458-4817-8ddc-1faec2b03c28') AND
+				Attached.PersonId = Child.ChildId) =  0  THEN 'N' ELSE '-' END AS [Document Uploaded]
+
+	FROM [dbo].[rpt_ChildHealthDetails] Health 
+	INNER JOIN [dbo].[rpt_FamilyChild] Child ON Health.PersonId = Child.ChildId
+	INNER JOIN [dbo].rpt_Family Family ON Family.FamilyId = Child.FamilyId
+	INNER JOIN [dbo].[rpt_Bookings] Book ON Book.FamilyId = Family.FamilyId AND Book.ChildId = Child.ChildId
+	WHERE ISNULL(Health.HealthTag, '-') = 'DietaryRestrictions'
+		/*Book.BookingDate >= DATEADD(week, DATEDIFF(day, 0, GETUTCDATE())/7, 0) first day current week
+        AND Book.BookingDate <=  DATEADD(week, DATEDIFF(day, 0, GETUTCDATE())/7, 6) last day current week*/]]></query>
+            </view>
+            <view id="80cb1a4d-5dea-4b60-93ef-6b9d89676f03" name="ChildImmunisationView" alias="ChildImmunisationView">
+                <query><![CDATA[SELECT
+	Family.[CentreName] AS [Centre],
+ 	Family.[OrganisationName]  AS [Organisation],
+	Family.ProviderName AS [Provider],
+ 	Child.ChildName AS [Child],
+	Family.[FamilyName] AS [Family],
+	COALESCE(CONVERT(VARCHAR, cd.DateOfBirth, 103), '-') AS [Child DOB],
+	DATEDIFF(MONTH, DateOfBirth, CONVERT(DATE, DATEADD(HOUR, 11, GETUTCDATE()))) AS [Child Age-Mth],
+
+	CASE WHEN cd.IsImmunised = 1 THEN 'Y'
+	     WHEN cd.IsImmunised = 0 THEN 'N'
+		 WHEN cd.IsImmunised IS NULL THEN 'Not Answered'  END AS [Immunised],
+
+	CASE WHEN cd.ImmunisationDocumentType IS NULL THEN '-'
+		 WHEN (cd.ImmunisationDocumentType IS NOT NULL AND (SELECT ISNULL(COUNT(Attached.Id), 0) FROM dbo.rpt_FamilyAttachments Attached WHERE Attached.AttachmentId IN ('58118d4f-f6d1-417c-8234-59cdbda69aed','07c56326-bcbc-45a7-aaa3-14b8e2193593') AND
+				Attached.PersonId = cd.PersonId) >  0 ) THEN 'Y'
+	     WHEN (cd.ImmunisationDocumentType IS NOT NULL AND (SELECT ISNULL(COUNT(Attached.Id), 0) FROM dbo.rpt_FamilyAttachments Attached WHERE Attached.AttachmentId IN ('58118d4f-f6d1-417c-8234-59cdbda69aed','07c56326-bcbc-45a7-aaa3-14b8e2193593') AND
+				Attached.PersonId = cd.PersonId) =  0 ) THEN 'N' END AS [Document Uploaded],
+	
+	/*IIF(cd.ImmunisationDocumentType IS NULL,  
+				CASE WHEN (SELECT ISNULL(COUNT(Attached.Id), 0) FROM dbo.rpt_FamilyAttachments Attached WHERE Attached.AttachmentId IN ('8b71dfc7-6f3c-47ae-b757-4408f1d27fe3') AND
+				Attached.PersonId = cd.PersonId) >  0 THEN 'Medical Exemption' ELSE '-' END, ISNULL(cd.ImmunisationDocumentType, '-')) AS [Document Type],*/
+	ISNULL(cd.ImmunisationDocumentType, '-') AS [Document Type],
+
+	CASE WHEN cd.IsBirth = 1 THEN 'Y'
+	     WHEN cd.IsBirth = 0 THEN 'N'
+		 WHEN cd.IsBirth IS NULL THEN '-' END AS [Birth],
+
+	CASE WHEN cd.Is2MonthsOfAge = 1 THEN 'Y'
+	     WHEN cd.Is2MonthsOfAge = 0 THEN 'N'
+		 WHEN cd.Is2MonthsOfAge IS NULL THEN '-' END AS [2 Months],
+	
+	CASE WHEN cd.Is4MonthsOfAge = 1 THEN 'Y'
+	     WHEN cd.Is4MonthsOfAge = 0 THEN 'N'
+		 WHEN cd.Is4MonthsOfAge IS NULL THEN '-' END AS [4 Months],
+	
+	CASE WHEN cd.Is6MonthsOfAge = 1 THEN 'Y'
+	     WHEN cd.Is6MonthsOfAge = 0 THEN 'N'
+		 WHEN cd.Is6MonthsOfAge IS NULL THEN '-' END AS [6 Months],
+	
+	CASE WHEN cd.Is12MonthsOfAge = 1 THEN 'Y'
+	     WHEN cd.Is12MonthsOfAge = 0 THEN 'N'
+		 WHEN cd.Is12MonthsOfAge IS NULL THEN '-' END AS [12 Months],
+
+	CASE WHEN cd.Is18MonthsOfAge = 1 THEN 'Y'
+	     WHEN cd.Is18MonthsOfAge = 0 THEN 'N'
+		 WHEN cd.Is18MonthsOfAge IS NULL THEN '-' END AS [18 Months],
+
+	CASE WHEN cd.Is4YearsOfAge = 1 THEN 'Y'
+	     WHEN cd.Is4YearsOfAge = 0 THEN 'N'
+		 WHEN cd.Is4YearsOfAge IS NULL THEN '-' END AS [4 Years],
+
+	CASE WHEN cd.Is6MonthsTo5YearsOfAge = 1 THEN 'Y'
+	     WHEN cd.Is6MonthsTo5YearsOfAge = 0 THEN 'N'
+		 WHEN cd.Is6MonthsTo5YearsOfAge IS NULL THEN '-' END AS [6 Months to 5 Years],
+
+	CONVERT(VARCHAR(MAX), ISNULL((STUFF((SELECT DISTINCT ', ' + CONVERT(NVARCHAR(MAX), book.RoomName) FROM
+	dbo.rpt_Bookings book WHERE book.ChildId = Child.ChildId AND book.BookingStatus = 'Approved' FOR XML PATH('')) , 1, 2, '')), '-')) AS Rooms,
+	Book.RoomName,
+	Book.BookingDate AS [Booking Date],
+
+	ISNULL(Child.ChildFamilyStatus, '-') AS [Child Status],
+	ISNULL(Family.FamilyStatus, '-') AS [Family Status],
+	Family.[OrganisationId]  AS [OrganisationId],
+	Family.[ProviderId]  AS [ProviderId],
+	Family.[CentreId]  AS [CentreId],
+	Book.BookingStatus AS [Booking Status]
+	
+FROM [dbo].rpt_Family Family
+INNER JOIN [dbo].[rpt_FamilyChild] Child ON Family.FamilyId = Child.FamilyId
+INNER JOIN [dbo].[rpt_ChildDetails] cd ON cd.PersonId = child.ChildId
+INNER JOIN dbo.rpt_Bookings Book ON Book.FamilyId = Family.FamilyId AND Book.ChildId = Child.ChildId]]></query>
+            </view>
+            <view id="5d6eb9e9-7055-4ce2-a182-72fe198518ea" name="ChildView" alias="ChildView">
+                <query><![CDATA[SELECT
+	Family.[CentreName] AS [Centre],
+ 	Family.[OrganisationName]  AS [Organisation],
+	Family.ProviderName AS [Provider],
+ 	Child.ChildName AS [Child],
+	Family.[FamilyName] AS [Family],
+	COALESCE(CONVERT(VARCHAR, cd.DateOfBirth, 103), '-') AS [Child DOB],
+	'0' AS [Child Age Group],
+	ISNULL(cd.KnownAs, '-') AS [Known As],
+	ISNULL(cd.CRN, '-') AS CRN,
+	ISNULL(cd.[Address], '-') AS [Address],
+	ISNULL(cd.Gender, '-') AS Gender,
+	ISNULL(cd.AboriginalStatus, '-') AS [Aboriginal],
+	ISNULL(cd.CountryOfBirth, '-') AS [Country Of Birth],
+	ISNULL(cd.Nationality, '-') AS Nationality,
+	ISNULL(cd.CulturalBackground, '-') AS [Cultural Background],
+	ISNULL(cd.LanguagesSpoken, '-') AS [Languages Spoken],
+	ISNULL(cd.Religion, '-') AS Religion,
+	ISNULL(cd.SchoolYear, '-') AS [School Year],
+	COALESCE(CONVERT(VARCHAR, cd.SchoolStartDate, 103), '-') AS [School Start Date],
+	ISNULL(cd.School, '-') AS [School],
+
+	CONVERT(VARCHAR(MAX), ISNULL((STUFF((SELECT DISTINCT ', ' + CONVERT(NVARCHAR(MAX), book.RoomName) FROM
+	dbo.rpt_Bookings book WHERE book.ChildId = Child.ChildId AND book.BookingStatus = 'Approved' FOR XML PATH('')) , 1, 2, '')), '-')) AS Rooms,
+	
+	 Book.RoomName,
+
+	ISNULL(Relation.RelatedToPersonName, '-') AS Guardian,
+	COALESCE(CONVERT(VARCHAR, gd.DateOfBirth, 103), '-') AS [Guardian DOB],
+	ISNULL(gd.CRN, '-') AS [Guardian CRN],
+
+	CASE WHEN Adult.AdultType = 'Guardian' THEN ISNULL(gd.[Mobile],'-')
+		 WHEN Adult.AdultType = 'Nominee' THEN ISNULL(Nominee.[Mobile],'-')
+		 END AS [Mobile],
+ 	ISNULL(gd.[Phone],'-')  AS [Work],
+ 	ISNULL(gd.[Home],'-')  AS [Home],
+	
+ 	CASE WHEN Adult.AdultType = 'Guardian' THEN ISNULL(gd.[Email],'-') 
+		 WHEN Adult.AdultType = 'Nominee' THEN ISNULL(Nominee.[Email],'-')
+		 END AS [Email],
+	ISNULL(Family.PriorityContact, '-') AS [Priority Contact Name],
+	ISNULL(Family.PriorityContactMobileNumber, '-') AS [Priority Contact No],
+
+	ISNULL(Relation.ContactPriority, '-') AS [Contact Priority],
+	ISNULL(Relation.Relationship, '-') AS [Child Relation],
+
+	ISNULL(Adult.AdultType, '-') AS [Person Type],
+
+	
+	CASE WHEN Relation.CanAuthoriseSeekMedical = 1 THEN 'Y'
+	     WHEN Relation.CanAuthoriseSeekMedical = 0 THEN 'N' 
+		 WHEN Relation.CanAuthoriseSeekMedical IS NULL THEN '-' 
+		 END AS 'Seek Medical Treatement',
+		 
+	CASE WHEN Relation.CanAuthoriseAdministerMedical = 1 THEN 'Y'
+		 WHEN Relation.CanAuthoriseAdministerMedical = 0 THEN 'N' 
+		 WHEN Relation.CanAuthoriseAdministerMedical IS NULL THEN '-' 
+		 END AS 'Authorise Medication',
+		 
+	CASE WHEN Relation.IsEmergencyContact = 1 THEN 'Y'
+	     WHEN Relation.IsEmergencyContact = 0 THEN 'N'
+		 WHEN Relation.IsEmergencyContact IS NULL THEN '-'
+		 END AS 'Act As Emergency Contact',
+		 
+	CASE WHEN Relation.CanAuthoriseForExcursion = 1 THEN 'Y'
+	     WHEN Relation.CanAuthoriseForExcursion = 0 THEN 'N'
+		 WHEN Relation.CanAuthoriseForExcursion IS NULL THEN '-'		 
+		 END AS 'Excursion Permission',
+		 
+	CASE WHEN Relation.HasPickupAuthority = 1 THEN 'Y'
+	     WHEN Relation.HasPickupAuthority = 0 THEN 'N' 
+		 WHEN Relation.HasPickupAuthority IS NULL THEN '-' 
+		 END AS 'Dropoff-Pickup',
+
+
+	COALESCE(CONVERT(VARCHAR, Relation.PickupFromDate, 103), '-') AS [Pickup From Date],
+	COALESCE(CONVERT(VARCHAR, Relation.PickupToDate, 103), '-') AS [Pickup To Date],
+
+	CASE WHEN Adult.AdultType = 'Guardian' THEN ISNULL(Adult.AdultFamilyStatus, '-') ELSE ISNULL(Adult.AdultFamilyStatus, '-') END AS [Guardian Status],
+	ISNULL(Child.ChildFamilyStatus, '-') AS [Child Status],
+	ISNULL(Family.FamilyStatus, '-') AS [Family Status],
+	/*Book.BookingDate AS [Booking Date],*/
+	ISNULL(gd.KnownAs, '-') AS [Guardian Known As],
+	ISNULL(Account.PaymentAccountStatus, '-') AS [Payment Account Status],
+	Family.[OrganisationId]  AS [OrganisationId],
+	Family.[ProviderId]  AS [ProviderId],
+	Family.[CentreId]  AS [CentreId],
+	
+	CONVERT(VARCHAR(MAX), ISNULL((STUFF((SELECT DISTINCT ', ' + CONVERT(NVARCHAR(MAX), cf.FieldText) +': '+ CASE WHEN CONVERT(NVARCHAR(MAX), cf.FieldValue) = 'true' THEN 'Yes' 	WHEN CONVERT(NVARCHAR(MAX), cf.FieldValue) = 'false' THEN 'No' ELSE CONVERT(NVARCHAR(MAX), cf.FieldValue) END FROM
+	dbo.rpt_CustomFields cf WHERE cf.PersonId = cd.PersonId  AND cf.SectionName IS NOT NULL
+										 AND cf.OrganisationId = Family.OrganisationId 
+										 AND IIF(ISNULL(cf.ProvideId, '') = '', Family.ProviderId, cf.ProvideId) = Family.ProviderId 
+										 AND IIF(ISNULL(cf.CentreId, '') = '', Family.CentreId, cf.CentreId) = Family.CentreId
+										 FOR XML PATH('')) , 1, 2, '')), '-')) AS [Custom Fields]
+
+ 
+FROM [dbo].rpt_Family Family
+INNER JOIN [dbo].[rpt_FamilyAdult] Adult ON Adult.FamilyId = Family.FamilyId
+INNER JOIN [dbo].[rpt_FamilyChild] Child ON Family.FamilyId = Child.FamilyId
+INNER JOIN [dbo].[rpt_ChildDetails] cd ON cd.PersonId = child.ChildId
+LEFT JOIN [dbo].[rpt_FamilyRelation] Relation ON Family.FamilyId = Relation.FamilyId 
+								AND Child.ChildId = Relation.ChildId 
+								AND Adult.AdultId = Relation.RelatedToPersonId
+LEFT JOIN dbo.rpt_FamilyPaymentAccount Account ON Family.FamilyId = Account.FamilyId 
+			AND Adult.AdultId = Account.PaymentAccountPersonId
+LEFT JOIN [dbo].[rpt_GuardianDetails] gd ON gd.PersonId = Adult.AdultId
+LEFT JOIN [dbo].[rpt_NomineeDetails] Nominee ON Nominee.PersonId = Adult.AdultId
+LEFT JOIN dbo.rpt_Bookings Book ON Book.FamilyId = Family.FamilyId AND Book.ChildId = Child.ChildId AND Book.BookingStatus = 'Approved' AND Book.BookingDate BETWEEN CONVERT(DATE, GETUTCDATE()) AND DATEADD(DD, 30, CONVERT(DATE, GETUTCDATE()))
+]]></query>
+            </view>
+        </views>
+    </database>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+    <access>
+        <expression expressionId="d997f8ff-4e3f-4476-a46f-c1ad57676fce" type="conditionIf" expressionName="ChildConsentViewSecurity" expressionType="table" on="ChildConsentView" accessType="grant">
+            <condition><![CDATA[${org}.name != '-' ]]></condition>
+            <filter><![CDATA[ChildConsentView.OrganisationId IN (${profile['organisation']}) AND
+ChildConsentView.ProviderId IN  (${profile['providers']}) AND
+ChildConsentView.CentreId IN (${profile['centres']})]]></filter>
+        </expression>
+        <expression expressionId="e3ba3a68-c978-4f23-a4c9-3566fe762841" type="conditionIf" expressionName="ChildCourtOrdersViewSecurity" expressionType="table" on="ChildCourtOrdersView" accessType="grant">
+            <condition><![CDATA[${org}.name != '-' ]]></condition>
+            <filter><![CDATA[ChildCourtOrdersView.OrganisationId IN (${profile['organisation']}) AND
+ChildCourtOrdersView.ProviderId IN  (${profile['providers']}) AND
+ChildCourtOrdersView.CentreId IN (${profile['centres']})]]></filter>
+        </expression>
+        <expression expressionId="0ff5d726-b6cf-4d05-af5d-bcca70264a4a" type="conditionIf" expressionName="ChildHealthViewSecurity" expressionType="table" on="ChildHealthView" accessType="grant">
+            <condition><![CDATA[${org}.name != '-']]></condition>
+            <filter><![CDATA[ChildHealthView.OrganisationId IN (${profile['organisation']}) AND
+ChildHealthView.ProviderId IN  (${profile['providers']}) AND
+ChildHealthView.CentreId IN (${profile['centres']})]]></filter>
+        </expression>
+        <expression expressionId="5b8ac38e-f825-4421-8da4-00fe3d019efc" type="conditionIf" expressionName="ChildImmunisationViewSecurity" expressionType="table" on="ChildImmunisationView" accessType="grant">
+            <condition><![CDATA[${org}.name != '-']]></condition>
+            <filter><![CDATA[ChildImmunisationView.OrganisationId IN (${profile['organisation']}) AND
+ChildImmunisationView.ProviderId IN  (${profile['providers']}) AND
+ChildImmunisationView.CentreId IN (${profile['centres']})]]></filter>
+        </expression>
+        <expression expressionId="788f78dd-9a77-48e9-9897-e193d2650674" type="conditionIf" expressionName="ChildMedicalViewSecurity" expressionType="table" on="ChildMedicalView" accessType="grant">
+            <condition><![CDATA[${org}.name != '-']]></condition>
+            <filter><![CDATA[ChildMedicalView.OrganisationId IN (${profile['organisation']}) AND
+ChildMedicalView.ProviderId IN  (${profile['providers']}) AND
+ChildMedicalView.CentreId IN (${profile['centres']})]]></filter>
+        </expression>
+        <expression expressionId="47b89b68-8947-4fe6-8286-d13207054adc" type="conditionIf" expressionName="ChildViewSecurity" expressionType="table" on="ChildView" accessType="grant">
+            <condition><![CDATA[${org}.name != '-']]></condition>
+            <filter><![CDATA[ChildView.OrganisationId IN (${profile['organisation']}) AND
+ChildView.ProviderId IN  (${profile['providers']}) AND
+ChildView.CentreId IN (${profile['centres']})]]></filter>
+        </expression>
+        <expression expressionId="9aa8126a-3e86-4d66-b641-3a52d0a6551d" type="conditionIf" expressionName="DietRequirementViewSecurity" expressionType="table" on="DietRequirementView" accessType="grant">
+            <condition><![CDATA[${org}.name != '-']]></condition>
+            <filter><![CDATA[DietRequirementView.OrganisationId IN (${profile['organisation']}) AND
+DietRequirementView.ProviderId IN  (${profile['providers']}) AND
+DietRequirementView.CentreId IN (${profile['centres']})
+]]></filter>
+        </expression>
+    </access>
+</metadata>

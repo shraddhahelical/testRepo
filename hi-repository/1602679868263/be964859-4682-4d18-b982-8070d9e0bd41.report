@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<report>
+    <reportName>test line chart</reportName>
+    <visible>true</visible>
+    <metadata>
+        <location>1463377807724/1463377836985</location>
+        <metadataFileName>e9be6771-995b-40eb-a01c-304857a100a1.metadata</metadataFileName>
+    </metadata>
+    <canvas>
+        <columns><![CDATA[[{"column":"employee_details.employee_name","label":"employee_details_employee_name","id":"i6lg1skp9is","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"employee_details_employee_name","groupBy":["db.generic.groupBy.group"]},{"column":"employee_details.age","label":"employee_details_age","id":"ltkwh1yf9tl","type":{"dataType":"numeric","backendDatatype":"java.lang.Integer"},"autogen_alias":"sum_age","aggregate":["db.generic.aggregate.sum"]}]]]></columns>
+    </canvas>
+    <state><![CDATA[{"columns":[{"column":"employee_details.employee_name","label":"employee_details_employee_name","id":"i6lg1skp9is","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"employee_details_employee_name","groupBy":["db.generic.groupBy.group"]},{"column":"employee_details.age","label":"employee_details_age","id":"ltkwh1yf9tl","type":{"dataType":"numeric","backendDatatype":"java.lang.Integer"},"autogen_alias":"sum_age","aggregate":["db.generic.aggregate.sum"]}],"filters":[],"customFilterExpression":"","customHavingExpression":"","customFilterExpressionObj":{},"customHavingExpressionObj":{},"havingExpressionIndexs":{},"filterExpressionIndexs":{},"options":{"limitBy":1000,"prependTableNameToAlias":true},"visualisation":{"type":"Charts","chartGroup":["C3","C3Axis","C3Line","C3Circle"],"selectedType":"Charts","settings":{"script":null,"vizscriptsEditMultipleMode":false,"type":"LineChart","vizType":"Charts","chartGroup":["C3","C3Axis","C3Line","C3Circle"]},"vizSelectedScripts":[]},"scripts":[],"styles":"","customStyles":"","customScripts":[]}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</report>

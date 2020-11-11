@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efw>
+    <title>DynamicView_CommunityReport</title>
+    <author>hiadmin</author>
+    <description>Efw File</description>
+    <template>d71dd0ae-eec4-492a-9d3b-39e25dc4fe59.html</template>
+    <visible>true</visible>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</efw>

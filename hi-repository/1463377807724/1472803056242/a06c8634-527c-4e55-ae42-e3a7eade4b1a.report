@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<report>
+    <reportName>Client Travel Cost</reportName>
+    <visible>true</visible>
+    <metadata>
+        <location>1463377807724/1463377836985</location>
+        <metadataFileName>e9be6771-995b-40eb-a01c-304857a100a1.metadata</metadataFileName>
+    </metadata>
+    <canvas>
+        <columns><![CDATA[[{"column":"meeting_details.client_name","label":"meeting_details_client_name","id":"ebdph5frfk","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"meeting_details_client_name","groupBy":["db.generic.groupBy.group"],"alias":"Client"},{"column":"travel_details.travel_cost","label":"travel_details_travel_cost","id":"run18a6va2","type":{"dataType":"numeric","backendDatatype":"java.lang.Integer"},"autogen_alias":"sum_travel_cost","aggregate":["db.generic.aggregate.sum"],"alias":"travel_cost"}]]]></columns>
+    </canvas>
+    <state><![CDATA[{"columns":[{"column":"meeting_details.client_name","label":"meeting_details_client_name","id":"ebdph5frfk","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"meeting_details_client_name","groupBy":["db.generic.groupBy.group"],"alias":"Client"},{"column":"travel_details.travel_cost","label":"travel_details_travel_cost","id":"run18a6va2","type":{"dataType":"numeric","backendDatatype":"java.lang.Integer"},"autogen_alias":"sum_travel_cost","aggregate":["db.generic.aggregate.sum"],"alias":"travel_cost"}],"filters":[],"customFilterExpression":"","customHavingExpression":"","options":{"limitBy":1000,"prependTableNameToAlias":true},"visualisation":{"type":"Charts","settings":{"script":null,"type":"PieChart"},"vizSelectedScripts":[]},"scripts":["$(document).ready(function() {\n  document.getElementById(\"main\").addEventListener(\"click\", function(d) {\n\tvar t = d.target;\n\tif (t.classList.contains(\"c3-arc\")) {\n\t  var e = d3.select(t);\n\t  parent.Dashboard.setVariable(\"Client\", e.data()[0].data.id);\n\tconsole.log(e.data()[0].data.id);\n\t}\n  });\n});"],"styles":"","customStyles":"","customScripts":[]}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+    <share mandatory="true">
+        <roles mandatory="true">
+            <role id="2">2</role>
+        </roles>
+    </share>
+</report>

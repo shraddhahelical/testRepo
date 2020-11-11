@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efwfolder>
+    <visible>true</visible>
+    <title>SSO Testing</title>
+    <security>
+        <createdBy>602</createdBy>
+        <organization>101</organization>
+    </security>
+</efwfolder>

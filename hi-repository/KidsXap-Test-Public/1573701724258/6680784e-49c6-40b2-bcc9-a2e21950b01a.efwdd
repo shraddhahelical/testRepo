@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efwdd>
+    <fileName>rpt_KIM</fileName>
+    <efw>6680784e-49c6-40b2-bcc9-a2e21950b01a.efw</efw>
+    <visible>true</visible>
+    <description>Efw Dashboard Designer</description>
+    <state><![CDATA[{"variables":[["Organisation",["_all_"]],["Provider",["_all_"]],["Centre",["_all_"]],["Year",["2020"]],["OrganisationId",["_all_"]],["ProviderId",["_all_"]],["CentreId",["_all_"]]],"components":{"quekxgynyie":{"gs_attr":{"x":0,"y":0,"width":100,"height":500},"name":"quekxgynyie","metadata":{"dir":"/KidsXap-Test-Public/Reports/KIM_Report/","name":"rpt_KIM"},"uid":"quekxgynyie","label":"","requestParameters":{"CentreId":"CentreId","ProviderId":"ProviderId","OrganisationId":"OrganisationId","Year":"Year"},"executeAtStart":true,"type":"dashboard-component","options":{"dir":"KidsXap-Test-Public/1573701738739/1592355780668","file":"0c8a25b5-0304-43d9-8d05-59c17ef3ff09.report","ext":"report","compType":"Adhoc","uid":"quekxgynyie","iframe":true,"styles":{"boxComp":"Adhoc","borderComp":"Adhoc"},"report":{"dir":"KidsXap-Test-Public/1573701738739/1592355780668","file":"0c8a25b5-0304-43d9-8d05-59c17ef3ff09.report"}},"listeners":["Year","OrganisationId","ProviderId","CentreId"]}},"dashboardConfig":{"id":"dashboard"},"css":"","script":"","printOptions":{"templateId":"Dashboard","title":"Dashboard"},"componentSettings":{"quekxgynyie":{"header":true,"minimize":false,"maximize":false,"export":false,"editReport":false}},"gridWidthOption":100,"toggleIframes":false}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</efwdd>

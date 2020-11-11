@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<report>
+    <reportName>DynamicView_Text_DoesnotStartsWithReport</reportName>
+    <visible>true</visible>
+    <metadata>
+        <location>1588851297738/1589444653445/1590651742641/1591111658450</location>
+        <metadataFileName>9fdad882-9600-43aa-92f0-2553f60922c8.metadata</metadataFileName>
+    </metadata>
+    <canvas>
+        <columns><![CDATA[[{"column":"TextFilterConditions.booking_platform","label":"TextFilterConditions_booking_platform","id":"3xbbqoomi23","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"TextFilterConditions_booking_platform","groupBy":["db.generic.groupBy.group"]},{"column":"TextFilterConditions.destination","label":"TextFilterConditions_destination","id":"kquytehfb3b","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"TextFilterConditions_destination","groupBy":["db.generic.groupBy.group"]},{"column":"TextFilterConditions.source","label":"TextFilterConditions_source","id":"e13jsy5ff7g","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"TextFilterConditions_source","groupBy":["db.generic.groupBy.group"]}]]]></columns>
+    </canvas>
+    <state><![CDATA[{"columns":[{"column":"TextFilterConditions.booking_platform","label":"TextFilterConditions_booking_platform","id":"3xbbqoomi23","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"TextFilterConditions_booking_platform","groupBy":["db.generic.groupBy.group"]},{"column":"TextFilterConditions.destination","label":"TextFilterConditions_destination","id":"kquytehfb3b","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"TextFilterConditions_destination","groupBy":["db.generic.groupBy.group"]},{"column":"TextFilterConditions.source","label":"TextFilterConditions_source","id":"e13jsy5ff7g","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"TextFilterConditions_source","groupBy":["db.generic.groupBy.group"]}],"filters":[{"values":["A"],"mode":"auto","dataType":"text","orderBy":"","valuesMode":"custom","isFilterEditable":false,"dateTimeToggle":false,"databaseFunction":{},"label":"destination","column":"TextFilterConditions.destination","backendDataType":"java.lang.String","rangeValuesType":"","id":0,"condition":"DOES_NOT_STARTS_WITH","valuesRange":{},"rangeSelectionToggole":true}],"customFilterExpression":"${0}","customHavingExpression":"","customFilterExpressionObj":{"0":"${0}"},"customHavingExpressionObj":{},"havingExpressionIndexs":{},"filterExpressionIndexs":{},"options":{"limitBy":1000,"prependTableNameToAlias":true},"visualisation":{"type":"Table","chartGroup":"","selectedType":"Table","settings":{"script":null,"vizscriptsEditMultipleMode":false},"vizSelectedScripts":[]},"scripts":[],"styles":"","customStyles":"","customScripts":[]}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</report>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<report>
+    <reportName>BugID2834Report</reportName>
+    <visible>true</visible>
+    <metadata>
+        <location>1588851297738/1590496210039</location>
+        <metadataFileName>51a062b2-3366-4ed5-b6f8-056ef7a6ad9f.metadata</metadataFileName>
+    </metadata>
+    <canvas>
+        <columns><![CDATA[[{"column":"SessionVarView.cancellation_reason","label":"SessionVarView_cancellation_reason","id":"40oh4ztkbdi","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"SessionVarView_cancellation_reason","groupBy":["db.generic.groupBy.group"]},{"column":"SessionVarView.client_name","label":"SessionVarView_client_name","id":"aexvpv7tf6n","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"SessionVarView_client_name","groupBy":["db.generic.groupBy.group"]},{"column":"SessionVarView.meeting_date","label":"SessionVarView_meeting_date","id":"xkk8ihtj65q","type":{"dataType":"dateTime","backendDatatype":"java.sql.Timestamp"},"autogen_alias":"SessionVarView_meeting_date","groupBy":["db.generic.groupBy.group"]},{"column":"SessionVarView.meeting_impact","label":"SessionVarView_meeting_impact","id":"kq5dlo3mv9b","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"SessionVarView_meeting_impact","groupBy":["db.generic.groupBy.group"]},{"column":"SessionVarView.meeting_purpose","label":"SessionVarView_meeting_purpose","id":"6mm25uu45sj","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"SessionVarView_meeting_purpose","groupBy":["db.generic.groupBy.group"]}]]]></columns>
+    </canvas>
+    <state><![CDATA[{"columns":[{"column":"SessionVarView.cancellation_reason","label":"SessionVarView_cancellation_reason","id":"40oh4ztkbdi","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"SessionVarView_cancellation_reason","groupBy":["db.generic.groupBy.group"]},{"column":"SessionVarView.client_name","label":"SessionVarView_client_name","id":"aexvpv7tf6n","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"SessionVarView_client_name","groupBy":["db.generic.groupBy.group"]},{"column":"SessionVarView.meeting_date","label":"SessionVarView_meeting_date","id":"xkk8ihtj65q","type":{"dataType":"dateTime","backendDatatype":"java.sql.Timestamp"},"autogen_alias":"SessionVarView_meeting_date","groupBy":["db.generic.groupBy.group"]},{"column":"SessionVarView.meeting_impact","label":"SessionVarView_meeting_impact","id":"kq5dlo3mv9b","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"SessionVarView_meeting_impact","groupBy":["db.generic.groupBy.group"]},{"column":"SessionVarView.meeting_purpose","label":"SessionVarView_meeting_purpose","id":"6mm25uu45sj","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"SessionVarView_meeting_purpose","groupBy":["db.generic.groupBy.group"]}],"filters":[],"customFilterExpression":"","customHavingExpression":"","customFilterExpressionObj":{},"customHavingExpressionObj":{},"havingExpressionIndexs":{},"filterExpressionIndexs":{},"options":{"limitBy":1000,"prependTableNameToAlias":true},"visualisation":{"type":"Table","chartGroup":"","selectedType":"Table","settings":{"script":null,"vizscriptsEditMultipleMode":false},"vizSelectedScripts":[]},"scripts":[],"styles":"","customStyles":"","customScripts":[]}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+    <share mandatory="true">
+        <users mandatory="true">
+            <user id="501">5</user>
+        </users>
+    </share>
+</report>

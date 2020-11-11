@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<report>
+    <reportName>Hidden Filter</reportName>
+    <visible>true</visible>
+    <metadata>
+        <location>1463377807724/1463377836985</location>
+        <metadataFileName>e9be6771-995b-40eb-a01c-304857a100a1.metadata</metadataFileName>
+    </metadata>
+    <canvas>
+        <columns><![CDATA[[{"column":"travel_details.booking_platform","label":"travel_details_booking_platform","id":"1mvlc3wezggi","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"travel_details_booking_platform","groupBy":["db.generic.groupBy.group"],"alias":"Booking Platform"},{"column":"travel_details.travel_cost","label":"travel_details_travel_cost","id":"86dpf2xhe0g","type":{"dataType":"numeric","backendDatatype":"java.lang.Integer"},"autogen_alias":"sum_travel_cost","aggregate":["db.generic.aggregate.sum"],"alias":"Total Travel Cost"}]]]></columns>
+    </canvas>
+    <state><![CDATA[{"columns":[{"column":"travel_details.booking_platform","label":"travel_details_booking_platform","id":"1mvlc3wezggi","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"travel_details_booking_platform","groupBy":["db.generic.groupBy.group"],"alias":"Booking Platform"},{"column":"travel_details.travel_cost","label":"travel_details_travel_cost","id":"86dpf2xhe0g","type":{"dataType":"numeric","backendDatatype":"java.lang.Integer"},"autogen_alias":"sum_travel_cost","aggregate":["db.generic.aggregate.sum"],"alias":"Total Travel Cost"}],"filters":[{"values":["_all_"],"mode":"auto","dataType":"text","orderBy":"","valuesMode":"auto","isFilterEditable":false,"encloseInQuotes":false,"dateTimeToggle":false,"databaseFunction":{},"label":"Booking Platform","column":"travel_details.booking_platform","backendDataType":"java.lang.String","hideThisFilter":true,"rangeValuesType":"","id":0,"condition":"EQUALS","valuesRange":{},"rangeSelectionToggole":true}],"customFilterExpression":"('_all_' = '_all_')","customHavingExpression":"","customFilterExpressionObj":{"0":"('_all_' = '_all_')"},"customHavingExpressionObj":{},"havingExpressionIndexs":{},"filterExpressionIndexs":{"0":0},"options":{"limitBy":1000,"prependTableNameToAlias":true},"visualisation":{"type":"Table","chartGroup":"","selectedType":"Table","settings":{"script":null,"vizscriptsEditMultipleMode":false},"vizSelectedScripts":[]},"scripts":[],"styles":"","customStyles":"","customScripts":[]}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</report>

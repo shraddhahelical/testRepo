@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efw>
+    <title>rpt_BondSummary</title>
+    <author>hiadmin</author>
+    <description>Efw File</description>
+    <template>be6c7f51-e65a-491a-8b14-5f1781fb0b24.html</template>
+    <visible>true</visible>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</efw>

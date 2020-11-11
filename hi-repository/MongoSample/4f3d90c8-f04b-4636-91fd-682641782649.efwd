@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<EFWD>
+    <DataSources>
+        <Connection id="1" type="global.jdbc">
+            <globalId>4</globalId>
+            <security>
+                <createdBy>1</createdBy>
+                <organization></organization>
+            </security>
+        </Connection>
+    </DataSources>
+    <DataMaps>
+        <DataMap id="1" connection="1" type="sql">
+            <Name>cuisine</Name>
+            <Query><![CDATA[db.observation.aggregate([
+{
+"$project":
+{
+       "_id" : 0, 
+       "Airport_Code" : { $arrayElemAt: [ "$fields", 3 ]}
+}
+}
+,
+     
+{
+"$project":
+{
+       "_id" : 0, 
+        Airport_Code : "$Airport_Code.control.modelValue"
+}
+}
+,
+
+{ 
+            "$group" : { 
+                "_id" : 0, 
+                "distinct" : { 
+                    "$addToSet" : "$$ROOT"
+                }
+            }
+}
+,{"$sort":{"Airport_Code": 1}}
+])
+
+]]></Query>
+        </DataMap>
+    </DataMaps>
+</EFWD>

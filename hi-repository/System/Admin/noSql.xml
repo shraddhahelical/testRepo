@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<noSql>
+    <enableWarehouse>true</enableWarehouse>
+    <master>local[*]</master>
+    <appName>HI-Spark-Application</appName>
+    <executeAtStart>false</executeAtStart>
+    <!--Mode can be m or clustered. As of now supporting only inMemory-->
+    <mode>inMemory</mode>
+    <url>jdbc:hive2://</url>
+    <host>localhost</host>
+    <inMemoryPort>10001</inMemoryPort>
+    <restApiPort>4040</restApiPort>
+    <templatePath>NoSql</templatePath>
+    <driverClass>org.apache.hive.jdbc.HiveDriver</driverClass>
+    <sparkHome>SparkHome</sparkHome>
+    <hadoopHome>HadoopHome</hadoopHome>
+    <executorInstances>2</executorInstances>
+    <executorCore>2</executorCore>
+    <maxCore>4</maxCore>
+    <masterPort>8899</masterPort>
+    <masterWebUiPort>8082</masterWebUiPort>
+	<workerWebUiport>8088</workerWebUiport>
+	<applicationUiPort>8089</applicationUiPort>
+	<executorMemory>1024M</executorMemory>
+	<portRangeStart>8000</portRangeStart>
+	<portRangeEnd>9000</portRangeEnd>
+	<userName> </userName>
+	<password> </password>
+	<metaStoreJdbcUrl> </metaStoreJdbcUrl>
+	<metaStoreDriver>org.apache.derby.jdbc.AutoloadedDriver</metaStoreDriver>
+	<metaStoreUserName>hiuser</metaStoreUserName>
+	<metaStorePassword>hiuser</metaStorePassword>
+	<wareHousePath> </wareHousePath>
+    <splitCharacter>;</splitCharacter>
+    <!--Use this element to bind username and password parameter, ssl true false etc -->
+    <otherUrlPart> </otherUrlPart>
+</noSql>

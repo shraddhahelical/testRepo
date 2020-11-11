@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<metadata type="db.generic" databaseType="Microsoft SQL Server 14.00.1000">
+    <fileName>mtd_KIM</fileName>
+    <connectionType>global.jdbc</connectionType>
+    <visible>true</visible>
+    <connection connectionType="global.jdbc" subType="dynamicDataSource">
+        <dialect>org.hibernate.dialect.SQLServerDialect</dialect>
+        <connectionId>2</connectionId>
+        <driverClass reference="sqlserver">com.microsoft.sqlserver.jdbc.SQLServerDriver</driverClass>
+    </connection>
+    <database name="QA_reportDB.dbo" catalog="QA_reportDB" schema="dbo">
+        <tables>
+            <table id="2b398bb3-8745-4dd1-9c33-93aed85e80ad" name="KIM" type="view" aliasName="KIM">
+                <columns>
+                    <column name="Year" id="e026467b-1bbf-4861-ae27-8d353e0f8116" aliasName="Year" type="java.lang.Float"/>
+                    <column name="CentreId" id="fcf18865-9fae-4da2-9390-096b0dd85ac8" aliasName="CentreId" type="java.lang.String"/>
+                    <column name="Centre" id="0f3e1cc0-7091-41c8-81b9-06c9ec84422c" aliasName="Centre" type="java.lang.String"/>
+                    <column name="OrganisationId" id="2c26f6be-b5ef-44b5-abf0-10e7e5600164" aliasName="OrganisationId" type="java.lang.String"/>
+                    <column name="Organisation" id="3e6d274a-f2cf-4977-900f-a6dac79d3f76" aliasName="Organisation" type="java.lang.String"/>
+                    <column name="ProviderId" id="7f9c68da-ebc9-408a-b500-8588bbd92738" aliasName="ProviderId" type="java.lang.String"/>
+                    <column name="Provider" id="124944b1-1d48-4e50-9372-92521fb52cf8" aliasName="Provider" type="java.lang.String"/>
+                    <column name="GivenName" id="3b424d74-a599-4762-ae5c-59a797a2e366" aliasName="GivenName" type="java.lang.String"/>
+                    <column name="FamilyName" id="ba5ac520-ff78-48cb-a520-15eb868ef3fe" aliasName="FamilyName" type="java.lang.String"/>
+                    <column name="Sex" id="de576489-e758-4877-ba02-33041bc8e35b" aliasName="Sex" type="java.lang.String"/>
+                    <column name="DOB" id="72c9ecb4-f9d1-41b6-87c3-638533df27ff" aliasName="DOB" type="java.lang.String"/>
+                    <column name="AddressUnitNumber" id="7c1cb565-8c11-4245-9a8a-c75dea1adfcb" aliasName="AddressUnitNumber" type="java.lang.String"/>
+                    <column name="AddressStreetNumber" id="390290fa-e234-4df6-a052-905e8a0bac1a" aliasName="AddressStreetNumber" type="java.lang.String"/>
+                    <column name="AddressStreetName" id="8ea3440b-248f-40a6-a4aa-6a4cf4aa1da1" aliasName="AddressStreetName" type="java.lang.String"/>
+                    <column name="AddressStreetType" id="04e472bd-f972-4d62-a769-5ce3ad365f33" aliasName="AddressStreetType" type="java.lang.String"/>
+                    <column name="AddressSuburb" id="8b9855b8-65fa-41cc-b50c-6fcae8088e2d" aliasName="AddressSuburb" type="java.lang.String"/>
+                    <column name="AddressPostCode" id="265d8362-7e78-42eb-9494-20daa5c21d5f" aliasName="AddressPostCode" type="java.lang.String"/>
+                    <column name="AddressState" id="97a5c9b7-b5fe-402a-87d0-a8a22cfdbad5" aliasName="AddressState" type="java.lang.String"/>
+                    <column name="DateCommenced-FirstBooking" id="a558108a-c7ca-4cfc-9bf6-3632ccac6a6d" aliasName="DateCommenced-FirstBooking" type="java.lang.String"/>
+                    <column name="IsAttendingSchoolSecondYear" id="8d5fe5bd-f2a1-4e7a-8a6f-959a75ea2b31" aliasName="IsAttendingSchoolSecondYear" type="java.lang.String"/>
+                    <column name="LanguageHome" id="f9a132f5-5ae0-4d8c-9598-cdd7d199687e" aliasName="LanguageHome" type="java.lang.String"/>
+                    <column name="IsEligibleKFS" id="80e3384c-eaf1-4f30-905b-a0eef276151a" aliasName="IsEligibleKFS" type="java.lang.String"/>
+                    <column name="ESKGrant" id="6aeec2d8-64c0-4de0-a72f-bd37f7516c7a" aliasName="ESKGrant" type="java.lang.Float"/>
+                    <column name="GrantType" id="1c877cb8-44d8-4381-b189-09a5f3226a5c" aliasName="GrantType" type="java.lang.String"/>
+                    <column name="IsProgramDelivered" id="1a60dac1-05fa-4948-8108-5d3a4d0cf9e4" aliasName="IsProgramDelivered" type="java.lang.String"/>
+                    <column name="IndigenousStatus" id="aa734d40-277f-4b99-8b4d-82bacd62b655" aliasName="IndigenousStatus" type="java.lang.String"/>
+                    <column name="DevelopmentalDelay" id="c1a8e764-a911-48fb-85fa-c67243189ee0" aliasName="DevelopmentalDelay" type="java.lang.String"/>
+                    <column name="ReceivingKIS" id="8f58cf46-16d0-44a0-a7f2-2553ae31877a" aliasName="ReceivingKIS" type="java.lang.String"/>
+                    <column name="ChildLivesWith" id="eca177e2-2088-4831-a130-054c0292ad39" aliasName="ChildLivesWith" type="java.lang.Float"/>
+                    <column name="ImmunisationStatus" id="dc0b6fba-b7d6-43c3-baca-0c50036465a1" aliasName="ImmunisationStatus" type="java.lang.Float"/>
+                    <column name="AdultAEducation" id="ce52fe69-0ddc-4380-817a-1ad0b6a5ea1c" aliasName="AdultAEducation" type="java.lang.String"/>
+                    <column name="AdultAQualification" id="0e8ab7fe-abd4-4ff8-9cf9-ff4754aa0d55" aliasName="AdultAQualification" type="java.lang.String"/>
+                    <column name=" AdultAOccupation" id="f735fe28-02df-4a37-8087-41f649205d82" aliasName=" AdultAOccupation" type="java.lang.String"/>
+                    <column name="AdultBEducation" id="872f5010-9330-42d2-8af1-892e555309f4" aliasName="AdultBEducation" type="java.lang.String"/>
+                    <column name="AdultBQualification" id="1e92678c-e256-4b74-9afc-ddb3ad432233" aliasName="AdultBQualification" type="java.lang.String"/>
+                    <column name=" AdultBOccupation" id="9dcb37a6-1272-45b0-9e6d-c35114110092" aliasName=" AdultBOccupation" type="java.lang.String"/>
+                </columns>
+            </table>
+        </tables>
+        <relationships/>
+        <views>
+            <view id="2b398bb3-8745-4dd1-9c33-93aed85e80ad" name="KIM" alias="KIM">
+                <query><![CDATA[
+SELECT DISTINCT
+  y.intYear AS [Year]
+, Family.CentreId
+, UPPER(Family.CentreName) AS [Centre]
+, Family.OrganisationId
+, UPPER(Family.OrganisationName) AS [Organisation]
+, Family.ProviderId
+, UPPER(Family.ProviderName) AS [Provider]
+, UPPER(Child.FirstName) AS [GivenName]
+, UPPER(Child.LastName) AS [FamilyName]
+, CASE WHEN Child.Gender = 'Female' THEN 'F' WHEN Child.Gender = 'Male' THEN 'M' WHEN Child.Gender = 'Other' THEN 'O' ELSE '-' END AS [Sex]
+, CONVERT(VARCHAR, Child.DateOfBirth, 103) AS [DOB]
+
+, '' AS AddressUnitNumber
+, '' AS AddressStreetNumber
+, ISNULL(StreetAddress, '') AS AddressStreetName
+, '' AS AddressStreetType
+, ISNULL(Suburb, '') AS AddressSuburb
+, ISNULL(Postcode, '') AS AddressPostCode
+, ISNULL(StateName, '') AS AddressState
+
+, CONVERT(VARCHAR, (SELECT MIN(Book.BookingDate) FROM dbo.rpt_Bookings Book WHERE Book.ChildId = Child.PersonId AND Book.FamilyId = Family.FamilyId AND ArrangementType = 'NoGov' /*'1332ee28-c091-4222-8b5e-6eacfc19f27e'*/
+	AND YEAR(Book.BookingDate) = ${Year} ), 103) AS [DateCommenced-FirstBooking]
+	
+	
+	
+, '-' AS [IsAttendingSchoolSecondYear]
+/*, IIF(ISNULL(Child.LanguagesSpoken,'English')='English','', TRIM(CAST(LEFT(REPLACE(Child.LanguagesSpoken,'English,',''), CASE WHEN CHARINDEX(',',REPLACE(Child.LanguagesSpoken,'English,',''))-1 < 0 THEN LEN(REPLACE(Child.LanguagesSpoken,'English,','')) ELSE CHARINDEX(',',REPLACE(Child.LanguagesSpoken,'English,',''))-1 END ) AS VARCHAR))) AS [LanguageHome]*/
+, ISNULL(L.LanguageId, '') AS [LanguageHome]
+, CASE WHEN KS.IsSubsidyEligible = 1 THEN 'Y' WHEN ISNULL(KS.IsSubsidyEligible, 0) = 0 THEN 'N' ELSE '-' END AS [IsEligibleKFS]
+, CASE WHEN KS.IsESK IS NULL THEN 3 ELSE KS.IsESK END AS [ESKGrant]
+, CASE WHEN KS.ESKGrant = 'Aboriginal Early Start grant' THEN CONVERT(VARCHAR, 1)
+	   WHEN KS.ESKGrant = 'Early Start Kindergarten Grant (Children known to child protection)' THEN CONVERT(VARCHAR, 2)
+	   WHEN KS.ESKGrant = 'Eligible for both Aboriginal Early Start and Early Start Kindergarten Grants' THEN CONVERT(VARCHAR, 3)
+	   WHEN KS.ESKGrant = 'Attended an Access to Early Learning program' THEN CONVERT(VARCHAR, 4)	 
+	   ELSE '-' END AS [GrantType]
+, CASE WHEN KS.IsESKPrgm = 1 THEN 'Y' WHEN KS.IsESKPrgm = 0 THEN 'N' ELSE '-' END AS [IsProgramDelivered]
+, CASE WHEN Child.AboriginalStatus = 'Aboriginal' THEN 'ABR'
+	   WHEN Child.AboriginalStatus = 'Both Aboriginal & Torres Strait Islander' THEN 'BOTH'
+	   WHEN Child.AboriginalStatus = 'Not Aboriginal nor Torres Strait Islander' THEN 'NO'
+	   WHEN Child.AboriginalStatus = 'Torres Strait Islander' THEN 'TORR' ELSE '-' END AS [IndigenousStatus]
+, 'N' AS [DevelopmentalDelay]
+, 'N' AS [ReceivingKIS]
+, CASE WHEN Child.ChildResidesWith IN ('Both Parents', 'Father', 'Mother') THEN 1
+	   WHEN Child.ChildResidesWith = 'Informal kinship care centre' THEN 2
+	   WHEN Child.ChildResidesWith = 'Formal kinship care' THEN 3
+	   WHEN Child.ChildResidesWith = 'Foster care' THEN 4
+	   WHEN Child.ChildResidesWith = 'Permanent care centre' THEN 5
+	   WHEN Child.ChildResidesWith = 'Residential care' THEN 6
+	   WHEN Child.ChildResidesWith IN ('Other living arrangements', 'Guardian') THEN 7 ELSE '-' END AS [ChildLivesWith]
+
+, CASE WHEN (Child.IsImmunised = 1 AND Child.ImmunisationDocumentType IN ('Immunisation History Statement','Immunisation Status Certificate')) THEN 1
+	   WHEN (Child.IsImmunised = 0 AND (SELECT COUNT(FAttach.Id) FROM dbo.rpt_FamilyAttachments FAttach WHERE FAttach.FileDisplay = 'MedicalExemption' AND FAttach.PersonId = Child.PersonId) > 0) THEN 3
+	   ELSE '-' END AS [ImmunisationStatus]
+
+, CASE WHEN Guardian.Education = 'Year 9 or equivalent or below' THEN CONVERT(VARCHAR, 9)
+	   WHEN Guardian.Education = 'Year 10 or equivalent' THEN CONVERT(VARCHAR, 10)
+	   WHEN Guardian.Education = 'Year 11 or equivalent' THEN CONVERT(VARCHAR, 11)
+	   WHEN Guardian.Education = 'Year 12 or equivalent' THEN CONVERT(VARCHAR, 12) ELSE 'U' END AS [AdultAEducation]
+
+, CASE WHEN Guardian.Qualification = 'Advanced diploma / Diploma' THEN 'D'
+       WHEN Guardian.Qualification = 'Bachelor degree or above' THEN 'B'
+	   WHEN Guardian.Qualification = 'Certificate I to IV (including trade certificate)' THEN 'C'
+	   WHEN Guardian.Qualification = 'No non-school qualification' THEN 'N' ELSE 'U' END AS [AdultAQualification]
+
+, CASE WHEN Guardian.OccupationGroup IS NULL THEN 'U' ELSE Guardian.OccupationGroup END AS [ AdultAOccupation]
+
+, CASE WHEN Guardian2.Education = 'Year 9 or equivalent or below' THEN CONVERT(VARCHAR, 9)
+	   WHEN Guardian2.Education = 'Year 10 or equivalent' THEN CONVERT(VARCHAR, 10)
+	   WHEN Guardian2.Education = 'Year 11 or equivalent' THEN CONVERT(VARCHAR, 11)
+	   WHEN Guardian2.Education = 'Year 12 or equivalent' THEN CONVERT(VARCHAR, 12) ELSE 'U' END AS [AdultBEducation]
+
+, CASE WHEN Guardian2.Qualification = 'Advanced diploma / Diploma' THEN 'D'
+       WHEN Guardian2.Qualification = 'Bachelor degree or above' THEN 'B'
+	   WHEN Guardian2.Qualification = 'Certificate I to IV (including trade certificate)' THEN 'C'
+	   WHEN Guardian2.Qualification = 'No non-school qualification' THEN 'N' ELSE 'U' END AS [AdultBQualification]
+
+, CASE WHEN Guardian2.OccupationGroup IS NULL THEN 'U' ELSE Guardian2.OccupationGroup END AS [ AdultBOccupation]
+
+
+FROM dbo.rpt_Family Family
+INNER JOIN dbo.rpt_FamilyChild FChild ON FChild.FamilyId = Family.FamilyId 
+INNER JOIN dbo.rpt_ChildDetails Child ON Child.PersonId = FChild.ChildId
+LEFT JOIN dbo.rpt_ChildKS KS ON KS.PersonId = Child.PersonId
+INNER JOIN dbo.rpt_FamilyRelation FRelation ON FRelation.FamilyId = Family.FamilyId AND FRelation.ChildId = Child.PersonId AND FRelation.IsPrimaryGuardian = 1
+INNER JOIN dbo.rpt_FamilyAdult FAdult ON FAdult.FamilyId = Family.FamilyId AND FRelation.RelatedToPersonId = FAdult.AdultId AND FAdult.AdultFamilyStatus NOT IN ('Archived')
+INNER JOIN dbo.rpt_GuardianDetails Guardian ON Guardian.PersonId = FRelation.RelatedToPersonId
+LEFT JOIN dbo.rpt_FamilyRelation FRelation2 ON FRelation2.FamilyId = Family.FamilyId AND FRelation2.ChildId = Child.PersonId AND FRelation2.IsPrimaryGuardian = 0 AND FRelation2.ID = (
+	SELECT MIN(FRelation2.Id) FROm dbo.rpt_FamilyRelation FRelation2 WHERE FRelation2.FamilyId = Family.FamilyId AND FRelation2.ChildId = Child.PersonId AND FRelation2.IsPrimaryGuardian = 0)
+LEFT JOIN dbo.rpt_FamilyAdult FAdult2 ON FAdult2.FamilyId = Family.FamilyId AND FRelation2.RelatedToPersonId = FAdult2.AdultId AND FAdult2.AdultFamilyStatus NOT IN ('Archived')
+LEFT JOIN dbo.rpt_GuardianDetails Guardian2 ON Guardian2.PersonId = FRelation2.RelatedToPersonId
+LEFT JOIN Mst_reportDB.dbo.Languages L ON [Language] = IIF(ISNULL(Child.LanguagesSpoken,'English')='English','', TRIM(CAST(LEFT(REPLACE(Child.LanguagesSpoken,'English,',''), CASE WHEN CHARINDEX(',',REPLACE(Child.LanguagesSpoken,'English,',''))-1 < 0 THEN LEN(REPLACE(Child.LanguagesSpoken,'English,','')) ELSE CHARINDEX(',',REPLACE(Child.LanguagesSpoken,'English,',''))-1 END ) AS VARCHAR)))
+
+inner join dbo.mst_year y on y.srno = Family.int_YearSrNo
+
+WHERE Family.FamilyStatus IN ('Active', 'Inactive', 'Archived')
+AND FChild.ChildFamilyStatus IN ('Active', 'Inactive', 'Archived')
+
+]]></query>
+            </view>
+        </views>
+    </database>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+    <access>
+        <expression expressionId="1ece56f0-4442-48a2-820a-828dddcc8588" type="conditionIf" expressionName="KIMSecurity" expressionType="table" on="KIM" accessType="grant">
+            <condition><![CDATA[${org}.name != '-' ]]></condition>
+            <filter><![CDATA[KIM.OrganisationId IN (${profile['organisation']}) AND
+KIM.ProviderId IN  (${profile['providers']}) AND
+KIM.CentreId IN (${profile['centres']})]]></filter>
+        </expression>
+    </access>
+</metadata>

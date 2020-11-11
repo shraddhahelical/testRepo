@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<report>
+    <reportName>DisableSortReport</reportName>
+    <visible>true</visible>
+    <metadata>
+        <location>1463377807724/1463377836985</location>
+        <metadataFileName>e9be6771-995b-40eb-a01c-304857a100a1.metadata</metadataFileName>
+    </metadata>
+    <canvas>
+        <columns><![CDATA[[{"column":"travel_details.destination","label":"travel_details_destination","id":"k53y6kqskbo","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"travel_details_destination","groupBy":["db.generic.groupBy.group"],"alias":"Destination"},{"column":"travel_details.travel_cost","label":"travel_details_travel_cost","id":"eyohqmqiq2a","type":{"dataType":"numeric","backendDatatype":"java.lang.Integer"},"autogen_alias":"sum_travel_cost","aggregate":["db.generic.aggregate.sum"],"alias":"Total Cost"},{"label":"Custom Column","custom":true,"column":"\"travel_cost\"","alias":"Average Cost","id":"q3hqgcj7u8","aggregate":["db.generic.aggregate.avg"],"autogen_alias":"avg_\"travel_cost\""}]]]></columns>
+    </canvas>
+    <state><![CDATA[{"columns":[{"column":"travel_details.destination","label":"travel_details_destination","id":"k53y6kqskbo","type":{"dataType":"text","backendDatatype":"java.lang.String"},"autogen_alias":"travel_details_destination","groupBy":["db.generic.groupBy.group"],"alias":"Destination"},{"column":"travel_details.travel_cost","label":"travel_details_travel_cost","id":"eyohqmqiq2a","type":{"dataType":"numeric","backendDatatype":"java.lang.Integer"},"autogen_alias":"sum_travel_cost","aggregate":["db.generic.aggregate.sum"],"alias":"Total Cost"},{"label":"Custom Column","custom":true,"column":"\"travel_cost\"","alias":"Average Cost","id":"q3hqgcj7u8","aggregate":["db.generic.aggregate.avg"],"autogen_alias":"avg_\"travel_cost\""}],"filters":[],"customFilterExpression":"","customHavingExpression":"","customFilterExpressionObj":{},"customHavingExpressionObj":{},"havingExpressionIndexs":{},"filterExpressionIndexs":{},"options":{"limitBy":1000,"prependTableNameToAlias":true},"visualisation":{"type":"Table","chartGroup":"","selectedType":"Table","settings":{"script":null},"vizSelectedScripts":[{"name":"Disable Sorting","scriptId":"table_js_disablesorting","scriptType":"js","group":"Table","parameters":{"refreshConfig":{"isEnable":false,"hours":23,"minutes":59,"seconds":59}},"renderOn":"simpleModel","isEditable":true,"description":"Helps to diable sorting on columns","icon":"/images/scriptIcons/disablesorting.png","isSelected":true,"isActiveScript":"active","isCheckedForMultipleEdit":false,"snippet":"\n\t\t\n\t\tvar id = hi_container.get(\"renderId\");\n\t\t\tvar ftnObj = {};\n\t\t\t\n\t\t\t\tftnObj['disablesort'+id] = function(c){\n\t\t\t\tjQuery('.column-header-anchor').removeClass('sortable');\n\t\t\t\t} ;\n\t\n\t\t\tif(!hi_container.isSet(\"postExecution\")){\n\t\t\t\thi_container.set(\"postExecution\", ftnObj['disablesort'+id]);\n\t\t\t}\n\t\t\n\t"}]},"scripts":[],"styles":"\n","customStyles":"","customScripts":["\n\t\t\n\t\tvar id = hi_container.get(\"renderId\");\n\t\t\tvar ftnObj = {};\n\t\t\t\n\t\t\t\tftnObj['disablesort'+id] = function(c){\n\t\t\t\tjQuery('.column-header-anchor').removeClass('sortable');\n\t\t\t\t} ;\n\t\n\t\t\tif(!hi_container.isSet(\"postExecution\")){\n\t\t\t\thi_container.set(\"postExecution\", ftnObj['disablesort'+id]);\n\t\t\t}\n\t\t\n\t"]}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</report>

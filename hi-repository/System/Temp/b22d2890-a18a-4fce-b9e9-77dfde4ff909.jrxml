@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Dynamic Designer report" columnCount="2" pageWidth="1191" pageHeight="1684" whenNoDataType="NoDataSection" columnWidth="575" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" uuid="f32cc354-9f3b-42f2-a2da-1f471b0b4894">
+	<property name="net.sf.jasperreports.awt.ignore.missing.font" value="true"/>
+	<style name="Style" mode="Opaque" hTextAlign="Center" pattern="" fontName="Serif" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false">
+		<pen lineWidth="1.0" lineStyle="Solid"/>
+		<box padding="0" topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+			<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+			<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+			<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+			<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<parameter name="startdate" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[2015-01-01]]></defaultValueExpression>
+	</parameter>
+	<parameter name="enddate" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[2015-02-02]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[ ]]>
+	</queryString>
+	<field name="ID" class="java.lang.Integer"/>
+	<field name="Name" class="java.lang.String"/>
+	<field name="Destination" class="java.lang.String"/>
+	<field name="Source" class="java.lang.String"/>
+	<field name="Cost" class="java.lang.Integer"/>
+	<field name="Date" class="java.sql.Timestamp"/>
+	<field name="travel_medium" class="java.lang.String"/>
+	<variable name="Sum_Cost1" class="java.lang.Integer" resetType="Group" resetGroup="group_Name" calculation="Sum">
+		<variableExpression><![CDATA[$F{Cost}]]></variableExpression>
+	</variable>
+	<variable name="Sum_Cost2" class="java.lang.Integer" resetType="Page" calculation="Sum">
+		<variableExpression><![CDATA[$F{Cost}]]></variableExpression>
+	</variable>
+	<variable name="Sum_Cost3" class="java.lang.Integer" resetType="Column" calculation="Sum">
+		<variableExpression><![CDATA[$F{Cost}]]></variableExpression>
+	</variable>
+	<variable name="Sum_Cost4" class="java.lang.Integer" resetType="Group" resetGroup="group_travel_medium" calculation="Sum">
+		<variableExpression><![CDATA[$F{Cost}]]></variableExpression>
+	</variable>
+	<group name="group_travel_medium" isStartNewColumn="true" isReprintHeaderOnEachPage="true">
+		<groupExpression><![CDATA[$F{travel_medium}]]></groupExpression>
+		<groupHeader>
+			<band height="20" splitType="Stretch">
+				<textField isBlankWhenNull="false">
+					<reportElement mode="Opaque" x="0" y="0" width="242" height="20" forecolor="#000000" backcolor="#D5E5F0" uuid="8433a97f-d20f-45e7-b9e0-940fc5044e71"/>
+					<box padding="1" topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+						<topPen lineWidth="0.0" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+						<font fontName="Serif" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Travel Medium"+":"+$F{travel_medium}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="27" splitType="Stretch">
+				<textField isBlankWhenNull="false">
+					<reportElement mode="Transparent" x="296" y="7" width="100" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="e077f575-4f3e-4bd0-adda-453e37530e23"/>
+					<box padding="1" topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+						<topPen lineWidth="0.0" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font fontName="Serif" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{group_travel_medium_COUNT}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement mode="Transparent" x="0" y="7" width="296" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="47c1e6f3-f762-45ed-8247-c599270189d5"/>
+					<box padding="1" topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+						<topPen lineWidth="0.0" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+						<font fontName="Serif" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["No.Of Records for"+" "+$F{travel_medium}+":"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement mode="Transparent" x="396" y="7" width="88" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="caa6b3de-1c10-43e1-ae9f-c3858d192ad9"/>
+					<box padding="1" topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+						<topPen lineWidth="0.0" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+						<font fontName="Serif" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Total Cost"+":"]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0.00#;(#,##0.00#)" isBlankWhenNull="false">
+					<reportElement mode="Transparent" x="484" y="7" width="65" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="b94ed8c1-cce1-412e-9110-0dcbbdf0bc33"/>
+					<box padding="1" topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+						<topPen lineWidth="0.0" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Bottom">
+						<font fontName="Serif" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{Sum_Cost4}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement positionType="Float" x="0" y="0" width="550" height="1" forecolor="#000000" backcolor="#000000" uuid="132798d4-d3d4-4326-b753-851fb3e3ca46"/>
+					<graphicElement>
+						<pen lineWidth="2.0" lineStyle="Solid"/>
+					</graphicElement>
+				</line>
+			</band>
+		</groupFooter>
+	</group>
+	<group name="group_Name" isReprintHeaderOnEachPage="true">
+		<groupExpression><![CDATA[$F{Name}]]></groupExpression>
+		<groupHeader>
+			<band height="20" splitType="Stretch">
+				<textField isBlankWhenNull="false">
+					<reportElement mode="Transparent" x="0" y="0" width="242" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="30ccb06f-360a-42c0-9d1e-e5a47cc14748"/>
+					<box padding="1" topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+						<topPen lineWidth="0.0" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+						<font fontName="Serif" size="14" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Client Name"+":"+$F{Name}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement positionType="Float" x="0" y="19" width="550" height="1" forecolor="#000000" backcolor="#000000" uuid="5d55530b-de5a-4d31-807d-90c38aa42d43"/>
+					<graphicElement>
+						<pen lineWidth="2.0" lineStyle="Solid"/>
+					</graphicElement>
+				</line>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="20" splitType="Stretch">
+				<textField isBlankWhenNull="false">
+					<reportElement mode="Opaque" x="397" y="0" width="88" height="20" forecolor="#000000" backcolor="#C0C0C0" uuid="95165f7c-f087-4ebb-8ceb-9b2fed67a235"/>
+					<box padding="1" topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+						<topPen lineWidth="0.0" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Bottom">
+						<font fontName="Serif" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Total Cost"+":"]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0.00#;(#,##0.00#)" isBlankWhenNull="false">
+					<reportElement mode="Opaque" x="485" y="0" width="65" height="20" forecolor="#000000" backcolor="#C0C0C0" uuid="c14363a9-2ff6-4b8a-992c-a483d2eb20b4"/>
+					<box padding="1" topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+						<topPen lineWidth="0.0" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Bottom">
+						<font fontName="Serif" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{Sum_Cost1}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement mode="Opaque" x="1" y="0" width="296" height="20" forecolor="#000000" backcolor="#C0C0C0" uuid="e42531dc-277d-4252-9ba7-c7b1505a8bd3"/>
+					<box padding="1" topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+						<topPen lineWidth="0.0" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Serif" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["No.Of Records for"+" "+$F{Name}+" "+"Client"+":"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement mode="Opaque" x="297" y="0" width="100" height="20" forecolor="#000000" backcolor="#C0C0C0" uuid="27efd39d-1320-47b1-becb-2cc3c763af00"/>
+					<box padding="1" topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+						<topPen lineWidth="0.0" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font fontName="Serif" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{group_Name_COUNT}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<title>
+		<band height="27">
+			<textField isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="0" y="0" width="1131" height="27" forecolor="#000000" backcolor="#FFFFFF" uuid="431247fa-d91e-419f-a43d-a662c8b812d6"/>
+				<box padding="1" topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.0" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Serif" size="18" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Detailed Travel Report By Client"]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="27">
+			<textField isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="0" y="0" width="1151" height="27" forecolor="#000000" backcolor="#FFFFFF" uuid="c941a1b2-fac9-4e4c-a8b3-e4c132f54039"/>
+				<box padding="1" topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.0" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Serif" size="18" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Travel Details for the period"+":"+$P{startdate}+" "+"To"+" "+$P{enddate}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20">
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement style="Style" mode="Opaque" x="0" y="0" width="100" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="5de8f548-e348-4a1f-95d6-7ded3d1e3ea2"/>
+				<box padding="1" topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="Serif" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["ID"]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement style="Style" mode="Opaque" x="100" y="0" width="156" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="3736cd18-6bad-4c9c-ab07-965c3ace8d9d"/>
+				<box padding="1" topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="Serif" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Source"]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement style="Style" mode="Opaque" x="256" y="0" width="88" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="4282320e-30f5-46ba-ae23-be6c30ecdca8"/>
+				<box padding="1" topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="Serif" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Destination"]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement style="Style" mode="Opaque" x="344" y="0" width="100" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="1bd53967-c17c-4f69-90e3-90da9341ed21"/>
+				<box padding="1" topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="Serif" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Date"]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement style="Style" mode="Opaque" x="444" y="0" width="100" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="a424e0d1-ba65-4458-bd8b-7b66c178939d"/>
+				<box padding="1" topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="Serif" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Cost"]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<textField isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="0" y="0" width="100" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="e2efae7e-f376-4c50-8a03-0153caddb527"/>
+				<box padding="1" topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.0" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ID}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="100" y="0" width="156" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="6a892c2c-a9a7-4dd1-b6a8-610ff2996272"/>
+				<box padding="1" topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.0" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Serif" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Source}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="256" y="0" width="88" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="a1071351-1e40-4279-a640-f17384991696"/>
+				<box padding="1" topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.0" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Serif" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Destination}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/YYYY" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="344" y="0" width="100" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="7486f78b-3d2c-40b4-adff-c6d5a1c89354"/>
+				<box padding="1" topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.0" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="Serif" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Date}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00#;(#,##0.00#)" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="444" y="0" width="100" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="0959c573-dd82-43ba-8141-d2133f8c693d"/>
+				<box padding="1" topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.0" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="Serif" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Cost}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="20">
+			<textField isBlankWhenNull="false">
+				<reportElement mode="Opaque" x="296" y="0" width="106" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="f7122e9f-30de-4fb0-9411-b74992dcfb98"/>
+				<box padding="1" topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.0" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Serif" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{COLUMN_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement mode="Opaque" x="399" y="0" width="88" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="06d0bd3d-bd1c-455d-b29c-5fd4722104b8"/>
+				<box padding="1" topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.0" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="Serif" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Total Cost"+":"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement mode="Opaque" x="0" y="0" width="296" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="efb41fa5-ad17-4283-8982-38ddaaf1198a"/>
+				<box padding="1" topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.0" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["No of Records In This Section"+":"]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00#;(#,##0.00#)" isBlankWhenNull="false">
+				<reportElement mode="Opaque" x="487" y="0" width="73" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="8abcabcb-7419-46d7-b587-c39bf1dfbaa8"/>
+				<box padding="1" topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.0" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="Serif" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{Sum_Cost3}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="21">
+			<textField isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="0" y="0" width="305" height="20" forecolor="#000000" backcolor="#000000" uuid="fd8a84fb-4fde-4dc6-b5be-cbacc5ce6fba"/>
+				<box padding="1" topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.0" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["No.Of Records In Current Page"+":"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="302" y="0" width="100" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="06726254-0035-45f5-8cd9-d3e29662b480"/>
+				<box padding="1" topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.0" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Serif" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="487" y="0" width="80" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="d298fa7b-1875-4162-9ce2-b470b446435b"/>
+				<box padding="1" topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.0" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="Serif" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}+"/"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="567" y="1" width="80" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="b7ede0a1-0132-4998-b1bb-0d29eedfcc58"/>
+				<box padding="1" topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.0" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Serif" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="964" y="0" width="100" height="20" forecolor="#000000" backcolor="#000000" uuid="d6a227d4-df7c-40c7-9d10-e9bf61262646"/>
+				<box padding="1" topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.0" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="Serif" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Sum Of Cost"+":"]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00#;(#,##0.00#)" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="1064" y="0" width="80" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="aa7dcdb1-ddb8-4967-adb5-04ee803fef68"/>
+				<box padding="1" topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.0" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="Serif" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{Sum_Cost2}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="20">
+			<textField pattern="MMMMM dd, yyyy" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="24" y="0" width="296" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="9c5dfb6b-de66-4d94-bf32-881ba99a9e62"/>
+				<box padding="1" topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.0" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Serif" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["DateTime"+" "+new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+	<summary>
+		<band height="20">
+			<textField isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="0" y="0" width="1151" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="1c108fe2-09a3-48de-b69f-57bf56191b3e"/>
+				<box padding="1" topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="1.0" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Serif" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Total No of Records In this Report"+":"+$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+	<noData>
+		<band height="27">
+			<textField isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="0" y="0" width="1131" height="27" forecolor="#000000" backcolor="#FFFFFF" uuid="10155b66-b9c5-4b51-a41a-4e407cbc8122"/>
+				<box padding="1" topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.0" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Serif" size="18" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["No Data Found for the period"+":"+$P{startdate}+" "+"To"+" "+$P{enddate}]]></textFieldExpression>
+			</textField>
+		</band>
+	</noData>
+</jasperReport>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<threadPoolConfig managerClass="com.helicalinsight.parallelprocessor.WorkerManager">
+	<!--The number of threads that will be created when metadata cache is used -->
+	 <maxPoolSize>200</maxPoolSize>
+	 <threadPoolMaxMemory>10</threadPoolMaxMemory>
+	 <!--Timeout in milliseconds. Waiting time of a metadata cache thread-->
+	 <threadPoolTimeout>600000</threadPoolTimeout>
+	 <threadPoolPrefix>hi_pool_</threadPoolPrefix>
+	 <maxWaitingTime>1000</maxWaitingTime>
+	 <poolExecutorServiceThreshold>1000</poolExecutorServiceThreshold>
+	 <!--Initial pool size of the executor-->
+	 <corePoolSize>25</corePoolSize>
+	 <waitForTasksToCompleteOnShutdown>true</waitForTasksToCompleteOnShutdown>
+	 <queueCapacity>100</queueCapacity>
+	 <taskExecutorBean>threadPoolTaskExecutorImpl</taskExecutorBean>
+	  <!--Timeout in milliseconds. Waiting time of a metadata cache thread-->
+	 <taskTimeout>600000</taskTimeout>
+	 <taskTimeoutUnit>MILLISECONDS</taskTimeoutUnit>
+	 <workerRejectionExecutionHandler>workerRejectionExecutionHandler</workerRejectionExecutionHandler>
+	 <threadPoolMonitorService>threadPoolMonitorService</threadPoolMonitorService>
+</threadPoolConfig>

@@ -1,0 +1,467 @@
+<div>
+<div id="divfailure" class="col-xs-6 col-sm-3 col-lg-2 inputControl">
+        <div id="Failures"></div>
+</div>
+<div id="divprotocol" class="col-xs-6 col-sm-3 col-lg-2 inputControl">
+        <div id="Protocols"></div>
+</div>
+</div>
+<div id="Trials"></div>
+<div id="SiteTrials"></div>
+<div id="failure_ParentTable"></div>
+<div id="dummy"></div>
+<style id="44a6a637-50f5-4b6e-aee0-af0fce88993f" type="text/css">.bar-chart-bar {
+    display: block; 
+    position:relative; 
+	float: right;
+    height: 15px;
+}
+#table th {
+    border-bottom: 1px solid #dadada;
+    position: sticky;
+    box-shadow: #dee1e3 0px 2px 2px 0px;
+}
+#table_child thead,#table_child2 thead{
+    visibility: collapse;
+}
+#main-table-bars{
+    margin-left: 10px ! important;
+}
+#table_for_header thead tr th{
+    background-color: #f6f6f6;
+    font-weight: normal;
+    font-family: Lato;
+    color: #777d94;
+    text-align: left;
+    padding: 1rem;
+    padding-left: 1.5rem;
+}
+#table_for_header thead,#chart_2, #chart_3{
+    border: 1px solid lightgray;
+}
+#nested_tables{
+    padding: 5px;
+}
+.criteria-failure-codes {
+    display: inline-block;
+    border: 1px solid #DADADA;
+    background: #F9F9FA;
+    padding: .3rem;
+    border-radius: .3rem;
+    font-size: 1.1rem;
+    font-family: Lato;
+    cursor: pointer;
+}
+.dataTables_filter{
+ float: left ! important;
+ margin-top: -35px;
+}
+
+#table .colH_1, .col_1, .colH_2, .col_2,#table_child .colH_1, .col_1, .colH_2, .col_2,#table_child2 .colH_1, .col_1, .colH_2, .col_2{
+    text-align: right ! important;
+    justify-content: flex-end ! important;
+   // font-weight: bold ! important;
+    
+} 
+#table .col_1, .col_2,#table_child .col_1, .col_2,#table_child2 .col_1, .col_2{
+    font-size: 1.3rem ! important;
+}
+#table .colH_3, .col_3,#table_child .colH_3, .col_3,#table_child2 .colH_3, .col_3{
+    padding-left: 5rem ! important;
+    
+}
+#table .colH_0,.colH_4{
+    border-left: none ! important;
+}
+details[open] .elipsisSpan { 
+  display:none;
+}
+summary{
+    outline: none;
+    display: list-item;
+}
+#bySiteButton, #byCountryButton, #closeButton {
+    padding-left: 5px;
+    padding-right: 5px;
+    font-family: Lato;
+    font-weight: bold;
+    //font-size: 1.3rem;
+    color: #777d94;
+    background: #f6f6f6;
+    border: none;
+    outline:none;
+}
+#closeButton{
+    float:right;
+}
+#bySiteButton{
+    float: right;
+    padding-bottom: 7px;
+	margin: 0px -7px;
+}
+#byCountryButton{
+    padding-bottom: 7px;
+	margin: 0px 9px;
+}
+#table_child, #table_child2{
+    //padding: 5px;
+    border: none;
+}
+#Trials, #SiteTrials{
+    display: none;
+}
+#divprotocol{
+    float: right;
+    padding: 2px;
+}
+#divfailure{
+    float: right;
+    padding: 2px;
+}
+#Protocols .form-control, #Failures .form-control{
+    font-family: Lato;
+    font-weight: bold;
+    color: #777d94;
+}
+.select2-container-multi .select2-choices{
+    border-radius: 4px;
+    min-height: 40px ! important;
+    color: #dadada;
+    border-color: #cdcdcd;
+    max-height: 100px;
+    overflow-y: auto;
+}
+.select2-container-multi .select2-choices .select2-search-choice{
+    border-radius: 2px;
+    background-color: rgba(0,126,255,0.08);
+    border: 1px solid rgba(0,126,255,0.24);
+    color: #007eff;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 5px;
+    margin-left: 5px;
+    max-width: 90%;
+}
+.select2-search-choice div{
+    padding: 2px;
+    padding-left: 7px;
+    color: #60A5EB;
+    text-overflow: initial;
+    overflow: auto;
+    white-space: normal;
+    word-break: break-word;
+    hyphens: none;
+    //border-left: 1px solid rgba(0,126,255,0.24);
+}
+.select2-search-choice-close{
+    height: 100%;
+    top: 0px ! important;
+    left: 0px ! important;
+    border-right: 1px solid rgba(0,126,255,0.24);
+    width: 18px;
+    /*
+    padding-bottom: 25px;
+    margin-top: -4px;
+    padding-left: 18px;
+    */
+}
+.select2-search-choice-close:before{
+    color: #007eff;
+    font-weight: 100;
+    font-size: 12px;
+    top: 20%;
+    /*
+    margin-top: 5px;
+    margin-left: -1px;
+    */
+}
+.select2-container-multi .select2-choices .select2-search-field input{
+    font-family: Arial !important;
+    font-style: italic;
+    color: #a4a8b4 ! important;
+    line-height: 1.6em;
+}
+.select2-drop-active{
+    border: 1px solid #cdcdcd;
+    border-top: 1px solid #cdcdcd;
+}
+.select2-results{
+    /*font-family: Arial !important; */
+    /* font-style: italic; */
+    color: #595f75 ! important;
+    line-height: 1.6em;
+    font-family: Lato;
+}
+.select2-results .select2-highlighted{
+    background: #f6f6f6;
+    color: #595f75;
+}
+</style><script id="4996748a-7ad9-4cd1-a2d0-cb42263b000d">var dashboard = Dashboard 
+ dashboard.resetAll() 
+  
+        dashboard.setVariable('Trials',["_all_"]);
+var Trials = {
+    name: "Trials" ,
+    type:  "select2",
+    parameters: ['Trials'],
+    listeners: ['Protocols'], //,'Protocols','Failures'
+    requestParameters: { 'user_name': 'user_name'},
+    options:{
+        all: true,
+        multiple: true,             // it can be true or false
+        display : 'trial_id',
+        value : 'trial_id'
+    },
+    htmlElementId : "#Trials",              
+    executeAtStart: true,            // it can be true or false
+    map: 6,
+    efwd : {
+        file: '2c32d272-b7a7-444f-bb15-ec4577fafa5f.efwd'
+    },
+};
+ //DashboardGlobals.sessionUserName
+//'auth0|5b242f33c622dc3967ae3822'
+dashboard.setVariable('user_name',DashboardGlobals.sessionUserName);
+var user_name = {
+    name: "user_name" ,
+    type:  "select2", 
+    options:{
+        multiple: false,             // it can be true or false
+        display : 'column_name',
+        value : 'column_name',
+        placeholder: 'select value'
+    },
+    htmlElementId : "#user_name",              
+    executeAtStart: false,            // it can be true or false
+    map: 7,
+    efwd : {
+        file: '2c32d272-b7a7-444f-bb15-ec4577fafa5f.efwd'
+    },
+};
+console.log("Logged in User: ",dashboard.getVariable('user_name'));
+dashboard.setVariable('selected_criteria_code','Inc 1');
+var selected_criteria_code = {
+    name: "selected_criteria_code" ,
+    type:  "select2",             
+    options:{
+        multiple: false,             // it can be true or false
+        display : 'column_name',
+        value : 'column_name',
+        placeholder: 'select value'
+    },
+    htmlElementId : "#selected_criteria_code",              
+    executeAtStart: false,            // it can be true or false
+    map: 12,
+    efwd : {
+        file: '2c32d272-b7a7-444f-bb15-ec4577fafa5f.efwd'
+    },
+};
+dashboard.setVariable('SiteTrials',["_all_"]);
+var SiteTrials = {
+    name: "SiteTrials" ,
+    type:  "select2",          
+    listeners: ['Trials'],
+    parameters:["SiteTrials"],
+    requestParameters: {'Trials': 'Trials', 'user_name': 'user_name'},
+    options:{
+        all: true,
+        multiple: true,             // it can be true or false
+        display : 'site_trial_id',
+        value : 'site_trial_id'
+    },
+    htmlElementId : "#SiteTrials",              
+    executeAtStart: true,            // it can be true or false
+    map: 13,
+    efwd : {
+        file: '2c32d272-b7a7-444f-bb15-ec4577fafa5f.efwd'
+    },
+};
+dashboard.setVariable('Protocols',["All Protocols"]);
+var Protocols = {
+    name: "Protocols" ,
+    type:  "select2",             
+    parameters:["Protocols"],
+    listeners: ['Trials'],
+    requestParameters: {'Trials': 'Trials', 'user_name': 'user_name'},
+    options:{
+        multiple: true,             // it can be true or false
+        display : 'protocol_name_and_version',
+        value : 'protocol_name_and_version',
+        placeholder: 'All Protocols'
+    },
+    htmlElementId : "#Protocols",              
+    executeAtStart: true,            // it can be true or false
+    map: 14,
+    efwd : {
+        file: '2c32d272-b7a7-444f-bb15-ec4577fafa5f.efwd'
+    },
+};
+dashboard.setVariable('Failures',["All Failures"]);
+var Failures = {
+    name: "Failures" ,
+    type:  "select2",             
+    parameters:["Failures"],
+    requestParameters: {'Trials': 'Trials', 'user_name': 'user_name','SiteTrials': 'SiteTrials','Protocols': 'Protocols'},
+    options:{
+        multiple: true,             // it can be true or false
+        display : 'display_col',
+        value : 'passing_col',
+        placeholder: 'All Failures'
+    },
+    htmlElementId : "#Failures",              
+    executeAtStart: true,            // it can be true or false
+    map: 15,
+    efwd : {
+        file: '2c32d272-b7a7-444f-bb15-ec4577fafa5f.efwd'
+    },
+};
+var table = [];
+var failure_ParentTable = {
+    name: "failure_ParentTable",
+    type:"chart",
+    listeners: ['SiteTrials','Trials'], //,'Protocols','Failures'
+    requestParameters: {'Trials': 'Trials', 'user_name': 'user_name','SiteTrials': 'SiteTrials','Protocols': 'Protocols','Failures': 'Failures'},
+    vf : {
+        id: "1",
+        file: '2c32d272-b7a7-444f-bb15-ec4577fafa5f.efwvf'
+    },
+    efwd : {
+        file: '2c32d272-b7a7-444f-bb15-ec4577fafa5f.efwd'
+    },
+    htmlElementId : "#failure_ParentTable", // provide report id here
+    executeAtStart: true  // it can be true or false
+};
+var failure_by_site = {
+    name: "failure_by_site",
+    type:"chart",
+    requestParameters: {'Trials': 'Trials', 'user_name': 'user_name','selected_criteria_code': 'selected_criteria_code','SiteTrials': 'SiteTrials','Protocols': 'Protocols','Failures': 'Failures'},
+    vf : {
+        id: "2",
+        file: '2c32d272-b7a7-444f-bb15-ec4577fafa5f.efwvf'
+    },
+    efwd : {
+        file: '2c32d272-b7a7-444f-bb15-ec4577fafa5f.efwd'
+    },
+    htmlElementId : "#failure_by_site", // provide report id here
+    executeAtStart: true  // it can be true or false
+};
+var failure_by_country = {
+    name: "failure_by_country",
+    type:"chart",
+    requestParameters: { 'Trials': 'Trials', 'user_name': 'user_name','selected_criteria_code': 'selected_criteria_code','SiteTrials': 'SiteTrials','Protocols': 'Protocols','Failures': 'Failures'},
+    vf : {
+        id: "3",
+        file: '2c32d272-b7a7-444f-bb15-ec4577fafa5f.efwvf'
+    },
+    efwd : {
+        file: '2c32d272-b7a7-444f-bb15-ec4577fafa5f.efwd'
+    },
+    htmlElementId : "#failure_by_country", // provide report id here
+    executeAtStart: true  // it can be true or false
+};
+var customScript = {
+    name: "customScript",
+    type:"custom",
+    listeners:["Protocols","Failures"],
+    requestParameters :{},
+    efwd : {
+        id: "19",
+        file: '2c32d272-b7a7-444f-bb15-ec4577fafa5f.efwd'
+    },
+    htmlElementId : "#dummy", // provide report id here
+    executeAtStart: false,  // it can be true or false
+    customScript: function() {
+    
+        console.log("customScript Triggered");
+        
+        if(dashboard.getVariable('Protocols').length === 0){
+            console.log("Selected Protocols length is Zero !!! ");
+            dashboard.setVariable('Protocols',["All Protocols"]);
+        }
+        if(dashboard.getVariable('Failures').length === 0){
+            console.log("Selected Failures length is Zero !!! ");
+            dashboard.setVariable('Failures',["All Failures"]);
+        }
+        dashboard.updateComponent('failure_ParentTable');
+    }
+};
+
+var tr = null;
+var row = null;
+$(document).on('click', '.criteria-failure-codes', function (e) {
+    if(tr != null){
+        tr.css('background-color', 'transparent');
+    }
+		tr = $(this).closest('tr');
+		tr.css('background-color', 'whitesmoke');
+        const allRows = document.querySelectorAll("#table tr");
+        allRows.forEach((searchTargetRow) => {
+            var row_in = table.row(searchTargetRow);
+            if (row_in.child && row_in.child.isShown() ) {
+			row_in.child.hide();
+			//row_in.removeClass('shown');
+		    }
+        });
+        
+		row = table.row(tr);
+		var rowData = row.data();
+		console.log("selected code:",rowData[3]);
+		dashboard.setVariable('selected_criteria_code',rowData[3]);
+		if ( row.child.isShown() ) {
+			
+			row.child.hide();
+			tr.removeClass('shown');
+		}
+		else {	    
+			tr.addClass('shown');
+			row.child(createDiv()).show();
+			$('td', row.child()).css({'background-color': '#e5e7eb'});
+			dashboard.removeComponent([failure_by_site]);
+			dashboard.addComponent([failure_by_site]);
+			dashboard.removeComponent([failure_by_country]);
+			dashboard.addComponent([failure_by_country]);
+			$('#failure_by_country')[0].hidden=true;
+			$('#bySiteButton')[0].style.borderBottom='3px solid #6dadf1';
+		    var child_table_cont= document.querySelectorAll('#table_child thead tr th')[0];
+		    console.log("child Tab:", child_table_cont);
+		}
+});
+function createDiv() {
+     //var html ='<button onclick="byCountryClicked()" id="byCountryButton">By Country</button><button onclick="bySiteClicked()" id="bySiteButton">By Site</button><button onclick="closeClicked()" id="closeButton">Close</button><div id="failure_by_site"></div>'+'<div id="failure_by_country"></div>';
+     var html="<div id='nested_tables'>" 
+                +"<div id='table_for_header'>"
+                 +"<table style='width: 100%;'><thead><tr>"
+                  +"<th class='colH_0' style='width:126px;padding-top: 0px;padding-bottom: 0px;vertical-align: bottom'>"
+                  +"<button onclick='byCountryClicked()' id='byCountryButton'>By Country</button>"
+                  +"<button onclick='bySiteClicked()' id='bySiteButton'>By Site</button></th>"
+                  +"<th class='colH_1' style='width:115px'></th>"
+                  +"<th class='colH_2' style='width:115px'></th>"
+                  +"<th class='colH_3' style='min-width:10rem'><span id='site_or_country' style='font-family: Lato'>Site</span>"
+                  +"<button onclick='closeClicked()' id='closeButton'>Close</button></th>"
+                 +"</tr></thead></table>"
+                +"</div>"
+               +"<div id='failure_by_site'></div>"
+               +"<div id='failure_by_country'></div></div>";
+    return html ;
+}
+function bySiteClicked() {
+$('#site_or_country').text('Site');
+$('#failure_by_country')[0].hidden=true;
+$('#failure_by_site')[0].hidden=false;
+$('#bySiteButton')[0].style.borderBottom='3px solid #6dadf1';
+$('#byCountryButton')[0].style.borderBottom='none';
+}
+function byCountryClicked() {
+$('#site_or_country').text('Country');
+$('#failure_by_country')[0].hidden=false;
+$('#failure_by_site')[0].hidden=true;
+$('#byCountryButton')[0].style.borderBottom='3px solid #6dadf1';
+$('#bySiteButton')[0].style.borderBottom='none';
+}
+function closeClicked() {
+tr.css('background-color', 'transparent');
+row.child.hide();
+tr.removeClass('shown');
+}
+var components = [Trials,user_name,selected_criteria_code,SiteTrials,Protocols,Failures,failure_ParentTable,failure_by_site,failure_by_country,customScript];
+dashboard.init(components);</script>

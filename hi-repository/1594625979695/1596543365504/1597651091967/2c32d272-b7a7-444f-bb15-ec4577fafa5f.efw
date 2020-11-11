@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efw>
+    <title>Criteria Failure Report</title>
+    <author>hiadmin</author>
+    <description>Efw File</description>
+    <template>2c32d272-b7a7-444f-bb15-ec4577fafa5f.html</template>
+    <visible>true</visible>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</efw>

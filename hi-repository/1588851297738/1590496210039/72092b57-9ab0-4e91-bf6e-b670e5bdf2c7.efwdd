@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<efwdd>
+    <fileName>BugID2929</fileName>
+    <efw>72092b57-9ab0-4e91-bf6e-b670e5bdf2c7.efw</efw>
+    <visible>true</visible>
+    <description>Efw Dashboard Designer</description>
+    <state><![CDATA[{"variables":[["booking","Agent"]],"components":{"pzza796su3":{"gs_attr":{"x":0,"y":0,"height":16,"width":33},"name":"pzza796su3","metadata":{"dir":"/Adhoc Dynamic View/","name":"FilterReport"},"uid":"pzza796su3","label":"FilterReport","requestParameters":{"booking":"booking"},"executeAtStart":true,"type":"dashboard-component","options":{"dir":"1588851297738","file":"0be6b7ce-d152-4cad-888f-7550df3f7d9c.report","ext":"report","compType":"Adhoc","uid":"pzza796su3","iframe":false},"listeners":["booking"]},"ynfqyaph8pa":{"gs_attr":{"x":33,"y":0,"height":16,"width":33},"dataType":"text","orderBy":"","dataSource":{"location":"1588851297738/1589444653445/1590651742641","metadataFileName":"55176731-1523-48d1-8a2d-f0f6cbad1678.metadata"},"parameters":["booking"],"name":"ynfqyaph8pa","uid":"ynfqyaph8pa","alias":"filtervalue_booking_platform","databaseFunction":{},"column":"filtervalue.booking_platform","adhoc":true,"executeAtStart":true,"type":"dashboard-component","database":"HIUSER","options":{"compType":"Select","display":"filtervalue_booking_platform","value":"filtervalue_booking_platform","multiple":false,"uid":"ynfqyaph8pa","iframe":false}}},"dashboardConfig":{"id":"dashboard"},"css":"","script":"","printOptions":{"templateId":"Dashboard","title":"Dashboard"},"componentSettings":{"pzza796su3":{"header":true,"minimize":false,"maximize":false,"export":false,"editReport":false},"ynfqyaph8pa":{"header":true,"minimize":false,"maximize":false,"export":false,"editReport":false}},"gridWidthOption":100,"toggleIframes":false}]]></state>
+    <security>
+        <createdBy>1</createdBy>
+        <organization></organization>
+    </security>
+</efwdd>
