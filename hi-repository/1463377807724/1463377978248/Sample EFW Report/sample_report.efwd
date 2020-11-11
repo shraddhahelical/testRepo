@@ -2,7 +2,7 @@
    <DataSources>
         <Connection id="1" name="SampleEFWD Sample Travel Data" type="sql.jdbc">
             <Driver>org.apache.derby.jdbc.AutoloadedDriver</Driver>
-			<Url>jdbc:derby:C:\Program Files\Helical Insight\hi\db\SampleTravelData</Url>
+			<Url>jdbc:derby:/usr/local/Helical Insight/hi/db/SampleTravelData</Url>
             <User>hiuser</User>
             <Pass>hiuser</Pass>
         </Connection>
