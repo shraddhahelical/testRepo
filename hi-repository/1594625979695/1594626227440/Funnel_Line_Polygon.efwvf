@@ -1,7 +1,7 @@
 <Charts>
 	<Chart id="1">
         <prop>
-            <name>Funnel Line Polygon Chart</name>
+            <name>Funnel Line Polygon Chart1 </name>
             <type>Custom</type>
             <DataSource></DataSource>
             <script>
